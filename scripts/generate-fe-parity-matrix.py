@@ -378,6 +378,9 @@ def build() -> dict:
             "atomic_evidence_swap": reference["atomic_evidence_publication_reference"]["swap"],
             "atomic_evidence_partial_overwrite": reference["atomic_evidence_publication_reference"]["partial_overwrite"],
             "atomic_evidence_mixed_generation": reference["atomic_evidence_publication_reference"]["mixed_generation"],
+            "evidence_dependency_source_commit": reference["evidence_dependency_graph_reference"]["source_commit"],
+            "evidence_dependency_source_branch": reference["evidence_dependency_graph_reference"]["source_branch"],
+            "evidence_dependency_transplant_frontend_counts": reference["evidence_dependency_graph_reference"]["transplant_frontend_counts"],
             "rule": "FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。",
         },
         "fixture_mapping": [

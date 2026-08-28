@@ -40,6 +40,9 @@ reference:
   atomic_evidence_swap: staged-directory-rename-with-rollback
   atomic_evidence_partial_overwrite: forbidden
   atomic_evidence_mixed_generation: forbidden
+  evidence_dependency_source_commit: 072d7ca77981f51754e824d70c6d4ecd55ea67e5
+  evidence_dependency_source_branch: main
+  evidence_dependency_transplant_frontend_counts: false
   rule: FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。
 fixture_mapping:
 - source: fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json
@@ -9217,7 +9220,7 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived architecture/integration behavior
     behaviors: 57
-    reference_systems: 0
+    reference_systems: 1
     scenario_contracts: 10
     executed: 0
     passed: 0

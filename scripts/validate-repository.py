@@ -9,6 +9,9 @@ import sys
 import yaml
 
 from scenario_proof import validate_files as validate_scenario_proof_files
+from evidence_dependency_graph import BASELINE_PATH as DEPENDENCY_BASELINE_PATH
+from evidence_dependency_graph import GRAPH_PATH as DEPENDENCY_GRAPH_PATH
+from evidence_dependency_graph import validate_graph as validate_dependency_graph
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -72,6 +75,11 @@ def main() -> int:
         for claim_path in sorted((ROOT / "claims").glob("*.claim.yaml"))
     )
     historical_digests = historical_authority_digests()
+
+    dependency_graph = json.loads(DEPENDENCY_GRAPH_PATH.read_text())
+    dependency_baseline = json.loads(DEPENDENCY_BASELINE_PATH.read_text())
+    for error in validate_dependency_graph(dependency_graph, ROOT, dependency_baseline):
+        fail(errors, f"evidence dependency: {error}")
 
     for error in validate_scenario_proof_files():
         fail(errors, f"scenario proof: {error}")
@@ -232,7 +240,7 @@ def main() -> int:
             or publication.get("mixed_generation") != expected_atomic["mixed_generation"]
             or publication.get("historical_live_without_run_report_allowed") is not True
             or publication.get("next_success_requires_run_report") is not True
-            or publication.get("owned_globs") != ["raw/*.json", "*.evidence.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json"]):
+            or publication.get("owned_globs") != ["raw/*.json", "*.evidence.json", "dependency-graph.json", "reference-system/*.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json"]):
         fail(errors, "RabbitMQ Atomic Evidence publication local contract mismatch")
     if (parity["reference"].get("atomic_evidence_publication_source_commit") != expected_atomic["source_commit"]
             or parity["reference"].get("atomic_evidence_publish_on") != expected_atomic["publish_on"]
@@ -241,6 +249,17 @@ def main() -> int:
             or parity["reference"].get("atomic_evidence_partial_overwrite") != "forbidden"
             or parity["reference"].get("atomic_evidence_mixed_generation") != "forbidden"):
         fail(errors, "RabbitMQ depth parity Atomic Evidence publication reference mismatch")
+    dependency_reference = load(ROOT / "parity/frontend-depth-reference.yaml")["evidence_dependency_graph_reference"]
+    if (dependency_reference.get("source_repository") != "reference-atlas-core"
+            or dependency_reference.get("source_branch") != "main"
+            or dependency_reference.get("source_commit") != "072d7ca77981f51754e824d70c6d4ecd55ea67e5"
+            or dependency_reference.get("status") != "official-main-ci-passed"
+            or dependency_reference.get("transplant_frontend_counts") is not False):
+        fail(errors, "RabbitMQ Evidence Dependency Graph Core main pin mismatch")
+    if (parity["reference"].get("evidence_dependency_source_commit") != dependency_reference["source_commit"]
+            or parity["reference"].get("evidence_dependency_source_branch") != "main"
+            or parity["reference"].get("evidence_dependency_transplant_frontend_counts") is not False):
+        fail(errors, "RabbitMQ depth parity Evidence Dependency Graph reference mismatch")
     if not (ROOT / skill["router"]["path"]).exists():
         fail(errors, "router path missing")
     expected_lock_digest = sha(ROOT / "sources.lock.yaml")
@@ -499,6 +518,10 @@ def main() -> int:
             fail(errors, "release validation requires status complete")
         if not certificate.exists():
             fail(errors, "completion certificate missing")
+        else:
+            certificate_document = json.loads(certificate.read_text())
+            if certificate_document.get("manifests", {}).get("evidence/dependency-graph.json") != sha(DEPENDENCY_GRAPH_PATH):
+                fail(errors, "completion certificate is not bound to the current Evidence Dependency Graph")
     if errors:
         for error in errors:
             print(f"ERROR: {error}", file=sys.stderr)

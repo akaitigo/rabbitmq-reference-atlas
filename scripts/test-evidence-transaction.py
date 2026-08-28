@@ -120,7 +120,7 @@ print("Evidence transaction tests PASS: partial/mixed/failed-run/swap-failureを
 # Python producerがRABBITMQ_EVIDENCE_ROOT外のlive Evidenceへ書かないことを確認する。
 repository_root = Path(__file__).resolve().parents[1]
 live_evidence = repository_root / "evidence"
-owned_before = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in ("raw/*.json", "*.evidence.json")
+owned_before = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in ("raw/*.json", "*.evidence.json", "dependency-graph.json", "reference-system/*.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json")
                 for item in live_evidence.glob(pattern)}
 with tempfile.TemporaryDirectory() as directory:
     staged_evidence = Path(directory) / "evidence"
@@ -129,12 +129,20 @@ with tempfile.TemporaryDirectory() as directory:
     environment["RABBITMQ_EVIDENCE_ROOT"] = str(staged_evidence)
     environment["RABBITMQ_EVIDENCE_ONLY"] = "1"
     environment["PYTHONDONTWRITEBYTECODE"] = "1"
-    for script in ("generate-amqp10-evidence.py", "generate-plugin-protocol-evidence.py", "generate-evidence.py", "generate-scenario-proofs.py"):
-        subprocess.run([sys.executable, str(repository_root / "scripts" / script)], cwd=repository_root,
-                       env=environment, check=True, capture_output=True, text=True)
+    for script in ("generate-amqp10-evidence.py", "generate-plugin-protocol-evidence.py", "generate-evidence.py", "generate-scenario-proofs.py", "evidence_dependency_graph.py"):
+        arguments = [sys.executable, str(repository_root / "scripts" / script)]
+        if script == "evidence_dependency_graph.py":
+            arguments.append("generate")
+        result = subprocess.run(arguments, cwd=repository_root,
+                                env=environment, capture_output=True, text=True)
+        if result.returncode != 0:
+            raise AssertionError(f"staging producer failed: {script}\nstdout={result.stdout}\nstderr={result.stderr}")
     assert len(list(staged_evidence.glob("*.evidence.json"))) == len(list(live_evidence.glob("*.evidence.json")))
     assert len(list((staged_evidence / "scenarios/behaviors").rglob("*.proof.json"))) == 2060
-owned_after = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in ("raw/*.json", "*.evidence.json")
+    assert (staged_evidence / "dependency-graph.json").is_file()
+    assert (staged_evidence / "scenarios/closure-plan.json").is_file()
+    assert (staged_evidence / "reference-system/results.json").is_file()
+owned_after = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in ("raw/*.json", "*.evidence.json", "dependency-graph.json", "reference-system/*.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json")
                for item in live_evidence.glob(pattern)}
 assert owned_after == owned_before
 print("Evidence staging producer tests PASS: Raw/Record生成先をtransaction stagingへ隔離")

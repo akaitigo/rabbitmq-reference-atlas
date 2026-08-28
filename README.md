@@ -9,7 +9,7 @@
 - RabbitMQ `4.3.5`
 - OCI Image `rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031`
 - Coverage Epoch `2026-08-28`
-- Core Contract `reference-atlas-core@be19ddaa411fe60dcf12f0f5d457902bb57b9eb3`（Subject Definitive Gate v2）
+- Core Contract `reference-atlas-core@072d7ca77981f51754e824d70c6d4ecd55ea67e5`（正式main、Evidence Dependency Graph）
 
 ## Bounded Historical実証範囲
 
@@ -41,6 +41,8 @@ Scenario Proofは`frontend-behavior-atlas@deadad18b6588d2c907170a451c3b5cea5ea41
 
 実行Evidenceの保存は`frontend-behavior-atlas@7175de4305afb308722d5b83475e91c18da64957`の原子的publication契約を適用します。`make labs`はrun所有Artifactをlive Evidenceへ直接書かず、sibling stagingへ全件再生成します。full-run passとinventory検証後だけdirectory renameで切り替え、検証失敗またはswap失敗では直前成功集合を復元します。部分上書き、旧Artifact混在、失敗runによる成功Evidence消去は`make atomic-evidence`で拒否します。詳細は`docs/ATOMIC_EVIDENCE_PUBLICATION.md`に記録します。
 
+`evidence/dependency-graph.json`はCore正式main `072d7ca77981f51754e824d70c6d4ecd55ea67e5`のEvidence Dependency Graph契約を適用します。RabbitMQ固有のAuthority、producer/consumer、Reporter、Broker/Client runtime、Broker configとTopology、delivery/ack/retry/DLX、quorum/failure/recovery、performance/compatibility、security/observability、Scenario、Skill profileを14 inputへ分離し、実在するraw Artifact、Evidence record、Skill Eval、Reference System gap、2,060 Scenario Proof、Closure Planを機械列挙します。入力変更後は現在digestへのbinding、変更観測後のfirst-attempt実再実行、runtime identityが揃わないoutputをstaleとして扱います。詳細は`docs/EVIDENCE_DEPENDENCY_GRAPH.md`に記録します。
+
 ## 検証
 
 前提はGo 1.26、Python 3、Docker Engine、Docker Composeです。
@@ -50,7 +52,7 @@ make check
 make labs
 ```
 
-`make labs`は専用Compose projectを作成し、正常系、拒否・再配送、Resource Alarm、Cluster障害、Network Partition、復旧、Security、Observability、固定性能測定を実行して`evidence/`を再生成した後、Volumeを含めてCleanupします。調査のため環境を残す場合だけ`KEEP_ENV=1 make labs`を使用します。
+`make labs`は専用Compose projectを作成し、正常系、拒否・再配送、Resource Alarm、Cluster障害、Network Partition、復旧、Security、Observability、固定性能測定を実行して`evidence/`を再生成します。ContainerとNetworkは停止しますが、既存VolumeとMessage dataは削除しません。調査のため環境を稼働状態で残す場合だけ`KEEP_ENV=1 make labs`を使用します。
 
 ## 正本
 
@@ -66,7 +68,10 @@ make labs
 - Integrated Reference System Contract: `reference-system/manifest.yaml`
 - Scenario Gap Closure Contract: `scenario-closure.yaml`
 - Atomic Evidence Publication Contract: `evidence-reporting.yaml`
+- Evidence Dependency Graph: `evidence/dependency-graph.json`
+- Evidence Dependency Additive Baseline: `baseline/evidence-dependency-graph-v1.json`
 - Behavior Scenario Proof Matrix: `evidence/scenarios/index.json`
+- Scenario Closure Plan: `evidence/scenarios/closure-plan.json`
 - Depth Parity: `rabbitmq-depth-parity.yaml`
 - Skill Package: `skill.package.yaml`
 - Skill Eval Detail: `evals/rabbitmq-reference-atlas.skill-routing-eval.json`

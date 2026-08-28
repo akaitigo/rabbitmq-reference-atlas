@@ -169,6 +169,21 @@ atomic_evidence_publication_reference:
       digest: sha256:fa93509b82141deb456e1218095de52a147c88d2b7e6f8e0e5df2725e92ad330
     - path: scripts/verify-pattern-scenario-evidence.ts
       digest: sha256:fc05990ab4a02a075f72badf60190dc3e584fe62acf52a31c179b99c90e3e0fd
+evidence_dependency_graph_reference:
+  source_repository: reference-atlas-core
+  source_branch: main
+  source_commit: 072d7ca77981f51754e824d70c6d4ecd55ea67e5
+  status: official-main-ci-passed
+  subject_denominator: rabbitmq-real-evidence-files-and-runtime-profiles
+  transplant_frontend_counts: false
+  required_predicates:
+  - transitive-input-staleness
+  - digest-only-closure-forbidden
+  - actual-first-attempt-rerun
+  - current-input-digest-binding
+  - runtime-identity
+  - required-output-mechanical-enumeration
+  - proof-and-closure-plan-structure-invariant
 denominator_policy:
   source: authority-derived-subject-surface-inventory
   transplant_absolute_counts: false

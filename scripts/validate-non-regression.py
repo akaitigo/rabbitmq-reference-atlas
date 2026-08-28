@@ -12,6 +12,10 @@ from typing import Any
 
 import yaml
 
+from evidence_dependency_graph import BASELINE_PATH as DEPENDENCY_BASELINE_PATH
+from evidence_dependency_graph import GRAPH_PATH as DEPENDENCY_GRAPH_PATH
+from evidence_dependency_graph import validate_graph as validate_dependency_graph
+
 
 ROOT = Path(__file__).resolve().parents[1]
 BASELINE_PATH = ROOT / "baseline" / "public-main-22ab07c.yaml"
@@ -47,6 +51,11 @@ def main() -> int:
     coverage = load_yaml(ROOT / "coverage.yaml")
     sources = load_yaml(ROOT / "sources.lock.yaml")
     claims = load_yaml(ROOT / "atlas" / "claims" / "index.yaml")
+
+    dependency_graph = json.loads(DEPENDENCY_GRAPH_PATH.read_text(encoding="utf-8"))
+    dependency_baseline = json.loads(DEPENDENCY_BASELINE_PATH.read_text(encoding="utf-8"))
+    for error in validate_dependency_graph(dependency_graph, ROOT, dependency_baseline):
+        failures.append(f"evidence dependency additive baseline: {error}")
 
     baseline_targets = index(baseline["targets"], "baseline target")
     current_targets = index(coverage["targets"], "current target")

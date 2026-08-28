@@ -17,6 +17,8 @@ publication:
   owned_globs:
   - raw/*.json
   - '*.evidence.json'
+  - dependency-graph.json
+  - reference-system/*.json
   - scenarios/*.json
   - scenarios/behaviors/**/*.proof.json
   run_report: run-report.json

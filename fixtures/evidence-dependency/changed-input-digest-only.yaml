@@ -1,0 +1,5 @@
+id: changed-input-digest-only
+mutation: change-input-and-rebind-digest-without-rerun
+input_id: source.rabbitmq-authority-and-coverage
+member: coverage.yaml
+expected_error: digest-only closure without post-change rerun

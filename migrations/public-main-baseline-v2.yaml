@@ -6,17 +6,18 @@ replacements:
   - id: ci.install-pinned-atlas-validator
     category: ci-matrix
     old_id: github-actions.validate.install-atlas-d5c0a6c
-    new_id: github-actions.validate.install-atlas-be19dda
+    new_id: github-actions.validate.install-atlas-072d7ca
     old_value: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@d5c0a6ce757fd5f43af837edd26f55c7325b811e
-    new_value: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@be19ddaa411fe60dcf12f0f5d457902bb57b9eb3
-    reason: Core Definitive Gate v2のSurface Inventory、Scenario Matrix、Definitive Skill Eval検査を追加し、既存v1検査を維持した上で強化するため。
+    new_value: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@072d7ca77981f51754e824d70c6d4ecd55ea67e5
+    reason: Core正式mainのEvidence Dependency Graph、Definitive、Non-regression検査を追加し、既存v1検査を維持した上で強化するため。
     runtime_proof:
       strength: stronger
-      evidence: evidence/migrations/core-definitive-v2.json
+      evidence: evidence/migrations/core-evidence-dependency-main.json
       required_checks:
         - go-test-reference-atlas-core
         - make-check-rabbitmq-reference-atlas
         - atlas-audit-incomplete
+        - atlas-evidence-dependency-gate
   - id: target.mastery-foundations-neutral-copy
     category: target-copy
     old_id: mastery.foundations-and-decisions#rationale

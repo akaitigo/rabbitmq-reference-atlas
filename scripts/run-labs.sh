@@ -39,6 +39,8 @@ TRANSACTION_ACTIVE=1
 export RABBITMQ_EVIDENCE_ROOT="$STAGING_EVIDENCE"
 export RABBITMQ_EVIDENCE_ONLY=1
 export RABBITMQ_EVIDENCE_RUN_TOKEN="$RUN_TOKEN"
+export RABBITMQ_EVIDENCE_OBSERVED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+export RABBITMQ_EVIDENCE_RERUN_AT="$RABBITMQ_EVIDENCE_OBSERVED_AT"
 mkdir -p "$RAW"
 "${COMPOSE[@]}" up -d --wait
 
@@ -105,6 +107,7 @@ DISCONNECTED_CONTAINER=''
 (cd "$ROOT" && python3 scripts/run-skill-evals.py >/dev/null)
 (cd "$ROOT" && python3 scripts/generate-evidence.py)
 (cd "$ROOT" && python3 scripts/generate-scenario-proofs.py)
+(cd "$ROOT" && python3 scripts/evidence_dependency_graph.py generate)
 ATLAS_STATUS=$(cd "$ROOT" && python3 -c 'import yaml; print(yaml.safe_load(open("atlas.yaml"))["status"])')
 if [[ "$ATLAS_STATUS" == "complete" ]]; then
   (cd "$ROOT" && python3 scripts/generate-completion-certificate.py)

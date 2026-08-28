@@ -2,12 +2,30 @@ schema_version: 2
 atlas_id: rabbitmq-reference-atlas
 epoch: '2026-08-28'
 completion_class: subject-definitive
+authority_extraction: authority/extraction.snapshot.json
+authority_body_inventory: authority/body-inventory.snapshot.json
+authority_body_review: authority/review-queue.snapshot.json
 surface_inventory: surface.inventory.yaml
 verification_matrix: verification.matrix.yaml
+scenario_proofs: evidence/scenarios/index.json
+scenario_closure_plan: evidence/scenarios/closure-plan.json
+evidence_durability: artifacts/pattern-scenarios/results.json
+evidence_dependency_graph: evidence/dependency-graph.json
 skill_eval: evals/rabbitmq-reference-atlas.definitive-skill-eval.json
+skill_router: evals/definitive-skill-router.json
 certificate: evidence/definitive-certificate.json
 historical_certificates:
 - path: evidence/history/v0.1.0/completion-certificate.json
   classification: bounded-complete
-reference_systems: []
+reference_systems:
+- id: rabbitmq-reference-system
+  path: reference-system/results.json
+  digest: sha256:ffd45daf72722dcca2c5bd36a0ab17c79457ab0046bc9fae2176642ad54124f5
+  behavior_ids:
+  - delivery.consumer-ack
+  - delivery.negative-ack
+  - quorum.replication
+  - partition.recovery
+  - protocol.mqtt.native
+  - protocol.stomp.proxy
 comparisons: []
