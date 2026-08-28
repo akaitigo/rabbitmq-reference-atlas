@@ -74,6 +74,8 @@ def build() -> dict:
     reference = load_yaml(REFERENCE)
     locator_index = json.loads((ROOT / "authority/extraction.snapshot.json").read_text(encoding="utf-8"))
     locator_artifacts = [json.loads(path.read_text(encoding="utf-8")) for path in sorted((ROOT / "authority/locator-drafts").glob("*.json"))]
+    body_index = json.loads((ROOT / "authority/body-inventory.snapshot.json").read_text(encoding="utf-8"))
+    body_artifacts = [json.loads(path.read_text(encoding="utf-8")) for path in sorted((ROOT / "authority/body-inventory-draft").glob("*.json"))]
     skill_eval = json.loads((ROOT / definitive["skill_eval"]).read_text(encoding="utf-8"))
     records = evidence_records()
     axes_by_id = {axis["id"]: axis for axis in reference["axes"]}
@@ -92,18 +94,31 @@ def build() -> dict:
     record_by_id = {record["id"]: record for record in records}
     locked_sources = [source for source in sources["sources"] if source.get("digest") and source.get("version") and source.get("url")]
     reproduction_gaps = [f"authority.body-{artifact['fetch']['status']}.{artifact['source_id']}" for artifact in locator_artifacts if artifact["fetch"]["status"] != "matched"]
+    body_document_gaps = [f"authority.raw-anchor-{artifact['fetch']['status']}.{artifact['document_id']}"
+                          for artifact in body_artifacts if artifact["fetch"]["status"] != "matched"]
     locator_candidates = [candidate for artifact in locator_artifacts for candidate in artifact["candidate_surfaces"]]
     locator_gaps = [f"authority.locator.{candidate['edge_id']}" for candidate in locator_candidates
                     if candidate["locator_status"] not in {"root-document", "fragment-found"}]
-    review_gaps = [f"authority.human-review.{candidate['edge_id']}" for candidate in locator_candidates]
+    reference_edge_review_gaps = [f"authority.human-review.{candidate['edge_id']}" for candidate in locator_candidates]
+    raw_anchors = [(artifact["document_id"], anchor) for artifact in body_artifacts for anchor in artifact["anchors"]]
+    review_gaps = [f"authority.human-review.{document_id}.{anchor['id']}" for document_id, anchor in raw_anchors
+                   if anchor["classification_status"] == "pending-human"]
     classification_gaps = [row["source_id"] for row in classification["sources"]
                            if row["classification"] not in {"surface-authority", "supporting-authority"}]
     authority_axis = make_axis(axes_by_id["authority-body-digestion"], {
-        "unit": "locked authority body × existing reference edge × exhaustive body surface × human review",
+        "unit": "unique locked document × fixed-selector raw anchor × human decision × promoted semantic surface",
         "locked_sources": locator_index["summary"]["locked_sources"],
-        "body_digest_matched": locator_index["summary"]["fetched_digest_matched"],
-        "body_digest_stale": locator_index["summary"]["fetched_digest_stale"],
-        "fetch_failed": locator_index["summary"]["fetch_failed"],
+        "unique_documents": body_index["summary"]["unique_documents"],
+        "body_digest_matched": body_index["summary"]["matched_documents"],
+        "body_digest_stale": body_index["summary"]["stale_documents"],
+        "fetch_failed": body_index["summary"]["failed_documents"],
+        "fixed_selector_raw_anchors": body_index["summary"]["raw_anchors"],
+        "pending_human_raw_anchors": body_index["summary"]["pending_human_anchors"],
+        "human_reviewed_raw_anchors": body_index["summary"]["human_reviewed_anchors"],
+        "promoted_semantic_surface_ids": body_index["summary"]["promoted_surface_ids"],
+        "promoted_behavior_ids": body_index["summary"]["promoted_behavior_ids"],
+        "raw_anchors_count_toward_surface_inventory": body_index["semantic_accounting"]["raw_anchors_count_toward_surface_inventory"],
+        "raw_anchors_count_toward_depth": body_index["semantic_accounting"]["raw_anchors_count_toward_depth"],
         "existing_reference_edges": locator_index["summary"]["candidate_surfaces"],
         "located_reference_edges": locator_index["summary"]["root_locators"] + locator_index["summary"]["fragments_found"],
         "fragment_not_found": locator_index["summary"]["fragments_not_found"],
@@ -119,22 +134,32 @@ def build() -> dict:
                    f"{len(locked_sources)}/{len(sources['sources'])}", "pass" if len(locked_sources) == len(sources["sources"]) else "gap",
                    ["sources.lock.yaml"], [source["id"] for source in sources["sources"] if source not in locked_sources]),
         make_check("authority.body-reproduction", "全固定Authority bodyを再取得し、exact digest一致を確認する。",
-                   f"{locator_index['summary']['fetched_digest_matched']}/{locator_index['summary']['locked_sources']}",
-                   "pass" if not reproduction_gaps else "partial", ["authority/extraction.snapshot.json", "authority/locator-drafts/"], reproduction_gaps),
+                   f"{body_index['summary']['matched_documents']}/{body_index['summary']['unique_documents']} unique documents",
+                   "pass" if not body_document_gaps else "partial", ["authority/body-inventory.snapshot.json", "authority/body-inventory-draft/"], body_document_gaps),
         make_check("authority.existing-surface-classification", "既存Surface分類とsupporting分類を全Sourceへ明示する。",
                    f"{len(classification['sources']) - len(classification_gaps)}/{len(classification['sources'])}",
                    "pass" if not classification_gaps else "gap", ["surface/source-classification.yaml", "surface/authority/"], classification_gaps),
         make_check("authority.reference-edge-candidates", "既存reference edgeを本文非保存のLocator候補へ損失なく投影し、未Reviewと明示する。",
                    f"{len(locator_candidates) - len(locator_gaps)}/{len(locator_candidates)} located",
                    "pass" if not locator_gaps else "partial", ["authority/extraction.snapshot.json", "authority/locator-drafts/"], locator_gaps),
+        make_check("authority.reference-edge-review", "既存reference edge候補をHuman review前のDomain Overlayとして維持する。",
+                   f"0/{len(locator_candidates)}", "gap", ["authority/extraction.snapshot.json", "authority/locator-drafts/"], reference_edge_review_gaps),
         make_check("authority.body-structure-scan", "固定body全体を非重複sectionへpartitionし、offsetとdigestだけを保持する。",
                    f"{locator_index['summary']['body_structure_sources_scanned']}/{locator_index['summary']['locked_sources']} sources; {locator_index['summary']['body_section_candidates']} sections",
                    "pass" if locator_index["summary"]["body_structure_sources_deferred"] == 0 else "partial",
                    ["authority/extraction.snapshot.json", "authority/locator-drafts/"], reproduction_gaps),
+        make_check("authority.raw-anchor-population", "unique documentごとに固定selector raw anchor候補を本文非保存で列挙し、stable IDとtool/source digestへ束縛する。",
+                   f"{body_index['summary']['selector_exhaustive_documents']}/{body_index['summary']['unique_documents']} documents; {body_index['summary']['raw_anchors']} raw anchors",
+                   "pass" if not body_document_gaps else "partial",
+                   ["authority/body-inventory.snapshot.json", "authority/body-inventory-draft/", "baseline/authority-body-inventory-v1.json"], body_document_gaps),
+        make_check("authority.raw-anchor-accounting", "raw anchor数をSemantic Surface数またはDepth達成へ算入しない。",
+                   "semantic surfaces=0; depth credit=0", "pass",
+                   ["authority/body-inventory.snapshot.json", "artifacts/authority-body-non-regression-report.json"], []),
         make_check("authority.surface-exhaustiveness", "Authority本文全体からSurfaceを抽出し、未分類をゼロにする。", False, "gap",
-                   ["authority/extraction.snapshot.json"], ["authority.text-surfaces-exhaustive"]),
-        make_check("authority.human-review", "抽出候補の本文解釈と分類を人がReviewする。",
-                   f"0/{len(locator_candidates)}", "gap", ["authority/extraction.snapshot.json"], review_gaps),
+                   ["authority/body-inventory.snapshot.json", "authority/body-review-decisions.json"], ["authority.semantic-surfaces-exhaustive"]),
+        make_check("authority.human-review", "各raw anchorを人が本文解釈し、Protocol/behavior Surfaceへ昇格または理由付き却下する。",
+                   f"{body_index['summary']['human_reviewed_anchors']}/{body_index['summary']['raw_anchors']}", "gap" if review_gaps else "pass",
+                   ["authority/body-inventory.snapshot.json", "authority/body-review-decisions.json"], review_gaps),
     ])
 
     comparison_items = [item for item in inventory["items"] if "decision-comparison" in item["surface_ids"]]
@@ -259,6 +284,10 @@ def build() -> dict:
             "source_summary": reference["source_summary"],
             "authority_extraction_source_commit": reference["authority_extraction_reference"]["source_commit"],
             "authority_body_storage": reference["authority_extraction_reference"]["body_storage"],
+            "authority_body_inventory_source_commit": reference["authority_body_inventory_reference"]["source_commit"],
+            "authority_raw_anchor_population_unit": reference["authority_body_inventory_reference"]["population_unit"],
+            "raw_anchors_count_toward_semantic_surface": reference["authority_body_inventory_reference"]["raw_anchors_count_toward_semantic_surface"],
+            "raw_anchors_count_toward_depth": reference["authority_body_inventory_reference"]["raw_anchors_count_toward_depth"],
             "rule": "FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。",
         },
         "fixture_mapping": [

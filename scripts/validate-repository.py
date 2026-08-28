@@ -105,6 +105,31 @@ def main() -> int:
         fail(errors, "RabbitMQ Authority locator audit uses an unexpected FE reference commit")
     if locator_reference["body_storage"] != "digest-and-locator-context-digest-only" or locator_reference["human_reviewed_surfaces"] != 0:
         fail(errors, "RabbitMQ Authority locator copyright/review boundary mismatch")
+    body_reference = load(ROOT / "parity/frontend-depth-reference.yaml")["authority_body_inventory_reference"]
+    if body_reference["source_commit"] != "841ec2fa399606a10305021a8bcd396713b8cee5":
+        fail(errors, "RabbitMQ Authority body inventory uses an unexpected FE reference commit")
+    if (body_reference["body_storage"] != "digest-locator-and-offset-only"
+            or body_reference["population_unit"] != "unique-document-fixed-selector-raw-anchor"
+            or body_reference["raw_anchors_count_toward_semantic_surface"] is not False
+            or body_reference["raw_anchors_count_toward_depth"] is not False
+            or body_reference["initial_classification"] != "pending-human"
+            or body_reference["promotion_requires"] != "recorded-human-decision"):
+        fail(errors, "RabbitMQ Authority raw anchor denominator boundary mismatch")
+    body_inventory = load(ROOT / "authority/body-inventory.snapshot.json")
+    accounting = body_inventory["semantic_accounting"]
+    if (accounting["raw_anchors_count_toward_surface_inventory"] is not False
+            or accounting["raw_anchors_count_toward_depth"] is not False
+            or accounting["promotion_requires"] != "recorded-human-decision"):
+        fail(errors, "RabbitMQ raw anchors cannot count as Semantic Surface or Depth")
+    if (body_inventory["summary"]["pending_human_anchors"] != body_inventory["summary"]["raw_anchors"]
+            or body_inventory["summary"]["human_reviewed_anchors"] != 0
+            or body_inventory["summary"]["promoted_surface_ids"] != 0
+            or body_inventory["summary"]["promoted_behavior_ids"] != 0):
+        fail(errors, "RabbitMQ Authority raw anchors must start entirely pending-human")
+    if (parity["reference"].get("authority_body_inventory_source_commit") != body_reference["source_commit"]
+            or parity["reference"].get("raw_anchors_count_toward_semantic_surface") is not False
+            or parity["reference"].get("raw_anchors_count_toward_depth") is not False):
+        fail(errors, "RabbitMQ depth parity raw anchor accounting mismatch")
     if not (ROOT / skill["router"]["path"]).exists():
         fail(errors, "router path missing")
     expected_lock_digest = sha(ROOT / "sources.lock.yaml")

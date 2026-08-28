@@ -24,6 +24,37 @@ authority_extraction_reference:
       digest: sha256:b17bf28e55dd0d778a2b697f3242631315e18e3a0f717431c97920590a7e98b2
     - path: scripts/verify-authority-extraction.ts
       digest: sha256:420acbe08bff848786c4a28febb4443c671afdd53ff1643413317a9ce175d9aa
+authority_body_inventory_reference:
+  source_commit: 841ec2fa399606a10305021a8bcd396713b8cee5
+  body_storage: digest-locator-and-offset-only
+  population_unit: unique-document-fixed-selector-raw-anchor
+  raw_anchors_count_toward_semantic_surface: false
+  raw_anchors_count_toward_depth: false
+  initial_classification: pending-human
+  promotion_requires: recorded-human-decision
+  human_reviewed_anchors: 0
+  authority_semantics_exhaustive: false
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:595937e586e307c6331ed1a610c98d2f010234ffdda42f1c84b2c36a03002ab9
+    - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+      digest: sha256:e1ce7244c5e279fd9ddebdaebfbcae1cdb990055934a04848a2bd2683b24047c
+    - path: authority/body-inventory.snapshot.json
+      digest: sha256:8b3d2823ec22b2193c89932017d8fd9308fc1851a13e3515c28da0752cd99a1d
+    - path: scripts/lib/authority-body-inventory.ts
+      digest: sha256:04f62a0b63981c62a7ab90f39637c71745642e84a3bdd4404ce715a0163ebe76
+    - path: scripts/extract-authority-body-inventory.ts
+      digest: sha256:1ce38aae8e9adf2c8095310bf54348eacc482cb19f5edbd7c013a4bf55e6d38c
+    - path: scripts/verify-authority-body-inventory.ts
+      digest: sha256:5ba278737bfedae54b3c3b92fdf16a9ecf6b914bcaf0ab2cd04ff0d6ef24884a
+    - path: scripts/lib/authority-body-baseline.ts
+      digest: sha256:0dc48dc9e62fdc9cd8493e9b5827b4cf5948c4b72df3374d5ebcc73ac344009c
+    - path: scripts/verify-authority-body-baseline.ts
+      digest: sha256:599d6dee6d34b10f8496309c68e5cd3b8752366238311ecfbda4e2a23a8be897
+    - path: baselines/authority-body-inventory-v1.json
+      digest: sha256:22b4eefbadff2e2c0117b70584a2bc5e9ae8ed3997f3dcb35e01358db2ddd82c
+    - path: migrations/authority-body-inventory-v1.json
+      digest: sha256:d6a3201d4cc4d7c7657821ff7bc49ad5bcafdaaab95a7d856a996797568598b5
 denominator_policy:
   source: authority-derived-subject-surface-inventory
   transplant_absolute_counts: false

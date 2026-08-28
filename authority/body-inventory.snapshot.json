@@ -1,0 +1,804 @@
+{
+  "schema_version": 1,
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "status": "incomplete-human-review-required",
+  "input_digest": "sha256:e2ea944d082d3e4cd3474fc5dca61621b553058d35609bf46b0db57838cc4902",
+  "tool_digest": "sha256:49824b7188770c38f6af50ef5861dc4479b8ed4e12509992f56f412f46b72793",
+  "body_storage": "digest-locator-and-offset-only",
+  "selector_contract": [
+    "document-root",
+    "markdown-atx-heading-1",
+    "markdown-atx-heading-2",
+    "markdown-atx-heading-3",
+    "markdown-atx-heading-4",
+    "markdown-atx-heading-5",
+    "markdown-atx-heading-6",
+    "html-h1",
+    "html-h2",
+    "html-h3",
+    "html-h4",
+    "html-h5",
+    "html-h6",
+    "html-dfn",
+    "html-section",
+    "html-article",
+    "html-main",
+    "html-nav",
+    "html-aside",
+    "html-table",
+    "html-figure"
+  ],
+  "semantic_accounting": {
+    "raw_anchors_count_toward_surface_inventory": false,
+    "raw_anchors_count_toward_depth": false,
+    "promotion_requires": "recorded-human-decision",
+    "decisions_path": "authority/body-review-decisions.json"
+  },
+  "summary": {
+    "source_entries": 50,
+    "unique_documents": 50,
+    "matched_documents": 48,
+    "stale_documents": 2,
+    "failed_documents": 0,
+    "selector_exhaustive_documents": 48,
+    "raw_anchors": 1579,
+    "raw_anchors_by_selector": {
+      "document-root": 48,
+      "html-figure": 17,
+      "html-table": 43,
+      "markdown-atx-heading-1": 44,
+      "markdown-atx-heading-2": 479,
+      "markdown-atx-heading-3": 704,
+      "markdown-atx-heading-4": 216,
+      "markdown-atx-heading-5": 28
+    },
+    "pending_human_anchors": 1579,
+    "human_reviewed_anchors": 0,
+    "promoted_surface_ids": 0,
+    "promoted_behavior_ids": 0,
+    "core_v2_eligible_artifacts": 0,
+    "authority_semantics_exhaustive": false
+  },
+  "documents": [
+    {
+      "id": "document-github-com-4a2c440585b2",
+      "path": "authority/body-inventory-draft/document-github-com-4a2c440585b2.json",
+      "digest": "sha256:b4060f084ea231bcea29433e8714b1d5b6d87b86188dee305cf3939391fc3e23",
+      "fetch_status": "stale",
+      "source_entries": 1,
+      "raw_anchors": 0,
+      "raw_anchors_by_selector": {}
+    },
+    {
+      "id": "document-github-com-edc04fb4e068",
+      "path": "authority/body-inventory-draft/document-github-com-edc04fb4e068.json",
+      "digest": "sha256:3133c1286bac8caca7bc91a15ea519b6a49c523c7a76d1f619276e3a79fe35be",
+      "fetch_status": "stale",
+      "source_entries": 1,
+      "raw_anchors": 0,
+      "raw_anchors_by_selector": {}
+    },
+    {
+      "id": "document-raw-githubusercontent-com-0b23e79d66e9",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-0b23e79d66e9.json",
+      "digest": "sha256:a725e2c8c7d4ed069611c39219e8fb2f9672ff9c6e3b10b2d4de55a14332dcd8",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 44,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-figure": 3,
+        "html-table": 4,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 14,
+        "markdown-atx-heading-3": 16,
+        "markdown-atx-heading-4": 5
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-0ee1984b73a6",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-0ee1984b73a6.json",
+      "digest": "sha256:711077284f27233a602ed9657b8d0518b2de86aca5ff5bda18085c8818ed2dec",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 34,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 2,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 11,
+        "markdown-atx-heading-3": 19
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-1137cc19e31e",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-1137cc19e31e.json",
+      "digest": "sha256:b8c708e69bdf6dd9fb8a98e1e94e8db503865c153530c9b7b5f61b7a1654164f",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 46,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 2,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 18,
+        "markdown-atx-heading-3": 22,
+        "markdown-atx-heading-4": 2
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-255b4c82e592",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-255b4c82e592.json",
+      "digest": "sha256:416c0519ef2d038e5516610cfdc6830e80dd706ef1b0f86559f846deadd8e392",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 13,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 7,
+        "markdown-atx-heading-3": 3,
+        "markdown-atx-heading-4": 1
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-36a397ba55bb",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-36a397ba55bb.json",
+      "digest": "sha256:d2a597e972927f08ec9c1f4395d5f5a24eafe020b56a646086e838ba4815c63e",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 25,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 9,
+        "markdown-atx-heading-3": 14
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-3c4185b31200",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-3c4185b31200.json",
+      "digest": "sha256:ef52975a0cd555bd3b75b2d0bf7cbc9b6b2977e41002b76c6884902ff1435fa8",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 6,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 1,
+        "markdown-atx-heading-3": 3
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-3fb34ba5dde6",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-3fb34ba5dde6.json",
+      "digest": "sha256:cd4240d327326f5571d1e63a8c9f8bd8e09f11f3ff17dd657398ead6a1e596fa",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 11,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 5,
+        "markdown-atx-heading-3": 4
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-42e548af5f27",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-42e548af5f27.json",
+      "digest": "sha256:af286ebebf3a7f5adee0c71d61e5584dd54a5ac8ab8c1fb1aed1a138b290ac37",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 46,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 2,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 13,
+        "markdown-atx-heading-3": 23,
+        "markdown-atx-heading-4": 6
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-45774c17ad3c",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-45774c17ad3c.json",
+      "digest": "sha256:29d5c8c82f86bb3dc61c7625700c5a93993ea3e83883109f0c2360a4b070b02f",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 18,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-2": 4,
+        "markdown-atx-heading-3": 13
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-4a57549bc02d",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-4a57549bc02d.json",
+      "digest": "sha256:0232d6f3009f5f834d8dacd3d67cccbbbb777ee2b9dd7172e0984639f7fb9936",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 23,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 10,
+        "markdown-atx-heading-3": 6,
+        "markdown-atx-heading-4": 5
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-4d70ee5c78be",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-4d70ee5c78be.json",
+      "digest": "sha256:43e109f7c220bc48f4178770d87277a473a8926ad512c1fec41ab0f800a80343",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 11,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 6,
+        "markdown-atx-heading-3": 3
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-5a833d664e43",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-5a833d664e43.json",
+      "digest": "sha256:6f442bff94baed701ac1e03eb0fe8ad9cdc5987fb65bf5820295eafdce435b49",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 31,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 13,
+        "markdown-atx-heading-3": 15
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-5d36035d9e54",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-5d36035d9e54.json",
+      "digest": "sha256:0184ba7c7affd8057ebc7cdaf85ad4831ae1f43e61e975df34e4a6aa99fefce2",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 65,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 16,
+        "markdown-atx-heading-3": 24,
+        "markdown-atx-heading-4": 23
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-5f68066ac2b1",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-5f68066ac2b1.json",
+      "digest": "sha256:3dc5965633ed11977dac3f997148ef310d2caf93cf682628d5cc5d66e77c851f",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 31,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-2": 2,
+        "markdown-atx-heading-3": 13,
+        "markdown-atx-heading-4": 15
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-64e3f75155f2",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-64e3f75155f2.json",
+      "digest": "sha256:3f061d7621d78bc999cd95ee65881086329d4965c1a8af8c0df0ea5e9b1febd5",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 75,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 14,
+        "markdown-atx-heading-3": 42,
+        "markdown-atx-heading-4": 16
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-6d55b8d4dc04",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-6d55b8d4dc04.json",
+      "digest": "sha256:b9735ef5702f4f8080b0417a2e2d8db804e1430ade71de7bd67df183303e55e8",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 39,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 11,
+        "markdown-atx-heading-3": 19,
+        "markdown-atx-heading-4": 7
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-79b85dedaa74",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-79b85dedaa74.json",
+      "digest": "sha256:6bb876a892665eaf4874d01ef9caeb6c1d399ef4c9f38223b9b9438b899f22ca",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 30,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 17,
+        "markdown-atx-heading-3": 9,
+        "markdown-atx-heading-4": 2
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-88940a2c326c",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-88940a2c326c.json",
+      "digest": "sha256:556cbf9e1e07f134e739f478b7d7f2a528c51d4fff8e6eeb03219d3eaa6b3570",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 43,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 11,
+        "markdown-atx-heading-3": 26,
+        "markdown-atx-heading-4": 4
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-8c014affc1b4",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-8c014affc1b4.json",
+      "digest": "sha256:932647e7cd989301bf39c462e07db9d9dfc83396e3668c063c0d86df282bf6fa",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 22,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 10,
+        "markdown-atx-heading-3": 7,
+        "markdown-atx-heading-4": 2
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-96ed37d93079",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-96ed37d93079.json",
+      "digest": "sha256:73fc8c06c0685a6b41cd89d42c17a8e4fb41853d3ad52c7022a55f5a9c1d0a3d",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 19,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 2,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 9,
+        "markdown-atx-heading-3": 6
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-990eb98fae1c",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-990eb98fae1c.json",
+      "digest": "sha256:72ab226d8e2ed142d2e10287ced555e428c7137c3de1d1ccb3735a4d73f34710",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 45,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 17,
+        "markdown-atx-heading-3": 23,
+        "markdown-atx-heading-4": 3
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-a18c11ff4705",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-a18c11ff4705.json",
+      "digest": "sha256:90d9f4890e161de9097edb478b2529c7dc5461913a0d6f19da2605dd97034efe",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 15,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 4,
+        "markdown-atx-heading-3": 9
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-a472c24e7f64",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-a472c24e7f64.json",
+      "digest": "sha256:dd9025f32577973ecaf04688d88929ec29b68b571978b6614725e3205ac1c57b",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 99,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-figure": 1,
+        "html-table": 4,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 15,
+        "markdown-atx-heading-3": 36,
+        "markdown-atx-heading-4": 26,
+        "markdown-atx-heading-5": 15
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-ab5093f6e02b",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-ab5093f6e02b.json",
+      "digest": "sha256:319efdc5f7351f8518579da29df933473ed21d451e4429d6e3a0a711e4b65bea",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 84,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-figure": 5,
+        "html-table": 4,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 21,
+        "markdown-atx-heading-3": 48,
+        "markdown-atx-heading-4": 4
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-afe2da2bd421",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-afe2da2bd421.json",
+      "digest": "sha256:3fe0d28d0d3f8a7dcedcd02603560eacdb22f6030136cb0d934f441c2cfeeda7",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 16,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 10,
+        "markdown-atx-heading-3": 4
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-b985ecd8323e",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-b985ecd8323e.json",
+      "digest": "sha256:3f733877fbf092d4cebeada0fa8598cce588a60fdd783d8b7410198db7b89a4b",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 47,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-figure": 3,
+        "html-table": 2,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 13,
+        "markdown-atx-heading-3": 22,
+        "markdown-atx-heading-4": 5
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-c152c9a39fa3",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-c152c9a39fa3.json",
+      "digest": "sha256:f1bb48b433a2bdbb8f4b3624a3fba084f255a424ff5b89c1c1c94203ad801394",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 14,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 3,
+        "markdown-atx-heading-3": 8,
+        "markdown-atx-heading-4": 1
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-c2d1b58c34f1",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-c2d1b58c34f1.json",
+      "digest": "sha256:43e9b08896c1ff25d7e7638a4579e8370c61767347e808f5da32b90d262f8dc0",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 37,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-figure": 4,
+        "html-table": 3,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 10,
+        "markdown-atx-heading-3": 8,
+        "markdown-atx-heading-4": 10
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-cbc5c5dc617d",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-cbc5c5dc617d.json",
+      "digest": "sha256:66373d9f0a80cbb3c211ad13cdc0a6689269c5ade021384ee31853051abdb957",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 57,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 6,
+        "markdown-atx-heading-3": 28,
+        "markdown-atx-heading-4": 10,
+        "markdown-atx-heading-5": 11
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-ce3dad9f7b32",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-ce3dad9f7b32.json",
+      "digest": "sha256:20827a319d3db81b3920ddf52aeb17afc2929ace58a9a32ab505f95da5c1ad24",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 48,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 22,
+        "markdown-atx-heading-3": 10,
+        "markdown-atx-heading-4": 13,
+        "markdown-atx-heading-5": 1
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-d0e65e6c1f81",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d0e65e6c1f81.json",
+      "digest": "sha256:3b9a955cba1bd8a9c99701e70c1e920ed33d7625f67e15d290b0ed77a7cbf9c1",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 24,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 3,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 10,
+        "markdown-atx-heading-3": 9
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-d143bfa5a0fe",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d143bfa5a0fe.json",
+      "digest": "sha256:e509afe47a5933b1ee158cca94852b291aa49bdb404586b6e9f030a6a5a76efa",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 38,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-2": 2,
+        "markdown-atx-heading-3": 16,
+        "markdown-atx-heading-4": 19
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-d7dd809cbe56",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d7dd809cbe56.json",
+      "digest": "sha256:0104405acc128fe5489c9796c20a2909ad0eb9c172559b74405199c0b30bdf24",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 47,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 15,
+        "markdown-atx-heading-3": 25,
+        "markdown-atx-heading-4": 4
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-d8921627de65",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d8921627de65.json",
+      "digest": "sha256:d857899913b920d0845342560f73c1a8a2c774edf0014af7c6bb3da0aec5a25e",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 41,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 7,
+        "markdown-atx-heading-3": 24,
+        "markdown-atx-heading-4": 8
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-d9afd28edcfa",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d9afd28edcfa.json",
+      "digest": "sha256:301bc54fb1b236a8b92adbd1f817fcb7af04fc734c022700e20d670618416b07",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 9,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-2": 6,
+        "markdown-atx-heading-3": 2
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-da420a7f792d",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-da420a7f792d.json",
+      "digest": "sha256:180ea9d05aaf7b71ea4eb64b011875aac0f263f3a6a75f2bc4b31acde48d592f",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 14,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 6,
+        "markdown-atx-heading-3": 6
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-e1309abcc960",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e1309abcc960.json",
+      "digest": "sha256:0839a532d01988b45fc07c0ee63e4a88f52bf170d61a9ebeff4a235cb45d13ca",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 13,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 4,
+        "markdown-atx-heading-3": 7
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-e2f2c8236fbe",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e2f2c8236fbe.json",
+      "digest": "sha256:78dbcd59c3e4c3f5542e95896c25c85fe371ea7ff547e267762a715ad2c7336d",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 14,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 7,
+        "markdown-atx-heading-3": 3,
+        "markdown-atx-heading-4": 2
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-e439566e98f0",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e439566e98f0.json",
+      "digest": "sha256:418565dc5a10d67bd18caa0a7d6c30b2e7c35d1cc91265f0dce9b5b4bb1761ed",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 26,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 5,
+        "markdown-atx-heading-3": 16,
+        "markdown-atx-heading-4": 3
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-e473db6f025d",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e473db6f025d.json",
+      "digest": "sha256:ce134c80f80a19eac672cb378fafc46a1ac22cb880d1a8090080eacd48866cb5",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 51,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-table": 7,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 8,
+        "markdown-atx-heading-3": 28,
+        "markdown-atx-heading-4": 6
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-e7a419b274a8",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e7a419b274a8.json",
+      "digest": "sha256:c0f29b702b053e752b12451f7f18d172e37002a6f4723e916d4ff794683535a0",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 13,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 5,
+        "markdown-atx-heading-3": 3,
+        "markdown-atx-heading-4": 3
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-e98b052f9f88",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e98b052f9f88.json",
+      "digest": "sha256:178e33234ba90c5e58b040dc9d849826f628e03417f8c5e51369b250ca27d002",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 32,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 17,
+        "markdown-atx-heading-3": 8,
+        "markdown-atx-heading-4": 5
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-ed2dc6b0c3ff",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-ed2dc6b0c3ff.json",
+      "digest": "sha256:306c11d8a3d7b964111a17376b97c650303bd1ff39013f167bb70fd153447dd4",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 24,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 7,
+        "markdown-atx-heading-3": 14,
+        "markdown-atx-heading-4": 1
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-efa279479f6d",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-efa279479f6d.json",
+      "digest": "sha256:8807d3ea9e190e6f33357b8146dc4b9c498b54a2f6d27db3eab9398a141cb569",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 9,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 7
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-f186c08d2e94",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-f186c08d2e94.json",
+      "digest": "sha256:cae75ec31f5100b75d82d5c3948ff41b26b048d1cc07d6734914ac7ceddc0904",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 62,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 22,
+        "markdown-atx-heading-3": 32,
+        "markdown-atx-heading-4": 5,
+        "markdown-atx-heading-5": 1
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-f449c49070a0",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-f449c49070a0.json",
+      "digest": "sha256:edf7c2445fce823554e767c01ecb4fc923908e9a0a5017c7e539cf31d2f6d27f",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 4,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 2
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-f621bb05363a",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-f621bb05363a.json",
+      "digest": "sha256:347a30269494025fda414e415e735962a68445de2f19f335d19ec85fbc2c06f2",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 55,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "html-figure": 1,
+        "html-table": 4,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 20,
+        "markdown-atx-heading-3": 28
+      }
+    },
+    {
+      "id": "document-raw-githubusercontent-com-fcfc42f881a0",
+      "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-fcfc42f881a0.json",
+      "digest": "sha256:d43d14098ae67218d33944ef4ed1c9fe82ae209aefd32153c4842da81d77c6a7",
+      "fetch_status": "matched",
+      "source_entries": 1,
+      "raw_anchors": 9,
+      "raw_anchors_by_selector": {
+        "document-root": 1,
+        "markdown-atx-heading-1": 1,
+        "markdown-atx-heading-2": 7
+      }
+    }
+  ]
+}

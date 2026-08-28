@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "document_id": "document-github-com-edc04fb4e068",
+  "fetch_url": "https://github.com/docker-library/rabbitmq/tree/fe08e8852f66fde85461be4eed35675a4b8e35d8/4.3/ubuntu/management",
+  "source_ids": [
+    "rabbitmq-container-v4.3.5-management"
+  ],
+  "locked_body_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031",
+  "fetch": {
+    "status": "stale",
+    "fetched_digest": "sha256:77ed5b9e685a2ac94ba369cf82f523e4815befa89d95003337f9c2578696cc23",
+    "locked_digest_match": false,
+    "http_status": 200,
+    "final_url": "https://github.com/docker-library/rabbitmq/tree/fe08e8852f66fde85461be4eed35675a4b8e35d8/4.3/ubuntu/management",
+    "content_type": "text/html; charset=utf-8",
+    "fetched_bytes": 229456,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "fixed-selector-raw-anchor-v1",
+    "tool": "rabbitmq-reference-atlas-authority-body-inventory-v1",
+    "tool_digest": "sha256:49824b7188770c38f6af50ef5861dc4479b8ed4e12509992f56f412f46b72793",
+    "selector_contract": [
+      "document-root",
+      "markdown-atx-heading-1",
+      "markdown-atx-heading-2",
+      "markdown-atx-heading-3",
+      "markdown-atx-heading-4",
+      "markdown-atx-heading-5",
+      "markdown-atx-heading-6",
+      "html-h1",
+      "html-h2",
+      "html-h3",
+      "html-h4",
+      "html-h5",
+      "html-h6",
+      "html-dfn",
+      "html-section",
+      "html-article",
+      "html-main",
+      "html-nav",
+      "html-aside",
+      "html-table",
+      "html-figure"
+    ],
+    "selector_exhaustive_for_locked_body": false,
+    "authority_semantics_exhaustive": false,
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-locator-and-offset-only"
+  },
+  "anchors": []
+}
