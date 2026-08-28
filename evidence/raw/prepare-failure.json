@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "mode": "prepare-failure",
+  "run_id": "1787896436394886000",
+  "created_at": "2026-08-28T05:53:56Z",
+  "checks": [
+    {
+      "name": "quorum-queue-prepared",
+      "passed": true,
+      "observed": {
+        "confirmed_messages": 5,
+        "leader": "rabbit@rabbitmq-1",
+        "members": [
+          "rabbit@rabbitmq-1",
+          "rabbit@rabbitmq-2",
+          "rabbit@rabbitmq-3"
+        ],
+        "online_members": [
+          "rabbit@rabbitmq-1",
+          "rabbit@rabbitmq-2",
+          "rabbit@rabbitmq-3"
+        ]
+      }
+    }
+  ],
+  "queue": "atlas.1787896436394886000.quorum-recovery",
+  "leader": "rabbit@rabbitmq-1",
+  "message_ids": [
+    "1787896436394886000.message-01",
+    "1787896436394886000.message-02",
+    "1787896436394886000.message-03",
+    "1787896436394886000.message-04",
+    "1787896436394886000.message-05"
+  ]
+}

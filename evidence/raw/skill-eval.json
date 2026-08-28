@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "suite": "rabbitmq-reference-router",
+  "passed": 7,
+  "total": 7,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "id": "design.exchange-selection",
+      "passed": true,
+      "expected_mode": "design",
+      "actual_mode": "design",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "implement.manual-ack",
+      "passed": true,
+      "expected_mode": "implement",
+      "actual_mode": "implement",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/capability-index.yaml",
+        "labs/README.md"
+      ]
+    },
+    {
+      "id": "diagnose.redelivery-loop",
+      "passed": true,
+      "expected_mode": "diagnose",
+      "actual_mode": "diagnose",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/runbook-index.yaml",
+        "operations/runbooks/index.yaml"
+      ]
+    },
+    {
+      "id": "recover.leader-failure",
+      "passed": true,
+      "expected_mode": "recover",
+      "actual_mode": "recover",
+      "references": [
+        "operations/runbooks/cluster-leader-failure.md",
+        "labs/cluster-failure-recovery/lab.yaml"
+      ]
+    },
+    {
+      "id": "migrate.classic-mirrored",
+      "passed": true,
+      "expected_mode": "migrate",
+      "actual_mode": "migrate",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md",
+        "versions/baseline.yaml"
+      ]
+    },
+    {
+      "id": "review.topology",
+      "passed": true,
+      "expected_mode": "review",
+      "actual_mode": "review",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "gap.mqtt",
+      "passed": true,
+      "expected_mode": "gap",
+      "actual_mode": "gap",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md",
+        "coverage.yaml"
+      ]
+    }
+  ]
+}

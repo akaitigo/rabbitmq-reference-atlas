@@ -1,0 +1,12 @@
+schema_version: 1
+symptoms:
+  repeated-redelivery:
+    runbook: operations/runbooks/redelivery-loop.md
+    evidence: delivery.redelivery
+  dead-letter-backlog:
+    runbook: operations/runbooks/dead-letter-backlog.md
+    evidence: delivery.dead-lettering
+  quorum-leader-unavailable:
+    runbook: operations/runbooks/cluster-leader-failure.md
+    evidence: cluster.leader-failure
+

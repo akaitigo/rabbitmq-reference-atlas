@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "cases": [
+    {
+      "id": "design.exchange-selection",
+      "query": "Routing Keyで配送先を分けるExchange設計を考えたい",
+      "expected_mode": "design",
+      "expected_reference": ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md"
+    },
+    {
+      "id": "implement.manual-ack",
+      "query": "manual ackとnackによる再配送を実装したい",
+      "expected_mode": "implement",
+      "expected_reference": "labs/README.md"
+    },
+    {
+      "id": "diagnose.redelivery-loop",
+      "query": "redelivery loopと重複配送を診断したい",
+      "expected_mode": "diagnose",
+      "expected_reference": "operations/runbooks/index.yaml"
+    },
+    {
+      "id": "recover.leader-failure",
+      "query": "Quorum Queueのleader停止から復旧したい",
+      "expected_mode": "recover",
+      "expected_reference": "operations/runbooks/cluster-leader-failure.md"
+    },
+    {
+      "id": "migrate.classic-mirrored",
+      "query": "mirrored classic queueから移行したい",
+      "expected_mode": "migrate",
+      "expected_reference": "versions/baseline.yaml"
+    },
+    {
+      "id": "review.topology",
+      "query": "このQueueとDLQのTopologyをレビューして",
+      "expected_mode": "review",
+      "expected_reference": "coverage.yaml"
+    },
+    {
+      "id": "gap.mqtt",
+      "query": "MQTT 5.0とAMQP 0-9-1の相互運用を証明して",
+      "expected_mode": "gap",
+      "expected_reference": ".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md"
+    }
+  ]
+}
+

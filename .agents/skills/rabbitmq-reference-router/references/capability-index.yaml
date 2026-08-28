@@ -1,0 +1,31 @@
+schema_version: 1
+baseline: RabbitMQ 4.3.5
+capabilities:
+  exchange.direct:
+    claims: [messaging.exchange-routing]
+    lab: labs/exchange-queue/lab.yaml
+  queue.classic:
+    claims: [messaging.queue-lifecycle]
+    lab: labs/exchange-queue/lab.yaml
+  publisher.confirm:
+    claims: [delivery.publisher-confirm]
+    lab: labs/exchange-queue/lab.yaml
+  consumer.ack:
+    claims: [delivery.acknowledgement]
+    lab: labs/ack-redelivery/lab.yaml
+  consumer.redelivery:
+    claims: [delivery.redelivery]
+    lab: labs/ack-redelivery/lab.yaml
+  queue.dead-lettering:
+    claims: [delivery.dead-lettering]
+    lab: labs/dead-letter/lab.yaml
+  consumer.prefetch:
+    claims: [delivery.flow-control]
+    lab: labs/consumer-flow-control/lab.yaml
+  cluster.membership:
+    claims: [cluster.three-node-membership]
+    lab: labs/cluster-failure-recovery/lab.yaml
+  quorum-queue.leader-election:
+    claims: [cluster.leader-failure, cluster.node-recovery]
+    lab: labs/cluster-failure-recovery/lab.yaml
+

@@ -1,0 +1,13 @@
+schema_version: 1
+proof_obligations:
+  evidence:
+    setup: Source、Environment、Harnessを固定する。
+    execute: Lab ArtifactからEvidence Recordを生成する。
+    verify: Schemaと全Digest、Claim参照を検証する。
+    cleanup: Temporary Fileだけを削除しEvidenceは保持する。
+  skill-eval:
+    setup: Router Caseと期待Observable Outcomeを固定する。
+    execute: 全CaseをRouter Scriptへ入力する。
+    verify: Mode、Reference、Gap判定とPass Rateを確認する。
+    cleanup: Temporary Resultを削除する。
+

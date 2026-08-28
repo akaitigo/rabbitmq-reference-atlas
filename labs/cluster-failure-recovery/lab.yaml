@@ -1,0 +1,9 @@
+schema_version: 1
+id: cluster-failure-recovery
+claims: [cluster.three-node-membership, cluster.leader-failure, cluster.node-recovery]
+profile: cluster
+setup: 三Node Clusterへ三Replica Quorum Queueを宣言し、五MessageをConfirm付きでPublishする。
+execute: Queue Leader Nodeを停止し、残存NodeからConsume後、停止Nodeを再起動する。
+verify: 停止前後のMembership、五Messageの完全性、復帰後の三Running Membersを機械判定する。
+cleanup: Quorum Queue、Compose project、Volumeを削除する。
+

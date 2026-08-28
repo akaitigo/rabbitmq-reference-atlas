@@ -1,0 +1,89 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+claims:
+  - id: messaging.exchange-routing
+    capability_id: exchange.direct
+    statement: Direct ExchangeはBinding Keyと一致するRouting KeyのMessageを対象Queueへ配送する。
+    acceptance:
+      - Publisher Confirmがackであること
+      - 対象Queueから同一Message IDを取得できること
+    proof_obligation: atlas/proof-obligations/messaging.yaml#exchange-routing
+  - id: messaging.queue-lifecycle
+    capability_id: queue.classic
+    statement: Lab固有Queueは宣言、利用、削除を再実行でき、Cleanup後に残存しない。
+    acceptance:
+      - Lab実行ごとに一意なQueue Namespaceを使用すること
+      - CleanupでQueueとExchangeを削除すること
+    proof_obligation: atlas/proof-obligations/messaging.yaml#queue-lifecycle
+  - id: delivery.publisher-confirm
+    capability_id: publisher.confirm
+    statement: Confirm ModeのChannelでBrokerがPublishを受理するとackのConfirmationを返す。
+    acceptance:
+      - Confirm Modeを有効化してからPublishすること
+      - nackまたはTimeoutを成功として扱わないこと
+    proof_obligation: atlas/proof-obligations/delivery.yaml#publisher-confirm
+  - id: delivery.acknowledgement
+    capability_id: consumer.ack
+    statement: Manual Acknowledgement前のDeliveryは未確定で、同じChannelからAckするとQueueから除去される。
+    acceptance:
+      - autoAckを無効にすること
+      - Ack後にQueueのMessageがゼロになること
+    proof_obligation: atlas/proof-obligations/delivery.yaml#acknowledgement
+  - id: delivery.redelivery
+    capability_id: consumer.redelivery
+    statement: DeliveryをNackしてRequeueすると同一Messageがredelivered=trueで再配送される。
+    acceptance:
+      - 最初のDeliveryではredelivered=falseであること
+      - 再配送のMessage IDが一致しredelivered=trueであること
+    proof_obligation: atlas/proof-obligations/delivery.yaml#redelivery
+  - id: delivery.dead-lettering
+    capability_id: queue.dead-lettering
+    statement: requeue=falseでRejectしたMessageは構成済みDead Letter Exchangeから隔離Queueへ配送される。
+    acceptance:
+      - Source QueueにDead Letter Exchangeを設定すること
+      - 隔離Queueでx-death Headerと元Message IDを確認すること
+    proof_obligation: atlas/proof-obligations/delivery.yaml#dead-lettering
+  - id: delivery.flow-control
+    capability_id: consumer.prefetch
+    statement: prefetch=1では一件目をAckするまで同一Consumerへ二件目が配送されない。
+    acceptance:
+      - 一件目を未Ackのまま観測Windowを待つこと
+      - Ack後に二件目が配送されること
+    proof_obligation: atlas/proof-obligations/delivery.yaml#consumer-prefetch
+  - id: cluster.three-node-membership
+    capability_id: cluster.membership
+    statement: 固定Compose環境は三つのRunning RabbitMQ Nodeからなる一つのClusterを形成する。
+    acceptance:
+      - rabbitmq-diagnostics cluster_statusで三Nodeを確認すること
+      - 全NodeがRunning Membersであること
+    proof_obligation: atlas/proof-obligations/resilience.yaml#membership
+  - id: cluster.leader-failure
+    capability_id: quorum-queue.leader-election
+    statement: 三ReplicaのQuorum QueueはLeader一Node停止後も多数派が残ればConfirm済みMessageを配送できる。
+    acceptance:
+      - 停止前に五MessageすべてのConfirmを得ること
+      - Queue Leader Nodeを特定して停止すること
+      - 残存Nodeから五Messageを重複なく取得すること
+    proof_obligation: atlas/proof-obligations/resilience.yaml#leader-failure
+  - id: cluster.node-recovery
+    capability_id: cluster.recovery
+    statement: 停止したNodeは再起動後にClusterのRunning Membersへ復帰する。
+    acceptance:
+      - 停止Nodeを同一Volumeで再起動すること
+      - 三NodeのRunning Membershipを再確認すること
+    proof_obligation: atlas/proof-obligations/resilience.yaml#node-recovery
+  - id: operation.reproducible-evidence
+    capability_id: atlas.evidence
+    statement: 各Evidenceは固定Source、Environment、Harness、ArtifactのSHA-256へ束縛される。
+    acceptance:
+      - Evidence Schemaに適合すること
+      - 参照ArtifactのDigestと実ファイルが一致すること
+    proof_obligation: atlas/proof-obligations/atlas-operation.yaml#evidence
+  - id: skill.router-evaluation
+    capability_id: skill.router
+    statement: Routerは代表Taskを正しいModeへ分類し、Coverage外の要求をgapとして返す。
+    acceptance:
+      - 全Eval Caseが期待ModeとReferenceに一致すること
+      - minimum_pass_rateを満たすこと
+    proof_obligation: atlas/proof-obligations/atlas-operation.yaml#skill-eval
+

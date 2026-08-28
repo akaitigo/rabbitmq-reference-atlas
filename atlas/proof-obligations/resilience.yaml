@@ -1,0 +1,18 @@
+schema_version: 1
+proof_obligations:
+  membership:
+    setup: 三Nodeを固定CookieとPeer Discoveryで起動する。
+    execute: Cluster Statusを取得する。
+    verify: 三NodeすべてがRunning Membersであることを確認する。
+    cleanup: 専用Compose projectとVolumeを削除する。
+  leader-failure:
+    setup: 三Replica Quorum Queueへ五MessageをConfirm付きでPublishする。
+    execute: Management APIで特定したLeader Nodeを停止する。
+    verify: 残存Nodeから五Messageを重複なくConsumeしてAckする。
+    cleanup: 停止Nodeを再起動する。
+  node-recovery:
+    setup: Leader Failure Labで一Nodeを停止する。
+    execute: 同じNodeとVolumeを再起動する。
+    verify: 三NodeがRunning Membersへ戻ることを確認する。
+    cleanup: 専用Compose projectとVolumeを削除する。
+

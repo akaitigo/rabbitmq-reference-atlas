@@ -1,0 +1,45 @@
+schema_version: 1
+id: rabbitmq-reference-atlas
+title: RabbitMQ 技術実証アトラス
+owner:
+  github: akaitigo
+repository:
+  url: https://github.com/akaitigo/rabbitmq-reference-atlas
+  visibility: public
+  default_branch: main
+archetypes: [product]
+stage: 3
+status: incomplete
+language:
+  primary: ja
+  identifiers: en
+coverage:
+  epoch: "2026-08-28"
+  manifest: coverage.yaml
+authority:
+  lockfile: sources.lock.yaml
+  policy: primary-first
+scope:
+  statement: RabbitMQ 4.3.5のExchange、Queue、Acknowledgement、Redelivery、Dead Lettering、Flow Control、Cluster、Failure、Recoveryを固定環境で再実行し、観測可能な証拠へ接続する。
+  exclusions:
+    - Tanzu RabbitMQだけで提供される商用機能の実装と実行証拠
+    - RabbitMQ以外のメッセージ製品との網羅的な機能比較
+    - Community Plugin全体とManaged Service固有機能の完全閉包
+skills:
+  router:
+    id: rabbitmq-reference-router
+    path: .agents/skills/rabbitmq-reference-router/SKILL.md
+  package_manifest: skill.package.yaml
+  evals: evals/
+completion:
+  policy_version: 1.0.0
+  required_profiles: [local, container, cluster]
+  certificate: evidence/completion-certificate.json
+license:
+  default: Apache-2.0
+  notice: NOTICE
+  third_party_manifest: third_party/manifest.yaml
+security:
+  disclosure: SECURITY.md
+  defensive_only: true
+

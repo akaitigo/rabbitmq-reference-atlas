@@ -1,0 +1,77 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+epoch: '2026-08-28'
+generated_at: '2026-08-28T00:00:00+09:00'
+sources:
+- id: rabbitmq-server-v4.3.5
+  kind: source
+  title: RabbitMQ Server v4.3.5 source release
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.5/release-notes/4.3.5.md
+  version: v4.3.5-0dde27bfdd1984ff7e157226fd97656854a7f359
+  retrieved_at: '2026-08-28'
+  digest: sha256:31bc3e0b69ccb97d0c266ba90db5055337772ffb7d0108d7ffcd71803c4ec334
+  license: MPL-2.0
+  redistribution: link-only
+- id: rabbitmq-4.3-exchanges
+  kind: official-documentation
+  title: RabbitMQ Exchanges
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:a0a6d3fae2073fe28ffe7fd016bbd3830262db554195e670f5dc57a123832f6c
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-queues
+  kind: official-documentation
+  title: RabbitMQ Queues
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:70a81800b3df6e9e0295391a2fae37f67421af5b097d112e06a3ac9ba3087025
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-confirms
+  kind: official-documentation
+  title: RabbitMQ Consumer Acknowledgements and Publisher Confirms
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:861abccf819fddcdaddd661255914d867d6ed511a9ff19311bfef73d0907b127
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-dlx
+  kind: official-documentation
+  title: RabbitMQ Dead Letter Exchanges
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/dlx.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:29bead1952a76facc60f98748860271da24c0feba82b9049ae9fc2eb41cd2a29
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-flow-control
+  kind: official-documentation
+  title: RabbitMQ Flow Control
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/flow-control.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:ce5d0876c0a35e13dc12ee6e199e758a51c5223c05f448b8aed9ebb7e4c13c79
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-clustering
+  kind: official-documentation
+  title: RabbitMQ Clustering Guide
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/clustering.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:f76eea55c22ddac659f4a20c48d236e7e7902527b7b70fb92dc2f55753b02ece
+  license: null
+  redistribution: link-only
+- id: rabbitmq-container-v4.3.5-management
+  kind: runtime-inventory
+  title: RabbitMQ 4.3.5 management OCI image
+  url: https://github.com/docker-library/rabbitmq/tree/fe08e8852f66fde85461be4eed35675a4b8e35d8/4.3/ubuntu/management
+  version: rabbitmq:4.3.5-management-fe08e8852f66fde85461be4eed35675a4b8e35d8
+  retrieved_at: '2026-08-28'
+  digest: sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031
+  license: MPL-2.0
+  redistribution: metadata-only

@@ -1,0 +1,9 @@
+schema_version: 1
+id: consumer-flow-control
+claims: [delivery.flow-control]
+profile: cluster
+setup: prefetch=1、autoAck=falseのConsumerと二Messageを用意する。
+execute: 一件目を未Ackのまま観測Windowを待ち、その後Ackする。
+verify: Ack前に二件目が来ず、Ack後に到達することを機械判定する。
+cleanup: ConsumerをCancelしQueueを削除する。
+

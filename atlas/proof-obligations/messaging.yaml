@@ -1,0 +1,13 @@
+schema_version: 1
+proof_obligations:
+  exchange-routing:
+    setup: Direct Exchange、Classic Queue、Bindingを一意Namespaceで宣言する。
+    execute: Persistent MessageをConfirm ChannelからPublishする。
+    verify: Confirm ack、Message ID、Routing結果を検証する。
+    cleanup: QueueとExchangeを削除する。
+  queue-lifecycle:
+    setup: Lab固有Queueを宣言する。
+    execute: QueueへPublishしてConsumeする。
+    verify: Ack後にMessage数がゼロであることを確認する。
+    cleanup: Queueを削除して再検査する。
+

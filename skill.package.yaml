@@ -1,0 +1,19 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+atlas_release: v0.1.0
+router:
+  id: rabbitmq-reference-router
+  path: .agents/skills/rabbitmq-reference-router/SKILL.md
+  description: RabbitMQ 4.3.5の設計、実装、診断、復旧、移行、Reviewを、固定Coverageと再実行可能なLab、Evidence、一次資料へ案内する。
+generated_from:
+  - coverage.yaml
+  - atlas/claims/index.yaml
+  - atlas/decisions/router.yaml
+  - operations/runbooks/index.yaml
+adapters:
+  - generic-agent-skills
+  - codex
+evals:
+  path: evals/
+  minimum_pass_rate: 1.0
+

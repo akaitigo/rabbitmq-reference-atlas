@@ -1,0 +1,166 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+epoch: '2026-08-28'
+authority_lock_digest: sha256:17667d9e84f296e0b7b51f280f9012e9c29285d7ec0c6b40becce97f6b746920
+target_sets:
+- id: messaging-surface
+  title: Messaging Surface
+  sequence: 1
+  completion_required: true
+  exit_criteria:
+  - ExchangeとQueueの宣言、Binding、Publish、Consumeを固定Versionで再実行できること
+  - Acknowledgement、Redelivery、Dead Letteringの境界を自動判定できること
+- id: delivery-pressure
+  title: Delivery and Pressure
+  sequence: 2
+  completion_required: true
+  exit_criteria:
+  - Prefetchによる未確認配送数の制御を観測可能なOracleで検証できること
+  - Publisher ConfirmとConsumer Acknowledgementを異なる保証境界として記録すること
+- id: cluster-resilience
+  title: Cluster Resilience
+  sequence: 3
+  completion_required: true
+  exit_criteria:
+  - 三ノードClusterとQuorum Queueの構成を固定環境で再現できること
+  - Leader停止後の継続配送とNode復帰を再実行可能に検証できること
+- id: atlas-operation
+  title: Atlas Operation
+  sequence: 4
+  completion_required: true
+  exit_criteria:
+  - EvidenceがSource、Harness、EnvironmentのDigestへ束縛されていること
+  - Router Skillが設計、実装、診断、移行、ReviewとCoverage Gapを区別すること
+targets:
+- id: messaging.exchange-routing
+  title: Exchange routing
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Direct ExchangeのBindingとRouting Keyにより、意図したQueueだけへ配送されることを実行証拠で確認する。
+  claim_ids:
+  - messaging.exchange-routing
+  evidence_ids:
+  - lab.exchange-queue
+- id: messaging.queue-lifecycle
+  title: Queue lifecycle
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Queueの宣言、利用、削除を隔離されたLabで再現し、残存ResourceをCleanupできる必要がある。
+  claim_ids:
+  - messaging.queue-lifecycle
+  evidence_ids:
+  - lab.exchange-queue
+- id: delivery.acknowledgement
+  title: Consumer acknowledgement
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Consumer AcknowledgementがBrokerからConsumerまでの配送境界を表すことを観測可能に検証する。
+  claim_ids:
+  - delivery.acknowledgement
+  evidence_ids:
+  - lab.ack-redelivery
+- id: delivery.redelivery
+  title: Redelivery after requeue
+  target_set: messaging-surface
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: 未確認MessageをRequeueした際にRedelivered Flagを伴って再配送されることを検証する。
+  claim_ids:
+  - delivery.redelivery
+  evidence_ids:
+  - lab.ack-redelivery
+- id: delivery.dead-lettering
+  title: Dead letter routing
+  target_set: messaging-surface
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: RejectされたMessageが指定したDead Letter Exchangeを経由して隔離Queueへ到達することを検証する。
+  claim_ids:
+  - delivery.dead-lettering
+  evidence_ids:
+  - lab.dead-letter
+- id: delivery.flow-control
+  title: Consumer flow control
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Prefetch一件の条件でAcknowledgement前に二件目が配送されず、確認後に配送が再開することを検証する。
+  claim_ids:
+  - delivery.flow-control
+  evidence_ids:
+  - lab.consumer-flow-control
+- id: delivery.publisher-confirm
+  title: Publisher confirm
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Publish処理とConsumer処理を混同せず、Broker受理をPublisher Confirmとして個別に検証する。
+  claim_ids:
+  - delivery.publisher-confirm
+  evidence_ids:
+  - lab.exchange-queue
+- id: cluster.three-node-membership
+  title: Three-node cluster membership
+  target_set: cluster-resilience
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 固定OCI Imageと構成から三ノードClusterを作り、全NodeがRunning Membersであることを確認する。
+  claim_ids:
+  - cluster.three-node-membership
+  evidence_ids:
+  - lab.cluster-membership
+- id: cluster.leader-failure
+  title: Quorum queue leader failure
+  target_set: cluster-resilience
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: Quorum QueueのLeader Nodeを停止しても多数派が残る条件で確定済みMessageを回収できることを検証する。
+  claim_ids:
+  - cluster.leader-failure
+  evidence_ids:
+  - lab.cluster-failure-recovery
+- id: cluster.node-recovery
+  title: Cluster node recovery
+  target_set: cluster-resilience
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 停止したNodeを再起動し、Cluster Membershipへ復帰するまでを同一Harnessで確認する必要がある。
+  claim_ids:
+  - cluster.node-recovery
+  evidence_ids:
+  - lab.cluster-failure-recovery
+- id: operation.reproducible-evidence
+  title: Reproducible evidence
+  target_set: atlas-operation
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 実行結果をSource、Harness、Environment、ArtifactのDigestへ束縛して再検証可能にする。
+  claim_ids:
+  - operation.reproducible-evidence
+  evidence_ids:
+  - operation.evidence-generation
+- id: skill.router-evaluation
+  title: Router Skill evaluation
+  target_set: atlas-operation
+  kind: skill
+  requirement: required
+  state: covered
+  rationale: Routerが問い合わせを正しいModeとEvidenceへ案内し、対象外機能を捏造せずCoverage Gapを返すことを検証する。
+  claim_ids:
+  - skill.router-evaluation
+  evidence_ids:
+  - eval.router

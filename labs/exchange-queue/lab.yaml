@@ -1,0 +1,9 @@
+schema_version: 1
+id: exchange-queue
+claims: [messaging.exchange-routing, messaging.queue-lifecycle, delivery.publisher-confirm]
+profile: cluster
+setup: Direct Exchange、Durable Classic Queue、Bindingを一意Namespaceで宣言する。
+execute: Confirm ChannelからPersistent MessageをPublishしてManual AckでConsumeする。
+verify: Confirm ack、Routing Key、Message ID、Queue残数を機械判定する。
+cleanup: QueueとExchangeを削除する。
+

@@ -1,0 +1,9 @@
+schema_version: 1
+id: dead-letter
+claims: [delivery.dead-lettering]
+profile: cluster
+setup: Source Queue、Dead Letter Exchange、隔離Queueを宣言する。
+execute: Source DeliveryをReject(requeue=false)する。
+verify: 隔離Queueで同一Message IDとx-death Headerを機械判定する。
+cleanup: QueueとExchangeを削除する。
+

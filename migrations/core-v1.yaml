@@ -1,0 +1,24 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+core_commit: 1c85bed8d45a3daee3e5cda7fbbe144607ac1259
+source_repository: null
+mappings:
+  - legacy_id: rabbitmq.exchange
+    target_ids: [messaging.exchange-routing]
+    disposition: newly-materialized
+  - legacy_id: rabbitmq.queue
+    target_ids: [messaging.queue-lifecycle]
+    disposition: newly-materialized
+  - legacy_id: rabbitmq.ack-redelivery-dlq
+    target_ids: [delivery.acknowledgement, delivery.redelivery, delivery.dead-lettering]
+    disposition: newly-materialized
+  - legacy_id: rabbitmq.flow-control
+    target_ids: [delivery.flow-control, delivery.publisher-confirm]
+    disposition: newly-materialized
+  - legacy_id: rabbitmq.cluster-failure-recovery
+    target_ids: [cluster.three-node-membership, cluster.leader-failure, cluster.node-recovery]
+    disposition: newly-materialized
+evidence_migration:
+  inherited: false
+  rationale: 専用の旧RabbitMQ Atlasが存在しないため、別RepositoryのEvidenceを自動継承せず本Atlasで再生成する。
+

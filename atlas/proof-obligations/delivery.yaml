@@ -1,0 +1,28 @@
+schema_version: 1
+proof_obligations:
+  publisher-confirm:
+    setup: ChannelをConfirm Modeへ変更する。
+    execute: MessageをPublishしてConfirmationを待つ。
+    verify: nackとTimeoutを拒否し、ackだけを成功とする。
+    cleanup: ChannelとConnectionをCloseする。
+  acknowledgement:
+    setup: autoAck=falseでMessageを取得する。
+    execute: 同一ChannelからDeliveryをAckする。
+    verify: Ack後にQueueが空であることを確認する。
+    cleanup: Queueを削除する。
+  redelivery:
+    setup: autoAck=falseで最初のDeliveryを取得する。
+    execute: Nack(requeue=true)して再取得する。
+    verify: Message ID一致とredelivered=trueを確認する。
+    cleanup: 再配送分をAckしてQueueを削除する。
+  dead-lettering:
+    setup: Source Queue、DLX、隔離Queueを宣言する。
+    execute: Source DeliveryをReject(requeue=false)する。
+    verify: 隔離Queueで同一Message IDとx-death Headerを確認する。
+    cleanup: 二QueueとExchangeを削除する。
+  consumer-prefetch:
+    setup: prefetch=1、autoAck=falseのConsumerを開始する。
+    execute: 二MessageをPublishし一件目を未Ackにする。
+    verify: 観測Window内に二件目が来ず、Ack後に到達することを確認する。
+    cleanup: 二件目をAckしてQueueを削除する。
+

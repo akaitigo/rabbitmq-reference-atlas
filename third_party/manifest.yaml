@@ -1,0 +1,44 @@
+schema_version: 1
+components:
+  - id: rabbitmq-server
+    name: RabbitMQ Server
+    version: 4.3.5
+    source: https://github.com/rabbitmq/rabbitmq-server/tree/v4.3.5
+    license: MPL-2.0
+    usage: 実行対象Broker。Sourceまたは文書本文は再配布しない。
+  - id: rabbitmq-docker-official-image
+    name: RabbitMQ Docker Official Image packaging
+    version: fe08e8852f66fde85461be4eed35675a4b8e35d8
+    source: https://github.com/docker-library/rabbitmq
+    license: GPL-2.0-or-later
+    usage: 固定DigestのContainer runtime packaging。Docker Community maintained。
+  - id: amqp091-go
+    name: rabbitmq/amqp091-go
+    version: 1.10.0
+    source: https://github.com/rabbitmq/amqp091-go
+    license: BSD-2-Clause
+    usage: AMQP 0-9-1 Lab Client。
+  - id: erlang-otp
+    name: Erlang/OTP
+    version: 27.3.4.16
+    source: https://github.com/erlang/otp
+    license: Apache-2.0
+    usage: RabbitMQ Container runtime dependency。
+  - id: openssl
+    name: OpenSSL
+    version: 3.5.7
+    source: https://github.com/openssl/openssl
+    license: Apache-2.0
+    usage: RabbitMQ Container runtime dependency。
+  - id: ubuntu
+    name: Ubuntu
+    version: "24.04"
+    source: https://ubuntu.com/
+    license: multiple
+    usage: RabbitMQ Container base distribution。
+assets: []
+trademarks:
+  - name: RabbitMQ
+    owner: Broadcom Inc. and/or its subsidiaries
+    usage: 製品の識別と相互運用性説明だけに使用する。
+

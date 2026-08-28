@@ -1,0 +1,12 @@
+schema_version: 1
+runbooks:
+  - id: cluster.leader-failure
+    path: operations/runbooks/cluster-leader-failure.md
+    evidence: cluster.leader-failure
+  - id: delivery.redelivery-loop
+    path: operations/runbooks/redelivery-loop.md
+    evidence: delivery.redelivery
+  - id: delivery.dead-letter-backlog
+    path: operations/runbooks/dead-letter-backlog.md
+    evidence: delivery.dead-lettering
+

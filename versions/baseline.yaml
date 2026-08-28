@@ -1,0 +1,17 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+coverage_epoch: "2026-08-28"
+product:
+  name: RabbitMQ
+  version: 4.3.5
+  source_tag: v4.3.5
+  source_commit: 0dde27bfdd1984ff7e157226fd97656854a7f359
+runtime:
+  image: rabbitmq:4.3.5-management
+  digest: sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031
+  packaging: docker-official-image-community-maintained
+  platforms: [linux/amd64, linux/arm64]
+core_contract:
+  repository: reference-atlas-core
+  commit: 1c85bed8d45a3daee3e5cda7fbbe144607ac1259
+status: locked

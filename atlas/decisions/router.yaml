@@ -1,0 +1,24 @@
+schema_version: 1
+modes:
+  design:
+    intent: Exchange、Queue、Ack、Redelivery、DLQ、Flow Control、Cluster構成の選択
+    references: [references/capability-index.yaml, references/decision-matrix.md]
+  implement:
+    intent: 宣言、Publish、Consume、Ack、再配送、DLQ処理の実装
+    references: [references/capability-index.yaml, ../../../labs/README.md]
+  diagnose:
+    intent: 配送停滞、重複、未Ack、DLQ、Cluster状態の診断
+    references: [references/runbook-index.yaml, ../../../operations/runbooks/index.yaml]
+  recover:
+    intent: Node停止、Leader再選出、Consumer再接続、Node復帰の安全な検証
+    references: [references/runbook-index.yaml, ../../../operations/runbooks/cluster-leader-failure.md]
+  migrate:
+    intent: Version、Queue Type、削除済み機能の移行境界確認
+    references: [references/coverage-boundaries.md, ../../../versions/baseline.yaml]
+  review:
+    intent: Topology、Delivery Guarantee、運用手順、EvidenceのReview
+    references: [references/decision-matrix.md, ../../../coverage.yaml]
+  gap:
+    intent: 固定Coverage外の要求を既存Capabilityとして捏造せず明示する
+    references: [references/coverage-boundaries.md]
+

@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "mode": "core",
+  "run_id": "1787896435458633000",
+  "created_at": "2026-08-28T05:53:56Z",
+  "checks": [
+    {
+      "name": "exchange-queue-confirm",
+      "passed": true,
+      "observed": {
+        "exchange": "atlas.1787896435458633000.direct",
+        "message_id": "atlas.1787896435458633000.exchange-message",
+        "messages_after_ack": 0,
+        "publisher_confirm": "ack",
+        "queue": "atlas.1787896435458633000.exchange-queue",
+        "routing_key": "orders.created"
+      }
+    },
+    {
+      "name": "ack-redelivery",
+      "passed": true,
+      "observed": {
+        "first_redelivered": false,
+        "message_id": "atlas.1787896435458633000.redelivery-message",
+        "messages_after_ack": 0,
+        "second_redelivered": true
+      }
+    },
+    {
+      "name": "dead-letter",
+      "passed": true,
+      "observed": {
+        "dead_letter_message_id": "atlas.1787896435458633000.dead-message",
+        "message_id": "atlas.1787896435458633000.dead-message",
+        "x_death_present": true
+      }
+    },
+    {
+      "name": "consumer-prefetch",
+      "passed": true,
+      "observed": {
+        "prefetch": 1,
+        "second_after_ack": true,
+        "second_before_ack": false
+      }
+    }
+  ]
+}
