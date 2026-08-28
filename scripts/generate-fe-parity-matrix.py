@@ -72,6 +72,8 @@ def build() -> dict:
     definitive = load_yaml(ROOT / "definitive.yaml")
     sources = load_yaml(ROOT / "sources.lock.yaml")
     reference = load_yaml(REFERENCE)
+    locator_index = json.loads((ROOT / "authority/extraction.snapshot.json").read_text(encoding="utf-8"))
+    locator_artifacts = [json.loads(path.read_text(encoding="utf-8")) for path in sorted((ROOT / "authority/locator-drafts").glob("*.json"))]
     skill_eval = json.loads((ROOT / definitive["skill_eval"]).read_text(encoding="utf-8"))
     records = evidence_records()
     axes_by_id = {axis["id"]: axis for axis in reference["axes"]}
@@ -88,26 +90,44 @@ def build() -> dict:
     rows = plan["rows"]
     required_rows = [row for row in rows if row["applicability"] == "required"]
     record_by_id = {record["id"]: record for record in records}
-    non_behavioral_sources = {
-        "rabbitmq-server-v4.3.5", "rabbitmq-server-v4.2.9-release-notes",
-        "rabbitmq-container-v4.2.9-management", "rabbitmq-container-v4.3.5-management",
-    }
-    behavioral_sources = [row for row in classification["sources"] if row["source_id"] not in non_behavioral_sources]
-    authority_gaps = [row["source_id"] for row in behavioral_sources if row["classification"] != "surface-authority"]
     locked_sources = [source for source in sources["sources"] if source.get("digest") and source.get("version") and source.get("url")]
+    reproduction_gaps = [f"authority.body-{artifact['fetch']['status']}.{artifact['source_id']}" for artifact in locator_artifacts if artifact["fetch"]["status"] != "matched"]
+    locator_candidates = [candidate for artifact in locator_artifacts for candidate in artifact["candidate_surfaces"]]
+    locator_gaps = [f"authority.locator.{candidate['edge_id']}" for candidate in locator_candidates
+                    if candidate["locator_status"] not in {"root-document", "fragment-found"}]
+    review_gaps = [f"authority.human-review.{candidate['edge_id']}" for candidate in locator_candidates]
+    classification_gaps = [row["source_id"] for row in classification["sources"]
+                           if row["classification"] not in {"surface-authority", "supporting-authority"}]
     authority_axis = make_axis(axes_by_id["authority-body-digestion"], {
-        "unit": "behavioral authority source and locator-extracted surface", "sources": len(behavioral_sources),
-        "extracted_sources": len(behavioral_sources) - len(authority_gaps), "atomic_surfaces": len(inventory["items"]),
-        "remaining_sources": len(authority_gaps),
+        "unit": "locked authority body × existing reference edge × exhaustive body surface × human review",
+        "locked_sources": locator_index["summary"]["locked_sources"],
+        "body_digest_matched": locator_index["summary"]["fetched_digest_matched"],
+        "body_digest_stale": locator_index["summary"]["fetched_digest_stale"],
+        "fetch_failed": locator_index["summary"]["fetch_failed"],
+        "existing_reference_edges": locator_index["summary"]["candidate_surfaces"],
+        "located_reference_edges": locator_index["summary"]["root_locators"] + locator_index["summary"]["fragments_found"],
+        "fragment_not_found": locator_index["summary"]["fragments_not_found"],
+        "locator_evaluations_deferred": locator_index["summary"]["locator_evaluations_deferred"],
+        "authority_text_surfaces_exhaustive": locator_index["summary"]["authority_text_surfaces_exhaustive"],
+        "human_reviewed_surfaces": locator_index["summary"]["human_reviewed_surfaces"],
+        "protocol_plugin_operator_denominators": locator_index["denominators"],
     }, [
         make_check("authority.body-lock", "全SourceのURL、Version、取得日、本文SHA-256を固定する。",
                    f"{len(locked_sources)}/{len(sources['sources'])}", "pass" if len(locked_sources) == len(sources["sources"]) else "gap",
                    ["sources.lock.yaml"], [source["id"] for source in sources["sources"] if source not in locked_sources]),
-        make_check("authority.surface-extraction", "全Behavioral AuthorityをLocator付きSurface Artifactへ抽出する。",
-                   f"{len(behavioral_sources) - len(authority_gaps)}/{len(behavioral_sources)}", "pass" if not authority_gaps else "partial",
-                   ["surface/authority/", "surface/source-classification.yaml"], authority_gaps),
-        make_check("authority.human-review", "抽出Artifactの本文解釈と分類をReview metadataへ固定する。",
-                   f"{len(inventory['authority_artifacts'])}/{len(inventory['authority_artifacts'])}", "pass", ["surface/authority/"], []),
+        make_check("authority.body-reproduction", "全固定Authority bodyを再取得し、exact digest一致を確認する。",
+                   f"{locator_index['summary']['fetched_digest_matched']}/{locator_index['summary']['locked_sources']}",
+                   "pass" if not reproduction_gaps else "partial", ["authority/extraction.snapshot.json", "authority/locator-drafts/"], reproduction_gaps),
+        make_check("authority.existing-surface-classification", "既存Surface分類とsupporting分類を全Sourceへ明示する。",
+                   f"{len(classification['sources']) - len(classification_gaps)}/{len(classification['sources'])}",
+                   "pass" if not classification_gaps else "gap", ["surface/source-classification.yaml", "surface/authority/"], classification_gaps),
+        make_check("authority.reference-edge-candidates", "既存reference edgeを本文非保存のLocator候補へ損失なく投影し、未Reviewと明示する。",
+                   f"{len(locator_candidates) - len(locator_gaps)}/{len(locator_candidates)} located",
+                   "pass" if not locator_gaps else "partial", ["authority/extraction.snapshot.json", "authority/locator-drafts/"], locator_gaps),
+        make_check("authority.surface-exhaustiveness", "Authority本文全体からSurfaceを抽出し、未分類をゼロにする。", False, "gap",
+                   ["authority/extraction.snapshot.json"], ["authority.text-surfaces-exhaustive"]),
+        make_check("authority.human-review", "抽出候補の本文解釈と分類を人がReviewする。",
+                   f"0/{len(locator_candidates)}", "gap", ["authority/extraction.snapshot.json"], review_gaps),
     ])
 
     comparison_items = [item for item in inventory["items"] if "decision-comparison" in item["surface_ids"]]
@@ -230,6 +250,8 @@ def build() -> dict:
             "manifest": REFERENCE.relative_to(ROOT).as_posix(), "source_repository": reference["source_repository"],
             "source_commit": reference["source_commit"], "source_status": reference["source_status"],
             "source_summary": reference["source_summary"],
+            "authority_extraction_source_commit": reference["authority_extraction_reference"]["source_commit"],
+            "authority_body_storage": reference["authority_extraction_reference"]["body_storage"],
             "rule": "FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。",
         },
         "fixture_mapping": [

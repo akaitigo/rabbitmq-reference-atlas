@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-policies",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/policies.md",
+  "locked_source_digest": "sha256:39c707f940467ef8a95a77b0ee151d79e8e495b8e2973c93ff0483d19780f1f2",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:39c707f940467ef8a95a77b0ee151d79e8e495b8e2973c93ff0483d19780f1f2",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/policies.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 41874,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.policy.application.rabbitmq-4.3-policies",
+      "source_id": "rabbitmq-4.3-policies",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/policies.md#how-policies-work",
+      "locator": "#how-policies-work",
+      "authority_surface_id": "policy.application",
+      "candidate_behavior_id": "candidate.policy.application",
+      "capability_id": "configuration.policies",
+      "target_id": "definitive.policy.application",
+      "claim_id": "definitive.policy.application.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:cd7e29f917cf1cc4c4bf253c2dbeae58a0349a4ecf3f2d8e671c02a4ea26554c",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:18422a22596fc16400c5a6d0428caec2c6a2088c1e68a8a5b6a6d36142bbe0ef",
+      "context_start": 0,
+      "context_end": 36317,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.policy.argument-precedence.rabbitmq-4.3-policies",
+      "source_id": "rabbitmq-4.3-policies",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/policies.md#optional-arguments-and-policy-defined-key-precedence",
+      "locator": "#optional-arguments-and-policy-defined-key-precedence",
+      "authority_surface_id": "policy.argument-precedence",
+      "candidate_behavior_id": "candidate.policy.argument-precedence",
+      "capability_id": "configuration.policies",
+      "target_id": "definitive.policy.argument-precedence",
+      "claim_id": "definitive.policy.argument-precedence.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:d4293434c0b688389cbd06c481e2b454b9f11a12b9184080b7f84194f8ab2ca2",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.policy.update.rabbitmq-4.3-policies",
+      "source_id": "rabbitmq-4.3-policies",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/policies.md#updating-policies",
+      "locator": "#updating-policies",
+      "authority_surface_id": "policy.update",
+      "candidate_behavior_id": "candidate.policy.update",
+      "capability_id": "configuration.policies",
+      "target_id": "definitive.policy.update",
+      "claim_id": "definitive.policy.update.claim",
+      "surface_ids": [
+        "migration-evolution-deprecation",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:fa84a818fef367e09fd48f856b1278001616fb31e100cc405199bc6c587ecf61",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:9ab8f52885dc499678fb3c1441b0549867403eb5b94535e7cd8e8a46a18d0079",
+      "context_start": 13791,
+      "context_end": 41874,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:adb30c7598aefff141a5c9195b8edc39c7c474aff46826b8e0808bd176680cee",
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

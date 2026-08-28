@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-plugins",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/plugins.md",
+  "locked_source_digest": "sha256:b014bdbb814fd894d42b9484c88a9a8a8c5e32360f0ea27fa8186c7a2946b3cc",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:b014bdbb814fd894d42b9484c88a9a8a8c5e32360f0ea27fa8186c7a2946b3cc",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/plugins.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 25734,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.plugin.compatibility.rabbitmq-4.3-plugins",
+      "source_id": "rabbitmq-4.3-plugins",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/plugins.md#plugin-versioning",
+      "locator": "#plugin-versioning",
+      "authority_surface_id": "plugin.compatibility",
+      "candidate_behavior_id": "candidate.plugin.compatibility",
+      "capability_id": "server.plugins",
+      "target_id": "definitive.plugin.compatibility",
+      "claim_id": "definitive.plugin.compatibility.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:baa039227f9d2f923fd4fc53fca7ab80f7ff6b7934a230b7da2fd00f2e1aac22",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.plugin.discovery.rabbitmq-4.3-plugins",
+      "source_id": "rabbitmq-4.3-plugins",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/plugins.md#plugin-discovery",
+      "locator": "#plugin-discovery",
+      "authority_surface_id": "plugin.discovery",
+      "candidate_behavior_id": "candidate.plugin.discovery",
+      "capability_id": "server.plugins",
+      "target_id": "definitive.plugin.discovery",
+      "claim_id": "definitive.plugin.discovery.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "orientation-scope"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:769df15ed11c59ebe4f77286e4ff3a518e3ded077b731bd8b4258638563cd2ce",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.plugin.enable-disable.rabbitmq-4.3-plugins",
+      "source_id": "rabbitmq-4.3-plugins",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/plugins.md#enabling-plugins",
+      "locator": "#enabling-plugins",
+      "authority_surface_id": "plugin.enable-disable",
+      "candidate_behavior_id": "candidate.plugin.enable-disable",
+      "capability_id": "server.plugins",
+      "target_id": "definitive.plugin.enable-disable",
+      "claim_id": "definitive.plugin.enable-disable.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:41aa12402fb45ceff9aefa4b3a003569617278bc1dd42dd938b89984d23fe165",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

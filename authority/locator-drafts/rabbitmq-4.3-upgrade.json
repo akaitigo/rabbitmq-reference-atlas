@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-upgrade",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/upgrade.md",
+  "locked_source_digest": "sha256:6eb02dcbc7ca6b504229d185d21ab2293c2fe2cc098a120a5d702c3a94192a5e",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:6eb02dcbc7ca6b504229d185d21ab2293c2fe2cc098a120a5d702c3a94192a5e",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/upgrade.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 18315,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.upgrade.feature-flags.rabbitmq-4.3-upgrade",
+      "source_id": "rabbitmq-4.3-upgrade",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/upgrade.md#feature-flags",
+      "locator": "#feature-flags",
+      "authority_surface_id": "upgrade.feature-flags",
+      "candidate_behavior_id": "candidate.upgrade.feature-flags",
+      "capability_id": "migration.upgrade",
+      "target_id": "definitive.upgrade.feature-flags",
+      "claim_id": "definitive.upgrade.feature-flags.claim",
+      "surface_ids": [
+        "migration-evolution-deprecation",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:7114510b319e4ac7b4cbf7cf81b9c527e1c68dbd98b384bb04bf1ba00b387fe3",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.upgrade.path.rabbitmq-4.3-upgrade",
+      "source_id": "rabbitmq-4.3-upgrade",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/upgrade.md#rabbitmq-version-upgradability",
+      "locator": "#rabbitmq-version-upgradability",
+      "authority_surface_id": "upgrade.path",
+      "candidate_behavior_id": "candidate.upgrade.path",
+      "capability_id": "migration.upgrade",
+      "target_id": "definitive.upgrade.path",
+      "claim_id": "definitive.upgrade.path.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:57d1dad39d5844204e394f8e07fbadddd7c6c338a17e45d5dcdf226a3df7351e",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:b28842612e3161f507e4f7608e3888862a10fc566a7a21550e487ce8eabbc54d",
+      "context_start": 1575,
+      "context_end": 18315,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.upgrade.rollback.rabbitmq-4.3-upgrade",
+      "source_id": "rabbitmq-4.3-upgrade",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/upgrade.md#rollback",
+      "locator": "#rollback",
+      "authority_surface_id": "upgrade.rollback",
+      "candidate_behavior_id": "candidate.upgrade.rollback",
+      "capability_id": "migration.upgrade",
+      "target_id": "definitive.upgrade.rollback",
+      "claim_id": "definitive.upgrade.rollback.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:dff34a8fb011e5b66663d16169fe91a45d85a793eca29cf521b7c7760a68a2d9",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.upgrade.rolling.rabbitmq-4.3-upgrade",
+      "source_id": "rabbitmq-4.3-upgrade",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/upgrade.md#rolling-upgrade",
+      "locator": "#rolling-upgrade",
+      "authority_surface_id": "upgrade.rolling",
+      "candidate_behavior_id": "candidate.upgrade.rolling",
+      "capability_id": "migration.upgrade",
+      "target_id": "definitive.upgrade.rolling",
+      "claim_id": "definitive.upgrade.rolling.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:837e7e6c9e15073e296dd0a395c36e513667c32dfb84cceaf8482202667f943b",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:6eb02dcbc7ca6b504229d185d21ab2293c2fe2cc098a120a5d702c3a94192a5e",
+      "context_start": 0,
+      "context_end": 18315,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

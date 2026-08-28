@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-access-control",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/access-control.md",
+  "locked_source_digest": "sha256:9cccc858072cf3a8fe7dede63cc198289b2414e33e9128d9eb941bfbaa417f7a",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:9cccc858072cf3a8fe7dede63cc198289b2414e33e9128d9eb941bfbaa417f7a",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/access-control.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 51772,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.security.authn-authz-split.rabbitmq-4.3-access-control",
+      "source_id": "rabbitmq-4.3-access-control",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/access-control.md#authentication-and-authorisation-backends",
+      "locator": "#authentication-and-authorisation-backends",
+      "authority_surface_id": "security.authn-authz-split",
+      "candidate_behavior_id": "candidate.security.authn-authz-split",
+      "capability_id": "security.auth-backends",
+      "target_id": "definitive.security.authn-authz-split",
+      "claim_id": "definitive.security.authn-authz-split.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:efb9f586de1c58eca4c837e2e6c9df49dddeb5aad6d2efbf458ba27a43cfed3f",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:2567f6c075f0257c729922ea035314303acc66dc866b5fc947e3b491bfd129f1",
+      "context_start": 31022,
+      "context_end": 51772,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:b0f31a5a5a3abc6edce264a2ef1e55afab4eaaf0c677064b25d95e1e097dadf4",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.security.backend-chain.rabbitmq-4.3-access-control",
+      "source_id": "rabbitmq-4.3-access-control",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/access-control.md#authentication-and-authorisation-backends",
+      "locator": "#authentication-and-authorisation-backends",
+      "authority_surface_id": "security.backend-chain",
+      "candidate_behavior_id": "candidate.security.backend-chain",
+      "capability_id": "security.auth-backends",
+      "target_id": "definitive.security.backend-chain",
+      "claim_id": "definitive.security.backend-chain.claim",
+      "surface_ids": [
+        "architecture-design",
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:73122a8b2381a5945b5474d0d96b38c2d490963c4280d69bfb7ff79f62cf833f",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:2567f6c075f0257c729922ea035314303acc66dc866b5fc947e3b491bfd129f1",
+      "context_start": 31022,
+      "context_end": 51772,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:b0f31a5a5a3abc6edce264a2ef1e55afab4eaaf0c677064b25d95e1e097dadf4",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.security.credential-rotation.rabbitmq-4.3-access-control",
+      "source_id": "rabbitmq-4.3-access-control",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/access-control.md#credential-management",
+      "locator": "#credential-management",
+      "authority_surface_id": "security.credential-rotation",
+      "candidate_behavior_id": "candidate.security.credential-rotation",
+      "capability_id": "security.credentials",
+      "target_id": "definitive.security.credential-rotation",
+      "claim_id": "definitive.security.credential-rotation.claim",
+      "surface_ids": [
+        "operations-observability",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:6d376d1b993a74da2956d76683877c94b4d8e11fb35d769c19d592fda0d88c7c",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.security.topic-permissions.rabbitmq-4.3-access-control",
+      "source_id": "rabbitmq-4.3-access-control",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/access-control.md#topic-authorisation",
+      "locator": "#topic-authorisation",
+      "authority_surface_id": "security.topic-permissions",
+      "candidate_behavior_id": "candidate.security.topic-permissions",
+      "capability_id": "security.permissions",
+      "target_id": "definitive.security.topic-permissions",
+      "claim_id": "definitive.security.topic-permissions.claim",
+      "surface_ids": [
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:ae599bb162550911bf8d8fca3aa52693a8bdeee389504d41901e52ed8ca868fc",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:9650f9b6c482ed1b57baf9312b42d610fb34f27f11bfceca325bd91b095b02e6",
+      "context_start": 26461,
+      "context_end": 51772,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.security.vhost-permissions.rabbitmq-4.3-access-control",
+      "source_id": "rabbitmq-4.3-access-control",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/access-control.md#authorisation-how-permissions-work",
+      "locator": "#authorisation-how-permissions-work",
+      "authority_surface_id": "security.vhost-permissions",
+      "candidate_behavior_id": "candidate.security.vhost-permissions",
+      "capability_id": "security.permissions",
+      "target_id": "definitive.security.vhost-permissions",
+      "claim_id": "definitive.security.vhost-permissions.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:dc2add1356eb0599c461897ecbef8db5a1ff8a70c77e3b7a5989cec038ef9b34",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:ceb54a39355e2d9cc0a8697791576da6132397d56af53747ec677f34c877835d",
+      "context_start": 17016,
+      "context_end": 51772,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:d216e3e42ebfb7d5f2600b561678125d9670cf0b76d3f2490570707c24953a62",
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

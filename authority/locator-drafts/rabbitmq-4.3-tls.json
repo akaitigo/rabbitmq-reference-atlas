@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-tls",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ssl/index.md",
+  "locked_source_digest": "sha256:d33e05a1821a2c0ebbbe804050d6c85a320eaba15e6128aa3573deb41dfe31db",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:d33e05a1821a2c0ebbbe804050d6c85a320eaba15e6128aa3573deb41dfe31db",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ssl/index.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 107360,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.tls.certificate-rotation.rabbitmq-4.3-tls",
+      "source_id": "rabbitmq-4.3-tls",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ssl/index.md#rotating-tls-certificates",
+      "locator": "#rotating-tls-certificates",
+      "authority_surface_id": "tls.certificate-rotation",
+      "candidate_behavior_id": "candidate.tls.certificate-rotation",
+      "capability_id": "security.tls",
+      "target_id": "definitive.tls.certificate-rotation",
+      "claim_id": "definitive.tls.certificate-rotation.claim",
+      "surface_ids": [
+        "migration-evolution-deprecation",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:69f40aa0c768f04421c4143509505b20e5e25409c1eacefc6427bf9ef52378da",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.tls.client-listener.rabbitmq-4.3-tls",
+      "source_id": "rabbitmq-4.3-tls",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ssl/index.md#enabling-tls-support-in-rabbitmq",
+      "locator": "#enabling-tls-support-in-rabbitmq",
+      "authority_surface_id": "tls.client-listener",
+      "candidate_behavior_id": "candidate.tls.client-listener",
+      "capability_id": "security.tls",
+      "target_id": "definitive.tls.client-listener",
+      "claim_id": "definitive.tls.client-listener.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:e7c82b0f174db3b28d3b289f15c3b3a6baef2e823f2831641fe2c7506bbfa1c0",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:a967fe6c7b45fe5c96f53ef0b489bfa08f05e20692da4e18b0e8715e60c9daa7",
+      "context_start": 9500,
+      "context_end": 46364,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:d0964ae53dc1e261dbff3336017c3993e28aee450e364cade6a361a21c89eecb",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.tls.inter-node.rabbitmq-4.3-tls",
+      "source_id": "rabbitmq-4.3-tls",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ssl/index.md#inter-node-traffic",
+      "locator": "#inter-node-traffic",
+      "authority_surface_id": "tls.inter-node",
+      "candidate_behavior_id": "candidate.tls.inter-node",
+      "capability_id": "security.tls",
+      "target_id": "definitive.tls.inter-node",
+      "claim_id": "definitive.tls.inter-node.claim",
+      "surface_ids": [
+        "architecture-design",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:b3be3dc76fecc1ed6635bd2650db97f0ba2c88432071f05a9293300004a05cbc",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.tls.mutual-authentication.rabbitmq-4.3-tls",
+      "source_id": "rabbitmq-4.3-tls",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ssl/index.md#peer-verification",
+      "locator": "#peer-verification",
+      "authority_surface_id": "tls.mutual-authentication",
+      "candidate_behavior_id": "candidate.tls.mutual-authentication",
+      "capability_id": "security.tls",
+      "target_id": "definitive.tls.mutual-authentication",
+      "claim_id": "definitive.tls.mutual-authentication.claim",
+      "surface_ids": [
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:34e3437c301a558bc8fade109295f514c621b2d5b95c6f2786baa23b354389d2",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:c25e877f3c07e0462acc02dfe9cff6938204a6602f6a4a1311155a1ca12c264d",
+      "context_start": 15356,
+      "context_end": 52220,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

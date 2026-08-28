@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-clustering",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/clustering.md",
+  "locked_source_digest": "sha256:f76eea55c22ddac659f4a20c48d236e7e7902527b7b70fb92dc2f55753b02ece",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:f76eea55c22ddac659f4a20c48d236e7e7902527b7b70fb92dc2f55753b02ece",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/clustering.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 59738,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.cluster.client-connection.rabbitmq-4.3-clustering",
+      "source_id": "rabbitmq-4.3-clustering",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/clustering.md#client-connections",
+      "locator": "#client-connections",
+      "authority_surface_id": "cluster.client-connection",
+      "candidate_behavior_id": "candidate.cluster.client-connection",
+      "capability_id": "cluster.client",
+      "target_id": "definitive.cluster.client-connection",
+      "claim_id": "definitive.cluster.client-connection.claim",
+      "surface_ids": [
+        "architecture-design",
+        "failure-recovery"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:474b1f6578fadc51994bcf248b218e407deb7027cd13d2630e13ebd323c69d8f",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.cluster.membership.rabbitmq-4.3-clustering",
+      "source_id": "rabbitmq-4.3-clustering",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/clustering.md#cluster-formation-requirements",
+      "locator": "#cluster-formation-requirements",
+      "authority_surface_id": "cluster.membership",
+      "candidate_behavior_id": "candidate.cluster.membership",
+      "capability_id": "cluster.membership",
+      "target_id": "definitive.cluster.membership",
+      "claim_id": "definitive.cluster.membership.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:229da8ffbf0c52a41b31f959a732265a6e997196a39aaa9a22600c07fbbc4e3c",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:002f9a65215b03b5fd017b4cd29a2fa8a80303f8f15040f17167959a0b345962",
+      "context_start": 2059,
+      "context_end": 38923,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.cluster.metadata-replication.rabbitmq-4.3-clustering",
+      "source_id": "rabbitmq-4.3-clustering",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/clustering.md#what-is-replicated",
+      "locator": "#what-is-replicated",
+      "authority_surface_id": "cluster.metadata-replication",
+      "candidate_behavior_id": "candidate.cluster.metadata-replication",
+      "capability_id": "cluster.membership",
+      "target_id": "definitive.cluster.metadata-replication",
+      "claim_id": "definitive.cluster.metadata-replication.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "foundations-mechanics"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:a52645cd7bb6405eaa084171e0a120eeac4ee2bf8ef51fa93fcb7a32a90638d6",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:79be473a4140f306f4f870a8752efea46679660be88c504ced7c8866ea58b666",
+      "context_start": 5276,
+      "context_end": 42140,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:def3277f8ec6c243d86805e94631d7a8e6404fd13dbd61dc51540efa9fa4b305",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.cluster.node-removal.rabbitmq-4.3-clustering",
+      "source_id": "rabbitmq-4.3-clustering",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/clustering.md#removing-nodes-from-a-cluster",
+      "locator": "#removing-nodes-from-a-cluster",
+      "authority_surface_id": "cluster.node-removal",
+      "candidate_behavior_id": "candidate.cluster.node-removal",
+      "capability_id": "cluster.membership",
+      "target_id": "definitive.cluster.node-removal",
+      "claim_id": "definitive.cluster.node-removal.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:4f51eb2ea5eaf630993bc68326061cf303d89b559bc7a787cc962f6eb9338b5e",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

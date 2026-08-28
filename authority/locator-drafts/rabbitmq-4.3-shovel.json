@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-shovel",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md",
+  "locked_source_digest": "sha256:e92ab6a923117c7faa48f662bb86da2c03ae9d61505dd5def1fb87dcce69eab5",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:e92ab6a923117c7faa48f662bb86da2c03ae9d61505dd5def1fb87dcce69eab5",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 15932,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.shovel.acknowledgement.rabbitmq-4.3-shovel",
+      "source_id": "rabbitmq-4.3-shovel",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md#acknowledgement-modes",
+      "locator": "#acknowledgement-modes",
+      "authority_surface_id": "shovel.acknowledgement",
+      "candidate_behavior_id": "candidate.shovel.acknowledgement",
+      "capability_id": "crosscluster.shovel",
+      "target_id": "definitive.shovel.acknowledgement",
+      "claim_id": "definitive.shovel.acknowledgement.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:9d2b97405b40ba2273ae770cabe6fc6374c4d94539f125b70874d817955e1a12",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.shovel.dynamic.rabbitmq-4.3-shovel",
+      "source_id": "rabbitmq-4.3-shovel",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md#getting-started",
+      "locator": "#getting-started",
+      "authority_surface_id": "shovel.dynamic",
+      "candidate_behavior_id": "candidate.shovel.dynamic",
+      "capability_id": "crosscluster.shovel",
+      "target_id": "definitive.shovel.dynamic",
+      "claim_id": "definitive.shovel.dynamic.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:b5d15f85541ae42c1cd2d80a97821968ca683d72a384f87fa950c40568571010",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:6448205991f5e7ade2ea1a88b91094eb2b60fde0c97600bdff5c85149239b053",
+      "context_start": 2642,
+      "context_end": 15932,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.shovel.failure-recovery.rabbitmq-4.3-shovel",
+      "source_id": "rabbitmq-4.3-shovel",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md#reconnection-behaviour",
+      "locator": "#reconnection-behaviour",
+      "authority_surface_id": "shovel.failure-recovery",
+      "candidate_behavior_id": "candidate.shovel.failure-recovery",
+      "capability_id": "crosscluster.shovel",
+      "target_id": "definitive.shovel.failure-recovery",
+      "claim_id": "definitive.shovel.failure-recovery.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:92e9e308c75d822aab506b23f225c228991c7052ee4affe8a526bf0aedbc0337",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.shovel.protocol-variants.rabbitmq-4.3-shovel",
+      "source_id": "rabbitmq-4.3-shovel",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md#overview",
+      "locator": "#overview",
+      "authority_surface_id": "shovel.protocol-variants",
+      "candidate_behavior_id": "candidate.shovel.protocol-variants",
+      "capability_id": "crosscluster.shovel",
+      "target_id": "definitive.shovel.protocol-variants",
+      "claim_id": "definitive.shovel.protocol-variants.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "decision-comparison"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:9f3ace0b7d877140b6195e67474ba2bdb15585857ef8c495e56cb9ed4f297e5d",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:e92ab6a923117c7faa48f662bb86da2c03ae9d61505dd5def1fb87dcce69eab5",
+      "context_start": 0,
+      "context_end": 15932,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

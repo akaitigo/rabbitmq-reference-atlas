@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-container-v4.3.5-management",
+  "source_url": "https://github.com/docker-library/rabbitmq/tree/fe08e8852f66fde85461be4eed35675a4b8e35d8/4.3/ubuntu/management",
+  "locked_source_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031",
+  "fetch": {
+    "status": "stale",
+    "fetched_digest": "sha256:c15ff94253653e6a411c2a8c3af83adffb88aaac4307a11ccf3c3aec7e61ec11",
+    "locked_digest_match": false,
+    "http_status": 200,
+    "final_url": "https://github.com/docker-library/rabbitmq/tree/fe08e8852f66fde85461be4eed35675a4b8e35d8/4.3/ubuntu/management",
+    "content_type": "text/html; charset=utf-8",
+    "fetched_bytes": 229464,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": []
+}

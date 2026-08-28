@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-federation",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md",
+  "locked_source_digest": "sha256:15ebce32a18d44382698ffc52ec60f15288751b1e1de021471caae0a3b1a9064",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:15ebce32a18d44382698ffc52ec60f15288751b1e1de021471caae0a3b1a9064",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 23489,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.federation.exchange.rabbitmq-4.3-federation",
+      "source_id": "rabbitmq-4.3-federation",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md#federated-exchanges",
+      "locator": "#federated-exchanges",
+      "authority_surface_id": "federation.exchange",
+      "candidate_behavior_id": "candidate.federation.exchange",
+      "capability_id": "crosscluster.federation",
+      "target_id": "definitive.federation.exchange",
+      "claim_id": "definitive.federation.exchange.claim",
+      "surface_ids": [
+        "architecture-design",
+        "compatibility-integration",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:04f8597eb2a3aa961e63894740aeb0f79b4f8c26b5d8559cc4464ee26cbb9b71",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.federation.link-recovery.rabbitmq-4.3-federation",
+      "source_id": "rabbitmq-4.3-federation",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md#federation-links",
+      "locator": "#federation-links",
+      "authority_surface_id": "federation.link-recovery",
+      "candidate_behavior_id": "candidate.federation.link-recovery",
+      "capability_id": "crosscluster.federation",
+      "target_id": "definitive.federation.link-recovery",
+      "claim_id": "definitive.federation.link-recovery.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:5587bfb2e8054a7203e194bfe9b25bb3a4a6808b84cc78ed81b26191e2e5fa5e",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.federation.queue.rabbitmq-4.3-federation",
+      "source_id": "rabbitmq-4.3-federation",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md#federated-queues",
+      "locator": "#federated-queues",
+      "authority_surface_id": "federation.queue",
+      "candidate_behavior_id": "candidate.federation.queue",
+      "capability_id": "crosscluster.federation",
+      "target_id": "definitive.federation.queue",
+      "claim_id": "definitive.federation.queue.claim",
+      "surface_ids": [
+        "architecture-design",
+        "compatibility-integration",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:232e54a46d2b3d2d212b9b45e111e9d1430635e5b26711b5a361efc33018fd8d",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.federation.topology-boundary.rabbitmq-4.3-federation",
+      "source_id": "rabbitmq-4.3-federation",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md#federation-plugin",
+      "locator": "#federation-plugin",
+      "authority_surface_id": "federation.topology-boundary",
+      "candidate_behavior_id": "candidate.federation.topology-boundary",
+      "capability_id": "crosscluster.federation",
+      "target_id": "definitive.federation.topology-boundary",
+      "claim_id": "definitive.federation.topology-boundary.claim",
+      "surface_ids": [
+        "decision-comparison",
+        "orientation-scope"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:a1dff11ab9fb7c7521ab8c0b332627a92e1a696586d14a0eca085b2b00558283",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

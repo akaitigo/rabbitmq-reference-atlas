@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-operator-overview",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/operator-overview.md",
+  "locked_source_digest": "sha256:d5311b55df339af1032ca249417a6dc7b58f529aac79152f1266df83610ce586",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:d5311b55df339af1032ca249417a6dc7b58f529aac79152f1266df83610ce586",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/operator-overview.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 7216,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.operator.cluster-provisioning.rabbitmq-operator-overview",
+      "source_id": "rabbitmq-operator-overview",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/operator-overview.md#rabbitmq-cluster-kubernetes-operator",
+      "locator": "#rabbitmq-cluster-kubernetes-operator",
+      "authority_surface_id": "operator.cluster-provisioning",
+      "candidate_behavior_id": "candidate.operator.cluster-provisioning",
+      "capability_id": "operator.cluster",
+      "target_id": "definitive.operator.cluster-provisioning",
+      "claim_id": "definitive.operator.cluster-provisioning.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:be43cad290dcc092ebc3dcbf9bab4b5264897daffd49209a900b59cf595ae47e",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d5311b55df339af1032ca249417a6dc7b58f529aac79152f1266df83610ce586",
+      "context_start": 0,
+      "context_end": 7216,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:6205a5273599cc9c9737b7d01c08ec735ab34c2c0d527d9f79058c2a6247dc76",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.operator.cluster-reconciliation.rabbitmq-operator-overview",
+      "source_id": "rabbitmq-operator-overview",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/operator-overview.md#rabbitmq-cluster-kubernetes-operator",
+      "locator": "#rabbitmq-cluster-kubernetes-operator",
+      "authority_surface_id": "operator.cluster-reconciliation",
+      "candidate_behavior_id": "candidate.operator.cluster-reconciliation",
+      "capability_id": "operator.cluster",
+      "target_id": "definitive.operator.cluster-reconciliation",
+      "claim_id": "definitive.operator.cluster-reconciliation.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:188e55641c79e2995b3c57da73f3196faf767a02bcebe963cd6f0493abf64cd2",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d5311b55df339af1032ca249417a6dc7b58f529aac79152f1266df83610ce586",
+      "context_start": 0,
+      "context_end": 7216,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:6205a5273599cc9c9737b7d01c08ec735ab34c2c0d527d9f79058c2a6247dc76",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.operator.feature-flags.rabbitmq-operator-overview",
+      "source_id": "rabbitmq-operator-overview",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/operator-overview.md#rabbitmq-cluster-kubernetes-operator-design-principles",
+      "locator": "#rabbitmq-cluster-kubernetes-operator-design-principles",
+      "authority_surface_id": "operator.feature-flags",
+      "candidate_behavior_id": "candidate.operator.feature-flags",
+      "capability_id": "operator.cluster",
+      "target_id": "definitive.operator.feature-flags",
+      "claim_id": "definitive.operator.feature-flags.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:e3b69b00fc81b9fb8bf5089e64d452d39c4873ff34b8d560c0a6073ed9d89140",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d5311b55df339af1032ca249417a6dc7b58f529aac79152f1266df83610ce586",
+      "context_start": 0,
+      "context_end": 7216,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:4c58bfc2d60d2825335d9584667338eefee49dfc81ae4ae5f11b4a56b212c657",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.operator.rolling-upgrade.rabbitmq-operator-overview",
+      "source_id": "rabbitmq-operator-overview",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/operator-overview.md#rabbitmq-cluster-kubernetes-operator",
+      "locator": "#rabbitmq-cluster-kubernetes-operator",
+      "authority_surface_id": "operator.rolling-upgrade",
+      "candidate_behavior_id": "candidate.operator.rolling-upgrade",
+      "capability_id": "operator.cluster",
+      "target_id": "definitive.operator.rolling-upgrade",
+      "claim_id": "definitive.operator.rolling-upgrade.claim",
+      "surface_ids": [
+        "migration-evolution-deprecation",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:4fd7459bc88822e9cb028b09c569a4bd5329b10bf3c9c1cffb2a6c279b34ee9c",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d5311b55df339af1032ca249417a6dc7b58f529aac79152f1266df83610ce586",
+      "context_start": 0,
+      "context_end": 7216,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:6205a5273599cc9c9737b7d01c08ec735ab34c2c0d527d9f79058c2a6247dc76",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.operator.topology-reconciliation.rabbitmq-operator-overview",
+      "source_id": "rabbitmq-operator-overview",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/operator-overview.md#rabbitmq-messaging-topology-operator",
+      "locator": "#rabbitmq-messaging-topology-operator",
+      "authority_surface_id": "operator.topology",
+      "candidate_behavior_id": "candidate.operator.topology-reconciliation",
+      "capability_id": "operator.topology",
+      "target_id": "definitive.operator.topology-reconciliation",
+      "claim_id": "definitive.operator.topology-reconciliation.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:8c0f9d6d572ec341a181fbf637efec91882bc2dad988afea41447fe86f3fd6d8",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:dd8fb023eb3b5b9df2e7c5665f59f63576ef74e907249ad5081844e0b15e00b0",
+      "context_start": 752,
+      "context_end": 7216,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:1e1d61f599fd5adb54ebbf492d1c1d8597993d422b15d6d17ed92aab65358bf3",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.operator.topology-rejection.rabbitmq-operator-overview",
+      "source_id": "rabbitmq-operator-overview",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/operator-overview.md#limitations",
+      "locator": "#limitations",
+      "authority_surface_id": "operator.topology-limitations",
+      "candidate_behavior_id": "candidate.operator.topology-rejection",
+      "capability_id": "operator.topology",
+      "target_id": "definitive.operator.topology-rejection",
+      "claim_id": "definitive.operator.topology-rejection.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:c50be1c6af8937902879364314a97648d316f2721bd48fa96c8f6eb0d41169ae",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d5311b55df339af1032ca249417a6dc7b58f529aac79152f1266df83610ce586",
+      "context_start": 0,
+      "context_end": 7216,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

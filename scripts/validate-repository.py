@@ -100,6 +100,11 @@ def main() -> int:
         fail(errors, "RabbitMQ depth parity uses an unexpected FE reference commit")
     if parity["reference"]["source_summary"] != {"satisfied": 1, "partial": 17, "missing": 0}:
         fail(errors, "FE reference status must remain 1/18 satisfied and incomplete")
+    locator_reference = load(ROOT / "parity/frontend-depth-reference.yaml")["authority_extraction_reference"]
+    if locator_reference["source_commit"] != "cabf687bab769b17928d950acc416f3f77eb4ca3":
+        fail(errors, "RabbitMQ Authority locator audit uses an unexpected FE reference commit")
+    if locator_reference["body_storage"] != "digest-and-locator-context-digest-only" or locator_reference["human_reviewed_surfaces"] != 0:
+        fail(errors, "RabbitMQ Authority locator copyright/review boundary mismatch")
     if not (ROOT / skill["router"]["path"]).exists():
         fail(errors, "router path missing")
     expected_lock_digest = sha(ROOT / "sources.lock.yaml")

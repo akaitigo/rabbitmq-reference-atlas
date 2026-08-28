@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-confirms",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md",
+  "locked_source_digest": "sha256:861abccf819fddcdaddd661255914d867d6ed511a9ff19311bfef73d0907b127",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:861abccf819fddcdaddd661255914d867d6ed511a9ff19311bfef73d0907b127",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 31197,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.delivery.consumer-ack.rabbitmq-4.3-confirms",
+      "source_id": "rabbitmq-4.3-confirms",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md#consumer-delivery-acknowledgements",
+      "locator": "#consumer-delivery-acknowledgements",
+      "authority_surface_id": "delivery.consumer-ack",
+      "candidate_behavior_id": "candidate.delivery.consumer-ack",
+      "capability_id": "delivery.acknowledgement",
+      "target_id": "definitive.delivery.consumer-ack",
+      "claim_id": "definitive.delivery.consumer-ack.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:2d2f5ac1a775b78c17afc1658b3c23f632dcd6e4a967e6f9748eb7323aa36b65",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:22dc9157d70e44b1088683afb39c874a4b6b3bf284b2c2a5e3187a6bbc9bd368",
+      "context_start": 304,
+      "context_end": 31197,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:2a199748c682db0fccf7db2f6eacb117a7995ddfd2b245abe3b0d75408479c6f",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.delivery.negative-ack.rabbitmq-4.3-confirms",
+      "source_id": "rabbitmq-4.3-confirms",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md#negative-acknowledgement-and-requeuing-of-deliveries",
+      "locator": "#negative-acknowledgement-and-requeuing-of-deliveries",
+      "authority_surface_id": "delivery.negative-ack",
+      "candidate_behavior_id": "candidate.delivery.negative-ack",
+      "capability_id": "delivery.acknowledgement",
+      "target_id": "definitive.delivery.negative-ack",
+      "claim_id": "definitive.delivery.negative-ack.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:5700b3cd86ba1341414d29e5dc4ea741256724c3ff136447274686af00693169",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:8b8c591532f5dfb23ae1a5bf8d4d36dc2dcfab48bab0d171362d999ed85741c8",
+      "context_start": 9034,
+      "context_end": 31197,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:6e298cacd83954f37dfa39bed275fb9fc55eef782eb6227ce283ff71220456a7",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.delivery.prefetch.rabbitmq-4.3-confirms",
+      "source_id": "rabbitmq-4.3-confirms",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md#channel-prefetch-setting-qos",
+      "locator": "#channel-prefetch-setting-qos",
+      "authority_surface_id": "delivery.prefetch",
+      "candidate_behavior_id": "candidate.delivery.prefetch",
+      "capability_id": "delivery.flow-control",
+      "target_id": "definitive.delivery.prefetch",
+      "claim_id": "definitive.delivery.prefetch.claim",
+      "surface_ids": [
+        "performance-capacity-cost",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:3f444082e97b8f88dc8799ed3f5da8dac6e40f705e4f600b2cbe6e09280a1509",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:11a9fe05ca8f97d428e75d9cb2d0460d0f8edf5db36dba7a0f0dcbea75bfa304",
+      "context_start": 14769,
+      "context_end": 31197,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:6820b57b363a03b58cb745f6477eb21c8896acc67ccfa5604c7d91906bf41e88",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.delivery.publisher-confirms.rabbitmq-4.3-confirms",
+      "source_id": "rabbitmq-4.3-confirms",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md#publisher-confirms",
+      "locator": "#publisher-confirms",
+      "authority_surface_id": "delivery.publisher-confirms",
+      "candidate_behavior_id": "candidate.delivery.publisher-confirms",
+      "capability_id": "delivery.publisher-confirm",
+      "target_id": "definitive.delivery.publisher-confirms",
+      "claim_id": "definitive.delivery.publisher-confirms.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:32e93da7a1c220f7199b85b13eced7d1caca1ad029d725454374903a12a49149",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:a49df97c3c36d384d6d31bc44136aa4c2aea352d26eab2130ab7fa1cc30876e4",
+      "context_start": 20931,
+      "context_end": 31197,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

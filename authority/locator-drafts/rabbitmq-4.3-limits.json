@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-limits",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md",
+  "locked_source_digest": "sha256:8f06c53e089b3c72a9a12e81fc4ad0ce3711422bf7c46584ca75ea5dcc1d61c3",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:8f06c53e089b3c72a9a12e81fc4ad0ce3711422bf7c46584ca75ea5dcc1d61c3",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 8679,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.limit.connections-channels.rabbitmq-4.3-limits",
+      "source_id": "rabbitmq-4.3-limits",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md#per-node-limits",
+      "locator": "#per-node-limits",
+      "authority_surface_id": "limit.connections-channels",
+      "candidate_behavior_id": "candidate.limit.connections-channels",
+      "capability_id": "capacity.limits",
+      "target_id": "definitive.limit.connections-channels",
+      "claim_id": "definitive.limit.connections-channels.claim",
+      "surface_ids": [
+        "performance-capacity-cost",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:ec39be0cb81631cdc54f635e50b0b6c2617d189fab78673bcd02980cc9d96a1b",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:972bb5846ca0cf8ec15d214cee37f2f71f33d16848ef965db9a88d59732d178a",
+      "context_start": 1405,
+      "context_end": 8679,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:310bf6043a09f551eab785eac3a30b58f38712b38e155f6998ffa6c5cbb8c788",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.limit.message-size.rabbitmq-4.3-limits",
+      "source_id": "rabbitmq-4.3-limits",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md#message-size",
+      "locator": "#message-size",
+      "authority_surface_id": "limit.message-size",
+      "candidate_behavior_id": "candidate.limit.message-size",
+      "capability_id": "capacity.limits",
+      "target_id": "definitive.limit.message-size",
+      "claim_id": "definitive.limit.message-size.claim",
+      "surface_ids": [
+        "performance-capacity-cost",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:4b583ca8b5b694e2d045c47c0da4c1a699fa2088395b14a715b27fb69e69168a",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.limit.queues.rabbitmq-4.3-limits",
+      "source_id": "rabbitmq-4.3-limits",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md#per-virtual-host-limits",
+      "locator": "#per-virtual-host-limits",
+      "authority_surface_id": "limit.queues",
+      "candidate_behavior_id": "candidate.limit.queues",
+      "capability_id": "capacity.limits",
+      "target_id": "definitive.limit.queues",
+      "claim_id": "definitive.limit.queues.claim",
+      "surface_ids": [
+        "performance-capacity-cost",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:3f0478600ce1c232a392b2d2f270b2f2088f18b66345e0ef459210eb792bf493",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:8f06c53e089b3c72a9a12e81fc4ad0ce3711422bf7c46584ca75ea5dcc1d61c3",
+      "context_start": 0,
+      "context_end": 8679,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:a27c79d8663ef7475a7b6121023e834b595c818f8d8db45dfa71462a8a2e22c6",
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

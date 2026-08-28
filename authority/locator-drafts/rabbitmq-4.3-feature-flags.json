@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-feature-flags",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/feature-flags/index.md",
+  "locked_source_digest": "sha256:ed43e6c64fb3076623ced45d42c4bf0de9786cad356f51d01013a3cd488fc62a",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:ed43e6c64fb3076623ced45d42c4bf0de9786cad356f51d01013a3cd488fc62a",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/feature-flags/index.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 36149,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.feature-flags.compatibility.rabbitmq-4.3-feature-flags",
+      "source_id": "rabbitmq-4.3-feature-flags",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/feature-flags/index.md#feature-flags-and-rabbitmq-versions",
+      "locator": "#feature-flags-and-rabbitmq-versions",
+      "authority_surface_id": "feature-flags.compatibility",
+      "candidate_behavior_id": "candidate.feature-flags.compatibility",
+      "capability_id": "migration.feature-flags",
+      "target_id": "definitive.feature-flags.compatibility",
+      "claim_id": "definitive.feature-flags.compatibility.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:7827a4acc4063ebd0daa81d029bd2d7bd4dcc599d72358b9c8f791adc03b7237",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:ff5b3fe57fd16083bfdd67a88b2d3b9d80e200ea6009fa90e52d7e4629fffdcc",
+      "context_start": 457,
+      "context_end": 36149,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:09146596cf9e1d673b1f9c0021d70b63eb69524438cd2dfe51800a24aa2a2507",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.feature-flags.enablement.rabbitmq-4.3-feature-flags",
+      "source_id": "rabbitmq-4.3-feature-flags",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/feature-flags/index.md#how-to-enable-feature-flags",
+      "locator": "#how-to-enable-feature-flags",
+      "authority_surface_id": "feature-flags.enablement",
+      "candidate_behavior_id": "candidate.feature-flags.enablement",
+      "capability_id": "migration.feature-flags",
+      "target_id": "definitive.feature-flags.enablement",
+      "claim_id": "definitive.feature-flags.enablement.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:8412478e8ad5a1e55fa30e6e0a1d085db3d000ef3eeae374da755def7d2deabf",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:3e235c68c4a20ea3b16a3963d012bf1212ea2b53c9aed693fb9cb2c5c0374815",
+      "context_start": 5960,
+      "context_end": 36149,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.feature-flags.irreversibility.rabbitmq-4.3-feature-flags",
+      "source_id": "rabbitmq-4.3-feature-flags",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/feature-flags/index.md#feature-flag-states",
+      "locator": "#feature-flag-states",
+      "authority_surface_id": "feature-flags.irreversibility",
+      "candidate_behavior_id": "candidate.feature-flags.irreversibility",
+      "capability_id": "migration.feature-flags",
+      "target_id": "definitive.feature-flags.irreversibility",
+      "claim_id": "definitive.feature-flags.irreversibility.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:0abab1b4d7b6d04ae7a437ae5a46c24660840242e297ff28036fa230fdfa7ffb",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-monitoring",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/monitoring/index.md",
+  "locked_source_digest": "sha256:f8ab65c35c95b92aad8d5cc0bdb94560136849a3dfacfd2b827475e7c73ff73d",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:f8ab65c35c95b92aad8d5cc0bdb94560136849a3dfacfd2b827475e7c73ff73d",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/monitoring/index.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 40225,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.monitoring.correlation.rabbitmq-4.3-monitoring",
+      "source_id": "rabbitmq-4.3-monitoring",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/monitoring/index.md#what-to-monitor",
+      "locator": "#what-to-monitor",
+      "authority_surface_id": "monitoring.correlation",
+      "candidate_behavior_id": "candidate.monitoring.correlation",
+      "capability_id": "observability.monitoring",
+      "target_id": "definitive.monitoring.correlation",
+      "claim_id": "definitive.monitoring.correlation.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:24a3a0c6dd3d252c8012ec9f5af78bcccec1a78cff620e03bb776c5fb3e21825",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.monitoring.logs.rabbitmq-4.3-monitoring",
+      "source_id": "rabbitmq-4.3-monitoring",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/monitoring/index.md#logs",
+      "locator": "#logs",
+      "authority_surface_id": "monitoring.logs",
+      "candidate_behavior_id": "candidate.monitoring.logs",
+      "capability_id": "observability.monitoring",
+      "target_id": "definitive.monitoring.logs",
+      "claim_id": "definitive.monitoring.logs.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:a133eca0a8ec1712d805c82237f655b340db9a5f6c8abf491ebd20a8df3f6830",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.monitoring.metrics.rabbitmq-4.3-monitoring",
+      "source_id": "rabbitmq-4.3-monitoring",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/monitoring/index.md#metrics",
+      "locator": "#metrics",
+      "authority_surface_id": "monitoring.metrics",
+      "candidate_behavior_id": "candidate.monitoring.metrics",
+      "capability_id": "observability.monitoring",
+      "target_id": "definitive.monitoring.metrics",
+      "claim_id": "definitive.monitoring.metrics.claim",
+      "surface_ids": [
+        "operations-observability",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:4420655464069a38d0b06f13c9f2ba5cacfcacf2b480d498cdc72e3747b18dac",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.monitoring.node-health.rabbitmq-4.3-monitoring",
+      "source_id": "rabbitmq-4.3-monitoring",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/monitoring/index.md#health-checks",
+      "locator": "#health-checks",
+      "authority_surface_id": "monitoring.node-health",
+      "candidate_behavior_id": "candidate.monitoring.node-health",
+      "capability_id": "observability.monitoring",
+      "target_id": "definitive.monitoring.node-health",
+      "claim_id": "definitive.monitoring.node-health.claim",
+      "surface_ids": [
+        "operations-observability",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:c4f021d3880ef568db4e092f16ed5cfdc914e4f075a0071275fffc2dd0262a71",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:f05f1656e47811a293f7fa3f3193d9eb9657f4bf89e0e735422d69d8e7315d55",
+      "context_start": 19416,
+      "context_end": 40225,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

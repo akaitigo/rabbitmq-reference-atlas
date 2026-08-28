@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-production-checklist",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/production-checklist.md",
+  "locked_source_digest": "sha256:8f944214046052ee6a5134f53715f4cd6207d8390c5946c7b245e2c45abe2c9e",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:8f944214046052ee6a5134f53715f4cd6207d8390c5946c7b245e2c45abe2c9e",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/production-checklist.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 27407,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.production.data-safety.rabbitmq-4.3-production-checklist",
+      "source_id": "rabbitmq-4.3-production-checklist",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/production-checklist.md#data-safety",
+      "locator": "#data-safety",
+      "authority_surface_id": "production.data-safety",
+      "candidate_behavior_id": "candidate.production.data-safety",
+      "capability_id": "system.reference",
+      "target_id": "definitive.production.data-safety",
+      "claim_id": "definitive.production.data-safety.claim",
+      "surface_ids": [
+        "architecture-design",
+        "failure-recovery"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:0427030778f0fe4db2937fc1e045d4b3d20609695eef6365f3c302bc0f96c8e9",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.production.monitoring.rabbitmq-4.3-production-checklist",
+      "source_id": "rabbitmq-4.3-production-checklist",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/production-checklist.md#monitoring",
+      "locator": "#monitoring",
+      "authority_surface_id": "production.monitoring",
+      "candidate_behavior_id": "candidate.production.monitoring",
+      "capability_id": "system.reference",
+      "target_id": "definitive.production.monitoring",
+      "claim_id": "definitive.production.monitoring.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:25a57f645279af57b708dc5b45757f7f90c4cee9d4539ffa3f0df7028db952a7",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:3e235d0c9dedcfadcb8d234694332708deb15b60ca8f0bb7f714f01f194a7af7",
+      "context_start": 5263,
+      "context_end": 27407,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.production.resource-planning.rabbitmq-4.3-production-checklist",
+      "source_id": "rabbitmq-4.3-production-checklist",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/production-checklist.md#resource-limits",
+      "locator": "#resource-limits",
+      "authority_surface_id": "production.resource-planning",
+      "candidate_behavior_id": "candidate.production.resource-planning",
+      "capability_id": "system.reference",
+      "target_id": "definitive.production.resource-planning",
+      "claim_id": "definitive.production.resource-planning.claim",
+      "surface_ids": [
+        "architecture-design",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:6054fa388a6b2ac352a3c86489f1d2abbfdc03004232606785b64f437dbe778a",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.production.security.rabbitmq-4.3-production-checklist",
+      "source_id": "rabbitmq-4.3-production-checklist",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/production-checklist.md#security",
+      "locator": "#security",
+      "authority_surface_id": "production.security",
+      "candidate_behavior_id": "candidate.production.security",
+      "capability_id": "system.reference",
+      "target_id": "definitive.production.security",
+      "claim_id": "definitive.production.security.claim",
+      "surface_ids": [
+        "architecture-design",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:b94b1c219c634a178d22e3116566f861d4b619f9d57121b12b89528103fb35c0",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:1694720449860b5b58241dd3432bf34e06a15fb16f1c9fceb9b8041a597db414",
+      "context_start": 10376,
+      "context_end": 27407,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

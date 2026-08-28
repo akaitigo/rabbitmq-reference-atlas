@@ -8,6 +8,22 @@ source_summary:
   satisfied: 1
   partial: 17
   missing: 0
+authority_extraction_reference:
+  source_commit: cabf687bab769b17928d950acc416f3f77eb4ca3
+  body_storage: digest-and-locator-context-digest-only
+  human_reviewed_surfaces: 0
+  authority_text_surfaces_exhaustive: false
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:699cd8ccf96e8cbfbed3cc176c29bb8a8908e43b7551e6e9fb8aec89d9434f6a
+    - path: authority/extraction.snapshot.json
+      digest: sha256:4708796bd7c05c3ae750c87a9d01291f66ea2a7cc1f54731172638bfffd9a629
+    - path: scripts/lib/authority-extraction.ts
+      digest: sha256:d0efb14e943384b363f6596cff32371368ad69d4aa319de4c7f5ecf189cb8c7c
+    - path: scripts/extract-authority-surfaces.ts
+      digest: sha256:b17bf28e55dd0d778a2b697f3242631315e18e3a0f717431c97920590a7e98b2
+    - path: scripts/verify-authority-extraction.ts
+      digest: sha256:420acbe08bff848786c4a28febb4443c671afdd53ff1643413317a9ce175d9aa
 denominator_policy:
   source: authority-derived-subject-surface-inventory
   transplant_absolute_counts: false

@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-ldap",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ldap.md",
+  "locked_source_digest": "sha256:d98bf6830d5ab29c2a3c0f39a5a79758f433b010724430941115b484f6ea8ae4",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:d98bf6830d5ab29c2a3c0f39a5a79758f433b010724430941115b484f6ea8ae4",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ldap.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 43346,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.ldap.authentication.rabbitmq-4.3-ldap",
+      "source_id": "rabbitmq-4.3-ldap",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ldap.md#authentication",
+      "locator": "#authentication",
+      "authority_surface_id": "ldap.authentication",
+      "candidate_behavior_id": "candidate.ldap.authentication",
+      "capability_id": "security.ldap",
+      "target_id": "definitive.ldap.authentication",
+      "claim_id": "definitive.ldap.authentication.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:1c915f9d70bacdf90e75b47d155978a4a31cb561a4dcac8d8721b284cbd8d2c9",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.ldap.authorization.rabbitmq-4.3-ldap",
+      "source_id": "rabbitmq-4.3-ldap",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ldap.md#authorisation",
+      "locator": "#authorisation",
+      "authority_surface_id": "ldap.authorization",
+      "candidate_behavior_id": "candidate.ldap.authorization",
+      "capability_id": "security.ldap",
+      "target_id": "definitive.ldap.authorization",
+      "claim_id": "definitive.ldap.authorization.claim",
+      "surface_ids": [
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:8048226a31938330cffab0a701d389536cba0fa68e2075d4a67801124f7b1e99",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:049f3c41c64370d533e19ac499b66d408d1b1181dccf11b70523156ee2d3c6df",
+      "context_start": 20956,
+      "context_end": 43346,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.ldap.outage.rabbitmq-4.3-ldap",
+      "source_id": "rabbitmq-4.3-ldap",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ldap.md#troubleshooting",
+      "locator": "#troubleshooting",
+      "authority_surface_id": "ldap.outage",
+      "candidate_behavior_id": "candidate.ldap.outage",
+      "capability_id": "security.ldap",
+      "target_id": "definitive.ldap.outage",
+      "claim_id": "definitive.ldap.outage.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:3256b338f4ac48f6afa9092b02f9e215a40dc450d2910d3c08078d7d8c4a982d",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:55f5182ed3623134fc297243fd500a493964a94a336fc3c2b4df1cb970157f35",
+      "context_start": 38011,
+      "context_end": 43346,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.ldap.tls.rabbitmq-4.3-ldap",
+      "source_id": "rabbitmq-4.3-ldap",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ldap.md#using-tls",
+      "locator": "#using-tls",
+      "authority_surface_id": "ldap.tls",
+      "candidate_behavior_id": "candidate.ldap.tls",
+      "capability_id": "security.ldap",
+      "target_id": "definitive.ldap.tls",
+      "claim_id": "definitive.ldap.tls.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:7fe79978dedbb4662fcd587560e2eee97f39ed139c0e16f6f529dac8a10046d1",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

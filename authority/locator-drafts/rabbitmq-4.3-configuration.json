@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-configuration",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/configure.md",
+  "locked_source_digest": "sha256:bf0e6f05185356bd4491fd04a1fbee8e82622b80b80b08565033a10c911426bf",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:bf0e6f05185356bd4491fd04a1fbee8e82622b80b80b08565033a10c911426bf",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/configure.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 83709,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.configuration.advanced-config.rabbitmq-4.3-configuration",
+      "source_id": "rabbitmq-4.3-configuration",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/configure.md#the-advanced-config-file",
+      "locator": "#the-advanced-config-file",
+      "authority_surface_id": "configuration.advanced-config",
+      "candidate_behavior_id": "candidate.configuration.advanced-config",
+      "capability_id": "configuration.files",
+      "target_id": "definitive.configuration.advanced-config",
+      "claim_id": "definitive.configuration.advanced-config.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:08cb409cd9c672327f9c768660a588f2b1a4899da6a9b4e6b19ee1381d6aedd2",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.configuration.environment.rabbitmq-4.3-configuration",
+      "source_id": "rabbitmq-4.3-configuration",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/configure.md#customise-rabbitmq-environment-variables",
+      "locator": "#customise-rabbitmq-environment-variables",
+      "authority_surface_id": "configuration.environment",
+      "candidate_behavior_id": "candidate.configuration.environment",
+      "capability_id": "configuration.environment",
+      "target_id": "definitive.configuration.environment",
+      "claim_id": "definitive.configuration.environment.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:71d0ecf90df33447066c967c4ed8d26c11caf2d3a4fde130efca153619728db1",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.configuration.rabbitmq-conf.rabbitmq-4.3-configuration",
+      "source_id": "rabbitmq-4.3-configuration",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/configure.md#the-main-configuration-file-rabbitmqconf",
+      "locator": "#the-main-configuration-file-rabbitmqconf",
+      "authority_surface_id": "configuration.rabbitmq-conf",
+      "candidate_behavior_id": "candidate.configuration.rabbitmq-conf",
+      "capability_id": "configuration.files",
+      "target_id": "definitive.configuration.rabbitmq-conf",
+      "claim_id": "definitive.configuration.rabbitmq-conf.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:9dcebeaf7e141d4d59c2d4cb3b3220868d02a4978f5e6076ac5dccad8d8de24b",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:f31cfa16b0a30518114ad725c16ec021d9792f88bfd4d99d3282e28dc05435fd",
+      "context_start": 7389,
+      "context_end": 44253,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:4f761cbcac6632f3d982d94542c7c630ba3ea996758680e3fab891316d4a964f",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.configuration.reload-boundary.rabbitmq-4.3-configuration",
+      "source_id": "rabbitmq-4.3-configuration",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/configure.md#configuration-file-changes-and-node-restarts",
+      "locator": "#configuration-file-changes-and-node-restarts",
+      "authority_surface_id": "configuration.reload-boundary",
+      "candidate_behavior_id": "candidate.configuration.reload-boundary",
+      "capability_id": "configuration.files",
+      "target_id": "definitive.configuration.reload-boundary",
+      "claim_id": "definitive.configuration.reload-boundary.claim",
+      "surface_ids": [
+        "migration-evolution-deprecation",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:05b1c879706dcff88fad06550d24982dee91097f725accbc7f6afe013f02a48d",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

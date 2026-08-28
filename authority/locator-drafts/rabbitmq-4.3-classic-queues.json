@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-classic-queues",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md",
+  "locked_source_digest": "sha256:084b58f037d5285d78a0c6665ddec2602c962b542d1bb273ea940e48821f9283",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:084b58f037d5285d78a0c6665ddec2602c962b542d1bb273ea940e48821f9283",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 10435,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.classic-queue.durability.rabbitmq-4.3-classic-queues",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md#durability",
+      "locator": "#durability",
+      "authority_surface_id": "classic-queue.durability",
+      "candidate_behavior_id": "candidate.classic-queue.durability",
+      "capability_id": "queue.classic",
+      "target_id": "definitive.classic-queue.durability",
+      "claim_id": "definitive.classic-queue.durability.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:121646d3a189d5c753f987621d1dcf867d8151297df258607ca527380383d52d",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.classic-queue.exclusive-auto-delete.rabbitmq-4.3-classic-queues",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md#exclusive-and-auto-delete-queues",
+      "locator": "#exclusive-and-auto-delete-queues",
+      "authority_surface_id": "classic-queue.exclusive-auto-delete",
+      "candidate_behavior_id": "candidate.classic-queue.exclusive-auto-delete",
+      "capability_id": "queue.classic",
+      "target_id": "definitive.classic-queue.exclusive-auto-delete",
+      "claim_id": "definitive.classic-queue.exclusive-auto-delete.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:2e4111866817c4a811953976b5e24917bbf94ee1a51f24b172866ca462deafbc",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.classic-queue.overflow.rabbitmq-4.3-classic-queues",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md#queue-and-message-ttl",
+      "locator": "#queue-and-message-ttl",
+      "authority_surface_id": "classic-queue.overflow",
+      "candidate_behavior_id": "candidate.classic-queue.overflow",
+      "capability_id": "queue.classic",
+      "target_id": "definitive.classic-queue.overflow",
+      "claim_id": "definitive.classic-queue.overflow.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:7c09023a2140bae6199d406db5e31392a40e295e3cf22898ebe5f6d3ba245384",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.classic-queue.priority.rabbitmq-4.3-classic-queues",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md#priority-queues",
+      "locator": "#priority-queues",
+      "authority_surface_id": "classic-queue.priority",
+      "candidate_behavior_id": "candidate.classic-queue.priority",
+      "capability_id": "queue.classic",
+      "target_id": "definitive.classic-queue.priority",
+      "claim_id": "definitive.classic-queue.priority.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:f21a5ed97f57947524b4b602b1056fa71f66ad7760a94fdcf6592fa05ee4ae40",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

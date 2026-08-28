@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-consumers",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md",
+  "locked_source_digest": "sha256:48339d265f8081f413fe13fbc822aa1fdf80248bff28a8eb21593a0edf6bd07a",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:48339d265f8081f413fe13fbc822aa1fdf80248bff28a8eb21593a0edf6bd07a",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 29928,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.client.connection-recovery.rabbitmq-4.3-consumers",
+      "source_id": "rabbitmq-4.3-consumers",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md#connection-recovery",
+      "locator": "#connection-recovery",
+      "authority_surface_id": "consumer.connection-recovery",
+      "candidate_behavior_id": "candidate.client.connection-recovery",
+      "capability_id": "client.recovery",
+      "target_id": "definitive.client.connection-recovery",
+      "claim_id": "definitive.client.connection-recovery.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "failure-recovery"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:af4ebb34e756e8220c301834d73d11eb478c7e390efe3d9450cbd42284a3feb4",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:b0d0efdc3408d346d5153638e5f70018e11235cedcfcf73e395c31653d71da8f",
+      "context_start": 263,
+      "context_end": 29928,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.consumer.ack-timeout.rabbitmq-4.3-consumers",
+      "source_id": "rabbitmq-4.3-consumers",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md#delivery-acknowledgement-timeout",
+      "locator": "#delivery-acknowledgement-timeout",
+      "authority_surface_id": "consumer.ack-timeout",
+      "candidate_behavior_id": "candidate.consumer.ack-timeout",
+      "capability_id": "consumer.lifecycle",
+      "target_id": "definitive.consumer.ack-timeout",
+      "claim_id": "definitive.consumer.ack-timeout.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:8b0a66917ad766275ceacf9eef5976b7bdd96259000178e8c5d75cb1d44eb426",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:c89a122c7cb4493921ecb72058ecb669cad306040b699226ff040e2e2a16ee9e",
+      "context_start": 11451,
+      "context_end": 29928,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:75a57d925f4c0552b495cfa284b3ce6de06430cf44fa965af4a0e9cff9525aed",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.consumer.exclusive.rabbitmq-4.3-consumers",
+      "source_id": "rabbitmq-4.3-consumers",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md#exclusivity",
+      "locator": "#exclusivity",
+      "authority_surface_id": "consumer.exclusive",
+      "candidate_behavior_id": "candidate.consumer.exclusive",
+      "capability_id": "consumer.lifecycle",
+      "target_id": "definitive.consumer.exclusive",
+      "claim_id": "definitive.consumer.exclusive.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:18a6ea40bcadd19d5ba6650eab73abf880ace46a4c099e900a5dd2c4f7be9b7b",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:81f470a22d6594eb0a95ed981dee41687e5502db09ed409737c0de62c8276089",
+      "context_start": 14773,
+      "context_end": 29928,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.consumer.lifecycle.rabbitmq-4.3-consumers",
+      "source_id": "rabbitmq-4.3-consumers",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md#consumer-lifecycle",
+      "locator": "#consumer-lifecycle",
+      "authority_surface_id": "consumer.lifecycle",
+      "candidate_behavior_id": "candidate.consumer.lifecycle",
+      "capability_id": "consumer.lifecycle",
+      "target_id": "definitive.consumer.lifecycle",
+      "claim_id": "definitive.consumer.lifecycle.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:b47dfa0ff7881e13508cbf59e352eaf7f7f00683ddc338909b4d157e0c8f27d4",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:48339d265f8081f413fe13fbc822aa1fdf80248bff28a8eb21593a0edf6bd07a",
+      "context_start": 0,
+      "context_end": 29928,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.consumer.priority.rabbitmq-4.3-consumers",
+      "source_id": "rabbitmq-4.3-consumers",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md#consumer-priority",
+      "locator": "#consumer-priority",
+      "authority_surface_id": "consumer.priority",
+      "candidate_behavior_id": "candidate.consumer.priority",
+      "capability_id": "consumer.lifecycle",
+      "target_id": "definitive.consumer.priority",
+      "claim_id": "definitive.consumer.priority.claim",
+      "surface_ids": [
+        "decision-comparison",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:76caeb6fe52c4270077e471cc3a887093ef00e1f8b5aaf668c9da496c05a11fb",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

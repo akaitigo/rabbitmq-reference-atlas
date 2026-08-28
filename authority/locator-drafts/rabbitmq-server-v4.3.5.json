@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-server-v4.3.5",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.5/release-notes/4.3.5.md",
+  "locked_source_digest": "sha256:31bc3e0b69ccb97d0c266ba90db5055337772ffb7d0108d7ffcd71803c4ec334",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:31bc3e0b69ccb97d0c266ba90db5055337772ffb7d0108d7ffcd71803c4ec334",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.5/release-notes/4.3.5.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 11561,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": []
+}

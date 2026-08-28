@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-queues",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md",
+  "locked_source_digest": "sha256:70a81800b3df6e9e0295391a2fae37f67421af5b097d112e06a3ac9ba3087025",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:70a81800b3df6e9e0295391a2fae37f67421af5b097d112e06a3ac9ba3087025",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 29219,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.queue.declaration-equivalence.rabbitmq-4.3-queues",
+      "source_id": "rabbitmq-4.3-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md#declaration-and-property-equivalence",
+      "locator": "#declaration-and-property-equivalence",
+      "authority_surface_id": "queue.declaration-equivalence",
+      "candidate_behavior_id": "candidate.queue.declaration-equivalence",
+      "capability_id": "queue.lifecycle",
+      "target_id": "definitive.queue.declaration-equivalence",
+      "claim_id": "definitive.queue.declaration-equivalence.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:d251a371d0da416ac96a2c7d817b07bdd96209805dffb362777681680b3ea6eb",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d2e56558f57667f396875e32b7fadbfedccc30cc56888e9b0fd28a2681317d36",
+      "context_start": 2249,
+      "context_end": 29219,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:d3cf04663feef4909bb9c7ce719f8bd26631690823357683f026af758bb04624",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.queue.durability.rabbitmq-4.3-queues",
+      "source_id": "rabbitmq-4.3-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md#durability",
+      "locator": "#durability",
+      "authority_surface_id": "queue.durability",
+      "candidate_behavior_id": "candidate.queue.durability",
+      "capability_id": "queue.lifecycle",
+      "target_id": "definitive.queue.durability",
+      "claim_id": "definitive.queue.durability.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:8951e3b09185cab3e06882cc380be2101ccd2f2ca747c3fafb49289b7484feb5",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:5996ec74c663cd9e8d4f49d8c0c736876ff9ff8904e13ab8dcb6ed716263ca5c",
+      "context_start": 8975,
+      "context_end": 29219,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.queue.exclusive.rabbitmq-4.3-queues",
+      "source_id": "rabbitmq-4.3-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md#exclusive-client-connection-specific-queues",
+      "locator": "#exclusive-client-connection-specific-queues",
+      "authority_surface_id": "queue.exclusive",
+      "candidate_behavior_id": "candidate.queue.exclusive",
+      "capability_id": "queue.lifecycle",
+      "target_id": "definitive.queue.exclusive",
+      "claim_id": "definitive.queue.exclusive.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:761a622cf0cca70cefe5366d608e37cd6a6c1aae6ba99263d91612f1c2c2d5b5",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d606b4c00fee1a384846e54aee1018c7f5e5e2bb133e2b55e98272e4a82941c0",
+      "context_start": 14007,
+      "context_end": 29219,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:5bb79cfc20661f1360c4149b06e29cbf8c2972978c518aeb5f911767db474065",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.queue.server-named.rabbitmq-4.3-queues",
+      "source_id": "rabbitmq-4.3-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md#server-named-queues",
+      "locator": "#server-named-queues",
+      "authority_surface_id": "queue.server-named",
+      "candidate_behavior_id": "candidate.queue.server-named",
+      "capability_id": "queue.lifecycle",
+      "target_id": "definitive.queue.server-named",
+      "claim_id": "definitive.queue.server-named.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:9b30aee761bf747d55b84a0d92ebad53f2b512d46ff04b0f5d10a5b824aebd43",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:0e55e75cf952236efc5d21c84c67132c5f1608b620ea2f272f1f02347918afdb",
+      "context_start": 59,
+      "context_end": 29219,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.queue.temporary-race.rabbitmq-4.3-queues",
+      "source_id": "rabbitmq-4.3-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md#temporary-queues",
+      "locator": "#temporary-queues",
+      "authority_surface_id": "queue.temporary-race",
+      "candidate_behavior_id": "candidate.queue.temporary-race",
+      "capability_id": "queue.lifecycle",
+      "target_id": "definitive.queue.temporary-race",
+      "claim_id": "definitive.queue.temporary-race.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "failure-recovery"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:80af48cdadd0a1483bbbf4b809ec520d92a96e5d1f433c3563561362c9ad7ef4",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:fd09c5250c7d5ce0b5ced0cb0b6b6c17aa326bb79b201668d7ed0278158d1e9d",
+      "context_start": 11783,
+      "context_end": 29219,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

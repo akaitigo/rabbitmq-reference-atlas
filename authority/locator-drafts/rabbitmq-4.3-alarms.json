@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-alarms",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/alarms.md",
+  "locked_source_digest": "sha256:f8dbb38f401201d31da0f6e7151c9519747c44bd4516ed0d2da05e228366a095",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:f8dbb38f401201d31da0f6e7151c9519747c44bd4516ed0d2da05e228366a095",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/alarms.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 4585,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.alarm.cluster-wide.rabbitmq-4.3-alarms",
+      "source_id": "rabbitmq-4.3-alarms",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/alarms.md#alarms-in-clusters",
+      "locator": "#alarms-in-clusters",
+      "authority_surface_id": "alarm.cluster-wide",
+      "candidate_behavior_id": "candidate.alarm.cluster-wide",
+      "capability_id": "capacity.alarms",
+      "target_id": "definitive.alarm.cluster-wide",
+      "claim_id": "definitive.alarm.cluster-wide.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "foundations-mechanics"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:0a6ed84b8d0a18f7ab1f56a6c2cc0043a907393186fc3ae5d0df1827fc1accea",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:f8dbb38f401201d31da0f6e7151c9519747c44bd4516ed0d2da05e228366a095",
+      "context_start": 0,
+      "context_end": 4585,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:767f88e415313e7936f4b07ea16ce75082e5f4c4fee55d2206a1de086104f7d6",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.alarm.disk.rabbitmq-4.3-alarms",
+      "source_id": "rabbitmq-4.3-alarms",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/alarms.md#disk-alarms",
+      "locator": "#disk-alarms",
+      "authority_surface_id": "alarm.disk",
+      "candidate_behavior_id": "candidate.alarm.disk",
+      "capability_id": "capacity.alarms",
+      "target_id": "definitive.alarm.disk",
+      "claim_id": "definitive.alarm.disk.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:20915840faed0ddface80cf54e356cd16ec4a91d5641afcca8eba02944732d82",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.alarm.memory.rabbitmq-4.3-alarms",
+      "source_id": "rabbitmq-4.3-alarms",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/alarms.md#memory-alarms",
+      "locator": "#memory-alarms",
+      "authority_surface_id": "alarm.memory",
+      "candidate_behavior_id": "candidate.alarm.memory",
+      "capability_id": "capacity.alarms",
+      "target_id": "definitive.alarm.memory",
+      "claim_id": "definitive.alarm.memory.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:9642825b24072f7bd81ebe73a6597672fe5bedc80fd062eea05636e71ab1b300",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.alarm.recovery.rabbitmq-4.3-alarms",
+      "source_id": "rabbitmq-4.3-alarms",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/alarms.md#resource-alarm-effects",
+      "locator": "#resource-alarm-effects",
+      "authority_surface_id": "alarm.recovery",
+      "candidate_behavior_id": "candidate.alarm.recovery",
+      "capability_id": "capacity.alarms",
+      "target_id": "definitive.alarm.recovery",
+      "claim_id": "definitive.alarm.recovery.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:3daae487956d625355d3ca00503eac5cee6c82fcec07a9fba46a65f3fad6012f",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

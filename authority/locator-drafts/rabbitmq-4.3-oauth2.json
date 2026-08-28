@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-oauth2",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/oauth2.md",
+  "locked_source_digest": "sha256:36c383bd323acf9df8d86069e6d62ba568dd5ddb463aa640d5661096b4525a40",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:36c383bd323acf9df8d86069e6d62ba568dd5ddb463aa640d5661096b4525a40",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/oauth2.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 66481,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.oauth2.jwt-validation.rabbitmq-4.3-oauth2",
+      "source_id": "rabbitmq-4.3-oauth2",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/oauth2.md#how-it-works",
+      "locator": "#how-it-works",
+      "authority_surface_id": "oauth2.jwt-validation",
+      "candidate_behavior_id": "candidate.oauth2.jwt-validation",
+      "capability_id": "security.oauth2",
+      "target_id": "definitive.oauth2.jwt-validation",
+      "claim_id": "definitive.oauth2.jwt-validation.claim",
+      "surface_ids": [
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:c6f0adb023857af833a64dcb5eb2ce19047683855aaced7ff84a9ba4af1b52a9",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:b920f6abbb34d81edc8d15dca65e858b811246c4b4fe09cfe0a372abf992d679",
+      "context_start": 7506,
+      "context_end": 44370,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.oauth2.key-rotation.rabbitmq-4.3-oauth2",
+      "source_id": "rabbitmq-4.3-oauth2",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/oauth2.md#jwks",
+      "locator": "#jwks",
+      "authority_surface_id": "oauth2.key-rotation",
+      "candidate_behavior_id": "candidate.oauth2.key-rotation",
+      "capability_id": "security.oauth2",
+      "target_id": "definitive.oauth2.key-rotation",
+      "claim_id": "definitive.oauth2.key-rotation.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:218c940ccdbe669eda472cde0aec23b3f9e52af8aea4c50079378ad7c7231f25",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.oauth2.multi-resource-server.rabbitmq-4.3-oauth2",
+      "source_id": "rabbitmq-4.3-oauth2",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/oauth2.md#multiple-resource-servers",
+      "locator": "#multiple-resource-servers",
+      "authority_surface_id": "oauth2.multi-resource-server",
+      "candidate_behavior_id": "candidate.oauth2.multi-resource-server",
+      "capability_id": "security.oauth2",
+      "target_id": "definitive.oauth2.multi-resource-server",
+      "claim_id": "definitive.oauth2.multi-resource-server.claim",
+      "surface_ids": [
+        "architecture-design",
+        "compatibility-integration"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:9519e953377cbf6f0b717faece10af684762730495586f212e46753f60476bb2",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:52747ae2fc8c61841bc1a21e1d484a93eba63b151666317d4344b47d01bff25b",
+      "context_start": 58337,
+      "context_end": 66481,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.oauth2.scope-mapping.rabbitmq-4.3-oauth2",
+      "source_id": "rabbitmq-4.3-oauth2",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/oauth2.md#scope-based-authorisation",
+      "locator": "#scope-based-authorisation",
+      "authority_surface_id": "oauth2.scope-mapping",
+      "candidate_behavior_id": "candidate.oauth2.scope-mapping",
+      "capability_id": "security.oauth2",
+      "target_id": "definitive.oauth2.scope-mapping",
+      "claim_id": "definitive.oauth2.scope-mapping.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:60cc28e52790b46af802fa081a8b087b5b8eec9285afc6bcc508ba15d526a1dc",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

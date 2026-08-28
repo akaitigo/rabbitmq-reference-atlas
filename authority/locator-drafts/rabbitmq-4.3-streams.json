@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-streams",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/streams.md",
+  "locked_source_digest": "sha256:1719c724d9d6877aad0b8830bc935d26644710aa7cd510a9fb554c0a239d99a0",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:1719c724d9d6877aad0b8830bc935d26644710aa7cd510a9fb554c0a239d99a0",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/streams.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 32727,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.stream.retention-replay.rabbitmq-4.3-streams",
+      "source_id": "rabbitmq-4.3-streams",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/streams.md#what-is-a-stream",
+      "locator": "#what-is-a-stream",
+      "authority_surface_id": "stream.append-only-replay",
+      "candidate_behavior_id": "candidate.stream.retention-replay",
+      "capability_id": "queue.stream",
+      "target_id": "definitive.stream.retention-replay",
+      "claim_id": "definitive.stream.retention-replay.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "implementation-construction",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:43a33f8b6de3623dd1b83e822ccda5a5711156f74120eab560273d73f2772cf6",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:1719c724d9d6877aad0b8830bc935d26644710aa7cd510a9fb554c0a239d99a0",
+      "context_start": 0,
+      "context_end": 32727,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:0602c65e573be1054d578a9bbef46c30e66a4f7dc6a15afc3e44c2ac2dcff9d0",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.stream.single-active-consumer.rabbitmq-4.3-streams",
+      "source_id": "rabbitmq-4.3-streams",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/streams.md#single-active-consumer",
+      "locator": "#single-active-consumer",
+      "authority_surface_id": "stream.single-active-consumer",
+      "candidate_behavior_id": "candidate.stream.single-active-consumer",
+      "capability_id": "queue.stream",
+      "target_id": "definitive.stream.single-active-consumer",
+      "claim_id": "definitive.stream.single-active-consumer.claim",
+      "surface_ids": [
+        "architecture-design",
+        "failure-recovery"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:86ea6224e80c18b78b869e9a008eee1ec456cc7a06dad8514064c7460f8995d1",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:eb4fca992d1de3f7d4f354c43c506ec55539aee54fbdd664bf7efce8166c90b8",
+      "context_start": 7782,
+      "context_end": 32727,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.stream.super-stream-ordering.rabbitmq-4.3-streams",
+      "source_id": "rabbitmq-4.3-streams",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/streams.md#super-streams",
+      "locator": "#super-streams",
+      "authority_surface_id": "stream.super-stream-ordering",
+      "candidate_behavior_id": "candidate.stream.super-stream-ordering",
+      "capability_id": "stream.super-stream",
+      "target_id": "definitive.stream.super-stream-ordering",
+      "claim_id": "definitive.stream.super-stream-ordering.claim",
+      "surface_ids": [
+        "decision-comparison",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:fb87d7372b7dfd8f423e508561d6d522b7bd7d4dc88d9a7e32e134b96894027f",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:903d73a0b3097f60139580909463458a0469f6ae8f497287681e100dc141ac01",
+      "context_start": 8611,
+      "context_end": 32727,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.stream.super-stream.rabbitmq-4.3-streams",
+      "source_id": "rabbitmq-4.3-streams",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/streams.md#super-streams",
+      "locator": "#super-streams",
+      "authority_surface_id": "stream.super-stream-topology",
+      "candidate_behavior_id": "candidate.stream.super-stream",
+      "capability_id": "stream.super-stream",
+      "target_id": "definitive.stream.super-stream",
+      "claim_id": "definitive.stream.super-stream.claim",
+      "surface_ids": [
+        "architecture-design",
+        "implementation-construction",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:ae5c5c2c585327455ce938f32ee0651db518869af3eff74294cb7db25240d2af",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:903d73a0b3097f60139580909463458a0469f6ae8f497287681e100dc141ac01",
+      "context_start": 8611,
+      "context_end": 32727,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

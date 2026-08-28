@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-amqp-1.0",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/amqp.md",
+  "locked_source_digest": "sha256:522b01d62ef577956e55fda6355c9994c11ebe8a6353b6fb6c0bcf034f561f88",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:522b01d62ef577956e55fda6355c9994c11ebe8a6353b6fb6c0bcf034f561f88",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/amqp.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 30127,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.amqp10.address-v2.rabbitmq-4.3-amqp-1.0",
+      "source_id": "rabbitmq-4.3-amqp-1.0",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/amqp.md#address-v2",
+      "locator": "#address-v2",
+      "authority_surface_id": "amqp10.address-v2",
+      "candidate_behavior_id": "candidate.amqp10.address-v2",
+      "capability_id": "protocol.amqp10",
+      "target_id": "definitive.amqp10.address-v2",
+      "claim_id": "definitive.amqp10.address-v2.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "migration-evolution-deprecation"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:f07401d76fb1db30a0c29700227e7b5444297109ea4abdc649b6997878e07579",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:9d257b89e8faa0f9014d868676457b33e203935883892874446cbd64ecec67f7",
+      "context_start": 1640,
+      "context_end": 30127,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:15d99fd74bdef48e4470b91b8d4a47a61e41fb51914739cfa09d7f68bd5506ab",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.amqp10.authentication-options.rabbitmq-4.3-amqp-1.0",
+      "source_id": "rabbitmq-4.3-amqp-1.0",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/amqp.md#authentication-options",
+      "locator": "#authentication-options",
+      "authority_surface_id": "amqp10.authentication-options",
+      "candidate_behavior_id": "candidate.amqp10.authentication-options",
+      "capability_id": "protocol.amqp10",
+      "target_id": "definitive.amqp10.authentication-options",
+      "claim_id": "definitive.amqp10.authentication-options.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:5ea82af29c5785969e3951a3cf86de530de75f15169f040dabb97963a02d9ce8",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:522b01d62ef577956e55fda6355c9994c11ebe8a6353b6fb6c0bcf034f561f88",
+      "context_start": 0,
+      "context_end": 30127,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:1e2d04b808d282c378978921a6b5dbb7fa44f1bcc21c535fc45f6c10129ff4e6",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.amqp10.protocol-interoperability.rabbitmq-4.3-amqp-1.0",
+      "source_id": "rabbitmq-4.3-amqp-1.0",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/amqp.md#protocol-interoperability",
+      "locator": "#protocol-interoperability",
+      "authority_surface_id": "amqp10.protocol-interoperability",
+      "candidate_behavior_id": "candidate.amqp10.protocol-interoperability",
+      "capability_id": "protocol.amqp10",
+      "target_id": "definitive.amqp10.protocol-interoperability",
+      "claim_id": "definitive.amqp10.protocol-interoperability.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:14ed613c6cfbfe926e8178dae9367b206a4b784dd3c551b11dae6988a004d061",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:522b01d62ef577956e55fda6355c9994c11ebe8a6353b6fb6c0bcf034f561f88",
+      "context_start": 0,
+      "context_end": 30127,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:d0482c207473a72f53767ab997835aca64d5ce07a7f51a01690942308596f253",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.amqp10.version-negotiation.rabbitmq-4.3-amqp-1.0",
+      "source_id": "rabbitmq-4.3-amqp-1.0",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/amqp.md#version-negotiation",
+      "locator": "#version-negotiation",
+      "authority_surface_id": "amqp10.version-negotiation",
+      "candidate_behavior_id": "candidate.amqp10.version-negotiation",
+      "capability_id": "protocol.amqp10",
+      "target_id": "definitive.amqp10.version-negotiation",
+      "claim_id": "definitive.amqp10.version-negotiation.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:93f85c255902f401b94d5d784cd274668fe35e5d92bc0970ec9cd2060b6c6389",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:522b01d62ef577956e55fda6355c9994c11ebe8a6353b6fb6c0bcf034f561f88",
+      "context_start": 0,
+      "context_end": 30127,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:2069330e2a2bcb338970bb3cff373a7e36c1534b2aa1d52b03c419459f5a65f0",
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

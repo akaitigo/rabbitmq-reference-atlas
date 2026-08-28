@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-cli",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/cli.md",
+  "locked_source_digest": "sha256:a9abe820326a30b61901d959597e93580cca07be0d8b15182a5c4593863dadcb",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:a9abe820326a30b61901d959597e93580cca07be0d8b15182a5c4593863dadcb",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/cli.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 32662,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.cli.exit-timeout.rabbitmq-4.3-cli",
+      "source_id": "rabbitmq-4.3-cli",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/cli.md#common-options",
+      "locator": "#common-options",
+      "authority_surface_id": "cli.exit-timeout",
+      "candidate_behavior_id": "candidate.cli.exit-timeout",
+      "capability_id": "management.cli",
+      "target_id": "definitive.cli.exit-timeout",
+      "claim_id": "definitive.cli.exit-timeout.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:d0cb6ada76d6f938a5c7e2a44861badaed39612931b31379ede9b4746b7e2703",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.cli.rabbitmq-diagnostics.rabbitmq-4.3-cli",
+      "source_id": "rabbitmq-4.3-cli",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/cli.md#rabbitmq-diagnostics",
+      "locator": "#rabbitmq-diagnostics",
+      "authority_surface_id": "cli.rabbitmq-diagnostics",
+      "candidate_behavior_id": "candidate.cli.rabbitmq-diagnostics",
+      "capability_id": "management.cli",
+      "target_id": "definitive.cli.rabbitmq-diagnostics",
+      "claim_id": "definitive.cli.rabbitmq-diagnostics.claim",
+      "surface_ids": [
+        "operations-observability",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:f6985806df2d7f1a1863dbc5cf02ddbe80c0bb6a2b330d39a96bb512e04cd5a6",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:17fa2063b982470804620e9263f4a864bde75c7e67bc558bdce1bd85714b9948",
+      "context_start": 3758,
+      "context_end": 32662,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.cli.rabbitmq-plugins.rabbitmq-4.3-cli",
+      "source_id": "rabbitmq-4.3-cli",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/cli.md#rabbitmq-plugins",
+      "locator": "#rabbitmq-plugins",
+      "authority_surface_id": "cli.rabbitmq-plugins",
+      "candidate_behavior_id": "candidate.cli.rabbitmq-plugins",
+      "capability_id": "management.cli",
+      "target_id": "definitive.cli.rabbitmq-plugins",
+      "claim_id": "definitive.cli.rabbitmq-plugins.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:0347b88cdf59757a77dbe04b2b34329c908581bec1abafa7fc6285a41bbd9127",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:0a33ee83282a0c0b470cd77589cf0e0884cc1ca51f5a613c1c4f3b368434caf9",
+      "context_start": 4249,
+      "context_end": 32662,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.cli.rabbitmqctl.rabbitmq-4.3-cli",
+      "source_id": "rabbitmq-4.3-cli",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/cli.md#rabbitmqctl",
+      "locator": "#rabbitmqctl",
+      "authority_surface_id": "cli.rabbitmqctl",
+      "candidate_behavior_id": "candidate.cli.rabbitmqctl",
+      "capability_id": "management.cli",
+      "target_id": "definitive.cli.rabbitmqctl",
+      "claim_id": "definitive.cli.rabbitmqctl.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:543b69d324cd0c9f0f2bc226aca26cd36c04a5b3998e9c24571cd09b592b1641",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:5dddf8a910cf1ec1369f53d6bf1f36835ad624489952822ab3ef5cc54cff00af",
+      "context_start": 2388,
+      "context_end": 32662,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

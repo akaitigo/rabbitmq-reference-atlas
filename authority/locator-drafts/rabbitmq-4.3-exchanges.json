@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-exchanges",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md",
+  "locked_source_digest": "sha256:a0a6d3fae2073fe28ffe7fd016bbd3830262db554195e670f5dc57a123832f6c",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:a0a6d3fae2073fe28ffe7fd016bbd3830262db554195e670f5dc57a123832f6c",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 13957,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.exchange.alternate.rabbitmq-4.3-exchanges",
+      "source_id": "rabbitmq-4.3-exchanges",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md#alternate-exchanges",
+      "locator": "#alternate-exchanges",
+      "authority_surface_id": "exchange.alternate",
+      "candidate_behavior_id": "candidate.exchange.alternate",
+      "capability_id": "routing.exchange",
+      "target_id": "definitive.exchange.alternate",
+      "claim_id": "definitive.exchange.alternate.claim",
+      "surface_ids": [
+        "decision-comparison",
+        "failure-recovery"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:8cd85ba7936f49fe15751643ba49daf592a339657b70b33047041b5d3cd9a84b",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:ed705e2a6d7b9ced5a2bbcb4ada011e8534a98e88aff8aaef9920be86cc3fbd3",
+      "context_start": 8922,
+      "context_end": 13957,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:6340a78e3424e9879431cf74d4ccedeaaff572d11c4473a2e02f3515b1d59f27",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.exchange.default.rabbitmq-4.3-exchanges",
+      "source_id": "rabbitmq-4.3-exchanges",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md#default-exchange",
+      "locator": "#default-exchange",
+      "authority_surface_id": "exchange.default",
+      "candidate_behavior_id": "candidate.exchange.default",
+      "capability_id": "routing.exchange",
+      "target_id": "definitive.exchange.default",
+      "claim_id": "definitive.exchange.default.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "orientation-scope"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:40edf587113fafdf5deaaa7ef4f5f07bae05a27496de4dade2a4a74bb59ffd01",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:2056eab887fff58a341680e97758a4a520308931f191ea1e1bda989c196556d3",
+      "context_start": 983,
+      "context_end": 13957,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:d107be942f712a17ea28a1a909192f953d43ab1f5b52875c77fef1fff27eff87",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.exchange.direct.rabbitmq-4.3-exchanges",
+      "source_id": "rabbitmq-4.3-exchanges",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md#direct-exchange",
+      "locator": "#direct-exchange",
+      "authority_surface_id": "exchange.direct",
+      "candidate_behavior_id": "candidate.exchange.direct",
+      "capability_id": "routing.exchange",
+      "target_id": "definitive.exchange.direct",
+      "claim_id": "definitive.exchange.direct.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:d765be995cc69562a2d5f6abb6f7e4013ea08f257d407037bd46ade36987ebd1",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.exchange.fanout.rabbitmq-4.3-exchanges",
+      "source_id": "rabbitmq-4.3-exchanges",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md#fanout-exchange",
+      "locator": "#fanout-exchange",
+      "authority_surface_id": "exchange.fanout",
+      "candidate_behavior_id": "candidate.exchange.fanout",
+      "capability_id": "routing.exchange",
+      "target_id": "definitive.exchange.fanout",
+      "claim_id": "definitive.exchange.fanout.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:cb9e70536e6d2aea9d8d565017c069f521f8d81b941c7f262aa6f3b6e746f71b",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.exchange.headers.rabbitmq-4.3-exchanges",
+      "source_id": "rabbitmq-4.3-exchanges",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md#headers-exchange",
+      "locator": "#headers-exchange",
+      "authority_surface_id": "exchange.headers",
+      "candidate_behavior_id": "candidate.exchange.headers",
+      "capability_id": "routing.exchange",
+      "target_id": "definitive.exchange.headers",
+      "claim_id": "definitive.exchange.headers.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:dcdb2db8058286acf7eb438b79b3ec69437437cae69e51357bea691ddd3241f3",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.exchange.topic.rabbitmq-4.3-exchanges",
+      "source_id": "rabbitmq-4.3-exchanges",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md#topic-exchange",
+      "locator": "#topic-exchange",
+      "authority_surface_id": "exchange.topic",
+      "candidate_behavior_id": "candidate.exchange.topic",
+      "capability_id": "routing.exchange",
+      "target_id": "definitive.exchange.topic",
+      "claim_id": "definitive.exchange.topic.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:379258d0128b975c1a6eda2c5f28fe679e0b629fa890d6cfd3f35889698e3b00",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

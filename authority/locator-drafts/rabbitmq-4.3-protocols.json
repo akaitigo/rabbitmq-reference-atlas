@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-protocols",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md",
+  "locked_source_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 4086,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.protocol.amqp091.core.rabbitmq-4.3-protocols",
+      "source_id": "rabbitmq-4.3-protocols",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md#amqp-0-9-1",
+      "locator": "#amqp-0-9-1",
+      "authority_surface_id": "protocol.amqp091.core",
+      "candidate_behavior_id": "candidate.protocol.amqp091.core",
+      "capability_id": "protocol.amqp091",
+      "target_id": "definitive.protocol.amqp091.core",
+      "claim_id": "definitive.protocol.amqp091.core.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "orientation-scope"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:0c558192d72857098c98679aa498fc36cdf4382083cb7a00228a366ac6b80b17",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+      "context_start": 0,
+      "context_end": 4086,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:66b61b6cb7e4bc69beeacdb2ee64a15eb41e586d8839fd0f374a64315520cdf7",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.protocol.amqp10.native.rabbitmq-4.3-protocols",
+      "source_id": "rabbitmq-4.3-protocols",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md#amqp-10",
+      "locator": "#amqp-10",
+      "authority_surface_id": "protocol.amqp10.core",
+      "candidate_behavior_id": "candidate.protocol.amqp10.native",
+      "capability_id": "protocol.amqp10",
+      "target_id": "definitive.protocol.amqp10.native",
+      "claim_id": "definitive.protocol.amqp10.native.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "foundations-mechanics"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:116dbb2fe2e907d98649c6c5c0493194ba2e3b01b6acfe6a8aeff2377b9aab38",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+      "context_start": 0,
+      "context_end": 4086,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.protocol.http.low-volume-diagnostic.rabbitmq-4.3-protocols",
+      "source_id": "rabbitmq-4.3-protocols",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md#http",
+      "locator": "#http",
+      "authority_surface_id": "protocol.http.diagnostic",
+      "candidate_behavior_id": "candidate.protocol.http.low-volume-diagnostic",
+      "capability_id": "protocol.http",
+      "target_id": "definitive.protocol.http.low-volume-diagnostic",
+      "claim_id": "definitive.protocol.http.low-volume-diagnostic.claim",
+      "surface_ids": [
+        "operations-observability",
+        "orientation-scope"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:ad07f405c4130721fb286d18dde659a802ce63dc9fc972b7deff437c44c2aefd",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+      "context_start": 0,
+      "context_end": 4086,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:4acc72df43241375c9a9165e6b9e8ac3be77b568fd6ee967febd58bf72b35e18",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.protocol.mqtt.native.rabbitmq-4.3-protocols",
+      "source_id": "rabbitmq-4.3-protocols",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md#mqtt",
+      "locator": "#mqtt",
+      "authority_surface_id": "protocol.mqtt.plugin",
+      "candidate_behavior_id": "candidate.protocol.mqtt.native",
+      "capability_id": "protocol.mqtt",
+      "target_id": "definitive.protocol.mqtt.native",
+      "claim_id": "definitive.protocol.mqtt.native.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:b768db65e33e85591271ae8402d79aaeba1950bef578295cce6b6901561c30d1",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+      "context_start": 0,
+      "context_end": 4086,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.protocol.stomp.proxy.rabbitmq-4.3-protocols",
+      "source_id": "rabbitmq-4.3-protocols",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md#stomp",
+      "locator": "#stomp",
+      "authority_surface_id": "protocol.stomp.plugin",
+      "candidate_behavior_id": "candidate.protocol.stomp.proxy",
+      "capability_id": "protocol.stomp",
+      "target_id": "definitive.protocol.stomp.proxy",
+      "claim_id": "definitive.protocol.stomp.proxy.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "foundations-mechanics"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:d3543b5f12e3f1ac065264fd7c0db803d12fb2dd766831dcd27ec8118974dc95",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+      "context_start": 0,
+      "context_end": 4086,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.protocol.stream.binary.rabbitmq-4.3-protocols",
+      "source_id": "rabbitmq-4.3-protocols",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md#rabbitmq-streams",
+      "locator": "#rabbitmq-streams",
+      "authority_surface_id": "protocol.stream.plugin",
+      "candidate_behavior_id": "candidate.protocol.stream.binary",
+      "capability_id": "protocol.stream",
+      "target_id": "definitive.protocol.stream.binary",
+      "claim_id": "definitive.protocol.stream.binary.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:4e6f47f5f469bef26a62b13e8036e9dfda82fe5fc7b6b4dedad106137c7a19da",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+      "context_start": 0,
+      "context_end": 4086,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.protocol.websocket.transports.rabbitmq-4.3-protocols",
+      "source_id": "rabbitmq-4.3-protocols",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/protocols.md#websocket",
+      "locator": "#websocket",
+      "authority_surface_id": "protocol.websocket.transports",
+      "candidate_behavior_id": "candidate.protocol.websocket.transports",
+      "capability_id": "protocol.websocket",
+      "target_id": "definitive.protocol.websocket.transports",
+      "claim_id": "definitive.protocol.websocket.transports.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "implementation-construction",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:bb7d399ebdcd3dd3684a966e293fa8114dfadc5469c3d07ba8bbb6e5a518fddb",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+      "context_start": 0,
+      "context_end": 4086,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:121eb1b7c6d4c0550c7b1925837f147811e9b2e165dd9f1e18f52d34e915bb9e",
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

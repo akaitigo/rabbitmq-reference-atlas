@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-quorum-queues",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md",
+  "locked_source_digest": "sha256:a9a41aca4560ded658c6ada1229258ba8f0a185bc026cb5784dfb831383ff41d",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:a9a41aca4560ded658c6ada1229258ba8f0a185bc026cb5784dfb831383ff41d",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 72951,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.quorum.dead-letter-safety.rabbitmq-4.3-quorum-queues",
+      "source_id": "rabbitmq-4.3-quorum-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md#dead-lettering",
+      "locator": "#dead-lettering",
+      "authority_surface_id": "quorum.dead-letter-safety",
+      "candidate_behavior_id": "candidate.quorum.dead-letter-safety",
+      "capability_id": "queue.quorum",
+      "target_id": "definitive.quorum.dead-letter-safety",
+      "claim_id": "definitive.quorum.dead-letter-safety.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:0ae34e898a93453f874098081d8bdb9c4818a27ae038e0c86f7e45d5f6e2547c",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:92768f94726b26597b2704161748db6d6219e6b44d0a52f967da534de3399286",
+      "context_start": 6097,
+      "context_end": 42961,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.quorum.delivery-limit.rabbitmq-4.3-quorum-queues",
+      "source_id": "rabbitmq-4.3-quorum-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md#poison-message-handling",
+      "locator": "#poison-message-handling",
+      "authority_surface_id": "quorum.delivery-limit",
+      "candidate_behavior_id": "candidate.quorum.delivery-limit",
+      "capability_id": "queue.quorum",
+      "target_id": "definitive.quorum.delivery-limit",
+      "claim_id": "definitive.quorum.delivery-limit.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:faaa2c4630d6ca13e51e714fa0eecdaa2a0045c46b3e80ad02bb514832b67c1c",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:df74e908da370bfa0cc7cb540e09e4d25116c2589e285f7ed7a4fc469c1068b5",
+      "context_start": 21138,
+      "context_end": 58002,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.quorum.leader-rebalance.rabbitmq-4.3-quorum-queues",
+      "source_id": "rabbitmq-4.3-quorum-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md#replica-reconciliation-and-rebalancing",
+      "locator": "#replica-reconciliation-and-rebalancing",
+      "authority_surface_id": "quorum.leader-rebalance",
+      "candidate_behavior_id": "candidate.quorum.leader-rebalance",
+      "capability_id": "queue.quorum",
+      "target_id": "definitive.quorum.leader-rebalance",
+      "claim_id": "definitive.quorum.leader-rebalance.claim",
+      "surface_ids": [
+        "operations-observability",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:45485af1a11f63ae4f608db6bea983f47ceba5fff04aa3cbfd0a3808fea697a0",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.quorum.membership.rabbitmq-4.3-quorum-queues",
+      "source_id": "rabbitmq-4.3-quorum-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md#managing-members",
+      "locator": "#managing-members",
+      "authority_surface_id": "quorum.membership",
+      "candidate_behavior_id": "candidate.quorum.membership",
+      "capability_id": "queue.quorum",
+      "target_id": "definitive.quorum.membership",
+      "claim_id": "definitive.quorum.membership.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:a92076c91321806b04a9a193edb732d25434cbba8d20ec7f205ef852393befa4",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:03f9fe5bb092f46065e431acaa6e26131b1f3634acb37ec11595525414d692ec",
+      "context_start": 34977,
+      "context_end": 71841,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:c39e3daba11353e80b2c64ebd6853c9cad87ada2a9cd04c5298c1a5a189821ab",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.quorum.replication.rabbitmq-4.3-quorum-queues",
+      "source_id": "rabbitmq-4.3-quorum-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md#overview",
+      "locator": "#overview",
+      "authority_surface_id": "quorum.replication",
+      "candidate_behavior_id": "candidate.quorum.replication",
+      "capability_id": "queue.quorum",
+      "target_id": "definitive.quorum.replication",
+      "claim_id": "definitive.quorum.replication.claim",
+      "surface_ids": [
+        "architecture-design",
+        "failure-recovery",
+        "foundations-mechanics"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:eb8441f7d1f48c22a8c96e15bb8cc58fc072733d0840ebb97ce89d80da8c38bf",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:858b26242e70cb3b7be4239a6e37c0459ee2f571a0929eff15263cbdfa5bb472",
+      "context_start": 0,
+      "context_end": 33683,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

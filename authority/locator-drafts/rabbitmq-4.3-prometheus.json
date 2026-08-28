@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-prometheus",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/prometheus/index.md",
+  "locked_source_digest": "sha256:012c5705ec820fe3d75c92aac79183db5c21b53bf1fa988a271fca2376a58dfe",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:012c5705ec820fe3d75c92aac79183db5c21b53bf1fa988a271fca2376a58dfe",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/prometheus/index.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 64547,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.prometheus.aggregation.rabbitmq-4.3-prometheus",
+      "source_id": "rabbitmq-4.3-prometheus",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/prometheus/index.md#metric-aggregation",
+      "locator": "#metric-aggregation",
+      "authority_surface_id": "prometheus.aggregation",
+      "candidate_behavior_id": "candidate.prometheus.aggregation",
+      "capability_id": "observability.prometheus",
+      "target_id": "definitive.prometheus.aggregation",
+      "claim_id": "definitive.prometheus.aggregation.claim",
+      "surface_ids": [
+        "decision-comparison",
+        "operations-observability",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:62c34250cee65cc9cb6aa5e0642c8942c5487760f38e7d61300de9089b8e2b34",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:7d69a8c7be399395874d90c0e3921daff1aefbe09e36064f0fc9e7bbf600238c",
+      "context_start": 17652,
+      "context_end": 54516,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.prometheus.alerting.rabbitmq-4.3-prometheus",
+      "source_id": "rabbitmq-4.3-prometheus",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/prometheus/index.md#alerting",
+      "locator": "#alerting",
+      "authority_surface_id": "prometheus.alerting",
+      "candidate_behavior_id": "candidate.prometheus.alerting",
+      "capability_id": "observability.prometheus",
+      "target_id": "definitive.prometheus.alerting",
+      "claim_id": "definitive.prometheus.alerting.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:f6c4f6feae4e89b8bf3fb6f39cc4d76ac982eb137af97b57f2d2302ee0946a35",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.prometheus.endpoint.rabbitmq-4.3-prometheus",
+      "source_id": "rabbitmq-4.3-prometheus",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/prometheus/index.md#prometheus-endpoint",
+      "locator": "#prometheus-endpoint",
+      "authority_surface_id": "prometheus.endpoint",
+      "candidate_behavior_id": "candidate.prometheus.endpoint",
+      "capability_id": "observability.prometheus",
+      "target_id": "definitive.prometheus.endpoint",
+      "claim_id": "definitive.prometheus.endpoint.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:30f20de44424b985dec1d576e093058b56d16d737d60c2fc02209114a288073a",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

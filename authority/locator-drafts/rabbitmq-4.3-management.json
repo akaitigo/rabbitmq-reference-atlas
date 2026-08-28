@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-management",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/management/index.md",
+  "locked_source_digest": "sha256:138604ee91db6d078c835dd9cdaf33e53eeda67d063d95336ca91c70f28900b1",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:138604ee91db6d078c835dd9cdaf33e53eeda67d063d95336ca91c70f28900b1",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/management/index.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 67690,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.management.authorization.rabbitmq-4.3-management",
+      "source_id": "rabbitmq-4.3-management",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/management/index.md#access-and-permissions",
+      "locator": "#access-and-permissions",
+      "authority_surface_id": "management.authorization",
+      "candidate_behavior_id": "candidate.management.authorization",
+      "capability_id": "management.http-api",
+      "target_id": "definitive.management.authorization",
+      "claim_id": "definitive.management.authorization.claim",
+      "surface_ids": [
+        "security-privacy-safety",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:a0d2e5ee3aa8ec09293731b52b2c40dda5a1af46ea09ae1ebf1b4a27cf210e49",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:86f9b33e4c5a8c23094663a1a69b92f01114ec6aa3609ed4584a0a63ce3b42be",
+      "context_start": 4531,
+      "context_end": 41395,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:15a329e3a446fa2e12ccdeb72f827fd697313306c0c7ab25c7931b6d007b954e",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.management.http-api.rabbitmq-4.3-management",
+      "source_id": "rabbitmq-4.3-management",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/management/index.md#http-api",
+      "locator": "#http-api",
+      "authority_surface_id": "management.http-api",
+      "candidate_behavior_id": "candidate.management.http-api",
+      "capability_id": "management.http-api",
+      "target_id": "definitive.management.http-api",
+      "claim_id": "definitive.management.http-api.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:3c8ecc478ee1898748dc699a80eb25dd5e577668435312d134bc91c63377acb4",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:e345917e05bf2efc2ba6fc4d66f1b93efda2f3145aa74321d449fe2b91384a62",
+      "context_start": 32683,
+      "context_end": 67690,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.management.metrics-cost.rabbitmq-4.3-management",
+      "source_id": "rabbitmq-4.3-management",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/management/index.md#management-database",
+      "locator": "#management-database",
+      "authority_surface_id": "management.metrics-cost",
+      "candidate_behavior_id": "candidate.management.metrics-cost",
+      "capability_id": "management.metrics",
+      "target_id": "definitive.management.metrics-cost",
+      "claim_id": "definitive.management.metrics-cost.claim",
+      "surface_ids": [
+        "operations-observability",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:ee2274c6d6fd4c8409c0c6c428a69a73e41c47940f2948336778a90e18b7e1b1",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.management.oauth.rabbitmq-4.3-management",
+      "source_id": "rabbitmq-4.3-management",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/management/index.md#oauth-20-authentication",
+      "locator": "#oauth-20-authentication",
+      "authority_surface_id": "management.oauth",
+      "candidate_behavior_id": "candidate.management.oauth",
+      "capability_id": "management.oauth",
+      "target_id": "definitive.management.oauth",
+      "claim_id": "definitive.management.oauth.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:135f3714dfb4913b4995205fbb153972c5a8b3d08971d49480c5139b8b48b095",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}
