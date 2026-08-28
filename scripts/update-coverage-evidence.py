@@ -25,6 +25,8 @@ def main() -> None:
     path = ROOT / "coverage.yaml"
     coverage = yaml.safe_load(path.read_text())
     for target in coverage["targets"]:
+        if target["id"] not in EVIDENCE_BY_TARGET:
+            continue
         expected = EVIDENCE_BY_TARGET[target["id"]]
         missing = [evidence_id for evidence_id in expected if not (ROOT / "evidence" / f"{evidence_id}.evidence.json").exists()]
         if missing:

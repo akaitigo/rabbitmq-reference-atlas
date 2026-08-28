@@ -19,6 +19,7 @@ legal:
 	test -s LICENSE
 	test -s NOTICE
 	test -s third_party/manifest.yaml
+	test -s sbom.spdx.json
 	test -s third_party/sbom.cdx.json
 
 check: test skill-eval atlas-validate repo-validate legal

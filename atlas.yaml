@@ -19,6 +19,9 @@ coverage:
 authority:
   lockfile: sources.lock.yaml
   policy: primary-first
+mastery:
+  manifest: mastery.yaml
+  contract_version: 1.0.0
 scope:
   statement: RabbitMQ 4.3.5のExchange、Queue、Acknowledgement、Redelivery、Dead Lettering、Flow Control、Cluster、Failure、Recoveryを固定環境で再実行し、観測可能な証拠へ接続する。
   exclusions:
@@ -39,7 +42,7 @@ license:
   default: Apache-2.0
   notice: NOTICE
   third_party_manifest: third_party/manifest.yaml
+  sbom: sbom.spdx.json
 security:
   disclosure: SECURITY.md
   defensive_only: true
-

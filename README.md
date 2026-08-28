@@ -9,7 +9,7 @@
 - RabbitMQ `4.3.5`
 - OCI Image `rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031`
 - Coverage Epoch `2026-08-28`
-- Core Contract `reference-atlas-core@1c85bed8d45a3daee3e5cda7fbbe144607ac1259`
+- Core Contract `reference-atlas-core@6793642472d4011786c35b98fdb60cd4212e9699`
 
 ## 実証範囲
 
@@ -19,6 +19,10 @@
 - Consumer PrefetchによるFlow Control
 - 三ノードCluster、Quorum Queue、Leader停止、配送継続、Node復帰
 - Router Skillと決定論的Eval
+
+## Mastery
+
+`mastery.yaml`は、RabbitMQという同一分野で答えられるべき問いを8 Outcomeと14 Surfaceへ固定します。既存のLabとEvidenceを置き換えずCoverageへ接続し、未閉包の運用監視、Security、性能、互換性、移行を`planned` Targetとして可視化します。Repository数や対象分野を増やすためのManifestではありません。
 
 ## 検証
 
@@ -37,6 +41,7 @@ make labs
 - Authority Lock: `sources.lock.yaml`
 - Coverage: `coverage.yaml`
 - Skill Package: `skill.package.yaml`
+- Mastery Contract: `mastery.yaml`
 - Product Version: `versions/baseline.yaml`
 - Claim: `atlas/claims/index.yaml`
 - Lab Contract: `labs/*/lab.yaml`

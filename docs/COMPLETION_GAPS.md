@@ -16,6 +16,6 @@
 
 ## 状態
 
-共通4 Manifest、今回の12 Coverage Target、8 Evidence Record、Router Eval、権利Manifest、ローカルCI相当Gateは通過しています。上記Gapがあるため`atlas.yaml`は`status: incomplete`を維持し、`evidence/completion-certificate.json`は生成しません。
+共通5 Manifest、Masteryの8 Outcomeと14 Surface、既存12 Covered Target、8 Evidence Record、Router Eval、権利Manifest、ローカルCI相当Gateは通過しています。Mastery移行で追加した6 Targetは未閉包であり、上記Gapがあるため`atlas.yaml`は`status: incomplete`を維持し、`evidence/completion-certificate.json`は生成しません。
 
 GitHub Repository、Release、OCI Artifact、外部Skill Registryへの公開は行っていません。

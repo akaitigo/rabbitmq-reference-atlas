@@ -31,6 +31,48 @@ target_sets:
   exit_criteria:
   - EvidenceがSource、Harness、EnvironmentのDigestへ束縛されていること
   - Router Skillが設計、実装、診断、移行、ReviewとCoverage Gapを区別すること
+- id: foundations-design
+  title: Foundations and Design
+  sequence: 5
+  completion_required: true
+  exit_criteria:
+  - RabbitMQの責任範囲、配送保証、複製原理、製品境界を一次資料から説明できること
+  - Queue Type、Routing、Retry、Cluster方式を要件とFailure Modelから選択できること
+- id: operations-observability
+  title: Operations and Observability
+  sequence: 6
+  completion_required: true
+  exit_criteria:
+  - Broker、Queue、Replica、Client、依存先の主要TelemetryとAlert条件を検証できること
+  - Alertから診断、Runbook、復旧判定までを再実行可能に接続できること
+- id: security-safety
+  title: Security and Safety
+  sequence: 7
+  completion_required: true
+  exit_criteria:
+  - TLS、認証、認可、Credential Lifecycle、Tenant境界を実行証拠で検証できること
+  - Failure Labと診断手順が許可された隔離環境だけへ作用すること
+- id: performance-capacity
+  title: Performance and Capacity
+  sequence: 8
+  completion_required: true
+  exit_criteria:
+  - 固定Workloadと環境条件からThroughput、Latency、Resource使用量を再測定できること
+  - Queue Type、Replica、Payload、Backlog、PrefetchのTrade-offを容量判断へ戻せること
+- id: compatibility-integration
+  title: Compatibility and Integration
+  sequence: 9
+  completion_required: true
+  exit_criteria:
+  - Protocol、Client、Plugin、Queue Type、Feature Flagの対応Matrixを固定Versionで検証できること
+  - 相互運用で保持される意味論と失われる意味論をEvidenceから説明できること
+- id: migration-evolution
+  title: Migration and Evolution
+  sequence: 10
+  completion_required: true
+  exit_criteria:
+  - 対象Upgrade Path、削除済み機能、Feature Flag、Plugin互換性を固定できること
+  - Workload継続中の移行、Rollback境界、Blue-Green手順を実行証拠へ接続できること
 targets:
 - id: messaging.exchange-routing
   title: Exchange routing
@@ -164,3 +206,57 @@ targets:
   - skill.router-evaluation
   evidence_ids:
   - eval.router
+- id: mastery.foundations-and-decisions
+  title: RabbitMQ foundations and design decisions
+  target_set: foundations-design
+  kind: concept
+  requirement: required
+  state: planned
+  rationale: 決定版として機能一覧だけでなく、配送、複製、Storage、Protocolの原理と採否判断を追跡可能にする必要がある。
+  claim_ids: []
+  evidence_ids: []
+- id: mastery.operations-observability
+  title: Operational observability and runbooks
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Backlog、未Ack、Alarm、Replica、Connectionを観測し、Alertから安全な復旧へ到達できる証拠が必要である。
+  claim_ids: []
+  evidence_ids: []
+- id: mastery.security-safety
+  title: Security and isolation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Transport、Identity、Authorization、Secret Rotation、Tenant Isolationを正常系と拒否系の両方で証明する必要がある。
+  claim_ids: []
+  evidence_ids: []
+- id: mastery.performance-capacity
+  title: Performance and capacity model
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: planned
+  rationale: 一般化した性能値ではなく、固定条件の測定とRaw Dataから利用者が自身の容量判断を行える必要がある。
+  claim_ids: []
+  evidence_ids: []
+- id: mastery.compatibility-integration
+  title: Protocol and client compatibility
+  target_set: compatibility-integration
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: AMQP 0-9-1以外のProtocol、Client、Plugin、Queue Type間の互換性を未検証のまま一般化しないために必要である。
+  claim_ids: []
+  evidence_ids: []
+- id: mastery.migration-evolution
+  title: Upgrade migration and deprecation
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: planned
+  rationale: RabbitMQ 4.3.5への公式Upgrade Path、削除済み機能、Rollback不能点をWorkload付きで実証する必要がある。
+  claim_ids: []
+  evidence_ids: []

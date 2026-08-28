@@ -39,7 +39,7 @@ def main() -> None:
     created_at = datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z")
     source_digest = sha(ROOT / "sources.lock.yaml")
     environment_digest = framed_digest([ROOT / "environments/compose.yaml", ROOT / "environments/rabbitmq.conf", ROOT / "environments/container.lock.yaml"])
-    local_digest = framed_digest([ROOT / "versions/baseline.yaml", ROOT / "coverage.yaml"])
+    local_digest = framed_digest([ROOT / "atlas.yaml", ROOT / "mastery.yaml", ROOT / "coverage.yaml", ROOT / "skill.package.yaml", ROOT / "versions/baseline.yaml"])
     harness_digest = framed_digest([ROOT / "cmd/rmq-lab/main.go", ROOT / "scripts/run-labs.sh", ROOT / "scripts/generate-evidence.py"])
     skill_harness_digest = framed_digest([ROOT / ".agents/skills/rabbitmq-reference-router/scripts/route.py", ROOT / "scripts/run-skill-evals.py", ROOT / "evals/router-cases.json"])
     summary = {

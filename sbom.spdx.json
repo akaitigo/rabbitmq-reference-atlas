@@ -1,0 +1,145 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "rabbitmq-reference-atlas-0.1.0",
+  "documentNamespace": "https://github.com/akaitigo/rabbitmq-reference-atlas/sbom/0.1.0/2026-08-28",
+  "creationInfo": {
+    "created": "2026-08-28T00:00:00+09:00",
+    "creators": [
+      "Tool: rabbitmq-reference-atlas-manifest-1.0",
+      "Organization: akaitigo"
+    ],
+    "licenseListVersion": "3.27.0"
+  },
+  "packages": [
+    {
+      "name": "rabbitmq-reference-atlas",
+      "SPDXID": "SPDXRef-Package-Atlas",
+      "versionInfo": "0.1.0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "Copyright 2026 Ryuukei Nakayama",
+      "primaryPackagePurpose": "APPLICATION"
+    },
+    {
+      "name": "RabbitMQ Server",
+      "SPDXID": "SPDXRef-Package-RabbitMQ",
+      "versionInfo": "4.3.5",
+      "downloadLocation": "https://github.com/rabbitmq/rabbitmq-server/tree/v4.3.5",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MPL-2.0",
+      "licenseDeclared": "MPL-2.0",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/rabbitmq/rabbitmq-server@v4.3.5"
+        }
+      ]
+    },
+    {
+      "name": "RabbitMQ Docker Official Image packaging",
+      "SPDXID": "SPDXRef-Package-RabbitMQ-Docker",
+      "versionInfo": "fe08e8852f66fde85461be4eed35675a4b8e35d8",
+      "downloadLocation": "https://github.com/docker-library/rabbitmq/tree/fe08e8852f66fde85461be4eed35675a4b8e35d8",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later",
+      "licenseDeclared": "GPL-2.0-or-later",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "name": "github.com/rabbitmq/amqp091-go",
+      "SPDXID": "SPDXRef-Package-amqp091-go",
+      "versionInfo": "1.10.0",
+      "downloadLocation": "https://github.com/rabbitmq/amqp091-go/tree/v1.10.0",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause",
+      "licenseDeclared": "BSD-2-Clause",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:golang/github.com/rabbitmq/amqp091-go@v1.10.0"
+        }
+      ]
+    },
+    {
+      "name": "Erlang/OTP",
+      "SPDXID": "SPDXRef-Package-Erlang-OTP",
+      "versionInfo": "27.3.4.16",
+      "downloadLocation": "https://github.com/erlang/otp",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "name": "OpenSSL",
+      "SPDXID": "SPDXRef-Package-OpenSSL",
+      "versionInfo": "3.5.7",
+      "downloadLocation": "https://github.com/openssl/openssl",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "copyrightText": "NOASSERTION"
+    },
+    {
+      "name": "Ubuntu",
+      "SPDXID": "SPDXRef-Package-Ubuntu",
+      "versionInfo": "24.04",
+      "downloadLocation": "https://ubuntu.com/",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION"
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-Atlas"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Atlas",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-RabbitMQ"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Atlas",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-RabbitMQ-Docker"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Atlas",
+      "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-amqp091-go"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-RabbitMQ-Docker",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-RabbitMQ"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-RabbitMQ-Docker",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-Erlang-OTP"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-RabbitMQ-Docker",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-OpenSSL"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-RabbitMQ-Docker",
+      "relationshipType": "CONTAINS",
+      "relatedSpdxElement": "SPDXRef-Package-Ubuntu"
+    }
+  ]
+}
+

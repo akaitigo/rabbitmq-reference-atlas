@@ -6,6 +6,7 @@ router:
   path: .agents/skills/rabbitmq-reference-router/SKILL.md
   description: RabbitMQ 4.3.5の設計、実装、診断、復旧、移行、Reviewを、固定Coverageと再実行可能なLab、Evidence、一次資料へ案内する。
 generated_from:
+  - mastery.yaml
   - coverage.yaml
   - atlas/claims/index.yaml
   - atlas/decisions/router.yaml
@@ -16,4 +17,3 @@ adapters:
 evals:
   path: evals/
   minimum_pass_rate: 1.0
-

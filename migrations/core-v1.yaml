@@ -1,6 +1,6 @@
 schema_version: 1
 atlas_id: rabbitmq-reference-atlas
-core_commit: 1c85bed8d45a3daee3e5cda7fbbe144607ac1259
+core_commit: 6793642472d4011786c35b98fdb60cd4212e9699
 source_repository: null
 mappings:
   - legacy_id: rabbitmq.exchange
@@ -21,4 +21,23 @@ mappings:
 evidence_migration:
   inherited: false
   rationale: 専用の旧RabbitMQ Atlasが存在しないため、別RepositoryのEvidenceを自動継承せず本Atlasで再生成する。
-
+mastery_migration:
+  contract_version: 1.0.0
+  outcomes: [understand, choose, build, verify, operate, troubleshoot, evolve, delegate]
+  surfaces:
+    - orientation-scope
+    - foundations-mechanics
+    - architecture-design
+    - implementation-construction
+    - testing-verification
+    - failure-recovery
+    - operations-observability
+    - security-privacy-safety
+    - performance-capacity-cost
+    - compatibility-integration
+    - migration-evolution-deprecation
+    - decision-comparison
+    - provenance-rights
+    - agent-skill
+  preserved_target_sets: [messaging-surface, delivery-pressure, cluster-resilience, atlas-operation]
+  added_gap_target_sets: [foundations-design, operations-observability, security-safety, performance-capacity, compatibility-integration, migration-evolution]

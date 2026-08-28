@@ -33,11 +33,12 @@ def main() -> int:
     atlas = load(ROOT / "atlas.yaml")
     sources = load(ROOT / "sources.lock.yaml")
     coverage = load(ROOT / "coverage.yaml")
+    mastery = load(ROOT / "mastery.yaml")
     skill = load(ROOT / "skill.package.yaml")
     claims_doc = load(ROOT / "atlas/claims/index.yaml")
     claims = {item["id"] for item in claims_doc["claims"]}
 
-    for name, document in (("sources", sources), ("coverage", coverage), ("skill", skill)):
+    for name, document in (("sources", sources), ("coverage", coverage), ("mastery", mastery), ("skill", skill)):
         if document["atlas_id"] != atlas["id"]:
             fail(errors, f"{name}.atlas_id mismatch")
     if sources["epoch"] != coverage["epoch"] or sources["epoch"] != atlas["coverage"]["epoch"]:
@@ -53,6 +54,11 @@ def main() -> int:
         fail(errors, "source lock contains placeholder or invalid digest")
 
     target_sets = {item["id"] for item in coverage["target_sets"]}
+    for collection in ("outcomes", "surfaces"):
+        for item in mastery[collection]:
+            for target_set in item["target_sets"]:
+                if target_set not in target_sets:
+                    fail(errors, f"mastery {collection} {item['id']} references unknown target_set {target_set}")
     evidence_records = {}
     for path in sorted((ROOT / "evidence").glob("*.evidence.json")):
         record = json.loads(path.read_text())
@@ -74,7 +80,7 @@ def main() -> int:
                 fail(errors, f"unknown evidence {evidence_id} in {target['id']}")
             elif not set(target["claim_ids"]).intersection(record["claim_ids"]):
                 fail(errors, f"evidence {evidence_id} is not connected to {target['id']}")
-    required = ["LICENSE", "NOTICE", "SECURITY.md", "CONTRIBUTING.md", "third_party/manifest.yaml", "third_party/sbom.cdx.json"]
+    required = ["LICENSE", "NOTICE", "SECURITY.md", "CONTRIBUTING.md", "third_party/manifest.yaml", "sbom.spdx.json", "third_party/sbom.cdx.json"]
     for relative in required:
         if not (ROOT / relative).exists():
             fail(errors, f"required publication file missing: {relative}")
