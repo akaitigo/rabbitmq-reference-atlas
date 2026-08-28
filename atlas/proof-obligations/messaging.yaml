@@ -1,5 +1,15 @@
 schema_version: 1
 proof_obligations:
+  amqp-model-boundary:
+    setup: Durable Queueを一意Namespaceで宣言する。
+    execute: 別Channelから同名かつnon-durableなQueue宣言を実行する。
+    verify: PRECONDITION_FAILEDでChannelだけが閉じ、Connectionが利用可能であることを確認する。
+    cleanup: 元ChannelからQueueを削除する。
+  exchange-binding-matrix:
+    setup: Direct、Topic、Fanout、Headers Exchangeと専用Queue、Bindingを宣言する。
+    execute: 各Exchangeへ一致MessageをPublishし、Direct Exchangeへ非一致MessageもPublishする。
+    verify: 一致する四QueueでMessageを取得し、非一致専用QueueのMessage数がゼロであることを確認する。
+    cleanup: 全QueueとExchangeを削除する。
   exchange-routing:
     setup: Direct Exchange、Classic Queue、Bindingを一意Namespaceで宣言する。
     execute: Persistent MessageをConfirm ChannelからPublishする。
@@ -10,4 +20,18 @@ proof_obligations:
     execute: QueueへPublishしてConsumeする。
     verify: Ack後にMessage数がゼロであることを確認する。
     cleanup: Queueを削除して再検査する。
-
+  quorum-queue:
+    setup: 三Node Clusterへ三ReplicaのQuorum Queueを宣言する。
+    execute: Persistent MessageをConfirm付きでPublishしManual AckでConsumeする。
+    verify: Confirm ackとMessage ID一致を確認する。
+    cleanup: Quorum Queueを削除する。
+  stream-queue:
+    setup: 三Node ClusterへStream Queueを宣言する。
+    execute: 三MessageをConfirm付きでPublishし、offset=firstの二つの独立Consumerを順次開始する。
+    verify: 両Consumerが同じ三MessageをPublish順にConsumeしてAckする。
+    cleanup: Consumerを停止してStream Queueを削除する。
+  fixed-client-queue-types:
+    setup: amqp091-go v1.10.0とRabbitMQ 4.3.5 OCI Digestを固定する。
+    execute: 同一Client HarnessでClassic、Quorum、Stream Queueの対象操作を実行する。
+    verify: 全Queue Typeの宣言、Confirm付きPublish、対象Consumeが成功することを確認する。
+    cleanup: 作成したQueueを削除し専用Compose環境を停止する。

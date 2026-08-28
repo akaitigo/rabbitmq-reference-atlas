@@ -1,0 +1,8 @@
+schema_version: 1
+id: exchange-binding-matrix
+claims: [messaging.exchange-binding-matrix]
+profile: cluster
+setup: Direct、Topic、Fanout、Headers Exchangeと専用Queue、Bindingを一意Namespaceで宣言する。
+execute: 各Exchangeへ一致Message、Direct Exchangeへ非一致MessageをConfirm付きでPublishする。
+verify: 四つの正Routingと一つの負Routingを機械判定する。
+cleanup: 全QueueとExchangeを削除する。

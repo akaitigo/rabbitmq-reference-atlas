@@ -6,6 +6,18 @@ components:
     source: https://github.com/rabbitmq/rabbitmq-server/tree/v4.3.5
     license: MPL-2.0
     usage: 実行対象Broker。Sourceまたは文書本文は再配布しない。
+  - id: rabbitmq-server-upgrade-source
+    name: RabbitMQ Server
+    version: 4.2.9
+    source: https://github.com/rabbitmq/rabbitmq-server/tree/v4.2.9
+    license: MPL-2.0
+    usage: Rolling Upgrade LabのSource Broker。Sourceまたは文書本文は再配布しない。
+  - id: rabbitmq-docker-official-image-upgrade-source
+    name: RabbitMQ Docker Official Image packaging
+    version: d9ae078e0eee51a50ad48c41914c06f0e6e20da5
+    source: https://github.com/docker-library/rabbitmq
+    license: GPL-2.0-or-later
+    usage: RabbitMQ 4.2.9固定DigestのUpgrade Source runtime packaging。
   - id: rabbitmq-docker-official-image
     name: RabbitMQ Docker Official Image packaging
     version: fe08e8852f66fde85461be4eed35675a4b8e35d8
@@ -41,4 +53,3 @@ trademarks:
   - name: RabbitMQ
     owner: Broadcom Inc. and/or its subsidiaries
     usage: 製品の識別と相互運用性説明だけに使用する。
-

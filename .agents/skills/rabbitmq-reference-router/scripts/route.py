@@ -13,19 +13,21 @@ MODES = {
     "gap": [".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md", "coverage.yaml"],
 }
 
-GAP = ("mqtt", "stomp", "amqp 1.0", "stream", "super stream", "federation", "shovel", "oauth", "ldap", "kubernetes", "operator", "backup", "performance", "性能", "memory alarm", "disk alarm", "blocked")
+GAP = ("mqtt", "stomp", "amqp 1.0", "super stream", "federation", "shovel", "oauth", "ldap", "kubernetes", "operator", "tanzu", "managed service")
 
 
 def route(query: str) -> dict:
     value = query.casefold()
     if any(keyword in value for keyword in GAP):
         mode, reason, status = "gap", "固定Coverage外のSurfaceです。追加のClaimとEvidenceが必要です。", "outside-current-coverage"
-    elif any(keyword in value for keyword in ("復旧", "recover", "leader failure", "leader停止", "node停止", "ノード停止")):
+    elif any(keyword in value for keyword in ("復旧", "recover", "leader failure", "leader停止", "node停止", "ノード停止", "partition", "network isolation", "ネットワーク分断")):
         mode, reason, status = "recover", "Cluster FailureとRecoveryの安全な手順へ案内します。", "candidate-evidence-required"
-    elif any(keyword in value for keyword in ("診断", "diagnose", "backlog", "redelivery loop", "再配送ループ", "重複", "dlq backlog")):
+    elif any(keyword in value for keyword in ("診断", "diagnose", "backlog", "redelivery loop", "再配送ループ", "重複", "dlq backlog", "blocked", "memory alarm", "disk alarm", "metrics", "prometheus", "access_refused")):
         mode, reason, status = "diagnose", "症状をObservable OutcomeとRunbookへ接続します。", "candidate-evidence-required"
-    elif any(keyword in value for keyword in ("移行", "migrate", "upgrade", "アップグレード", "mirrored classic")):
+    elif any(keyword in value for keyword in ("移行", "migrate", "upgrade", "アップグレード", "mirrored classic", "blue-green", "rolling")):
         mode, reason, status = "migrate", "固定Versionと未閉包の移行境界を確認します。", "coverage-boundary"
+    elif any(keyword in value for keyword in ("設計", "design", "選定", "使い分け", "比較", "architecture")):
+        mode, reason, status = "design", "選択条件と保証境界の判断表へ案内します。", "candidate-evidence-required"
     elif any(keyword in value for keyword in ("review", "レビュー", "lint", "監査")):
         mode, reason, status = "review", "Topologyと保証境界をClaim/Evidenceに照らしてReviewします。", "candidate-evidence-required"
     elif any(keyword in value for keyword in ("実装", "implement", "code", "宣言", "publish", "consume", "ack", "nack", "reject")):
@@ -44,4 +46,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

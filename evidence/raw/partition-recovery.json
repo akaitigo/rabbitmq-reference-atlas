@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "mode": "inspect-queue",
+  "run_id": "1787902354159274000",
+  "created_at": "2026-08-28T07:32:40Z",
+  "checks": [
+    {
+      "name": "partition-replica-rejoined",
+      "passed": true,
+      "observed": {
+        "members": [
+          "rabbit@rabbitmq-1",
+          "rabbit@rabbitmq-2",
+          "rabbit@rabbitmq-3"
+        ],
+        "online_members": [
+          "rabbit@rabbitmq-1",
+          "rabbit@rabbitmq-2",
+          "rabbit@rabbitmq-3"
+        ],
+        "queue_deleted": true
+      }
+    }
+  ],
+  "queue": "atlas.1787902301570859000.quorum-recovery"
+}

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "mode": "publisher-flow-blocked",
+  "run_id": "1787902282383845000",
+  "created_at": "2026-08-28T07:31:22Z",
+  "checks": [
+    {
+      "name": "publisher-flow.blocked",
+      "passed": true,
+      "observed": {
+        "alarm_http_status": 503,
+        "blocked_event": true,
+        "blocked_reason": "low on memory",
+        "publish_confirmed": false,
+        "publish_error": "context deadline exceeded"
+      }
+    }
+  ]
+}

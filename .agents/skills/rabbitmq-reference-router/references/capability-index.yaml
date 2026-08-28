@@ -1,6 +1,12 @@
 schema_version: 1
 baseline: RabbitMQ 4.3.5
 capabilities:
+  amqp091.entity-declaration:
+    claims: [messaging.amqp-model-boundary]
+    lab: labs/amqp-model/lab.yaml
+  exchange.binding-routing:
+    claims: [messaging.exchange-binding-matrix]
+    lab: labs/exchange-binding-matrix/lab.yaml
   exchange.direct:
     claims: [messaging.exchange-routing]
     lab: labs/exchange-queue/lab.yaml
@@ -19,13 +25,45 @@ capabilities:
   queue.dead-lettering:
     claims: [delivery.dead-lettering]
     lab: labs/dead-letter/lab.yaml
+  queue.ttl-dead-lettering:
+    claims: [delivery.ttl-dead-lettering]
+    lab: labs/ttl-dead-letter/lab.yaml
   consumer.prefetch:
     claims: [delivery.flow-control]
     lab: labs/consumer-flow-control/lab.yaml
+  publisher.resource-alarm-flow-control:
+    claims: [delivery.publisher-flow-control]
+    lab: labs/publisher-flow-control/lab.yaml
+  queue.quorum-stream:
+    claims: [queue.quorum-semantics, queue.stream-semantics]
+    lab: labs/quorum-stream/lab.yaml
+  delivery.ordering-idempotency:
+    claims: [delivery.ordering-boundary, delivery.idempotency-boundary]
+    lab: labs/ordering-idempotency/lab.yaml
   cluster.membership:
     claims: [cluster.three-node-membership]
     lab: labs/cluster-failure-recovery/lab.yaml
   quorum-queue.leader-election:
     claims: [cluster.leader-failure, cluster.node-recovery]
     lab: labs/cluster-failure-recovery/lab.yaml
-
+  cluster.network-partition:
+    claims: [cluster.network-partition, cluster.partition-recovery]
+    lab: labs/network-partition/lab.yaml
+  security.rabbitmq-permissions:
+    claims: [security.least-privilege]
+    lab: labs/security-observability/lab.yaml
+  security.tls-mtls:
+    claims: [security.tls-transport]
+    lab: labs/security-tls/lab.yaml
+  observability.management-api:
+    claims: [observability.management-api, operation.health-and-alarms]
+    lab: labs/security-observability/lab.yaml
+  observability.queue-state-prometheus:
+    claims: [observability.queue-state-transition, observability.prometheus-metrics]
+    lab: labs/observability-state/lab.yaml
+  performance.fixed-workload:
+    claims: [performance.fixed-workload]
+    lab: labs/performance-capacity/lab.yaml
+  migration.rolling-upgrade:
+    claims: [migration.rolling-upgrade]
+    lab: labs/rolling-upgrade/lab.yaml

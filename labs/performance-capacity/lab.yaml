@@ -1,0 +1,8 @@
+schema_version: 1
+id: performance-capacity
+claims: [performance.fixed-workload]
+profile: cluster
+setup: RabbitMQ 4.3.5、amqp091-go v1.10.0、単一Publisher/Consumer、300件、1024 byte、Persistent、Confirm、Manual Ackを固定する。
+execute: Classic、三Replica Quorum、Stream Queueを順次一回ずつ測定する。
+verify: 各Cellで300 Publish/Confirm/Consumeと300一意ID、Confirm p50/p95/p99、Broker Memory Snapshotを取得する。
+cleanup: CellごとにConsumerを停止しQueueを削除する。

@@ -1,6 +1,6 @@
 ---
 name: rabbitmq-reference-router
-description: RabbitMQ 4.3.5のExchange、Queue、Acknowledgement、Redelivery、Dead Lettering、Flow Control、Cluster、Failure、Recoveryについて、設計・実装・診断・復旧・移行・Reviewを固定Coverage、Lab、Evidenceへ案内する。RabbitMQ以外のBroker比較や未検証Protocolを実証済みとして扱う依頼には使用しない。
+description: RabbitMQ 4.3.5のAMQP Model、Topology、Delivery、Quorum/Stream、Flow Control、Cluster/Partition/Recovery、Security、Observability、Performance、Upgrade/Migrationについて、設計・実装・診断・復旧・移行・Reviewを固定Coverage、Lab、Evidenceへ案内する。RabbitMQ以外のBroker比較や未検証Protocolを実証済みとして扱う依頼には使用しない。
 ---
 
 # RabbitMQ Reference Router
@@ -22,6 +22,9 @@ description: RabbitMQ 4.3.5のExchange、Queue、Acknowledgement、Redelivery、
 - Canonical Lab ProtocolはAMQP 0-9-1です。AMQP 1.0、Stream Protocol、MQTT、STOMPの挙動へ一般化しません。
 - Consumer Prefetch、Connection State `flow`、resource alarmによる`blocked`を同じ機能として扱いません。
 - Consumer AcknowledgementとPublisher Confirmを同じ保証として扱いません。
+- Node停止とNetwork Partitionを同じFailureとして扱いません。
+- RabbitMQの配送をExactly-onceや組込み重複排除として扱わず、Application Idempotency境界を示します。
+- 固定性能測定をProduction CapacityやQueue Typeの普遍的優劣へ一般化しません。
 - Failure Labは専用Compose projectだけを操作します。外部Clusterを停止しません。
 - Coverage外では既存Capabilityを捏造せず、`gap`と必要な追加Evidenceを返します。
 - ユーザーが実装・変更・公開を依頼していない場合、診断と根拠提示に留めます。
@@ -29,4 +32,3 @@ description: RabbitMQ 4.3.5のExchange、Queue、Acknowledgement、Redelivery、
 ## 出力
 
 回答には、選択したMode、固定Version、根拠Claim、Evidenceの有無、適用条件、保証しない境界を短く含めます。実行した場合は再現コマンドとObservable Outcomeを示します。
-

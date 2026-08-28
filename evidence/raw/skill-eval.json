@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "suite": "rabbitmq-reference-router",
-  "passed": 7,
-  "total": 7,
+  "passed": 21,
+  "total": 21,
   "pass_rate": 1.0,
   "results": [
     {
@@ -67,6 +67,146 @@
     },
     {
       "id": "gap.mqtt",
+      "passed": true,
+      "expected_mode": "gap",
+      "actual_mode": "gap",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "design.amqp-model",
+      "passed": true,
+      "expected_mode": "design",
+      "actual_mode": "design",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "design.exchange-matrix",
+      "passed": true,
+      "expected_mode": "design",
+      "actual_mode": "design",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "implement.ttl-dlx",
+      "passed": true,
+      "expected_mode": "implement",
+      "actual_mode": "implement",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/capability-index.yaml",
+        "labs/README.md"
+      ]
+    },
+    {
+      "id": "design.quorum-stream",
+      "passed": true,
+      "expected_mode": "design",
+      "actual_mode": "design",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "diagnose.publisher-blocked",
+      "passed": true,
+      "expected_mode": "diagnose",
+      "actual_mode": "diagnose",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/runbook-index.yaml",
+        "operations/runbooks/index.yaml"
+      ]
+    },
+    {
+      "id": "design.ordering",
+      "passed": true,
+      "expected_mode": "design",
+      "actual_mode": "design",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "diagnose.idempotency",
+      "passed": true,
+      "expected_mode": "diagnose",
+      "actual_mode": "diagnose",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/runbook-index.yaml",
+        "operations/runbooks/index.yaml"
+      ]
+    },
+    {
+      "id": "recover.partition",
+      "passed": true,
+      "expected_mode": "recover",
+      "actual_mode": "recover",
+      "references": [
+        "operations/runbooks/cluster-leader-failure.md",
+        "labs/cluster-failure-recovery/lab.yaml"
+      ]
+    },
+    {
+      "id": "diagnose.access-refused",
+      "passed": true,
+      "expected_mode": "diagnose",
+      "actual_mode": "diagnose",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/runbook-index.yaml",
+        "operations/runbooks/index.yaml"
+      ]
+    },
+    {
+      "id": "diagnose.prometheus",
+      "passed": true,
+      "expected_mode": "diagnose",
+      "actual_mode": "diagnose",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/runbook-index.yaml",
+        "operations/runbooks/index.yaml"
+      ]
+    },
+    {
+      "id": "design.performance",
+      "passed": true,
+      "expected_mode": "design",
+      "actual_mode": "design",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "migrate.upgrade",
+      "passed": true,
+      "expected_mode": "migrate",
+      "actual_mode": "migrate",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md",
+        "versions/baseline.yaml"
+      ]
+    },
+    {
+      "id": "gap.amqp10",
+      "passed": true,
+      "expected_mode": "gap",
+      "actual_mode": "gap",
+      "references": [
+        ".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md",
+        "coverage.yaml"
+      ]
+    },
+    {
+      "id": "gap.super-stream",
       "passed": true,
       "expected_mode": "gap",
       "actual_mode": "gap",

@@ -1,0 +1,7 @@
+schema_version: 1
+proof_obligations:
+  fixed-workload:
+    setup: Broker、Client、Queue Type、件数、Payload、Publisher、Consumer、Confirm、Ack条件を固定する。
+    execute: Classic、Quorum、Streamの各Cellを一意Queueで順次測定する。
+    verify: Published、Confirmed、Consumed、一意IDが期待件数で、Latency Sample、分位、Rate、Memory Snapshotが揃うことを確認する。
+    cleanup: 各CellのConsumerとQueueを削除する。

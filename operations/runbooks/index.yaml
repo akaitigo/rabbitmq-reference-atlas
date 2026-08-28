@@ -9,4 +9,12 @@ runbooks:
   - id: delivery.dead-letter-backlog
     path: operations/runbooks/dead-letter-backlog.md
     evidence: delivery.dead-lettering
-
+  - id: security.least-privilege-access-denied
+    path: operations/runbooks/least-privilege-access-denied.md
+    evidence: security.least-privilege
+  - id: operations.management-health-alarm
+    path: operations/runbooks/management-health-alarm-snapshot.md
+    evidence: operation.health-and-alarms
+  - id: observability.queue-state-prometheus
+    path: operations/runbooks/queue-state-prometheus-correlation.md
+    evidence: observability.queue-state-transition

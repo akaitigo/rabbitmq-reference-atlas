@@ -11,7 +11,6 @@
 make labs
 ```
 
-`evidence/raw/`はHarnessの直接出力、`evidence/*.evidence.json`はCore Evidence Schemaへ変換したRecordです。Cluster Failureは対象Quorum QueueのLeaderをManagement APIから特定し、その一Nodeだけを停止します。
+`evidence/raw/`はHarnessの直接出力、`evidence/*.evidence.json`はCore Evidence Schemaへ変換したRecordです。GeneratorはEvidence IDごとの必須Check名と`passed=true`を検査し、失敗または欠落したRawから`verdict: pass`を生成しません。Cluster Failureは対象Quorum QueueのLeaderをManagement APIから特定し、その一Nodeだけを停止します。Network Partitionは別Labとして専用Compose NetworkからLeader Containerを隔離し、Trapで必ず再接続します。
 
-`delivery.flow-control`はConsumer Prefetchの配送制御を対象にします。RabbitMQ Connection Stateの`flow`とresource alarmによる`blocked`は異なるSurfaceであり、現Epochでは未閉包のため完成Gapとして残します。
-
+`delivery.flow-control`はConsumer Prefetchの配送制御、`delivery.publisher-flow-control`はMemory Alarm中のConnection.Blockedと解除後のConfirm再開を対象にします。両者は別Claim・別Evidenceであり、同じ保証として扱いません。

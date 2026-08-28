@@ -2,27 +2,28 @@
 
 `rabbitmq-reference-atlas`は、RabbitMQ 4.3.5の公開挙動を、一次資料、再実行可能なLab、観測可能なOracle、Digestで固定したEvidenceへ接続する製品Technical Reference Atlasです。
 
-現在はローカル実装段階で、`status: incomplete`です。GitHubには未公開です。完成の主張は、固定Coverage Epochに対する全Gateと生成Certificateが揃うまで行いません。
+現在は固定Coverage Epochに対するローカル実証を完了し、`status: complete`です。GitHubへの公開や署名済みReleaseは行っていません。完了の範囲は`atlas.yaml`、`mastery.yaml`、`coverage.yaml`とローカルCompletion Certificateに固定しています。
 
 ## 固定対象
 
 - RabbitMQ `4.3.5`
 - OCI Image `rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031`
 - Coverage Epoch `2026-08-28`
-- Core Contract `reference-atlas-core@6793642472d4011786c35b98fdb60cd4212e9699`
+- Core Contract `reference-atlas-core@d5c0a6ce757fd5f43af837edd26f55c7325b811e`
 
 ## 実証範囲
 
-- Direct Exchange、Queue、Binding、Publisher Confirm
-- Manual Acknowledgement、Nack/Requeue、Redelivery Flag
-- Dead Letter Exchangeと隔離Queue
-- Consumer PrefetchによるFlow Control
-- 三ノードCluster、Quorum Queue、Leader停止、配送継続、Node復帰
-- Router Skillと決定論的Eval
+- AMQP 0-9-1 Model、Direct/Topic/Fanout/Headers Exchange、Binding、Queue
+- Publisher Confirm、Manual Ack、Nack/Requeue、Redelivery、TTL/DLX
+- Quorum Queue、Streamの非破壊Replay、限定条件のOrdering、Application Idempotency境界
+- Consumer Prefetchと、Resource AlarmによるPublisher Block/再開
+- 三Node Cluster、Quorum Leader停止、Network Partition、多数派配送、Replica復帰
+- Least Privilege、Management Health/Alarm、固定Workload性能測定
+- Router Skillと全領域・誤同一視を含む決定論的Eval
 
 ## Mastery
 
-`mastery.yaml`は、RabbitMQという同一分野で答えられるべき問いを8 Outcomeと14 Surfaceへ固定します。既存のLabとEvidenceを置き換えずCoverageへ接続し、未閉包の運用監視、Security、性能、互換性、移行を`planned` Targetとして可視化します。Repository数や対象分野を増やすためのManifestではありません。
+`mastery.yaml`は、RabbitMQという同一分野で答えられるべき問いを8 Outcomeと14 Surfaceへ固定します。運用監視、Security、性能、互換性、移行を含む32 Required TargetはClaimと再実行可能なEvidenceへ接続済みです。Repository数や対象分野を増やすためのManifestではありません。
 
 ## 検証
 
@@ -33,7 +34,7 @@ make check
 make labs
 ```
 
-`make labs`は専用Compose projectを作成し、正常系、拒否・再配送、Cluster障害、復旧を実行して`evidence/`を再生成した後、Volumeを含めてCleanupします。調査のため環境を残す場合だけ`KEEP_ENV=1 make labs`を使用します。
+`make labs`は専用Compose projectを作成し、正常系、拒否・再配送、Resource Alarm、Cluster障害、Network Partition、復旧、Security、Observability、固定性能測定を実行して`evidence/`を再生成した後、Volumeを含めてCleanupします。調査のため環境を残す場合だけ`KEEP_ENV=1 make labs`を使用します。
 
 ## 正本
 

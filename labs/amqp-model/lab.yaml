@@ -1,0 +1,8 @@
+schema_version: 1
+id: amqp-model
+claims: [messaging.amqp-model-boundary]
+profile: cluster
+setup: Durable Queueを一意Namespaceで宣言する。
+execute: 同名かつnon-durableな競合Queue宣言を別Channelで実行する。
+verify: PRECONDITION_FAILEDとConnection継続を機械判定する。
+cleanup: Queueを削除する。

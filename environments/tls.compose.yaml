@@ -1,0 +1,33 @@
+name: rabbitmq-reference-atlas-tls
+
+services:
+  rabbitmq-tls:
+    image: rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031
+    hostname: rabbitmq-tls
+    restart: "no"
+    environment:
+      RABBITMQ_DEFAULT_USER: atlas
+      RABBITMQ_DEFAULT_PASS: atlas-local-only
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-tls-cookie
+      RABBITMQ_NODENAME: rabbit@rabbitmq-tls
+    configs:
+      - source: rabbitmq-tls-config
+        target: /etc/rabbitmq/rabbitmq.conf
+    volumes:
+      - type: bind
+        source: ${RABBITMQ_ATLAS_TLS_DIR:?RABBITMQ_ATLAS_TLS_DIR must point to an ephemeral certificate directory}
+        target: /tls
+        read_only: true
+    ports:
+      - "127.0.0.1:45671:5671"
+      - "127.0.0.1:45672:5672"
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 2s
+      timeout: 5s
+      retries: 60
+      start_period: 10s
+
+configs:
+  rabbitmq-tls-config:
+    file: ./tls/rabbitmq.conf

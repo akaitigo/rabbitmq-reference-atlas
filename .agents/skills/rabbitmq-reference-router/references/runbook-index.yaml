@@ -9,4 +9,15 @@ symptoms:
   quorum-leader-unavailable:
     runbook: operations/runbooks/cluster-leader-failure.md
     evidence: cluster.leader-failure
-
+  network-partition:
+    runbook: operations/runbooks/cluster-leader-failure.md
+    evidence: cluster.network-partition
+  access-refused:
+    runbook: operations/runbooks/least-privilege-access-denied.md
+    evidence: security.least-privilege
+  health-or-alarm:
+    runbook: operations/runbooks/management-health-alarm-snapshot.md
+    evidence: operation.health-and-alarms
+  queue-state-or-metrics:
+    runbook: operations/runbooks/queue-state-prometheus-correlation.md
+    evidence: observability.queue-state-transition

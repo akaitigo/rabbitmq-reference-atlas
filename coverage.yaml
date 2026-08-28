@@ -1,7 +1,7 @@
 schema_version: 1
 atlas_id: rabbitmq-reference-atlas
 epoch: '2026-08-28'
-authority_lock_digest: sha256:17667d9e84f296e0b7b51f280f9012e9c29285d7ec0c6b40becce97f6b746920
+authority_lock_digest: sha256:91cc188ce4fa664745afdaf5d1b3d7681c0d3647b35ca4fbf702a7df25e9ef69
 target_sets:
 - id: messaging-surface
   title: Messaging Surface
@@ -74,6 +74,28 @@ target_sets:
   - 対象Upgrade Path、削除済み機能、Feature Flag、Plugin互換性を固定できること
   - Workload継続中の移行、Rollback境界、Blue-Green手順を実行証拠へ接続できること
 targets:
+- id: messaging.amqp-model
+  title: AMQP 0-9-1 model boundary
+  target_set: foundations-design
+  kind: concept
+  requirement: required
+  state: covered
+  rationale: Exchange、Binding、Queueの役割と宣言同値性を、競合宣言の拒否を含む実行結果で境界付ける。
+  claim_ids:
+  - messaging.amqp-model-boundary
+  evidence_ids:
+  - lab.amqp-model
+- id: messaging.exchange-binding-matrix
+  title: Exchange, binding, and queue routing matrix
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Direct、Topic、Fanout、Headersの正Routingと非一致Routingを同一固定環境で比較する。
+  claim_ids:
+  - messaging.exchange-binding-matrix
+  evidence_ids:
+  - lab.exchange-binding-matrix
 - id: messaging.exchange-routing
   title: Exchange routing
   target_set: messaging-surface
@@ -129,6 +151,17 @@ targets:
   - delivery.dead-lettering
   evidence_ids:
   - lab.dead-letter
+- id: delivery.ttl-dead-lettering
+  title: Message TTL and dead letter routing
+  target_set: messaging-surface
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: RejectだけでなくTTL超過によるDead LetteringをSource残数とx-death Headerで検証する。
+  claim_ids:
+  - delivery.ttl-dead-lettering
+  evidence_ids:
+  - lab.ttl-dead-letter
 - id: delivery.flow-control
   title: Consumer flow control
   target_set: delivery-pressure
@@ -140,6 +173,17 @@ targets:
   - delivery.flow-control
   evidence_ids:
   - lab.consumer-flow-control
+- id: delivery.publisher-flow-control
+  title: Publisher flow control under resource alarm
+  target_set: delivery-pressure
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: Consumer PrefetchとBroker Resource AlarmによるPublisher Blockを区別し、Alarm解除後の再開まで検証する。
+  claim_ids:
+  - delivery.publisher-flow-control
+  evidence_ids:
+  - lab.publisher-flow-control
 - id: delivery.publisher-confirm
   title: Publisher confirm
   target_set: delivery-pressure
@@ -151,6 +195,31 @@ targets:
   - delivery.publisher-confirm
   evidence_ids:
   - lab.exchange-queue
+- id: queue.quorum-stream
+  title: Quorum queue and stream queue semantics
+  target_set: foundations-design
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: 複製Queueと追記型Streamを同一視せず、Confirm/AckとOffset Replayの異なる操作を固定Clusterで検証する。
+  claim_ids:
+  - queue.quorum-semantics
+  - queue.stream-semantics
+  evidence_ids:
+  - lab.quorum-stream
+  - lab.cluster-failure-recovery
+- id: delivery.ordering-idempotency
+  title: Ordering and application idempotency boundary
+  target_set: delivery-pressure
+  kind: concept
+  requirement: required
+  state: covered
+  rationale: 順序を保証できる限定条件と、重複排除がApplication責任である境界を同じWorkloadで反証可能にする。
+  claim_ids:
+  - delivery.ordering-boundary
+  - delivery.idempotency-boundary
+  evidence_ids:
+  - lab.ordering-idempotency
 - id: cluster.three-node-membership
   title: Three-node cluster membership
   target_set: cluster-resilience
@@ -184,6 +253,18 @@ targets:
   - cluster.node-recovery
   evidence_ids:
   - lab.cluster-failure-recovery
+- id: cluster.network-partition-recovery
+  title: Network partition majority and replica recovery
+  target_set: cluster-resilience
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: Node停止とNetwork Partitionを区別し、多数派継続、少数派拒否、再接続後Replica復帰を専用Networkで検証する。
+  claim_ids:
+  - cluster.network-partition
+  - cluster.partition-recovery
+  evidence_ids:
+  - lab.network-partition
 - id: operation.reproducible-evidence
   title: Reproducible evidence
   target_set: atlas-operation
@@ -206,57 +287,168 @@ targets:
   - skill.router-evaluation
   evidence_ids:
   - eval.router
+- id: compatibility.fixed-client-queue-types
+  title: Fixed AMQP client and queue type compatibility
+  target_set: compatibility-integration
+  kind: compatibility
+  requirement: required
+  state: covered
+  rationale: ClientとBrokerのVersionを固定し、Classic、Quorum、Streamの対象操作を同一Harnessで実証する。
+  claim_ids:
+  - compatibility.fixed-client-queue-types
+  evidence_ids:
+  - lab.quorum-stream
+- id: security.authorization-isolation
+  title: Authentication, authorization, and vhost isolation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: covered
+  rationale: 正常認証だけでなくResource Permissionの許可・拒否を専用vhostで実証する。
+  claim_ids:
+  - security.least-privilege
+  evidence_ids:
+  - lab.security-authz
+- id: security.tls-transport
+  title: TLS and mutual TLS transport boundary
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: covered
+  rationale: 正常なmTLSだけでなくTrust、Hostname、Client Identity、Plaintext拒否を専用環境で実証する。
+  claim_ids:
+  - security.tls-transport
+  evidence_ids:
+  - lab.security-tls
+- id: observability.management-health
+  title: Management health, alarms, and safe cleanup
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 三NodeとQueueの状態、正常Health/Alarm、Lab Resource Cleanupを構造化Evidenceへ接続する。
+  claim_ids:
+  - observability.management-api
+  - operation.health-and-alarms
+  - operation.safe-cleanup
+  evidence_ids:
+  - lab.observability-health
+- id: observability.queue-state-prometheus
+  title: Queue state transition and Prometheus metrics
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 静的なQueue=0だけでなくready→unacked→acked遷移と三Node Metricsを同一Runへ接続する。
+  claim_ids:
+  - observability.queue-state-transition
+  - observability.prometheus-metrics
+  evidence_ids:
+  - lab.observability-state
+- id: performance.fixed-workload
+  title: Fixed workload performance measurement
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: covered
+  rationale: 普遍値を主張せず、固定条件のRaw Sample、分位、Rate、Resource Snapshotを容量判断の入力として再測定する。
+  claim_ids:
+  - performance.fixed-workload
+  evidence_ids:
+  - lab.performance-capacity
+- id: migration.rolling-upgrade
+  title: Three-node rolling upgrade from 4.2.9 to 4.3.5
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: covered
+  rationale: 実在してDigest固定できる4.2.9から4.3.5へ、Mixed-versionと継続Workloadを含む一台ずつのUpgradeを実証する。
+  claim_ids:
+  - migration.rolling-upgrade
+  evidence_ids:
+  - lab.rolling-upgrade
 - id: mastery.foundations-and-decisions
   title: RabbitMQ foundations and design decisions
   target_set: foundations-design
   kind: concept
   requirement: required
-  state: planned
+  state: covered
   rationale: 決定版として機能一覧だけでなく、配送、複製、Storage、Protocolの原理と採否判断を追跡可能にする必要がある。
-  claim_ids: []
-  evidence_ids: []
+  claim_ids:
+  - messaging.amqp-model-boundary
+  - messaging.exchange-binding-matrix
+  - queue.quorum-semantics
+  - queue.stream-semantics
+  - delivery.ordering-boundary
+  - delivery.idempotency-boundary
+  evidence_ids:
+  - lab.amqp-model
+  - lab.exchange-binding-matrix
+  - lab.quorum-stream
+  - lab.ordering-idempotency
 - id: mastery.operations-observability
   title: Operational observability and runbooks
   target_set: operations-observability
   kind: operation
   requirement: required
-  state: planned
+  state: covered
   rationale: Backlog、未Ack、Alarm、Replica、Connectionを観測し、Alertから安全な復旧へ到達できる証拠が必要である。
-  claim_ids: []
-  evidence_ids: []
+  claim_ids:
+  - observability.management-api
+  - observability.queue-state-transition
+  - observability.prometheus-metrics
+  - operation.health-and-alarms
+  - operation.safe-cleanup
+  - delivery.publisher-flow-control
+  evidence_ids:
+  - lab.observability-health
+  - lab.observability-state
+  - lab.publisher-flow-control
 - id: mastery.security-safety
   title: Security and isolation
   target_set: security-safety
   kind: security
   requirement: required
-  state: planned
+  state: covered
   rationale: Transport、Identity、Authorization、Secret Rotation、Tenant Isolationを正常系と拒否系の両方で証明する必要がある。
-  claim_ids: []
-  evidence_ids: []
+  claim_ids:
+  - security.least-privilege
+  - security.tls-transport
+  evidence_ids:
+  - lab.security-authz
+  - lab.security-tls
 - id: mastery.performance-capacity
   title: Performance and capacity model
   target_set: performance-capacity
   kind: performance
   requirement: required
-  state: planned
+  state: covered
   rationale: 一般化した性能値ではなく、固定条件の測定とRaw Dataから利用者が自身の容量判断を行える必要がある。
-  claim_ids: []
-  evidence_ids: []
+  claim_ids:
+  - performance.fixed-workload
+  evidence_ids:
+  - lab.performance-capacity
 - id: mastery.compatibility-integration
   title: Protocol and client compatibility
   target_set: compatibility-integration
   kind: compatibility
   requirement: required
-  state: planned
+  state: covered
   rationale: AMQP 0-9-1以外のProtocol、Client、Plugin、Queue Type間の互換性を未検証のまま一般化しないために必要である。
-  claim_ids: []
-  evidence_ids: []
+  claim_ids:
+  - compatibility.fixed-client-queue-types
+  - queue.quorum-semantics
+  - queue.stream-semantics
+  evidence_ids:
+  - lab.quorum-stream
 - id: mastery.migration-evolution
   title: Upgrade migration and deprecation
   target_set: migration-evolution
   kind: migration
   requirement: required
-  state: planned
+  state: covered
   rationale: RabbitMQ 4.3.5への公式Upgrade Path、削除済み機能、Rollback不能点をWorkload付きで実証する必要がある。
-  claim_ids: []
-  evidence_ids: []
+  claim_ids:
+  - migration.rolling-upgrade
+  evidence_ids:
+  - lab.rolling-upgrade

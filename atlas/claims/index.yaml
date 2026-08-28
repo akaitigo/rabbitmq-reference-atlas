@@ -1,6 +1,20 @@
 schema_version: 1
 atlas_id: rabbitmq-reference-atlas
 claims:
+  - id: messaging.amqp-model-boundary
+    capability_id: amqp091.entity-declaration
+    statement: AMQP 0-9-1のExchange、Binding、QueueはBroker上の独立Entityであり、既存Queueと非同値な再宣言はPRECONDITION_FAILEDで拒否される。
+    acceptance:
+      - Durable Queueを宣言した後、同名かつnon-durableな宣言を試みること
+      - 競合宣言がPRECONDITION_FAILEDで拒否され、Connection自体は利用可能であること
+    proof_obligation: atlas/proof-obligations/messaging.yaml#amqp-model-boundary
+  - id: messaging.exchange-binding-matrix
+    capability_id: exchange.binding-routing
+    statement: Direct、Topic、Fanout、Headers Exchangeは、それぞれのBinding規則に従って対象Queueへ配送し、非一致Direct Routing Keyは配送しない。
+    acceptance:
+      - 4種類のExchangeを同一の固定Broker Versionで宣言すること
+      - 正のRouting結果と非一致Direct Routing Keyの負の結果を同時に判定すること
+    proof_obligation: atlas/proof-obligations/messaging.yaml#exchange-binding-matrix
   - id: messaging.exchange-routing
     capability_id: exchange.direct
     statement: Direct ExchangeはBinding Keyと一致するRouting KeyのMessageを対象Queueへ配送する。
@@ -43,6 +57,13 @@ claims:
       - Source QueueにDead Letter Exchangeを設定すること
       - 隔離Queueでx-death Headerと元Message IDを確認すること
     proof_obligation: atlas/proof-obligations/delivery.yaml#dead-lettering
+  - id: delivery.ttl-dead-lettering
+    capability_id: queue.ttl-dead-lettering
+    statement: Queue TTLを超過したMessageはSource Queueから除去され、構成済みDead Letter Exchangeを経由して隔離Queueへ配送される。
+    acceptance:
+      - 固定TTLを持つSource QueueとDLX、隔離Queueを宣言すること
+      - Source Queueが空になり、隔離Queueで同一Message IDとx-death Headerを確認すること
+    proof_obligation: atlas/proof-obligations/delivery.yaml#ttl-dead-lettering
   - id: delivery.flow-control
     capability_id: consumer.prefetch
     statement: prefetch=1では一件目をAckするまで同一Consumerへ二件目が配送されない。
@@ -50,6 +71,116 @@ claims:
       - 一件目を未Ackのまま観測Windowを待つこと
       - Ack後に二件目が配送されること
     proof_obligation: atlas/proof-obligations/delivery.yaml#consumer-prefetch
+  - id: delivery.publisher-flow-control
+    capability_id: publisher.resource-alarm-flow-control
+    statement: Cluster Resource Alarm中はPublisher ConnectionへBlocked通知が届き、Publish Confirmは成立せず、Alarm解除後に新規ConnectionのPublish Confirmが成立する。
+    acceptance:
+      - Consumer Prefetchとは別に専用Compose内だけでMemory Alarmを注入すること
+      - Alarm Health非正常、Connection.Blocked、Confirm未成立、解除後Health正常とConfirm ackを確認すること
+    proof_obligation: atlas/proof-obligations/delivery.yaml#publisher-flow-control
+  - id: delivery.ordering-boundary
+    capability_id: queue.single-consumer-ordering
+    statement: 単一Channelから順次Confirm付きでPublishし、単一Queueを単一Consumerで取得する固定条件では、観測したMessage ID列がPublish順と一致する。
+    acceptance:
+      - 二十Messageを同一Channelから順次Publishして各Confirmを得ること
+      - 単一Consumerの取得順がMessage IDのPublish順と一致すること
+    proof_obligation: atlas/proof-obligations/delivery.yaml#ordering-boundary
+  - id: delivery.idempotency-boundary
+    capability_id: application.idempotency-ledger
+    statement: RabbitMQは同一Message IDの重複Publishを排除せず、Application側Ledgerが同一IDの副作用を一回へ制限する。
+    acceptance:
+      - 同一Message IDを二回Publishし、二Deliveryを観測すること
+      - Message BrokerではなくApplication Ledgerが副作用を一回だけ適用したことを記録すること
+    proof_obligation: atlas/proof-obligations/delivery.yaml#idempotency-boundary
+  - id: queue.quorum-semantics
+    capability_id: queue.quorum
+    statement: 三Replicaを要求したQuorum QueueはConfirm付きPublishとManual Ack Consumeを完了できる。
+    acceptance:
+      - 三Node Clusterでx-queue-type=quorumかつinitial-group-size=3を宣言し、三Online Memberを観測すること
+      - Confirm ackと同一Message IDのManual Ack Consumeを確認すること
+    proof_obligation: atlas/proof-obligations/messaging.yaml#quorum-queue
+  - id: queue.stream-semantics
+    capability_id: queue.stream
+    statement: Stream Queueは保持したMessageをx-stream-offset=firstの複数ConsumerへPublish順に非破壊で再生する。
+    acceptance:
+      - x-queue-type=streamのQueueへ三MessageをConfirm付きでPublishすること
+      - 独立した二Consumerがoffset=firstから同じ三Message IDをPublish順に取得すること
+    proof_obligation: atlas/proof-obligations/messaging.yaml#stream-queue
+  - id: compatibility.fixed-client-queue-types
+    capability_id: compatibility.amqp091-go
+    statement: amqp091-go v1.10.0はRabbitMQ 4.3.5のAMQP 0-9-1 Listenerに接続し、Classic、Quorum、Stream Queueの対象操作を同一Harnessで完了する。
+    acceptance:
+      - Client Module Version、RabbitMQ OCI Digest、RabbitMQ VersionをEvidence Digestへ固定すること
+      - Classic、Quorum、Stream Queueの宣言、Confirm付きPublish、対象Consumeが成功すること
+    proof_obligation: atlas/proof-obligations/messaging.yaml#fixed-client-queue-types
+  - id: security.least-privilege
+    capability_id: security.rabbitmq-permissions
+    statement: 専用vhostの無Tag Userへallowed.*だけを許可すると、対象Topologyの構築と配送は成功し、誤Password、別vhost、forbidden.*操作は拒否され、Password Rotation後は旧Credentialが失効する。
+    acceptance:
+      - 実行ごとに専用vhost、User、正規表現Permissionを作ること
+      - 許可操作のConfirm/Ack成功と、禁止Configure/Readのreply_code=403を確認すること
+      - 誤Passwordと別vhost接続を拒否し、Rotation後に旧Password拒否と新Password受理を確認すること
+    proof_obligation: atlas/proof-obligations/security-operations.yaml#least-privilege
+  - id: security.tls-transport
+    capability_id: security.tls-mtls
+    statement: RabbitMQ 4.3.5のTLS専用Listenerは固定CA、Server Name、Client証明書でAMQPS配送を許可し、不正CA、Hostname不一致、Client証明書なし、Plaintext AMQPを拒否する。
+    acceptance:
+      - Runtime一時領域でCA、Server、Client、不正CA証明書を生成し秘密鍵を残さないこと
+      - Server証明書Fingerprint、RabbitMQ Version、Confirm/Consume/Ack成功を記録すること
+      - 不正CA、Hostname不一致、Client証明書なし、Plaintext Listenerを個別に拒否すること
+    proof_obligation: atlas/proof-obligations/security-operations.yaml#tls-transport
+  - id: observability.management-api
+    capability_id: observability.management-api
+    statement: 固定ClusterのManagement APIは三NodeのRunning/Alarm/Partition状態と対象QueueのMessage状態を取得できる。
+    acceptance:
+      - RabbitMQ Version 4.3.5をAPI応答で確認すること
+      - 三Nodeと対象Queueを構造化JSONとして保存すること
+    proof_obligation: atlas/proof-obligations/security-operations.yaml#management-observability
+  - id: observability.queue-state-transition
+    capability_id: observability.queue-state
+    statement: Management APIは同一Messageのready=1、Manual Ack前のunacked=1、Ack後のready=0/unacked=0を時刻付きSnapshotとして区別できる。
+    acceptance:
+      - Confirm付きPublish、Manual Ack Consume、Ackを同一Run IDで実行すること
+      - ready、unacked、ackedの三状態を上限付きPollで取得すること
+    proof_obligation: atlas/proof-obligations/security-operations.yaml#queue-state-transition
+  - id: observability.prometheus-metrics
+    capability_id: observability.prometheus
+    statement: 固定三Node Clusterの各NodeはPrometheus EndpointからRabbitMQ Metric FamilyとAlarm/到達不能Peer Sampleを取得できる。
+    acceptance:
+      - 各Container内部のlocalhost:15692からMetricsを取得すること
+      - 三PayloadのSHA-256、byte数、Metric Family数と選択Sampleを保存すること
+    proof_obligation: atlas/proof-obligations/security-operations.yaml#prometheus-metrics
+  - id: operation.health-and-alarms
+    capability_id: operation.health-checks
+    statement: 各Nodeのready-to-serve-clientsとCluster alarms Health Endpointが正常状態をstatus=okとして返す。
+    acceptance:
+      - 三つのManagement Endpointを個別に検査すること
+      - HealthとAlarmのHTTP 200およびstatus=okを確認すること
+    proof_obligation: atlas/proof-obligations/security-operations.yaml#health-and-alarms
+  - id: operation.safe-cleanup
+    capability_id: operation.lab-cleanup
+    statement: Security Labは専用Userとvhostを削除し、GET 404で不存在を確認して既存Resourceを変更しない。
+    acceptance:
+      - 専用UserとvhostのDelete成功を確認すること
+      - 削除後の個別GETが404であること
+    proof_obligation: atlas/proof-obligations/security-operations.yaml#safe-cleanup
+  - id: performance.fixed-workload
+    capability_id: performance.fixed-workload
+    statement: 固定したRabbitMQ 4.3.5 Cluster、Client、Message数、Payload、Confirm、Ack条件で、Classic、Quorum、Streamの送受信件数、Confirm Latency分位、Rate、Broker Memoryを再測定できる。
+    acceptance:
+      - 各Queue Typeで300件すべてをPublish、Confirm、Consumeし、一意ID数も300であること
+      - Confirm Raw Sampleとp50/p95/p99、Rate、測定前後のBroker Memoryを記録すること
+      - 測定値を固定条件外の容量やQueue Typeの普遍的優劣へ一般化しないこと
+    proof_obligation: atlas/proof-obligations/performance.yaml#fixed-workload
+  - id: migration.rolling-upgrade
+    capability_id: migration.rolling-upgrade
+    statement: 三Node RabbitMQ 4.2.9 Clusterは全Stable Feature Flagを事前有効化し、各NodeのQuorum安全性を確認して一台ずつ固定4.3.5 Imageへ置換すると、Mixed-version Phaseを経て三Node 4.3.5へ到達し、低Rate Confirm/Ack Workloadを継続できる。
+    acceptance:
+      - Source/Target OCI Digest、Node Name、Data Volume、Erlang Cookieを固定すること
+      - source、mixed-1、mixed-2、targetのVersion、Membership、Alarm、Partition、Replicaを保存すること
+      - 各Node停止前Check、全PhaseのConfirm/Consume、Confirm済みID欠落ゼロを確認すること
+      - Downgrade、別Cluster Message移送、Exactly-once、Upgrade中性能を主張しないこと
+    proof_obligation: atlas/proof-obligations/migration.yaml#rolling-upgrade
   - id: cluster.three-node-membership
     capability_id: cluster.membership
     statement: 固定Compose環境は三つのRunning RabbitMQ Nodeからなる一つのClusterを形成する。
@@ -72,6 +203,20 @@ claims:
       - 停止Nodeを同一Volumeで再起動すること
       - 三NodeのRunning Membershipを再確認すること
     proof_obligation: atlas/proof-obligations/resilience.yaml#node-recovery
+  - id: cluster.network-partition
+    capability_id: cluster.network-partition
+    statement: 三Replica Quorum QueueのLeaderをNetwork隔離した場合、多数派側はConfirm済みMessageを配送でき、少数派側は新規WriteをConfirmできない。
+    acceptance:
+      - Process停止ではなく専用Compose Networkから一Nodeを切断すること
+      - 多数派で全Message IDを一意に取得し、少数派WriteがConfirmされないこと
+    proof_obligation: atlas/proof-obligations/resilience.yaml#network-partition
+  - id: cluster.partition-recovery
+    capability_id: cluster.partition-recovery
+    statement: 隔離Nodeを専用Networkへ再接続すると、Cluster Membershipと対象Quorum Queueの三Online Replicaが回復する。
+    acceptance:
+      - Trapを含む再接続処理を持つこと
+      - 三Node Running Membershipと三Online Queue Memberを再確認すること
+    proof_obligation: atlas/proof-obligations/resilience.yaml#partition-recovery
   - id: operation.reproducible-evidence
     capability_id: atlas.evidence
     statement: 各Evidenceは固定Source、Environment、Harness、ArtifactのSHA-256へ束縛される。
@@ -86,4 +231,3 @@ claims:
       - 全Eval Caseが期待ModeとReferenceに一致すること
       - minimum_pass_rateを満たすこと
     proof_obligation: atlas/proof-obligations/atlas-operation.yaml#skill-eval
-

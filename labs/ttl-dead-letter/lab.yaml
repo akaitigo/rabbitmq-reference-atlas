@@ -1,0 +1,8 @@
+schema_version: 1
+id: ttl-dead-letter
+claims: [delivery.ttl-dead-lettering]
+profile: cluster
+setup: message-ttl=300msのSource Queue、DLX、隔離Queueを宣言する。
+execute: Persistent MessageをPublishしTTL超過まで待つ。
+verify: Source Queueが空で、隔離Queueに同一Message IDとx-death Headerがあることを確認する。
+cleanup: 二QueueとExchangeを削除する。

@@ -1,0 +1,7 @@
+schema_version: 1
+proof_obligations:
+  rolling-upgrade:
+    setup: 固定4.2.9 Imageで三Node Clusterと三Replica Quorum Queueを作り全Stable Feature Flagを有効化する。
+    execute: 継続Workload中にQuorum Critical/Replica Sync/Online Quorum/Drainを確認し、三Nodeを一台ずつ固定4.3.5 Imageへ置換する。
+    verify: 四PhaseのVersion/Health/Replica、全PhaseのConfirm/Ack、Confirm済みID欠落ゼロ、Client再接続を確認する。
+    cleanup: 専用Compose Project、Network、Volume、一時Fileだけを削除する。

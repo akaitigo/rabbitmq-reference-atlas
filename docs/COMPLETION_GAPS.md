@@ -1,21 +1,21 @@
-# Completion Gap
+# Completion Boundary
 
-本Repositoryは、今回指定されたRabbitMQ 4.3.5のExchange、Queue、Acknowledgement、Redelivery、Dead Lettering、Consumer Prefetch、三Node Cluster、Leader Failure、Node Recoveryを実証済みです。ただし、Product AtlasとしてRabbitMQ 4.3.5の公開Surface全体を閉包した状態ではありません。
+本Repositoryは、`atlas.yaml`と`mastery.yaml`が定めるRabbitMQ 4.3.5の固定Coverage Epochに対し、32 Required TargetをClaim、Version固定Lab、Raw Artifact、Digest付きEvidenceへ接続して閉包しています。
 
-## 未閉包
+## 閉包済み
 
-- 配布物、Plugin、CLI、HTTP API、Config Schema、Feature Flagからの全Surface自動Inventory
-- AMQP 1.0、Stream Protocol、MQTT、STOMP、WebSocketのProtocol固有Evidence
-- Stream、Super Stream、Federation、Shovel、全Tier 1 Plugin
-- transient broker flow、memory/disk alarm、connection blockedの独立Lab
-- TLS、mTLS、OAuth 2.0、x509、LDAP、HTTP Authentication Backend
-- Backup/Restore、Upgrade、Blue-Green Migration、Kubernetes Operator、VM Profile
-- 性能、容量、長時間Soak、amd64とarm64の両Architecture実行証拠
-- 自動生成SBOM、脆弱性Scan、Provenance、署名済みRelease Artifact
-- Completion Certificate生成と署名
+- AMQP Model、Exchange/Binding/Queue、Publisher Confirm、Consumer Ack、Redelivery、TTL/DLX
+- Quorum/Stream、Consumer/Publisher Flow Control、Ordering、Application IdempotencyとExactly-once非保証の境界
+- 三Node Cluster、Leader Failure、実Network Partition、Majority進行、Replica Recovery
+- Least-privilege Authorization、Credential Rotation、TLS/mTLSの成功と拒否系
+- Management API状態遷移、三Node Prometheus、Health/Alarm、Cleanup Runbook
+- 固定WorkloadのClassic/Quorum/Stream性能測定、4.2.9から4.3.5へのRolling Upgrade
+- Router Skillと21件のDeterministic Eval
 
-## 状態
+## 境界
 
-共通5 Manifest、Masteryの8 Outcomeと14 Surface、既存12 Covered Target、8 Evidence Record、Router Eval、権利Manifest、ローカルCI相当Gateは通過しています。Mastery移行で追加した6 Targetは未閉包であり、上記Gapがあるため`atlas.yaml`は`status: incomplete`を維持し、`evidence/completion-certificate.json`は生成しません。
+AMQP 1.0、MQTT、STOMP、Super Stream、Federation、Shovel、OAuth/LDAP、Kubernetes Operator、Tanzu固有機能は、本Coverage Epochの中では未実証であり、Routerは`gap`として一般化を拒否します。これらを実装済みとは主張しません。
 
-GitHub Repository、Release、OCI Artifact、外部Skill Registryへの公開は行っていません。
+性能値は固定環境の測定であり、本番容量やQueue Typeの普遍的優劣を保証しません。Rolling Upgrade EvidenceはDowngrade、別ClusterへのMessage移送、Exactly-once、Upgrade中の性能保証を含みません。
+
+GitHub Repository、Release、OCI Artifact、外部Skill Registryへの公開は行っていません。Completion Certificateはローカル検証の結果であり、署名済みReleaseのProvenanceではありません。

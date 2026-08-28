@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "atlas_id": "rabbitmq-reference-atlas",
+  "coverage_epoch": "2026-08-28",
+  "created_at": "2026-08-28T07:37:26.584179Z",
+  "verdict": "pass",
+  "scope": "local verified closure; no GitHub publication or signed release is asserted",
+  "manifests": {
+    "atlas.yaml": "sha256:9d1f06a563c490657e21ac43b463eab32c9056b746f7f62febeeb902d9cbe6fc",
+    "mastery.yaml": "sha256:4b78b6e4ef98e1f1e23a92f5b71e3ef2ee6a480c8f45feba29ad7620b581937f",
+    "coverage.yaml": "sha256:155096a2a814a79af7f00309f0b57bd35d1940c87be1717d2c7246cc88416176",
+    "sources.lock.yaml": "sha256:91cc188ce4fa664745afdaf5d1b3d7681c0d3647b35ca4fbf702a7df25e9ef69",
+    "skill.package.yaml": "sha256:88df90d41d43d0ab22d248418f37ce776aaacb1082f647468124d1d01893076d",
+    "versions/baseline.yaml": "sha256:e3cacfd9133472ce3601fc54d42504f329f3367948ba187176d1ab95ab0ff8de"
+  },
+  "evidence": [
+    {
+      "id": "eval.router",
+      "record_digest": "sha256:4cbdcd1c055ebcc068e64c419b0cfbb40dd78f8f4f04c5fb67b559971ad0a506",
+      "artifact_digest": "sha256:17e0878ec82d2f61d632b2fbedab5e19793ded98e8412e90c3978c523adb6fd6"
+    },
+    {
+      "id": "lab.ack-redelivery",
+      "record_digest": "sha256:9f00e208f310bdb28c5872aeaeb188082b92159e1093235457485795ff69e813",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "lab.amqp-model",
+      "record_digest": "sha256:516fad448527a4e5f70635e6d20a5bf9fcce502d9f6ab9cde6ff9f8b2933595b",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "lab.cluster-failure-recovery",
+      "record_digest": "sha256:8960a4af4baef186c6ec733c98d2708f14f7d62f2d4380f48ceed32577638bde",
+      "artifact_digest": "sha256:eb8c1706813b641ae5a5eb43cc20cf8fc2edd56b00f81b286044551139b4a1dc"
+    },
+    {
+      "id": "lab.cluster-membership",
+      "record_digest": "sha256:65db9325e447bd49bb080f77bc5666042f2d1e879b4d5a50c8ad18add045f324",
+      "artifact_digest": "sha256:b655414dbc87ca5d2d235262e7364e6b523b145acb4df6011d3eb388dfcc1877"
+    },
+    {
+      "id": "lab.consumer-flow-control",
+      "record_digest": "sha256:74d32464971db0fe6a22b0e37e1c92fbeb75ac3aef1bba607392373736f7239e",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "lab.dead-letter",
+      "record_digest": "sha256:98f09aa47b4dec0652cb0502d310dc8e624be61a71bec206bf90fc326b54c35d",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "lab.exchange-binding-matrix",
+      "record_digest": "sha256:275fa2a7c21128ddb293f360f6ebf335ea1ca12502ee1f60bc7358fc7553155f",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "lab.exchange-queue",
+      "record_digest": "sha256:a779ce2000afa4b10bfe5a2e4fc56bdf50e99838703e1660dc016052182362b4",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "lab.network-partition",
+      "record_digest": "sha256:64fd3ed4b36485b101a9ddc2d53ab04e8def00ee58b0edad55d1a1fda675b1f8",
+      "artifact_digest": "sha256:feae14e8e52bdc08858c73083f90e79fea7734eb2a3f24786155cd38079e08c5"
+    },
+    {
+      "id": "lab.observability-health",
+      "record_digest": "sha256:a243c1ea9cbb8e660c2c49efac31f216d01a7fd7fba582be08580f7b7788ac1c",
+      "artifact_digest": "sha256:ff812c19290facb02ecd37a3e6d83462b4a221dc2a89a68fa32f9c5aa32c1ae7"
+    },
+    {
+      "id": "lab.observability-state",
+      "record_digest": "sha256:2f86520708131360341e7747e8ba5781b4939e912cda2940617785042a6bb175",
+      "artifact_digest": "sha256:478e9d8b25e7e15684ffbce7608809c3a4173a71e0a3ba9bdd68c99f956f3e4f"
+    },
+    {
+      "id": "lab.ordering-idempotency",
+      "record_digest": "sha256:17273ebe21135e752a446f1665819b93ba4f69e3ba935d17003ca0398613fa68",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "lab.performance-capacity",
+      "record_digest": "sha256:2ec1c1b0954c36bb6c66086b84048b5fca444a6fcef721f114050579029d0c53",
+      "artifact_digest": "sha256:8315c6de10e986b54e95eb151a85027dfc4cefc5696d2f956a6d9e546db627b0"
+    },
+    {
+      "id": "lab.publisher-flow-control",
+      "record_digest": "sha256:d2fa882b5ade69a4e0f5e7ea6eeb99dbbe2acfdec443c13158165733aa15e5d7",
+      "artifact_digest": "sha256:b1f7a1636a39e625054669df50bed8c6e5fe26f3d83e28a32eb48c9360989dfe"
+    },
+    {
+      "id": "lab.quorum-stream",
+      "record_digest": "sha256:7bf286e2861670149f3aedd29bc78a02435a99d3ee1e266297fe292309be820e",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "lab.rolling-upgrade",
+      "record_digest": "sha256:dfc97c1b65ac63327d9b6145d970c08f736ccfb66cd45ce9e32b458bbea219fa",
+      "artifact_digest": "sha256:c4ec16ec971b179f5c0450b02e61a7474f1ee125052d5322d3fd47f446abe0ef"
+    },
+    {
+      "id": "lab.security-authz",
+      "record_digest": "sha256:4ae4a262a44fd844bfd5b14837c2e90db057894423d9163150af5ad909f130ec",
+      "artifact_digest": "sha256:ff812c19290facb02ecd37a3e6d83462b4a221dc2a89a68fa32f9c5aa32c1ae7"
+    },
+    {
+      "id": "lab.security-tls",
+      "record_digest": "sha256:09150a1ab93a50490662e2a8a68714502004652e39dd5aece1185ed8655d8584",
+      "artifact_digest": "sha256:ce86099bfea2b91245e320161c8715b633ded616b7a519f0c6ba2f375e71b0b5"
+    },
+    {
+      "id": "lab.ttl-dead-letter",
+      "record_digest": "sha256:6df128dafd2071dadbec74d989b35d97566c2cf7541ecb51a72bfea22343d3fc",
+      "artifact_digest": "sha256:ed75ba8f84c0a2dcffc09d29f4592858bad73e661f8e72f50ced7164f7235b19"
+    },
+    {
+      "id": "operation.evidence-generation",
+      "record_digest": "sha256:35413538e32035dadce0c250670a7468071066ecb9c16053b58b789f85d25c89",
+      "artifact_digest": "sha256:a17f04320fce56cec6d3efa3dbc7cf48df237eadf5bccb757676c7ea9ac34b0f"
+    }
+  ],
+  "signature": null
+}

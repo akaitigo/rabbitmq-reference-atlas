@@ -1,0 +1,12 @@
+schema_version: 1
+id: rolling-upgrade-4.2.9-to-4.3.5
+profile: upgrade
+setup: RabbitMQ 4.2.9固定Imageで三Node Clusterと三Replica Quorum Queueを作り、全Stable Feature Flagを有効化してConfirm付きWorkloadを開始する。
+execute: Quorum Critical CheckとOnline Quorum待機後、upgrade-3、upgrade-2、upgrade-1を一台ずつData Volume維持のままRabbitMQ 4.3.5固定Imageへ置換する。
+verify: 各Mixed-version Phaseの三Node Membership、Version、Alarm、Replica状態と、全PhaseでのPublisher ConfirmおよびConsumer Ackを機械判定する。
+cleanup: 専用Compose Projectと専用Volumeだけを削除する。
+boundaries:
+  - RabbitMQが公式サポートしないDowngradeは実行しない。
+  - 継続Workloadは低Rateの可用性Probeであり、Upgrade中の性能保証ではない。
+  - Confirm応答喪失時の再PublishはDuplicateを生じ得るため、Exactly-once Deliveryを主張しない。
+  - 別ClusterへのMessage移送やBlue-Green CutoverはこのLabの証明対象外である。

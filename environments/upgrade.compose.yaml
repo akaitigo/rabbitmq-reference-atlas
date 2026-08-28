@@ -1,0 +1,78 @@
+name: rabbitmq-reference-atlas-upgrade
+
+x-upgrade-node: &upgrade-node
+  restart: "no"
+  environment:
+    RABBITMQ_DEFAULT_USER: atlas
+    RABBITMQ_DEFAULT_PASS: atlas-local-only
+    RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-upgrade-cookie
+  configs:
+    - source: upgrade-rabbitmq-config
+      target: /etc/rabbitmq/rabbitmq.conf
+  healthcheck:
+    test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+    interval: 3s
+    timeout: 5s
+    retries: 80
+    start_period: 15s
+  stop_grace_period: 30s
+  networks: [upgrade-cluster]
+
+services:
+  upgrade-1:
+    <<: *upgrade-node
+    image: ${UPGRADE_IMAGE_1:-rabbitmq:4.2.9-management@sha256:59935db6392a27b5192f1be080df9b4194bc22f104a7a1bf3b31479a8e0d1031}
+    hostname: upgrade-1
+    environment:
+      RABBITMQ_DEFAULT_USER: atlas
+      RABBITMQ_DEFAULT_PASS: atlas-local-only
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-upgrade-cookie
+      RABBITMQ_NODENAME: rabbit@upgrade-1
+    ports:
+      - "27672:5672"
+      - "37672:15672"
+    volumes:
+      - upgrade-1-data:/var/lib/rabbitmq
+
+  upgrade-2:
+    <<: *upgrade-node
+    image: ${UPGRADE_IMAGE_2:-rabbitmq:4.2.9-management@sha256:59935db6392a27b5192f1be080df9b4194bc22f104a7a1bf3b31479a8e0d1031}
+    hostname: upgrade-2
+    environment:
+      RABBITMQ_DEFAULT_USER: atlas
+      RABBITMQ_DEFAULT_PASS: atlas-local-only
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-upgrade-cookie
+      RABBITMQ_NODENAME: rabbit@upgrade-2
+    ports:
+      - "27673:5672"
+      - "37673:15672"
+    volumes:
+      - upgrade-2-data:/var/lib/rabbitmq
+
+  upgrade-3:
+    <<: *upgrade-node
+    image: ${UPGRADE_IMAGE_3:-rabbitmq:4.2.9-management@sha256:59935db6392a27b5192f1be080df9b4194bc22f104a7a1bf3b31479a8e0d1031}
+    hostname: upgrade-3
+    environment:
+      RABBITMQ_DEFAULT_USER: atlas
+      RABBITMQ_DEFAULT_PASS: atlas-local-only
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-upgrade-cookie
+      RABBITMQ_NODENAME: rabbit@upgrade-3
+    ports:
+      - "27674:5672"
+      - "37674:15672"
+    volumes:
+      - upgrade-3-data:/var/lib/rabbitmq
+
+configs:
+  upgrade-rabbitmq-config:
+    file: ./upgrade-rabbitmq.conf
+
+networks:
+  upgrade-cluster:
+    name: rabbitmq-reference-atlas-upgrade-cluster
+
+volumes:
+  upgrade-1-data:
+  upgrade-2-data:
+  upgrade-3-data:

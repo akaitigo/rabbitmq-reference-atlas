@@ -20,9 +20,28 @@ proof_obligations:
     execute: Source DeliveryをReject(requeue=false)する。
     verify: 隔離Queueで同一Message IDとx-death Headerを確認する。
     cleanup: 二QueueとExchangeを削除する。
+  ttl-dead-lettering:
+    setup: 固定TTLを持つSource Queue、DLX、隔離Queueを宣言する。
+    execute: Source QueueへMessageをPublishしTTL超過まで待つ。
+    verify: Source Queueが空で、隔離Queueの同一Message IDにx-death Headerがあることを確認する。
+    cleanup: 二QueueとExchangeを削除する。
   consumer-prefetch:
     setup: prefetch=1、autoAck=falseのConsumerを開始する。
     execute: 二MessageをPublishし一件目を未Ackにする。
     verify: 観測Window内に二件目が来ず、Ack後に到達することを確認する。
     cleanup: 二件目をAckしてQueueを削除する。
-
+  publisher-flow-control:
+    setup: 専用Compose Clusterの一NodeへMemory Watermarkを設定してResource Alarmを発生させる。
+    execute: Alarm中のPublishと、Watermark復元後のPublishを別Connectionで実行する。
+    verify: Alarm中のBlocked通知とConfirm未成立、解除後のAlarm正常とConfirm ackを確認する。
+    cleanup: Trapを含めMemory Watermarkを0.4へ戻す。
+  ordering-boundary:
+    setup: 単一Queue、単一Confirm Channel、単一Consumerを使用する。
+    execute: 連番付き二十Messageを順次Publishし、順次取得する。
+    verify: 取得したMessage ID列がPublish列と完全一致することを確認する。
+    cleanup: 全DeliveryをAckしてQueueを削除する。
+  idempotency-boundary:
+    setup: Application Ledgerを空にし、同一Message IDを持つ二Messageを用意する。
+    execute: 二MessageをPublishし、二DeliveryをConsumerで処理する。
+    verify: Deliveryは二件、Ledgerによる副作用は一件であることを確認する。
+    cleanup: 二DeliveryをAckしてQueueを削除する。

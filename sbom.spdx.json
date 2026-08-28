@@ -52,6 +52,23 @@
       "copyrightText": "NOASSERTION"
     },
     {
+      "name": "RabbitMQ Server",
+      "SPDXID": "SPDXRef-Package-RabbitMQ-4.2.9",
+      "versionInfo": "4.2.9",
+      "downloadLocation": "https://github.com/rabbitmq/rabbitmq-server/tree/v4.2.9",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MPL-2.0",
+      "licenseDeclared": "MPL-2.0",
+      "copyrightText": "NOASSERTION",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:github/rabbitmq/rabbitmq-server@v4.2.9"
+        }
+      ]
+    },
+    {
       "name": "github.com/rabbitmq/amqp091-go",
       "SPDXID": "SPDXRef-Package-amqp091-go",
       "versionInfo": "1.10.0",
@@ -113,6 +130,11 @@
     {
       "spdxElementId": "SPDXRef-Package-Atlas",
       "relationshipType": "DEPENDS_ON",
+      "relatedSpdxElement": "SPDXRef-Package-RabbitMQ-4.2.9"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-Atlas",
+      "relationshipType": "DEPENDS_ON",
       "relatedSpdxElement": "SPDXRef-Package-RabbitMQ-Docker"
     },
     {
@@ -142,4 +164,3 @@
     }
   ]
 }
-

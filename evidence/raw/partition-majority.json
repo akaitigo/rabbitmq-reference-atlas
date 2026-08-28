@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "mode": "partition-majority-delivery",
+  "run_id": "1787902353864726000",
+  "created_at": "2026-08-28T07:32:33Z",
+  "checks": [
+    {
+      "name": "partition-majority-delivery",
+      "passed": true,
+      "observed": {
+        "expected": 5,
+        "queue_deleted": false,
+        "received": 5,
+        "unique": 5
+      }
+    }
+  ],
+  "queue": "atlas.1787902301570859000.quorum-recovery",
+  "message_ids": [
+    "1787902301570859000.message-01",
+    "1787902301570859000.message-02",
+    "1787902301570859000.message-03",
+    "1787902301570859000.message-04",
+    "1787902301570859000.message-05"
+  ]
+}

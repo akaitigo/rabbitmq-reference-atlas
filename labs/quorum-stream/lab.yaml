@@ -1,0 +1,8 @@
+schema_version: 1
+id: quorum-stream
+claims: [queue.quorum-semantics, queue.stream-semantics]
+profile: cluster
+setup: 三ReplicaのQuorum QueueとStream Queueを宣言する。
+execute: Quorumへ一Message、Streamへ三MessageをConfirm付きでPublishし、Streamを二つの独立ConsumerでManual Ack Consumeする。
+verify: QuorumのConfirm/AckとStreamのoffset=firstからのPublish順・非破壊再生を機械判定する。
+cleanup: Consumerを停止し二Queueを削除する。

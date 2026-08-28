@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "mode": "publisher-flow-resumed",
+  "run_id": "1787902290754550000",
+  "created_at": "2026-08-28T07:31:30Z",
+  "checks": [
+    {
+      "name": "publisher-flow.resumed",
+      "passed": true,
+      "observed": {
+        "alarm_http_status": 200,
+        "blocked_event": false,
+        "blocked_reason": "",
+        "publish_confirmed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,310 @@
+{
+  "schema_version": 1,
+  "evidence_id": "observability-state",
+  "created_at": "2026-08-28T07:31:19Z",
+  "rabbitmq_version": "4.3.5",
+  "run_id": "1787902264182127000",
+  "state_transition": {
+    "schema_version": 1,
+    "mode": "observability-state-transition",
+    "run_id": "1787902264182127000",
+    "created_at": "2026-08-28T07:31:04.182228Z",
+    "rabbitmq_version": "4.3.5",
+    "queue": "atlas.observability.1787902264182127000",
+    "checks": [
+      {
+        "name": "environment.rabbitmq-version",
+        "passed": true,
+        "observed": {
+          "endpoint": "http://127.0.0.1:35672",
+          "expected": "4.3.5",
+          "observed": "4.3.5"
+        }
+      },
+      {
+        "name": "observability.queue-setup",
+        "passed": true,
+        "observed": {
+          "durable": true,
+          "queue": "atlas.observability.1787902264182127000",
+          "vhost": "/"
+        }
+      },
+      {
+        "name": "observability.publish-confirm",
+        "passed": true,
+        "observed": {
+          "message_id": "observability-1787902264182127000",
+          "publisher_confirm": true
+        }
+      },
+      {
+        "name": "observability.state-ready",
+        "passed": true,
+        "observed": {
+          "messages": 1,
+          "messages_ready": 1,
+          "messages_unacknowledged": 0,
+          "node": "rabbit@rabbitmq-1",
+          "phase": "ready",
+          "queue": "atlas.observability.1787902264182127000",
+          "sampled_at": "2026-08-28T07:31:07.761241Z",
+          "state": "running"
+        }
+      },
+      {
+        "name": "observability.state-unacked",
+        "passed": true,
+        "observed": {
+          "messages": 1,
+          "messages_ready": 0,
+          "messages_unacknowledged": 1,
+          "node": "rabbit@rabbitmq-1",
+          "phase": "unacked",
+          "queue": "atlas.observability.1787902264182127000",
+          "sampled_at": "2026-08-28T07:31:12.883528Z",
+          "state": "running"
+        }
+      },
+      {
+        "name": "observability.state-acked",
+        "passed": true,
+        "observed": {
+          "messages": 0,
+          "messages_ready": 0,
+          "messages_unacknowledged": 0,
+          "node": "rabbit@rabbitmq-1",
+          "phase": "acked",
+          "queue": "atlas.observability.1787902264182127000",
+          "sampled_at": "2026-08-28T07:31:17.731736Z",
+          "state": "running"
+        }
+      },
+      {
+        "name": "operations.queue-cleanup",
+        "passed": true,
+        "observed": {
+          "deleted_messages": 0,
+          "management_get_after_delete": 404,
+          "queue": "atlas.observability.1787902264182127000"
+        }
+      }
+    ],
+    "transitions": [
+      {
+        "phase": "ready",
+        "sampled_at": "2026-08-28T07:31:07.761241Z",
+        "name": "atlas.observability.1787902264182127000",
+        "vhost": "/",
+        "node": "rabbit@rabbitmq-1",
+        "state": "running",
+        "messages": 1,
+        "messages_ready": 1,
+        "messages_unacknowledged": 0
+      },
+      {
+        "phase": "unacked",
+        "sampled_at": "2026-08-28T07:31:12.883528Z",
+        "name": "atlas.observability.1787902264182127000",
+        "vhost": "/",
+        "node": "rabbit@rabbitmq-1",
+        "state": "running",
+        "messages": 1,
+        "messages_ready": 0,
+        "messages_unacknowledged": 1
+      },
+      {
+        "phase": "acked",
+        "sampled_at": "2026-08-28T07:31:17.731736Z",
+        "name": "atlas.observability.1787902264182127000",
+        "vhost": "/",
+        "node": "rabbit@rabbitmq-1",
+        "state": "running",
+        "messages": 0,
+        "messages_ready": 0,
+        "messages_unacknowledged": 0
+      }
+    ],
+    "passed": true,
+    "summary": {
+      "passed": 7,
+      "failed": 0
+    }
+  },
+  "prometheus": {
+    "endpoint_port": 15692,
+    "host_port_published": false,
+    "nodes": [
+      {
+        "node": "rabbitmq-1",
+        "endpoint": "http://127.0.0.1:15692/metrics",
+        "transport": "container-local-erlang-httpc",
+        "bytes": 232340,
+        "sha256": "1e32b9327ef96a097fdb23ffc4220b2e713ff63caee3469e5312f48bf7ee604b",
+        "metric_families": 276,
+        "rabbitmq_metric_families": 194,
+        "selected_samples": [
+          "rabbitmq_alarms_free_disk_space_watermark 0",
+          "rabbitmq_alarms_memory_used_watermark 0",
+          "rabbitmq_unreachable_cluster_peers_count 0"
+        ]
+      },
+      {
+        "node": "rabbitmq-2",
+        "endpoint": "http://127.0.0.1:15692/metrics",
+        "transport": "container-local-erlang-httpc",
+        "bytes": 232242,
+        "sha256": "0f509c36b0969eaaebf5bb25c684332ef080bd6b6d00656fe10aa13ed4e0a68d",
+        "metric_families": 276,
+        "rabbitmq_metric_families": 194,
+        "selected_samples": [
+          "rabbitmq_alarms_free_disk_space_watermark 0",
+          "rabbitmq_alarms_memory_used_watermark 0",
+          "rabbitmq_unreachable_cluster_peers_count 0"
+        ]
+      },
+      {
+        "node": "rabbitmq-3",
+        "endpoint": "http://127.0.0.1:15692/metrics",
+        "transport": "container-local-erlang-httpc",
+        "bytes": 232234,
+        "sha256": "c01e280f7303ac15167e9f9cd3090b5538d5d512014e9c605724d3f6c786e55e",
+        "metric_families": 276,
+        "rabbitmq_metric_families": 194,
+        "selected_samples": [
+          "rabbitmq_alarms_free_disk_space_watermark 0",
+          "rabbitmq_alarms_memory_used_watermark 0",
+          "rabbitmq_unreachable_cluster_peers_count 0"
+        ]
+      }
+    ]
+  },
+  "checks": [
+    {
+      "name": "environment.rabbitmq-version",
+      "passed": true,
+      "observed": {
+        "endpoint": "http://127.0.0.1:35672",
+        "expected": "4.3.5",
+        "observed": "4.3.5"
+      }
+    },
+    {
+      "name": "observability.queue-setup",
+      "passed": true,
+      "observed": {
+        "durable": true,
+        "queue": "atlas.observability.1787902264182127000",
+        "vhost": "/"
+      }
+    },
+    {
+      "name": "observability.publish-confirm",
+      "passed": true,
+      "observed": {
+        "message_id": "observability-1787902264182127000",
+        "publisher_confirm": true
+      }
+    },
+    {
+      "name": "observability.state-ready",
+      "passed": true,
+      "observed": {
+        "messages": 1,
+        "messages_ready": 1,
+        "messages_unacknowledged": 0,
+        "node": "rabbit@rabbitmq-1",
+        "phase": "ready",
+        "queue": "atlas.observability.1787902264182127000",
+        "sampled_at": "2026-08-28T07:31:07.761241Z",
+        "state": "running"
+      }
+    },
+    {
+      "name": "observability.state-unacked",
+      "passed": true,
+      "observed": {
+        "messages": 1,
+        "messages_ready": 0,
+        "messages_unacknowledged": 1,
+        "node": "rabbit@rabbitmq-1",
+        "phase": "unacked",
+        "queue": "atlas.observability.1787902264182127000",
+        "sampled_at": "2026-08-28T07:31:12.883528Z",
+        "state": "running"
+      }
+    },
+    {
+      "name": "observability.state-acked",
+      "passed": true,
+      "observed": {
+        "messages": 0,
+        "messages_ready": 0,
+        "messages_unacknowledged": 0,
+        "node": "rabbit@rabbitmq-1",
+        "phase": "acked",
+        "queue": "atlas.observability.1787902264182127000",
+        "sampled_at": "2026-08-28T07:31:17.731736Z",
+        "state": "running"
+      }
+    },
+    {
+      "name": "operations.queue-cleanup",
+      "passed": true,
+      "observed": {
+        "deleted_messages": 0,
+        "management_get_after_delete": 404,
+        "queue": "atlas.observability.1787902264182127000"
+      }
+    },
+    {
+      "name": "observability.prometheus.rabbitmq-1",
+      "passed": true,
+      "observed": {
+        "node": "rabbitmq-1",
+        "bytes": 232340,
+        "sha256": "1e32b9327ef96a097fdb23ffc4220b2e713ff63caee3469e5312f48bf7ee604b",
+        "metric_families": 276,
+        "rabbitmq_metric_families": 194,
+        "selected_samples": [
+          "rabbitmq_alarms_free_disk_space_watermark 0",
+          "rabbitmq_alarms_memory_used_watermark 0",
+          "rabbitmq_unreachable_cluster_peers_count 0"
+        ]
+      }
+    },
+    {
+      "name": "observability.prometheus.rabbitmq-2",
+      "passed": true,
+      "observed": {
+        "node": "rabbitmq-2",
+        "bytes": 232242,
+        "sha256": "0f509c36b0969eaaebf5bb25c684332ef080bd6b6d00656fe10aa13ed4e0a68d",
+        "metric_families": 276,
+        "rabbitmq_metric_families": 194,
+        "selected_samples": [
+          "rabbitmq_alarms_free_disk_space_watermark 0",
+          "rabbitmq_alarms_memory_used_watermark 0",
+          "rabbitmq_unreachable_cluster_peers_count 0"
+        ]
+      }
+    },
+    {
+      "name": "observability.prometheus.rabbitmq-3",
+      "passed": true,
+      "observed": {
+        "node": "rabbitmq-3",
+        "bytes": 232234,
+        "sha256": "c01e280f7303ac15167e9f9cd3090b5538d5d512014e9c605724d3f6c786e55e",
+        "metric_families": 276,
+        "rabbitmq_metric_families": 194,
+        "selected_samples": [
+          "rabbitmq_alarms_free_disk_space_watermark 0",
+          "rabbitmq_alarms_memory_used_watermark 0",
+          "rabbitmq_unreachable_cluster_peers_count 0"
+        ]
+      }
+    }
+  ],
+  "passed": true
+}

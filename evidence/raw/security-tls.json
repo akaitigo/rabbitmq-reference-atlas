@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "mode": "security-tls-mtls",
+  "created_at": "2026-08-28T07:11:57Z",
+  "rabbitmq_version": "4.3.5",
+  "ca_fingerprint_sha256": "sha256:b25a58935338803c07ebd0c7c1fb0fb161d45f51e4c33ff9ae3c3af54759d436",
+  "client_fingerprint_sha256": "sha256:bc94b4f90cce2495b5fed68a5fab1bac4f12b267496b00b9a5af6c34ed4229fd",
+  "server_fingerprint_sha256": "sha256:4eed32165297ee2959aea2ddccb70910a2588e426db8dfa73f29c7894bcda2e1",
+  "remote_server_fingerprint_sha256": "sha256:4eed32165297ee2959aea2ddccb70910a2588e426db8dfa73f29c7894bcda2e1",
+  "checks": [
+    {
+      "name": "tls.server-certificate-pinned",
+      "passed": true,
+      "observed": {
+        "fingerprints_match": true
+      }
+    },
+    {
+      "name": "tls.mtls-trusted-ca-and-hostname",
+      "passed": true,
+      "observed": {
+        "connected": true,
+        "expected_version": "4.3.5",
+        "observed_version": "4.3.5",
+        "publish_confirm_consume_ack": true
+      }
+    },
+    {
+      "name": "tls.untrusted-ca-rejected",
+      "passed": true,
+      "observed": {
+        "tls_handshake_rejected": true
+      }
+    },
+    {
+      "name": "tls.hostname-mismatch-rejected",
+      "passed": true,
+      "observed": {
+        "tls_handshake_rejected": true
+      }
+    },
+    {
+      "name": "tls.client-certificate-required",
+      "passed": true,
+      "observed": {
+        "connection_rejected": true
+      }
+    },
+    {
+      "name": "tls.plaintext-listener-disabled",
+      "passed": true,
+      "observed": {
+        "plaintext_amqp_rejected": true
+      }
+    }
+  ],
+  "passed": true
+}

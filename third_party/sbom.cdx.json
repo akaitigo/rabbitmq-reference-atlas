@@ -14,10 +14,10 @@
   },
   "components": [
     {"type": "application", "name": "RabbitMQ Server", "version": "4.3.5", "purl": "pkg:github/rabbitmq/rabbitmq-server@v4.3.5", "licenses": [{"license": {"id": "MPL-2.0"}}]},
+    {"type": "application", "name": "RabbitMQ Server", "version": "4.2.9", "purl": "pkg:github/rabbitmq/rabbitmq-server@v4.2.9", "scope": "optional", "licenses": [{"license": {"id": "MPL-2.0"}}]},
     {"type": "library", "name": "amqp091-go", "version": "1.10.0", "purl": "pkg:golang/github.com/rabbitmq/amqp091-go@v1.10.0", "licenses": [{"license": {"id": "BSD-2-Clause"}}]},
     {"type": "framework", "name": "Erlang/OTP", "version": "27.3.4.16", "purl": "pkg:github/erlang/otp@OTP-27.3.4.16", "licenses": [{"license": {"id": "Apache-2.0"}}]},
     {"type": "library", "name": "OpenSSL", "version": "3.5.7", "purl": "pkg:github/openssl/openssl@openssl-3.5.7", "licenses": [{"license": {"id": "Apache-2.0"}}]},
     {"type": "operating-system", "name": "Ubuntu", "version": "24.04"}
   ]
 }
-

@@ -42,7 +42,90 @@
       "query": "MQTT 5.0とAMQP 0-9-1の相互運用を証明して",
       "expected_mode": "gap",
       "expected_reference": ".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md"
+    },
+    {
+      "id": "design.amqp-model",
+      "query": "AMQP EntityとQueue宣言同値性を設計したい",
+      "expected_mode": "design",
+      "expected_reference": ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md"
+    },
+    {
+      "id": "design.exchange-matrix",
+      "query": "Topic Fanout Headers Exchangeの選定基準を知りたい",
+      "expected_mode": "design",
+      "expected_reference": "coverage.yaml"
+    },
+    {
+      "id": "implement.ttl-dlx",
+      "query": "TTLで期限切れになったMessageをDLXへ送る実装",
+      "expected_mode": "implement",
+      "expected_reference": "labs/README.md"
+    },
+    {
+      "id": "design.quorum-stream",
+      "query": "Quorum QueueとStreamの使い分けを設計したい",
+      "expected_mode": "design",
+      "expected_reference": ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md"
+    },
+    {
+      "id": "diagnose.publisher-blocked",
+      "query": "memory alarmでpublisher blockedになった原因を診断",
+      "expected_mode": "diagnose",
+      "expected_reference": "operations/runbooks/index.yaml"
+    },
+    {
+      "id": "design.ordering",
+      "query": "単一Consumerで順序を保つ条件を設計したい",
+      "expected_mode": "design",
+      "expected_reference": "coverage.yaml"
+    },
+    {
+      "id": "diagnose.idempotency",
+      "query": "重複配送時のApplication Idempotencyを診断したい",
+      "expected_mode": "diagnose",
+      "expected_reference": ".agents/skills/rabbitmq-reference-router/references/runbook-index.yaml"
+    },
+    {
+      "id": "recover.partition",
+      "query": "Quorum Queueのネットワーク分断から復旧したい",
+      "expected_mode": "recover",
+      "expected_reference": "labs/cluster-failure-recovery/lab.yaml"
+    },
+    {
+      "id": "diagnose.access-refused",
+      "query": "ACCESS_REFUSEDのpermission問題を診断",
+      "expected_mode": "diagnose",
+      "expected_reference": "operations/runbooks/index.yaml"
+    },
+    {
+      "id": "diagnose.prometheus",
+      "query": "Prometheus metricsとalarmから診断したい",
+      "expected_mode": "diagnose",
+      "expected_reference": ".agents/skills/rabbitmq-reference-router/references/runbook-index.yaml"
+    },
+    {
+      "id": "design.performance",
+      "query": "固定Workloadで性能と容量を比較したい",
+      "expected_mode": "design",
+      "expected_reference": ".agents/skills/rabbitmq-reference-router/references/decision-matrix.md"
+    },
+    {
+      "id": "migrate.upgrade",
+      "query": "RabbitMQ 4.2から4.3へrolling upgradeしたい",
+      "expected_mode": "migrate",
+      "expected_reference": "versions/baseline.yaml"
+    },
+    {
+      "id": "gap.amqp10",
+      "query": "AMQP 1.0固有のtransaction挙動を証明して",
+      "expected_mode": "gap",
+      "expected_reference": ".agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md"
+    },
+    {
+      "id": "gap.super-stream",
+      "query": "Super Streamのpartition key挙動を証明して",
+      "expected_mode": "gap",
+      "expected_reference": "coverage.yaml"
     }
   ]
 }
-

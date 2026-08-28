@@ -1,0 +1,9 @@
+schema_version: 1
+id: security-tls
+profile: tls-single-node
+claims:
+  - security.tls-transport
+setup: RabbitMQ 4.3.5の固定OCI ImageをTLS専用設定で起動し、Ephemeral CA、Server証明書、Client証明書をRuntime一時領域へ生成する。
+execute: 正しいCA、Server Name、Client証明書でAMQPS Messagingを実行し、不正CA、Hostname不一致、Client証明書なし、Plaintext AMQPを個別に試行する。
+verify: Server証明書Fingerprint一致、RabbitMQ 4.3.5接続、Publish ConfirmとConsume Ack成功、四つの拒否境界を機械判定する。
+cleanup: 専用Compose projectとVolumeを削除し、秘密鍵を含むRuntime一時領域を削除する。

@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
-CORE_COMMIT=6793642472d4011786c35b98fdb60cd4212e9699
+CORE_COMMIT=d5c0a6ce757fd5f43af837edd26f55c7325b811e
 FILES=("$ROOT/atlas.yaml" "$ROOT/sources.lock.yaml" "$ROOT/coverage.yaml" "$ROOT/skill.package.yaml" "$ROOT/mastery.yaml")
 while IFS= read -r file; do FILES+=("$file"); done < <(find "$ROOT/evidence" -maxdepth 1 -type f \( -name '*.evidence.json' -o -name '*.evidence.yaml' \) | sort)
 

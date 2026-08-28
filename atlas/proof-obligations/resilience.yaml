@@ -15,4 +15,13 @@ proof_obligations:
     execute: 同じNodeとVolumeを再起動する。
     verify: 三NodeがRunning Membersへ戻ることを確認する。
     cleanup: 専用Compose projectとVolumeを削除する。
-
+  network-partition:
+    setup: 三Replica Quorum Queueへ五MessageをConfirm付きでPublishしLeaderを特定する。
+    execute: Leader Containerを専用Compose Networkから切断し、多数派Consumeと少数派Publishを実行する。
+    verify: 多数派で五IDを一意に取得し、少数派が新規WriteをConfirmできないことを確認する。
+    cleanup: 隔離ContainerをNetworkへ再接続する。
+  partition-recovery:
+    setup: Network Partition Labで一Nodeを隔離する。
+    execute: 同じContainerを専用Compose Networkへ再接続する。
+    verify: 三Node Running Membershipと対象Quorum Queueの三Online Memberを確認する。
+    cleanup: Queueを削除し専用Compose projectとVolumeを削除する。

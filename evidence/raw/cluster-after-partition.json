@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "mode": "cluster",
+  "run_id": "1787902361077853000",
+  "created_at": "2026-08-28T07:32:41Z",
+  "checks": [
+    {
+      "name": "three-running-members",
+      "passed": true,
+      "observed": {
+        "nodes": 3,
+        "running": 3
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "name": "rabbit@rabbitmq-1",
+      "running": true
+    },
+    {
+      "name": "rabbit@rabbitmq-2",
+      "running": true
+    },
+    {
+      "name": "rabbit@rabbitmq-3",
+      "running": true
+    }
+  ]
+}

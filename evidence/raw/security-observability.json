@@ -1,0 +1,234 @@
+{
+  "schema_version": 1,
+  "mode": "security-observability-operations",
+  "run_id": "1787902245267407000",
+  "created_at": "2026-08-28T07:30:45Z",
+  "rabbitmq_version": "4.3.5",
+  "namespace": "atlas-secops-1787902245267407000",
+  "checks": [
+    {
+      "name": "environment.version-lock-management-authentication",
+      "category": "observability",
+      "passed": true,
+      "observed": {
+        "endpoint": "http://127.0.0.1:35672",
+        "expected_rabbitmq_version": "4.3.5",
+        "observed_rabbitmq_version": "4.3.5"
+      }
+    },
+    {
+      "name": "security.least-privilege-setup",
+      "category": "security",
+      "passed": true,
+      "observed": {
+        "forbidden_probe_queue": "forbidden.queue",
+        "permissions": {
+          "configure": "^allowed\\..*$",
+          "read": "^allowed\\..*$",
+          "write": "^allowed\\..*$"
+        },
+        "user_created": true,
+        "vhost_created": true
+      }
+    },
+    {
+      "name": "security.bad-password-denied",
+      "category": "security",
+      "passed": true,
+      "observed": {
+        "connections_accepted": 0,
+        "endpoint_count": 3
+      }
+    },
+    {
+      "name": "security.cross-vhost-denied",
+      "category": "security",
+      "passed": true,
+      "observed": {
+        "connections_accepted": 0,
+        "endpoint_count": 3
+      }
+    },
+    {
+      "name": "security.authentication",
+      "category": "security",
+      "passed": true,
+      "observed": {
+        "endpoint_count": 3,
+        "user": "atlas-secops-1787902245267407000-user",
+        "vhost": "atlas-secops-1787902245267407000"
+      }
+    },
+    {
+      "name": "security.allowed-operations",
+      "category": "security",
+      "passed": true,
+      "observed": {
+        "consume_and_ack": true,
+        "exchange_declare": "allowed.exchange",
+        "message_id": "secops-1787902245267407000",
+        "publisher_confirm": "ack",
+        "queue_bind": true,
+        "queue_declare": "allowed.queue"
+      }
+    },
+    {
+      "name": "security.denied-configure",
+      "category": "security",
+      "passed": true,
+      "observed": {
+        "operation": "queue.declare",
+        "reply_code": 403,
+        "reply_text": "ACCESS_REFUSED - configure access to queue 'forbidden.queue-new' in vhost 'atlas-secops-1787902245267407000' refused for user 'atlas-secops-1787902245267407000-user'",
+        "resource": "forbidden.queue-new"
+      }
+    },
+    {
+      "name": "security.denied-read",
+      "category": "security",
+      "passed": true,
+      "observed": {
+        "operation": "basic.consume",
+        "reply_code": 403,
+        "reply_text": "ACCESS_REFUSED - read access to queue 'forbidden.queue' in vhost 'atlas-secops-1787902245267407000' refused for user 'atlas-secops-1787902245267407000-user'",
+        "resource": "forbidden.queue"
+      }
+    },
+    {
+      "name": "security.credential-rotation",
+      "category": "security",
+      "passed": true,
+      "observed": {
+        "new_password_accepted": true,
+        "old_password_denied": true,
+        "rotation_status": 204
+      }
+    },
+    {
+      "name": "observability.management-nodes",
+      "category": "observability",
+      "passed": true,
+      "observed": {
+        "expected_nodes": 3,
+        "nodes": [
+          {
+            "disk_free_alarm": false,
+            "mem_alarm": false,
+            "name": "rabbit@rabbitmq-1",
+            "partitions": [],
+            "running": true
+          },
+          {
+            "disk_free_alarm": false,
+            "mem_alarm": false,
+            "name": "rabbit@rabbitmq-2",
+            "partitions": [],
+            "running": true
+          },
+          {
+            "disk_free_alarm": false,
+            "mem_alarm": false,
+            "name": "rabbit@rabbitmq-3",
+            "partitions": [],
+            "running": true
+          }
+        ],
+        "observed_nodes": 3
+      }
+    },
+    {
+      "name": "observability.management-queue",
+      "category": "observability",
+      "passed": true,
+      "observed": {
+        "consumers": 0,
+        "messages": 0,
+        "messages_ready": 0,
+        "messages_unacknowledged": 0,
+        "name": "allowed.queue",
+        "node": "rabbit@rabbitmq-1",
+        "state": "running",
+        "type": "classic",
+        "vhost": "atlas-secops-1787902245267407000"
+      }
+    },
+    {
+      "name": "operations.node-health.endpoint-1",
+      "category": "operations",
+      "passed": true,
+      "observed": {
+        "endpoint": "http://127.0.0.1:35672",
+        "http_status": 200,
+        "status": "ok"
+      }
+    },
+    {
+      "name": "operations.cluster-alarms.endpoint-1",
+      "category": "operations",
+      "passed": true,
+      "observed": {
+        "endpoint": "http://127.0.0.1:35672",
+        "http_status": 200,
+        "status": "ok"
+      }
+    },
+    {
+      "name": "operations.node-health.endpoint-2",
+      "category": "operations",
+      "passed": true,
+      "observed": {
+        "endpoint": "http://127.0.0.1:35673",
+        "http_status": 200,
+        "status": "ok"
+      }
+    },
+    {
+      "name": "operations.cluster-alarms.endpoint-2",
+      "category": "operations",
+      "passed": true,
+      "observed": {
+        "endpoint": "http://127.0.0.1:35673",
+        "http_status": 200,
+        "status": "ok"
+      }
+    },
+    {
+      "name": "operations.node-health.endpoint-3",
+      "category": "operations",
+      "passed": true,
+      "observed": {
+        "endpoint": "http://127.0.0.1:35674",
+        "http_status": 200,
+        "status": "ok"
+      }
+    },
+    {
+      "name": "operations.cluster-alarms.endpoint-3",
+      "category": "operations",
+      "passed": true,
+      "observed": {
+        "endpoint": "http://127.0.0.1:35674",
+        "http_status": 200,
+        "status": "ok"
+      }
+    },
+    {
+      "name": "operations.safe-cleanup",
+      "category": "operations",
+      "passed": true,
+      "observed": {
+        "delete_user_status": 204,
+        "delete_vhost_status": 204,
+        "user_created": true,
+        "verify_user_absent_status": 404,
+        "verify_vhost_absent_status": 404,
+        "vhost_created": true
+      }
+    }
+  ],
+  "passed": true,
+  "summary": {
+    "passed": 18,
+    "failed": 0
+  }
+}

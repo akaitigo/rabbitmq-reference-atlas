@@ -1,0 +1,25 @@
+schema_version: 1
+id: rabbitmq-4.2.9-to-4.3.5
+strategy: rolling-in-place
+source:
+  version: 4.2.9
+  source_tag: v4.2.9
+  source_commit: 47d6d6457c7d1a440daed643cb7d76bba313e79c
+  image: docker.io/library/rabbitmq:4.2.9-management
+  index_digest: sha256:59935db6392a27b5192f1be080df9b4194bc22f104a7a1bf3b31479a8e0d1031
+  linux_amd64_digest: sha256:4155f60885ce1949616d8a7b7cdaa5b3facf6dcaf6ba1f31d6ea7cc9723e8334
+  linux_arm64_v8_digest: sha256:ab1e8157261e42bab899ae942265083eb9a5860ebb793a5de7cd2490cf0d21d8
+target:
+  version: 4.3.5
+  source_tag: v4.3.5
+  source_commit: 0dde27bfdd1984ff7e157226fd97656854a7f359
+  image: docker.io/library/rabbitmq:4.3.5-management
+  index_digest: sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031
+  linux_amd64_digest: sha256:8f2728c6fade11cb4e230a2dbcd3d77f61f5d8f5bed5981f9182ad529ae28890
+  linux_arm64_v8_digest: sha256:e78a569b7dd23d1313e11b9f0ab3d3f1a730154a868d428924de4ba591f661c5
+constraints:
+  - 4.3.xへのIn-place Upgradeは4.2.xからのみ行う。
+  - Source ClusterではUpgrade前に全Stable Feature Flagを有効化する。
+  - Nodeは一台ずつ停止し、Data VolumeとNode Nameを維持する。
+  - DowngradeはRabbitMQの公式サポート対象外であり、このLabでは実行しない。
+authority_note: RabbitMQ Release Informationは4.2.10を掲載する一方、調査時点でv4.2.10 TagとDocker Official Imageが存在しないため、実在する固定配布物4.2.9をSourceとする。

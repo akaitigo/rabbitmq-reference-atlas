@@ -1,0 +1,12 @@
+schema_version: 1
+id: observability-state
+claims:
+  - observability.queue-state-transition
+  - observability.prometheus-metrics
+profile: cluster
+version: 4.3.5
+setup: 一意なDurable Classic Queueを宣言し、Confirm付きで一MessageをPublishする。
+execute: Management APIでready=1を確認し、Manual Ack Consumerへ配送してunacked=1を確認した後にAckし、ready=0かつunacked=0を確認する。続いて各RabbitMQ Container内からlocalhost:15692/metricsを取得する。
+verify: ready、unacked、ackedの三Snapshot、Publisher Confirm、Queue削除後404、三Node全てのPrometheus Payload、SHA-256、Metric Family数、Alarm/到達不能Peer SampleをJSONで機械判定する。
+cleanup: 一意Queueを削除し、Management APIのGET 404を確認する。Compose、既存Queue、既存Connection、他LabのEvidenceは変更しない。
+command: scripts/run-observability-lab.sh

@@ -1,0 +1,8 @@
+schema_version: 1
+id: network-partition
+claims: [cluster.network-partition, cluster.partition-recovery]
+profile: cluster
+setup: 三Replica Quorum QueueへConfirm済みMessageを投入し、Leader Containerを特定する。
+execute: 専用Compose NetworkからLeader Containerだけを切断し、多数派Consumeと少数派Publishを試行してから再接続する。
+verify: 多数派で全IDを一意に取得し、少数派がConfirmできず、再接続後に三Replicaがonlineであることを確認する。
+cleanup: TrapでもNetwork再接続を保証し、Queueと専用Compose環境を削除する。

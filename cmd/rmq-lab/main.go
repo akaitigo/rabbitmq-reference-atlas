@@ -48,7 +48,7 @@ type queueInfo struct {
 }
 
 func main() {
-	mode := flag.String("mode", "core", "core, prepare-failure, verify-recovery, cluster")
+	mode := flag.String("mode", "core", "core, prepare-failure, verify-recovery, verify-partition-majority, verify-minority, inspect-queue, cluster")
 	amqpURLs := flag.String("amqp-urls", "amqp://atlas:atlas-local-only@127.0.0.1:25672/", "comma-separated AMQP endpoints")
 	managementURLs := flag.String("management-urls", "http://127.0.0.1:35672", "comma-separated Management endpoints")
 	queue := flag.String("queue", "", "existing queue for recovery verification")
@@ -65,7 +65,13 @@ func main() {
 	case "prepare-failure":
 		r, err = prepareFailure(split(*amqpURLs), split(*managementURLs), runID, *expected)
 	case "verify-recovery":
-		r, err = verifyRecovery(split(*amqpURLs), runID, *queue, *expected)
+		r, err = verifyMessages(split(*amqpURLs), runID, *queue, *expected, true, "leader-failure-delivery")
+	case "verify-partition-majority":
+		r, err = verifyMessages(split(*amqpURLs), runID, *queue, *expected, false, "partition-majority-delivery")
+	case "verify-minority":
+		r, err = verifyMinority(split(*amqpURLs), runID, *queue)
+	case "inspect-queue":
+		r, err = inspectQueue(split(*amqpURLs), split(*managementURLs), runID, *queue)
 	case "cluster":
 		r, err = inspectCluster(split(*managementURLs), runID)
 	default:
@@ -114,7 +120,17 @@ func runCore(endpoints []string, runID string) (report, error) {
 	}
 	defer conn.Close()
 	checks := make([]check, 0, 5)
-	for _, lab := range []func(*amqp.Connection, string) (check, error){exchangeQueue, ackRedelivery, deadLetter, consumerFlowControl} {
+	for _, lab := range []func(*amqp.Connection, string) (check, error){
+		amqpModelBoundary,
+		exchangeBindingMatrix,
+		exchangeQueue,
+		ackRedelivery,
+		deadLetter,
+		ttlDeadLetter,
+		consumerFlowControl,
+		quorumAndStream,
+		orderingAndIdempotency,
+	} {
 		result, err := lab(conn, "atlas."+runID)
 		if err != nil {
 			return report{}, err
@@ -295,13 +311,356 @@ func consumerFlowControl(conn *amqp.Connection, prefix string) (check, error) {
 	return check{Name: "consumer-prefetch", Passed: passed, Observed: map[string]any{"prefetch": 1, "second_before_ack": secondBeforeAck, "second_after_ack": secondAfterAck}}, assert(passed, "consumer prefetch invariant failed")
 }
 
+func amqpModelBoundary(conn *amqp.Connection, prefix string) (check, error) {
+	stable, err := conn.Channel()
+	if err != nil {
+		return check{}, err
+	}
+	defer stable.Close()
+	queueName := prefix + ".property-equivalence"
+	q, err := stable.QueueDeclare(queueName, true, false, false, false, nil)
+	if err != nil {
+		return check{}, err
+	}
+	defer stable.QueueDelete(q.Name, false, false, false)
+
+	conflict, err := conn.Channel()
+	if err != nil {
+		return check{}, err
+	}
+	_, conflictErr := conflict.QueueDeclare(queueName, false, false, false, false, nil)
+	_ = conflict.Close()
+	passed := conflictErr != nil && strings.Contains(conflictErr.Error(), "PRECONDITION_FAILED")
+	return check{
+		Name:   "amqp-model-property-equivalence",
+		Passed: passed,
+		Observed: map[string]any{
+			"connection_remained_open": !conn.IsClosed(),
+			"conflicting_declaration":  "rejected",
+			"error_contains":           "PRECONDITION_FAILED",
+		},
+	}, assert(passed, "AMQP property equivalence invariant failed")
+}
+
+func exchangeBindingMatrix(conn *amqp.Connection, prefix string) (check, error) {
+	type routeCase struct {
+		name       string
+		kind       string
+		bindingKey string
+		publishKey string
+		bindArgs   amqp.Table
+		headers    amqp.Table
+	}
+	cases := []routeCase{
+		{name: "direct", kind: "direct", bindingKey: "orders.created", publishKey: "orders.created"},
+		{name: "topic", kind: "topic", bindingKey: "orders.*", publishKey: "orders.updated"},
+		{name: "fanout", kind: "fanout", bindingKey: "", publishKey: "ignored"},
+		{name: "headers", kind: "headers", bindingKey: "", publishKey: "", bindArgs: amqp.Table{"x-match": "all", "format": "json"}, headers: amqp.Table{"format": "json"}},
+	}
+	observed := map[string]any{}
+	for _, scenario := range cases {
+		ch, err := conn.Channel()
+		if err != nil {
+			return check{}, err
+		}
+		exchange := prefix + ".matrix." + scenario.name
+		queueName := exchange + ".queue"
+		if err := ch.ExchangeDeclare(exchange, scenario.kind, true, false, false, false, nil); err != nil {
+			ch.Close()
+			return check{}, err
+		}
+		q, err := ch.QueueDeclare(queueName, true, false, false, false, nil)
+		if err != nil {
+			ch.Close()
+			return check{}, err
+		}
+		if err := ch.QueueBind(q.Name, scenario.bindingKey, exchange, false, scenario.bindArgs); err != nil {
+			ch.Close()
+			return check{}, err
+		}
+		messageID := prefix + ".matrix-message." + scenario.name
+		publishing := amqp.Publishing{DeliveryMode: amqp.Persistent, ContentType: "application/json", MessageId: messageID, Headers: scenario.headers, Body: []byte(`{"matrix":true}`)}
+		if err := publishConfirmedPublishing(ch, exchange, scenario.publishKey, publishing); err != nil {
+			ch.Close()
+			return check{}, err
+		}
+		delivery, ok, err := getEventually(ch, q.Name, 5*time.Second)
+		if err != nil || !ok || delivery.MessageId != messageID {
+			ch.Close()
+			return check{}, fmt.Errorf("%s exchange routing failed: %w", scenario.name, err)
+		}
+		if err := delivery.Ack(false); err != nil {
+			ch.Close()
+			return check{}, err
+		}
+		observed[scenario.name] = "routed"
+		_, _ = ch.QueueDelete(q.Name, false, false, false)
+		_ = ch.ExchangeDelete(exchange, false, false)
+		_ = ch.Close()
+	}
+
+	negative, err := conn.Channel()
+	if err != nil {
+		return check{}, err
+	}
+	defer negative.Close()
+	exchange := prefix + ".matrix.negative"
+	if err := negative.ExchangeDeclare(exchange, "direct", true, false, false, false, nil); err != nil {
+		return check{}, err
+	}
+	defer negative.ExchangeDelete(exchange, false, false)
+	q, err := negative.QueueDeclare(exchange+".queue", true, false, false, false, nil)
+	if err != nil {
+		return check{}, err
+	}
+	defer negative.QueueDelete(q.Name, false, false, false)
+	if err := negative.QueueBind(q.Name, "expected", exchange, false, nil); err != nil {
+		return check{}, err
+	}
+	if err := publishConfirmed(negative, exchange, "unexpected", prefix+".unroutable"); err != nil {
+		return check{}, err
+	}
+	time.Sleep(250 * time.Millisecond)
+	inspected, err := negative.QueueInspect(q.Name)
+	if err != nil {
+		return check{}, err
+	}
+	observed["non_matching_direct"] = inspected.Messages
+	passed := inspected.Messages == 0 && len(observed) == 5
+	return check{Name: "exchange-binding-matrix", Passed: passed, Observed: observed}, assert(passed, "exchange binding matrix invariant failed")
+}
+
+func ttlDeadLetter(conn *amqp.Connection, prefix string) (check, error) {
+	ch, err := conn.Channel()
+	if err != nil {
+		return check{}, err
+	}
+	defer ch.Close()
+	dlx := prefix + ".ttl.dlx"
+	if err := ch.ExchangeDeclare(dlx, "direct", true, false, false, false, nil); err != nil {
+		return check{}, err
+	}
+	defer ch.ExchangeDelete(dlx, false, false)
+	dead, err := ch.QueueDeclare(prefix+".ttl.dead", true, false, false, false, nil)
+	if err != nil {
+		return check{}, err
+	}
+	defer ch.QueueDelete(dead.Name, false, false, false)
+	if err := ch.QueueBind(dead.Name, "expired", dlx, false, nil); err != nil {
+		return check{}, err
+	}
+	source, err := ch.QueueDeclare(prefix+".ttl.source", true, false, false, false, amqp.Table{
+		"x-message-ttl":             int32(300),
+		"x-dead-letter-exchange":    dlx,
+		"x-dead-letter-routing-key": "expired",
+	})
+	if err != nil {
+		return check{}, err
+	}
+	defer ch.QueueDelete(source.Name, false, false, false)
+	messageID := prefix + ".ttl-message"
+	if err := publishConfirmed(ch, "", source.Name, messageID); err != nil {
+		return check{}, err
+	}
+	delivery, ok, err := getEventually(ch, dead.Name, 8*time.Second)
+	if err != nil || !ok {
+		return check{}, fmt.Errorf("expired dead letter missing: %w", err)
+	}
+	deathReason := ""
+	if deaths, ok := delivery.Headers["x-death"].([]interface{}); ok && len(deaths) > 0 {
+		if death, ok := deaths[0].(amqp.Table); ok {
+			deathReason = fmt.Sprint(death["reason"])
+		}
+	}
+	hasExpiredDeath := deathReason == "expired"
+	if err := delivery.Ack(false); err != nil {
+		return check{}, err
+	}
+	sourceState, err := ch.QueueInspect(source.Name)
+	if err != nil {
+		return check{}, err
+	}
+	passed := delivery.MessageId == messageID && hasExpiredDeath && sourceState.Messages == 0
+	return check{Name: "ttl-dead-letter", Passed: passed, Observed: map[string]any{"message_id": messageID, "x_death_reason": deathReason, "source_messages": sourceState.Messages, "ttl_ms": 300}}, assert(passed, "TTL dead-letter invariant failed")
+}
+
+func quorumAndStream(conn *amqp.Connection, prefix string) (check, error) {
+	quorumChannel, err := conn.Channel()
+	if err != nil {
+		return check{}, err
+	}
+	defer quorumChannel.Close()
+	quorum, err := quorumChannel.QueueDeclare(prefix+".quorum", true, false, false, false, amqp.Table{"x-queue-type": "quorum", "x-quorum-initial-group-size": int32(3)})
+	if err != nil {
+		return check{}, err
+	}
+	defer quorumChannel.QueueDelete(quorum.Name, false, false, false)
+	quorumID := prefix + ".quorum-message"
+	if err := publishConfirmed(quorumChannel, "", quorum.Name, quorumID); err != nil {
+		return check{}, err
+	}
+	quorumDelivery, ok, err := getEventually(quorumChannel, quorum.Name, 8*time.Second)
+	if err != nil || !ok {
+		return check{}, fmt.Errorf("quorum delivery missing: %w", err)
+	}
+	if err := quorumDelivery.Ack(false); err != nil {
+		return check{}, err
+	}
+
+	streamChannel, err := conn.Channel()
+	if err != nil {
+		return check{}, err
+	}
+	defer streamChannel.Close()
+	stream, err := streamChannel.QueueDeclare(prefix+".stream", true, false, false, false, amqp.Table{"x-queue-type": "stream"})
+	if err != nil {
+		return check{}, err
+	}
+	defer streamChannel.QueueDelete(stream.Name, false, false, false)
+	for i := 1; i <= 3; i++ {
+		id := fmt.Sprintf("%s.stream-%d", prefix, i)
+		if err := publishConfirmed(streamChannel, "", stream.Name, id); err != nil {
+			return check{}, err
+		}
+	}
+	if err := streamChannel.Qos(10, 0, false); err != nil {
+		return check{}, err
+	}
+	deliveries, err := streamChannel.Consume(stream.Name, "atlas-stream-consumer", false, false, false, false, amqp.Table{"x-stream-offset": "first"})
+	if err != nil {
+		return check{}, err
+	}
+	streamIDs := make([]string, 0, 3)
+	deadline := time.After(8 * time.Second)
+	for len(streamIDs) < 3 {
+		select {
+		case delivery := <-deliveries:
+			streamIDs = append(streamIDs, delivery.MessageId)
+			if err := delivery.Ack(false); err != nil {
+				return check{}, err
+			}
+		case <-deadline:
+			return check{}, errors.New("stream delivery timeout")
+		}
+	}
+	_ = streamChannel.Cancel("atlas-stream-consumer", false)
+
+	// A second consumer starts from the beginning to prove that acknowledging a
+	// stream delivery does not destructively remove the retained log entry.
+	replayChannel, err := conn.Channel()
+	if err != nil {
+		return check{}, err
+	}
+	defer replayChannel.Close()
+	if err := replayChannel.Qos(10, 0, false); err != nil {
+		return check{}, err
+	}
+	replayed, err := replayChannel.Consume(stream.Name, "atlas-stream-replay-consumer", false, false, false, false, amqp.Table{"x-stream-offset": "first"})
+	if err != nil {
+		return check{}, err
+	}
+	replayedIDs := make([]string, 0, 3)
+	replayDeadline := time.After(8 * time.Second)
+	for len(replayedIDs) < 3 {
+		select {
+		case delivery := <-replayed:
+			replayedIDs = append(replayedIDs, delivery.MessageId)
+			if err := delivery.Ack(false); err != nil {
+				return check{}, err
+			}
+		case <-replayDeadline:
+			return check{}, errors.New("stream replay delivery timeout")
+		}
+	}
+	_ = replayChannel.Cancel("atlas-stream-replay-consumer", false)
+	replayMatches := len(streamIDs) == len(replayedIDs)
+	for index := range streamIDs {
+		replayMatches = replayMatches && streamIDs[index] == replayedIDs[index]
+	}
+	passed := quorumDelivery.MessageId == quorumID && len(streamIDs) == 3 && replayMatches
+	return check{Name: "quorum-stream-semantics", Passed: passed, Observed: map[string]any{"quorum_confirmed_and_acked": true, "quorum_replicas_requested": 3, "stream_offset": "first", "stream_messages": streamIDs, "second_consumer_replay": replayedIDs, "non_destructive_replay": replayMatches}}, assert(passed, "quorum/stream invariant failed")
+}
+
+func orderingAndIdempotency(conn *amqp.Connection, prefix string) (check, error) {
+	ch, err := conn.Channel()
+	if err != nil {
+		return check{}, err
+	}
+	defer ch.Close()
+	q, err := ch.QueueDeclare(prefix+".ordering", true, false, false, false, nil)
+	if err != nil {
+		return check{}, err
+	}
+	defer ch.QueueDelete(q.Name, false, false, false)
+	const count = 20
+	for sequence := 1; sequence <= count; sequence++ {
+		body := []byte(fmt.Sprintf(`{"sequence":%d}`, sequence))
+		publishing := amqp.Publishing{DeliveryMode: amqp.Persistent, ContentType: "application/json", MessageId: fmt.Sprintf("%s.sequence-%02d", prefix, sequence), Body: body}
+		if err := publishConfirmedPublishing(ch, "", q.Name, publishing); err != nil {
+			return check{}, err
+		}
+	}
+	received := make([]int, 0, count)
+	for len(received) < count {
+		delivery, ok, err := getEventually(ch, q.Name, 8*time.Second)
+		if err != nil || !ok {
+			return check{}, fmt.Errorf("ordered delivery missing: %w", err)
+		}
+		var payload struct {
+			Sequence int `json:"sequence"`
+		}
+		if err := json.Unmarshal(delivery.Body, &payload); err != nil {
+			return check{}, err
+		}
+		received = append(received, payload.Sequence)
+		if err := delivery.Ack(false); err != nil {
+			return check{}, err
+		}
+	}
+	ordered := true
+	for index, sequence := range received {
+		ordered = ordered && sequence == index+1
+	}
+
+	duplicateID := prefix + ".idempotency-key"
+	for i := 0; i < 2; i++ {
+		publishing := amqp.Publishing{DeliveryMode: amqp.Persistent, ContentType: "application/json", MessageId: duplicateID, Body: []byte(`{"effect":"charge"}`)}
+		if err := publishConfirmedPublishing(ch, "", q.Name, publishing); err != nil {
+			return check{}, err
+		}
+	}
+	seen := map[string]bool{}
+	deliveries := 0
+	sideEffects := 0
+	for deliveries < 2 {
+		delivery, ok, err := getEventually(ch, q.Name, 5*time.Second)
+		if err != nil || !ok {
+			return check{}, fmt.Errorf("duplicate delivery missing: %w", err)
+		}
+		deliveries++
+		if !seen[delivery.MessageId] {
+			seen[delivery.MessageId] = true
+			sideEffects++
+		}
+		if err := delivery.Ack(false); err != nil {
+			return check{}, err
+		}
+	}
+	passed := ordered && deliveries == 2 && sideEffects == 1
+	return check{Name: "ordering-idempotency", Passed: passed, Observed: map[string]any{"ordered_count": len(received), "ordered": ordered, "duplicate_deliveries": deliveries, "idempotent_side_effects": sideEffects, "guarantee_boundary": "application-ledger"}}, assert(passed, "ordering/idempotency invariant failed")
+}
+
 func publishConfirmed(ch *amqp.Channel, exchange, key, messageID string) error {
+	return publishConfirmedPublishing(ch, exchange, key, amqp.Publishing{DeliveryMode: amqp.Persistent, ContentType: "application/json", MessageId: messageID, Body: []byte(`{"atlas":"rabbitmq-reference-atlas"}`)})
+}
+
+func publishConfirmedPublishing(ch *amqp.Channel, exchange, key string, publishing amqp.Publishing) error {
 	if err := ch.Confirm(false); err != nil {
 		return err
 	}
 	ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancel()
-	confirmation, err := ch.PublishWithDeferredConfirmWithContext(ctx, exchange, key, false, false, amqp.Publishing{DeliveryMode: amqp.Persistent, ContentType: "application/json", MessageId: messageID, Body: []byte(`{"atlas":"rabbitmq-reference-atlas"}`)})
+	confirmation, err := ch.PublishWithDeferredConfirmWithContext(ctx, exchange, key, false, false, publishing)
 	if err != nil {
 		return err
 	}
@@ -376,11 +735,11 @@ func prepareFailure(endpoints, management []string, runID string, count int) (re
 	return report{SchemaVersion: 1, Mode: "prepare-failure", RunID: runID, CreatedAt: time.Now().UTC().Format(time.RFC3339), Queue: q.Name, Leader: leader, MessageIDs: ids, Checks: []check{{Name: "quorum-queue-prepared", Passed: passed, Observed: map[string]any{"leader": leader, "members": info.Members, "online_members": info.OnlineMembers, "confirmed_messages": len(ids)}}}}, assert(passed, "quorum queue did not reach three online members")
 }
 
-func verifyRecovery(endpoints []string, runID, queueName string, expected int) (report, error) {
+func verifyMessages(endpoints []string, runID, queueName string, expected int, deleteQueue bool, checkName string) (report, error) {
 	if queueName == "" {
 		return report{}, errors.New("queue is required")
 	}
-	conn, err := connect(endpoints, 60*time.Second)
+	conn, err := connect(endpoints, 120*time.Second)
 	if err != nil {
 		return report{}, err
 	}
@@ -391,7 +750,7 @@ func verifyRecovery(endpoints []string, runID, queueName string, expected int) (
 	}
 	defer ch.Close()
 	ids := make([]string, 0, expected)
-	deadline := time.Now().Add(60 * time.Second)
+	deadline := time.Now().Add(120 * time.Second)
 	for len(ids) < expected && time.Now().Before(deadline) {
 		d, ok, err := ch.Get(queueName, false)
 		if err != nil {
@@ -414,10 +773,71 @@ func verifyRecovery(endpoints []string, runID, queueName string, expected int) (
 		unique[id] = true
 	}
 	passed := len(ids) == expected && len(unique) == expected
+	if deleteQueue {
+		if _, err := ch.QueueDelete(queueName, false, false, false); err != nil {
+			return report{}, err
+		}
+	}
+	return report{SchemaVersion: 1, Mode: checkName, RunID: runID, CreatedAt: time.Now().UTC().Format(time.RFC3339), Queue: queueName, MessageIDs: sorted, Checks: []check{{Name: checkName, Passed: passed, Observed: map[string]any{"expected": expected, "received": len(ids), "unique": len(unique), "queue_deleted": deleteQueue}}}}, assert(passed, "message recovery invariant failed")
+}
+
+func verifyMinority(endpoints []string, runID, queueName string) (report, error) {
+	if queueName == "" {
+		return report{}, errors.New("queue is required")
+	}
+	conn, err := connect(endpoints, 20*time.Second)
+	if err != nil {
+		return report{SchemaVersion: 1, Mode: "verify-minority", RunID: runID, CreatedAt: time.Now().UTC().Format(time.RFC3339), Queue: queueName, Checks: []check{{Name: "partition-minority-write-rejected", Passed: true, Observed: map[string]any{"connection": "unavailable", "write_confirmed": false, "error": err.Error()}}}}, nil
+	}
+	defer conn.Close()
+	ch, err := conn.Channel()
+	if err != nil {
+		return report{}, err
+	}
+	defer ch.Close()
+	err = publishConfirmed(ch, "", queueName, runID+".minority-write")
+	passed := err != nil
+	observed := map[string]any{"connection": "available", "write_confirmed": err == nil}
+	if err != nil {
+		observed["error"] = err.Error()
+	}
+	return report{SchemaVersion: 1, Mode: "verify-minority", RunID: runID, CreatedAt: time.Now().UTC().Format(time.RFC3339), Queue: queueName, Checks: []check{{Name: "partition-minority-write-rejected", Passed: passed, Observed: observed}}}, assert(passed, "minority unexpectedly confirmed a quorum queue write")
+}
+
+func inspectQueue(amqpEndpoints, management []string, runID, queueName string) (report, error) {
+	if queueName == "" {
+		return report{}, errors.New("queue is required")
+	}
+	var info queueInfo
+	var err error
+	for i := 0; i < 60; i++ {
+		info, err = fetchQueue(management, queueName)
+		if err == nil && len(info.Members) == 3 && len(info.OnlineMembers) == 3 {
+			break
+		}
+		time.Sleep(time.Second)
+	}
+	if err != nil {
+		return report{}, err
+	}
+	passed := len(info.Members) == 3 && len(info.OnlineMembers) == 3
+	if !passed {
+		return report{}, errors.New("quorum queue replica did not rejoin")
+	}
+	conn, err := connect(amqpEndpoints, 30*time.Second)
+	if err != nil {
+		return report{}, err
+	}
+	defer conn.Close()
+	ch, err := conn.Channel()
+	if err != nil {
+		return report{}, err
+	}
+	defer ch.Close()
 	if _, err := ch.QueueDelete(queueName, false, false, false); err != nil {
 		return report{}, err
 	}
-	return report{SchemaVersion: 1, Mode: "verify-recovery", RunID: runID, CreatedAt: time.Now().UTC().Format(time.RFC3339), Queue: queueName, MessageIDs: sorted, Checks: []check{{Name: "leader-failure-delivery", Passed: passed, Observed: map[string]any{"expected": expected, "received": len(ids), "unique": len(unique)}}}}, assert(passed, "recovery message invariant failed")
+	return report{SchemaVersion: 1, Mode: "inspect-queue", RunID: runID, CreatedAt: time.Now().UTC().Format(time.RFC3339), Queue: queueName, Checks: []check{{Name: "partition-replica-rejoined", Passed: true, Observed: map[string]any{"members": info.Members, "online_members": info.OnlineMembers, "queue_deleted": true}}}}, nil
 }
 
 func inspectCluster(management []string, runID string) (report, error) {

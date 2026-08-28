@@ -1,0 +1,8 @@
+schema_version: 1
+id: publisher-flow-control
+claims: [delivery.publisher-flow-control]
+profile: cluster
+setup: 専用Compose Clusterの一Nodeへ1 byteのMemory Watermarkを設定しCluster Resource Alarmを発生させる。
+execute: Alarm中のConnection.BlockedとConfirm未成立を観測し、Watermarkを0.4へ戻して別Publishを実行する。
+verify: Alarm Healthが非200、Blocked Eventあり、Confirmなしを確認し、解除後はAlarm Health 200とConfirm ackを確認する。
+cleanup: Trapを含めWatermarkを0.4へ戻し、専用Compose環境を削除する。

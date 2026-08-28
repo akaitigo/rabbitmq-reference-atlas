@@ -1,0 +1,8 @@
+schema_version: 1
+id: ordering-idempotency
+claims: [delivery.ordering-boundary, delivery.idempotency-boundary]
+profile: cluster
+setup: 単一Queue、Confirm Channel、単一ConsumerとApplication Ledgerを用意する。
+execute: 連番二十Messageと、同一Message IDの二MessageをPublishしてConsumeする。
+verify: 連番の順序一致、重複二Delivery、Application副作用一回を機械判定する。
+cleanup: 全DeliveryをAckしてQueueを削除する。

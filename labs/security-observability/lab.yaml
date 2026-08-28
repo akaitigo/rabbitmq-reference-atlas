@@ -1,0 +1,14 @@
+schema_version: 1
+id: security-observability
+claims:
+  - security.least-privilege
+  - observability.management-api
+  - operation.health-and-alarms
+  - operation.safe-cleanup
+profile: cluster
+version: 4.3.5
+setup: 実行ごとに一意な専用vhostと無Tagの専用userを作り、allowed.*だけにconfigure/write/readを許可する。
+execute: 誤Passwordと別vhost接続、許可されたExchange・Binding・Queue・Publish Confirm・Consume/Ack、forbidden.*へのQueue Declare/Consume、Password Rotationを実行する。同時にManagement APIから三Node、対象Queue、各Nodeのready-to-serve-clients HealthとCluster Alarmを取得する。
+verify: 全checkがpassed=true、Version 4.3.5、許可操作成功、誤Password/別vhost拒否、禁止操作403、Rotation後の旧Password拒否と新Password受理、三Node/Queue/Health/Alarm正常を機械判定する。
+cleanup: 成否にかかわらず専用userと専用vhostをManagement APIで削除し、双方のGETが404になることを確認する。既存vhost、user、Queue、Exchange、Nodeは変更しない。
+command: go run ./cmd/rmq-secops -output /tmp/rabbitmq-security-observability.json

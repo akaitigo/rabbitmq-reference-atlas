@@ -21,6 +21,17 @@ def load(path: pathlib.Path):
     return yaml.safe_load(path.read_text())
 
 
+def raw_checks(document):
+    checks = []
+    for run in document.get("runs", [document]):
+        run_checks = run.get("checks", [])
+        if isinstance(run_checks, dict):
+            checks.extend({"name": name, "passed": passed} for name, passed in run_checks.items())
+        elif isinstance(run_checks, list):
+            checks.extend(run_checks)
+    return checks
+
+
 def fail(errors: list[str], message: str) -> None:
     errors.append(message)
 
@@ -66,6 +77,19 @@ def main() -> int:
         artifact = ROOT / record["artifact"]["uri"]
         if not artifact.exists() or sha(artifact) != record["artifact"]["digest"]:
             fail(errors, f"artifact digest mismatch: {record['id']}")
+        elif record["artifact"].get("media_type") == "application/json":
+            try:
+                raw = json.loads(artifact.read_text())
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                fail(errors, f"invalid JSON artifact: {record['id']}")
+            else:
+                checks = raw_checks(raw)
+                if checks and any(check.get("passed") is not True for check in checks):
+                    fail(errors, f"failed raw oracle in pass evidence: {record['id']}")
+                if record["kind"] == "skill-eval":
+                    results = raw.get("results", [])
+                    if not results or not all(item.get("passed") is True for item in results) or raw.get("passed") != raw.get("total"):
+                        fail(errors, f"incomplete skill eval result: {record['id']}")
         if record["source_digest"] != expected_lock_digest:
             fail(errors, f"source digest mismatch: {record['id']}")
     for target in coverage["targets"]:
@@ -80,6 +104,10 @@ def main() -> int:
                 fail(errors, f"unknown evidence {evidence_id} in {target['id']}")
             elif not set(target["claim_ids"]).intersection(record["claim_ids"]):
                 fail(errors, f"evidence {evidence_id} is not connected to {target['id']}")
+            elif record.get("verdict") != "pass":
+                fail(errors, f"non-pass evidence {evidence_id} connected to covered target {target['id']}")
+        if target["state"] == "covered" and (not target["claim_ids"] or not target["evidence_ids"]):
+            fail(errors, f"covered target lacks claim/evidence: {target['id']}")
     required = ["LICENSE", "NOTICE", "SECURITY.md", "CONTRIBUTING.md", "third_party/manifest.yaml", "sbom.spdx.json", "third_party/sbom.cdx.json"]
     for relative in required:
         if not (ROOT / relative).exists():

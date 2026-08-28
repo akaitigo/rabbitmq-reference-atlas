@@ -1,0 +1,37 @@
+schema_version: 1
+proof_obligations:
+  tls-transport:
+    setup: 専用ComposeとRuntime一時領域へEphemeral CA、Server、Client、不正CA証明書を生成する。
+    execute: 正しいmTLS配送と四つの拒否Probeを実行する。
+    verify: Fingerprint/Version/Confirm/Consume/Ackと、不正CA/Hostname/Client証明書なし/Plaintext拒否を確認する。
+    cleanup: 専用Compose/Volumeと秘密鍵を含む一時領域を削除する。
+  least-privilege:
+    setup: 一意な専用vhostと無Tag Userを作りallowed.*だけのPermissionを設定する。
+    execute: 誤Password、別vhost、許可Topology、forbidden.*操作、Password Rotationを順次試行する。
+    verify: 許可側Confirm/Ack、拒否側ACCESS_REFUSED 403、旧Password失効、新Password受理を確認する。
+    cleanup: 専用Userとvhostを削除する。
+  management-observability:
+    setup: 三NodeのManagement Endpointと対象Queueを固定する。
+    execute: Version、Node、QueueのAPI応答を取得する。
+    verify: Version 4.3.5、三Noderunning、対象Queue runningを確認する。
+    cleanup: Read-only観測のため追加Cleanupは行わない。
+  queue-state-transition:
+    setup: 一意なDurable Queueへ一MessageをConfirm付きでPublishする。
+    execute: readyを観測し、Manual Ack Consumerへ配送してunackedを観測後にAckする。
+    verify: ready=1、unacked=1、Ack後ready=0/unacked=0を時刻付きで確認する。
+    cleanup: Queueを削除してManagement API 404を確認する。
+  prometheus-metrics:
+    setup: 三NodeのContainer-local Prometheus Endpointを列挙する。
+    execute: 各Nodeのlocalhost:15692/metricsを取得する。
+    verify: Payload Digest、Metric Family、Alarm、到達不能Peer Sampleを三Nodeすべてで確認する。
+    cleanup: Read-only観測のため追加Cleanupは行わない。
+  health-and-alarms:
+    setup: 三つのManagement Endpointを列挙する。
+    execute: ready-to-serve-clientsとalarms Health Checkを各Endpointで呼ぶ。
+    verify: HTTP 200かつstatus=okを確認する。
+    cleanup: Read-only観測のため追加Cleanupは行わない。
+  safe-cleanup:
+    setup: Lab専用Resource名を記録する。
+    execute: 専用Userとvhostを削除する。
+    verify: 削除API成功と削除後GET 404を確認する。
+    cleanup: 残存した専用Resourceだけを再度削除する。
