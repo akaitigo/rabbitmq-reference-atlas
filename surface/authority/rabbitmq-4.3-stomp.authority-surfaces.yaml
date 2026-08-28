@@ -1,0 +1,121 @@
+schema_version: 2
+source_id: rabbitmq-4.3-stomp
+source_digest: sha256:95d827abe7e15c70ad3605d0d8518d6cdce75d3c95d147c8da6a34f626647e67
+extraction:
+  method: primary-text-reviewed
+  tool: heading-and-contract-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+  - id: stomp.protocol-plugin
+    locator: '#overview'
+    kind: capability
+    capability_id: protocol.stomp
+    behavior_id: stomp.protocol-plugin
+    title: STOMP 1.0 through 1.2 plugin protocol negotiation
+    surface_ids: [foundations-mechanics, testing-verification, compatibility-integration]
+  - id: stomp.listeners-tls
+    locator: '#plugin-configuration'
+    kind: capability
+    capability_id: protocol.stomp
+    behavior_id: stomp.listeners-tls
+    title: STOMP TCP, TLS, Web STOMP, and listener configuration
+    surface_ids: [implementation-construction, testing-verification, security-privacy-safety, compatibility-integration]
+  - id: stomp.x509-authentication
+    locator: '#authentication-with-tlsx509-client-certificates'
+    kind: behavior
+    capability_id: security.stomp
+    behavior_id: stomp.x509-authentication
+    title: STOMP mutual TLS x.509 identity extraction
+    surface_ids: [testing-verification, security-privacy-safety]
+  - id: stomp.frame-size-limit
+    locator: '#frame-size-limit'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.frame-size-limit
+    title: STOMP frame size limit boundary and oversized frame rejection
+    surface_ids: [testing-verification, security-privacy-safety, performance-capacity-cost]
+  - id: stomp.exchange-destination
+    locator: '#exchange-destinations'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.exchange-destination
+    title: STOMP exchange destination routing and generated subscription queue
+    surface_ids: [foundations-mechanics, testing-verification, compatibility-integration]
+  - id: stomp.queue-destination
+    locator: '#queue-destinations'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.queue-destination
+    title: STOMP shared queue destination declaration and at-most-one subscriber delivery
+    surface_ids: [foundations-mechanics, testing-verification]
+  - id: stomp.amq-queue-destination
+    locator: '#amq-queue-destinations'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.amq-queue-destination
+    title: STOMP existing AMQP queue destination and missing queue rejection
+    surface_ids: [foundations-mechanics, testing-verification, compatibility-integration]
+  - id: stomp.topic-destination
+    locator: '#topic-destinations'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.topic-destination
+    title: STOMP topic fanout and no-subscriber discard behavior
+    surface_ids: [foundations-mechanics, testing-verification, failure-recovery]
+  - id: stomp.durable-topic
+    locator: '#durable-topic-subscriptions'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.durable-topic-subscription
+    title: STOMP durable topic disconnect and replay semantics
+    surface_ids: [testing-verification, failure-recovery]
+  - id: stomp.temp-queue
+    locator: '#temp-queue-destinations'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.temp-queue
+    title: STOMP session-private opaque temporary reply queue lifecycle
+    surface_ids: [foundations-mechanics, testing-verification, security-privacy-safety]
+  - id: stomp.queue-parameters
+    locator: '#controlling-rabbitmq-queue-parameters-with-stomp'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.queue-parameters
+    title: STOMP queue property declaration equivalence and policy interaction
+    surface_ids: [implementation-construction, testing-verification, compatibility-integration]
+  - id: stomp.ack-nack
+    locator: '#ack-and-nack'
+    kind: behavior
+    capability_id: delivery.stomp
+    behavior_id: stomp.ack-nack
+    title: STOMP auto, client, and client-individual ACK and NACK behavior
+    surface_ids: [foundations-mechanics, testing-verification, failure-recovery, compatibility-integration]
+  - id: stomp.prefetch
+    locator: '#prefetch'
+    kind: behavior
+    capability_id: delivery.stomp
+    behavior_id: stomp.prefetch
+    title: STOMP prefetch count and unacknowledged delivery pressure
+    surface_ids: [testing-verification, performance-capacity-cost]
+  - id: stomp.stream-support
+    locator: '#stream-support'
+    kind: behavior
+    capability_id: protocol.stomp
+    behavior_id: stomp.stream-support
+    title: STOMP stream subscription offset and credit behavior
+    surface_ids: [testing-verification, compatibility-integration, performance-capacity-cost]
+  - id: stomp.connection-vhost
+    locator: '#connection-and-virtual-hosts'
+    kind: behavior
+    capability_id: security.stomp
+    behavior_id: stomp.connection-vhost
+    title: STOMP CONNECT authentication and virtual host selection
+    surface_ids: [testing-verification, security-privacy-safety]
+  - id: stomp.persistence
+    locator: '#message-persistence'
+    kind: behavior
+    capability_id: delivery.stomp
+    behavior_id: stomp.persistence
+    title: STOMP persistent header mapping to durable RabbitMQ storage
+    surface_ids: [foundations-mechanics, testing-verification, failure-recovery]

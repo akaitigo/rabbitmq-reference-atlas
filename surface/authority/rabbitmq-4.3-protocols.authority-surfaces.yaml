@@ -1,0 +1,58 @@
+schema_version: 2
+source_id: rabbitmq-4.3-protocols
+source_digest: sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: protocol.amqp091.core
+  locator: '#amqp-0-9-1'
+  kind: capability
+  capability_id: protocol.amqp091
+  behavior_id: protocol.amqp091.core
+  title: AMQP 0-9-1 core protocol and RabbitMQ extensions
+  surface_ids: [orientation-scope, compatibility-integration]
+- id: protocol.amqp10.core
+  locator: '#amqp-10'
+  kind: capability
+  capability_id: protocol.amqp10
+  behavior_id: protocol.amqp10.native
+  title: Native AMQP 1.0 core protocol
+  surface_ids: [foundations-mechanics, compatibility-integration]
+- id: protocol.stream.plugin
+  locator: '#rabbitmq-streams'
+  kind: capability
+  capability_id: protocol.stream
+  behavior_id: protocol.stream.binary
+  title: RabbitMQ Stream binary protocol plugin
+  surface_ids: [implementation-construction, compatibility-integration]
+- id: protocol.mqtt.plugin
+  locator: '#mqtt'
+  kind: capability
+  capability_id: protocol.mqtt
+  behavior_id: protocol.mqtt.native
+  title: MQTT 3.1, 3.1.1, and 5.0 plugin
+  surface_ids: [implementation-construction, compatibility-integration]
+- id: protocol.stomp.plugin
+  locator: '#stomp'
+  kind: capability
+  capability_id: protocol.stomp
+  behavior_id: protocol.stomp.proxy
+  title: STOMP protocol plugin and AMQP 0-9-1 proxy boundary
+  surface_ids: [foundations-mechanics, compatibility-integration]
+- id: protocol.websocket.transports
+  locator: '#websocket'
+  kind: capability
+  capability_id: protocol.websocket
+  behavior_id: protocol.websocket.transports
+  title: AMQP 1.0, MQTT, and STOMP over WebSocket
+  surface_ids: [implementation-construction, security-privacy-safety, compatibility-integration]
+- id: protocol.http.diagnostic
+  locator: '#http'
+  kind: behavior
+  capability_id: protocol.http
+  behavior_id: protocol.http.low-volume-diagnostic
+  title: Management HTTP API low-volume diagnostic messaging boundary
+  surface_ids: [orientation-scope, operations-observability]

@@ -9,7 +9,7 @@ repository:
   default_branch: main
 archetypes: [product]
 stage: 3
-status: complete
+status: incomplete
 language:
   primary: ja
   identifiers: en
@@ -23,7 +23,7 @@ mastery:
   manifest: mastery.yaml
   contract_version: 1.0.0
 scope:
-  statement: RabbitMQ 4.3.5のAMQP Model、Exchange、Binding、Queue、Publisher Confirm、Consumer Ack、Redelivery、TTL/DLX、Quorum/Stream、Flow Control、Ordering、Idempotency、Cluster、Partition、Recovery、Security、Observability、Performance、Upgrade/Migration、Operations、Skill EvalをVersion固定環境で再実行し、観測可能な証拠へ接続する。
+  statement: RabbitMQ 4.3.5 Serverと公式Pluginについて、Protocol、Client Contract、Management、CLI、Config、Feature Flag、Queue Type、Routing、Delivery、Stream、Cluster、Cross-cluster、Security、Observability、Capacity、Failure Recovery、Backup Restore、Upgrade、OperatorをAuthority由来Inventoryから固定し、適用対象を実Runtimeの正常、境界、拒否、障害、回復Evidenceへ接続する。
   exclusions:
     - Tanzu RabbitMQだけで提供される商用機能の実装と実行証拠
     - RabbitMQ以外のメッセージ製品との網羅的な機能比較
@@ -35,9 +35,12 @@ skills:
   package_manifest: skill.package.yaml
   evals: evals/
 completion:
-  policy_version: 1.0.0
+  policy_version: 2.0.0
   required_profiles: [local, container, cluster]
   certificate: evidence/completion-certificate.json
+  definitive:
+    manifest: definitive.yaml
+    contract_version: 2.0.0
 license:
   default: Apache-2.0
   notice: NOTICE

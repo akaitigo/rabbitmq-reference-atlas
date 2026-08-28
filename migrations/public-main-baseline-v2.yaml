@@ -1,0 +1,32 @@
+schema_version: 1
+id: public-main-baseline-v2
+baseline: baseline/public-main-22ab07c.yaml
+policy: preserve-or-strengthen
+replacements:
+  - id: ci.install-pinned-atlas-validator
+    category: ci-matrix
+    old_id: github-actions.validate.install-atlas-d5c0a6c
+    new_id: github-actions.validate.install-atlas-be19dda
+    old_value: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@d5c0a6ce757fd5f43af837edd26f55c7325b811e
+    new_value: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@be19ddaa411fe60dcf12f0f5d457902bb57b9eb3
+    reason: Core Definitive Gate v2のSurface Inventory、Scenario Matrix、Definitive Skill Eval検査を追加し、既存v1検査を維持した上で強化するため。
+    runtime_proof:
+      strength: stronger
+      evidence: evidence/migrations/core-definitive-v2.json
+      required_checks:
+        - go-test-reference-atlas-core
+        - make-check-rabbitmq-reference-atlas
+        - atlas-audit-incomplete
+  - id: target.mastery-foundations-neutral-copy
+    category: target-copy
+    old_id: mastery.foundations-and-decisions#rationale
+    new_id: mastery.foundations-and-decisions#rationale
+    new_value: 機能一覧だけでなく、配送、複製、Storage、Protocolの原理と採否判断を追跡可能にする必要がある。
+    reason: 実証要件、Target ID、Claim、Evidenceを変更せず、中立な技術説明へ置換するため。
+    runtime_proof:
+      strength: equivalent
+      evidence: evidence/migrations/neutral-language-policy.json
+      required_checks:
+        - baseline-evidence-digests-preserved
+        - neutral-language-scan
+unmapped_replacements: forbidden

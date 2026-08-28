@@ -1,0 +1,204 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+authority_lock_digest: sha256:09c7e172622e8ad1dde0401f01e625586f1e9231165f10ab40cd8e60f7ddcb0c
+sources:
+- source_id: rabbitmq-server-v4.3.5
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-exchanges
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-exchanges
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-queues
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-queues
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-confirms
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-confirms
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-dlx
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-flow-control
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-clustering
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-clustering
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-amqp-concepts
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-ttl
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-streams
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-streams
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-quorum-queues
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-quorum-queues
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-partitions
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-partitions
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-reliability
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-access-control
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-access-control
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-tls
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-tls
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-monitoring
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-monitoring
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-prometheus
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-prometheus
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-alarms
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-alarms
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-definitions
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-feature-flags
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-feature-flags
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-upgrade
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-upgrade
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-rolling-upgrade
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-blue-green-upgrade
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-production-checklist
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-production-checklist
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-server-v4.2.9-release-notes
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-container-v4.2.9-management
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-container-v4.3.5-management
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-protocols
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-protocols
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-amqp-1.0
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-amqp-1-0
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-mqtt
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-stomp
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-stomp
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-stream-plugin
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-stream-comparison
+  classification: supporting-authority
+  authority_artifact_id: null
+  rationale: Version、Runtime、補完的契約の固定に使用し、独自Surfaceの抽出元にはしない。
+- source_id: rabbitmq-4.3-federation
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-federation
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-shovel
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-shovel
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-oauth2
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-oauth2
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-ldap
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-ldap
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-backup
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-backup
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-cli
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-cli
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-configuration
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-configuration
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-plugins
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-plugins
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-management
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-management
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-classic-queues
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-classic-queues
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-consumers
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-consumers
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-publishers
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-publishers
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-policies
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-policies
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-4.3-limits
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-4-3-limits
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-operator-overview
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-operator-overview
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-operator-usage
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-operator-usage
+  rationale: Authority Surfaceを抽出した一次資料。
+- source_id: rabbitmq-topology-operator-usage
+  classification: surface-authority
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  rationale: Authority Surfaceを抽出した一次資料。

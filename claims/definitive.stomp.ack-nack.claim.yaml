@@ -1,0 +1,40 @@
+schema_version: 1
+id: definitive.stomp.ack-nack.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: delivery.stomp
+statement: STOMP auto, client, and client-individual ACK and NACK behaviorのRabbitMQ
+  4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-stomp
+proof_obligations:
+- id: proof.stomp.ack-nack.normal
+  statement: STOMP auto, client, and client-individual ACK and NACK behaviorのnormal
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.stomp.ack-nack.boundary
+  statement: STOMP auto, client, and client-individual ACK and NACK behaviorのboundary
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.stomp.ack-nack.rejection
+  statement: STOMP auto, client, and client-individual ACK and NACK behaviorのrejection
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.stomp.ack-nack.failure
+  statement: STOMP auto, client, and client-individual ACK and NACK behaviorのfailure
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 専用Environment内だけに停止、Network断、Resource Alarmまたは依存先障害を注入し、保証Invariantを検証する。
+- id: proof.stomp.ack-nack.recovery
+  statement: STOMP auto, client, and client-individual ACK and NACK behaviorのrecovery
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 障害要因を取り除き、Membership、Delivery、Telemetryとデータ整合性が制限時間内に回復することを確認する。
+- id: proof.stomp.ack-nack.compatibility
+  statement: STOMP auto, client, and client-individual ACK and NACK behaviorのcompatibility
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 二つ以上のProtocol、Client、Queue、PluginまたはVersion Variantを同一Oracleで比較する。

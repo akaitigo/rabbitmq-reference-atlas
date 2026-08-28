@@ -1,0 +1,29 @@
+schema_version: 1
+id: definitive.partition.detection.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: cluster.partition
+statement: Network partition detection and diagnosticsのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-partitions
+proof_obligations:
+- id: proof.partition.detection.normal
+  statement: Network partition detection and diagnosticsのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.partition.detection.boundary
+  statement: Network partition detection and diagnosticsのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.partition.detection.rejection
+  statement: Network partition detection and diagnosticsのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.partition.detection.operations
+  statement: Network partition detection and diagnosticsのoperations Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - Metrics、Logs、Health、CLI状態を同一Run IDと時刻で相関し、診断から安全な復旧判定まで接続する。

@@ -18,7 +18,7 @@ jobs:
           go-version: "1.26.0"
           cache: true
       - name: Install pinned atlas validator
-        run: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@d5c0a6ce757fd5f43af837edd26f55c7325b811e
+        run: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@be19ddaa411fe60dcf12f0f5d457902bb57b9eb3
       - name: Validate manifests, Router Skill, rights and repository graph
         env:
           ATLAS_BIN: /home/runner/go/bin/atlas

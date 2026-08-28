@@ -1,0 +1,37 @@
+schema_version: 2
+source_id: rabbitmq-4.3-federation
+source_digest: sha256:15ebce32a18d44382698ffc52ec60f15288751b1e1de021471caae0a3b1a9064
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: federation.exchange
+  locator: '#federated-exchanges'
+  kind: capability
+  capability_id: crosscluster.federation
+  behavior_id: federation.exchange
+  title: Federated exchanges across independent clusters
+  surface_ids: [architecture-design, implementation-construction, compatibility-integration]
+- id: federation.queue
+  locator: '#federated-queues'
+  kind: capability
+  capability_id: crosscluster.federation
+  behavior_id: federation.queue
+  title: Federated queues across independent clusters
+  surface_ids: [architecture-design, implementation-construction, compatibility-integration]
+- id: federation.link-recovery
+  locator: '#federation-links'
+  kind: behavior
+  capability_id: crosscluster.federation
+  behavior_id: federation.link-recovery
+  title: Federation link status, disconnect, and recovery
+  surface_ids: [failure-recovery, operations-observability]
+- id: federation.topology-boundary
+  locator: '#federation-plugin'
+  kind: behavior
+  capability_id: crosscluster.federation
+  behavior_id: federation.topology-boundary
+  title: Federation topology and coupling boundary
+  surface_ids: [orientation-scope, decision-comparison]

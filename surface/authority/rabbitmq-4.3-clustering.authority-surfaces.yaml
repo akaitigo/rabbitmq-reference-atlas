@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-clustering
+source_digest: sha256:f76eea55c22ddac659f4a20c48d236e7e7902527b7b70fb92dc2f55753b02ece
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: cluster.membership, locator: '#cluster-formation-requirements', kind: capability, capability_id: cluster.membership, behavior_id: cluster.membership, title: RabbitMQ node cluster membership and identity, surface_ids: [foundations-mechanics, implementation-construction]}
+- {id: cluster.metadata-replication, locator: '#what-is-replicated', kind: behavior, capability_id: cluster.membership, behavior_id: cluster.metadata-replication, title: Cluster metadata replication boundary, surface_ids: [foundations-mechanics, failure-recovery]}
+- {id: cluster.client-connection, locator: '#client-connections', kind: behavior, capability_id: cluster.client, behavior_id: cluster.client-connection, title: Client node selection and reconnection boundary, surface_ids: [architecture-design, failure-recovery]}
+- {id: cluster.node-removal, locator: '#removing-nodes-from-a-cluster', kind: behavior, capability_id: cluster.membership, behavior_id: cluster.node-removal, title: Safe node removal and rejoin lifecycle, surface_ids: [operations-observability, failure-recovery]}

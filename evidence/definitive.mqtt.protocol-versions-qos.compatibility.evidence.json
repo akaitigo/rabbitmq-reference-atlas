@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "id": "definitive.mqtt.protocol-versions-qos.compatibility",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "claim_ids": [
+    "definitive.mqtt.protocol-versions-qos.claim"
+  ],
+  "kind": "conformance",
+  "producer": "cmd/rmq-plugin-protocols",
+  "command": "bash scripts/run-plugin-protocol-lab.sh",
+  "created_at": "2026-08-28T11:16:26.860036423Z",
+  "environment": {
+    "profile": "cluster",
+    "runtime_profile": "plugin-mqtt",
+    "manifest_digest": "sha256:00098566c5ceb6359261fb10265a3ba9e71e312c50219f842a99bf2dede7bed6",
+    "nodes": 3,
+    "rabbitmq_version": "4.3.5",
+    "official_plugins": [
+      "rabbitmq_mqtt",
+      "rabbitmq_stomp",
+      "rabbitmq_stream"
+    ],
+    "scenario": "compatibility"
+  },
+  "source_digest": "sha256:09c7e172622e8ad1dde0401f01e625586f1e9231165f10ab40cd8e60f7ddcb0c",
+  "harness_digest": "sha256:b05df0bfa1939c0c22933cb2030638247a68e96b4b9e3d8df252a5529e8907d4",
+  "harness_path": "cmd/rmq-plugin-protocols/main.go",
+  "execution_mode": "runtime",
+  "runtime_identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins",
+  "artifact": {
+    "uri": "evidence/raw/definitive.mqtt.protocol-versions-qos.compatibility.json",
+    "digest": "sha256:e5ea3791d9ade91f20fff5d9c7e3fd53e1427aba4a860cd903399e4bc653e0bc",
+    "media_type": "application/json",
+    "size_bytes": 842
+  },
+  "verdict": "pass",
+  "retention": "git"
+}

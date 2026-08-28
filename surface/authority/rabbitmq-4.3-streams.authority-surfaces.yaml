@@ -1,0 +1,37 @@
+schema_version: 2
+source_id: rabbitmq-4.3-streams
+source_digest: sha256:1719c724d9d6877aad0b8830bc935d26644710aa7cd510a9fb554c0a239d99a0
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: stream.append-only-replay
+  locator: '#what-is-a-stream'
+  kind: behavior
+  capability_id: queue.stream
+  behavior_id: stream.retention-replay
+  title: Append-only retention and non-destructive offset replay
+  surface_ids: [foundations-mechanics, implementation-construction, testing-verification]
+- id: stream.single-active-consumer
+  locator: '#single-active-consumer'
+  kind: behavior
+  capability_id: queue.stream
+  behavior_id: stream.single-active-consumer
+  title: Single active consumer ordering and continuity
+  surface_ids: [architecture-design, failure-recovery]
+- id: stream.super-stream-topology
+  locator: '#super-streams'
+  kind: capability
+  capability_id: stream.super-stream
+  behavior_id: stream.super-stream
+  title: Partitioned super stream topology and client abstraction
+  surface_ids: [architecture-design, implementation-construction, performance-capacity-cost]
+- id: stream.super-stream-ordering
+  locator: '#super-streams'
+  kind: behavior
+  capability_id: stream.super-stream
+  behavior_id: stream.super-stream-ordering
+  title: Ordering within a super stream partition
+  surface_ids: [testing-verification, decision-comparison]

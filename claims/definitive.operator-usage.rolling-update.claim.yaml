@@ -1,0 +1,39 @@
+schema_version: 1
+id: definitive.operator-usage.rolling-update.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: operator.cluster
+statement: StatefulSet rolling reconciliation under continuous workloadのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-operator-usage
+proof_obligations:
+- id: proof.operator-usage.rolling-update.normal
+  statement: StatefulSet rolling reconciliation under continuous workloadのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.operator-usage.rolling-update.boundary
+  statement: StatefulSet rolling reconciliation under continuous workloadのboundary
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.operator-usage.rolling-update.rejection
+  statement: StatefulSet rolling reconciliation under continuous workloadのrejection
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.operator-usage.rolling-update.failure
+  statement: StatefulSet rolling reconciliation under continuous workloadのfailure
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 専用Environment内だけに停止、Network断、Resource Alarmまたは依存先障害を注入し、保証Invariantを検証する。
+- id: proof.operator-usage.rolling-update.recovery
+  statement: StatefulSet rolling reconciliation under continuous workloadのrecovery
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 障害要因を取り除き、Membership、Delivery、Telemetryとデータ整合性が制限時間内に回復することを確認する。
+- id: proof.operator-usage.rolling-update.migration
+  statement: StatefulSet rolling reconciliation under continuous workloadのmigration
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定したSourceとTarget Versionの間で継続Workloadを実行し、互換性とRollback不能境界を記録する。

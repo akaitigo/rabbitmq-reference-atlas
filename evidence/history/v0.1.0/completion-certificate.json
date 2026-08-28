@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "atlas_id": "rabbitmq-reference-atlas",
+  "coverage_epoch": "2026-08-28",
+  "created_at": "2026-08-28T08:39:32.480678Z",
+  "verdict": "pass",
+  "scope": "local verified closure; GitHub publication is outside certificate scope; no signed release is asserted",
+  "manifests": {
+    "atlas.yaml": "sha256:9d1f06a563c490657e21ac43b463eab32c9056b746f7f62febeeb902d9cbe6fc",
+    "mastery.yaml": "sha256:4b78b6e4ef98e1f1e23a92f5b71e3ef2ee6a480c8f45feba29ad7620b581937f",
+    "coverage.yaml": "sha256:155096a2a814a79af7f00309f0b57bd35d1940c87be1717d2c7246cc88416176",
+    "sources.lock.yaml": "sha256:91cc188ce4fa664745afdaf5d1b3d7681c0d3647b35ca4fbf702a7df25e9ef69",
+    "skill.package.yaml": "sha256:88df90d41d43d0ab22d248418f37ce776aaacb1082f647468124d1d01893076d",
+    "versions/baseline.yaml": "sha256:e3cacfd9133472ce3601fc54d42504f329f3367948ba187176d1ab95ab0ff8de"
+  },
+  "evidence": [
+    {
+      "id": "eval.router",
+      "record_digest": "sha256:19a28b4d2472a7345b3d55a008bce0fecd6a68eb0c9b70a0a9fd4038378217e2",
+      "artifact_digest": "sha256:17e0878ec82d2f61d632b2fbedab5e19793ded98e8412e90c3978c523adb6fd6"
+    },
+    {
+      "id": "lab.ack-redelivery",
+      "record_digest": "sha256:198e23ee119b032a67d30900e2fe44c01481690782652613b287bcb8f2d3e036",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "lab.amqp-model",
+      "record_digest": "sha256:c1c1a41f51ba9085774d09cb82528ba71a2654987d67efc6bb7e6acccfc4fd42",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "lab.cluster-failure-recovery",
+      "record_digest": "sha256:bccefd9173de7171c8cc7e9e4ae4102944e3795428acdf72fb79a0cc70bd2b88",
+      "artifact_digest": "sha256:687eda593ae005fd151a0b7add40ad9cbc87c56fe180e6508ec931904c339e5a"
+    },
+    {
+      "id": "lab.cluster-membership",
+      "record_digest": "sha256:25a5b5b58f289978fe733c135f1e3117ba57d7f1e4779a2fcbbd2f76367411cb",
+      "artifact_digest": "sha256:42668f833142cad43499401484b560bc83184f4d0516e26f069ee4184cfe7858"
+    },
+    {
+      "id": "lab.consumer-flow-control",
+      "record_digest": "sha256:69ae78c41c8f7f2fa68518b72cd1bff19c9a20f7e4c8171087825eed98df88ca",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "lab.dead-letter",
+      "record_digest": "sha256:d3ffaaf0c7eb19acfe8472db890e88dd64677dfbe4f62ec6b2268ef01832bfba",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "lab.exchange-binding-matrix",
+      "record_digest": "sha256:223f7ae4f7cd10ea9702daffb6b9ae514e699c588540f9f4b99e2017b3420480",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "lab.exchange-queue",
+      "record_digest": "sha256:8c9de96d96485d4e1b09cd874f156661b9459356160423731a666d923038a021",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "lab.network-partition",
+      "record_digest": "sha256:d55959f8f9867c2417235aaca23d56903ee454b1952a1ecd260d61ea8ddf9b62",
+      "artifact_digest": "sha256:1432ab93b30948a4c65977ee16c4a053c80894144dfca01706c4dd20d552e8a5"
+    },
+    {
+      "id": "lab.observability-health",
+      "record_digest": "sha256:8647eeb88142e855bce0afdb6846290eef43b5032120e0289e15afc931da672c",
+      "artifact_digest": "sha256:4a3be46850c5e01356684973fb1c5e78fd2d1c16b593097bbbfced1beb670f24"
+    },
+    {
+      "id": "lab.observability-state",
+      "record_digest": "sha256:b249d2e1cb69e522138ce0351e1bd5538c57ba27e8e1bcb223a07f14fd98b8ee",
+      "artifact_digest": "sha256:e6155b1b631f746f7d3a86f3c91af9e0636132b3ead8c8ab39b1e02254241a7f"
+    },
+    {
+      "id": "lab.ordering-idempotency",
+      "record_digest": "sha256:22342f6dff4724900f49c17760530e5768322dd8dbf4296a550554962d865e82",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "lab.performance-capacity",
+      "record_digest": "sha256:09699bc8cda47f6b29ec3b6d5e83260be42b7cdad6d639655c1873d01b1b3d14",
+      "artifact_digest": "sha256:ca8245623f3bb424f0eb9b29ab0da0ecf37a5831fb47541c8eebc14248f55916"
+    },
+    {
+      "id": "lab.publisher-flow-control",
+      "record_digest": "sha256:0d63eb38f8d72282637c93368b6ba74f546e896762e83671c36b8381a028a31b",
+      "artifact_digest": "sha256:7a74272bb5d81902c50002f96ff07ac2fe89d9531ebcfe00c7bd4590d4f55ae5"
+    },
+    {
+      "id": "lab.quorum-stream",
+      "record_digest": "sha256:c093a2c7e64532b790ebace555a733b1bb3ea41107da80b7dabb1ee4b1796eb9",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "lab.rolling-upgrade",
+      "record_digest": "sha256:df8291d60929b42865684b3533cb77e8c0c57a15c478548a9fb0b0b55bc1bac0",
+      "artifact_digest": "sha256:c4ec16ec971b179f5c0450b02e61a7474f1ee125052d5322d3fd47f446abe0ef"
+    },
+    {
+      "id": "lab.security-authz",
+      "record_digest": "sha256:fcc07dc3a7a19f38eefecb8c0fa0f0225511a993bfe70e680d78a04c9d0ba2d8",
+      "artifact_digest": "sha256:4a3be46850c5e01356684973fb1c5e78fd2d1c16b593097bbbfced1beb670f24"
+    },
+    {
+      "id": "lab.security-tls",
+      "record_digest": "sha256:b3c0c3e9e9b12d37d0e8fcd5ba536ce60b5f19daf6688c5d8e2998dbaa126f55",
+      "artifact_digest": "sha256:ce86099bfea2b91245e320161c8715b633ded616b7a519f0c6ba2f375e71b0b5"
+    },
+    {
+      "id": "lab.ttl-dead-letter",
+      "record_digest": "sha256:21654db51278acfc8a6239a5a482705b816bda304f425c5a7d8636958880e39b",
+      "artifact_digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696"
+    },
+    {
+      "id": "operation.evidence-generation",
+      "record_digest": "sha256:c4ccdc834151689d86ba00bdfd8f5099219fd445c8323321c9001fd584e55520",
+      "artifact_digest": "sha256:eed68f7e130331209c63165d2c36e890e61ce3441f2a2dcb05f7e6d69a551726"
+    }
+  ],
+  "signature": null
+}

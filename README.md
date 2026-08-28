@@ -2,16 +2,16 @@
 
 `rabbitmq-reference-atlas`は、RabbitMQ 4.3.5の公開挙動を、一次資料、再実行可能なLab、観測可能なOracle、Digestで固定したEvidenceへ接続する製品Technical Reference Atlasです。
 
-現在は固定Coverage Epochに対するローカル実証を完了し、`status: complete`です。GitHub Repositoryは公開済みですが、署名済みRelease、OCI Artifact、外部Skill Registryへの公開は行っていません。完了の範囲は`atlas.yaml`、`mastery.yaml`、`coverage.yaml`とCompletion Certificateに固定しています。
+現在はDefinitive Coverageを再構築中で、`status: incomplete`です。GitHub Repositoryは公開済みですが、署名済みRelease、OCI Artifact、外部Skill Registryへの公開は行っていません。`22ab07c`時点の32 Target Certificateはbounded historical Evidenceとして保持し、RabbitMQのDefinitive Completionを証明するものとは扱いません。
 
 ## 固定対象
 
 - RabbitMQ `4.3.5`
 - OCI Image `rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031`
 - Coverage Epoch `2026-08-28`
-- Core Contract `reference-atlas-core@d5c0a6ce757fd5f43af837edd26f55c7325b811e`
+- Core Contract `reference-atlas-core@be19ddaa411fe60dcf12f0f5d457902bb57b9eb3`（Subject Definitive Gate v2）
 
-## 実証範囲
+## Bounded Historical実証範囲
 
 - AMQP 0-9-1 Model、Direct/Topic/Fanout/Headers Exchange、Binding、Queue
 - Publisher Confirm、Manual Ack、Nack/Requeue、Redelivery、TTL/DLX
@@ -23,7 +23,11 @@
 
 ## Mastery
 
-`mastery.yaml`は、RabbitMQという同一分野で答えられるべき問いを8 Outcomeと14 Surfaceへ固定します。運用監視、Security、性能、互換性、移行を含む32 Required TargetはClaimと再実行可能なEvidenceへ接続済みです。Repository数や対象分野を増やすためのManifestではありません。
+`mastery.yaml`は、RabbitMQという同一分野で答えられるべき問いを8 Outcomeと14 Surfaceへ固定します。公開済みmainの旧32 Targetは非後退baselineとして`covered`のまま維持し、37 Authority Artifactから抽出した206 Behaviorを追加の専用required Targetへ接続しました。`verification.plan.yaml`には全2,060 Scenario Rowがあり、Surface規則から951 Rowを実Runtimeまたは実Platform必須としているため、Targetや文書の宣言だけで`complete`へ戻りません。
+
+`baseline/public-main-22ab07c.yaml`は、公開済みmainのTarget、Source、Claim、Proof、Evidence、Lab、Go Test、Router Skill Eval、CI MatrixをDigest付きで固定します。`make non-regression`は削除、required/covered格下げ、EvidenceやAssertionの変更、CI縮小を拒否し、承認された置換には`migrations/public-main-baseline-v2.yaml`の旧ID→新ID Mappingと実行Proofを要求します。
+
+`rabbitmq-depth-parity.yaml`は、`frontend-behavior-atlas@4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45`のFE Depth Referenceが定義する18軸を、RabbitMQ固有の母集団へ写像します。FEの件数は閾値にせず、AMQP 0-9-1/1.0、MQTT、STOMP、Stream、Plugin、三Node Cluster、二Cluster、外部認証、TLS、Operator、Upgrade、CapacityのProfileを分離し、各Required Behavior × Scenario × Profileへ専用ProofとArtifactを要求します。FE自身も1/18 satisfiedで`incomplete`であり、本Repositoryも18軸すべてのGapが0になるまでDefinitive昇格を許可しません。
 
 ## 検証
 
@@ -41,6 +45,10 @@ make labs
 - Atlas Identity: `atlas.yaml`
 - Authority Lock: `sources.lock.yaml`
 - Coverage: `coverage.yaml`
+- Definitive Contract: `definitive.yaml`
+- Authority Surface Inventory: `surface.inventory.yaml`
+- Open Verification Plan: `verification.plan.yaml`
+- Depth Parity: `rabbitmq-depth-parity.yaml`
 - Skill Package: `skill.package.yaml`
 - Mastery Contract: `mastery.yaml`
 - Product Version: `versions/baseline.yaml`

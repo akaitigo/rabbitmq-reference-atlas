@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-ldap
+source_digest: sha256:d98bf6830d5ab29c2a3c0f39a5a79758f433b010724430941115b484f6ea8ae4
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: ldap.authentication, locator: '#authentication', kind: behavior, capability_id: security.ldap, behavior_id: ldap.authentication, title: LDAP user lookup and bind authentication, surface_ids: [implementation-construction, security-privacy-safety]}
+- {id: ldap.authorization, locator: '#authorisation', kind: behavior, capability_id: security.ldap, behavior_id: ldap.authorization, title: LDAP vhost resource and topic authorization queries, surface_ids: [testing-verification, security-privacy-safety]}
+- {id: ldap.tls, locator: '#using-tls', kind: behavior, capability_id: security.ldap, behavior_id: ldap.tls, title: TLS protected LDAP backend connection, surface_ids: [security-privacy-safety, compatibility-integration]}
+- {id: ldap.outage, locator: '#troubleshooting', kind: behavior, capability_id: security.ldap, behavior_id: ldap.outage, title: LDAP timeout outage and diagnostic behavior, surface_ids: [failure-recovery, operations-observability]}

@@ -1,0 +1,10 @@
+schema_version: 2
+source_id: rabbitmq-4.3-quorum-queues
+source_digest: sha256:a9a41aca4560ded658c6ada1229258ba8f0a185bc026cb5784dfb831383ff41d
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: quorum.replication, locator: '#overview', kind: capability, capability_id: queue.quorum, behavior_id: quorum.replication, title: Quorum queue Raft replication and majority availability, surface_ids: [foundations-mechanics, architecture-design, failure-recovery]}
+- {id: quorum.membership, locator: '#managing-members', kind: behavior, capability_id: queue.quorum, behavior_id: quorum.membership, title: Quorum queue replica membership management, surface_ids: [operations-observability, failure-recovery]}
+- {id: quorum.delivery-limit, locator: '#poison-message-handling', kind: behavior, capability_id: queue.quorum, behavior_id: quorum.delivery-limit, title: Delivery limit poison message handling, surface_ids: [testing-verification, failure-recovery]}
+- {id: quorum.dead-letter-safety, locator: '#dead-lettering', kind: behavior, capability_id: queue.quorum, behavior_id: quorum.dead-letter-safety, title: Quorum queue at-least-once dead lettering, surface_ids: [testing-verification, failure-recovery]}
+- {id: quorum.leader-rebalance, locator: '#replica-reconciliation-and-rebalancing', kind: behavior, capability_id: queue.quorum, behavior_id: quorum.leader-rebalance, title: Quorum replica reconciliation and leader rebalance, surface_ids: [operations-observability, performance-capacity-cost]}

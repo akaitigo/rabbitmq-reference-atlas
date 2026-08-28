@@ -1,0 +1,8 @@
+schema_version: 2
+source_id: rabbitmq-4.3-plugins
+source_digest: sha256:b014bdbb814fd894d42b9484c88a9a8a8c5e32360f0ea27fa8186c7a2946b3cc
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: plugin.discovery, locator: '#plugin-discovery', kind: behavior, capability_id: server.plugins, behavior_id: plugin.discovery, title: Plugin discovery and dependency resolution, surface_ids: [orientation-scope, compatibility-integration]}
+- {id: plugin.enable-disable, locator: '#enabling-plugins', kind: behavior, capability_id: server.plugins, behavior_id: plugin.enable-disable, title: Online and offline plugin enablement lifecycle, surface_ids: [implementation-construction, operations-observability]}
+- {id: plugin.compatibility, locator: '#plugin-versioning', kind: behavior, capability_id: server.plugins, behavior_id: plugin.compatibility, title: Plugin and server version compatibility, surface_ids: [compatibility-integration, migration-evolution-deprecation]}

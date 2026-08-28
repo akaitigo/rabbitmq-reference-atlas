@@ -1,0 +1,37 @@
+schema_version: 2
+source_id: rabbitmq-4.3-backup
+source_digest: sha256:a93c321b41d3fc8040eb631b61caff9e2257810c28cf4d33ff13a51f68066c81
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: backup.definitions
+  locator: '#definitions-export-and-import'
+  kind: capability
+  capability_id: recovery.backup
+  behavior_id: backup.definitions
+  title: Definition export and import
+  surface_ids: [operations-observability, migration-evolution-deprecation]
+- id: backup.message-data
+  locator: '#message-store-data'
+  kind: capability
+  capability_id: recovery.backup
+  behavior_id: backup.message-data
+  title: Message store data backup boundary
+  surface_ids: [failure-recovery, operations-observability]
+- id: backup.node-identity
+  locator: '#node-data-directory'
+  kind: behavior
+  capability_id: recovery.backup
+  behavior_id: backup.node-identity
+  title: Node identity and data directory restore constraint
+  surface_ids: [foundations-mechanics, testing-verification]
+- id: backup.restore-verification
+  locator: '#restoring-from-a-backup'
+  kind: behavior
+  capability_id: recovery.backup
+  behavior_id: backup.restore-verification
+  title: Restore procedure and post-restore verification
+  surface_ids: [testing-verification, failure-recovery]

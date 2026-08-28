@@ -1,0 +1,28 @@
+schema_version: 1
+id: definitive.oauth2.multi-resource-server.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: security.oauth2
+statement: Multiple OAuth resource server selectionのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-oauth2
+proof_obligations:
+- id: proof.oauth2.multi-resource-server.normal
+  statement: Multiple OAuth resource server selectionのnormal Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.oauth2.multi-resource-server.boundary
+  statement: Multiple OAuth resource server selectionのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.oauth2.multi-resource-server.rejection
+  statement: Multiple OAuth resource server selectionのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.oauth2.multi-resource-server.compatibility
+  statement: Multiple OAuth resource server selectionのcompatibility Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 二つ以上のProtocol、Client、Queue、PluginまたはVersion Variantを同一Oracleで比較する。

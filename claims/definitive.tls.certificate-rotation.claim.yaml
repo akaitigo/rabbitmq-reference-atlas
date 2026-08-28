@@ -1,0 +1,29 @@
+schema_version: 1
+id: definitive.tls.certificate-rotation.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: security.tls
+statement: TLS certificate rotation lifecycleのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-tls
+proof_obligations:
+- id: proof.tls.certificate-rotation.normal
+  statement: TLS certificate rotation lifecycleのnormal Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.tls.certificate-rotation.boundary
+  statement: TLS certificate rotation lifecycleのboundary Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.tls.certificate-rotation.rejection
+  statement: TLS certificate rotation lifecycleのrejection Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.tls.certificate-rotation.migration
+  statement: TLS certificate rotation lifecycleのmigration Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定したSourceとTarget Versionの間で継続Workloadを実行し、互換性とRollback不能境界を記録する。
+- id: proof.tls.certificate-rotation.operations
+  statement: TLS certificate rotation lifecycleのoperations Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - Metrics、Logs、Health、CLI状態を同一Run IDと時刻で相関し、診断から安全な復旧判定まで接続する。

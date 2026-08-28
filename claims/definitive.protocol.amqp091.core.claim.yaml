@@ -1,0 +1,29 @@
+schema_version: 1
+id: definitive.protocol.amqp091.core.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: protocol.amqp091
+statement: AMQP 0-9-1 core protocol and RabbitMQ extensionsのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-protocols
+proof_obligations:
+- id: proof.protocol.amqp091.core.normal
+  statement: AMQP 0-9-1 core protocol and RabbitMQ extensionsのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.protocol.amqp091.core.boundary
+  statement: AMQP 0-9-1 core protocol and RabbitMQ extensionsのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.protocol.amqp091.core.rejection
+  statement: AMQP 0-9-1 core protocol and RabbitMQ extensionsのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.protocol.amqp091.core.compatibility
+  statement: AMQP 0-9-1 core protocol and RabbitMQ extensionsのcompatibility Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 二つ以上のProtocol、Client、Queue、PluginまたはVersion Variantを同一Oracleで比較する。

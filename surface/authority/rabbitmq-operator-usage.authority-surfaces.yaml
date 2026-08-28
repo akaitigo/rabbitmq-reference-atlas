@@ -1,0 +1,128 @@
+schema_version: 2
+source_id: rabbitmq-operator-usage
+source_digest: sha256:dc688cd5ede76722d5c7e261c99e247371509310cd779b6272ec2c8a0e59e676
+extraction:
+  method: primary-text-reviewed
+  tool: heading-and-contract-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+  - id: operator-usage.crd-availability
+    locator: '#confirm-service-availability'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.crd-availability
+    title: RabbitmqCluster CRD installation and API availability
+    surface_ids: [implementation-construction, testing-verification, operations-observability]
+  - id: operator-usage.instance-creation
+    locator: '#create-a-rabbitmq-instance'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.instance-creation
+    title: RabbitmqCluster reconciliation to StatefulSet, Service, Pods, and credentials
+    surface_ids: [implementation-construction, testing-verification, operations-observability]
+  - id: operator-usage.replica-scaling
+    locator: '#number-of-replicas'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.replica-scaling
+    title: Odd replica invariant, scale-to-zero, restore, and downscale rejection
+    surface_ids: [architecture-design, testing-verification, failure-recovery]
+  - id: operator-usage.persistence
+    locator: '#persistence'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.persistence
+    title: PersistentVolume provisioning, capacity, unschedulable rejection, and data retention
+    surface_ids: [implementation-construction, testing-verification, failure-recovery, performance-capacity-cost]
+  - id: operator-usage.resources-headroom
+    locator: '#resource-requirements'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.resources-headroom
+    title: Resource request validation and RabbitMQ memory headroom calculation
+    surface_ids: [testing-verification, failure-recovery, performance-capacity-cost]
+  - id: operator-usage.scheduling
+    locator: '#affinity-and-anti-affinity-rules'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.scheduling
+    title: Anti-affinity, toleration, topology spread, and three-node placement
+    surface_ids: [architecture-design, testing-verification, failure-recovery]
+  - id: operator-usage.config-precedence
+    locator: '#rabbitmq-additional-configuration'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.config-precedence
+    title: Operator defaults and user RabbitMQ configuration precedence
+    surface_ids: [implementation-construction, testing-verification, compatibility-integration]
+  - id: operator-usage.additional-plugins
+    locator: '#rabbitmq-additional-plugins'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.additional-plugins
+    title: Additional official plugin reconciliation and unavailable plugin failure
+    surface_ids: [implementation-construction, testing-verification, failure-recovery, compatibility-integration]
+  - id: operator-usage.tls-listeners
+    locator: '#tls-configuration'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.tls-listeners
+    title: Kubernetes Secret TLS, mTLS, and non-TLS listener disablement
+    surface_ids: [testing-verification, security-privacy-safety, compatibility-integration]
+  - id: operator-usage.tls-rotation
+    locator: '#tls-configuration'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.tls-rotation
+    title: TLS Secret certificate rotation and per-node PEM cache reload
+    surface_ids: [testing-verification, failure-recovery, security-privacy-safety, operations-observability]
+  - id: operator-usage.feature-flags
+    locator: '#automatically-enabling-feature-flags'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.feature-flags
+    title: Automatic feature flag enablement and irreversible state boundary
+    surface_ids: [testing-verification, migration-evolution-deprecation]
+  - id: operator-usage.rolling-update
+    locator: '#update-a-rabbitmq-instance'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.rolling-update
+    title: StatefulSet rolling reconciliation under continuous workload
+    surface_ids: [testing-verification, failure-recovery, migration-evolution-deprecation]
+  - id: operator-usage.pod-disruption-budget
+    locator: '#set-a-pod-disruption-budget'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.pod-disruption-budget
+    title: Pod disruption budget protection of quorum availability
+    surface_ids: [architecture-design, testing-verification, failure-recovery]
+  - id: operator-usage.network-policy
+    locator: '#restrict-traffic-using-network-policies'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.network-policy
+    title: Kubernetes NetworkPolicy allowed and denied RabbitMQ traffic
+    surface_ids: [testing-verification, failure-recovery, security-privacy-safety]
+  - id: operator-usage.pause-reconciliation
+    locator: '#pause-reconciliation-for-a-rabbitmq-instance'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.pause-reconciliation
+    title: Reconciliation pause, drift observation, and resume recovery
+    surface_ids: [testing-verification, failure-recovery, operations-observability]
+  - id: operator-usage.quorum-monitoring
+    locator: '#monitor-quorum-status'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.quorum-monitoring
+    title: Operator quorum status, RabbitMQ metrics, logs, and alert correlation
+    surface_ids: [testing-verification, failure-recovery, operations-observability]
+  - id: operator-usage.deletion
+    locator: '#delete-a-rabbitmq-instance'
+    kind: behavior
+    capability_id: operator.cluster
+    behavior_id: operator-usage.deletion
+    title: RabbitmqCluster deletion and persistent data retention boundary
+    surface_ids: [testing-verification, failure-recovery, security-privacy-safety]

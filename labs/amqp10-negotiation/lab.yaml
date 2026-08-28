@@ -1,0 +1,8 @@
+schema_version: 1
+id: amqp10-negotiation
+claims: [definitive.amqp10.version-negotiation.claim]
+profile: cluster
+setup: 既存Dataを変更せず、固定RabbitMQ 4.3.5三Nodeの共用Protocol ListenerへTCP接続する。
+execute: SASL、AMQP 0-9-1、未対応SASL Version、SASLなしAMQP 1.0の各Headerを全三Nodeへ送信する。
+verify: 正常、境界、拒否、Securityの各Scenarioを専用JSON Artifactへ分離し、三NodeすべてのResponse Byteを機械判定する。
+cleanup: TCP Connectionだけを閉じ、Queue、Message、Volume、Plugin、Node構成を変更しない。

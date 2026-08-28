@@ -1,0 +1,102 @@
+schema_version: 1
+id: frontend-depth-reference-4a0b2df
+classification: normalized-pinned-reference
+source_repository: frontend-behavior-atlas
+source_commit: 4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45
+source_status: incomplete
+source_summary:
+  satisfied: 1
+  partial: 17
+  missing: 0
+denominator_policy:
+  source: authority-derived-subject-surface-inventory
+  transplant_absolute_counts: false
+  note: FEの件数はFE自身の非後退floorであり、RabbitMQの合格閾値には使用しない。
+artifacts:
+  - path: FE_DEPTH_REFERENCE.json
+    digest: sha256:2452696f9807b7d4a8ffb22b3ba37f079a25a34ac2370d78423445b96064582a
+  - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+    digest: sha256:280a398ed1251438ad244e999c9c9cef9b0b6b78217db82e2b55ef882306d241
+  - path: fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json
+    digest: sha256:01c29cdd29f61968b06791edf3d0d0674462d279422bd312d523ab7964e2a1e4
+  - path: fixtures/definitive-gate-v2/variant-comparison.fixture.json
+    digest: sha256:2964d596201033761c083d06dc705d21a428de043a91a0f1e71e7d5b841f59d3
+  - path: fixtures/definitive-gate-v2/profile-incompatibility.fixture.json
+    digest: sha256:95c07992da4b78db5c5551d7ed0c4425668dde9188c0acb53c3b76b17a91e364
+  - path: fixtures/definitive-gate-v2/evidence-granularity.fixture.json
+    digest: sha256:94506646f1e30429cb84a87927e1af7e1e890d401efd0335ebf911aed6f85126
+  - path: baselines/definitive-gate-v2.json
+    digest: sha256:b6685fac1e11429ed7c203e35aac55c7a82c276dc32aadb97f225af801c3bb67
+axes:
+  - id: authority-body-digestion
+    title: Authority本文消化
+    portable_criterion: 対象分野の母集団を一次資料本文または固定Surface Artifactから導き、本文をDigest固定し、Locator単位で分類・Reviewする。
+    denominator: authority sources and extracted surfaces
+  - id: surface-atomic-behavior-variant
+    title: Surface→Atomic behavior→Variant
+    portable_criterion: Authority Surfaceを一意なAtomic behavior、Target、Claimへ接続し、同じObservable Contractの実装差だけをVariantとして比較する。
+    denominator: authority-derived atomic behaviors
+  - id: real-runtime-lab
+    title: 実Runtime Lab
+    portable_criterion: 各Behaviorを対象RuntimeまたはPlatform上で操作し、Source、Harness、実Versionを記録する。Mockやstatic fixtureは代替にしない。
+    denominator: required behavior × RabbitMQ runtime profile
+  - id: scenario-normal
+    title: Normal Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring normal
+  - id: scenario-boundary
+    title: Boundary Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring boundary
+  - id: scenario-refusal
+    title: Refusal Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring refusal
+  - id: scenario-failure
+    title: Failure Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring failure
+  - id: scenario-recovery
+    title: Recovery Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring recovery
+  - id: scenario-migration
+    title: Migration Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring migration
+  - id: scenario-operations
+    title: Operations Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring operations
+  - id: scenario-security
+    title: Security Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring security
+  - id: scenario-performance
+    title: Performance Scenario
+    portable_criterion: 各Atomic behaviorへ代表Workload、環境、分布、予算、劣化戦略を接続し、Variantを同じOracleで測定する。
+    denominator: required behavior × variant × workload/profile
+  - id: scenario-compatibility
+    title: Compatibility Scenario
+    portable_criterion: 必要Profileを根拠から列挙し、各Atomic behaviorの正常、劣化、非対応境界を実Runtimeで区別する。
+    denominator: required behavior × protocol/plugin/queue/client/version profile
+  - id: artifact-trace
+    title: Artifact・Trace
+    portable_criterion: 各Required Scenarioを専用Artifactへ固定し、Source、Harness、Runtime、Platform、Version、Attemptと追跡可能にする。
+    denominator: required scenario rows
+  - id: integrated-reference-system
+    title: 統合Reference System
+    portable_criterion: 複数Atomic behaviorを実責任境界で接続し、Cross-behavior failure/recoveryを証明する。
+    denominator: authority-derived architecture and integration surfaces
+  - id: skill-eval
+    title: Skill Eval
+    portable_criterion: Skillが8 Outcome、14 Surface、曖昧Query、Coverage Gap、権限境界、実装、診断、移行、Reviewを実行Evidence付きで扱う。
+    denominator: outcome × surface × risk/coverage-gap classes
+  - id: rights-provenance
+    title: 権利・Provenance
+    portable_criterion: Code、Authority、Dependency、Trademark、再配布義務を別々に追跡し、人手判断待ちはFail closedにする。
+    denominator: all repository and transitive publication artifacts
+  - id: non-regression-gate
+    title: 非後退Gate
+    portable_criterion: 公開mainの能力をID、Runtime Contract、Assertion、Version、CI、Evidenceで固定し、置換へMappingとMigration Evidenceを要求する。
+    denominator: tracked baseline capability identities

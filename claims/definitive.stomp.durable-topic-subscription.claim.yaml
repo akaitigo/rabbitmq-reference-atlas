@@ -1,0 +1,34 @@
+schema_version: 1
+id: definitive.stomp.durable-topic-subscription.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: protocol.stomp
+statement: STOMP durable topic disconnect and replay semanticsのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-stomp
+proof_obligations:
+- id: proof.stomp.durable-topic-subscription.normal
+  statement: STOMP durable topic disconnect and replay semanticsのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.stomp.durable-topic-subscription.boundary
+  statement: STOMP durable topic disconnect and replay semanticsのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.stomp.durable-topic-subscription.rejection
+  statement: STOMP durable topic disconnect and replay semanticsのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.stomp.durable-topic-subscription.failure
+  statement: STOMP durable topic disconnect and replay semanticsのfailure Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 専用Environment内だけに停止、Network断、Resource Alarmまたは依存先障害を注入し、保証Invariantを検証する。
+- id: proof.stomp.durable-topic-subscription.recovery
+  statement: STOMP durable topic disconnect and replay semanticsのrecovery Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 障害要因を取り除き、Membership、Delivery、Telemetryとデータ整合性が制限時間内に回復することを確認する。

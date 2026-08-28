@@ -1,7 +1,7 @@
 schema_version: 1
 atlas_id: rabbitmq-reference-atlas
 epoch: '2026-08-28'
-authority_lock_digest: sha256:91cc188ce4fa664745afdaf5d1b3d7681c0d3647b35ca4fbf702a7df25e9ef69
+authority_lock_digest: sha256:09c7e172622e8ad1dde0401f01e625586f1e9231165f10ab40cd8e60f7ddcb0c
 target_sets:
 - id: messaging-surface
   title: Messaging Surface
@@ -73,6 +73,57 @@ target_sets:
   exit_criteria:
   - 対象Upgrade Path、削除済み機能、Feature Flag、Plugin互換性を固定できること
   - Workload継続中の移行、Rollback境界、Blue-Green手順を実行証拠へ接続できること
+- id: protocols-client-contracts
+  title: Protocols and Client Contracts
+  sequence: 11
+  completion_required: true
+  exit_criteria:
+  - AMQP 0-9-1、AMQP 1.0、MQTT、STOMP、Stream ProtocolとWebSocket TransportをVersion固定のClientで検証できること
+  - Protocol間変換、Reconnect、Topology Recovery、Flow Controlの保証境界を比較できること
+- id: control-plane-configuration
+  title: Management, CLI, Configuration, and Feature Flags
+  sequence: 12
+  completion_required: true
+  exit_criteria:
+  - Management HTTP API、rabbitmqctl、rabbitmq-diagnostics、rabbitmq-pluginsの許可・拒否・障害時の挙動を検証できること
+  - rabbitmq.conf、advanced.config、Environment、Runtime Parameter、Policy、Feature Flagの優先順位と変更影響を再現できること
+- id: cross-cluster-messaging
+  title: Cross-cluster Messaging
+  sequence: 13
+  completion_required: true
+  exit_criteria:
+  - FederationとShovelを別Cluster間で実行し、停止・再接続・重複・保証境界を検証できること
+  - Exchange Federation、Queue Federation、Dynamic Shovelの選択を同一Failure Modelで比較できること
+- id: data-protection
+  title: Backup and Restore
+  sequence: 14
+  completion_required: true
+  exit_criteria:
+  - DefinitionsとMessage Dataの保護範囲を区別し、正常Restoreと不適合Artifact拒否を再現できること
+  - 復旧後のTopology、Permission、Queue Type、Message整合性をArtifact Evidenceで確認できること
+- id: operator-platform
+  title: Kubernetes Operators
+  sequence: 15
+  completion_required: true
+  exit_criteria:
+  - 固定VersionのCluster Operatorが三Replica RabbitmqClusterを調停し、障害後に宣言状態へ回復できること
+  - Topology Operatorの正常・拒否・更新・削除・TLS境界を実Kubernetes Runtimeで検証できること
+- id: integrated-reference-system
+  title: Integrated Reference System
+  sequence: 16
+  completion_required: true
+  exit_criteria:
+  - Producer、Consumer、Operator、Telemetry、Security、Cross-cluster Recoveryを一つのReference
+    Systemで統合できること
+  - 正常・境界・拒否・障害・回復を独立LabだけでなくEnd-to-Endで再現できること
+- id: definitive-assurance
+  title: Definitive Assurance
+  sequence: 17
+  completion_required: true
+  exit_criteria:
+  - Authority Inventory、Coverage、Claim、Proof Obligation、Evidence、Skill Evalの全LinkがCore
+    Definitive Gate v2で検査されること
+  - 全必須ScenarioとRuntime Profileが閉じるまでDefinitive Certificateを発行しないこと
 targets:
 - id: messaging.amqp-model
   title: AMQP 0-9-1 model boundary
@@ -373,7 +424,7 @@ targets:
   kind: concept
   requirement: required
   state: covered
-  rationale: 決定版として機能一覧だけでなく、配送、複製、Storage、Protocolの原理と採否判断を追跡可能にする必要がある。
+  rationale: 機能一覧だけでなく、配送、複製、Storage、Protocolの原理と採否判断を追跡可能にする必要がある。
   claim_ids:
   - messaging.amqp-model-boundary
   - messaging.exchange-binding-matrix
@@ -452,3 +503,2076 @@ targets:
   - migration.rolling-upgrade
   evidence_ids:
   - lab.rolling-upgrade
+- id: definitive.security.authn-authz-split
+  title: Pluggable authentication and authorisation separation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.security.authn-authz-split.claim
+  evidence_ids: []
+- id: definitive.security.backend-chain
+  title: Ordered backend chaining and fallback
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.security.backend-chain.claim
+  evidence_ids: []
+- id: definitive.security.vhost-permissions
+  title: Virtual host configure, write, and read permissions
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.security.vhost-permissions.claim
+  evidence_ids: []
+- id: definitive.security.topic-permissions
+  title: Topic exchange routing-key authorisation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.security.topic-permissions.claim
+  evidence_ids: []
+- id: definitive.security.credential-rotation
+  title: Credential change and revocation lifecycle
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.security.credential-rotation.claim
+  evidence_ids: []
+- id: definitive.alarm.memory
+  title: Memory watermark alarm and publisher blocking
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.alarm.memory.claim
+  evidence_ids: []
+- id: definitive.alarm.disk
+  title: Disk free space alarm and publisher blocking
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.alarm.disk.claim
+  evidence_ids: []
+- id: definitive.alarm.cluster-wide
+  title: Cluster-wide resource alarm propagation
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.alarm.cluster-wide.claim
+  evidence_ids: []
+- id: definitive.alarm.recovery
+  title: Publisher flow recovery after alarm clearance
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.alarm.recovery.claim
+  evidence_ids: []
+- id: definitive.amqp10.version-negotiation
+  title: AMQP 1.0 protocol header negotiation and SASL rejection
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: covered
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.amqp10.version-negotiation.claim
+  evidence_ids:
+  - definitive.amqp10.version-negotiation.normal
+  - definitive.amqp10.version-negotiation.boundary
+  - definitive.amqp10.version-negotiation.rejection
+  - definitive.amqp10.version-negotiation.security
+- id: definitive.amqp10.authentication-options
+  title: Username, OAuth token, and x.509 authentication options
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.amqp10.authentication-options.claim
+  evidence_ids: []
+- id: definitive.amqp10.protocol-interoperability
+  title: Native message storage and cross-protocol conversion
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.amqp10.protocol-interoperability.claim
+  evidence_ids: []
+- id: definitive.amqp10.address-v2
+  title: RabbitMQ AMQP 1.0 address format v2
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.amqp10.address-v2.claim
+  evidence_ids: []
+- id: definitive.backup.definitions
+  title: Definition export and import
+  target_set: data-protection
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.backup.definitions.claim
+  evidence_ids: []
+- id: definitive.backup.message-data
+  title: Message store data backup boundary
+  target_set: data-protection
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.backup.message-data.claim
+  evidence_ids: []
+- id: definitive.backup.node-identity
+  title: Node identity and data directory restore constraint
+  target_set: data-protection
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.backup.node-identity.claim
+  evidence_ids: []
+- id: definitive.backup.restore-verification
+  title: Restore procedure and post-restore verification
+  target_set: data-protection
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.backup.restore-verification.claim
+  evidence_ids: []
+- id: definitive.classic-queue.durability
+  title: Classic queue durability and restart behavior
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.classic-queue.durability.claim
+  evidence_ids: []
+- id: definitive.classic-queue.priority
+  title: Classic queue message priority
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.classic-queue.priority.claim
+  evidence_ids: []
+- id: definitive.classic-queue.overflow
+  title: Classic queue length TTL and overflow behavior
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.classic-queue.overflow.claim
+  evidence_ids: []
+- id: definitive.classic-queue.exclusive-auto-delete
+  title: Exclusive and auto-delete queue lifecycle
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.classic-queue.exclusive-auto-delete.claim
+  evidence_ids: []
+- id: definitive.cli.rabbitmqctl
+  title: rabbitmqctl administrative operations
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.cli.rabbitmqctl.claim
+  evidence_ids: []
+- id: definitive.cli.rabbitmq-diagnostics
+  title: rabbitmq-diagnostics health and diagnostic operations
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.cli.rabbitmq-diagnostics.claim
+  evidence_ids: []
+- id: definitive.cli.rabbitmq-plugins
+  title: rabbitmq-plugins lifecycle operations
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.cli.rabbitmq-plugins.claim
+  evidence_ids: []
+- id: definitive.cli.exit-timeout
+  title: CLI node selection timeout exit and output contracts
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.cli.exit-timeout.claim
+  evidence_ids: []
+- id: definitive.cluster.membership
+  title: RabbitMQ node cluster membership and identity
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.cluster.membership.claim
+  evidence_ids: []
+- id: definitive.cluster.metadata-replication
+  title: Cluster metadata replication boundary
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.cluster.metadata-replication.claim
+  evidence_ids: []
+- id: definitive.cluster.client-connection
+  title: Client node selection and reconnection boundary
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.cluster.client-connection.claim
+  evidence_ids: []
+- id: definitive.cluster.node-removal
+  title: Safe node removal and rejoin lifecycle
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.cluster.node-removal.claim
+  evidence_ids: []
+- id: definitive.configuration.rabbitmq-conf
+  title: rabbitmq.conf primary configuration file
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.configuration.rabbitmq-conf.claim
+  evidence_ids: []
+- id: definitive.configuration.advanced-config
+  title: advanced.config Erlang term configuration
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.configuration.advanced-config.claim
+  evidence_ids: []
+- id: definitive.configuration.environment
+  title: Environment variable based node configuration
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.configuration.environment.claim
+  evidence_ids: []
+- id: definitive.configuration.reload-boundary
+  title: Restart and dynamic configuration boundary
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.configuration.reload-boundary.claim
+  evidence_ids: []
+- id: definitive.delivery.consumer-ack
+  title: Manual consumer delivery acknowledgement
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.delivery.consumer-ack.claim
+  evidence_ids: []
+- id: definitive.delivery.negative-ack
+  title: Reject nack and requeue redelivery behavior
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.delivery.negative-ack.claim
+  evidence_ids: []
+- id: definitive.delivery.prefetch
+  title: Consumer prefetch and unacknowledged delivery bound
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.delivery.prefetch.claim
+  evidence_ids: []
+- id: definitive.delivery.publisher-confirms
+  title: Publisher confirm acknowledgement and nack boundary
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.delivery.publisher-confirms.claim
+  evidence_ids: []
+- id: definitive.consumer.lifecycle
+  title: Consumer registration and cancellation lifecycle
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.consumer.lifecycle.claim
+  evidence_ids: []
+- id: definitive.consumer.priority
+  title: Consumer priority dispatch behavior
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.consumer.priority.claim
+  evidence_ids: []
+- id: definitive.consumer.exclusive
+  title: Exclusive consumer rejection and ownership
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.consumer.exclusive.claim
+  evidence_ids: []
+- id: definitive.consumer.ack-timeout
+  title: Delivery acknowledgement timeout enforcement
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.consumer.ack-timeout.claim
+  evidence_ids: []
+- id: definitive.client.connection-recovery
+  title: Client connection and consumer recovery responsibility
+  target_set: protocols-client-contracts
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.client.connection-recovery.claim
+  evidence_ids: []
+- id: definitive.exchange.direct
+  title: Direct exchange exact routing-key matching
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.exchange.direct.claim
+  evidence_ids: []
+- id: definitive.exchange.topic
+  title: Topic exchange wildcard routing
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.exchange.topic.claim
+  evidence_ids: []
+- id: definitive.exchange.fanout
+  title: Fanout exchange broadcast routing
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.exchange.fanout.claim
+  evidence_ids: []
+- id: definitive.exchange.headers
+  title: Headers exchange argument matching
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.exchange.headers.claim
+  evidence_ids: []
+- id: definitive.exchange.default
+  title: Default exchange implicit queue binding
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.exchange.default.claim
+  evidence_ids: []
+- id: definitive.exchange.alternate
+  title: Alternate exchange unroutable message routing
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.exchange.alternate.claim
+  evidence_ids: []
+- id: definitive.feature-flags.compatibility
+  title: Node version compatibility through feature flags
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.feature-flags.compatibility.claim
+  evidence_ids: []
+- id: definitive.feature-flags.enablement
+  title: Feature flag enablement lifecycle
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.feature-flags.enablement.claim
+  evidence_ids: []
+- id: definitive.feature-flags.irreversibility
+  title: Enabled feature flag rollback boundary
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.feature-flags.irreversibility.claim
+  evidence_ids: []
+- id: definitive.federation.exchange
+  title: Federated exchanges across independent clusters
+  target_set: cross-cluster-messaging
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.federation.exchange.claim
+  evidence_ids: []
+- id: definitive.federation.queue
+  title: Federated queues across independent clusters
+  target_set: cross-cluster-messaging
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.federation.queue.claim
+  evidence_ids: []
+- id: definitive.federation.link-recovery
+  title: Federation link status, disconnect, and recovery
+  target_set: cross-cluster-messaging
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.federation.link-recovery.claim
+  evidence_ids: []
+- id: definitive.federation.topology-boundary
+  title: Federation topology and coupling boundary
+  target_set: cross-cluster-messaging
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.federation.topology-boundary.claim
+  evidence_ids: []
+- id: definitive.ldap.authentication
+  title: LDAP user lookup and bind authentication
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.ldap.authentication.claim
+  evidence_ids: []
+- id: definitive.ldap.authorization
+  title: LDAP vhost resource and topic authorization queries
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.ldap.authorization.claim
+  evidence_ids: []
+- id: definitive.ldap.tls
+  title: TLS protected LDAP backend connection
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.ldap.tls.claim
+  evidence_ids: []
+- id: definitive.ldap.outage
+  title: LDAP timeout outage and diagnostic behavior
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.ldap.outage.claim
+  evidence_ids: []
+- id: definitive.limit.connections-channels
+  title: Per-node connection and channel limits
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.limit.connections-channels.claim
+  evidence_ids: []
+- id: definitive.limit.queues
+  title: Per-virtual-host queue and connection limits
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.limit.queues.claim
+  evidence_ids: []
+- id: definitive.limit.message-size
+  title: Maximum message size rejection boundary
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.limit.message-size.claim
+  evidence_ids: []
+- id: definitive.management.http-api
+  title: Management HTTP API resource and monitoring operations
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.management.http-api.claim
+  evidence_ids: []
+- id: definitive.management.authorization
+  title: Management user tag and permission boundary
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.management.authorization.claim
+  evidence_ids: []
+- id: definitive.management.metrics-cost
+  title: Management statistics collection and resource cost
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.management.metrics-cost.claim
+  evidence_ids: []
+- id: definitive.management.oauth
+  title: Management UI OAuth 2.0 authentication
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.management.oauth.claim
+  evidence_ids: []
+- id: definitive.monitoring.node-health
+  title: Node and cluster health checks
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.monitoring.node-health.claim
+  evidence_ids: []
+- id: definitive.monitoring.logs
+  title: RabbitMQ log collection and interpretation
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.monitoring.logs.claim
+  evidence_ids: []
+- id: definitive.monitoring.metrics
+  title: Broker client queue and system metrics
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.monitoring.metrics.claim
+  evidence_ids: []
+- id: definitive.monitoring.correlation
+  title: Infrastructure broker and application signal correlation
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.monitoring.correlation.claim
+  evidence_ids: []
+- id: definitive.mqtt.protocol-versions-qos
+  title: MQTT 3.1, 3.1.1, 5.0 and QoS 0/1 behavior
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: covered
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.protocol-versions-qos.claim
+  evidence_ids:
+  - definitive.mqtt.protocol-versions-qos.normal
+  - definitive.mqtt.protocol-versions-qos.boundary
+  - definitive.mqtt.protocol-versions-qos.rejection
+  - definitive.mqtt.protocol-versions-qos.compatibility
+- id: definitive.mqtt.message-expiry-will-retained
+  title: MQTT expiry, will, retained message, and subscription option behavior
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.message-expiry-will-retained.claim
+  evidence_ids: []
+- id: definitive.mqtt.cross-protocol-routing
+  title: MQTT interoperability with AMQP 0-9-1, AMQP 1.0, and STOMP
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.cross-protocol-routing.claim
+  evidence_ids: []
+- id: definitive.mqtt.session-queue-cardinality
+  title: Subscriber session creation of zero, one, or two QoS queues
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.session-queue-cardinality.claim
+  evidence_ids: []
+- id: definitive.mqtt.session-expiry-clean
+  title: Clean session, session expiry, queue TTL, and state deletion boundary
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.session-expiry-clean.claim
+  evidence_ids: []
+- id: definitive.mqtt.topic-translation
+  title: MQTT slash and wildcard translation to AMQP topic routing
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.topic-translation.claim
+  evidence_ids: []
+- id: definitive.mqtt.durable-quorum-boundary
+  title: Durable MQTT subscription quorum queue opt-in and mismatch rejection
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.durable-quorum-boundary.claim
+  evidence_ids: []
+- id: definitive.mqtt.qos0-queue
+  title: MQTT QoS 0 pseudo-queue online-only delivery semantics
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.qos0-queue.claim
+  evidence_ids: []
+- id: definitive.mqtt.qos0-overload-drop
+  title: MQTT QoS 0 mailbox soft limit drop and metric behavior
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.qos0-overload-drop.claim
+  evidence_ids: []
+- id: definitive.mqtt.authentication-anonymous
+  title: MQTT credential, remote guest, and anonymous connection rejection
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.authentication-anonymous.claim
+  evidence_ids: []
+- id: definitive.mqtt.authorization
+  title: MQTT exchange, queue, and topic authorization boundaries
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.authorization.claim
+  evidence_ids: []
+- id: definitive.mqtt.listener-tls
+  title: MQTT TCP and TLS listener transport behavior
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.listener-tls.claim
+  evidence_ids: []
+- id: definitive.mqtt.vhost-precedence
+  title: MQTT username, port mapping, and default virtual host precedence
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.vhost-precedence.claim
+  evidence_ids: []
+- id: definitive.mqtt.x509-authentication
+  title: MQTT mutual TLS x.509 identity extraction and user lookup
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.x509-authentication.claim
+  evidence_ids: []
+- id: definitive.mqtt.metrics-capacity
+  title: MQTT connection, delivery, drop, and capacity telemetry
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.mqtt.metrics-capacity.claim
+  evidence_ids: []
+- id: definitive.oauth2.jwt-validation
+  title: JWT signature, issuer, audience, and lifetime validation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.oauth2.jwt-validation.claim
+  evidence_ids: []
+- id: definitive.oauth2.scope-mapping
+  title: OAuth scopes to RabbitMQ permissions mapping
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.oauth2.scope-mapping.claim
+  evidence_ids: []
+- id: definitive.oauth2.key-rotation
+  title: JWKS refresh and signing key rotation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.oauth2.key-rotation.claim
+  evidence_ids: []
+- id: definitive.oauth2.multi-resource-server
+  title: Multiple OAuth resource server selection
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.oauth2.multi-resource-server.claim
+  evidence_ids: []
+- id: definitive.partition.detection
+  title: Network partition detection and diagnostics
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.partition.detection.claim
+  evidence_ids: []
+- id: definitive.partition.pause-minority
+  title: Pause minority partition handling mode
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.partition.pause-minority.claim
+  evidence_ids: []
+- id: definitive.partition.autoheal
+  title: Autoheal partition handling and data-loss boundary
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.partition.autoheal.claim
+  evidence_ids: []
+- id: definitive.partition.recovery
+  title: Partition recovery and cluster convergence
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.partition.recovery.claim
+  evidence_ids: []
+- id: definitive.plugin.discovery
+  title: Plugin discovery and dependency resolution
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.plugin.discovery.claim
+  evidence_ids: []
+- id: definitive.plugin.enable-disable
+  title: Online and offline plugin enablement lifecycle
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.plugin.enable-disable.claim
+  evidence_ids: []
+- id: definitive.plugin.compatibility
+  title: Plugin and server version compatibility
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.plugin.compatibility.claim
+  evidence_ids: []
+- id: definitive.policy.application
+  title: Policy pattern priority and application
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.policy.application.claim
+  evidence_ids: []
+- id: definitive.policy.argument-precedence
+  title: Client argument policy and operator policy precedence
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.policy.argument-precedence.claim
+  evidence_ids: []
+- id: definitive.policy.update
+  title: Runtime policy update and resource effect
+  target_set: control-plane-configuration
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.policy.update.claim
+  evidence_ids: []
+- id: definitive.production.resource-planning
+  title: Production resource and capacity planning
+  target_set: integrated-reference-system
+  kind: construction
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.production.resource-planning.claim
+  evidence_ids: []
+- id: definitive.production.monitoring
+  title: Production monitoring and alerting baseline
+  target_set: integrated-reference-system
+  kind: construction
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.production.monitoring.claim
+  evidence_ids: []
+- id: definitive.production.security
+  title: Production network identity TLS and access baseline
+  target_set: integrated-reference-system
+  kind: construction
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.production.security.claim
+  evidence_ids: []
+- id: definitive.production.data-safety
+  title: Production queue replication confirms and recovery baseline
+  target_set: integrated-reference-system
+  kind: construction
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.production.data-safety.claim
+  evidence_ids: []
+- id: definitive.prometheus.endpoint
+  title: RabbitMQ Prometheus metrics endpoint
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.prometheus.endpoint.claim
+  evidence_ids: []
+- id: definitive.prometheus.aggregation
+  title: Per-object and aggregated metric tradeoff
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.prometheus.aggregation.claim
+  evidence_ids: []
+- id: definitive.prometheus.alerting
+  title: Prometheus alert rules and diagnostic transition
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.prometheus.alerting.claim
+  evidence_ids: []
+- id: definitive.protocol.amqp091.core
+  title: AMQP 0-9-1 core protocol and RabbitMQ extensions
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.protocol.amqp091.core.claim
+  evidence_ids: []
+- id: definitive.protocol.amqp10.native
+  title: Native AMQP 1.0 core protocol
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.protocol.amqp10.native.claim
+  evidence_ids: []
+- id: definitive.protocol.stream.binary
+  title: RabbitMQ Stream binary protocol plugin
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.protocol.stream.binary.claim
+  evidence_ids: []
+- id: definitive.protocol.mqtt.native
+  title: MQTT 3.1, 3.1.1, and 5.0 plugin
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.protocol.mqtt.native.claim
+  evidence_ids: []
+- id: definitive.protocol.stomp.proxy
+  title: STOMP protocol plugin and AMQP 0-9-1 proxy boundary
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.protocol.stomp.proxy.claim
+  evidence_ids: []
+- id: definitive.protocol.websocket.transports
+  title: AMQP 1.0, MQTT, and STOMP over WebSocket
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.protocol.websocket.transports.claim
+  evidence_ids: []
+- id: definitive.protocol.http.low-volume-diagnostic
+  title: Management HTTP API low-volume diagnostic messaging boundary
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.protocol.http.low-volume-diagnostic.claim
+  evidence_ids: []
+- id: definitive.publisher.unroutable
+  title: Unroutable message return and discard behavior
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.publisher.unroutable.claim
+  evidence_ids: []
+- id: definitive.publisher.confirm-boundary
+  title: Publisher confirm acceptance boundary
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.publisher.confirm-boundary.claim
+  evidence_ids: []
+- id: definitive.publisher.connection-failure
+  title: Publish outcome under connection failure
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.publisher.connection-failure.claim
+  evidence_ids: []
+- id: definitive.queue.declaration-equivalence
+  title: Queue redeclaration property equivalence and rejection
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.queue.declaration-equivalence.claim
+  evidence_ids: []
+- id: definitive.queue.server-named
+  title: Server-named queue declaration and recovery
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.queue.server-named.claim
+  evidence_ids: []
+- id: definitive.queue.durability
+  title: Queue and message durability boundary
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.queue.durability.claim
+  evidence_ids: []
+- id: definitive.queue.exclusive
+  title: Connection-scoped exclusive queue ownership
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.queue.exclusive.claim
+  evidence_ids: []
+- id: definitive.queue.temporary-race
+  title: Auto-delete and exclusive queue recovery race
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.queue.temporary-race.claim
+  evidence_ids: []
+- id: definitive.quorum.replication
+  title: Quorum queue Raft replication and majority availability
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.quorum.replication.claim
+  evidence_ids: []
+- id: definitive.quorum.membership
+  title: Quorum queue replica membership management
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.quorum.membership.claim
+  evidence_ids: []
+- id: definitive.quorum.delivery-limit
+  title: Delivery limit poison message handling
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.quorum.delivery-limit.claim
+  evidence_ids: []
+- id: definitive.quorum.dead-letter-safety
+  title: Quorum queue at-least-once dead lettering
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.quorum.dead-letter-safety.claim
+  evidence_ids: []
+- id: definitive.quorum.leader-rebalance
+  title: Quorum replica reconciliation and leader rebalance
+  target_set: cluster-resilience
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.quorum.leader-rebalance.claim
+  evidence_ids: []
+- id: definitive.shovel.dynamic
+  title: Dynamic Shovel lifecycle through runtime parameters
+  target_set: cross-cluster-messaging
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.shovel.dynamic.claim
+  evidence_ids: []
+- id: definitive.shovel.protocol-variants
+  title: AMQP 0-9-1, AMQP 1.0, and local Shovel variants
+  target_set: cross-cluster-messaging
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.shovel.protocol-variants.claim
+  evidence_ids: []
+- id: definitive.shovel.acknowledgement
+  title: Source and destination acknowledgement boundary
+  target_set: cross-cluster-messaging
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.shovel.acknowledgement.claim
+  evidence_ids: []
+- id: definitive.shovel.failure-recovery
+  title: Source or destination outage and reconnect behavior
+  target_set: cross-cluster-messaging
+  kind: failure
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.shovel.failure-recovery.claim
+  evidence_ids: []
+- id: definitive.stomp.protocol-plugin
+  title: STOMP 1.0 through 1.2 plugin protocol negotiation
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: covered
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.protocol-plugin.claim
+  evidence_ids:
+  - definitive.stomp.protocol-plugin.normal
+  - definitive.stomp.protocol-plugin.boundary
+  - definitive.stomp.protocol-plugin.rejection
+  - definitive.stomp.protocol-plugin.compatibility
+- id: definitive.stomp.listeners-tls
+  title: STOMP TCP, TLS, Web STOMP, and listener configuration
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.listeners-tls.claim
+  evidence_ids: []
+- id: definitive.stomp.x509-authentication
+  title: STOMP mutual TLS x.509 identity extraction
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.x509-authentication.claim
+  evidence_ids: []
+- id: definitive.stomp.frame-size-limit
+  title: STOMP frame size limit boundary and oversized frame rejection
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.frame-size-limit.claim
+  evidence_ids: []
+- id: definitive.stomp.exchange-destination
+  title: STOMP exchange destination routing and generated subscription queue
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.exchange-destination.claim
+  evidence_ids: []
+- id: definitive.stomp.queue-destination
+  title: STOMP shared queue destination declaration and at-most-one subscriber delivery
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.queue-destination.claim
+  evidence_ids: []
+- id: definitive.stomp.amq-queue-destination
+  title: STOMP existing AMQP queue destination and missing queue rejection
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.amq-queue-destination.claim
+  evidence_ids: []
+- id: definitive.stomp.topic-destination
+  title: STOMP topic fanout and no-subscriber discard behavior
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.topic-destination.claim
+  evidence_ids: []
+- id: definitive.stomp.durable-topic-subscription
+  title: STOMP durable topic disconnect and replay semantics
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.durable-topic-subscription.claim
+  evidence_ids: []
+- id: definitive.stomp.temp-queue
+  title: STOMP session-private opaque temporary reply queue lifecycle
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.temp-queue.claim
+  evidence_ids: []
+- id: definitive.stomp.queue-parameters
+  title: STOMP queue property declaration equivalence and policy interaction
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.queue-parameters.claim
+  evidence_ids: []
+- id: definitive.stomp.ack-nack
+  title: STOMP auto, client, and client-individual ACK and NACK behavior
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.ack-nack.claim
+  evidence_ids: []
+- id: definitive.stomp.prefetch
+  title: STOMP prefetch count and unacknowledged delivery pressure
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.prefetch.claim
+  evidence_ids: []
+- id: definitive.stomp.stream-support
+  title: STOMP stream subscription offset and credit behavior
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.stream-support.claim
+  evidence_ids: []
+- id: definitive.stomp.connection-vhost
+  title: STOMP CONNECT authentication and virtual host selection
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.connection-vhost.claim
+  evidence_ids: []
+- id: definitive.stomp.persistence
+  title: STOMP persistent header mapping to durable RabbitMQ storage
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stomp.persistence.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.protocol-client
+  title: RabbitMQ Stream binary protocol and official client contract
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.protocol-client.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.enablement
+  title: Stream plugin enablement and listener availability
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.enablement.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.listeners
+  title: Stream TCP listener address and option configuration
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.listeners.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.tls
+  title: Stream protocol TLS listener and peer verification
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.tls.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.publisher-credit
+  title: Stream publisher credit flow, batching, and memory trade-off
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.publisher-credit.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.consumer-credit
+  title: Stream consumer chunk credit and replenishment behavior
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.consumer-credit.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.authorization
+  title: Stream protocol authentication and virtual host permissions
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.authorization.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.cluster-topology
+  title: Stream leader and replica topology discovery across three nodes
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.cluster-topology.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.load-balancer-locality
+  title: Stream load balancer reconnect for leader and replica locality
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.load-balancer-locality.claim
+  evidence_ids: []
+- id: definitive.stream-plugin.metrics-performance
+  title: Stream connection, credit, throughput, latency, and resource telemetry
+  target_set: protocols-client-contracts
+  kind: compatibility
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream-plugin.metrics-performance.claim
+  evidence_ids: []
+- id: definitive.stream.retention-replay
+  title: Append-only retention and non-destructive offset replay
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream.retention-replay.claim
+  evidence_ids: []
+- id: definitive.stream.single-active-consumer
+  title: Single active consumer ordering and continuity
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream.single-active-consumer.claim
+  evidence_ids: []
+- id: definitive.stream.super-stream
+  title: Partitioned super stream topology and client abstraction
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream.super-stream.claim
+  evidence_ids: []
+- id: definitive.stream.super-stream-ordering
+  title: Ordering within a super stream partition
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.stream.super-stream-ordering.claim
+  evidence_ids: []
+- id: definitive.tls.client-listener
+  title: Client TLS listener and certificate validation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.tls.client-listener.claim
+  evidence_ids: []
+- id: definitive.tls.mutual-authentication
+  title: Mutual TLS peer verification
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.tls.mutual-authentication.claim
+  evidence_ids: []
+- id: definitive.tls.certificate-rotation
+  title: TLS certificate rotation lifecycle
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.tls.certificate-rotation.claim
+  evidence_ids: []
+- id: definitive.tls.inter-node
+  title: Inter-node and CLI distribution TLS boundary
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.tls.inter-node.claim
+  evidence_ids: []
+- id: definitive.upgrade.path
+  title: Supported RabbitMQ version upgrade path
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.upgrade.path.claim
+  evidence_ids: []
+- id: definitive.upgrade.feature-flags
+  title: Feature flag preconditions and compatibility boundary
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.upgrade.feature-flags.claim
+  evidence_ids: []
+- id: definitive.upgrade.rolling
+  title: Rolling upgrade with mixed-version cluster
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.upgrade.rolling.claim
+  evidence_ids: []
+- id: definitive.upgrade.rollback
+  title: Rollback support and irreversible boundary
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.upgrade.rollback.claim
+  evidence_ids: []
+- id: definitive.operator.cluster-provisioning
+  title: Single-node and multi-node RabbitMQ cluster provisioning
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator.cluster-provisioning.claim
+  evidence_ids: []
+- id: definitive.operator.cluster-reconciliation
+  title: Desired state reconciliation and day-two operations
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator.cluster-reconciliation.claim
+  evidence_ids: []
+- id: definitive.operator.rolling-upgrade
+  title: Operator-driven scaling and rolling upgrades
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator.rolling-upgrade.claim
+  evidence_ids: []
+- id: definitive.operator.feature-flags
+  title: Operator feature flag enablement policy
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator.feature-flags.claim
+  evidence_ids: []
+- id: definitive.operator.topology-reconciliation
+  title: Declarative messaging topology reconciliation
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator.topology-reconciliation.claim
+  evidence_ids: []
+- id: definitive.operator.topology-rejection
+  title: Topology Operator credential and reconciliation limitations
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator.topology-rejection.claim
+  evidence_ids: []
+- id: definitive.operator-usage.crd-availability
+  title: RabbitmqCluster CRD installation and API availability
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.crd-availability.claim
+  evidence_ids: []
+- id: definitive.operator-usage.instance-creation
+  title: RabbitmqCluster reconciliation to StatefulSet, Service, Pods, and credentials
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.instance-creation.claim
+  evidence_ids: []
+- id: definitive.operator-usage.replica-scaling
+  title: Odd replica invariant, scale-to-zero, restore, and downscale rejection
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.replica-scaling.claim
+  evidence_ids: []
+- id: definitive.operator-usage.persistence
+  title: PersistentVolume provisioning, capacity, unschedulable rejection, and data
+    retention
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.persistence.claim
+  evidence_ids: []
+- id: definitive.operator-usage.resources-headroom
+  title: Resource request validation and RabbitMQ memory headroom calculation
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.resources-headroom.claim
+  evidence_ids: []
+- id: definitive.operator-usage.scheduling
+  title: Anti-affinity, toleration, topology spread, and three-node placement
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.scheduling.claim
+  evidence_ids: []
+- id: definitive.operator-usage.config-precedence
+  title: Operator defaults and user RabbitMQ configuration precedence
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.config-precedence.claim
+  evidence_ids: []
+- id: definitive.operator-usage.additional-plugins
+  title: Additional official plugin reconciliation and unavailable plugin failure
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.additional-plugins.claim
+  evidence_ids: []
+- id: definitive.operator-usage.tls-listeners
+  title: Kubernetes Secret TLS, mTLS, and non-TLS listener disablement
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.tls-listeners.claim
+  evidence_ids: []
+- id: definitive.operator-usage.tls-rotation
+  title: TLS Secret certificate rotation and per-node PEM cache reload
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.tls-rotation.claim
+  evidence_ids: []
+- id: definitive.operator-usage.feature-flags
+  title: Automatic feature flag enablement and irreversible state boundary
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.feature-flags.claim
+  evidence_ids: []
+- id: definitive.operator-usage.rolling-update
+  title: StatefulSet rolling reconciliation under continuous workload
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.rolling-update.claim
+  evidence_ids: []
+- id: definitive.operator-usage.pod-disruption-budget
+  title: Pod disruption budget protection of quorum availability
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.pod-disruption-budget.claim
+  evidence_ids: []
+- id: definitive.operator-usage.network-policy
+  title: Kubernetes NetworkPolicy allowed and denied RabbitMQ traffic
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.network-policy.claim
+  evidence_ids: []
+- id: definitive.operator-usage.pause-reconciliation
+  title: Reconciliation pause, drift observation, and resume recovery
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.pause-reconciliation.claim
+  evidence_ids: []
+- id: definitive.operator-usage.quorum-monitoring
+  title: Operator quorum status, RabbitMQ metrics, logs, and alert correlation
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.quorum-monitoring.claim
+  evidence_ids: []
+- id: definitive.operator-usage.deletion
+  title: RabbitmqCluster deletion and persistent data retention boundary
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.operator-usage.deletion.claim
+  evidence_ids: []
+- id: definitive.topology-operator.secret-label-admission
+  title: Labeled Secret cache and unlabeled or missing Secret admission rejection
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.secret-label-admission.claim
+  evidence_ids: []
+- id: definitive.topology-operator.namespace-scope
+  title: Same-namespace and explicitly allowed cross-namespace reconciliation
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.namespace-scope.claim
+  evidence_ids: []
+- id: definitive.topology-operator.external-cluster
+  title: External RabbitMQ connection Secret and immutable cluster reference
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.external-cluster.claim
+  evidence_ids: []
+- id: definitive.topology-operator.queue-policy
+  title: Queue and policy creation, update, drift, and declaration rejection
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.queue-policy.claim
+  evidence_ids: []
+- id: definitive.topology-operator.exchange-binding
+  title: Exchange and binding creation, update, and missing dependency failure
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.exchange-binding.claim
+  evidence_ids: []
+- id: definitive.topology-operator.user-permissions
+  title: User credential Secret, permission, and topic permission reconciliation
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.user-permissions.claim
+  evidence_ids: []
+- id: definitive.topology-operator.vhost
+  title: Virtual host creation, limits, default queue type, and deletion
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.vhost.claim
+  evidence_ids: []
+- id: definitive.topology-operator.federation
+  title: Federation URI Secret and upstream reconciliation
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.federation.claim
+  evidence_ids: []
+- id: definitive.topology-operator.shovel
+  title: Shovel URI Secret, acknowledgement mode, and recovery reconciliation
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.shovel.claim
+  evidence_ids: []
+- id: definitive.topology-operator.immutable-update-rejection
+  title: Mutable update reconciliation and immutable field webhook rejection
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.immutable-update-rejection.claim
+  evidence_ids: []
+- id: definitive.topology-operator.deletion-policy
+  title: Finalizer and delete versus retain policy behavior
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.deletion-policy.claim
+  evidence_ids: []
+- id: definitive.topology-operator.tls
+  title: Topology Operator HTTPS management connection trust
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.tls.claim
+  evidence_ids: []
+- id: definitive.topology-operator.time-reconciliation
+  title: Periodic reconciliation, deleted topology recovery, and message loss boundary
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.time-reconciliation.claim
+  evidence_ids: []
+- id: definitive.topology-operator.monitoring
+  title: Topology Operator reconciliation logs and Prometheus metrics
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.monitoring.claim
+  evidence_ids: []
+- id: definitive.topology-operator.imported-definitions-failure
+  title: Imported definitions credential overwrite failure and recovery boundary
+  target_set: operator-platform
+  kind: operation
+  requirement: required
+  state: planned
+  rationale: Authorityから抽出したBehaviorを正常・境界・拒否と適用Surface固有のScenarioで個別に証明する。
+  claim_ids:
+  - definitive.topology-operator.imported-definitions-failure.claim
+  evidence_ids: []

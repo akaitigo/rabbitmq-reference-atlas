@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-cli
+source_digest: sha256:a9abe820326a30b61901d959597e93580cca07be0d8b15182a5c4593863dadcb
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: cli.rabbitmqctl, locator: '#rabbitmqctl', kind: capability, capability_id: management.cli, behavior_id: cli.rabbitmqctl, title: rabbitmqctl administrative operations, surface_ids: [implementation-construction, operations-observability]}
+- {id: cli.rabbitmq-diagnostics, locator: '#rabbitmq-diagnostics', kind: capability, capability_id: management.cli, behavior_id: cli.rabbitmq-diagnostics, title: rabbitmq-diagnostics health and diagnostic operations, surface_ids: [testing-verification, operations-observability]}
+- {id: cli.rabbitmq-plugins, locator: '#rabbitmq-plugins', kind: capability, capability_id: management.cli, behavior_id: cli.rabbitmq-plugins, title: rabbitmq-plugins lifecycle operations, surface_ids: [implementation-construction, compatibility-integration]}
+- {id: cli.exit-timeout, locator: '#common-options', kind: behavior, capability_id: management.cli, behavior_id: cli.exit-timeout, title: CLI node selection timeout exit and output contracts, surface_ids: [testing-verification, failure-recovery]}

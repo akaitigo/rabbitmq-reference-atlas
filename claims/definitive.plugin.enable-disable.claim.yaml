@@ -1,0 +1,29 @@
+schema_version: 1
+id: definitive.plugin.enable-disable.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: server.plugins
+statement: Online and offline plugin enablement lifecycleのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-plugins
+proof_obligations:
+- id: proof.plugin.enable-disable.normal
+  statement: Online and offline plugin enablement lifecycleのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.plugin.enable-disable.boundary
+  statement: Online and offline plugin enablement lifecycleのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.plugin.enable-disable.rejection
+  statement: Online and offline plugin enablement lifecycleのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.plugin.enable-disable.operations
+  statement: Online and offline plugin enablement lifecycleのoperations Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - Metrics、Logs、Health、CLI状態を同一Run IDと時刻で相関し、診断から安全な復旧判定まで接続する。

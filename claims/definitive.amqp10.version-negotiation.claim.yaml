@@ -1,0 +1,29 @@
+schema_version: 1
+id: definitive.amqp10.version-negotiation.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: protocol.amqp10
+statement: AMQP 1.0 protocol header negotiation and SASL rejectionのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: accepted
+source_ids:
+- rabbitmq-4.3-amqp-1.0
+proof_obligations:
+- id: proof.amqp10.version-negotiation.normal
+  statement: AMQP 1.0 protocol header negotiation and SASL rejectionのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.amqp10.version-negotiation.boundary
+  statement: AMQP 1.0 protocol header negotiation and SASL rejectionのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.amqp10.version-negotiation.rejection
+  statement: AMQP 1.0 protocol header negotiation and SASL rejectionのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.amqp10.version-negotiation.security
+  statement: AMQP 1.0 protocol header negotiation and SASL rejectionのsecurity Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - SASLなしのAMQP 1.0 Headerを送信し、Brokerが接続継続や匿名受理をせず、SASL 1.0 Headerを要求することを全三Nodeで確認する。

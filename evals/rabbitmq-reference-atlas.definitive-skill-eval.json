@@ -1,0 +1,82 @@
+{
+  "schema_version": 2,
+  "id": "rabbitmq.definitive.router",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "atlas_release": "v0.2.0",
+  "skill_id": "rabbitmq-reference-router",
+  "generated_at": "2026-08-28T12:00:00+09:00",
+  "cases": [
+    {
+      "id": "definitive.orientation-authority",
+      "result": "inconclusive",
+      "outcome_ids": ["understand"],
+      "surface_ids": ["orientation-scope", "foundations-mechanics", "provenance-rights"],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "Authority由来InventoryからRabbitMQ 4.3.5の対象範囲と根拠を説明する。"
+    },
+    {
+      "id": "definitive.architecture-comparison",
+      "result": "inconclusive",
+      "outcome_ids": ["choose"],
+      "surface_ids": ["architecture-design", "decision-comparison", "performance-capacity-cost"],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "Queue、Protocol、Federation、Shovelの方式をEvidence付き比較から選択する。"
+    },
+    {
+      "id": "definitive.build-reference-system",
+      "result": "inconclusive",
+      "outcome_ids": ["build"],
+      "surface_ids": ["implementation-construction", "compatibility-integration"],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "権限境界を守って統合Reference SystemのTopologyとClient契約を構築する。"
+    },
+    {
+      "id": "definitive.verify-artifacts",
+      "result": "inconclusive",
+      "outcome_ids": ["verify"],
+      "surface_ids": ["testing-verification"],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "Behavior専用Claim、Proof、Runtime ArtifactのDigestとOracleを検証する。"
+    },
+    {
+      "id": "definitive.operate-observe",
+      "result": "inconclusive",
+      "outcome_ids": ["operate"],
+      "surface_ids": ["operations-observability", "security-privacy-safety"],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "最小権限でBroker、Plugin、Cross-cluster、Operatorの状態を観測し運用する。"
+    },
+    {
+      "id": "definitive.troubleshoot-recover",
+      "result": "inconclusive",
+      "outcome_ids": ["troubleshoot"],
+      "surface_ids": ["failure-recovery"],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "Network Partition、Resource Alarm、依存先停止から安全な回復手順へ到達する。"
+    },
+    {
+      "id": "definitive.evolve-migrate",
+      "result": "inconclusive",
+      "outcome_ids": ["evolve"],
+      "surface_ids": ["migration-evolution-deprecation"],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "Feature FlagとRollback不能境界を守ってRolling Upgradeを計画し検証する。"
+    },
+    {
+      "id": "definitive.delegate-gap",
+      "result": "inconclusive",
+      "outcome_ids": ["delegate"],
+      "surface_ids": ["agent-skill"],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "未Closure Behaviorを成功扱いせずGapと必要Evidenceを返し、安全に委任する。"
+    }
+  ]
+}

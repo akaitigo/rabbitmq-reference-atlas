@@ -1,0 +1,24 @@
+schema_version: 1
+id: definitive.cluster.membership.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: cluster.membership
+statement: RabbitMQ node cluster membership and identityのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-clustering
+proof_obligations:
+- id: proof.cluster.membership.normal
+  statement: RabbitMQ node cluster membership and identityのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.cluster.membership.boundary
+  statement: RabbitMQ node cluster membership and identityのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.cluster.membership.rejection
+  statement: RabbitMQ node cluster membership and identityのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。

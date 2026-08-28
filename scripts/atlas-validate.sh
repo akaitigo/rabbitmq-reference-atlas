@@ -2,9 +2,11 @@
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
-CORE_COMMIT=d5c0a6ce757fd5f43af837edd26f55c7325b811e
-FILES=("$ROOT/atlas.yaml" "$ROOT/sources.lock.yaml" "$ROOT/coverage.yaml" "$ROOT/skill.package.yaml" "$ROOT/mastery.yaml")
+CORE_COMMIT=be19ddaa411fe60dcf12f0f5d457902bb57b9eb3
+FILES=("$ROOT/atlas.yaml" "$ROOT/sources.lock.yaml" "$ROOT/coverage.yaml" "$ROOT/skill.package.yaml" "$ROOT/mastery.yaml" "$ROOT/definitive.yaml" "$ROOT/surface.inventory.yaml" "$ROOT/migrations/definitive-v2.yaml" "$ROOT/evals/rabbitmq-reference-atlas.definitive-skill-eval.json")
 while IFS= read -r file; do FILES+=("$file"); done < <(find "$ROOT/evidence" -maxdepth 1 -type f \( -name '*.evidence.json' -o -name '*.evidence.yaml' \) | sort)
+while IFS= read -r file; do FILES+=("$file"); done < <(find "$ROOT/surface/authority" -maxdepth 1 -type f -name '*.authority-surfaces.yaml' | sort)
+while IFS= read -r file; do FILES+=("$file"); done < <(find "$ROOT/claims" -maxdepth 1 -type f -name '*.claim.yaml' | sort)
 
 if [[ -n "${ATLAS_BIN:-}" ]]; then
   "$ATLAS_BIN" validate "${FILES[@]}"

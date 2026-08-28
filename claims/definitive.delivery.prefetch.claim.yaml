@@ -1,0 +1,29 @@
+schema_version: 1
+id: definitive.delivery.prefetch.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: delivery.flow-control
+statement: Consumer prefetch and unacknowledged delivery boundのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-confirms
+proof_obligations:
+- id: proof.delivery.prefetch.normal
+  statement: Consumer prefetch and unacknowledged delivery boundのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.delivery.prefetch.boundary
+  statement: Consumer prefetch and unacknowledged delivery boundのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.delivery.prefetch.rejection
+  statement: Consumer prefetch and unacknowledged delivery boundのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.delivery.prefetch.performance
+  statement: Consumer prefetch and unacknowledged delivery boundのperformance Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 条件を固定した複数VariantでRaw Sample、分位、Rate、Memory、Diskを取得し、適用範囲外へ一般化しない。

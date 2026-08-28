@@ -21,6 +21,9 @@ trap cleanup EXIT
 mkdir -p "$RAW"
 "${COMPOSE[@]}" up -d --wait
 
+(cd "$ROOT" && go run ./cmd/rmq-amqp10-handshake --endpoints 127.0.0.1:25672,127.0.0.1:25673,127.0.0.1:25674 --output-dir "$RAW")
+(cd "$ROOT" && python3 scripts/generate-amqp10-evidence.py)
+(cd "$ROOT" && bash scripts/run-plugin-protocol-lab.sh)
 (cd "$ROOT" && go run ./cmd/rmq-lab --mode cluster --management-urls "$MGMT_ALL" --output "$RAW/cluster-before.json")
 (cd "$ROOT" && go run ./cmd/rmq-lab --mode core --amqp-urls "$AMQP_ALL" --output "$RAW/core.json")
 (cd "$ROOT" && go run ./cmd/rmq-secops --amqp-urls "$AMQP_ALL" --management-urls "$MGMT_ALL" --output "$RAW/security-observability.json")

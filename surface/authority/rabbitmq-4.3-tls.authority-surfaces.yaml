@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-tls
+source_digest: sha256:d33e05a1821a2c0ebbbe804050d6c85a320eaba15e6128aa3573deb41dfe31db
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: tls.client-listener, locator: '#enabling-tls-support-in-rabbitmq', kind: capability, capability_id: security.tls, behavior_id: tls.client-listener, title: Client TLS listener and certificate validation, surface_ids: [implementation-construction, security-privacy-safety]}
+- {id: tls.mutual-authentication, locator: '#peer-verification', kind: behavior, capability_id: security.tls, behavior_id: tls.mutual-authentication, title: Mutual TLS peer verification, surface_ids: [testing-verification, security-privacy-safety]}
+- {id: tls.certificate-rotation, locator: '#rotating-tls-certificates', kind: behavior, capability_id: security.tls, behavior_id: tls.certificate-rotation, title: TLS certificate rotation lifecycle, surface_ids: [operations-observability, migration-evolution-deprecation]}
+- {id: tls.inter-node, locator: '#inter-node-traffic', kind: behavior, capability_id: security.tls, behavior_id: tls.inter-node, title: Inter-node and CLI distribution TLS boundary, surface_ids: [architecture-design, security-privacy-safety]}

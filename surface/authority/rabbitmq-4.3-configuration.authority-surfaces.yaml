@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-configuration
+source_digest: sha256:bf0e6f05185356bd4491fd04a1fbee8e82622b80b80b08565033a10c911426bf
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: configuration.rabbitmq-conf, locator: '#the-main-configuration-file-rabbitmqconf', kind: capability, capability_id: configuration.files, behavior_id: configuration.rabbitmq-conf, title: rabbitmq.conf primary configuration file, surface_ids: [implementation-construction, operations-observability]}
+- {id: configuration.advanced-config, locator: '#the-advanced-config-file', kind: capability, capability_id: configuration.files, behavior_id: configuration.advanced-config, title: advanced.config Erlang term configuration, surface_ids: [implementation-construction, compatibility-integration]}
+- {id: configuration.environment, locator: '#customise-rabbitmq-environment-variables', kind: behavior, capability_id: configuration.environment, behavior_id: configuration.environment, title: Environment variable based node configuration, surface_ids: [implementation-construction, operations-observability]}
+- {id: configuration.reload-boundary, locator: '#configuration-file-changes-and-node-restarts', kind: behavior, capability_id: configuration.files, behavior_id: configuration.reload-boundary, title: Restart and dynamic configuration boundary, surface_ids: [testing-verification, migration-evolution-deprecation]}

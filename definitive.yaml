@@ -1,0 +1,13 @@
+schema_version: 2
+atlas_id: rabbitmq-reference-atlas
+epoch: '2026-08-28'
+completion_class: subject-definitive
+surface_inventory: surface.inventory.yaml
+verification_matrix: verification.matrix.yaml
+skill_eval: evals/rabbitmq-reference-atlas.definitive-skill-eval.json
+certificate: evidence/definitive-certificate.json
+historical_certificates:
+- path: evidence/history/v0.1.0/completion-certificate.json
+  classification: bounded-complete
+reference_systems: []
+comparisons: []

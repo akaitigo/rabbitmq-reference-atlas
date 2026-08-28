@@ -1,0 +1,29 @@
+schema_version: 1
+id: definitive.stomp.x509-authentication.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: security.stomp
+statement: STOMP mutual TLS x.509 identity extractionのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-stomp
+proof_obligations:
+- id: proof.stomp.x509-authentication.normal
+  statement: STOMP mutual TLS x.509 identity extractionのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.stomp.x509-authentication.boundary
+  statement: STOMP mutual TLS x.509 identity extractionのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.stomp.x509-authentication.rejection
+  statement: STOMP mutual TLS x.509 identity extractionのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.stomp.x509-authentication.security
+  statement: STOMP mutual TLS x.509 identity extractionのsecurity Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 最小権限の許可と、誤Credential、不正なTrust、越権操作の拒否を同一隔離Environmentで検証する。

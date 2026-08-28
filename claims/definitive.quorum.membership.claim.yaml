@@ -1,0 +1,39 @@
+schema_version: 1
+id: definitive.quorum.membership.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: queue.quorum
+statement: Quorum queue replica membership managementのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-quorum-queues
+proof_obligations:
+- id: proof.quorum.membership.normal
+  statement: Quorum queue replica membership managementのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.quorum.membership.boundary
+  statement: Quorum queue replica membership managementのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.quorum.membership.rejection
+  statement: Quorum queue replica membership managementのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.quorum.membership.failure
+  statement: Quorum queue replica membership managementのfailure Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 専用Environment内だけに停止、Network断、Resource Alarmまたは依存先障害を注入し、保証Invariantを検証する。
+- id: proof.quorum.membership.recovery
+  statement: Quorum queue replica membership managementのrecovery Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 障害要因を取り除き、Membership、Delivery、Telemetryとデータ整合性が制限時間内に回復することを確認する。
+- id: proof.quorum.membership.operations
+  statement: Quorum queue replica membership managementのoperations Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - Metrics、Logs、Health、CLI状態を同一Run IDと時刻で相関し、診断から安全な復旧判定まで接続する。
