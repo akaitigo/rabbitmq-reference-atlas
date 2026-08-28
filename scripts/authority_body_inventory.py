@@ -16,7 +16,7 @@ import yaml
 ROOT = Path(__file__).resolve().parents[1]
 INVENTORY_DIRECTORY = ROOT / "authority/body-inventory-draft"
 INVENTORY_INDEX = ROOT / "authority/body-inventory.snapshot.json"
-DECISIONS_PATH = ROOT / "authority/body-review-decisions.json"
+DECISIONS_PATH = ROOT / "authority/reviews/decisions.json"
 BASELINE_PATH = ROOT / "baseline/authority-body-inventory-v1.json"
 MIGRATION_PATH = ROOT / "migrations/authority-body-inventory-v1.json"
 REPORT_PATH = ROOT / "artifacts/authority-body-non-regression-report.json"

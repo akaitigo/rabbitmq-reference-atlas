@@ -76,6 +76,8 @@ def build() -> dict:
     locator_artifacts = [json.loads(path.read_text(encoding="utf-8")) for path in sorted((ROOT / "authority/locator-drafts").glob("*.json"))]
     body_index = json.loads((ROOT / "authority/body-inventory.snapshot.json").read_text(encoding="utf-8"))
     body_artifacts = [json.loads(path.read_text(encoding="utf-8")) for path in sorted((ROOT / "authority/body-inventory-draft").glob("*.json"))]
+    review_queue = json.loads((ROOT / "authority/review-queue.snapshot.json").read_text(encoding="utf-8"))
+    review_decisions = json.loads((ROOT / review_queue["decision_ledger"]).read_text(encoding="utf-8"))
     skill_eval = json.loads((ROOT / definitive["skill_eval"]).read_text(encoding="utf-8"))
     records = evidence_records()
     axes_by_id = {axis["id"]: axis for axis in reference["axes"]}
@@ -101,8 +103,9 @@ def build() -> dict:
                     if candidate["locator_status"] not in {"root-document", "fragment-found"}]
     reference_edge_review_gaps = [f"authority.human-review.{candidate['edge_id']}" for candidate in locator_candidates]
     raw_anchors = [(artifact["document_id"], anchor) for artifact in body_artifacts for anchor in artifact["anchors"]]
+    reviewed_anchor_ids = {anchor_id for decision in review_decisions["decisions"] for anchor_id in decision["anchor_ids"]}
     review_gaps = [f"authority.human-review.{document_id}.{anchor['id']}" for document_id, anchor in raw_anchors
-                   if anchor["classification_status"] == "pending-human"]
+                   if anchor["id"] not in reviewed_anchor_ids]
     classification_gaps = [row["source_id"] for row in classification["sources"]
                            if row["classification"] not in {"surface-authority", "supporting-authority"}]
     authority_axis = make_axis(axes_by_id["authority-body-digestion"], {
@@ -119,6 +122,16 @@ def build() -> dict:
         "promoted_behavior_ids": body_index["summary"]["promoted_behavior_ids"],
         "raw_anchors_count_toward_surface_inventory": body_index["semantic_accounting"]["raw_anchors_count_toward_surface_inventory"],
         "raw_anchors_count_toward_depth": body_index["semantic_accounting"]["raw_anchors_count_toward_depth"],
+        "review_queue_id": review_queue["queue_id"],
+        "queued_raw_anchors": review_queue["summary"]["queued_anchors"],
+        "pending_human_queue_items": review_queue["summary"]["pending_human"],
+        "human_review_decisions": review_queue["summary"]["decisions"],
+        "proposed_priority_counts": review_queue["summary"]["proposed_priority_counts"],
+        "proposed_candidate_clusters": review_queue["summary"]["proposed_candidate_clusters"],
+        "proposed_batches": review_queue["summary"]["proposed_batches"],
+        "stale_document_holds": review_queue["summary"]["stale_document_holds"],
+        "queued_anchor_count_toward_semantic_surface": review_queue["semantic_accounting"]["queued_anchor_count_toward_semantic_surface"],
+        "queued_anchor_count_toward_depth": review_queue["semantic_accounting"]["queued_anchor_count_toward_depth"],
         "existing_reference_edges": locator_index["summary"]["candidate_surfaces"],
         "located_reference_edges": locator_index["summary"]["root_locators"] + locator_index["summary"]["fragments_found"],
         "fragment_not_found": locator_index["summary"]["fragments_not_found"],
@@ -155,11 +168,20 @@ def build() -> dict:
         make_check("authority.raw-anchor-accounting", "raw anchor数をSemantic Surface数またはDepth達成へ算入しない。",
                    "semantic surfaces=0; depth credit=0", "pass",
                    ["authority/body-inventory.snapshot.json", "artifacts/authority-body-non-regression-report.json"], []),
+        make_check("authority.human-review-queue", "全eligible raw anchorをstable ID、source/tool digest、locator付きの人手Review queueへ一度ずつ投影し、stale documentをholdする。",
+                   f"{review_queue['summary']['queued_anchors']}/{body_index['summary']['raw_anchors']} anchors; {review_queue['summary']['stale_document_holds']} stale holds",
+                   "pass" if (review_queue["summary"]["queued_anchors"] == body_index["summary"]["raw_anchors"]
+                              and review_queue["summary"]["stale_document_holds"] == body_index["summary"]["stale_documents"]) else "gap",
+                   ["authority/review-queue.snapshot.json", "authority/review-queue-draft/", "authority/reviews/decisions.json"], []),
+        make_check("authority.review-queue-accounting", "priority、cluster、batchを機械提案に限定し、Queue件数をSemantic Surface数またはDepth達成へ算入しない。",
+                   "machine proposals only; semantic surfaces=0; depth credit=0", "pass",
+                   ["authority/review-queue.snapshot.json", "baseline/authority-review-prequeue-v1.json"], []),
         make_check("authority.surface-exhaustiveness", "Authority本文全体からSurfaceを抽出し、未分類をゼロにする。", False, "gap",
-                   ["authority/body-inventory.snapshot.json", "authority/body-review-decisions.json"], ["authority.semantic-surfaces-exhaustive"]),
+                   ["authority/body-inventory.snapshot.json", "authority/review-queue.snapshot.json", "authority/reviews/decisions.json"], ["authority.semantic-surfaces-exhaustive"]),
         make_check("authority.human-review", "各raw anchorを人が本文解釈し、Protocol/behavior Surfaceへ昇格または理由付き却下する。",
-                   f"{body_index['summary']['human_reviewed_anchors']}/{body_index['summary']['raw_anchors']}", "gap" if review_gaps else "pass",
-                   ["authority/body-inventory.snapshot.json", "authority/body-review-decisions.json"], review_gaps),
+                   f"{review_queue['summary']['human_reviewed']}/{review_queue['summary']['queued_anchors']}; {review_queue['summary']['pending_human']} pending",
+                   "gap" if review_gaps else "pass",
+                   ["authority/review-queue.snapshot.json", "authority/reviews/decisions.json"], review_gaps),
     ])
 
     comparison_items = [item for item in inventory["items"] if "decision-comparison" in item["surface_ids"]]
@@ -288,6 +310,10 @@ def build() -> dict:
             "authority_raw_anchor_population_unit": reference["authority_body_inventory_reference"]["population_unit"],
             "raw_anchors_count_toward_semantic_surface": reference["authority_body_inventory_reference"]["raw_anchors_count_toward_semantic_surface"],
             "raw_anchors_count_toward_depth": reference["authority_body_inventory_reference"]["raw_anchors_count_toward_depth"],
+            "authority_review_queue_source_commit": reference["authority_review_queue_reference"]["source_commit"],
+            "authority_review_queue_population_unit": reference["authority_review_queue_reference"]["population_unit"],
+            "queued_anchor_count_toward_semantic_surface": reference["authority_review_queue_reference"]["queued_anchor_count_toward_semantic_surface"],
+            "queued_anchor_count_toward_depth": reference["authority_review_queue_reference"]["queued_anchor_count_toward_depth"],
             "rule": "FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。",
         },
         "fixture_mapping": [

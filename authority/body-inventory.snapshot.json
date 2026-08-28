@@ -3,8 +3,8 @@
   "atlas_id": "rabbitmq-reference-atlas",
   "generated_at": "2026-08-28T00:00:00+09:00",
   "status": "incomplete-human-review-required",
-  "input_digest": "sha256:e2ea944d082d3e4cd3474fc5dca61621b553058d35609bf46b0db57838cc4902",
-  "tool_digest": "sha256:49824b7188770c38f6af50ef5861dc4479b8ed4e12509992f56f412f46b72793",
+  "input_digest": "sha256:86a149c977329b855504062e6b86f76a2c4449f3477cd7a5d01d9032c0436f0e",
+  "tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
   "body_storage": "digest-locator-and-offset-only",
   "selector_contract": [
     "document-root",
@@ -33,7 +33,7 @@
     "raw_anchors_count_toward_surface_inventory": false,
     "raw_anchors_count_toward_depth": false,
     "promotion_requires": "recorded-human-decision",
-    "decisions_path": "authority/body-review-decisions.json"
+    "decisions_path": "authority/reviews/decisions.json"
   },
   "summary": {
     "source_entries": 50,
@@ -64,7 +64,7 @@
     {
       "id": "document-github-com-4a2c440585b2",
       "path": "authority/body-inventory-draft/document-github-com-4a2c440585b2.json",
-      "digest": "sha256:b4060f084ea231bcea29433e8714b1d5b6d87b86188dee305cf3939391fc3e23",
+      "digest": "sha256:bf617eac37a2d6cc26f3d548d43581456b3f2ac95313a9fe1ce915811e74d158",
       "fetch_status": "stale",
       "source_entries": 1,
       "raw_anchors": 0,
@@ -73,7 +73,7 @@
     {
       "id": "document-github-com-edc04fb4e068",
       "path": "authority/body-inventory-draft/document-github-com-edc04fb4e068.json",
-      "digest": "sha256:3133c1286bac8caca7bc91a15ea519b6a49c523c7a76d1f619276e3a79fe35be",
+      "digest": "sha256:a7baa2169d1200655e8940bd104120238ee808de7c849b91b6f7a71c1d5194f1",
       "fetch_status": "stale",
       "source_entries": 1,
       "raw_anchors": 0,
@@ -82,7 +82,7 @@
     {
       "id": "document-raw-githubusercontent-com-0b23e79d66e9",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-0b23e79d66e9.json",
-      "digest": "sha256:a725e2c8c7d4ed069611c39219e8fb2f9672ff9c6e3b10b2d4de55a14332dcd8",
+      "digest": "sha256:bef5ee1004e4fbb5f7d2c7190515b54985ab28695de16d31befd70b7bd340a05",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 44,
@@ -99,7 +99,7 @@
     {
       "id": "document-raw-githubusercontent-com-0ee1984b73a6",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-0ee1984b73a6.json",
-      "digest": "sha256:711077284f27233a602ed9657b8d0518b2de86aca5ff5bda18085c8818ed2dec",
+      "digest": "sha256:9ff3cba4a9d457e6ea13693be6ba910c95531c6baa2c9c1b3b2589740ae94703",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 34,
@@ -114,7 +114,7 @@
     {
       "id": "document-raw-githubusercontent-com-1137cc19e31e",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-1137cc19e31e.json",
-      "digest": "sha256:b8c708e69bdf6dd9fb8a98e1e94e8db503865c153530c9b7b5f61b7a1654164f",
+      "digest": "sha256:400266a5f2a1ec4c8396b223a0f630472c57f0ea88574eca7807f9a5123607b8",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 46,
@@ -130,7 +130,7 @@
     {
       "id": "document-raw-githubusercontent-com-255b4c82e592",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-255b4c82e592.json",
-      "digest": "sha256:416c0519ef2d038e5516610cfdc6830e80dd706ef1b0f86559f846deadd8e392",
+      "digest": "sha256:6c49f91a549cd50aa061ea5604f297cdc774e1867cc16092bd2b0d8f3fd6df46",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 13,
@@ -145,7 +145,7 @@
     {
       "id": "document-raw-githubusercontent-com-36a397ba55bb",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-36a397ba55bb.json",
-      "digest": "sha256:d2a597e972927f08ec9c1f4395d5f5a24eafe020b56a646086e838ba4815c63e",
+      "digest": "sha256:5b15e30db4bd703ec4a12b47962dfe61b0e103cd628dcbc2d80819f10227e32c",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 25,
@@ -159,7 +159,7 @@
     {
       "id": "document-raw-githubusercontent-com-3c4185b31200",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-3c4185b31200.json",
-      "digest": "sha256:ef52975a0cd555bd3b75b2d0bf7cbc9b6b2977e41002b76c6884902ff1435fa8",
+      "digest": "sha256:1f9efcf9190f07b8e0b09a44a270c05eee4b9685e10aefd12de17b6e982028ec",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 6,
@@ -173,7 +173,7 @@
     {
       "id": "document-raw-githubusercontent-com-3fb34ba5dde6",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-3fb34ba5dde6.json",
-      "digest": "sha256:cd4240d327326f5571d1e63a8c9f8bd8e09f11f3ff17dd657398ead6a1e596fa",
+      "digest": "sha256:5c1bdc80bc8af03bc09d03971656e8257a87b6fbe8b937415adafa66761358f5",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 11,
@@ -187,7 +187,7 @@
     {
       "id": "document-raw-githubusercontent-com-42e548af5f27",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-42e548af5f27.json",
-      "digest": "sha256:af286ebebf3a7f5adee0c71d61e5584dd54a5ac8ab8c1fb1aed1a138b290ac37",
+      "digest": "sha256:e8faed65590b1200f00cfce568f5a18b89a1a88122110a3ca0338c385f9f3ebd",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 46,
@@ -203,7 +203,7 @@
     {
       "id": "document-raw-githubusercontent-com-45774c17ad3c",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-45774c17ad3c.json",
-      "digest": "sha256:29d5c8c82f86bb3dc61c7625700c5a93993ea3e83883109f0c2360a4b070b02f",
+      "digest": "sha256:94e61abe69de8b7dfef0546371bd500eea575a8548dad602deaca01d5ab17574",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 18,
@@ -216,7 +216,7 @@
     {
       "id": "document-raw-githubusercontent-com-4a57549bc02d",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-4a57549bc02d.json",
-      "digest": "sha256:0232d6f3009f5f834d8dacd3d67cccbbbb777ee2b9dd7172e0984639f7fb9936",
+      "digest": "sha256:adc47fcb8f50aeac74db78a5c720b86023cdb424ab500badc9c91a6b1273b10f",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 23,
@@ -231,7 +231,7 @@
     {
       "id": "document-raw-githubusercontent-com-4d70ee5c78be",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-4d70ee5c78be.json",
-      "digest": "sha256:43e109f7c220bc48f4178770d87277a473a8926ad512c1fec41ab0f800a80343",
+      "digest": "sha256:1a08cd48ae5e85673279b5c9fb4fe4787883a80a1fac0ffb4fd4d958dea35217",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 11,
@@ -245,7 +245,7 @@
     {
       "id": "document-raw-githubusercontent-com-5a833d664e43",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-5a833d664e43.json",
-      "digest": "sha256:6f442bff94baed701ac1e03eb0fe8ad9cdc5987fb65bf5820295eafdce435b49",
+      "digest": "sha256:2372672fdd3a25f4e9a93622422967a2f3af403fdecb7c74c6402c3a559c65f8",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 31,
@@ -260,7 +260,7 @@
     {
       "id": "document-raw-githubusercontent-com-5d36035d9e54",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-5d36035d9e54.json",
-      "digest": "sha256:0184ba7c7affd8057ebc7cdaf85ad4831ae1f43e61e975df34e4a6aa99fefce2",
+      "digest": "sha256:b7e996ac5cef67315101c6da2b336b6102666cb211957f0b2a4438e5b8106d46",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 65,
@@ -275,7 +275,7 @@
     {
       "id": "document-raw-githubusercontent-com-5f68066ac2b1",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-5f68066ac2b1.json",
-      "digest": "sha256:3dc5965633ed11977dac3f997148ef310d2caf93cf682628d5cc5d66e77c851f",
+      "digest": "sha256:6f2894d519b175d238344802003434fbb18d5fbe97f2a0fe2f899b265b33a81e",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 31,
@@ -289,7 +289,7 @@
     {
       "id": "document-raw-githubusercontent-com-64e3f75155f2",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-64e3f75155f2.json",
-      "digest": "sha256:3f061d7621d78bc999cd95ee65881086329d4965c1a8af8c0df0ea5e9b1febd5",
+      "digest": "sha256:39f7e4e6395f61dab95c7edcbcef288b1f602336e6ca960734688852658e59d6",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 75,
@@ -305,7 +305,7 @@
     {
       "id": "document-raw-githubusercontent-com-6d55b8d4dc04",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-6d55b8d4dc04.json",
-      "digest": "sha256:b9735ef5702f4f8080b0417a2e2d8db804e1430ade71de7bd67df183303e55e8",
+      "digest": "sha256:babe9c86dd89346a406888b46bb5eea737ae251fb60d56f3f2cdc015c8173ad9",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 39,
@@ -320,7 +320,7 @@
     {
       "id": "document-raw-githubusercontent-com-79b85dedaa74",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-79b85dedaa74.json",
-      "digest": "sha256:6bb876a892665eaf4874d01ef9caeb6c1d399ef4c9f38223b9b9438b899f22ca",
+      "digest": "sha256:f714b049fa83ac5b38b69a030d329f8e1e7fa5d4a7327808be8df10d96efa256",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 30,
@@ -335,7 +335,7 @@
     {
       "id": "document-raw-githubusercontent-com-88940a2c326c",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-88940a2c326c.json",
-      "digest": "sha256:556cbf9e1e07f134e739f478b7d7f2a528c51d4fff8e6eeb03219d3eaa6b3570",
+      "digest": "sha256:3c5eb030ffd05e01ae0d28ad0ebeb9533ffa979481d44f4d705f100923229291",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 43,
@@ -350,7 +350,7 @@
     {
       "id": "document-raw-githubusercontent-com-8c014affc1b4",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-8c014affc1b4.json",
-      "digest": "sha256:932647e7cd989301bf39c462e07db9d9dfc83396e3668c063c0d86df282bf6fa",
+      "digest": "sha256:556d7e26321a4166f31061bf3acc48d8922bfcaa350a7e0b5d68e2a5c96bb95f",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 22,
@@ -366,7 +366,7 @@
     {
       "id": "document-raw-githubusercontent-com-96ed37d93079",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-96ed37d93079.json",
-      "digest": "sha256:73fc8c06c0685a6b41cd89d42c17a8e4fb41853d3ad52c7022a55f5a9c1d0a3d",
+      "digest": "sha256:5ff5babfe818d39dd6b505f9484b12c0f0a3d590e16cf8b0593e789b9884f4af",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 19,
@@ -381,7 +381,7 @@
     {
       "id": "document-raw-githubusercontent-com-990eb98fae1c",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-990eb98fae1c.json",
-      "digest": "sha256:72ab226d8e2ed142d2e10287ced555e428c7137c3de1d1ccb3735a4d73f34710",
+      "digest": "sha256:07b6c19a43fdccd19583cce329cf7cd3bebee2e39593eec2149f61dd0960bd73",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 45,
@@ -396,7 +396,7 @@
     {
       "id": "document-raw-githubusercontent-com-a18c11ff4705",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-a18c11ff4705.json",
-      "digest": "sha256:90d9f4890e161de9097edb478b2529c7dc5461913a0d6f19da2605dd97034efe",
+      "digest": "sha256:314a502cf82657679fd69b7eb0949f170f93420344538061973c8075cd7c7ce0",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 15,
@@ -410,7 +410,7 @@
     {
       "id": "document-raw-githubusercontent-com-a472c24e7f64",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-a472c24e7f64.json",
-      "digest": "sha256:dd9025f32577973ecaf04688d88929ec29b68b571978b6614725e3205ac1c57b",
+      "digest": "sha256:8713e702f20110164a438bae79b5db4881482af3bfee40787318c1604ed5ee3c",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 99,
@@ -428,7 +428,7 @@
     {
       "id": "document-raw-githubusercontent-com-ab5093f6e02b",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-ab5093f6e02b.json",
-      "digest": "sha256:319efdc5f7351f8518579da29df933473ed21d451e4429d6e3a0a711e4b65bea",
+      "digest": "sha256:d216c94ae4bd86f36ad673b04bac72b55d5334fc3a4dd9fb6a9694dd6379a0c7",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 84,
@@ -445,7 +445,7 @@
     {
       "id": "document-raw-githubusercontent-com-afe2da2bd421",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-afe2da2bd421.json",
-      "digest": "sha256:3fe0d28d0d3f8a7dcedcd02603560eacdb22f6030136cb0d934f441c2cfeeda7",
+      "digest": "sha256:c7b7305a3e3cd624945a735c0cc5bf0a32f1fb2855fc5b0e7db00c3ddffdb0ce",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 16,
@@ -459,7 +459,7 @@
     {
       "id": "document-raw-githubusercontent-com-b985ecd8323e",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-b985ecd8323e.json",
-      "digest": "sha256:3f733877fbf092d4cebeada0fa8598cce588a60fdd783d8b7410198db7b89a4b",
+      "digest": "sha256:37352a220f0a74e6aac95595641c4ab4ac9c3b33dfd0d3f9949aa6ec57471f83",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 47,
@@ -476,7 +476,7 @@
     {
       "id": "document-raw-githubusercontent-com-c152c9a39fa3",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-c152c9a39fa3.json",
-      "digest": "sha256:f1bb48b433a2bdbb8f4b3624a3fba084f255a424ff5b89c1c1c94203ad801394",
+      "digest": "sha256:80e343726bae4d4b97190b63b27b53ee9fbaa844517d655ad9f06a909d0e09ec",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 14,
@@ -491,7 +491,7 @@
     {
       "id": "document-raw-githubusercontent-com-c2d1b58c34f1",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-c2d1b58c34f1.json",
-      "digest": "sha256:43e9b08896c1ff25d7e7638a4579e8370c61767347e808f5da32b90d262f8dc0",
+      "digest": "sha256:63cd9c037067e571fffde34181a3bdb544a496fdbae9d95f5fb45505d71cca0e",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 37,
@@ -508,7 +508,7 @@
     {
       "id": "document-raw-githubusercontent-com-cbc5c5dc617d",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-cbc5c5dc617d.json",
-      "digest": "sha256:66373d9f0a80cbb3c211ad13cdc0a6689269c5ade021384ee31853051abdb957",
+      "digest": "sha256:af3b73ca6e04e82fb388f0a652875e160a1510ea07b9eafe9d55dd76fdcfdbe3",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 57,
@@ -524,7 +524,7 @@
     {
       "id": "document-raw-githubusercontent-com-ce3dad9f7b32",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-ce3dad9f7b32.json",
-      "digest": "sha256:20827a319d3db81b3920ddf52aeb17afc2929ace58a9a32ab505f95da5c1ad24",
+      "digest": "sha256:f7002f9efd608701824d26721ac000be5def76c41a3fd1dd5ad888671b2dca6f",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 48,
@@ -540,7 +540,7 @@
     {
       "id": "document-raw-githubusercontent-com-d0e65e6c1f81",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d0e65e6c1f81.json",
-      "digest": "sha256:3b9a955cba1bd8a9c99701e70c1e920ed33d7625f67e15d290b0ed77a7cbf9c1",
+      "digest": "sha256:1d2fe60902c334e8849bc36428db3fc8b3eed90f8bc11a5f3089ed0657bc36ab",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 24,
@@ -555,7 +555,7 @@
     {
       "id": "document-raw-githubusercontent-com-d143bfa5a0fe",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d143bfa5a0fe.json",
-      "digest": "sha256:e509afe47a5933b1ee158cca94852b291aa49bdb404586b6e9f030a6a5a76efa",
+      "digest": "sha256:9c32eb58c3e12a02b759c8f0ce4981a423e73c199b575dd8afdcb2a1cfa2bfba",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 38,
@@ -569,7 +569,7 @@
     {
       "id": "document-raw-githubusercontent-com-d7dd809cbe56",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d7dd809cbe56.json",
-      "digest": "sha256:0104405acc128fe5489c9796c20a2909ad0eb9c172559b74405199c0b30bdf24",
+      "digest": "sha256:8a9fa3ea8865b6c78a7181ebbac747039969ab773f86a27a9aaa36a04d694e26",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 47,
@@ -585,7 +585,7 @@
     {
       "id": "document-raw-githubusercontent-com-d8921627de65",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d8921627de65.json",
-      "digest": "sha256:d857899913b920d0845342560f73c1a8a2c774edf0014af7c6bb3da0aec5a25e",
+      "digest": "sha256:a71aef81836178f3fdb2841fdc466f1856f6ea0e5d3173657ff7d8cd7fc18e4c",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 41,
@@ -600,7 +600,7 @@
     {
       "id": "document-raw-githubusercontent-com-d9afd28edcfa",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-d9afd28edcfa.json",
-      "digest": "sha256:301bc54fb1b236a8b92adbd1f817fcb7af04fc734c022700e20d670618416b07",
+      "digest": "sha256:86c646f61a94236c7ed207f9c5123aefb2c2ffe2673c867eed38da929a13a120",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 9,
@@ -613,7 +613,7 @@
     {
       "id": "document-raw-githubusercontent-com-da420a7f792d",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-da420a7f792d.json",
-      "digest": "sha256:180ea9d05aaf7b71ea4eb64b011875aac0f263f3a6a75f2bc4b31acde48d592f",
+      "digest": "sha256:332c4227e774dad0b47f6e5074b0f7f97c9ed0447f6a049b79e23ebf0656ba69",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 14,
@@ -627,7 +627,7 @@
     {
       "id": "document-raw-githubusercontent-com-e1309abcc960",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e1309abcc960.json",
-      "digest": "sha256:0839a532d01988b45fc07c0ee63e4a88f52bf170d61a9ebeff4a235cb45d13ca",
+      "digest": "sha256:598a078de316435f5236743070f28bb00c9f97deb1a0a1d76e6064aacdfb0281",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 13,
@@ -641,7 +641,7 @@
     {
       "id": "document-raw-githubusercontent-com-e2f2c8236fbe",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e2f2c8236fbe.json",
-      "digest": "sha256:78dbcd59c3e4c3f5542e95896c25c85fe371ea7ff547e267762a715ad2c7336d",
+      "digest": "sha256:9caac5ec140f4a5a25454e8d9b6ddd233d5b372aa90031c012e4be7fed12bd74",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 14,
@@ -656,7 +656,7 @@
     {
       "id": "document-raw-githubusercontent-com-e439566e98f0",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e439566e98f0.json",
-      "digest": "sha256:418565dc5a10d67bd18caa0a7d6c30b2e7c35d1cc91265f0dce9b5b4bb1761ed",
+      "digest": "sha256:3b05456b1f6b368a39338d7314d3ddfe31b35b927c6d47768ef0af88b5e70115",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 26,
@@ -671,7 +671,7 @@
     {
       "id": "document-raw-githubusercontent-com-e473db6f025d",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e473db6f025d.json",
-      "digest": "sha256:ce134c80f80a19eac672cb378fafc46a1ac22cb880d1a8090080eacd48866cb5",
+      "digest": "sha256:8cd75929ffcc50b0f90cf551586b8a51a705b4c832514b6e3d33e9dff1b195e8",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 51,
@@ -687,7 +687,7 @@
     {
       "id": "document-raw-githubusercontent-com-e7a419b274a8",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e7a419b274a8.json",
-      "digest": "sha256:c0f29b702b053e752b12451f7f18d172e37002a6f4723e916d4ff794683535a0",
+      "digest": "sha256:7678ee4e9d2e6ee4f012709e90c573a649b8425965be7df1bead7f5d69b6cb1e",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 13,
@@ -702,7 +702,7 @@
     {
       "id": "document-raw-githubusercontent-com-e98b052f9f88",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-e98b052f9f88.json",
-      "digest": "sha256:178e33234ba90c5e58b040dc9d849826f628e03417f8c5e51369b250ca27d002",
+      "digest": "sha256:d75a97d30769fd093b3e3c30b3e004571706206f5c6ae8ba3ec6545940bf5bdf",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 32,
@@ -717,7 +717,7 @@
     {
       "id": "document-raw-githubusercontent-com-ed2dc6b0c3ff",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-ed2dc6b0c3ff.json",
-      "digest": "sha256:306c11d8a3d7b964111a17376b97c650303bd1ff39013f167bb70fd153447dd4",
+      "digest": "sha256:e3d666bdc6d573a3099c608b4855986090e0f2fff1c761dbb4dec410df167a4f",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 24,
@@ -732,7 +732,7 @@
     {
       "id": "document-raw-githubusercontent-com-efa279479f6d",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-efa279479f6d.json",
-      "digest": "sha256:8807d3ea9e190e6f33357b8146dc4b9c498b54a2f6d27db3eab9398a141cb569",
+      "digest": "sha256:a6a4e8446f16b9083074c05394775caf48e7f41443fa7449b33eeb7632a394c2",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 9,
@@ -745,7 +745,7 @@
     {
       "id": "document-raw-githubusercontent-com-f186c08d2e94",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-f186c08d2e94.json",
-      "digest": "sha256:cae75ec31f5100b75d82d5c3948ff41b26b048d1cc07d6734914ac7ceddc0904",
+      "digest": "sha256:e3fc79cd12ede5ab5d2be73631c107ece19ed4d994c0b97a41d98db6d49a1d41",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 62,
@@ -761,7 +761,7 @@
     {
       "id": "document-raw-githubusercontent-com-f449c49070a0",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-f449c49070a0.json",
-      "digest": "sha256:edf7c2445fce823554e767c01ecb4fc923908e9a0a5017c7e539cf31d2f6d27f",
+      "digest": "sha256:89fd69832f5f8e914058e465a5ea8512aaea5712fde6f0a7847c549a80794aac",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 4,
@@ -774,7 +774,7 @@
     {
       "id": "document-raw-githubusercontent-com-f621bb05363a",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-f621bb05363a.json",
-      "digest": "sha256:347a30269494025fda414e415e735962a68445de2f19f335d19ec85fbc2c06f2",
+      "digest": "sha256:107f74819b5e0e9cf51fb08b176138a17357c708a7b97b9261af4453b0b8bdc1",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 55,
@@ -790,7 +790,7 @@
     {
       "id": "document-raw-githubusercontent-com-fcfc42f881a0",
       "path": "authority/body-inventory-draft/document-raw-githubusercontent-com-fcfc42f881a0.json",
-      "digest": "sha256:d43d14098ae67218d33944ef4ed1c9fe82ae209aefd32153c4842da81d77c6a7",
+      "digest": "sha256:c97d122c072d6ed53e40d23d80d8fa8904992b96946205354e81a066ff5ea879",
       "fetch_status": "matched",
       "source_entries": 1,
       "raw_anchors": 9,

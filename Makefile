@@ -1,4 +1,4 @@
-.PHONY: test skill-eval atlas-validate repo-validate authority-locators authority-body non-regression parity neutral-language legal check labs amqp10-lab plugin-protocol-lab tls-lab observability-lab upgrade-lab lock-sources completion
+.PHONY: test skill-eval atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal check labs amqp10-lab plugin-protocol-lab tls-lab observability-lab upgrade-lab lock-sources completion
 
 export GOCACHE := $(CURDIR)/.cache/go-build
 export GOMODCACHE := $(CURDIR)/.cache/go-mod
@@ -22,6 +22,10 @@ authority-body:
 	python3 scripts/test-authority-body-inventory.py
 	python3 scripts/validate-authority-body-inventory.py
 
+authority-review:
+	python3 scripts/test-authority-review-queue.py
+	python3 scripts/validate-authority-review-queue.py
+
 non-regression:
 	python3 scripts/validate-non-regression.py
 
@@ -38,7 +42,7 @@ legal:
 	test -s sbom.spdx.json
 	test -s third_party/sbom.cdx.json
 
-check: test skill-eval atlas-validate repo-validate authority-locators authority-body non-regression parity neutral-language legal
+check: test skill-eval atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal
 
 labs:
 	bash scripts/run-labs.sh

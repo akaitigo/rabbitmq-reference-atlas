@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "queue_id": "authority-review-847612e358adc84d78cc",
+  "batch_id": "review-p2-document-root-16",
+  "status": "pending-human",
+  "machine_assistance": "priority-cluster-batch-proposals-only",
+  "semantic_decisions": "none",
+  "items": [
+    {
+      "anchor_id": "anchor-3331cfbee7aa4dbaab15",
+      "document_id": "document-raw-githubusercontent-com-ce3dad9f7b32",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/cli.md",
+      "source_ids": [
+        "rabbitmq-4.3-cli"
+      ],
+      "locked_source_digest": "sha256:a9abe820326a30b61901d959597e93580cca07be0d8b15182a5c4593863dadcb",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "document-root",
+      "locator_kind": "document-root",
+      "selector": "document-root",
+      "selector_kind": "document-root",
+      "tag": "document",
+      "heading_level": null,
+      "parent_anchor_id": null,
+      "context_start": 0,
+      "context_end": 32662,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:a9abe820326a30b61901d959597e93580cca07be0d8b15182a5c4593863dadcb",
+      "label_digest": null,
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 2,
+      "priority_proposal_reasons": [
+        "structural-or-document-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p2-document-root-16",
+      "state": "pending-human"
+    }
+  ]
+}

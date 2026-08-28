@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "inventory_id": "rabbitmq-authority-body-inventory-v1",
-  "policy": "human-recorded-decisions-only",
-  "decisions": []
+  "status": "superseded",
+  "decision_ledger": "authority/reviews/decisions.json",
+  "reason": "Authority review queue導入前の空ledgerです。Semantic decisionは新ledgerだけを正本とします。"
 }

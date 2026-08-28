@@ -18,6 +18,10 @@ reference:
   authority_raw_anchor_population_unit: unique-document-fixed-selector-raw-anchor
   raw_anchors_count_toward_semantic_surface: false
   raw_anchors_count_toward_depth: false
+  authority_review_queue_source_commit: de2f016b8b44ea67afdb08c0552044807505984e
+  authority_review_queue_population_unit: stable-raw-anchor-human-review-queue
+  queued_anchor_count_toward_semantic_surface: false
+  queued_anchor_count_toward_depth: false
   rule: FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。
 fixture_mapping:
 - source: fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json
@@ -85,6 +89,19 @@ axes:
     promoted_behavior_ids: 0
     raw_anchors_count_toward_surface_inventory: false
     raw_anchors_count_toward_depth: false
+    review_queue_id: authority-review-847612e358adc84d78cc
+    queued_raw_anchors: 1579
+    pending_human_queue_items: 1579
+    human_review_decisions: 0
+    proposed_priority_counts:
+      '0': 54
+      '1': 1417
+      '2': 108
+    proposed_candidate_clusters: 85
+    proposed_batches: 171
+    stale_document_holds: 2
+    queued_anchor_count_toward_semantic_surface: false
+    queued_anchor_count_toward_depth: false
     existing_reference_edges: 206
     located_reference_edges: 137
     fragment_not_found: 69
@@ -2339,22 +2356,40 @@ axes:
     - authority/body-inventory.snapshot.json
     - artifacts/authority-body-non-regression-report.json
     gap_ids: []
+  - id: authority.human-review-queue
+    required: 全eligible raw anchorをstable ID、source/tool digest、locator付きの人手Review queueへ一度ずつ投影し、stale documentをholdする。
+    observed: 1579/1579 anchors; 2 stale holds
+    status: pass
+    evidence:
+    - authority/review-queue.snapshot.json
+    - authority/review-queue-draft/
+    - authority/reviews/decisions.json
+    gap_ids: []
+  - id: authority.review-queue-accounting
+    required: priority、cluster、batchを機械提案に限定し、Queue件数をSemantic Surface数またはDepth達成へ算入しない。
+    observed: machine proposals only; semantic surfaces=0; depth credit=0
+    status: pass
+    evidence:
+    - authority/review-queue.snapshot.json
+    - baseline/authority-review-prequeue-v1.json
+    gap_ids: []
   - id: authority.surface-exhaustiveness
     required: Authority本文全体からSurfaceを抽出し、未分類をゼロにする。
     observed: false
     status: gap
     evidence:
     - authority/body-inventory.snapshot.json
-    - authority/body-review-decisions.json
+    - authority/review-queue.snapshot.json
+    - authority/reviews/decisions.json
     gap_ids:
     - authority.semantic-surfaces-exhaustive
   - id: authority.human-review
     required: 各raw anchorを人が本文解釈し、Protocol/behavior Surfaceへ昇格または理由付き却下する。
-    observed: 0/1579
+    observed: 0/1579; 1579 pending
     status: gap
     evidence:
-    - authority/body-inventory.snapshot.json
-    - authority/body-review-decisions.json
+    - authority/review-queue.snapshot.json
+    - authority/reviews/decisions.json
     gap_ids:
     - authority.human-review.document-raw-githubusercontent-com-0b23e79d66e9.anchor-42a5474f747e307a57d7
     - authority.human-review.document-raw-githubusercontent-com-0b23e79d66e9.anchor-c62468407d54c2edd3ff

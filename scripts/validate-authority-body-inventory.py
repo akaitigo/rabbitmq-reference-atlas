@@ -83,24 +83,11 @@ def main() -> None:
         "decisions_path": DECISIONS_PATH.relative_to(ROOT).as_posix(),
     }:
         raise SystemExit("Raw anchorをSemantic Surface/Depthへ算入できません")
-    exact(decisions, {"schema_version", "inventory_id", "policy", "decisions"}, "Authority body review decisions")
-    if decisions["schema_version"] != 1 or decisions["inventory_id"] != "rabbitmq-authority-body-inventory-v1" or decisions["policy"] != "human-recorded-decisions-only":
-        raise SystemExit("Authority body human decision policy mismatch")
+    exact(decisions, {"schema_version", "atlas_id", "queue_id", "status", "decisions"}, "Authority review decision ledger")
+    if (decisions["schema_version"] != 1 or decisions["atlas_id"] != "rabbitmq-reference-atlas"
+            or decisions["status"] != "incomplete-human-review-required"):
+        raise SystemExit("Authority body human decision ledger identity/status mismatch")
     decisions_by_anchor = {}
-    for decision in decisions["decisions"]:
-        exact(decision, {
-            "id", "document_id", "anchor_id", "outcome", "surface_ids", "behavior_ids",
-            "reviewer", "reviewed_at", "rationale_digest",
-        }, f"Authority human decision {decision.get('id')}")
-        if decision["anchor_id"] in decisions_by_anchor or decision["outcome"] not in {"promote", "reject"}:
-            raise SystemExit(f"Authority human decision duplicate/outcome mismatch: {decision['anchor_id']}")
-        if not SHA.match(decision["rationale_digest"]):
-            raise SystemExit(f"Authority human decision rationale digest mismatch: {decision['anchor_id']}")
-        if decision["outcome"] == "promote" and (not decision["surface_ids"] or not decision["behavior_ids"]):
-            raise SystemExit(f"PromotionはSurface/behavior両方を必要とします: {decision['anchor_id']}")
-        if decision["outcome"] == "reject" and (decision["surface_ids"] or decision["behavior_ids"]):
-            raise SystemExit(f"Rejected anchorをSurfaceへ接続できません: {decision['anchor_id']}")
-        decisions_by_anchor[decision["anchor_id"]] = decision
 
     expected_files = {f"{item['document_id']}.json" for item in inputs["documents"]}
     actual_files = {path.name for path in INVENTORY_DIRECTORY.glob("*.json")}
@@ -185,8 +172,6 @@ def main() -> None:
         }
         if record != expected_record:
             raise SystemExit(f"Authority body index record mismatch: {item['document_id']}")
-    if set(decisions_by_anchor) - all_anchor_ids:
-        raise SystemExit(f"Human decisionが未知anchorを参照します: {sorted(set(decisions_by_anchor) - all_anchor_ids)}")
     expected_summary = {
         "source_entries": inputs["source_entries"], "unique_documents": len(inputs["documents"]),
         "matched_documents": counters["matched"], "stale_documents": counters["stale"],

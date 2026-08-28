@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "queue_id": "authority-review-847612e358adc84d78cc",
+  "batch_id": "review-p0-markdown-atx-heading-3f",
+  "status": "pending-human",
+  "machine_assistance": "priority-cluster-batch-proposals-only",
+  "semantic_decisions": "none",
+  "items": [
+    {
+      "anchor_id": "anchor-f8db413d164e35332fa3",
+      "document_id": "document-raw-githubusercontent-com-79b85dedaa74",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md",
+      "source_ids": [
+        "rabbitmq-4.3-queues"
+      ],
+      "locked_source_digest": "sha256:70a81800b3df6e9e0295391a2fae37f67421af5b097d112e06a3ac9ba3087025",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#durability",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-314a31fab2fe3ed0cd7e",
+      "context_start": 12033,
+      "context_end": 17181,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:fb78d3fb7198bfd2a6e8936993fe9dfea18f07328eacb9a5828dc56792f147ae",
+      "label_digest": "sha256:a319657b629b2a1cde254a4f0f4746d0cab89de30dfad4fc57d0e12fe42b59f9",
+      "existing_reference_edge_ids": [
+        "edge.queue.durability.rabbitmq-4.3-queues"
+      ],
+      "proposed_priority": 0,
+      "priority_proposal_reasons": [
+        "existing-domain-reference-locator-match"
+      ],
+      "proposed_candidate_cluster_id": "candidate-cluster-fb024dca6d44f82e65cb",
+      "proposed_batch_id": "review-p0-markdown-atx-heading-3f",
+      "state": "pending-human"
+    }
+  ]
+}

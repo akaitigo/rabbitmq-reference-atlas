@@ -109,11 +109,6 @@ def main() -> None:
         } for artifact in artifacts],
     }
     INVENTORY_INDEX.write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    if not DECISIONS_PATH.exists():
-        DECISIONS_PATH.write_text(json.dumps({
-            "schema_version": 1, "inventory_id": "rabbitmq-authority-body-inventory-v1",
-            "policy": "human-recorded-decisions-only", "decisions": [],
-        }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Authority body inventory: matched={status_counts['matched']}/{len(artifacts)} stale={status_counts['stale']} failed={status_counts['failed']} raw_anchors={len(all_anchors)} pending_human={len(all_anchors)} semantic_promotions=0")
 
 

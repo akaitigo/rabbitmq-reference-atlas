@@ -119,7 +119,8 @@ def main() -> int:
     accounting = body_inventory["semantic_accounting"]
     if (accounting["raw_anchors_count_toward_surface_inventory"] is not False
             or accounting["raw_anchors_count_toward_depth"] is not False
-            or accounting["promotion_requires"] != "recorded-human-decision"):
+            or accounting["promotion_requires"] != "recorded-human-decision"
+            or accounting["decisions_path"] != "authority/reviews/decisions.json"):
         fail(errors, "RabbitMQ raw anchors cannot count as Semantic Surface or Depth")
     if (body_inventory["summary"]["pending_human_anchors"] != body_inventory["summary"]["raw_anchors"]
             or body_inventory["summary"]["human_reviewed_anchors"] != 0
@@ -130,6 +131,39 @@ def main() -> int:
             or parity["reference"].get("raw_anchors_count_toward_semantic_surface") is not False
             or parity["reference"].get("raw_anchors_count_toward_depth") is not False):
         fail(errors, "RabbitMQ depth parity raw anchor accounting mismatch")
+    queue_reference = load(ROOT / "parity/frontend-depth-reference.yaml")["authority_review_queue_reference"]
+    if queue_reference["source_commit"] != "de2f016b8b44ea67afdb08c0552044807505984e":
+        fail(errors, "RabbitMQ Authority review queue uses an unexpected FE reference commit")
+    if (queue_reference["population_unit"] != "stable-raw-anchor-human-review-queue"
+            or queue_reference["machine_assistance"] != "priority-cluster-batch-proposals-only"
+            or queue_reference["semantic_decisions"] != "human-primary-source-review-only"
+            or queue_reference["queued_anchor_count_toward_semantic_surface"] is not False
+            or queue_reference["queued_anchor_count_toward_depth"] is not False
+            or queue_reference["stale_policy"] != "hold-until-source-relock"):
+        fail(errors, "RabbitMQ Authority review queue reference boundary mismatch")
+    review_queue = load(ROOT / "authority/review-queue.snapshot.json")
+    queue_accounting = review_queue["semantic_accounting"]
+    queue_summary = review_queue["summary"]
+    if (review_queue["decision_ledger"] != "authority/reviews/decisions.json"
+            or review_queue["machine_assistance"] != "dedupe-candidate-cluster-priority-and-batch-proposals-only"
+            or review_queue["semantic_decisions"] != "human-primary-source-review-only"
+            or queue_accounting["queued_anchor_count_toward_semantic_surface"] is not False
+            or queue_accounting["queued_anchor_count_toward_depth"] is not False
+            or queue_accounting["priority_cluster_batch_are"] != "machine-proposals-only"
+            or queue_accounting["promotion_requires"] != "valid-human-primary-source-decision"):
+        fail(errors, "RabbitMQ Authority review queue semantic/accounting boundary mismatch")
+    if (queue_summary["queued_anchors"] != body_inventory["summary"]["raw_anchors"]
+            or queue_summary["pending_human"] != queue_summary["queued_anchors"]
+            or queue_summary["human_reviewed"] != 0 or queue_summary["decisions"] != 0
+            or queue_summary["stale_document_holds"] != body_inventory["summary"]["stale_documents"]
+            or queue_summary["promoted_authority_surfaces"] != 0
+            or queue_summary["promoted_atomic_behaviors"] != 0
+            or sum(queue_summary["proposed_priority_counts"].values()) != queue_summary["queued_anchors"]):
+        fail(errors, "RabbitMQ Authority review queue must start complete and entirely pending-human")
+    if (parity["reference"].get("authority_review_queue_source_commit") != queue_reference["source_commit"]
+            or parity["reference"].get("queued_anchor_count_toward_semantic_surface") is not False
+            or parity["reference"].get("queued_anchor_count_toward_depth") is not False):
+        fail(errors, "RabbitMQ depth parity review queue accounting mismatch")
     if not (ROOT / skill["router"]["path"]).exists():
         fail(errors, "router path missing")
     expected_lock_digest = sha(ROOT / "sources.lock.yaml")

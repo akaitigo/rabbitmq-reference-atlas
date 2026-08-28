@@ -31,7 +31,9 @@
 
 `authority/extraction.snapshot.json`は、`frontend-behavior-atlas@cabf687bab769b17928d950acc416f3f77eb4ca3`のcopyright-safe Locator契約を適用します。第三者本文やexcerptは保存せず、URL、固定digest、取得metadata、Locator byte offset、context/heading digestだけを保持します。現在は50 Source中48件がdigest一致、Docker packagingの2 Sourceがstale、206既存reference edge中137件のLocatorを確認し、69件は未解決です。さらに一致した48 body全体を1,471の非重複Sectionへpartitionし、Section offset/digestだけを保持します。これはSemantic Surface分類ではないため、本文全体のexhaustive抽出を`false`、Human reviewを0件として維持し、Protocol、Plugin、Operatorの各denominatorを`partial`とします。
 
-`authority/body-inventory.snapshot.json`は、`frontend-behavior-atlas@841ec2fa399606a10305021a8bcd396713b8cee5`のAuthority body denominator契約を適用します。50 unique documentの固定bodyに対してRabbitMQ資料形式用の固定selector contractを使い、48一致documentから1,579 raw anchor候補を列挙しました。Artifactにはstable ID、tool/source digest、fragmentまたはbyte offset、context/label digestだけを保存し、第三者本文は保存しません。全1,579件は`pending-human`で、2 stale documentは抽出を保留しています。raw anchor数はSemantic Surface数にもDepth達成にも算入せず、`authority/body-review-decisions.json`へ人手decisionが記録された候補だけをProtocol/behavior Surfaceへ昇格できます。初回候補集合は`baseline/authority-body-inventory-v1.json`で固定し、`make authority-body`が無断削除・置換と本文field混入を拒否します。
+`authority/body-inventory.snapshot.json`は、`frontend-behavior-atlas@841ec2fa399606a10305021a8bcd396713b8cee5`のAuthority body denominator契約を適用します。50 unique documentの固定bodyに対してRabbitMQ資料形式用の固定selector contractを使い、48一致documentから1,579 raw anchor候補を列挙しました。Artifactにはstable ID、tool/source digest、fragmentまたはbyte offset、context/label digestだけを保存し、第三者本文は保存しません。全1,579件は`pending-human`で、2 stale documentは抽出を保留しています。raw anchor数はSemantic Surface数にもDepth達成にも算入せず、Queueの人手decisionが整合した候補だけをAuthority SurfaceまたはAtomic Behaviorへ昇格できます。初回候補集合は`baseline/authority-body-inventory-v1.json`で固定し、`make authority-body`が無断削除・置換と本文field混入を拒否します。
+
+`authority/review-queue.snapshot.json`は、`frontend-behavior-atlas@de2f016b8b44ea67afdb08c0552044807505984e`のReview Queue契約を適用します。1,579 raw anchorをstable IDのまま171 batchへ一度ずつ投影し、全件を`pending-human`で開始しました。priority、85 candidate cluster、batchは確認順と重複候補の機械提案だけで、Semantic decisionまたはDepth達成には算入しません。2 stale documentはholdです。一次資料を人が確認し、reviewer、時刻、理由と理由digest、source/tool/context digest、locator、旧anchor→新Authority Surface/Atomic Behavior mapping、result集合がすべて整合するdecisionだけを`authority/reviews/decisions.json`で受理します。詳細は`docs/AUTHORITY_REVIEW_WORKFLOW.md`に固定します。
 
 ## 検証
 
@@ -53,6 +55,7 @@ make labs
 - Authority Surface Inventory: `surface.inventory.yaml`
 - Copyright-safe Authority Locator Audit: `authority/extraction.snapshot.json`
 - Authority Raw Anchor Inventory: `authority/body-inventory.snapshot.json`
+- Authority Human Review Queue: `authority/review-queue.snapshot.json`
 - Open Verification Plan: `verification.plan.yaml`
 - Depth Parity: `rabbitmq-depth-parity.yaml`
 - Skill Package: `skill.package.yaml`

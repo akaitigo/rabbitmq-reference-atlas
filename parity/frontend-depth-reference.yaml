@@ -55,6 +55,31 @@ authority_body_inventory_reference:
       digest: sha256:22b4eefbadff2e2c0117b70584a2bc5e9ae8ed3997f3dcb35e01358db2ddd82c
     - path: migrations/authority-body-inventory-v1.json
       digest: sha256:d6a3201d4cc4d7c7657821ff7bc49ad5bcafdaaab95a7d856a996797568598b5
+authority_review_queue_reference:
+  source_commit: de2f016b8b44ea67afdb08c0552044807505984e
+  population_unit: stable-raw-anchor-human-review-queue
+  machine_assistance: priority-cluster-batch-proposals-only
+  semantic_decisions: human-primary-source-review-only
+  queued_anchor_count_toward_semantic_surface: false
+  queued_anchor_count_toward_depth: false
+  stale_policy: hold-until-source-relock
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:21068ce29adaca303b1cbc40a92d729aecbd7d732db8a1fdc775d20c100a9bb3
+    - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+      digest: sha256:4887965a9e7c9fba846bea35e3a04753ba2f81a321d66ec67d23a819c394e0a7
+    - path: authority/review-queue.snapshot.json
+      digest: sha256:9df1d3669135bf9612eb971b2e8279f8419deb3d0f484c7700ac1a3c19612484
+    - path: authority/reviews/decisions.json
+      digest: sha256:a6a9d05f74e022e3632443ebc0a311f5ca193b9328a995aafb8d4b0170783f08
+    - path: scripts/lib/authority-review-queue.ts
+      digest: sha256:6a0d44da874e7332d2212416bcbaa9ca93ab7a2cda9d5c28b846fecb847c2187
+    - path: scripts/generate-authority-review-queue.ts
+      digest: sha256:0ddb9e1ed3221c89e68449914e37a94a9104123d3ae0578b2e0a4aed3f57f291
+    - path: scripts/verify-authority-review-queue.ts
+      digest: sha256:3849bd25a409742acdcbb8e028a65cf0d51249ac29c23ba606a14d63b81524f9
+    - path: scripts/test-authority-review-queue.ts
+      digest: sha256:cd6ffd8860645b70f85feb262fffc903d3b0a0aa96c6f9a7181f6ed895e965ec
 denominator_policy:
   source: authority-derived-subject-surface-inventory
   transplant_absolute_counts: false
