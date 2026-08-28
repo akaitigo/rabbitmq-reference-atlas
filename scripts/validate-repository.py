@@ -164,6 +164,16 @@ def main() -> int:
             or parity["reference"].get("queued_anchor_count_toward_semantic_surface") is not False
             or parity["reference"].get("queued_anchor_count_toward_depth") is not False):
         fail(errors, "RabbitMQ depth parity review queue accounting mismatch")
+    skill_reference = load(ROOT / "parity/frontend-depth-reference.yaml")["skill_eval_reference"]
+    if (skill_reference["source_commit"] != "8a9e34a89a55cc53702032783c06ede7246a286f"
+            or skill_reference["matrix_unit"] != "8-outcomes-by-14-surfaces"
+            or skill_reference["matrix_pass_is_completion"] is not False
+            or skill_reference["independent_agent_forward_eval_required"] is not True):
+        fail(errors, "RabbitMQ Skill Eval reference contract mismatch")
+    if (parity["reference"].get("skill_eval_source_commit") != skill_reference["source_commit"]
+            or parity["reference"].get("skill_eval_matrix_pass_is_completion") is not False
+            or parity["reference"].get("skill_eval_independent_agent_forward_required") is not True):
+        fail(errors, "RabbitMQ depth parity Skill Eval reference mismatch")
     if not (ROOT / skill["router"]["path"]).exists():
         fail(errors, "router path missing")
     expected_lock_digest = sha(ROOT / "sources.lock.yaml")
@@ -222,6 +232,82 @@ def main() -> int:
                 fail(errors, f"non-pass evidence {evidence_id} connected to covered target {target['id']}")
         if target["state"] == "covered" and (not target["claim_ids"] or not target["evidence_ids"]):
             fail(errors, f"covered target lacks claim/evidence: {target['id']}")
+
+    routing_eval_path = ROOT / "evals/rabbitmq-reference-atlas.skill-routing-eval.json"
+    forward_eval_path = ROOT / "evals/rabbitmq-reference-atlas.independent-agent-forward-eval.json"
+    core_eval_path = ROOT / "evals/rabbitmq-reference-atlas.definitive-skill-eval.json"
+    if not routing_eval_path.is_file() or not forward_eval_path.is_file() or not core_eval_path.is_file():
+        fail(errors, "definitive routing or independent forward eval artifact missing")
+    else:
+        routing_eval = json.loads(routing_eval_path.read_text())
+        forward_eval = json.loads(forward_eval_path.read_text())
+        core_eval = json.loads(core_eval_path.read_text())
+        matrix = routing_eval.get("matrix", [])
+        boundaries = routing_eval.get("boundary_cases", [])
+        target_states = routing_eval.get("target_state_inventory", {}).get("targets", [])
+        summary = routing_eval.get("summary", {})
+        if (len(matrix) != 112 or summary.get("outcomes") != 8 or summary.get("surfaces") != 14
+                or summary.get("matrix_cells") != 112 or summary.get("contract_passed") != 112):
+            fail(errors, "definitive Skill Eval must preserve the complete 8 Outcome × 14 Surface matrix")
+        if len({item.get("id") for item in matrix}) != 112:
+            fail(errors, "definitive Skill Eval matrix IDs are duplicate or incomplete")
+        if len(target_states) != len(coverage["targets"]) or {item.get("id") for item in target_states} != {item["id"] for item in coverage["targets"]}:
+            fail(errors, "definitive Skill Eval does not record every Coverage Target state")
+        target_index = {item["id"]: item for item in coverage["targets"]}
+        for item in target_states:
+            target = target_index.get(item["id"])
+            if not target or item.get("state") != target["state"] or item.get("evidence_ids") != target["evidence_ids"]:
+                fail(errors, f"Skill Eval Target state binding mismatch: {item.get('id')}")
+        for item in matrix:
+            target_binding = item.get("target_binding")
+            if item.get("routing_gap"):
+                if target_binding is not None or item.get("closure_eligible") is not False:
+                    fail(errors, f"Skill Eval routing gap is not fail-closed: {item.get('id')}")
+            elif target_binding is None or target_binding.get("id") not in target_index:
+                fail(errors, f"Skill Eval routed cell lacks real Target: {item.get('id')}")
+            elif target_binding.get("state") != target_index[target_binding["id"]]["state"]:
+                fail(errors, f"Skill Eval routed Target state drift: {item.get('id')}")
+            for binding in item.get("evidence_bindings", []):
+                path = ROOT / binding["path"]
+                if not path.is_file() or sha(path) != binding["digest"] or binding["id"] not in evidence_records:
+                    fail(errors, f"Skill Eval Evidence binding drift: {item.get('id')}:{binding.get('id')}")
+            if item.get("closure_eligible"):
+                if (target_binding.get("state") != "covered"
+                        or item.get("variant_binding", {}).get("state") != "covered"
+                        or item.get("authority_binding_status") != "exact-primary-authority"
+                        or not item.get("broker_binding", {}).get("runtime_proven")
+                        or not item.get("protocol_binding", {}).get("runtime_proven")
+                        or not item.get("evidence_bindings")):
+                    fail(errors, f"Skill Eval cell claims Closure without full runtime bindings: {item.get('id')}")
+        required_boundary_reasons = {
+            "unauthorized-mutation", "external-human-authority-decision-required",
+            "stale-source-relock-explicit-procedure-required",
+        }
+        observed_boundary_reasons = {reason for item in boundaries for reason in item.get("blocked_reasons", [])}
+        if len(boundaries) != 5 or any(item.get("result") != "pass" for item in boundaries) or not required_boundary_reasons.issubset(observed_boundary_reasons):
+            fail(errors, "Skill Eval boundary cases do not enforce fail-closed and stop conditions")
+        core_matrix_ids = {case["id"] for case in core_eval.get("cases", []) if case["id"].startswith("matrix.")}
+        if len(core_matrix_ids) != 112:
+            fail(errors, "Core definitive Skill Eval does not expose all 112 matrix cells")
+        if routing_eval.get("completion_requirements", {}).get("matrix_contract_pass_is_sufficient") is not False:
+            fail(errors, "Skill Eval matrix pass must not be treated as completion")
+        prompt_fixture = json.loads((ROOT / "evals/forward-agent-prompts.json").read_text())
+        if (forward_eval.get("independence", {}).get("prompt_fixture") != "evals/forward-agent-prompts.json"
+                or forward_eval.get("independence", {}).get("expected_answers_hidden_from_executor") is not True
+                or forward_eval.get("independence", {}).get("deterministic_router_output_is_not_forward_eval") is not True):
+            fail(errors, "independent Agent Forward Eval independence contract mismatch")
+        if forward_eval.get("status") == "pass":
+            if (not forward_eval.get("independence", {}).get("executor")
+                    or len(forward_eval.get("cases", [])) != len(prompt_fixture["cases"])
+                    or any(item.get("result") != "pass" for item in forward_eval["cases"])):
+                fail(errors, "independent Agent Forward Eval pass is incomplete")
+        if summary.get("completion_ready"):
+            if (summary.get("closure_eligible_cells") != 112
+                    or summary.get("all_required_targets_covered") is not True
+                    or forward_eval.get("status") != "pass"):
+                fail(errors, "Skill Eval completion_ready ignores Closure or Forward Eval requirements")
+        elif atlas["status"] == "complete":
+            fail(errors, "status complete is forbidden while definitive Skill Eval remains incomplete")
 
     inventory_path = ROOT / "surface.inventory.yaml"
     plan_path = ROOT / "verification.plan.yaml"

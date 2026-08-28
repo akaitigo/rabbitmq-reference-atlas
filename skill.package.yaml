@@ -14,6 +14,9 @@ generated_from:
   - atlas/claims/index.yaml
   - atlas/decisions/router.yaml
   - operations/runbooks/index.yaml
+  - .agents/skills/rabbitmq-reference-router/references/mastery-contract.json
+  - evals/rabbitmq-reference-atlas.skill-routing-eval.json
+  - evals/rabbitmq-reference-atlas.independent-agent-forward-eval.json
 adapters:
   - generic-agent-skills
   - codex

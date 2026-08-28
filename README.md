@@ -35,6 +35,8 @@
 
 `authority/review-queue.snapshot.json`は、`frontend-behavior-atlas@de2f016b8b44ea67afdb08c0552044807505984e`のReview Queue契約を適用します。1,579 raw anchorをstable IDのまま171 batchへ一度ずつ投影し、全件を`pending-human`で開始しました。priority、85 candidate cluster、batchは確認順と重複候補の機械提案だけで、Semantic decisionまたはDepth達成には算入しません。2 stale documentはholdです。一次資料を人が確認し、reviewer、時刻、理由と理由digest、source/tool/context digest、locator、旧anchor→新Authority Surface/Atomic Behavior mapping、result集合がすべて整合するdecisionだけを`authority/reviews/decisions.json`で受理します。詳細は`docs/AUTHORITY_REVIEW_WORKFLOW.md`に固定します。
 
+Router Skill Evalは`frontend-behavior-atlas@8a9e34a89a55cc53702032783c06ede7246a286f`の方式をRabbitMQへ適用します。112セルを実Target、Scenario/Profile Variant、Authority locator、固定Broker/Protocol EvidenceへRouteし、曖昧・未知Query、無許可変更、人手Authority判断、stale relockをfail-closedで評価します。現状はRouter契約112/112、Route可能86、実証Closure 20/112、独立Agent Forward Eval 6/10であり、matrix passだけでは完成扱いにしません。詳細は`docs/SKILL_EVAL_WORKFLOW.md`に記録します。
+
 ## 検証
 
 前提はGo 1.26、Python 3、Docker Engine、Docker Composeです。
@@ -59,6 +61,8 @@ make labs
 - Open Verification Plan: `verification.plan.yaml`
 - Depth Parity: `rabbitmq-depth-parity.yaml`
 - Skill Package: `skill.package.yaml`
+- Skill Eval Detail: `evals/rabbitmq-reference-atlas.skill-routing-eval.json`
+- Independent Agent Forward Eval: `evals/rabbitmq-reference-atlas.independent-agent-forward-eval.json`
 - Mastery Contract: `mastery.yaml`
 - Product Version: `versions/baseline.yaml`
 - Claim: `atlas/claims/index.yaml`

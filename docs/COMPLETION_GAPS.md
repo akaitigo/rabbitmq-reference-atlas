@@ -16,7 +16,7 @@ Authority Inventoryで発見したSurfaceは、実装の有無にかかわらず
 - Authority Artifact: 37。RabbitMQ公式の固定commitと固定Versionから抽出した。
 - Authority Behavior: 206。集約Targetを禁止し、Behaviorごとに専用required Targetとproposed Claimを持つ。
 - Verification Plan: 2,060 Row。全Behaviorに10 Scenarioを分類し、951 Rowが実Runtimeまたは実Platform必須である。
-- Definitive Skill Eval: 8 Outcomeと14 Surfaceを含むが、Closure前なので全Caseを`inconclusive`とする。
+- Definitive Skill Eval: 112セルのRouter契約は112/112 passだが、Route可能86、Mastery routing gap 26、実Target/Variant/Authority/Broker/Protocol Evidenceまで閉じたセルは20/112である。全Target stateは`covered` 35、`planned` 203として記録する。期待値を隠した独立Agent Forward Evalは6/10であり、Queue Type比較、STOMP検証、Metrics運用、Partition復旧の4件をGapとして保持する。
 
 未Closureの正本は`coverage.yaml`、Behavior分類は`surface.inventory.yaml`、Scenario単位の作業状態は`verification.plan.yaml`である。Core v2形式の`verification.matrix.yaml`は専用Proof、pass Evidence、Artifactが実在するRowだけで構築し、空欄を成功扱いするためには作らない。
 

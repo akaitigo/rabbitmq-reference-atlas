@@ -79,6 +79,8 @@ def build() -> dict:
     review_queue = json.loads((ROOT / "authority/review-queue.snapshot.json").read_text(encoding="utf-8"))
     review_decisions = json.loads((ROOT / review_queue["decision_ledger"]).read_text(encoding="utf-8"))
     skill_eval = json.loads((ROOT / definitive["skill_eval"]).read_text(encoding="utf-8"))
+    routing_eval = json.loads((ROOT / "evals/rabbitmq-reference-atlas.skill-routing-eval.json").read_text(encoding="utf-8"))
+    forward_eval = json.loads((ROOT / "evals/rabbitmq-reference-atlas.independent-agent-forward-eval.json").read_text(encoding="utf-8"))
     records = evidence_records()
     axes_by_id = {axis["id"]: axis for axis in reference["axes"]}
     expected_axes = [
@@ -265,13 +267,33 @@ def build() -> dict:
                    len(definitive.get("reference_systems", [])), "pass" if not reference_gaps else "gap",
                    ["definitive.yaml", "verification.plan.yaml"], reference_gaps)])
 
-    eval_gaps = [case["id"] for case in skill_eval["cases"] if case.get("result") not in {"pass", "passed"}]
-    eval_gaps.extend(["skill.surface-matrix-14", "skill.agent-execution-oracle"])
+    contract_gaps = [item["id"] for item in routing_eval["matrix"] if item["contract_result"] != "pass"]
+    contract_gaps.extend(item["id"] for item in routing_eval["boundary_cases"] if item["result"] != "pass")
+    closure_gaps = [item["id"] for item in routing_eval["matrix"] if not item["closure_eligible"]]
+    open_target_gaps = [f"skill.target-state.{item['id']}" for item in routing_eval["target_state_inventory"]["targets"]
+                        if item["requirement"] == "required" and item["state"] != "covered"]
+    forward_gaps = [] if forward_eval["status"] == "pass" and all(item["result"] == "pass" for item in forward_eval["cases"]) else ["skill.independent-agent-forward-eval"]
     skill_axis = make_axis(axes_by_id["skill-eval"], {
         "unit": "8 outcomes × 14 mastery surfaces × risk/gap class", "outcomes": 8, "surfaces": 14,
-        "outcome_surface_cells": 112, "closed_cells": 0,
-    }, [make_check("skill.definitive-matrix", "成功、Gap、拒否、実装、診断、移行、Reviewを独立Oracleで評価する。",
-                   "0/112 cells", "gap", [definitive["skill_eval"], "mastery.yaml"], eval_gaps)])
+        "outcome_surface_cells": 112, "contract_passed_cells": routing_eval["summary"]["contract_passed"],
+        "routed_cells": routing_eval["summary"]["routed"], "routing_gaps": routing_eval["summary"]["routing_gaps"],
+        "closed_cells": routing_eval["summary"]["closure_eligible_cells"],
+        "target_state_counts": routing_eval["summary"]["target_state_counts"],
+        "independent_agent_forward_eval": forward_eval["status"],
+        "matrix_contract_pass_is_sufficient": False,
+    }, [
+        make_check("skill.routing-contract", "112セルとBoundary CaseでRoute、Gap、権限、人手Authority、stale relock停止を評価する。",
+                   f"{routing_eval['summary']['contract_passed']}/112 contract; boundary {routing_eval['summary']['boundary_passed']}/{routing_eval['summary']['boundary_cases']}",
+                   "pass" if not contract_gaps else "gap",
+                   [definitive["skill_eval"], "evals/rabbitmq-reference-atlas.skill-routing-eval.json", "mastery.yaml"], contract_gaps),
+        make_check("skill.runtime-closure", "各セルを実Target、Variant、一次資料、Broker、Protocol Evidenceへ接続し全Required Targetをcoveredにする。",
+                   f"{routing_eval['summary']['closure_eligible_cells']}/112 cells; targets={routing_eval['summary']['target_state_counts']}",
+                   "pass" if not closure_gaps and not open_target_gaps else "partial",
+                   ["coverage.yaml", "verification.plan.yaml", "surface.inventory.yaml", "evidence/"], closure_gaps + open_target_gaps),
+        make_check("skill.independent-forward", "期待値を隠した独立Agent Forward Evalで実Query応答と停止条件を評価する。",
+                   forward_eval["status"], "pass" if not forward_gaps else "gap",
+                   ["evals/forward-agent-prompts.json", "evals/rabbitmq-reference-atlas.independent-agent-forward-eval.json"], forward_gaps),
+    ])
 
     rights_gaps = ["rights.human-license-obligations", "rights.human-trademark-name-review"]
     rights_axis = make_axis(axes_by_id["rights-provenance"], {
@@ -314,6 +336,10 @@ def build() -> dict:
             "authority_review_queue_population_unit": reference["authority_review_queue_reference"]["population_unit"],
             "queued_anchor_count_toward_semantic_surface": reference["authority_review_queue_reference"]["queued_anchor_count_toward_semantic_surface"],
             "queued_anchor_count_toward_depth": reference["authority_review_queue_reference"]["queued_anchor_count_toward_depth"],
+            "skill_eval_source_commit": reference["skill_eval_reference"]["source_commit"],
+            "skill_eval_matrix_unit": reference["skill_eval_reference"]["matrix_unit"],
+            "skill_eval_matrix_pass_is_completion": reference["skill_eval_reference"]["matrix_pass_is_completion"],
+            "skill_eval_independent_agent_forward_required": reference["skill_eval_reference"]["independent_agent_forward_eval_required"],
             "rule": "FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。",
         },
         "fixture_mapping": [

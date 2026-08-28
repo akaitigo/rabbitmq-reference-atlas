@@ -37,7 +37,14 @@ def main() -> int:
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(report, ensure_ascii=False, indent=2))
-    return 0 if report["pass_rate"] == 1.0 else 1
+    if report["pass_rate"] != 1.0:
+        return 1
+    completed = subprocess.run(
+        [sys.executable, str(ROOT / "scripts/run-definitive-skill-eval.py")],
+        cwd=ROOT,
+        check=False,
+    )
+    return completed.returncode
 
 
 if __name__ == "__main__":

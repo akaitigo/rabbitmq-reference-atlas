@@ -80,6 +80,24 @@ authority_review_queue_reference:
       digest: sha256:3849bd25a409742acdcbb8e028a65cf0d51249ac29c23ba606a14d63b81524f9
     - path: scripts/test-authority-review-queue.ts
       digest: sha256:cd6ffd8860645b70f85feb262fffc903d3b0a0aa96c6f9a7181f6ed895e965ec
+skill_eval_reference:
+  source_commit: 8a9e34a89a55cc53702032783c06ede7246a286f
+  matrix_unit: 8-outcomes-by-14-surfaces
+  matrix_pass_is_completion: false
+  fail_closed_queries: [ambiguous, unknown]
+  mutation_policy: explicit-authorization-required-for-build-evolve-delegate
+  authority_policy: human-semantic-decision-and-stale-relock-stop
+  binding_unit: target-variant-authority-runtime-evidence
+  independent_agent_forward_eval_required: true
+  artifacts:
+    - path: scripts/lib/definitive-skill-eval.ts
+      digest: sha256:8209f3deb47eff03a2f88822a7a2af52dd9a3a3d44b74e88e42e84e2c3d1b5b6
+    - path: .agents/skills/fe-behavior-advisor/scripts/advisor-router.mjs
+      digest: sha256:993326210fecfafa4843d9c11929cddc5bd93c2c9fac6c85a79b9dcf43120c07
+    - path: evals/fe-behavior-advisor.definitive-skill-eval.json
+      digest: sha256:566c9f3cea248f49c24f769c88695b10c15bbdb956c08bcfa68dbe7e96c18d0a
+    - path: scripts/lib/mastery-contract.ts
+      digest: sha256:cf939059fa698e23c97c0cb8f08ff2289d37f9abca145cb8320a59425c41e363
 denominator_policy:
   source: authority-derived-subject-surface-inventory
   transplant_absolute_counts: false
