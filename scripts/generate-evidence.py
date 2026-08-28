@@ -2,11 +2,13 @@
 import datetime
 import hashlib
 import json
+import os
 import pathlib
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-RAW = ROOT / "evidence/raw"
+EVIDENCE_ROOT = pathlib.Path(os.environ.get("RABBITMQ_EVIDENCE_ROOT", ROOT / "evidence"))
+RAW = EVIDENCE_ROOT / "raw"
 
 
 MAPPINGS = [
@@ -49,7 +51,7 @@ def framed_digest(paths: list[pathlib.Path]) -> str:
 
 
 def load_json(relative: str) -> dict:
-    path = ROOT / "evidence" / relative
+    path = EVIDENCE_ROOT / relative
     if not path.exists():
         raise SystemExit(f"artifact missing: {path}")
     return json.loads(path.read_text())
@@ -114,7 +116,7 @@ def main() -> None:
         environment_paths.append(ROOT / "versions/upgrade-path.yaml")
     environment_digest = framed_digest(environment_paths)
     local_digest = framed_digest([ROOT / "atlas.yaml", ROOT / "mastery.yaml", ROOT / "coverage.yaml", ROOT / "skill.package.yaml", ROOT / "versions/baseline.yaml"])
-    harness_digest = framed_digest([ROOT / "cmd/rmq-lab/main.go", ROOT / "cmd/rmq-secops/main.go", ROOT / "cmd/rmq-observability/main.go", ROOT / "cmd/rmq-tls-lab/main.go", ROOT / "cmd/rmq-benchmark/main.go", ROOT / "cmd/rmq-flow-control/main.go", ROOT / "cmd/rmq-upgrade-workload/main.go", ROOT / "scripts/run-labs.sh", ROOT / "scripts/run-observability-lab.sh", ROOT / "scripts/run-tls-lab.sh", ROOT / "scripts/run-upgrade-migration-lab.sh", ROOT / "scripts/capture-upgrade-snapshot.py", ROOT / "scripts/assemble-upgrade-evidence.py", ROOT / "scripts/generate-evidence.py", ROOT / "go.mod", ROOT / "go.sum"])
+    harness_digest = framed_digest([ROOT / "cmd/rmq-lab/main.go", ROOT / "cmd/rmq-secops/main.go", ROOT / "cmd/rmq-observability/main.go", ROOT / "cmd/rmq-tls-lab/main.go", ROOT / "cmd/rmq-benchmark/main.go", ROOT / "cmd/rmq-flow-control/main.go", ROOT / "cmd/rmq-upgrade-workload/main.go", ROOT / "scripts/run-labs.sh", ROOT / "scripts/evidence_transaction.py", ROOT / "evidence-reporting.yaml", ROOT / "scripts/run-observability-lab.sh", ROOT / "scripts/run-tls-lab.sh", ROOT / "scripts/run-upgrade-migration-lab.sh", ROOT / "scripts/capture-upgrade-snapshot.py", ROOT / "scripts/assemble-upgrade-evidence.py", ROOT / "scripts/generate-evidence.py", ROOT / "go.mod", ROOT / "go.sum"])
     skill_harness_digest = framed_digest([ROOT / ".agents/skills/rabbitmq-reference-router/scripts/route.py", ROOT / "scripts/run-skill-evals.py", ROOT / "evals/router-cases.json"])
     summary = {
         "schema_version": 1,
@@ -126,7 +128,7 @@ def main() -> None:
     }
     (RAW / "evidence-generation.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
     for evidence_id, claims, kind, relative_artifact, profile, _ in MAPPINGS:
-        artifact = ROOT / "evidence" / relative_artifact
+        artifact = EVIDENCE_ROOT / relative_artifact
         if not artifact.exists():
             raise SystemExit(f"artifact missing: {artifact}")
         record = {
@@ -154,9 +156,9 @@ def main() -> None:
             "verdict": "pass",
             "retention": "git",
         }
-        output = ROOT / "evidence" / f"{evidence_id}.evidence.json"
+        output = EVIDENCE_ROOT / f"{evidence_id}.evidence.json"
         output.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n")
-        print(f"generated {output.relative_to(ROOT)}")
+        print(f"generated evidence/{output.name}")
 
 
 if __name__ == "__main__":

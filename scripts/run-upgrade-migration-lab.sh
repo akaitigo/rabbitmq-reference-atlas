@@ -2,12 +2,14 @@
 set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
-COMPOSE=(docker compose -p rabbitmq-reference-atlas-upgrade -f "$ROOT/environments/upgrade.compose.yaml")
+UPGRADE_PROJECT="rabbitmq-reference-atlas-upgrade-${RABBITMQ_EVIDENCE_RUN_TOKEN:-$(date -u +%s)-$$}"
+UPGRADE_PROJECT=$(printf '%s' "$UPGRADE_PROJECT" | tr '[:upper:]' '[:lower:]')
+COMPOSE=(docker compose -p "$UPGRADE_PROJECT" -f "$ROOT/environments/upgrade.compose.yaml")
 SOURCE_IMAGE='rabbitmq:4.2.9-management@sha256:59935db6392a27b5192f1be080df9b4194bc22f104a7a1bf3b31479a8e0d1031'
 TARGET_IMAGE='rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031'
 AMQP_URLS='amqp://atlas:atlas-local-only@127.0.0.1:27672/,amqp://atlas:atlas-local-only@127.0.0.1:27673/,amqp://atlas:atlas-local-only@127.0.0.1:27674/'
 MANAGEMENT_URL='http://127.0.0.1:37672'
-OUTPUT="$ROOT/evidence/raw/upgrade-migration.json"
+OUTPUT="${1:-${RABBITMQ_EVIDENCE_ROOT:-$ROOT/evidence}/raw/upgrade-migration.json}"
 UPGRADE_TMP=$(mktemp -d "${TMPDIR:-/tmp}/rabbitmq-atlas-upgrade.XXXXXX")
 PRESTOP="$UPGRADE_TMP/prestop"
 WORKLOAD_PID=''
@@ -22,7 +24,7 @@ cleanup() {
     wait "$WORKLOAD_PID" >/dev/null 2>&1 || true
   fi
   if [[ "${KEEP_UPGRADE_ENV:-0}" != "1" ]]; then
-    "${COMPOSE[@]}" down -v --remove-orphans >/dev/null 2>&1 || true
+    "${COMPOSE[@]}" down --remove-orphans >/dev/null 2>&1 || true
   fi
   if [[ -d "$UPGRADE_TMP" ]]; then
     rm -rf -- "$UPGRADE_TMP"
@@ -30,7 +32,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-mkdir -p "$PRESTOP" "$ROOT/evidence/raw"
+mkdir -p "$PRESTOP" "$(dirname "$OUTPUT")"
 "${COMPOSE[@]}" up -d --wait
 
 wait_rabbit_running() {

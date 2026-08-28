@@ -3,12 +3,14 @@
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
 import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
+EVIDENCE_ROOT = Path(os.environ.get("RABBITMQ_EVIDENCE_ROOT", ROOT / "evidence"))
 BEHAVIORS = ("mqtt.protocol-versions-qos", "stomp.protocol-plugin")
 SCENARIOS = ("normal", "boundary", "rejection", "compatibility")
 
@@ -35,7 +37,7 @@ def main() -> None:
     for behavior in BEHAVIORS:
         evidence_ids = []
         for scenario in SCENARIOS:
-            artifact_path = ROOT / f"evidence/raw/definitive.{behavior}.{scenario}.json"
+            artifact_path = EVIDENCE_ROOT / f"raw/definitive.{behavior}.{scenario}.json"
             raw = json.loads(artifact_path.read_text(encoding="utf-8"))
             if raw.get("behavior_id") != behavior or raw.get("scenario") != scenario:
                 raise SystemExit(f"artifact identity mismatch: {artifact_path}")
@@ -68,7 +70,7 @@ def main() -> None:
                 "execution_mode": "runtime",
                 "runtime_identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins",
                 "artifact": {
-                    "uri": artifact_path.relative_to(ROOT).as_posix(),
+                    "uri": f"evidence/raw/definitive.{behavior}.{scenario}.json",
                     "digest": sha(artifact_path),
                     "media_type": "application/json",
                     "size_bytes": artifact_path.stat().st_size,
@@ -76,8 +78,12 @@ def main() -> None:
                 "verdict": "pass",
                 "retention": "git",
             }
-            (ROOT / f"evidence/{evidence_id}.evidence.json").write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+            (EVIDENCE_ROOT / f"{evidence_id}.evidence.json").write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         evidence_by_behavior[behavior] = evidence_ids
+
+    if os.environ.get("RABBITMQ_EVIDENCE_ONLY") == "1":
+        print(f"plugin protocol evidence staged: behaviors={len(BEHAVIORS)} scenarios={len(BEHAVIORS) * len(SCENARIOS)}")
+        return
 
     coverage_path = ROOT / "coverage.yaml"
     coverage = yaml.safe_load(coverage_path.read_text(encoding="utf-8"))

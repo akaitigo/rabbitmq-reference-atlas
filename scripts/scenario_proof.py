@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -14,14 +15,23 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-PROOF_ROOT = ROOT / "evidence/scenarios"
-BEHAVIOR_ROOT = PROOF_ROOT / "behaviors"
-INDEX_PATH = PROOF_ROOT / "index.json"
 REFERENCE_RESULT_PATH = ROOT / "reference-system/results.json"
 SCENARIOS = ["normal", "boundary", "rejection", "failure", "recovery", "migration", "operations", "security", "performance", "compatibility"]
 GENERATED_AT = "2026-08-28T00:00:00+09:00"
 CHANNELS = ("packet", "log", "metric")
 SHA256 = re.compile(r"^sha256:[0-9a-f]{64}$")
+
+
+def evidence_root() -> Path:
+    return Path(os.environ.get("RABBITMQ_EVIDENCE_ROOT", ROOT / "evidence"))
+
+
+def evidence_path(relative: str) -> Path:
+    if relative == "evidence":
+        return evidence_root()
+    if relative.startswith("evidence/"):
+        return evidence_root() / relative.removeprefix("evidence/")
+    return ROOT / relative
 
 
 def load_yaml(path: Path) -> Any:
@@ -183,7 +193,7 @@ def exact_behavior_evidence(row: dict, inventory_item: dict, records: dict[str, 
         gaps.append("evidence.runtime-pass-missing")
     if record.get("claim_ids") != inventory_item["claim_ids"]:
         gaps.append("evidence.claim-binding-mismatch")
-    artifact_path = ROOT / record.get("artifact", {}).get("uri", "")
+    artifact_path = evidence_path(record.get("artifact", {}).get("uri", ""))
     raw = None
     if not artifact_path.is_file():
         gaps.append("evidence.raw-artifact-missing")
@@ -224,9 +234,9 @@ def exact_file_binding(binding: Any, prefix: str, gaps: list[str]) -> Path | Non
     if not isinstance(name, str) or not name or not isinstance(digest, str) or not SHA256.match(digest):
         gaps.append(f"{prefix}.binding-invalid")
         return None
-    candidate = (ROOT / name).resolve()
+    candidate = evidence_path(name).resolve()
     try:
-        candidate.relative_to(ROOT.resolve())
+        candidate.relative_to(evidence_root().parent.resolve())
     except ValueError:
         gaps.append(f"{prefix}.path-outside-repository")
         return None
@@ -244,7 +254,7 @@ def dedicated_runtime_proof(row: dict, inventory_item: dict, contract: dict,
     scenario_gaps = list(variant_gaps)
     artifact_uses: list[str] = []
     forbidden_artifact_digests = forbidden_artifact_digests or set()
-    report_path = ROOT / report_name
+    report_path = evidence_path(report_name)
     report = load_json(report_path) if report_path.is_file() else None
     variant_proofs = []
     report_binding = {"path": report_name, "present": report is not None, "digest": sha_file(report_path) if report else None}
@@ -413,7 +423,7 @@ def build() -> tuple[dict, dict[str, dict]]:
     artifacts = authority_artifacts(inventory)
     inventory_by_behavior = {item["behavior_id"]: item for item in inventory["items"]}
     records = {record["id"]: record for record in (
-        load_json(path) for path in sorted((ROOT / "evidence").glob("definitive.*.evidence.json"))
+        load_json(path) for path in sorted(evidence_root().glob("definitive.*.evidence.json"))
     )}
     reference_results = build_reference_results(manifest)
     reference_by_scenario = {item["scenario"]: item for item in reference_results["scenarios"]}
@@ -667,13 +677,15 @@ def generate() -> dict:
     if errors:
         raise SystemExit("\n".join(errors))
     for path, proof in proofs.items():
-        destination = ROOT / path
+        destination = evidence_path(path)
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_text(canonical(proof), encoding="utf-8")
-    REFERENCE_RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
-    REFERENCE_RESULT_PATH.write_text(canonical(bundle["reference_results"]), encoding="utf-8")
-    INDEX_PATH.parent.mkdir(parents=True, exist_ok=True)
-    INDEX_PATH.write_text(canonical(bundle["index"]), encoding="utf-8")
+    if "RABBITMQ_EVIDENCE_ROOT" not in os.environ:
+        REFERENCE_RESULT_PATH.parent.mkdir(parents=True, exist_ok=True)
+        REFERENCE_RESULT_PATH.write_text(canonical(bundle["reference_results"]), encoding="utf-8")
+    index_path = evidence_root() / "scenarios/index.json"
+    index_path.parent.mkdir(parents=True, exist_ok=True)
+    index_path.write_text(canonical(bundle["index"]), encoding="utf-8")
     return bundle["index"]
 
 
@@ -681,20 +693,23 @@ def validate_files() -> list[str]:
     bundle, proofs = build()
     errors = validate_built(bundle, proofs)
     expected_paths = sorted(proofs)
-    actual_paths = sorted(relative(path) for path in BEHAVIOR_ROOT.rglob("*.proof.json")) if BEHAVIOR_ROOT.exists() else []
+    behavior_root = evidence_root() / "scenarios/behaviors"
+    actual_paths = sorted("evidence/" + path.relative_to(evidence_root()).as_posix()
+                          for path in behavior_root.rglob("*.proof.json")) if behavior_root.exists() else []
     if actual_paths != expected_paths:
         errors.append(f"Scenario Proof file集合が不一致です: expected={len(expected_paths)} actual={len(actual_paths)}")
     for path, expected in proofs.items():
-        actual_path = ROOT / path
+        actual_path = evidence_path(path)
         if not actual_path.is_file() or actual_path.read_text(encoding="utf-8") != canonical(expected):
             errors.append(f"Scenario Proofがstaleです: {path}")
-    for path, expected in ((INDEX_PATH, bundle["index"]), (REFERENCE_RESULT_PATH, bundle["reference_results"])):
+    index_path = evidence_root() / "scenarios/index.json"
+    for path, expected in ((index_path, bundle["index"]), (REFERENCE_RESULT_PATH, bundle["reference_results"])):
         if not path.is_file() or path.read_text(encoding="utf-8") != canonical(expected):
             errors.append(f"Scenario Proof index/resultがstaleです: {relative(path)}")
-    if INDEX_PATH.is_file():
-        stored = load_json(INDEX_PATH)
+    if index_path.is_file():
+        stored = load_json(index_path)
         for descriptor in stored.get("files", []):
-            artifact = ROOT / descriptor["path"]
+            artifact = evidence_path(descriptor["path"])
             if not artifact.is_file() or sha_file(artifact) != descriptor["digest"]:
                 errors.append(f"Scenario Proof digest mismatch: {descriptor['path']}")
     return errors

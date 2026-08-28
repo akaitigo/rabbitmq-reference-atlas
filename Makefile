@@ -1,4 +1,4 @@
-.PHONY: test skill-eval definitive-skill-eval scenario-proof atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal check labs amqp10-lab plugin-protocol-lab tls-lab observability-lab upgrade-lab lock-sources completion
+.PHONY: test skill-eval definitive-skill-eval scenario-proof atomic-evidence atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal check labs amqp10-lab plugin-protocol-lab tls-lab observability-lab upgrade-lab lock-sources completion
 
 export GOCACHE := $(CURDIR)/.cache/go-build
 export GOMODCACHE := $(CURDIR)/.cache/go-mod
@@ -17,6 +17,9 @@ definitive-skill-eval:
 scenario-proof:
 	python3 scripts/test-scenario-proofs.py
 	python3 scripts/validate-scenario-proofs.py
+
+atomic-evidence:
+	python3 scripts/test-evidence-transaction.py
 
 atlas-validate:
 	bash scripts/atlas-validate.sh
@@ -51,7 +54,7 @@ legal:
 	test -s sbom.spdx.json
 	test -s third_party/sbom.cdx.json
 
-check: test skill-eval definitive-skill-eval scenario-proof atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal
+check: test skill-eval definitive-skill-eval scenario-proof atomic-evidence atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal
 
 labs:
 	bash scripts/run-labs.sh

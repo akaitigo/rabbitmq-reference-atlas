@@ -153,6 +153,22 @@ scenario_gap_closure_reference:
       digest: sha256:8b89ff8d0f042b181abe22a2fb1280546f7534f0525a931c6437a177fdb2432f
     - path: scripts/verify-scenario-proofs.ts
       digest: sha256:d6192f7da3b160300690f3a4168846711b366b77f8fc6c28918733db221005cd
+atomic_evidence_publication_reference:
+  source_commit: 7175de4305afb308722d5b83475e91c18da64957
+  publish_on: full-run-passed
+  failed_run: retain-prior-success
+  swap: staged-directory-rename-with-rollback
+  partial_overwrite: forbidden
+  mixed_generation: forbidden
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:a8d4394bbbc231280fc5b5ea3a0e65475d2d7c9ac0538dd812803ce1d0ca5c08
+    - path: docs/REFERENCE_SYSTEM.md
+      digest: sha256:33d8b7d1c4cd0b01e094f3c1c805cfb0d6e2e7f2862305cb6daffc2852fe8bb9
+    - path: scripts/reporters/pattern-scenario-evidence-reporter.ts
+      digest: sha256:fa93509b82141deb456e1218095de52a147c88d2b7e6f8e0e5df2725e92ad330
+    - path: scripts/verify-pattern-scenario-evidence.ts
+      digest: sha256:fc05990ab4a02a075f72badf60190dc3e584fe62acf52a31c179b99c90e3e0fd
 denominator_policy:
   source: authority-derived-subject-surface-inventory
   transplant_absolute_counts: false

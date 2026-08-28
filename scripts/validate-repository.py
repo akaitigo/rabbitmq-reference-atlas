@@ -210,6 +210,37 @@ def main() -> int:
             or parity["reference"].get("scenario_gap_integrated_reuse") != "forbidden"
             or parity["reference"].get("scenario_gap_other_metadata_reuse") != "forbidden"):
         fail(errors, "RabbitMQ depth parity Scenario gap Closure reference mismatch")
+    atomic_reference = load(ROOT / "parity/frontend-depth-reference.yaml")["atomic_evidence_publication_reference"]
+    atomic_contract = load(ROOT / "evidence-reporting.yaml")
+    expected_atomic = {
+        "source_commit": "7175de4305afb308722d5b83475e91c18da64957",
+        "publish_on": "full-run-passed",
+        "failed_run": "retain-prior-success",
+        "swap": "staged-directory-rename-with-rollback",
+        "partial_overwrite": "forbidden",
+        "mixed_generation": "forbidden",
+    }
+    if any(atomic_reference.get(key) != value for key, value in expected_atomic.items()):
+        fail(errors, "RabbitMQ Atomic Evidence publication reference contract mismatch")
+    publication = atomic_contract.get("publication", {})
+    if (atomic_contract.get("status") != "active"
+            or atomic_contract.get("current_live_evidence") != "bounded-historical-pre-atomic-contract"
+            or publication.get("publish_on") != expected_atomic["publish_on"]
+            or publication.get("failed_run") != expected_atomic["failed_run"]
+            or publication.get("swap") != expected_atomic["swap"]
+            or publication.get("partial_overwrite") != expected_atomic["partial_overwrite"]
+            or publication.get("mixed_generation") != expected_atomic["mixed_generation"]
+            or publication.get("historical_live_without_run_report_allowed") is not True
+            or publication.get("next_success_requires_run_report") is not True
+            or publication.get("owned_globs") != ["raw/*.json", "*.evidence.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json"]):
+        fail(errors, "RabbitMQ Atomic Evidence publication local contract mismatch")
+    if (parity["reference"].get("atomic_evidence_publication_source_commit") != expected_atomic["source_commit"]
+            or parity["reference"].get("atomic_evidence_publish_on") != expected_atomic["publish_on"]
+            or parity["reference"].get("atomic_evidence_failed_run") != expected_atomic["failed_run"]
+            or parity["reference"].get("atomic_evidence_swap") != expected_atomic["swap"]
+            or parity["reference"].get("atomic_evidence_partial_overwrite") != "forbidden"
+            or parity["reference"].get("atomic_evidence_mixed_generation") != "forbidden"):
+        fail(errors, "RabbitMQ depth parity Atomic Evidence publication reference mismatch")
     if not (ROOT / skill["router"]["path"]).exists():
         fail(errors, "router path missing")
     expected_lock_digest = sha(ROOT / "sources.lock.yaml")

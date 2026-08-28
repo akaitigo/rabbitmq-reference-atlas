@@ -5,19 +5,40 @@ ROOT=$(cd "$(dirname "$0")/.." && pwd)
 COMPOSE=(docker compose -f "$ROOT/environments/compose.yaml")
 AMQP_ALL='amqp://atlas:atlas-local-only@127.0.0.1:25672/,amqp://atlas:atlas-local-only@127.0.0.1:25673/,amqp://atlas:atlas-local-only@127.0.0.1:25674/'
 MGMT_ALL='http://127.0.0.1:35672,http://127.0.0.1:35673,http://127.0.0.1:35674'
-RAW="$ROOT/evidence/raw"
+LIVE_EVIDENCE="$ROOT/evidence"
+RUN_TOKEN="$(date -u +%Y%m%dT%H%M%SZ)-$$"
+STAGING_EVIDENCE="$ROOT/.evidence-next-$RUN_TOKEN"
+BACKUP_EVIDENCE="$ROOT/.evidence-previous-$RUN_TOKEN"
+TRANSACTION_TMP=$(mktemp -d "${TMPDIR:-/tmp}/rabbitmq-evidence-transaction.XXXXXX")
+TRANSACTION_STATE="$TRANSACTION_TMP/state.json"
+TRANSACTION_ACTIVE=''
+RAW="$STAGING_EVIDENCE/raw"
 STOPPED_SERVICE=''
 DISCONNECTED_CONTAINER=''
 ALARM_ACTIVE=''
 
 cleanup() {
+  if [[ -n "$TRANSACTION_ACTIVE" && -f "$TRANSACTION_STATE" ]]; then
+    python3 "$ROOT/scripts/evidence_transaction.py" rollback --state "$TRANSACTION_STATE" >/dev/null 2>&1 || true
+  fi
   if [[ -n "$ALARM_ACTIVE" ]]; then "${COMPOSE[@]}" exec -T rabbitmq-1 rabbitmqctl set_vm_memory_high_watermark 0.4 >/dev/null 2>&1 || true; fi
   if [[ -n "$DISCONNECTED_CONTAINER" ]]; then docker network connect rabbitmq-reference-atlas-cluster "$DISCONNECTED_CONTAINER" >/dev/null 2>&1 || true; fi
   if [[ -n "$STOPPED_SERVICE" ]]; then "${COMPOSE[@]}" start "$STOPPED_SERVICE" >/dev/null 2>&1 || true; fi
-  if [[ "${KEEP_ENV:-0}" != "1" ]]; then "${COMPOSE[@]}" down -v --remove-orphans >/dev/null 2>&1 || true; fi
+  if [[ "${KEEP_ENV:-0}" != "1" ]]; then "${COMPOSE[@]}" down --remove-orphans >/dev/null 2>&1 || true; fi
+  rm -rf -- "$TRANSACTION_TMP"
 }
 trap cleanup EXIT
 
+python3 "$ROOT/scripts/evidence_transaction.py" begin \
+  --state "$TRANSACTION_STATE" \
+  --live "$LIVE_EVIDENCE" \
+  --staging "$STAGING_EVIDENCE" \
+  --backup "$BACKUP_EVIDENCE" \
+  --config "$ROOT/evidence-reporting.yaml" >/dev/null
+TRANSACTION_ACTIVE=1
+export RABBITMQ_EVIDENCE_ROOT="$STAGING_EVIDENCE"
+export RABBITMQ_EVIDENCE_ONLY=1
+export RABBITMQ_EVIDENCE_RUN_TOKEN="$RUN_TOKEN"
 mkdir -p "$RAW"
 "${COMPOSE[@]}" up -d --wait
 
@@ -79,17 +100,24 @@ docker network connect rabbitmq-reference-atlas-cluster "$DISCONNECTED_CONTAINER
 DISCONNECTED_CONTAINER=''
 (cd "$ROOT" && go run ./cmd/rmq-lab --mode inspect-queue --amqp-urls "$AMQP_ALL" --management-urls "$MGMT_ALL" --queue "$PARTITION_QUEUE" --output "$RAW/partition-recovery.json")
 (cd "$ROOT" && go run ./cmd/rmq-lab --mode cluster --management-urls "$MGMT_ALL" --output "$RAW/cluster-after-partition.json")
+(cd "$ROOT" && bash scripts/run-tls-lab.sh "$RAW/security-tls.json")
+(cd "$ROOT" && bash scripts/run-upgrade-migration-lab.sh "$RAW/upgrade-migration.json")
 (cd "$ROOT" && python3 scripts/run-skill-evals.py >/dev/null)
 (cd "$ROOT" && python3 scripts/generate-evidence.py)
-(cd "$ROOT" && python3 scripts/update-coverage-evidence.py)
-(cd "$ROOT" && python3 scripts/sync-authority-digest.py >/dev/null)
-(cd "$ROOT" && python3 scripts/generate-evidence.py)
+(cd "$ROOT" && python3 scripts/generate-scenario-proofs.py)
 ATLAS_STATUS=$(cd "$ROOT" && python3 -c 'import yaml; print(yaml.safe_load(open("atlas.yaml"))["status"])')
 if [[ "$ATLAS_STATUS" == "complete" ]]; then
   (cd "$ROOT" && python3 scripts/generate-completion-certificate.py)
+fi
+
+python3 "$ROOT/scripts/evidence_transaction.py" verify --state "$TRANSACTION_STATE" >/dev/null
+python3 "$ROOT/scripts/evidence_transaction.py" swap --state "$TRANSACTION_STATE" >/dev/null
+if [[ "$ATLAS_STATUS" == "complete" ]]; then
   (cd "$ROOT" && python3 scripts/validate-repository.py --release)
 else
   (cd "$ROOT" && python3 scripts/validate-repository.py)
 fi
+python3 "$ROOT/scripts/evidence_transaction.py" finalize --state "$TRANSACTION_STATE" >/dev/null
+TRANSACTION_ACTIVE=''
 
-echo "RabbitMQ LabsとEvidence生成が完了しました。"
+echo "RabbitMQ Labsのfull-run passを確認し、Evidence集合を原子的に公開しました。"

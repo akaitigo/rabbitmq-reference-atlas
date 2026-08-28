@@ -34,6 +34,12 @@ reference:
   scenario_gap_closure_retries: 0
   scenario_gap_integrated_reuse: forbidden
   scenario_gap_other_metadata_reuse: forbidden
+  atomic_evidence_publication_source_commit: 7175de4305afb308722d5b83475e91c18da64957
+  atomic_evidence_publish_on: full-run-passed
+  atomic_evidence_failed_run: retain-prior-success
+  atomic_evidence_swap: staged-directory-rename-with-rollback
+  atomic_evidence_partial_overwrite: forbidden
+  atomic_evidence_mixed_generation: forbidden
   rule: FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。
 fixture_mapping:
 - source: fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json

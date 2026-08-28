@@ -39,6 +39,8 @@ Router Skill Evalは`frontend-behavior-atlas@8a9e34a89a55cc53702032783c06ede7246
 
 Scenario Proofは`frontend-behavior-atlas@deadad18b6588d2c907170a451c3b5cea5ea4192`の統合／個別分離と、`frontend-behavior-atlas@f2e4c4b19156f8e993f48cdcbce23679ad881924`のScenario gap Closure条件を適用します。`reference-system/`はCross-behavior統合実行10 Scenarioだけを記録し、`evidence/scenarios/behaviors/`は206 Behavior × 10 Scenarioの2,060専用判定Artifactを保持します。Required rowを閉じるには、Surface × Scenarioの全Runtime/Semantic Variantを専用実Broker/Clientでattempts 1・retries 0として実行し、VariantごとのOracle、Source/Harness digest、Broker/Client/Runtime identity、専用packet／log／metric Artifactが必要です。現状の12 rowは非後退のlegacy runtime observationとして保持しますが、この厳密条件を満たす専用reportは0、Scenario gap closedは0/951、Authority atomic昇格も0、Completion eligibleは0です。統合Systemまたは別EvidenceのArtifact metadataを個別Closureへ流用することはGateで拒否します。
 
+実行Evidenceの保存は`frontend-behavior-atlas@7175de4305afb308722d5b83475e91c18da64957`の原子的publication契約を適用します。`make labs`はrun所有Artifactをlive Evidenceへ直接書かず、sibling stagingへ全件再生成します。full-run passとinventory検証後だけdirectory renameで切り替え、検証失敗またはswap失敗では直前成功集合を復元します。部分上書き、旧Artifact混在、失敗runによる成功Evidence消去は`make atomic-evidence`で拒否します。詳細は`docs/ATOMIC_EVIDENCE_PUBLICATION.md`に記録します。
+
 ## 検証
 
 前提はGo 1.26、Python 3、Docker Engine、Docker Composeです。
@@ -63,6 +65,7 @@ make labs
 - Open Verification Plan: `verification.plan.yaml`
 - Integrated Reference System Contract: `reference-system/manifest.yaml`
 - Scenario Gap Closure Contract: `scenario-closure.yaml`
+- Atomic Evidence Publication Contract: `evidence-reporting.yaml`
 - Behavior Scenario Proof Matrix: `evidence/scenarios/index.json`
 - Depth Parity: `rabbitmq-depth-parity.yaml`
 - Skill Package: `skill.package.yaml`

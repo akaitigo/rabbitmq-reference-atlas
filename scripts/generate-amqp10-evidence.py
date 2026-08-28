@@ -3,12 +3,14 @@
 
 import hashlib
 import json
+import os
 import pathlib
 
 import yaml
 
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
+EVIDENCE_ROOT = pathlib.Path(os.environ.get("RABBITMQ_EVIDENCE_ROOT", ROOT / "evidence"))
 BEHAVIOR = "amqp10.version-negotiation"
 TARGET_ID = f"definitive.{BEHAVIOR}"
 CLAIM_ID = f"{TARGET_ID}.claim"
@@ -25,7 +27,7 @@ def main() -> None:
     environment_path = ROOT / "environments/compose.yaml"
     evidence_ids = []
     for scenario in SCENARIOS:
-        artifact_path = ROOT / f"evidence/raw/definitive.{BEHAVIOR}.{scenario}.json"
+        artifact_path = EVIDENCE_ROOT / f"raw/definitive.{BEHAVIOR}.{scenario}.json"
         raw = json.loads(artifact_path.read_text())
         checks = raw.get("checks", [])
         if raw.get("behavior_id") != BEHAVIOR or raw.get("scenario") != scenario:
@@ -57,7 +59,7 @@ def main() -> None:
             "execution_mode": "runtime",
             "runtime_identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3",
             "artifact": {
-                "uri": artifact_path.relative_to(ROOT).as_posix(),
+                "uri": f"evidence/raw/definitive.{BEHAVIOR}.{scenario}.json",
                 "digest": sha(artifact_path),
                 "media_type": "application/json",
                 "size_bytes": artifact_path.stat().st_size,
@@ -65,8 +67,12 @@ def main() -> None:
             "verdict": "pass",
             "retention": "git",
         }
-        record_path = ROOT / f"evidence/{evidence_id}.evidence.json"
+        record_path = EVIDENCE_ROOT / f"{evidence_id}.evidence.json"
         record_path.write_text(json.dumps(record, ensure_ascii=False, indent=2) + "\n")
+
+    if os.environ.get("RABBITMQ_EVIDENCE_ONLY") == "1":
+        print(f"AMQP 1.0 negotiation evidence staged: scenarios={len(evidence_ids)} target={TARGET_ID}")
+        return
 
     coverage_path = ROOT / "coverage.yaml"
     coverage = yaml.safe_load(coverage_path.read_text())

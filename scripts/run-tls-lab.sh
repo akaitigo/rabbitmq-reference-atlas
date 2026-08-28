@@ -5,9 +5,10 @@ ROOT=$(cd "$(dirname "$0")/.." && pwd)
 TLS_RUNTIME=$(mktemp -d "${TMPDIR:-/tmp}/rabbitmq-reference-atlas-tls.XXXXXX")
 export RABBITMQ_ATLAS_TLS_DIR="$TLS_RUNTIME"
 COMPOSE=(docker compose -f "$ROOT/environments/tls.compose.yaml")
+OUTPUT="${1:-${RABBITMQ_EVIDENCE_ROOT:-$ROOT/evidence}/raw/security-tls.json}"
 
 cleanup() {
-  "${COMPOSE[@]}" down -v --remove-orphans >/dev/null 2>&1 || true
+  "${COMPOSE[@]}" down --remove-orphans >/dev/null 2>&1 || true
   rm -rf "$TLS_RUNTIME"
 }
 trap cleanup EXIT
@@ -89,6 +90,6 @@ fi
   --client-cert "$TLS_RUNTIME/client-cert.pem" \
   --client-key "$TLS_RUNTIME/client-key.pem" \
   --server-cert "$TLS_RUNTIME/server-cert.pem" \
-  --output "$ROOT/evidence/raw/security-tls.json")
+  --output "$OUTPUT")
 
 echo "RabbitMQ TLS/mTLS LabとRaw Evidence生成が完了しました。"

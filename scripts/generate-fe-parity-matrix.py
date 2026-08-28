@@ -372,6 +372,12 @@ def build() -> dict:
             "scenario_gap_closure_retries": reference["scenario_gap_closure_reference"]["retries"],
             "scenario_gap_integrated_reuse": reference["scenario_gap_closure_reference"]["integrated_system_reuse"],
             "scenario_gap_other_metadata_reuse": reference["scenario_gap_closure_reference"]["other_artifact_metadata_reuse"],
+            "atomic_evidence_publication_source_commit": reference["atomic_evidence_publication_reference"]["source_commit"],
+            "atomic_evidence_publish_on": reference["atomic_evidence_publication_reference"]["publish_on"],
+            "atomic_evidence_failed_run": reference["atomic_evidence_publication_reference"]["failed_run"],
+            "atomic_evidence_swap": reference["atomic_evidence_publication_reference"]["swap"],
+            "atomic_evidence_partial_overwrite": reference["atomic_evidence_publication_reference"]["partial_overwrite"],
+            "atomic_evidence_mixed_generation": reference["atomic_evidence_publication_reference"]["mixed_generation"],
             "rule": "FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。",
         },
         "fixture_mapping": [
