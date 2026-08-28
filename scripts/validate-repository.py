@@ -192,6 +192,24 @@ def main() -> int:
             or parity["reference"].get("integrated_success_counts_as_behavior_proof") is not False
             or parity["reference"].get("authority_atomic_binding_required_for_completion") is not True):
         fail(errors, "RabbitMQ depth parity Scenario Proof reference mismatch")
+    closure_reference = load(ROOT / "parity/frontend-depth-reference.yaml")["scenario_gap_closure_reference"]
+    if (closure_reference["source_commit"] != "f2e4c4b19156f8e993f48cdcbce23679ad881924"
+            or closure_reference["closure_unit"] != "surface-scenario-all-variants"
+            or closure_reference["actual_runtime_required"] is not True
+            or closure_reference["retries"] != 0
+            or closure_reference["oracle_per_variant_required"] is not True
+            or closure_reference["source_harness_digest_required"] is not True
+            or closure_reference["runtime_identity_required"] is not True
+            or closure_reference["integrated_system_reuse"] != "forbidden"
+            or closure_reference["other_artifact_metadata_reuse"] != "forbidden"
+            or closure_reference["rabbitmq_artifact_channels"] != ["packet", "log", "metric"]):
+        fail(errors, "RabbitMQ Scenario gap Closure reference contract mismatch")
+    if (parity["reference"].get("scenario_gap_closure_source_commit") != closure_reference["source_commit"]
+            or parity["reference"].get("scenario_gap_closure_unit") != closure_reference["closure_unit"]
+            or parity["reference"].get("scenario_gap_closure_retries") != 0
+            or parity["reference"].get("scenario_gap_integrated_reuse") != "forbidden"
+            or parity["reference"].get("scenario_gap_other_metadata_reuse") != "forbidden"):
+        fail(errors, "RabbitMQ depth parity Scenario gap Closure reference mismatch")
     if not (ROOT / skill["router"]["path"]).exists():
         fail(errors, "router path missing")
     expected_lock_digest = sha(ROOT / "sources.lock.yaml")

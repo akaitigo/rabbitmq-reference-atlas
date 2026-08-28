@@ -25,36 +25,57 @@
     "human_review_decision": null,
     "authority_atomic_behavior": false
   },
-  "behavior_evidence": {
+  "legacy_observation": {
     "evidence_id": null,
     "evidence_record": null,
     "behavior_specific": false,
+    "identity": {
+      "broker": null,
+      "client": null,
+      "runtime": null
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.missing"
+        ]
+      },
+      "log": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.log.missing"
+        ]
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.log.missing",
+      "artifact.metric.missing",
+      "artifact.packet.missing",
+      "identity.broker.missing",
+      "identity.client-version.missing",
+      "identity.runtime.missing",
+      "scenario.not-applicable-by-surface-contract"
+    ],
+    "counts_toward_scenario_gap_closure": false,
     "aggregate_evidence_allowed": false
   },
-  "identity": {
-    "broker": null,
-    "client": null,
-    "runtime": null
-  },
-  "artifact_channels": {
-    "packet": {
-      "artifacts": [],
-      "gap_ids": [
-        "artifact.packet.missing"
-      ]
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/stream.super-stream/operations.runtime.json",
+      "present": false,
+      "digest": null
     },
-    "log": {
-      "artifacts": [],
-      "gap_ids": [
-        "artifact.log.missing"
-      ]
-    },
-    "metric": {
-      "artifacts": [],
-      "gap_ids": [
-        "artifact.metric.missing"
-      ]
-    }
+    "required_variants": [],
+    "variant_proofs": [],
+    "requirements": {},
+    "scenario_gap_closed": false
   },
   "integrated_reference": {
     "manifest": "reference-system/manifest.yaml",
@@ -65,19 +86,16 @@
   },
   "closure": {
     "dedicated_row": true,
-    "dedicated_artifact": true,
-    "behavior_specific_runtime_proof": false,
-    "broker_client_version_runtime_identity": false,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": false,
     "authority_atomic_behavior": false,
     "completion_eligible": false
   },
+  "scenario_gap_ids": [
+    "scenario.not-applicable-by-surface-contract"
+  ],
+  "completion_gap_ids": [],
   "gap_ids": [
-    "artifact.log.missing",
-    "artifact.metric.missing",
-    "artifact.packet.missing",
-    "identity.broker.missing",
-    "identity.client-version.missing",
-    "identity.runtime.missing",
     "scenario.not-applicable-by-surface-contract"
   ]
 }

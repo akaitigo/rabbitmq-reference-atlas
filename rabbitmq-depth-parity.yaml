@@ -29,6 +29,11 @@ reference:
   reference_system_source_commit: deadad18b6588d2c907170a451c3b5cea5ea4192
   integrated_success_counts_as_behavior_proof: false
   authority_atomic_binding_required_for_completion: true
+  scenario_gap_closure_source_commit: f2e4c4b19156f8e993f48cdcbce23679ad881924
+  scenario_gap_closure_unit: surface-scenario-all-variants
+  scenario_gap_closure_retries: 0
+  scenario_gap_integrated_reuse: forbidden
+  scenario_gap_other_metadata_reuse: forbidden
   rule: FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。
 fixture_mapping:
 - source: fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json
@@ -74,8 +79,8 @@ scenario_mapping:
 summary:
   axes: 18
   satisfied: 1
-  partial: 11
-  missing: 6
+  partial: 6
+  missing: 11
   total_gaps: 4283
   definitive_allowed: false
 axes:
@@ -4515,71 +4520,87 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring normal
     required: 206
-    behavior_specific_runtime: 3
+    legacy_runtime_observation: 3
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 206
     profile_partitions:
       broker-cluster-3:
         required: 81
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       capacity-benchmark:
         required: 7
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-federation:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-shovel:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       integrated-reference-system:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 38
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-ldap-directory:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 16
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stomp:
         required: 17
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 11
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp10:
         required: 5
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       rolling-upgrade:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       tls-cluster-client:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
-  status: partial
+  status: missing
   gap_count: 206
   gap_ids:
   - proof.alarm.cluster-wide.normal
@@ -4790,10 +4811,12 @@ axes:
   - proof.upgrade.rolling.normal
   checks:
   - id: scenario-normal.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=3/206; eligible=0/206
-    status: partial
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=3/206; scenario-gap-closed=0/206; completion-eligible=0/206
+    status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -5010,71 +5033,87 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring boundary
     required: 206
-    behavior_specific_runtime: 3
+    legacy_runtime_observation: 3
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 206
     profile_partitions:
       broker-cluster-3:
         required: 81
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       capacity-benchmark:
         required: 7
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-federation:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-shovel:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       integrated-reference-system:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 38
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-ldap-directory:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 16
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stomp:
         required: 17
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 11
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp10:
         required: 5
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       rolling-upgrade:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       tls-cluster-client:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
-  status: partial
+  status: missing
   gap_count: 206
   gap_ids:
   - proof.alarm.cluster-wide.boundary
@@ -5285,10 +5324,12 @@ axes:
   - proof.upgrade.rolling.boundary
   checks:
   - id: scenario-boundary.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=3/206; eligible=0/206
-    status: partial
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=3/206; scenario-gap-closed=0/206; completion-eligible=0/206
+    status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -5505,71 +5546,87 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring rejection
     required: 206
-    behavior_specific_runtime: 3
+    legacy_runtime_observation: 3
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 206
     profile_partitions:
       broker-cluster-3:
         required: 81
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       capacity-benchmark:
         required: 7
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-federation:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-shovel:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       integrated-reference-system:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 38
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-ldap-directory:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 16
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stomp:
         required: 17
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 11
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp10:
         required: 5
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       rolling-upgrade:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       tls-cluster-client:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
-  status: partial
+  status: missing
   gap_count: 206
   gap_ids:
   - proof.alarm.cluster-wide.rejection
@@ -5780,10 +5837,12 @@ axes:
   - proof.upgrade.rolling.rejection
   checks:
   - id: scenario-refusal.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=3/206; eligible=0/206
-    status: partial
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=3/206; scenario-gap-closed=0/206; completion-eligible=0/206
+    status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -6000,57 +6059,70 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring failure
     required: 74
-    behavior_specific_runtime: 0
+    legacy_runtime_observation: 0
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 74
     profile_partitions:
       broker-cluster-3:
         required: 31
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       capacity-benchmark:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-federation:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-shovel:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       integrated-reference-system:
         required: 2
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 21
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-ldap-directory:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stomp:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       rolling-upgrade:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
   status: missing
   gap_count: 74
@@ -6131,10 +6203,12 @@ axes:
   - proof.upgrade.rollback.failure
   checks:
   - id: scenario-failure.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=0/74; eligible=0/74
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=0/74; scenario-gap-closed=0/74; completion-eligible=0/74
     status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -6219,57 +6293,70 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring recovery
     required: 74
-    behavior_specific_runtime: 0
+    legacy_runtime_observation: 0
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 74
     profile_partitions:
       broker-cluster-3:
         required: 31
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       capacity-benchmark:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-federation:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-shovel:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       integrated-reference-system:
         required: 2
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 21
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-ldap-directory:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stomp:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       rolling-upgrade:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
   status: missing
   gap_count: 74
@@ -6350,10 +6437,12 @@ axes:
   - proof.upgrade.rollback.recovery
   checks:
   - id: scenario-recovery.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=0/74; eligible=0/74
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=0/74; scenario-gap-closed=0/74; completion-eligible=0/74
     status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -6438,33 +6527,40 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring migration
     required: 20
-    behavior_specific_runtime: 0
+    legacy_runtime_observation: 0
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 20
     profile_partitions:
       broker-cluster-3:
         required: 7
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 6
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp10:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       rolling-upgrade:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       tls-cluster-client:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
   status: missing
   gap_count: 20
@@ -6491,10 +6587,12 @@ axes:
   - proof.upgrade.rolling.migration
   checks:
   - id: scenario-migration.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=0/20; eligible=0/20
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=0/20; scenario-gap-closed=0/20; completion-eligible=0/20
     status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -6525,57 +6623,70 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring operations
     required: 50
-    behavior_specific_runtime: 0
+    legacy_runtime_observation: 0
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 50
     profile_partitions:
       broker-cluster-3:
         required: 23
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       capacity-benchmark:
         required: 2
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-federation:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-shovel:
         required: 2
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       integrated-reference-system:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 11
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-ldap-directory:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       tls-cluster-client:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
   status: missing
   gap_count: 50
@@ -6632,10 +6743,12 @@ axes:
   - proof.topology-operator.time-reconciliation.operations
   checks:
   - id: scenario-operations.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=0/50; eligible=0/50
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=0/50; scenario-gap-closed=0/50; completion-eligible=0/50
     status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -6696,59 +6809,72 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring security
     required: 47
-    behavior_specific_runtime: 1
+    legacy_runtime_observation: 1
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 47
     profile_partitions:
       broker-cluster-3:
         required: 7
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       capacity-benchmark:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       integrated-reference-system:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 14
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-ldap-directory:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 5
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stomp:
         required: 5
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 2
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp10:
         required: 2
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       tls-cluster-client:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
-  status: partial
+  status: missing
   gap_count: 47
   gap_ids:
   - proof.amqp10.authentication-options.security
@@ -6800,10 +6926,12 @@ axes:
   - proof.topology-operator.vhost.security
   checks:
   - id: scenario-security.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=1/47; eligible=0/47
-    status: partial
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=1/47; scenario-gap-closed=0/47; completion-eligible=0/47
+    status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -6861,37 +6989,45 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring performance
     required: 26
-    behavior_specific_runtime: 0
+    legacy_runtime_observation: 0
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 26
     profile_partitions:
       broker-cluster-3:
         required: 7
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       capacity-benchmark:
         required: 5
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       integrated-reference-system:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stomp:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 4
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
   status: missing
   gap_count: 26
@@ -6924,10 +7060,12 @@ axes:
   - proof.topology-operator.time-reconciliation.performance
   checks:
   - id: scenario-performance.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=0/26; eligible=0/26
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=0/26; scenario-gap-closed=0/26; completion-eligible=0/26
     status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -6964,59 +7102,72 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring compatibility
     required: 42
-    behavior_specific_runtime: 2
+    legacy_runtime_observation: 2
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 42
     profile_partitions:
       broker-cluster-3:
         required: 9
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-federation:
         required: 2
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       cross-cluster-shovel:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       kubernetes-operator:
         required: 5
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-ldap-directory:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-mqtt:
         required: 6
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stomp:
         required: 8
-        behavior_specific_runtime: 1
+        legacy_runtime_observation: 1
+        scenario_gap_closed: 0
         completion_eligible: 0
       plugin-stream:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 2
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       protocol-amqp10:
         required: 3
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
       rolling-upgrade:
         required: 1
-        behavior_specific_runtime: 0
+        legacy_runtime_observation: 0
+        scenario_gap_closed: 0
         completion_eligible: 0
-  status: partial
+  status: missing
   gap_count: 42
   gap_ids:
   - proof.amqp10.authentication-options.compatibility
@@ -7063,10 +7214,12 @@ axes:
   - proof.upgrade.path.compatibility
   checks:
   - id: scenario-compatibility.dedicated-proof
-    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
-    observed: runtime=2/42; eligible=0/42
-    status: partial
+    required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
+      Artifactを接続する。
+    observed: legacy-observation=2/42; scenario-gap-closed=0/42; completion-eligible=0/42
+    status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/
@@ -7119,7 +7272,9 @@ axes:
   rabbitmq_denominator:
     unit: required behavior × scenario × profile × proof × artifact
     required: 951
-    behavior_specific_runtime: 12
+    legacy_runtime_observation: 12
+    dedicated_runtime_reports: 0
+    scenario_gap_closed: 0
     completion_eligible: 0
     remaining: 951
     required_channels:
@@ -8082,10 +8237,11 @@ axes:
   - proof.upgrade.rolling.rejection
   checks:
   - id: artifact.unique-binding
-    required: 各Required rowへ共有しないBehavior固有Evidenceとpacket/log/metric Artifactまたは明示gapを接続する。
-    observed: runtime=12/951; eligible=0/951
-    status: partial
+    required: 各Required rowの全Variantへ共有しないpacket/log/metric Artifactを専用pathとdigestで接続する。
+    observed: legacy-observation=12/951; scenario-gap-closed=0/951
+    status: gap
     evidence:
+    - scenario-closure.yaml
     - verification.plan.yaml
     - evidence/scenarios/index.json
     - evidence/scenarios/behaviors/

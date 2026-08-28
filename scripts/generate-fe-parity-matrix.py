@@ -45,26 +45,31 @@ def make_axis(reference_axis: dict, denominator: dict, checks: list[dict]) -> di
 def scenario_axis(reference_axis: dict, scenario: str, rows: list[dict], proof_index: dict) -> dict:
     applicable = [row for row in rows if row["scenario"] == scenario and row["applicability"] == "required"]
     proof_by_pair = {(item["behavior_id"], item["scenario"]): item for item in proof_index["files"]}
-    specific = [row for row in applicable if proof_by_pair[(row["behavior_id"], scenario)]["behavior_specific_runtime"]]
+    observed = [row for row in applicable if proof_by_pair[(row["behavior_id"], scenario)]["legacy_runtime_observation"]]
+    closed = [row for row in applicable if proof_by_pair[(row["behavior_id"], scenario)]["scenario_gap_closed"]]
     eligible = [row for row in applicable if proof_by_pair[(row["behavior_id"], scenario)]["completion_eligible"]]
-    gaps = [row["proof_obligation_id"] for row in applicable if row not in eligible]
-    partitions: dict[str, dict[str, int]] = defaultdict(lambda: {"required": 0, "behavior_specific_runtime": 0, "completion_eligible": 0})
+    gaps = [row["proof_obligation_id"] for row in applicable if row not in closed]
+    partitions: dict[str, dict[str, int]] = defaultdict(lambda: {
+        "required": 0, "legacy_runtime_observation": 0, "scenario_gap_closed": 0, "completion_eligible": 0})
     for row in applicable:
         partitions[row["profile"]]["required"] += 1
-        if row in specific:
-            partitions[row["profile"]]["behavior_specific_runtime"] += 1
+        if row in observed:
+            partitions[row["profile"]]["legacy_runtime_observation"] += 1
+        if row in closed:
+            partitions[row["profile"]]["scenario_gap_closed"] += 1
         if row in eligible:
             partitions[row["profile"]]["completion_eligible"] += 1
     check = make_check(
         f"{reference_axis['id']}.dedicated-proof",
-        "各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。",
-        f"runtime={len(specific)}/{len(applicable)}; eligible={len(eligible)}/{len(applicable)}",
-        "pass" if not gaps else ("partial" if specific else "gap"),
-        ["verification.plan.yaml", "evidence/scenarios/index.json", "evidence/scenarios/behaviors/"], gaps)
+        "各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric Artifactを接続する。",
+        f"legacy-observation={len(observed)}/{len(applicable)}; scenario-gap-closed={len(closed)}/{len(applicable)}; completion-eligible={len(eligible)}/{len(applicable)}",
+        "pass" if not gaps else ("partial" if closed else "gap"),
+        ["scenario-closure.yaml", "verification.plan.yaml", "evidence/scenarios/index.json", "evidence/scenarios/behaviors/"], gaps)
     return make_axis(reference_axis, {
         "unit": f"authority-derived behavior requiring {scenario}",
-        "required": len(applicable), "behavior_specific_runtime": len(specific),
-        "completion_eligible": len(eligible), "remaining": len(applicable) - len(eligible),
+        "required": len(applicable), "legacy_runtime_observation": len(observed),
+        "scenario_gap_closed": len(closed), "completion_eligible": len(eligible),
+        "remaining": len(applicable) - len(closed),
         "profile_partitions": dict(sorted(partitions.items())),
     }, [check])
 
@@ -252,18 +257,20 @@ def build() -> dict:
         record = record_by_id.get(row["evidence_ids"][0])
         if not record or record.get("source_digest") != current_lock or record.get("execution_mode") not in {"runtime", "platform"}:
             binding_gaps.append(row["proof_obligation_id"])
-    eligible_pairs = {(item["behavior_id"], item["scenario"]) for item in scenario_proofs["files"] if item["completion_eligible"]}
-    uncovered_artifacts = [row["proof_obligation_id"] for row in required_rows if (row["behavior_id"], row["scenario"]) not in eligible_pairs]
+    closed_pairs = {(item["behavior_id"], item["scenario"]) for item in scenario_proofs["files"] if item["scenario_gap_closed"]}
+    uncovered_artifacts = [row["proof_obligation_id"] for row in required_rows if (row["behavior_id"], row["scenario"]) not in closed_pairs]
     artifact_axis = make_axis(axes_by_id["artifact-trace"], {
         "unit": "required behavior × scenario × profile × proof × artifact", "required": len(required_rows),
-        "behavior_specific_runtime": scenario_proofs["summary"]["behavior_specific_runtime_rows"],
+        "legacy_runtime_observation": scenario_proofs["summary"]["legacy_runtime_observation_rows"],
+        "dedicated_runtime_reports": scenario_proofs["summary"]["dedicated_runtime_report_rows"],
+        "scenario_gap_closed": scenario_proofs["summary"]["scenario_gap_closed_rows"],
         "completion_eligible": scenario_proofs["summary"]["completion_eligible_rows"],
         "remaining": len(uncovered_artifacts), "required_channels": ["packet", "log", "metric"],
     }, [
-        make_check("artifact.unique-binding", "各Required rowへ共有しないBehavior固有Evidenceとpacket/log/metric Artifactまたは明示gapを接続する。",
-                   f"runtime={scenario_proofs['summary']['behavior_specific_runtime_rows']}/{len(required_rows)}; eligible={scenario_proofs['summary']['completion_eligible_rows']}/{len(required_rows)}",
-                   "pass" if not uncovered_artifacts else ("partial" if scenario_proofs["summary"]["behavior_specific_runtime_rows"] else "gap"),
-                   ["verification.plan.yaml", "evidence/scenarios/index.json", "evidence/scenarios/behaviors/"], uncovered_artifacts),
+        make_check("artifact.unique-binding", "各Required rowの全Variantへ共有しないpacket/log/metric Artifactを専用pathとdigestで接続する。",
+                   f"legacy-observation={scenario_proofs['summary']['legacy_runtime_observation_rows']}/{len(required_rows)}; scenario-gap-closed={scenario_proofs['summary']['scenario_gap_closed_rows']}/{len(required_rows)}",
+                   "pass" if not uncovered_artifacts else ("partial" if scenario_proofs["summary"]["scenario_gap_closed_rows"] else "gap"),
+                   ["scenario-closure.yaml", "verification.plan.yaml", "evidence/scenarios/index.json", "evidence/scenarios/behaviors/"], uncovered_artifacts),
         make_check("artifact.digest-freshness", "Source、Harness、Environment、Raw Artifact、実行ModeをDigest束縛する。",
                    f"{len(covered_rows) - len(binding_gaps)}/{len(covered_rows)} covered rows", "pass" if not binding_gaps else "gap",
                    ["sources.lock.yaml", "evidence/"], binding_gaps),
@@ -360,6 +367,11 @@ def build() -> dict:
             "reference_system_source_commit": reference["reference_system_scenario_proof_reference"]["source_commit"],
             "integrated_success_counts_as_behavior_proof": reference["reference_system_scenario_proof_reference"]["integrated_success_counts_as_behavior_proof"],
             "authority_atomic_binding_required_for_completion": reference["reference_system_scenario_proof_reference"]["authority_atomic_binding_required_for_completion"],
+            "scenario_gap_closure_source_commit": reference["scenario_gap_closure_reference"]["source_commit"],
+            "scenario_gap_closure_unit": reference["scenario_gap_closure_reference"]["closure_unit"],
+            "scenario_gap_closure_retries": reference["scenario_gap_closure_reference"]["retries"],
+            "scenario_gap_integrated_reuse": reference["scenario_gap_closure_reference"]["integrated_system_reuse"],
+            "scenario_gap_other_metadata_reuse": reference["scenario_gap_closure_reference"]["other_artifact_metadata_reuse"],
             "rule": "FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。",
         },
         "fixture_mapping": [

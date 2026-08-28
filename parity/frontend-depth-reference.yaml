@@ -123,6 +123,36 @@ reference_system_scenario_proof_reference:
       digest: sha256:e8367390035bf38f93a29d8b0d8c79762517673cc7a38fb227b8e8f036e1dbe2
     - path: scripts/verify-reference-system-evidence.ts
       digest: sha256:0f356e451128294789d7bc6f8b343bc85940258cb612b710d775a7674e10f66c
+scenario_gap_closure_reference:
+  source_commit: f2e4c4b19156f8e993f48cdcbce23679ad881924
+  closure_unit: surface-scenario-all-variants
+  actual_runtime_required: true
+  retries: 0
+  oracle_per_variant_required: true
+  source_harness_digest_required: true
+  runtime_identity_required: true
+  integrated_system_reuse: forbidden
+  other_artifact_metadata_reuse: forbidden
+  rabbitmq_artifact_channels: [packet, log, metric]
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:dca8763eaf3a89ee78883957e351e5e5bfe3e9f78e2b828e74553744d2aeb3b6
+    - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+      digest: sha256:8e6ec1b9277d5bf0a7d8a36618c42212b2037ca43643e64ec0e79150de19a690
+    - path: docs/REFERENCE_SYSTEM.md
+      digest: sha256:5562aa75e57c518c402c31d97885083bed3d1e3abc0af2ecade5c5cb3f188d49
+    - path: artifacts/pattern-scenarios/results.json
+      digest: sha256:6bf5034a3effce130861878081dfb2b3cd7d50698e7075237db13b29d46aecf6
+    - path: pattern-scenario-e2e/reactive-queue-boundary.spec.ts
+      digest: sha256:253f7317c7bc538ece20aa47427457ae92915d3840eab44873ced9ca7565bd35
+    - path: scripts/reporters/pattern-scenario-evidence-reporter.ts
+      digest: sha256:0cc4766e76a23292a50571dfaa76906865e7df55a68c22c5ee70fed840863dcf
+    - path: scripts/verify-pattern-scenario-evidence.ts
+      digest: sha256:3643d1dd6ab6830d1a729fc0684a6691e8fc7af4b2d85bae3e5ec01d89113469
+    - path: scripts/lib/scenario-proof.ts
+      digest: sha256:8b89ff8d0f042b181abe22a2fb1280546f7534f0525a931c6437a177fdb2432f
+    - path: scripts/verify-scenario-proofs.ts
+      digest: sha256:d6192f7da3b160300690f3a4168846711b366b77f8fc6c28918733db221005cd
 denominator_policy:
   source: authority-derived-subject-surface-inventory
   transplant_absolute_counts: false

@@ -7,7 +7,7 @@
   "target_id": "definitive.mqtt.protocol-versions-qos",
   "scenario": "rejection",
   "applicability": "required",
-  "status": "bounded-behavior-runtime-proof",
+  "status": "legacy-runtime-observation-gap-open",
   "runtime_profile": "plugin-mqtt",
   "proof_obligation_id": "proof.mqtt.protocol-versions-qos.rejection",
   "authority_binding": {
@@ -25,58 +25,180 @@
     "human_review_decision": null,
     "authority_atomic_behavior": false
   },
-  "behavior_evidence": {
+  "legacy_observation": {
     "evidence_id": "definitive.mqtt.protocol-versions-qos.rejection",
     "evidence_record": "evidence/definitive.mqtt.protocol-versions-qos.rejection.evidence.json",
     "behavior_specific": true,
+    "identity": {
+      "broker": {
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins",
+        "manifest_digest": "sha256:00098566c5ceb6359261fb10265a3ba9e71e312c50219f842a99bf2dede7bed6",
+        "nodes": 3
+      },
+      "client": {
+        "name": "cmd/rmq-plugin-protocols",
+        "version_kind": "harness-sha256",
+        "version": "sha256:b05df0bfa1939c0c22933cb2030638247a68e96b4b9e3d8df252a5529e8907d4",
+        "source": "cmd/rmq-plugin-protocols/main.go"
+      },
+      "runtime": {
+        "profile": "plugin-mqtt",
+        "execution_mode": "runtime",
+        "created_at": "2026-08-28T11:16:26.836266089Z",
+        "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins"
+      }
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.capture-missing"
+        ]
+      },
+      "log": {
+        "artifacts": [
+          {
+            "channel": "client-log",
+            "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.rejection.json",
+            "digest": "sha256:3fa2aa087cd09474e9170078fcf062278bcdba25f2ff6ef881027fec3e7d58a1",
+            "media_type": "application/json",
+            "size_bytes": 718
+          }
+        ],
+        "gap_ids": []
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.record-missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.metric.record-missing",
+      "artifact.packet.capture-missing"
+    ],
+    "counts_toward_scenario_gap_closure": false,
     "aggregate_evidence_allowed": false
   },
-  "identity": {
-    "broker": {
-      "product": "RabbitMQ",
-      "version": "4.3.5",
-      "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins",
-      "manifest_digest": "sha256:00098566c5ceb6359261fb10265a3ba9e71e312c50219f842a99bf2dede7bed6",
-      "nodes": 3
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/mqtt.protocol-versions-qos/rejection.runtime.json",
+      "present": false,
+      "digest": null
     },
-    "client": {
-      "name": "cmd/rmq-plugin-protocols",
-      "version_kind": "harness-sha256",
-      "version": "sha256:b05df0bfa1939c0c22933cb2030638247a68e96b4b9e3d8df252a5529e8907d4",
-      "source": "cmd/rmq-plugin-protocols/main.go"
-    },
-    "runtime": {
-      "profile": "plugin-mqtt",
-      "execution_mode": "runtime",
-      "created_at": "2026-08-28T11:16:26.836266089Z",
-      "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins"
-    }
-  },
-  "artifact_channels": {
-    "packet": {
-      "artifacts": [],
-      "gap_ids": [
-        "artifact.packet.capture-missing"
-      ]
-    },
-    "log": {
-      "artifacts": [
-        {
-          "channel": "client-log",
-          "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.rejection.json",
-          "digest": "sha256:3fa2aa087cd09474e9170078fcf062278bcdba25f2ff6ef881027fec3e7d58a1",
-          "media_type": "application/json",
-          "size_bytes": 718
+    "required_variants": [
+      "node-1",
+      "node-2",
+      "node-3"
+    ],
+    "variant_proofs": [
+      {
+        "id": "node-1",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1.metric.missing"
+            ]
+          }
         }
-      ],
-      "gap_ids": []
+      },
+      {
+        "id": "node-2",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2.metric.missing"
+            ]
+          }
+        }
+      },
+      {
+        "id": "node-3",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3.metric.missing"
+            ]
+          }
+        }
+      }
+    ],
+    "requirements": {
+      "dedicated_surface_scenario_report": false,
+      "all_variants_driven": false,
+      "attempts_one_retry_zero": false,
+      "oracle_pass_per_variant": false,
+      "source_harness_digest_bound": false,
+      "broker_client_runtime_identity": false,
+      "packet_log_metric_dedicated": false
     },
-    "metric": {
-      "artifacts": [],
-      "gap_ids": [
-        "artifact.metric.record-missing"
-      ]
-    }
+    "scenario_gap_closed": false
   },
   "integrated_reference": {
     "manifest": "reference-system/manifest.yaml",
@@ -87,15 +209,56 @@
   },
   "closure": {
     "dedicated_row": true,
-    "dedicated_artifact": true,
-    "behavior_specific_runtime_proof": true,
-    "broker_client_version_runtime_identity": true,
+    "dedicated_surface_scenario_report": false,
+    "all_variants_driven": false,
+    "attempts_one_retry_zero": false,
+    "oracle_pass_per_variant": false,
+    "source_harness_digest_bound": false,
+    "broker_client_runtime_identity": false,
+    "packet_log_metric_dedicated": false,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": false,
     "authority_atomic_behavior": false,
     "completion_eligible": false
   },
-  "gap_ids": [
-    "artifact.metric.record-missing",
-    "artifact.packet.capture-missing",
+  "scenario_gap_ids": [
+    "artifact.node-1.log.missing",
+    "artifact.node-1.metric.missing",
+    "artifact.node-1.packet.missing",
+    "artifact.node-2.log.missing",
+    "artifact.node-2.metric.missing",
+    "artifact.node-2.packet.missing",
+    "artifact.node-3.log.missing",
+    "artifact.node-3.metric.missing",
+    "artifact.node-3.packet.missing",
+    "digest.source-harness-missing",
+    "execution.attempts-not-one",
+    "execution.retries-not-zero",
+    "identity.broker-client-runtime-missing",
+    "oracle.variant-pass-missing",
+    "runtime.dedicated-report-missing",
+    "variant.execution-missing"
+  ],
+  "completion_gap_ids": [
     "authority.atomic-human-promotion-missing"
+  ],
+  "gap_ids": [
+    "artifact.node-1.log.missing",
+    "artifact.node-1.metric.missing",
+    "artifact.node-1.packet.missing",
+    "artifact.node-2.log.missing",
+    "artifact.node-2.metric.missing",
+    "artifact.node-2.packet.missing",
+    "artifact.node-3.log.missing",
+    "artifact.node-3.metric.missing",
+    "artifact.node-3.packet.missing",
+    "authority.atomic-human-promotion-missing",
+    "digest.source-harness-missing",
+    "execution.attempts-not-one",
+    "execution.retries-not-zero",
+    "identity.broker-client-runtime-missing",
+    "oracle.variant-pass-missing",
+    "runtime.dedicated-report-missing",
+    "variant.execution-missing"
   ]
 }
