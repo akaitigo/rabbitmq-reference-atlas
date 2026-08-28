@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.delivery.publisher-confirms.failure",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "delivery.publisher-confirms",
+  "target_id": "definitive.delivery.publisher-confirms",
+  "scenario": "failure",
+  "applicability": "required",
+  "status": "behavior-specific-gap",
+  "runtime_profile": "broker-cluster-3",
+  "proof_obligation_id": "proof.delivery.publisher-confirms.failure",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.delivery.publisher-confirms",
+      "authority_artifact_id": "rabbitmq-4-3-confirms",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-confirms.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:70db2332ed6756d9adf44f40c24376ebfa30ff0f93c4d59cba3e9619e74d56c4",
+      "source_id": "rabbitmq-4.3-confirms",
+      "source_digest": "sha256:861abccf819fddcdaddd661255914d867d6ed511a9ff19311bfef73d0907b127",
+      "surface_id": "delivery.publisher-confirms",
+      "locator": "#publisher-confirms",
+      "behavior_id": "delivery.publisher-confirms"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "behavior_evidence": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "aggregate_evidence_allowed": false
+  },
+  "identity": {
+    "broker": null,
+    "client": null,
+    "runtime": null
+  },
+  "artifact_channels": {
+    "packet": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.packet.missing"
+      ]
+    },
+    "log": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.log.missing"
+      ]
+    },
+    "metric": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.metric.missing"
+      ]
+    }
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.failure",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_artifact": true,
+    "behavior_specific_runtime_proof": false,
+    "broker_client_version_runtime_identity": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "gap_ids": [
+    "artifact.log.missing",
+    "artifact.metric.missing",
+    "artifact.packet.missing",
+    "authority.atomic-human-promotion-missing",
+    "evidence.behavior-specific-single-record-missing",
+    "identity.broker.missing",
+    "identity.client-version.missing",
+    "identity.runtime.missing",
+    "proof.behavior-specific-runtime-missing"
+  ]
+}

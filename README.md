@@ -37,6 +37,8 @@
 
 Router Skill Evalは`frontend-behavior-atlas@8a9e34a89a55cc53702032783c06ede7246a286f`の方式をRabbitMQへ適用します。112セルを実Target、Scenario/Profile Variant、Authority locator、固定Broker/Protocol EvidenceへRouteし、曖昧・未知Query、無許可変更、人手Authority判断、stale relockをfail-closedで評価します。現状はRouter契約112/112、Route可能86、実証Closure 20/112、独立Agent Forward Eval 6/10であり、matrix passだけでは完成扱いにしません。詳細は`docs/SKILL_EVAL_WORKFLOW.md`に記録します。
 
+Scenario Proofは`frontend-behavior-atlas@deadad18b6588d2c907170a451c3b5cea5ea4192`の分離方式を適用します。`reference-system/`はCross-behavior統合実行10 Scenarioだけを記録し、`evidence/scenarios/behaviors/`は206 Behavior × 10 Scenarioの2,060専用Artifactを保持します。各rowはAuthority locator、Broker、Client version、Runtime identityとpacket／log／metric Artifactまたは明示gapを別欄に持ちます。現状はRequired 951 row中12 rowだけがBehavior固有Runtime Evidenceを持ち、Authority Review Queueから昇格したAtomic behaviorが0、統合実行Evidenceが0/10のため、Completion eligibleは0です。統合Systemの成功を個別BehaviorのProofへ流用することはGateで拒否します。
+
 ## 検証
 
 前提はGo 1.26、Python 3、Docker Engine、Docker Composeです。
@@ -59,6 +61,8 @@ make labs
 - Authority Raw Anchor Inventory: `authority/body-inventory.snapshot.json`
 - Authority Human Review Queue: `authority/review-queue.snapshot.json`
 - Open Verification Plan: `verification.plan.yaml`
+- Integrated Reference System Contract: `reference-system/manifest.yaml`
+- Behavior Scenario Proof Matrix: `evidence/scenarios/index.json`
 - Depth Parity: `rabbitmq-depth-parity.yaml`
 - Skill Package: `skill.package.yaml`
 - Skill Eval Detail: `evals/rabbitmq-reference-atlas.skill-routing-eval.json`

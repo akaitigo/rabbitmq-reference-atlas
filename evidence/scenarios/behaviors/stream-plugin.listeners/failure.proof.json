@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.stream-plugin.listeners.failure",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "stream-plugin.listeners",
+  "target_id": "definitive.stream-plugin.listeners",
+  "scenario": "failure",
+  "applicability": "not-applicable",
+  "status": "not-applicable-contract",
+  "runtime_profile": null,
+  "proof_obligation_id": null,
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.stream-plugin.listeners",
+      "authority_artifact_id": "rabbitmq-4-3-stream-plugin",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-stream-plugin.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:6c36f0074bc897c6a33663eae2fc706a5a4124afaec95d0fd3b56b229db34804",
+      "source_id": "rabbitmq-4.3-stream-plugin",
+      "source_digest": "sha256:772204455494ca191c54d1aea15926e148fe5120cd698ad2177f3a9deaf8bb69",
+      "surface_id": "stream-plugin.listeners",
+      "locator": "#tcp-listeners",
+      "behavior_id": "stream-plugin.listeners"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "behavior_evidence": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "aggregate_evidence_allowed": false
+  },
+  "identity": {
+    "broker": null,
+    "client": null,
+    "runtime": null
+  },
+  "artifact_channels": {
+    "packet": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.packet.missing"
+      ]
+    },
+    "log": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.log.missing"
+      ]
+    },
+    "metric": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.metric.missing"
+      ]
+    }
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.failure",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_artifact": true,
+    "behavior_specific_runtime_proof": false,
+    "broker_client_version_runtime_identity": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "gap_ids": [
+    "artifact.log.missing",
+    "artifact.metric.missing",
+    "artifact.packet.missing",
+    "identity.broker.missing",
+    "identity.client-version.missing",
+    "identity.runtime.missing",
+    "scenario.not-applicable-by-surface-contract"
+  ]
+}

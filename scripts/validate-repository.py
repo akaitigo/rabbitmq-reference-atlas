@@ -8,6 +8,8 @@ import sys
 
 import yaml
 
+from scenario_proof import validate_files as validate_scenario_proof_files
+
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 SHA256 = re.compile(r"^sha256:[0-9a-f]{64}$")
@@ -70,6 +72,9 @@ def main() -> int:
         for claim_path in sorted((ROOT / "claims").glob("*.claim.yaml"))
     )
     historical_digests = historical_authority_digests()
+
+    for error in validate_scenario_proof_files():
+        fail(errors, f"scenario proof: {error}")
 
     for name, document in (("sources", sources), ("coverage", coverage), ("mastery", mastery), ("skill", skill)):
         if document["atlas_id"] != atlas["id"]:
@@ -174,6 +179,19 @@ def main() -> int:
             or parity["reference"].get("skill_eval_matrix_pass_is_completion") is not False
             or parity["reference"].get("skill_eval_independent_agent_forward_required") is not True):
         fail(errors, "RabbitMQ depth parity Skill Eval reference mismatch")
+    scenario_reference = load(ROOT / "parity/frontend-depth-reference.yaml")["reference_system_scenario_proof_reference"]
+    if (scenario_reference["source_commit"] != "deadad18b6588d2c907170a451c3b5cea5ea4192"
+            or scenario_reference["integrated_scenarios"] != 10
+            or scenario_reference["behavior_specific_proof_separate"] is not True
+            or scenario_reference["integrated_success_counts_as_behavior_proof"] is not False
+            or scenario_reference["authority_atomic_binding_required_for_completion"] is not True
+            or scenario_reference["runtime_identity_required"] is not True
+            or scenario_reference["artifacts_or_explicit_gaps_required"] is not True):
+        fail(errors, "RabbitMQ Reference System/Scenario Proof reference contract mismatch")
+    if (parity["reference"].get("reference_system_source_commit") != scenario_reference["source_commit"]
+            or parity["reference"].get("integrated_success_counts_as_behavior_proof") is not False
+            or parity["reference"].get("authority_atomic_binding_required_for_completion") is not True):
+        fail(errors, "RabbitMQ depth parity Scenario Proof reference mismatch")
     if not (ROOT / skill["router"]["path"]).exists():
         fail(errors, "router path missing")
     expected_lock_digest = sha(ROOT / "sources.lock.yaml")

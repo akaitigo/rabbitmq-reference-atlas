@@ -26,6 +26,9 @@ reference:
   skill_eval_matrix_unit: 8-outcomes-by-14-surfaces
   skill_eval_matrix_pass_is_completion: false
   skill_eval_independent_agent_forward_required: true
+  reference_system_source_commit: deadad18b6588d2c907170a451c3b5cea5ea4192
+  integrated_success_counts_as_behavior_proof: false
+  authority_atomic_binding_required_for_completion: true
   rule: FE件数を転記せず、同じ18軸の意味とProof粒度をRabbitMQ固有denominatorへ適用する。
 fixture_mapping:
 - source: fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json
@@ -73,7 +76,7 @@ summary:
   satisfied: 1
   partial: 11
   missing: 6
-  total_gaps: 4250
+  total_gaps: 4283
   definitive_allowed: false
 axes:
 - id: authority-body-digestion
@@ -4512,56 +4515,72 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring normal
     required: 206
-    covered: 3
-    remaining: 203
+    behavior_specific_runtime: 3
+    completion_eligible: 0
+    remaining: 206
     profile_partitions:
       broker-cluster-3:
         required: 81
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       capacity-benchmark:
         required: 7
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-federation:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-shovel:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       integrated-reference-system:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 38
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-ldap-directory:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 16
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       plugin-oauth2-idp:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stomp:
         required: 17
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       plugin-stream:
         required: 11
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp10:
         required: 5
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       rolling-upgrade:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       tls-cluster-client:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: partial
-  gap_count: 203
+  gap_count: 206
   gap_ids:
   - proof.alarm.cluster-wide.normal
   - proof.alarm.disk.normal
@@ -4570,6 +4589,7 @@ axes:
   - proof.amqp10.address-v2.normal
   - proof.amqp10.authentication-options.normal
   - proof.amqp10.protocol-interoperability.normal
+  - proof.amqp10.version-negotiation.normal
   - proof.backup.definitions.normal
   - proof.backup.message-data.normal
   - proof.backup.node-identity.normal
@@ -4634,6 +4654,7 @@ axes:
   - proof.mqtt.listener-tls.normal
   - proof.mqtt.message-expiry-will-retained.normal
   - proof.mqtt.metrics-capacity.normal
+  - proof.mqtt.protocol-versions-qos.normal
   - proof.mqtt.qos0-overload-drop.normal
   - proof.mqtt.qos0-queue.normal
   - proof.mqtt.session-expiry-clean.normal
@@ -4723,6 +4744,7 @@ axes:
   - proof.stomp.listeners-tls.normal
   - proof.stomp.persistence.normal
   - proof.stomp.prefetch.normal
+  - proof.stomp.protocol-plugin.normal
   - proof.stomp.queue-destination.normal
   - proof.stomp.queue-parameters.normal
   - proof.stomp.stream-support.normal
@@ -4768,13 +4790,13 @@ axes:
   - proof.upgrade.rolling.normal
   checks:
   - id: scenario-normal.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 3/206
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=3/206; eligible=0/206
     status: partial
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.security.authn-authz-split.normal
     - proof.security.backend-chain.normal
@@ -4785,6 +4807,7 @@ axes:
     - proof.alarm.disk.normal
     - proof.alarm.cluster-wide.normal
     - proof.alarm.recovery.normal
+    - proof.amqp10.version-negotiation.normal
     - proof.amqp10.authentication-options.normal
     - proof.amqp10.protocol-interoperability.normal
     - proof.amqp10.address-v2.normal
@@ -4845,6 +4868,7 @@ axes:
     - proof.monitoring.logs.normal
     - proof.monitoring.metrics.normal
     - proof.monitoring.correlation.normal
+    - proof.mqtt.protocol-versions-qos.normal
     - proof.mqtt.message-expiry-will-retained.normal
     - proof.mqtt.cross-protocol-routing.normal
     - proof.mqtt.session-queue-cardinality.normal
@@ -4904,6 +4928,7 @@ axes:
     - proof.shovel.protocol-variants.normal
     - proof.shovel.acknowledgement.normal
     - proof.shovel.failure-recovery.normal
+    - proof.stomp.protocol-plugin.normal
     - proof.stomp.listeners-tls.normal
     - proof.stomp.x509-authentication.normal
     - proof.stomp.frame-size-limit.normal
@@ -4985,56 +5010,72 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring boundary
     required: 206
-    covered: 3
-    remaining: 203
+    behavior_specific_runtime: 3
+    completion_eligible: 0
+    remaining: 206
     profile_partitions:
       broker-cluster-3:
         required: 81
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       capacity-benchmark:
         required: 7
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-federation:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-shovel:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       integrated-reference-system:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 38
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-ldap-directory:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 16
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       plugin-oauth2-idp:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stomp:
         required: 17
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       plugin-stream:
         required: 11
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp10:
         required: 5
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       rolling-upgrade:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       tls-cluster-client:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: partial
-  gap_count: 203
+  gap_count: 206
   gap_ids:
   - proof.alarm.cluster-wide.boundary
   - proof.alarm.disk.boundary
@@ -5043,6 +5084,7 @@ axes:
   - proof.amqp10.address-v2.boundary
   - proof.amqp10.authentication-options.boundary
   - proof.amqp10.protocol-interoperability.boundary
+  - proof.amqp10.version-negotiation.boundary
   - proof.backup.definitions.boundary
   - proof.backup.message-data.boundary
   - proof.backup.node-identity.boundary
@@ -5107,6 +5149,7 @@ axes:
   - proof.mqtt.listener-tls.boundary
   - proof.mqtt.message-expiry-will-retained.boundary
   - proof.mqtt.metrics-capacity.boundary
+  - proof.mqtt.protocol-versions-qos.boundary
   - proof.mqtt.qos0-overload-drop.boundary
   - proof.mqtt.qos0-queue.boundary
   - proof.mqtt.session-expiry-clean.boundary
@@ -5196,6 +5239,7 @@ axes:
   - proof.stomp.listeners-tls.boundary
   - proof.stomp.persistence.boundary
   - proof.stomp.prefetch.boundary
+  - proof.stomp.protocol-plugin.boundary
   - proof.stomp.queue-destination.boundary
   - proof.stomp.queue-parameters.boundary
   - proof.stomp.stream-support.boundary
@@ -5241,13 +5285,13 @@ axes:
   - proof.upgrade.rolling.boundary
   checks:
   - id: scenario-boundary.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 3/206
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=3/206; eligible=0/206
     status: partial
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.security.authn-authz-split.boundary
     - proof.security.backend-chain.boundary
@@ -5258,6 +5302,7 @@ axes:
     - proof.alarm.disk.boundary
     - proof.alarm.cluster-wide.boundary
     - proof.alarm.recovery.boundary
+    - proof.amqp10.version-negotiation.boundary
     - proof.amqp10.authentication-options.boundary
     - proof.amqp10.protocol-interoperability.boundary
     - proof.amqp10.address-v2.boundary
@@ -5318,6 +5363,7 @@ axes:
     - proof.monitoring.logs.boundary
     - proof.monitoring.metrics.boundary
     - proof.monitoring.correlation.boundary
+    - proof.mqtt.protocol-versions-qos.boundary
     - proof.mqtt.message-expiry-will-retained.boundary
     - proof.mqtt.cross-protocol-routing.boundary
     - proof.mqtt.session-queue-cardinality.boundary
@@ -5377,6 +5423,7 @@ axes:
     - proof.shovel.protocol-variants.boundary
     - proof.shovel.acknowledgement.boundary
     - proof.shovel.failure-recovery.boundary
+    - proof.stomp.protocol-plugin.boundary
     - proof.stomp.listeners-tls.boundary
     - proof.stomp.x509-authentication.boundary
     - proof.stomp.frame-size-limit.boundary
@@ -5458,56 +5505,72 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring rejection
     required: 206
-    covered: 3
-    remaining: 203
+    behavior_specific_runtime: 3
+    completion_eligible: 0
+    remaining: 206
     profile_partitions:
       broker-cluster-3:
         required: 81
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       capacity-benchmark:
         required: 7
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-federation:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-shovel:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       integrated-reference-system:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 38
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-ldap-directory:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 16
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       plugin-oauth2-idp:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stomp:
         required: 17
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       plugin-stream:
         required: 11
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp10:
         required: 5
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       rolling-upgrade:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       tls-cluster-client:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: partial
-  gap_count: 203
+  gap_count: 206
   gap_ids:
   - proof.alarm.cluster-wide.rejection
   - proof.alarm.disk.rejection
@@ -5516,6 +5579,7 @@ axes:
   - proof.amqp10.address-v2.rejection
   - proof.amqp10.authentication-options.rejection
   - proof.amqp10.protocol-interoperability.rejection
+  - proof.amqp10.version-negotiation.rejection
   - proof.backup.definitions.rejection
   - proof.backup.message-data.rejection
   - proof.backup.node-identity.rejection
@@ -5580,6 +5644,7 @@ axes:
   - proof.mqtt.listener-tls.rejection
   - proof.mqtt.message-expiry-will-retained.rejection
   - proof.mqtt.metrics-capacity.rejection
+  - proof.mqtt.protocol-versions-qos.rejection
   - proof.mqtt.qos0-overload-drop.rejection
   - proof.mqtt.qos0-queue.rejection
   - proof.mqtt.session-expiry-clean.rejection
@@ -5669,6 +5734,7 @@ axes:
   - proof.stomp.listeners-tls.rejection
   - proof.stomp.persistence.rejection
   - proof.stomp.prefetch.rejection
+  - proof.stomp.protocol-plugin.rejection
   - proof.stomp.queue-destination.rejection
   - proof.stomp.queue-parameters.rejection
   - proof.stomp.stream-support.rejection
@@ -5714,13 +5780,13 @@ axes:
   - proof.upgrade.rolling.rejection
   checks:
   - id: scenario-refusal.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 3/206
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=3/206; eligible=0/206
     status: partial
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.security.authn-authz-split.rejection
     - proof.security.backend-chain.rejection
@@ -5731,6 +5797,7 @@ axes:
     - proof.alarm.disk.rejection
     - proof.alarm.cluster-wide.rejection
     - proof.alarm.recovery.rejection
+    - proof.amqp10.version-negotiation.rejection
     - proof.amqp10.authentication-options.rejection
     - proof.amqp10.protocol-interoperability.rejection
     - proof.amqp10.address-v2.rejection
@@ -5791,6 +5858,7 @@ axes:
     - proof.monitoring.logs.rejection
     - proof.monitoring.metrics.rejection
     - proof.monitoring.correlation.rejection
+    - proof.mqtt.protocol-versions-qos.rejection
     - proof.mqtt.message-expiry-will-retained.rejection
     - proof.mqtt.cross-protocol-routing.rejection
     - proof.mqtt.session-queue-cardinality.rejection
@@ -5850,6 +5918,7 @@ axes:
     - proof.shovel.protocol-variants.rejection
     - proof.shovel.acknowledgement.rejection
     - proof.shovel.failure-recovery.rejection
+    - proof.stomp.protocol-plugin.rejection
     - proof.stomp.listeners-tls.rejection
     - proof.stomp.x509-authentication.rejection
     - proof.stomp.frame-size-limit.rejection
@@ -5931,45 +6000,58 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring failure
     required: 74
-    covered: 0
+    behavior_specific_runtime: 0
+    completion_eligible: 0
     remaining: 74
     profile_partitions:
       broker-cluster-3:
         required: 31
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       capacity-benchmark:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-federation:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-shovel:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       integrated-reference-system:
         required: 2
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 21
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-ldap-directory:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stomp:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stream:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       rolling-upgrade:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: missing
   gap_count: 74
   gap_ids:
@@ -6049,13 +6131,13 @@ axes:
   - proof.upgrade.rollback.failure
   checks:
   - id: scenario-failure.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 0/74
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=0/74; eligible=0/74
     status: gap
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.alarm.memory.failure
     - proof.alarm.disk.failure
@@ -6137,45 +6219,58 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring recovery
     required: 74
-    covered: 0
+    behavior_specific_runtime: 0
+    completion_eligible: 0
     remaining: 74
     profile_partitions:
       broker-cluster-3:
         required: 31
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       capacity-benchmark:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-federation:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-shovel:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       integrated-reference-system:
         required: 2
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 21
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-ldap-directory:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stomp:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stream:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       rolling-upgrade:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: missing
   gap_count: 74
   gap_ids:
@@ -6255,13 +6350,13 @@ axes:
   - proof.upgrade.rollback.recovery
   checks:
   - id: scenario-recovery.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 0/74
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=0/74; eligible=0/74
     status: gap
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.alarm.memory.recovery
     - proof.alarm.disk.recovery
@@ -6343,27 +6438,34 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring migration
     required: 20
-    covered: 0
+    behavior_specific_runtime: 0
+    completion_eligible: 0
     remaining: 20
     profile_partitions:
       broker-cluster-3:
         required: 7
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 6
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp10:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       rolling-upgrade:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       tls-cluster-client:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: missing
   gap_count: 20
   gap_ids:
@@ -6389,13 +6491,13 @@ axes:
   - proof.upgrade.rolling.migration
   checks:
   - id: scenario-migration.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 0/20
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=0/20; eligible=0/20
     status: gap
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.amqp10.address-v2.migration
     - proof.backup.definitions.migration
@@ -6423,45 +6525,58 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring operations
     required: 50
-    covered: 0
+    behavior_specific_runtime: 0
+    completion_eligible: 0
     remaining: 50
     profile_partitions:
       broker-cluster-3:
         required: 23
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       capacity-benchmark:
         required: 2
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-federation:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-shovel:
         required: 2
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       integrated-reference-system:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 11
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-ldap-directory:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stream:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       tls-cluster-client:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: missing
   gap_count: 50
   gap_ids:
@@ -6517,13 +6632,13 @@ axes:
   - proof.topology-operator.time-reconciliation.operations
   checks:
   - id: scenario-operations.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 0/50
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=0/50; eligible=0/50
     status: gap
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.security.credential-rotation.operations
     - proof.alarm.memory.operations
@@ -6581,49 +6696,63 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring security
     required: 47
-    covered: 1
-    remaining: 46
+    behavior_specific_runtime: 1
+    completion_eligible: 0
+    remaining: 47
     profile_partitions:
       broker-cluster-3:
         required: 7
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       capacity-benchmark:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       integrated-reference-system:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 14
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-ldap-directory:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 5
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-oauth2-idp:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stomp:
         required: 5
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stream:
         required: 2
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp10:
         required: 2
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       tls-cluster-client:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: partial
-  gap_count: 46
+  gap_count: 47
   gap_ids:
   - proof.amqp10.authentication-options.security
+  - proof.amqp10.version-negotiation.security
   - proof.ldap.authentication.security
   - proof.ldap.authorization.security
   - proof.ldap.tls.security
@@ -6671,19 +6800,20 @@ axes:
   - proof.topology-operator.vhost.security
   checks:
   - id: scenario-security.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 1/47
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=1/47; eligible=0/47
     status: partial
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.security.authn-authz-split.security
     - proof.security.backend-chain.security
     - proof.security.vhost-permissions.security
     - proof.security.topic-permissions.security
     - proof.security.credential-rotation.security
+    - proof.amqp10.version-negotiation.security
     - proof.amqp10.authentication-options.security
     - proof.ldap.authentication.security
     - proof.ldap.authorization.security
@@ -6731,30 +6861,38 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring performance
     required: 26
-    covered: 0
+    behavior_specific_runtime: 0
+    completion_eligible: 0
     remaining: 26
     profile_partitions:
       broker-cluster-3:
         required: 7
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       capacity-benchmark:
         required: 5
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       integrated-reference-system:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stomp:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stream:
         required: 4
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: missing
   gap_count: 26
   gap_ids:
@@ -6786,13 +6924,13 @@ axes:
   - proof.topology-operator.time-reconciliation.performance
   checks:
   - id: scenario-performance.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 0/26
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=0/26; eligible=0/26
     status: gap
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.alarm.memory.performance
     - proof.alarm.disk.performance
@@ -6826,47 +6964,60 @@ axes:
   rabbitmq_denominator:
     unit: authority-derived behavior requiring compatibility
     required: 42
-    covered: 2
-    remaining: 40
+    behavior_specific_runtime: 2
+    completion_eligible: 0
+    remaining: 42
     profile_partitions:
       broker-cluster-3:
         required: 9
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-federation:
         required: 2
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       cross-cluster-shovel:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       kubernetes-operator:
         required: 5
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-ldap-directory:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-mqtt:
         required: 6
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       plugin-stomp:
         required: 8
-        covered: 1
+        behavior_specific_runtime: 1
+        completion_eligible: 0
       plugin-stream:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp091-control-plane:
         required: 2
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       protocol-amqp10:
         required: 3
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
       rolling-upgrade:
         required: 1
-        covered: 0
+        behavior_specific_runtime: 0
+        completion_eligible: 0
   status: partial
-  gap_count: 40
+  gap_count: 42
   gap_ids:
   - proof.amqp10.authentication-options.compatibility
   - proof.amqp10.protocol-interoperability.compatibility
@@ -6880,6 +7031,7 @@ axes:
   - proof.management.oauth.compatibility
   - proof.mqtt.cross-protocol-routing.compatibility
   - proof.mqtt.listener-tls.compatibility
+  - proof.mqtt.protocol-versions-qos.compatibility
   - proof.mqtt.topic-translation.compatibility
   - proof.mqtt.x509-authentication.compatibility
   - proof.oauth2.multi-resource-server.compatibility
@@ -6902,6 +7054,7 @@ axes:
   - proof.stomp.amq-queue-destination.compatibility
   - proof.stomp.exchange-destination.compatibility
   - proof.stomp.listeners-tls.compatibility
+  - proof.stomp.protocol-plugin.compatibility
   - proof.stomp.queue-parameters.compatibility
   - proof.stomp.stream-support.compatibility
   - proof.stream-plugin.protocol-client.compatibility
@@ -6910,13 +7063,13 @@ axes:
   - proof.upgrade.path.compatibility
   checks:
   - id: scenario-compatibility.dedicated-proof
-    required: 各Required behaviorへ専用Oracle、実Profile、専用Artifact、Evidenceを一対一で接続する。
-    observed: 2/42
+    required: 各Required behaviorへAuthority atomic binding、専用Oracle、実Profile、Broker/Client/version identity、専用Artifactを一対一で接続する。
+    observed: runtime=2/42; eligible=0/42
     status: partial
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.amqp10.authentication-options.compatibility
     - proof.amqp10.protocol-interoperability.compatibility
@@ -6928,6 +7081,7 @@ axes:
     - proof.federation.queue.compatibility
     - proof.ldap.tls.compatibility
     - proof.management.oauth.compatibility
+    - proof.mqtt.protocol-versions-qos.compatibility
     - proof.mqtt.cross-protocol-routing.compatibility
     - proof.mqtt.topic-translation.compatibility
     - proof.mqtt.listener-tls.compatibility
@@ -6944,6 +7098,7 @@ axes:
     - proof.publisher.connection-failure.compatibility
     - proof.queue.temporary-race.compatibility
     - proof.shovel.protocol-variants.compatibility
+    - proof.stomp.protocol-plugin.compatibility
     - proof.stomp.listeners-tls.compatibility
     - proof.stomp.exchange-destination.compatibility
     - proof.stomp.amq-queue-destination.compatibility
@@ -6964,18 +7119,15 @@ axes:
   rabbitmq_denominator:
     unit: required behavior × scenario × profile × proof × artifact
     required: 951
-    bound: 12
-    remaining: 939
+    behavior_specific_runtime: 12
+    completion_eligible: 0
+    remaining: 951
     required_channels:
-    - wire-packet
-    - broker-log
-    - client-log
+    - packet
+    - log
     - metric
-    - state-snapshot
-    - benchmark-sample
-    - kubernetes-event
   status: partial
-  gap_count: 939
+  gap_count: 951
   gap_ids:
   - proof.alarm.cluster-wide.boundary
   - proof.alarm.cluster-wide.failure
@@ -7014,6 +7166,10 @@ axes:
   - proof.amqp10.protocol-interoperability.compatibility
   - proof.amqp10.protocol-interoperability.normal
   - proof.amqp10.protocol-interoperability.rejection
+  - proof.amqp10.version-negotiation.boundary
+  - proof.amqp10.version-negotiation.normal
+  - proof.amqp10.version-negotiation.rejection
+  - proof.amqp10.version-negotiation.security
   - proof.backup.definitions.boundary
   - proof.backup.definitions.migration
   - proof.backup.definitions.normal
@@ -7296,6 +7452,10 @@ axes:
   - proof.mqtt.metrics-capacity.operations
   - proof.mqtt.metrics-capacity.performance
   - proof.mqtt.metrics-capacity.rejection
+  - proof.mqtt.protocol-versions-qos.boundary
+  - proof.mqtt.protocol-versions-qos.compatibility
+  - proof.mqtt.protocol-versions-qos.normal
+  - proof.mqtt.protocol-versions-qos.rejection
   - proof.mqtt.qos0-overload-drop.boundary
   - proof.mqtt.qos0-overload-drop.failure
   - proof.mqtt.qos0-overload-drop.normal
@@ -7717,6 +7877,10 @@ axes:
   - proof.stomp.prefetch.normal
   - proof.stomp.prefetch.performance
   - proof.stomp.prefetch.rejection
+  - proof.stomp.protocol-plugin.boundary
+  - proof.stomp.protocol-plugin.compatibility
+  - proof.stomp.protocol-plugin.normal
+  - proof.stomp.protocol-plugin.rejection
   - proof.stomp.queue-destination.boundary
   - proof.stomp.queue-destination.normal
   - proof.stomp.queue-destination.rejection
@@ -7918,13 +8082,13 @@ axes:
   - proof.upgrade.rolling.rejection
   checks:
   - id: artifact.unique-binding
-    required: 各Required rowへ共有しない専用Evidence/Artifactを一件接続する。
-    observed: 12/951
+    required: 各Required rowへ共有しないBehavior固有Evidenceとpacket/log/metric Artifactまたは明示gapを接続する。
+    observed: runtime=12/951; eligible=0/951
     status: partial
     evidence:
     - verification.plan.yaml
-    - evidence/
-    - evidence/raw/
+    - evidence/scenarios/index.json
+    - evidence/scenarios/behaviors/
     gap_ids:
     - proof.security.authn-authz-split.normal
     - proof.security.authn-authz-split.boundary
@@ -7971,6 +8135,10 @@ axes:
     - proof.alarm.recovery.rejection
     - proof.alarm.recovery.failure
     - proof.alarm.recovery.recovery
+    - proof.amqp10.version-negotiation.normal
+    - proof.amqp10.version-negotiation.boundary
+    - proof.amqp10.version-negotiation.rejection
+    - proof.amqp10.version-negotiation.security
     - proof.amqp10.authentication-options.normal
     - proof.amqp10.authentication-options.boundary
     - proof.amqp10.authentication-options.rejection
@@ -8235,6 +8403,10 @@ axes:
     - proof.monitoring.correlation.failure
     - proof.monitoring.correlation.recovery
     - proof.monitoring.correlation.operations
+    - proof.mqtt.protocol-versions-qos.normal
+    - proof.mqtt.protocol-versions-qos.boundary
+    - proof.mqtt.protocol-versions-qos.rejection
+    - proof.mqtt.protocol-versions-qos.compatibility
     - proof.mqtt.message-expiry-will-retained.normal
     - proof.mqtt.message-expiry-will-retained.boundary
     - proof.mqtt.message-expiry-will-retained.rejection
@@ -8503,6 +8675,10 @@ axes:
     - proof.shovel.failure-recovery.failure
     - proof.shovel.failure-recovery.recovery
     - proof.shovel.failure-recovery.operations
+    - proof.stomp.protocol-plugin.normal
+    - proof.stomp.protocol-plugin.boundary
+    - proof.stomp.protocol-plugin.rejection
+    - proof.stomp.protocol-plugin.compatibility
     - proof.stomp.listeners-tls.normal
     - proof.stomp.listeners-tls.boundary
     - proof.stomp.listeners-tls.rejection
@@ -8880,22 +9056,45 @@ axes:
     unit: authority-derived architecture/integration behavior
     behaviors: 57
     reference_systems: 0
+    scenario_contracts: 10
+    executed: 0
+    passed: 0
+    behavior_completion_reuse: false
   status: missing
-  gap_count: 2
+  gap_count: 11
   gap_ids:
-  - reference.cross-behavior-proof
-  - reference.system-manifest
+  - reference.authority-atomic-binding
+  - reference.system.boundary
+  - reference.system.compatibility
+  - reference.system.failure
+  - reference.system.migration
+  - reference.system.normal
+  - reference.system.operations
+  - reference.system.performance
+  - reference.system.recovery
+  - reference.system.rejection
+  - reference.system.security
   checks:
   - id: reference.system-proof
     required: 複数Protocol、Queue、Security、Telemetry、Cross-clusterを統合し、正常・障害・回復を専用Proof化する。
-    observed: 0
+    observed: 0/10
     status: gap
     evidence:
-    - definitive.yaml
-    - verification.plan.yaml
+    - reference-system/manifest.yaml
+    - reference-system/results.json
+    - evidence/scenarios/index.json
     gap_ids:
-    - reference.system-manifest
-    - reference.cross-behavior-proof
+    - reference.system.normal
+    - reference.system.boundary
+    - reference.system.rejection
+    - reference.system.failure
+    - reference.system.recovery
+    - reference.system.migration
+    - reference.system.operations
+    - reference.system.security
+    - reference.system.performance
+    - reference.system.compatibility
+    - reference.authority-atomic-binding
 - id: skill-eval
   title: Skill Eval
   portable_criterion: Skillが8 Outcome、14 Surface、曖昧Query、Coverage Gap、権限境界、実装、診断、移行、Reviewを実行Evidence付きで扱う。

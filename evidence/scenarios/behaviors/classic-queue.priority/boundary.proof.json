@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.classic-queue.priority.boundary",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "classic-queue.priority",
+  "target_id": "definitive.classic-queue.priority",
+  "scenario": "boundary",
+  "applicability": "required",
+  "status": "behavior-specific-gap",
+  "runtime_profile": "broker-cluster-3",
+  "proof_obligation_id": "proof.classic-queue.priority.boundary",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.classic-queue.priority",
+      "authority_artifact_id": "rabbitmq-4-3-classic-queues",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-classic-queues.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:b4f492499b176fc0ecc2c29143160dc90c7cd95dea9f0cbf7afa7599d9612670",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "source_digest": "sha256:084b58f037d5285d78a0c6665ddec2602c962b542d1bb273ea940e48821f9283",
+      "surface_id": "classic-queue.priority",
+      "locator": "#priority-queues",
+      "behavior_id": "classic-queue.priority"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "behavior_evidence": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "aggregate_evidence_allowed": false
+  },
+  "identity": {
+    "broker": null,
+    "client": null,
+    "runtime": null
+  },
+  "artifact_channels": {
+    "packet": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.packet.missing"
+      ]
+    },
+    "log": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.log.missing"
+      ]
+    },
+    "metric": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.metric.missing"
+      ]
+    }
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.boundary",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_artifact": true,
+    "behavior_specific_runtime_proof": false,
+    "broker_client_version_runtime_identity": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "gap_ids": [
+    "artifact.log.missing",
+    "artifact.metric.missing",
+    "artifact.packet.missing",
+    "authority.atomic-human-promotion-missing",
+    "evidence.behavior-specific-single-record-missing",
+    "identity.broker.missing",
+    "identity.client-version.missing",
+    "identity.runtime.missing",
+    "proof.behavior-specific-runtime-missing"
+  ]
+}

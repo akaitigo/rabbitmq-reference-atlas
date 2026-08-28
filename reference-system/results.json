@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "id": "rabbitmq-reference-system-results-v1",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "status": "incomplete-no-integrated-runtime-evidence",
+  "manifest": "reference-system/manifest.yaml",
+  "manifest_digest": "sha256:966fb1a889ba57507455e76b791498e99734382446bb5f131492823211fba21f",
+  "reuse_policy": "forbidden-for-behavior-completion",
+  "summary": {
+    "scenarios": 10,
+    "executed": 0,
+    "passed": 0,
+    "gaps": 10
+  },
+  "scenarios": [
+    {
+      "id": "reference-system.normal",
+      "scenario": "normal",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.normal.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.normal.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.normal.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.normal.execution-missing",
+        "reference.normal.broker-client-runtime-identity-missing",
+        "reference.normal.packet-missing",
+        "reference.normal.log-missing",
+        "reference.normal.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.boundary",
+      "scenario": "boundary",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.boundary.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.boundary.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.boundary.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.boundary.execution-missing",
+        "reference.boundary.broker-client-runtime-identity-missing",
+        "reference.boundary.packet-missing",
+        "reference.boundary.log-missing",
+        "reference.boundary.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.rejection",
+      "scenario": "rejection",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.rejection.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.rejection.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.rejection.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.rejection.execution-missing",
+        "reference.rejection.broker-client-runtime-identity-missing",
+        "reference.rejection.packet-missing",
+        "reference.rejection.log-missing",
+        "reference.rejection.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.failure",
+      "scenario": "failure",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.failure.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.failure.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.failure.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.failure.execution-missing",
+        "reference.failure.broker-client-runtime-identity-missing",
+        "reference.failure.packet-missing",
+        "reference.failure.log-missing",
+        "reference.failure.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.recovery",
+      "scenario": "recovery",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.recovery.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.recovery.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.recovery.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.recovery.execution-missing",
+        "reference.recovery.broker-client-runtime-identity-missing",
+        "reference.recovery.packet-missing",
+        "reference.recovery.log-missing",
+        "reference.recovery.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.migration",
+      "scenario": "migration",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.migration.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.migration.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.migration.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.migration.execution-missing",
+        "reference.migration.broker-client-runtime-identity-missing",
+        "reference.migration.packet-missing",
+        "reference.migration.log-missing",
+        "reference.migration.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.operations",
+      "scenario": "operations",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.operations.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.operations.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.operations.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.operations.execution-missing",
+        "reference.operations.broker-client-runtime-identity-missing",
+        "reference.operations.packet-missing",
+        "reference.operations.log-missing",
+        "reference.operations.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.security",
+      "scenario": "security",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.security.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.security.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.security.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.security.execution-missing",
+        "reference.security.broker-client-runtime-identity-missing",
+        "reference.security.packet-missing",
+        "reference.security.log-missing",
+        "reference.security.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.performance",
+      "scenario": "performance",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.performance.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.performance.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.performance.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.performance.execution-missing",
+        "reference.performance.broker-client-runtime-identity-missing",
+        "reference.performance.packet-missing",
+        "reference.performance.log-missing",
+        "reference.performance.metric-missing"
+      ]
+    },
+    {
+      "id": "reference-system.compatibility",
+      "scenario": "compatibility",
+      "status": "gap-unexecuted",
+      "broker_identity": null,
+      "client_identity": null,
+      "runtime_identity": null,
+      "artifact_channels": {
+        "packet": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.compatibility.packet-missing"
+          ]
+        },
+        "log": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.compatibility.log-missing"
+          ]
+        },
+        "metric": {
+          "artifacts": [],
+          "gap_ids": [
+            "reference.compatibility.metric-missing"
+          ]
+        }
+      },
+      "completion_eligible": false,
+      "gap_ids": [
+        "reference.compatibility.execution-missing",
+        "reference.compatibility.broker-client-runtime-identity-missing",
+        "reference.compatibility.packet-missing",
+        "reference.compatibility.log-missing",
+        "reference.compatibility.metric-missing"
+      ]
+    }
+  ]
+}

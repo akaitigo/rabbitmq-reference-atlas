@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.configuration.advanced-config.normal",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "configuration.advanced-config",
+  "target_id": "definitive.configuration.advanced-config",
+  "scenario": "normal",
+  "applicability": "required",
+  "status": "behavior-specific-gap",
+  "runtime_profile": "broker-cluster-3",
+  "proof_obligation_id": "proof.configuration.advanced-config.normal",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.configuration.advanced-config",
+      "authority_artifact_id": "rabbitmq-4-3-configuration",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-configuration.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:1583e7cd1d4b3ced722b4cbaaae7a8c6c0e24a16e5e7952449bced6944857dbf",
+      "source_id": "rabbitmq-4.3-configuration",
+      "source_digest": "sha256:bf0e6f05185356bd4491fd04a1fbee8e82622b80b80b08565033a10c911426bf",
+      "surface_id": "configuration.advanced-config",
+      "locator": "#the-advanced-config-file",
+      "behavior_id": "configuration.advanced-config"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "behavior_evidence": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "aggregate_evidence_allowed": false
+  },
+  "identity": {
+    "broker": null,
+    "client": null,
+    "runtime": null
+  },
+  "artifact_channels": {
+    "packet": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.packet.missing"
+      ]
+    },
+    "log": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.log.missing"
+      ]
+    },
+    "metric": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.metric.missing"
+      ]
+    }
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.normal",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_artifact": true,
+    "behavior_specific_runtime_proof": false,
+    "broker_client_version_runtime_identity": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "gap_ids": [
+    "artifact.log.missing",
+    "artifact.metric.missing",
+    "artifact.packet.missing",
+    "authority.atomic-human-promotion-missing",
+    "evidence.behavior-specific-single-record-missing",
+    "identity.broker.missing",
+    "identity.client-version.missing",
+    "identity.runtime.missing",
+    "proof.behavior-specific-runtime-missing"
+  ]
+}

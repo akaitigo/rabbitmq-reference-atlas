@@ -98,6 +98,31 @@ skill_eval_reference:
       digest: sha256:566c9f3cea248f49c24f769c88695b10c15bbdb956c08bcfa68dbe7e96c18d0a
     - path: scripts/lib/mastery-contract.ts
       digest: sha256:cf939059fa698e23c97c0cb8f08ff2289d37f9abca145cb8320a59425c41e363
+reference_system_scenario_proof_reference:
+  source_commit: deadad18b6588d2c907170a451c3b5cea5ea4192
+  integrated_scenarios: 10
+  behavior_specific_proof_separate: true
+  integrated_success_counts_as_behavior_proof: false
+  authority_atomic_binding_required_for_completion: true
+  runtime_identity_required: true
+  artifacts_or_explicit_gaps_required: true
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:4f88b8bfd22a9b8262e4a1e8184e50cded0372dd82458fbbcc308b3647876d0d
+    - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+      digest: sha256:6c8bb8d45a66b7595f22a23596cfa0ab495a4fd593740d9dab6ce138e4d4af89
+    - path: integrations/reference-system/manifest.json
+      digest: sha256:118ae5f25958855e3e1846ab998b6d45db656220ab8e4bd99330c0e208082940
+    - path: artifacts/reference-system/results.json
+      digest: sha256:f16ea6113c829379e10b8def5baf4cf82ba6596ffa4146792315ed688da6985a
+    - path: evidence/scenarios/index.json
+      digest: sha256:c70eeb43b85c4b4f8e57abacd4459fe8b01fa407ce355311f335dd5654c0f669
+    - path: scripts/lib/scenario-proof.ts
+      digest: sha256:089911b3dd1235b320bac592ef23ab0cf176fc17fa113682833ef9a685542092
+    - path: scripts/verify-scenario-proofs.ts
+      digest: sha256:e8367390035bf38f93a29d8b0d8c79762517673cc7a38fb227b8e8f036e1dbe2
+    - path: scripts/verify-reference-system-evidence.ts
+      digest: sha256:0f356e451128294789d7bc6f8b343bc85940258cb612b710d775a7674e10f66c
 denominator_policy:
   source: authority-derived-subject-surface-inventory
   transplant_absolute_counts: false

@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.publisher.unroutable.migration",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "publisher.unroutable",
+  "target_id": "definitive.publisher.unroutable",
+  "scenario": "migration",
+  "applicability": "not-applicable",
+  "status": "not-applicable-contract",
+  "runtime_profile": null,
+  "proof_obligation_id": null,
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.publisher.unroutable",
+      "authority_artifact_id": "rabbitmq-4-3-publishers",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-publishers.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:8f4dc417a94aa38ab796fc79189c77d3f709d5e31d524e7a52683a46107bfb7b",
+      "source_id": "rabbitmq-4.3-publishers",
+      "source_digest": "sha256:d60b79cb06d56403d516262bd2b4612fd2799a7adad30ee8378d235698c7afe7",
+      "surface_id": "publisher.unroutable",
+      "locator": "#unroutable-message-handling",
+      "behavior_id": "publisher.unroutable"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "behavior_evidence": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "aggregate_evidence_allowed": false
+  },
+  "identity": {
+    "broker": null,
+    "client": null,
+    "runtime": null
+  },
+  "artifact_channels": {
+    "packet": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.packet.missing"
+      ]
+    },
+    "log": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.log.missing"
+      ]
+    },
+    "metric": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.metric.missing"
+      ]
+    }
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.migration",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_artifact": true,
+    "behavior_specific_runtime_proof": false,
+    "broker_client_version_runtime_identity": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "gap_ids": [
+    "artifact.log.missing",
+    "artifact.metric.missing",
+    "artifact.packet.missing",
+    "identity.broker.missing",
+    "identity.client-version.missing",
+    "identity.runtime.missing",
+    "scenario.not-applicable-by-surface-contract"
+  ]
+}

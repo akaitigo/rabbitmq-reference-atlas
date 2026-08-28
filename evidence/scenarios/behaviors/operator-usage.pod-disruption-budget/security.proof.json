@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.operator-usage.pod-disruption-budget.security",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "operator-usage.pod-disruption-budget",
+  "target_id": "definitive.operator-usage.pod-disruption-budget",
+  "scenario": "security",
+  "applicability": "not-applicable",
+  "status": "not-applicable-contract",
+  "runtime_profile": null,
+  "proof_obligation_id": null,
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.operator-usage.pod-disruption-budget",
+      "authority_artifact_id": "rabbitmq-operator-usage",
+      "authority_artifact_path": "surface/authority/rabbitmq-operator-usage.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:e1a8ad10e928ad3b1bc91889a8e6ea87bd4a70388397ae82db6c0853d4714552",
+      "source_id": "rabbitmq-operator-usage",
+      "source_digest": "sha256:dc688cd5ede76722d5c7e261c99e247371509310cd779b6272ec2c8a0e59e676",
+      "surface_id": "operator-usage.pod-disruption-budget",
+      "locator": "#set-a-pod-disruption-budget",
+      "behavior_id": "operator-usage.pod-disruption-budget"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "behavior_evidence": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "aggregate_evidence_allowed": false
+  },
+  "identity": {
+    "broker": null,
+    "client": null,
+    "runtime": null
+  },
+  "artifact_channels": {
+    "packet": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.packet.missing"
+      ]
+    },
+    "log": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.log.missing"
+      ]
+    },
+    "metric": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.metric.missing"
+      ]
+    }
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.security",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_artifact": true,
+    "behavior_specific_runtime_proof": false,
+    "broker_client_version_runtime_identity": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "gap_ids": [
+    "artifact.log.missing",
+    "artifact.metric.missing",
+    "artifact.packet.missing",
+    "identity.broker.missing",
+    "identity.client-version.missing",
+    "identity.runtime.missing",
+    "scenario.not-applicable-by-surface-contract"
+  ]
+}

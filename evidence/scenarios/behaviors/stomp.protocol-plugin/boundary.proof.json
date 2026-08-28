@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.stomp.protocol-plugin.boundary",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "stomp.protocol-plugin",
+  "target_id": "definitive.stomp.protocol-plugin",
+  "scenario": "boundary",
+  "applicability": "required",
+  "status": "bounded-behavior-runtime-proof",
+  "runtime_profile": "plugin-stomp",
+  "proof_obligation_id": "proof.stomp.protocol-plugin.boundary",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.stomp.protocol-plugin",
+      "authority_artifact_id": "rabbitmq-4-3-stomp",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-stomp.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:d6689269824cd9b3a8a0d58dfb1f038e592f175b00eb788fb1f4cd71da146548",
+      "source_id": "rabbitmq-4.3-stomp",
+      "source_digest": "sha256:95d827abe7e15c70ad3605d0d8518d6cdce75d3c95d147c8da6a34f626647e67",
+      "surface_id": "stomp.protocol-plugin",
+      "locator": "#overview",
+      "behavior_id": "stomp.protocol-plugin"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "behavior_evidence": {
+    "evidence_id": "definitive.stomp.protocol-plugin.boundary",
+    "evidence_record": "evidence/definitive.stomp.protocol-plugin.boundary.evidence.json",
+    "behavior_specific": true,
+    "aggregate_evidence_allowed": false
+  },
+  "identity": {
+    "broker": {
+      "product": "RabbitMQ",
+      "version": "4.3.5",
+      "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins",
+      "manifest_digest": "sha256:00098566c5ceb6359261fb10265a3ba9e71e312c50219f842a99bf2dede7bed6",
+      "nodes": 3
+    },
+    "client": {
+      "name": "cmd/rmq-plugin-protocols",
+      "version_kind": "harness-sha256",
+      "version": "sha256:b05df0bfa1939c0c22933cb2030638247a68e96b4b9e3d8df252a5529e8907d4",
+      "source": "cmd/rmq-plugin-protocols/main.go"
+    },
+    "runtime": {
+      "profile": "plugin-stomp",
+      "execution_mode": "runtime",
+      "created_at": "2026-08-28T11:16:17.816141293Z",
+      "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins"
+    }
+  },
+  "artifact_channels": {
+    "packet": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.packet.capture-missing"
+      ]
+    },
+    "log": {
+      "artifacts": [
+        {
+          "channel": "client-log",
+          "path": "evidence/raw/definitive.stomp.protocol-plugin.boundary.json",
+          "digest": "sha256:2c1ea264592661eb8c18fe524d78c3cadabd5f6be6a1e73ae74d9076cdf09426",
+          "media_type": "application/json",
+          "size_bytes": 925
+        }
+      ],
+      "gap_ids": []
+    },
+    "metric": {
+      "artifacts": [],
+      "gap_ids": [
+        "artifact.metric.record-missing"
+      ]
+    }
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.boundary",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_artifact": true,
+    "behavior_specific_runtime_proof": true,
+    "broker_client_version_runtime_identity": true,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "gap_ids": [
+    "artifact.metric.record-missing",
+    "artifact.packet.capture-missing",
+    "authority.atomic-human-promotion-missing"
+  ]
+}

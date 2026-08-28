@@ -16,9 +16,11 @@ Authority Inventoryで発見したSurfaceは、実装の有無にかかわらず
 - Authority Artifact: 37。RabbitMQ公式の固定commitと固定Versionから抽出した。
 - Authority Behavior: 206。集約Targetを禁止し、Behaviorごとに専用required Targetとproposed Claimを持つ。
 - Verification Plan: 2,060 Row。全Behaviorに10 Scenarioを分類し、951 Rowが実Runtimeまたは実Platform必須である。
+- Scenario Proof: 2,060専用Artifact。Required 951 Rowのうち12 RowはBehavior固有Runtime Evidenceを持つが、Authority atomic昇格は0、Completion eligibleは0である。各RowはBroker、Client version、Runtime identity、packet／log／metric Artifactまたは明示gapを保持する。
+- Integrated Reference System: 10 Scenarioを`reference-system/manifest.yaml`へ固定したが、専用実行Evidenceは0/10である。統合結果はBehavior固有Proofへ流用せず、各Protocol、Plugin、Cluster Behaviorの専用Artifactを別に要求する。
 - Definitive Skill Eval: 112セルのRouter契約は112/112 passだが、Route可能86、Mastery routing gap 26、実Target/Variant/Authority/Broker/Protocol Evidenceまで閉じたセルは20/112である。全Target stateは`covered` 35、`planned` 203として記録する。期待値を隠した独立Agent Forward Evalは6/10であり、Queue Type比較、STOMP検証、Metrics運用、Partition復旧の4件をGapとして保持する。
 
-未Closureの正本は`coverage.yaml`、Behavior分類は`surface.inventory.yaml`、Scenario単位の作業状態は`verification.plan.yaml`である。Core v2形式の`verification.matrix.yaml`は専用Proof、pass Evidence、Artifactが実在するRowだけで構築し、空欄を成功扱いするためには作らない。
+未Closureの正本は`coverage.yaml`、Behavior分類は`surface.inventory.yaml`、Scenario単位の作業状態は`verification.plan.yaml`、実行Identity・Artifact・明示gapは`evidence/scenarios/index.json`である。Core v2形式の`verification.matrix.yaml`は専用Proof、pass Evidence、Artifactが実在するRowだけで構築し、空欄や統合Systemの成功を個別Behaviorの成功扱いにしない。
 
 Baseline正本は`baseline/public-main-22ab07c.yaml`、非後退Gateは`scripts/validate-non-regression.py`である。置換を行う場合は`migrations/public-main-baseline-v2.yaml`へ旧ID→新ID、同等以上の実行Proof、Migration Evidence、理由を登録しなければならない。
 
