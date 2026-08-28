@@ -2,7 +2,7 @@
 
 `rabbitmq-reference-atlas`は、RabbitMQ 4.3.5の公開挙動を、一次資料、再実行可能なLab、観測可能なOracle、Digestで固定したEvidenceへ接続する製品Technical Reference Atlasです。
 
-現在は固定Coverage Epochに対するローカル実証を完了し、`status: complete`です。GitHubへの公開や署名済みReleaseは行っていません。完了の範囲は`atlas.yaml`、`mastery.yaml`、`coverage.yaml`とローカルCompletion Certificateに固定しています。
+現在は固定Coverage Epochに対するローカル実証を完了し、`status: complete`です。GitHub Repositoryは公開済みですが、署名済みRelease、OCI Artifact、外部Skill Registryへの公開は行っていません。完了の範囲は`atlas.yaml`、`mastery.yaml`、`coverage.yaml`とCompletion Certificateに固定しています。
 
 ## 固定対象
 

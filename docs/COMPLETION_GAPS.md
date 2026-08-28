@@ -18,4 +18,4 @@ AMQP 1.0、MQTT、STOMP、Super Stream、Federation、Shovel、OAuth/LDAP、Kube
 
 性能値は固定環境の測定であり、本番容量やQueue Typeの普遍的優劣を保証しません。Rolling Upgrade EvidenceはDowngrade、別ClusterへのMessage移送、Exactly-once、Upgrade中の性能保証を含みません。
 
-GitHub Repository、Release、OCI Artifact、外部Skill Registryへの公開は行っていません。Completion Certificateはローカル検証の結果であり、署名済みReleaseのProvenanceではありません。
+GitHub Repositoryは公開済みです。Release、OCI Artifact、外部Skill Registryへの公開は行っていません。Completion Certificateは固定ManifestとEvidenceのローカル検証結果であり、GitHub公開の有無や署名済みReleaseのProvenanceを証明するものではありません。

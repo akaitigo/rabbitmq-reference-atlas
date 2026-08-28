@@ -47,6 +47,44 @@ type queueInfo struct {
 	OnlineMembers []string `json:"online"`
 }
 
+type recoverySession interface {
+	Get(queue string, autoAck bool) (amqp.Delivery, bool, error)
+	DeleteQueue(queue string) error
+	Close()
+}
+
+type amqpRecoverySession struct {
+	connection *amqp.Connection
+	channel    *amqp.Channel
+}
+
+func (session *amqpRecoverySession) Get(queue string, autoAck bool) (amqp.Delivery, bool, error) {
+	return session.channel.Get(queue, autoAck)
+}
+
+func (session *amqpRecoverySession) DeleteQueue(queue string) error {
+	_, err := session.channel.QueueDelete(queue, false, false, false)
+	return err
+}
+
+func (session *amqpRecoverySession) Close() {
+	_ = session.channel.Close()
+	_ = session.connection.Close()
+}
+
+type recoveryStats struct {
+	messageIDs     []string
+	deliveries     int
+	duplicates     int
+	sessions       int
+	openErrors     int
+	getErrors      int
+	ackErrors      int
+	currentSession recoverySession
+}
+
+type recoverySessionOpener func(time.Duration) (recoverySession, error)
+
 func main() {
 	mode := flag.String("mode", "core", "core, prepare-failure, verify-recovery, verify-partition-majority, verify-minority, inspect-queue, cluster")
 	amqpURLs := flag.String("amqp-urls", "amqp://atlas:atlas-local-only@127.0.0.1:25672/", "comma-separated AMQP endpoints")
@@ -739,46 +777,117 @@ func verifyMessages(endpoints []string, runID, queueName string, expected int, d
 	if queueName == "" {
 		return report{}, errors.New("queue is required")
 	}
-	conn, err := connect(endpoints, 120*time.Second)
-	if err != nil {
-		return report{}, err
-	}
-	defer conn.Close()
-	ch, err := conn.Channel()
-	if err != nil {
-		return report{}, err
-	}
-	defer ch.Close()
-	ids := make([]string, 0, expected)
-	deadline := time.Now().Add(120 * time.Second)
-	for len(ids) < expected && time.Now().Before(deadline) {
-		d, ok, err := ch.Get(queueName, false)
+	opener := func(deadline time.Duration) (recoverySession, error) {
+		conn, err := connect(endpoints, deadline)
 		if err != nil {
-			time.Sleep(time.Second)
+			return nil, err
+		}
+		ch, err := conn.Channel()
+		if err != nil {
+			_ = conn.Close()
+			return nil, err
+		}
+		return &amqpRecoverySession{connection: conn, channel: ch}, nil
+	}
+	stats := recoverMessages(opener, queueName, expected, 180*time.Second, 500*time.Millisecond)
+	if stats.currentSession != nil {
+		defer stats.currentSession.Close()
+	}
+	sorted := append([]string(nil), stats.messageIDs...)
+	sort.Strings(sorted)
+	passed := len(stats.messageIDs) == expected && stats.duplicates == 0
+	if passed && deleteQueue {
+		if stats.currentSession == nil {
+			return report{}, errors.New("recovery session unavailable for queue cleanup")
+		}
+		if err := stats.currentSession.DeleteQueue(queueName); err != nil {
+			return report{}, err
+		}
+	}
+	observed := map[string]any{
+		"expected":              expected,
+		"received":              stats.deliveries,
+		"unique":                len(stats.messageIDs),
+		"duplicate_deliveries":  stats.duplicates,
+		"queue_deleted":         passed && deleteQueue,
+		"sessions":              stats.sessions,
+		"reconnects":            max(stats.sessions-1, 0),
+		"transient_open_errors": stats.openErrors,
+		"transient_get_errors":  stats.getErrors,
+		"transient_ack_errors":  stats.ackErrors,
+	}
+	return report{SchemaVersion: 1, Mode: checkName, RunID: runID, CreatedAt: time.Now().UTC().Format(time.RFC3339), Queue: queueName, MessageIDs: sorted, Checks: []check{{Name: checkName, Passed: passed, Observed: observed}}}, assert(passed, "message recovery invariant failed")
+}
+
+// recoverMessages treats an AMQP connection as available only for the lifetime
+// of its channel. A quorum queue can temporarily close Basic.Get channels while
+// its leader is being elected; retrying that closed channel can never recover.
+// Reopening both the connection and channel lets the same bounded oracle observe
+// progress after the majority has elected a new leader.
+func recoverMessages(open recoverySessionOpener, queueName string, expected int, timeout, retryDelay time.Duration) recoveryStats {
+	stats := recoveryStats{messageIDs: make([]string, 0, expected)}
+	seen := make(map[string]bool, expected)
+	deadline := time.Now().Add(timeout)
+	closeCurrent := func() {
+		if stats.currentSession != nil {
+			stats.currentSession.Close()
+			stats.currentSession = nil
+		}
+	}
+	for len(stats.messageIDs) < expected && time.Now().Before(deadline) {
+		if stats.currentSession == nil {
+			remaining := time.Until(deadline)
+			if remaining <= 0 {
+				break
+			}
+			openDeadline := min(15*time.Second, remaining)
+			session, err := open(openDeadline)
+			if err != nil {
+				stats.openErrors++
+				sleepBounded(retryDelay, deadline)
+				continue
+			}
+			stats.currentSession = session
+			stats.sessions++
+		}
+		delivery, ok, err := stats.currentSession.Get(queueName, false)
+		if err != nil {
+			stats.getErrors++
+			closeCurrent()
+			sleepBounded(retryDelay, deadline)
 			continue
 		}
 		if !ok {
-			time.Sleep(200 * time.Millisecond)
+			sleepBounded(retryDelay, deadline)
 			continue
 		}
-		ids = append(ids, d.MessageId)
-		if err := d.Ack(false); err != nil {
-			return report{}, err
+		if err := delivery.Ack(false); err != nil {
+			stats.ackErrors++
+			closeCurrent()
+			sleepBounded(retryDelay, deadline)
+			continue
 		}
-	}
-	sorted := append([]string(nil), ids...)
-	sort.Strings(sorted)
-	unique := map[string]bool{}
-	for _, id := range ids {
-		unique[id] = true
-	}
-	passed := len(ids) == expected && len(unique) == expected
-	if deleteQueue {
-		if _, err := ch.QueueDelete(queueName, false, false, false); err != nil {
-			return report{}, err
+		stats.deliveries++
+		if seen[delivery.MessageId] {
+			stats.duplicates++
+			continue
 		}
+		seen[delivery.MessageId] = true
+		stats.messageIDs = append(stats.messageIDs, delivery.MessageId)
 	}
-	return report{SchemaVersion: 1, Mode: checkName, RunID: runID, CreatedAt: time.Now().UTC().Format(time.RFC3339), Queue: queueName, MessageIDs: sorted, Checks: []check{{Name: checkName, Passed: passed, Observed: map[string]any{"expected": expected, "received": len(ids), "unique": len(unique), "queue_deleted": deleteQueue}}}}, assert(passed, "message recovery invariant failed")
+	return stats
+}
+
+func sleepBounded(delay time.Duration, deadline time.Time) {
+	if delay <= 0 {
+		return
+	}
+	if remaining := time.Until(deadline); delay > remaining {
+		delay = remaining
+	}
+	if delay > 0 {
+		time.Sleep(delay)
+	}
 }
 
 func verifyMinority(endpoints []string, runID, queueName string) (report, error) {

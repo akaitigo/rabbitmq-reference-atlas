@@ -81,6 +81,12 @@ DISCONNECTED_CONTAINER=''
 (cd "$ROOT" && python3 scripts/update-coverage-evidence.py)
 (cd "$ROOT" && python3 scripts/sync-authority-digest.py >/dev/null)
 (cd "$ROOT" && python3 scripts/generate-evidence.py)
-(cd "$ROOT" && python3 scripts/validate-repository.py)
+ATLAS_STATUS=$(cd "$ROOT" && python3 -c 'import yaml; print(yaml.safe_load(open("atlas.yaml"))["status"])')
+if [[ "$ATLAS_STATUS" == "complete" ]]; then
+  (cd "$ROOT" && python3 scripts/generate-completion-certificate.py)
+  (cd "$ROOT" && python3 scripts/validate-repository.py --release)
+else
+  (cd "$ROOT" && python3 scripts/validate-repository.py)
+fi
 
 echo "RabbitMQ LabsとEvidence生成が完了しました。"

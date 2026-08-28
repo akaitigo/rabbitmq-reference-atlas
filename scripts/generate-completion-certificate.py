@@ -34,7 +34,7 @@ def main() -> None:
         "coverage_epoch": atlas["coverage"]["epoch"],
         "created_at": datetime.datetime.now(datetime.timezone.utc).isoformat().replace("+00:00", "Z"),
         "verdict": "pass",
-        "scope": "local verified closure; no GitHub publication or signed release is asserted",
+        "scope": "local verified closure; GitHub publication is outside certificate scope; no signed release is asserted",
         "manifests": {
             name: digest(ROOT / name)
             for name in ("atlas.yaml", "mastery.yaml", "coverage.yaml", "sources.lock.yaml", "skill.package.yaml", "versions/baseline.yaml")
