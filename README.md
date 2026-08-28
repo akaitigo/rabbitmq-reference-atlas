@@ -29,7 +29,7 @@
 
 `rabbitmq-depth-parity.yaml`は、`frontend-behavior-atlas@4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45`のFE Depth Referenceが定義する18軸を、RabbitMQ固有の母集団へ写像します。FEの件数は閾値にせず、AMQP 0-9-1/1.0、MQTT、STOMP、Stream、Plugin、三Node Cluster、二Cluster、外部認証、TLS、Operator、Upgrade、CapacityのProfileを分離し、各Required Behavior × Scenario × Profileへ専用ProofとArtifactを要求します。FE自身も1/18 satisfiedで`incomplete`であり、本Repositoryも18軸すべてのGapが0になるまでDefinitive昇格を許可しません。
 
-`authority/extraction.snapshot.json`は、`frontend-behavior-atlas@cabf687bab769b17928d950acc416f3f77eb4ca3`のcopyright-safe Locator契約を適用します。第三者本文やexcerptは保存せず、URL、固定digest、取得metadata、Locator byte offset、context/heading digestだけを保持します。現在は50 Source中48件がdigest一致、Docker packagingの2 Sourceがstale、206既存reference edge中137件のLocatorを確認し、69件は未解決です。既存Surface分類とは別に本文全体のexhaustive抽出を`false`、Human reviewを0件として保持し、Protocol、Plugin、Operatorの各denominatorを`partial`とします。
+`authority/extraction.snapshot.json`は、`frontend-behavior-atlas@cabf687bab769b17928d950acc416f3f77eb4ca3`のcopyright-safe Locator契約を適用します。第三者本文やexcerptは保存せず、URL、固定digest、取得metadata、Locator byte offset、context/heading digestだけを保持します。現在は50 Source中48件がdigest一致、Docker packagingの2 Sourceがstale、206既存reference edge中137件のLocatorを確認し、69件は未解決です。さらに一致した48 body全体を1,471の非重複Sectionへpartitionし、Section offset/digestだけを保持します。これはSemantic Surface分類ではないため、本文全体のexhaustive抽出を`false`、Human reviewを0件として維持し、Protocol、Plugin、Operatorの各denominatorを`partial`とします。
 
 ## 検証
 

@@ -19,6 +19,146 @@
     "review_status": "automated-unreviewed",
     "body_storage": "digest-and-locator-context-digest-only"
   },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0000",
+        "locator": "#stream-plugin",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 832,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:848e6f1a43fa8516b23ee92877e04a803b0804f09e6d17ced8a944440e3d2508",
+        "heading_digest": "sha256:81e5e425b5c1d2b11ebccfe892a572e785add27da6e7020591323d8e33599a7d",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 832,
+        "section_end": 3318,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:988d15c0deca88fa655b98cb924cd90ddd4732c8990c668768a07f05ed491cd7",
+        "heading_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0002",
+        "locator": "#enabling-plugin",
+        "level": 2,
+        "section_start": 3318,
+        "section_end": 3568,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:8552d8decb679e0584c4fe1133daf482e7cc8dfd5cbd8a82ff215db1258bebcb",
+        "heading_digest": "sha256:479268507c5d274416c33d8fba26c8d9cbd6f6c071c127343da56fcffe06aeea",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0003",
+        "locator": "#configuration",
+        "level": 2,
+        "section_start": 3568,
+        "section_end": 3610,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b190e45936dd3a9ab914618474ae9fb5ea1ed8c80d9c133ce326e830110381c2",
+        "heading_digest": "sha256:422d771c5a0a6cb0ee6e8c67c2dac6ad795af0d52dc621e5e17edac0b7418c04",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0004",
+        "locator": "#tcp-listeners",
+        "level": 3,
+        "section_start": 3610,
+        "section_end": 4238,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:9eb9337faac31d7b10d307874b6e717554edd09476d2b900e17cef912ece73fb",
+        "heading_digest": "sha256:88847e9abcb54b4dd24c2201293dbdc080b878d8b43fa52e052cd85bc8a25994",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0005",
+        "locator": "#tcp-listeners-options",
+        "level": 3,
+        "section_start": 4238,
+        "section_end": 5017,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:3eec255d1321a5a998412253f946e03b0cd51625a794849eb4705a8d096861e2",
+        "heading_digest": "sha256:36541753b389b301d97923ea4400c673825fcc1069db14b020dd32f3569426cb",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0006",
+        "locator": "#heartbeats",
+        "level": 3,
+        "section_start": 5017,
+        "section_end": 6037,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:cf45cc5f0321fede957a518683d0736f6a7f7dcc2c5ee22e5c91f69863a24621",
+        "heading_digest": "sha256:01bcbface387da5dfdb0c1cb859cd0478b58af2fad26dcb42c2e20a9c13cbe37",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0007",
+        "locator": "#flow-control",
+        "level": 3,
+        "section_start": 6037,
+        "section_end": 6902,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:89bf9334da7440f3bbb3196369bdf41ee312665f90df3c97919d918184858c0e",
+        "heading_digest": "sha256:42dddbb609e91c93f1e076eddbfaea6e6255cdc27d8c23499199e41d8e20c860",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0008",
+        "locator": "#consumer-credit-flow",
+        "level": 3,
+        "section_start": 6902,
+        "section_end": 9066,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d3822098453035535618f2e0fb42997d35fc71b651357e28600b6b0310d847ba",
+        "heading_digest": "sha256:0b1225df9e898e5dee925dd1d1c1ed2fa9daeb296e7ba4c2a19d465c400db861",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0009",
+        "locator": "#advertised-host-port",
+        "level": 3,
+        "section_start": 9066,
+        "section_end": 10250,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:df3e0db1b9c46379d11824a82574f959a27adfeea188753b5a25a1376ee6966c",
+        "heading_digest": "sha256:65bb48df43ea6bfaec8391a84d3dc952a2c7cf5f469a4550c63fdfd7bf300e73",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0010",
+        "locator": "#frame-size",
+        "level": 3,
+        "section_start": 10250,
+        "section_end": 10464,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:e42d04516eff3fab0f7f7c876cd1ccdce3922707b69b964d775f00bdc9413009",
+        "heading_digest": "sha256:b2d1da4d6ad0161d2679a30f789d43ef92786413c7a64a43b2f50917a07040b6",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-plugin.0011",
+        "locator": "#tls",
+        "level": 2,
+        "section_start": 10464,
+        "section_end": 12082,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:adcff7a1151d713b87e6fa44151aa927c12ef6016c05a9c83ee99bd9549a6603",
+        "heading_digest": "sha256:d73fd1019a44299b6db3d8403fc0039cb3ab9c9cdab8595b8afa1c0528b1be63",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
   "candidate_surfaces": [
     {
       "edge_id": "edge.stream-plugin.authorization.rabbitmq-4.3-stream-plugin",

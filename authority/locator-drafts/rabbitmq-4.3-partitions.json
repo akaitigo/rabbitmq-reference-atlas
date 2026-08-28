@@ -19,6 +19,157 @@
     "review_status": "automated-unreviewed",
     "body_storage": "digest-and-locator-context-digest-only"
   },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0000",
+        "locator": "#clustering-and-network-partitions",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 936,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:69ddcb5ce83beb22af260c9406d017f3b5c87cde8862b4cc073102eb89b0b192",
+        "heading_digest": "sha256:b9fd7e50e83176db01dfbfe24b536e0682f620e56a1a9a1ee714ff9be31db9f7",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0001",
+        "locator": "#introduction",
+        "level": 2,
+        "section_start": 936,
+        "section_end": 1922,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:badfd3ead9b40d84034932dcb89b3b99f5225d9d33939e876864ac209d81c626",
+        "heading_digest": "sha256:b605350bc00209520b7cd8f546322663356ba630708f71bbf30aead6b3dd608e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0002",
+        "locator": "#how-to-spot-network-partitions",
+        "level": 2,
+        "section_start": 1922,
+        "section_end": 2611,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:75062cdf33dec7500c27ba475210a93703718fa6259d8930df3bd0e9b4c0a9fd",
+        "heading_digest": "sha256:82a9ab33d8d915badb9efe0f52e12f06d64e3ee3c88062e884fc9b55a15edb91",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0003",
+        "locator": "#effects",
+        "level": 2,
+        "section_start": 2611,
+        "section_end": 3373,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:04872f0712ec0027f16aaee51d756768f3fb6f06aecba6398999d64b8b8c9500",
+        "heading_digest": "sha256:2a1ce05bc17cf68816ec9c313576d0ad4fd71f0beec50da76124ffe4e2c7b4a7",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0004",
+        "locator": "#scenario-1-the-leader-disconnects",
+        "level": 3,
+        "section_start": 3373,
+        "section_end": 5265,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:f26b5eac6fbd48c0617a9085a2f65315d7c4aefee60db9f3034ceed5b7dbee04",
+        "heading_digest": "sha256:27d6decf60e89bc2d98be62d0bc16d5db7e90d61c635e6f48e4887f072b0174d",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0005",
+        "locator": "#effects-on-quorum-queues-publishers",
+        "level": 4,
+        "section_start": 5265,
+        "section_end": 5618,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c07a4b441cccaf13f874eed2037c43c11ee0a8397d6613914b390b2dcc43bd64",
+        "heading_digest": "sha256:b454832534b3d4de623c240261f1f886f92aeb59b3c8df6991b3fc46cc77fd4f",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0006",
+        "locator": "#effects-on-quorum-queues-consumers",
+        "level": 4,
+        "section_start": 5618,
+        "section_end": 6139,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:650e1f078ea9ba10205980a453d9933b9567b62bbdc45c93915f6ff905d90f03",
+        "heading_digest": "sha256:826f722cdd267f70c0cdcd4241fe64db4fae22e348a1e1b242c219517fcf86eb",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0007",
+        "locator": "#scenario-2-a-follower-disconnects",
+        "level": 3,
+        "section_start": 6139,
+        "section_end": 6775,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:39a5512aa544a558b1af342dfb5f21b62e8f46b03fdca40e155a701a2bd0fbfc",
+        "heading_digest": "sha256:92ce2ae796880e885736f98cdbe0a0e5f412ee97bd97397be3c5b748289ad7d0",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0008",
+        "locator": "#scenario-3-a-non-member-disconnects",
+        "level": 3,
+        "section_start": 6775,
+        "section_end": 7270,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a2b6a7289ca2ca46e63024ebc02e3520e2e9cc9173b148ceccd6836f250daa31",
+        "heading_digest": "sha256:950019d7adfe6feb93bb326db36b6362cc6634db2a5719d2a470b7f26cb84866",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0009",
+        "locator": "#recovery",
+        "level": 2,
+        "section_start": 7270,
+        "section_end": 8143,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:df34206dd97ba40964aad6c240fc63541cfacda4b7c76b9a001ef1b70b23f049",
+        "heading_digest": "sha256:7ec2994862fedf13adb410462b2ff7cb16001cee0c5c81f41e8d8b76174b57ec",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0010",
+        "locator": "#quorum",
+        "level": 2,
+        "section_start": 8143,
+        "section_end": 9760,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:0b1f1ba3b6806cdeca96d23adc0c0919775df1b24554834db9d40a8ae931adec",
+        "heading_digest": "sha256:7af3d348acf5aa9802e992d31dbce94754b5551dd67b6d9a3d822f672eb9e328",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0011",
+        "locator": "#suspend",
+        "level": 2,
+        "section_start": 9760,
+        "section_end": 11120,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:83d524cab3b9a6c6bc634fefc2720359d3e64a3c3168ce0144fcf4c9ddd5957f",
+        "heading_digest": "sha256:30db82d6f2d180512f3cfb34d7cefdc8ab08f9fc59a69a531f512392adaf6cfe",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-partitions.0012",
+        "locator": "#deprecated-rabbitmqconf-keys",
+        "level": 2,
+        "section_start": 11120,
+        "section_end": 11589,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:3884274969a0b69cbbe1ff287eaf5d821776a1280a8cf5bc1dfb9ce9d633962b",
+        "heading_digest": "sha256:6be414c39005f534abf9c8712f06b95aa3e882f2abd6fd747b727d8545d98fa7",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
   "candidate_surfaces": [
     {
       "edge_id": "edge.partition.autoheal.rabbitmq-4.3-partitions",

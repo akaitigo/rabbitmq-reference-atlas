@@ -5,12 +5,12 @@
   "locked_source_digest": "sha256:59935db6392a27b5192f1be080df9b4194bc22f104a7a1bf3b31479a8e0d1031",
   "fetch": {
     "status": "stale",
-    "fetched_digest": "sha256:2704d1747c51077a7d8c6dafe0aa280100c1523c7415004e3c72b80be1408fe0",
+    "fetched_digest": "sha256:f7fd5d779b34f8ec36c48879dfd0bd4457994059a651a3f03012da0f34be6cd8",
     "locked_digest_match": false,
     "http_status": 200,
     "final_url": "https://github.com/docker-library/rabbitmq/tree/d9ae078e0eee51a50ad48c41914c06f0e6e20da5/4.2/ubuntu/management",
     "content_type": "text/html; charset=utf-8",
-    "fetched_bytes": 229457,
+    "fetched_bytes": 229456,
     "error_digest": null
   },
   "extraction": {
@@ -18,6 +18,13 @@
     "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
     "review_status": "automated-unreviewed",
     "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "not-evaluated-stale-body",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": []
   },
   "candidate_surfaces": []
 }

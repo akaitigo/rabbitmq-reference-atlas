@@ -19,6 +19,102 @@
     "review_status": "automated-unreviewed",
     "body_storage": "digest-and-locator-context-digest-only"
   },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-protocols.0000",
+        "locator": "#which-protocols-does-rabbitmq-support",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 1054,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:977f4ba2573cc4a1ac3b2c5161c3efbc638435bb104f852fb6d17d5869d81ae2",
+        "heading_digest": "sha256:71f2f0cdbea349a51b0b4b939e1a95e467f34a7e0e91f913fe8d40c86c5a992c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-protocols.0001",
+        "locator": "#amqp-091",
+        "level": 2,
+        "section_start": 1054,
+        "section_end": 1665,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:bfe01f698b58ced383ff16117373c33166c57f4c8b85672746c1ece271e98c8e",
+        "heading_digest": "sha256:9bd87bfa49821e42bc12b475de59a8d72091ee72dbfd8c83c2a8dba38dd97c31",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-protocols.0002",
+        "locator": "#amqp-10",
+        "level": 2,
+        "section_start": 1665,
+        "section_end": 2252,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:1f5917df58d156e35d04c714922e21009491d95f4e573724d2892532a6b88866",
+        "heading_digest": "sha256:6b7beb8f313d19284460192ea2126b115cbf7e9449630787449a706521ddf9c0",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-protocols.0003",
+        "locator": "#rabbitmq-streams",
+        "level": 2,
+        "section_start": 2252,
+        "section_end": 2654,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:dc853630e8094f136b03b0b7787f82d720b9817eb9a312a59bdaef24e4cf358a",
+        "heading_digest": "sha256:3a29701592b427e887f041e5d2af47a108e8fe4f93b7bef9428f82f29a92bf98",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-protocols.0004",
+        "locator": "#mqtt",
+        "level": 2,
+        "section_start": 2654,
+        "section_end": 3042,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a07ccab4bb6c0e33cfaa3c60094fea701b5c53364788d56680558fa741e3fc20",
+        "heading_digest": "sha256:c71d5131c4d871bd9dd58f5592ba7b432bde4381d37f59d071fd4af771abf7ba",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-protocols.0005",
+        "locator": "#stomp",
+        "level": 2,
+        "section_start": 3042,
+        "section_end": 3455,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:9b5fe52b23362cfb91a0fa7c5593d46667fae8968e3212e6661337139d4860e5",
+        "heading_digest": "sha256:806278f0ab47cdf4bbd8951a30ed92553c3d2679d9160abce62b99b7766b9d56",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-protocols.0006",
+        "locator": "#websocket",
+        "level": 2,
+        "section_start": 3455,
+        "section_end": 3799,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:cdc5f72556f64fb27416e7703e90f5000c4f34303494abadd24a74a608fd14e9",
+        "heading_digest": "sha256:2adc1280d346d502068cf26f4abac8c4cb06f31dc140f266b2584bf0ac882ddc",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-protocols.0007",
+        "locator": "#http",
+        "level": 2,
+        "section_start": 3799,
+        "section_end": 4086,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:21b90afede43a8886c0152ed53bc4431ab547dab570a99dbb42b37205111dec2",
+        "heading_digest": "sha256:56d6f32151ad8474f40d7b939c2161ee2bbf10023f4af1dbb3e13260ebdc6342",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
   "candidate_surfaces": [
     {
       "edge_id": "edge.protocol.amqp091.core.rabbitmq-4.3-protocols",

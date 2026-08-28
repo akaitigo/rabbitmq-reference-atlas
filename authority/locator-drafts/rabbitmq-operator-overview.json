@@ -19,6 +19,146 @@
     "review_status": "automated-unreviewed",
     "body_storage": "digest-and-locator-context-digest-only"
   },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-operator-overview.0000",
+        "locator": "#rabbitmq-kubernetes-operators-cluster-operator-and-messaging-topology-operator",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 1116,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:e1a13a39cbc11e6090a2c68cfddfb9223717c4d87187d85ff334830e756bfa80",
+        "heading_digest": "sha256:b02a79cba19f5cafdb9abe37adfa7cbbeafee9c78d78191eec055ea389a7f603",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0001",
+        "locator": "#cluster-operator",
+        "level": 2,
+        "section_start": 1116,
+        "section_end": 3224,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:21132207140feef25244d55dc60990000cbaf4f7887245ba959d277ddf4bad57",
+        "heading_digest": "sha256:7a61ad9f510e15afa35727dfb996c57895cdea0ec4b9f3ef66041d01bf8f109b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0002",
+        "locator": "#op-design-principles",
+        "level": 3,
+        "section_start": 3224,
+        "section_end": 3992,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:02f4bb3d3c534db8c045281df7d540ab16d761903e18ddb396bfcc01df215e48",
+        "heading_digest": "sha256:c20c6fa83024f0e76c97386cb335759b45d2b82a6d8f3ea0e0156399f8429d6f",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0003",
+        "locator": "#limitations",
+        "level": 3,
+        "section_start": 3992,
+        "section_end": 4024,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a8925709b1b4c7ddd22ac7ca8dd4907b4f2f2a119c17b4b3f487e4de5f52d9c6",
+        "heading_digest": "sha256:2325faa95e0c165a8be3920fad7fc0f46edac4c68fafc41a5b5f146ec1113530",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0004",
+        "locator": "#rabbitmq-cluster-operator-reconciliation",
+        "level": 4,
+        "section_start": 4024,
+        "section_end": 4587,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:770d83780f31a6206b52a748950956c574229cf90a6fe92ae14488fbb267750b",
+        "heading_digest": "sha256:f22e04c439e02c2108e871bb291a427d8777a1164594abca0ad279e7fb90ab9b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0005",
+        "locator": "#rabbitmq-cluster-operator-feature-flags",
+        "level": 4,
+        "section_start": 4587,
+        "section_end": 4848,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:52166c838f4c5eef81268c81f2cc0578b2035f706b19eaeb816f544deeb58ad8",
+        "heading_digest": "sha256:dc405e542fc246a4ebd4456e4e44b75757e2f9c288ce99cc9f05eb49f13e5b43",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0006",
+        "locator": "#topology-operator",
+        "level": 2,
+        "section_start": 4848,
+        "section_end": 5473,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:8494b2fb4b73d8ca5b667431d5c06ec722dbc2495de055c7164d1f7767318a02",
+        "heading_digest": "sha256:ff7d612b5efcef38aa7372fac90985508f8514824d30f1707757ebb0485c4f77",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0007",
+        "locator": "#top-op-limitations",
+        "level": 3,
+        "section_start": 5473,
+        "section_end": 5512,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:5d4b4962ce178769882fa986980f60c90160e715730d704717775abdb1429644",
+        "heading_digest": "sha256:54d1fb1fb7751acb64cefd62688a856f91d187634867a13631cdffcd2be1bd26",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0008",
+        "locator": "#custom-default-credentials-result-in-401-unauthorised",
+        "level": 4,
+        "section_start": 5512,
+        "section_end": 6208,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:1f31fa6c764cc74292e7bd2caf0d120ef7cca173d2924ec949d04afb2cbae8e6",
+        "heading_digest": "sha256:dc9f296d2654bfb7647a93c3364d30d133f70e922a29676c2b58722eb3230093",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0009",
+        "locator": "#source",
+        "level": 2,
+        "section_start": 6208,
+        "section_end": 6537,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:131813be4904f5ee03ed7e88d531ff89aa61ab224cf799b9315fcb554b698bfe",
+        "heading_digest": "sha256:f90e5fa18e43c9cf5c6d987d315a052d3b327a1e274d6fd8b6e853d7885f3a35",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0010",
+        "locator": "#license",
+        "level": 2,
+        "section_start": 6537,
+        "section_end": 6705,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a3185bcbcecf70cacebf64aa8858f3c84837f9d547cf08d10c12eb0d36338942",
+        "heading_digest": "sha256:ffed31d1247e31554946aa1cb1699a701f3128b6fa24caed4256f523a8ba7435",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-operator-overview.0011",
+        "locator": "#kubernetes-versions",
+        "level": 2,
+        "section_start": 6705,
+        "section_end": 7216,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:dd579b3037555e22654ceb93ec1004782b5317606e16d42ee44b25822474665a",
+        "heading_digest": "sha256:c707c5dd85665e3d1b15ad0b4de18b88b705702a96c2a06a937c04eec18b206d",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
   "candidate_surfaces": [
     {
       "edge_id": "edge.operator.cluster-provisioning.rabbitmq-operator-overview",

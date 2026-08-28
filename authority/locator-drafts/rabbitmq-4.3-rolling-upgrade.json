@@ -19,5 +19,200 @@
     "review_status": "automated-unreviewed",
     "body_storage": "digest-and-locator-context-digest-only"
   },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0000",
+        "locator": "#before",
+        "level": 2,
+        "section_start": 0,
+        "section_end": 1733,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:022a6da34df79d79255158861f5208dc1f20324d977146795df3901ae9bdfe28",
+        "heading_digest": "sha256:28d0ab2b04fc33cbbfa6ad1e5ba6b121c4af2fc096e8dbb8f3ad5ff474979c4e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0001",
+        "locator": "#investigate-if-the-current-and-target-versions-have-a-rolling-upgrade-path",
+        "level": 3,
+        "section_start": 1733,
+        "section_end": 1957,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:0f8c9e70db59587efe9d7073a97fd16bbeb784496c90c9bb1017265fd3dc298d",
+        "heading_digest": "sha256:6aaddf67c221fdc6cbd9abb33f6f62ad2013d8e42e761977ae0e36b25ddf5d20",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0002",
+        "locator": "#check-erlang-version-requirements",
+        "level": 3,
+        "section_start": 1957,
+        "section_end": 2534,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:dba43ea9388b1e204b237acb04555514faaab4a13567e57833d54ef0cae12e78",
+        "heading_digest": "sha256:1df1bcef9169940d0dfd7f51a77d2a16ce023362a1c205a91e3d81ab32b8be1d",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0003",
+        "locator": "#carefully-read-the-release-notes-up-to-the-selected-rabbitmq-version",
+        "level": 3,
+        "section_start": 2534,
+        "section_end": 2835,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:54967f17779c3ce459a7f17607a07f8b19f3794301aa8397570a7f9ed9515658",
+        "heading_digest": "sha256:4a71bdff87ab5b5813a5e1f6f34697e226440a3cef92e055967fe66857f8d5b1",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0004",
+        "locator": "#verify-all-stable-feature-flags-are-enabled",
+        "level": 3,
+        "section_start": 2835,
+        "section_end": 3567,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:67f79be4423c8191c91a17191bbb609c1dbcb45640cd9079a4b6c9dfddf8025f",
+        "heading_digest": "sha256:592b9db03d689e1c456ad7f5869845e231cab20085e82c38258778c25ac8bdf2",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0005",
+        "locator": "#make-sure-all-package-dependencies-including-erlang-are-available",
+        "level": 3,
+        "section_start": 3567,
+        "section_end": 4037,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:cf7f8b35952b4aa448a4909ab8f4785f3a66433ec022b260b1c93b8df5b06363",
+        "heading_digest": "sha256:56d0e8ec9ce0c300cef37f55c919da2861130b52da62ce85efc21cb2b78f8eed",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0006",
+        "locator": "#assess-cluster-health",
+        "level": 3,
+        "section_start": 4037,
+        "section_end": 5324,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:cb2e483133d53907f5ee585835dd8e8501c22fcdaa7b087f6c07a61c245f2f52",
+        "heading_digest": "sha256:b54f2276973124b527f277a25cf08f625d623d5a81750e1a1d212d0964492386",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0007",
+        "locator": "#ensure-cluster-has-the-capacity-for-upgrading",
+        "level": 3,
+        "section_start": 5324,
+        "section_end": 5533,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d6e4a9a53db5958c1295b96e767cc5d34c1cd8909186400041771066ef1cd5fe",
+        "heading_digest": "sha256:e0b2e31c2b0152589debc210ef72923b34a467658af6473c043309c89aeaa150",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0008",
+        "locator": "#perform-the-upgrade",
+        "level": 2,
+        "section_start": 5533,
+        "section_end": 5721,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:273718452f7f9cd15bc27f1dd08dc99ab180fc9b7fb3709e12372d9ab0dfb1dd",
+        "heading_digest": "sha256:db7985472ab1503d3a6b6463bf8b37fea092e2e27eb18a6de10bd6c75eef6d56",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0009",
+        "locator": "#stop-the-node",
+        "level": 3,
+        "section_start": 5721,
+        "section_end": 5801,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:0b54dbc2bdc7d35a443c1d98297bdf94b593b0531f715cb4e1580df4335d4a0e",
+        "heading_digest": "sha256:d6f058911edf8973cd6e1026b0ba8626e1c2c305d81bff4008ba04d177124095",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0010",
+        "locator": "#take-a-backup",
+        "level": 3,
+        "section_start": 5801,
+        "section_end": 5903,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:101500884babd8e56b1285e7f67c4132a69cd08f7993d184836d6df6ed5ba025",
+        "heading_digest": "sha256:19f74f7424a46e766b11d20da686e3bc89a0575d86b44809a1a19bb8073140bd",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0011",
+        "locator": "#upgrade-the-node",
+        "level": 3,
+        "section_start": 5903,
+        "section_end": 6075,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:da90548b42e40fc11fdc8aa91b757376bcc0bb08902a2fadbf62c0d936b6ce67",
+        "heading_digest": "sha256:339e089ede7b4a9b999446c61572b33eaeca4ec6ff08fb6b029bdd1c36df5c50",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0012",
+        "locator": "#start-the-node",
+        "level": 3,
+        "section_start": 6075,
+        "section_end": 6601,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:85abd69159e21deb171a01f948ad2311c3e21bee87690995cd04b239a5997228",
+        "heading_digest": "sha256:da6fd7709046930d68f669cea9df5af087658fe5d83cff73ba0c45981c32cde7",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0013",
+        "locator": "#after",
+        "level": 2,
+        "section_start": 6601,
+        "section_end": 6632,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:dd5339fdf9d03ffc16ebb12dca3037185f2fc824f130025eb9c2b8c3a7bb6653",
+        "heading_digest": "sha256:9aa1f17f32ebace3ce18322940337ea2a475d4f545b9b97214a6859eb18223ee",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0014",
+        "locator": "#verify-that-the-upgrade-has-succeeded",
+        "level": 3,
+        "section_start": 6632,
+        "section_end": 6846,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:4b0f6575ccec0daec49b5e8415f0872b5b0328fb0399999faf7db23752be4d00",
+        "heading_digest": "sha256:fe40e7f0d1b432df460c36147aa889a933f6b481e78ce6d85efda637e602db8d",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0015",
+        "locator": "#enable-ff-after-upgrade",
+        "level": 3,
+        "section_start": 6846,
+        "section_end": 7187,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:70ff06d0143ed6454339ff6f263bffd1912eff6a9cc15232b9c580388b4150b5",
+        "heading_digest": "sha256:0a1e74643c17c00095bfeaf0ea3575b6d7458289c96ea1b4fbadf757c9c59adc",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-rolling-upgrade.0016",
+        "locator": "#example",
+        "level": 2,
+        "section_start": 7187,
+        "section_end": 10269,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:bb91f0e00b2b1d1e6ef73b28908df2ac5e6d3143995bedf5aa4ff69e375b3246",
+        "heading_digest": "sha256:6fd10e719e66e325fe8e75db1d6cf48e9bbdf93e980f1ae3344af395e0411dc5",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
   "candidate_surfaces": []
 }

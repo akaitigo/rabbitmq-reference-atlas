@@ -17,6 +17,9 @@
     "locator_evaluations_deferred": 0,
     "reference_edges_classified": 206,
     "unclassified_reference_edges": 0,
+    "body_structure_sources_scanned": 48,
+    "body_structure_sources_deferred": 2,
+    "body_section_candidates": 1471,
     "authority_text_surfaces_exhaustive": false,
     "human_reviewed_surfaces": 0,
     "core_v2_eligible_surfaces": 0
@@ -71,17 +74,21 @@
     {
       "id": "rabbitmq-server-v4.3.5",
       "path": "authority/locator-drafts/rabbitmq-server-v4.3.5.json",
-      "digest": "sha256:4d5181f9f2dd9530c52049802c4540436f1a3d2abc94db5ebe396bc06496d237",
+      "digest": "sha256:c7a3c58fc220375b0514e2912551e7cef2d6f978370ed1dfa60b0cdb96697516",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 30,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-exchanges",
       "path": "authority/locator-drafts/rabbitmq-4.3-exchanges.json",
-      "digest": "sha256:ae0afd370e019f6cd4d05e7674f13055431dccf023c0176a32b263c1b6265227",
+      "digest": "sha256:a0611877f6291bd6ce1a49dc3a6d1e6c28f1b80c81bbd64ef477a9f6e2ad37ec",
       "locked_digest_match": true,
       "candidate_surfaces": 6,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 24,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 4
@@ -90,9 +97,11 @@
     {
       "id": "rabbitmq-4.3-queues",
       "path": "authority/locator-drafts/rabbitmq-4.3-queues.json",
-      "digest": "sha256:7e5f68041f0255b76da30f7b2dc35a9fc3ec56446e149248056a80383d785424",
+      "digest": "sha256:991cb643d7c75da5cd8af8ce14de95d856d05902848ea16ad84597dbb5883bcf",
       "locked_digest_match": true,
       "candidate_surfaces": 5,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 29,
       "locator_status": {
         "fragment-found": 5
       }
@@ -100,9 +109,11 @@
     {
       "id": "rabbitmq-4.3-confirms",
       "path": "authority/locator-drafts/rabbitmq-4.3-confirms.json",
-      "digest": "sha256:a350ede9a25dcbd12e5ab63f11f4aac50de6ac7ff49fdb16716e144f9623b038",
+      "digest": "sha256:5f0e9c810100cfbce3b689c8ca4e43089e46b13a6ea7c2c104fbfd4d5ea449d8",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 25,
       "locator_status": {
         "fragment-found": 4
       }
@@ -110,25 +121,31 @@
     {
       "id": "rabbitmq-4.3-dlx",
       "path": "authority/locator-drafts/rabbitmq-4.3-dlx.json",
-      "digest": "sha256:1538e9bc2778974bcc47c5377a87a1e9e4ed196e062d50fecec0b315ab24017f",
+      "digest": "sha256:133e08543bdf9326578fca1f7dfcad7f6eb9f3705209d44c69b83e370a3dd7bf",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 10,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-flow-control",
       "path": "authority/locator-drafts/rabbitmq-4.3-flow-control.json",
-      "digest": "sha256:c102d002ace7400c67e65913c69d5cc928d2d4dcb5c2488bb0916bdc5687260c",
+      "digest": "sha256:f0efcc91c1940bdea8c3b939a205f8967713951bfcb259955807bc9e2294f306",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 3,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-clustering",
       "path": "authority/locator-drafts/rabbitmq-4.3-clustering.json",
-      "digest": "sha256:107cad14266e2890d7bfc55db0d2bd03c0e05ba03cfcfc1ff8b15a8862ae12c4",
+      "digest": "sha256:74de574dad836aa57079fdccdbbfe021a9731a8f50a036e0755ca1061316aec3",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 61,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 2
@@ -137,25 +154,31 @@
     {
       "id": "rabbitmq-amqp-concepts",
       "path": "authority/locator-drafts/rabbitmq-amqp-concepts.json",
-      "digest": "sha256:381f6ae11dff5f0f6bda24d73285cfd4d219c2b6bf4824af7574b005fc82b804",
+      "digest": "sha256:a41a5573c54160f4f83ffad17ddd8c8d96dab4b4f213b368fa18c8162d488e27",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 29,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-ttl",
       "path": "authority/locator-drafts/rabbitmq-4.3-ttl.json",
-      "digest": "sha256:ef68dd7253fffa6f2b084e7d93baf9eee147dedaeed1ee8675464f994782a570",
+      "digest": "sha256:f3e5f35874e32c04dccc95ef6a742aff12cc144bf1bc962dc6aa834d03a26a5a",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 13,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-streams",
       "path": "authority/locator-drafts/rabbitmq-4.3-streams.json",
-      "digest": "sha256:7f412e84a19d625fb41991e18caaa2a532c133b5516f74a63fff1041fde2dfcd",
+      "digest": "sha256:44931afbf92c5cdfab1298cd9be778e20e52c23b991bb3ad6d7b80d36ccbfa5b",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 38,
       "locator_status": {
         "fragment-found": 4
       }
@@ -163,9 +186,11 @@
     {
       "id": "rabbitmq-4.3-quorum-queues",
       "path": "authority/locator-drafts/rabbitmq-4.3-quorum-queues.json",
-      "digest": "sha256:39fd9236974a45fb553b6d7b0ed757c6e461f4ce1d9b2066df661d7de1f98b7f",
+      "digest": "sha256:d56466274bd994f68ab9c3255b7f28f527a10021aa0d5088ac7c7137bbe74c09",
       "locked_digest_match": true,
       "candidate_surfaces": 5,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 93,
       "locator_status": {
         "fragment-found": 4,
         "fragment-not-found": 1
@@ -174,9 +199,11 @@
     {
       "id": "rabbitmq-4.3-partitions",
       "path": "authority/locator-drafts/rabbitmq-4.3-partitions.json",
-      "digest": "sha256:b30e982c2da84d35b8719ff3374d9ae421bd99e1e5ea4a47cd97839b230db7c3",
+      "digest": "sha256:ffa1baccfb2224e144449a233e7732262127f7dd7ddc8ce39596994ee9013640",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 13,
       "locator_status": {
         "fragment-not-found": 4
       }
@@ -184,17 +211,21 @@
     {
       "id": "rabbitmq-4.3-reliability",
       "path": "authority/locator-drafts/rabbitmq-4.3-reliability.json",
-      "digest": "sha256:ab72f920b1c7884be5a26a2a77db40eb37b264270846d3edc7fd31a3405aa197",
+      "digest": "sha256:54201777b0328427eb0e2999b9ea992fb58c2c671b88897bb40ec57c102a6d03",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 15,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-access-control",
       "path": "authority/locator-drafts/rabbitmq-4.3-access-control.json",
-      "digest": "sha256:7e329e2ffe0c7b227fd797a8bb92543323a67f13dac0a98147261d5700373b1c",
+      "digest": "sha256:42d9330e4738b8a318d06c97be4905e72016a9e38ba3706a6fd18a07645076eb",
       "locked_digest_match": true,
       "candidate_surfaces": 5,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 45,
       "locator_status": {
         "fragment-found": 4,
         "fragment-not-found": 1
@@ -203,9 +234,11 @@
     {
       "id": "rabbitmq-4.3-tls",
       "path": "authority/locator-drafts/rabbitmq-4.3-tls.json",
-      "digest": "sha256:c09887876186fcbaffb1fce58a5b169eee20baaf0a2b2cbeef775c8a5343db8c",
+      "digest": "sha256:2e621f9241a03261c13e28f1b55a636b6a107e0c3f790824e7c19100b28f0605",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 74,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 2
@@ -214,9 +247,11 @@
     {
       "id": "rabbitmq-4.3-monitoring",
       "path": "authority/locator-drafts/rabbitmq-4.3-monitoring.json",
-      "digest": "sha256:366262c68f778e1f3e4c1c00f5675603565222c0a0f20d609f81b9d3a0481582",
+      "digest": "sha256:48119b2d092ae385169d6e29b89f01aaf85cf26be611f3ef8ca97958962d0dcd",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 36,
       "locator_status": {
         "fragment-found": 1,
         "fragment-not-found": 3
@@ -225,9 +260,11 @@
     {
       "id": "rabbitmq-4.3-prometheus",
       "path": "authority/locator-drafts/rabbitmq-4.3-prometheus.json",
-      "digest": "sha256:e20a2018a1e859d5d8b8ef0a21c08b162e8cc63bddd7de37a45dc7d19fd1ca2e",
+      "digest": "sha256:367cb21a68e6d2efbe0c430367f0d87c6a2f63d61d647ce5d357524eb47dc7f2",
       "locked_digest_match": true,
       "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 56,
       "locator_status": {
         "fragment-found": 1,
         "fragment-not-found": 2
@@ -236,9 +273,11 @@
     {
       "id": "rabbitmq-4.3-alarms",
       "path": "authority/locator-drafts/rabbitmq-4.3-alarms.json",
-      "digest": "sha256:0b75f4728be73dd8ce65935a5ea47ea42506241ec95f5c5642b7e9275c5daa11",
+      "digest": "sha256:0cc947ec74cef889e6168b18a819969d567e6276faab124c9fb959b5f3b16020",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 8,
       "locator_status": {
         "fragment-found": 1,
         "fragment-not-found": 3
@@ -247,17 +286,21 @@
     {
       "id": "rabbitmq-4.3-definitions",
       "path": "authority/locator-drafts/rabbitmq-4.3-definitions.json",
-      "digest": "sha256:651c8ea521e533eb849252ad0003f8aa0652a3970c1503276b3c8a662a056793",
+      "digest": "sha256:3b1d3fe26434b7e347772d78011dbde71f73fdce1310a9f8c52eb36599f1adb5",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 10,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-feature-flags",
       "path": "authority/locator-drafts/rabbitmq-4.3-feature-flags.json",
-      "digest": "sha256:1ddf502614635cfdd5c387fcea8d59443b5396c351f557c7a0e6e2676514a043",
+      "digest": "sha256:9d4faf483912659ade2063761a2bb5b15f830127871030e3bd423d67840434aa",
       "locked_digest_match": true,
       "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 29,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 1
@@ -266,9 +309,11 @@
     {
       "id": "rabbitmq-4.3-upgrade",
       "path": "authority/locator-drafts/rabbitmq-4.3-upgrade.json",
-      "digest": "sha256:4d11a734e658c8df624fd2e2be934bea2555295e616aea4cc1917ada17922aeb",
+      "digest": "sha256:91f7345215544691a20227a19298ab7e52406b08b2989fb663c0366d04d5031d",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 23,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 2
@@ -277,25 +322,31 @@
     {
       "id": "rabbitmq-4.3-rolling-upgrade",
       "path": "authority/locator-drafts/rabbitmq-4.3-rolling-upgrade.json",
-      "digest": "sha256:62fb17aa373b3b71a47f3599b6fd7b772a8e308834ce89dbcee67023dfe7c964",
+      "digest": "sha256:2820b60cb6a61a60a20ad3c9d6e85910f4ef23f1f8c1aa14b324acc0f4836dbd",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 17,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-blue-green-upgrade",
       "path": "authority/locator-drafts/rabbitmq-4.3-blue-green-upgrade.json",
-      "digest": "sha256:0a0488edf2795784c1dc08137b74866b992a79e14b4a825caf221f4f21812605",
+      "digest": "sha256:9aecf9245cb3e6c1d66124409230e91d5948da64488af1c26d9fd389e2346d6e",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 8,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-production-checklist",
       "path": "authority/locator-drafts/rabbitmq-4.3-production-checklist.json",
-      "digest": "sha256:e02f40c03e72f6d4a08bf8e0b5b509ea10c0dca80c67983b9729ad8d6373f3db",
+      "digest": "sha256:5416fe9bbbeca3aec193c3082b08d486ea33f3c0a47dc6e54e3dd64a27347399",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 42,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 2
@@ -304,33 +355,41 @@
     {
       "id": "rabbitmq-server-v4.2.9-release-notes",
       "path": "authority/locator-drafts/rabbitmq-server-v4.2.9-release-notes.json",
-      "digest": "sha256:7f758eb3a6c11a143facca2264c38210b1cdc7095caa6eac2be44ab1a5d20df5",
+      "digest": "sha256:b66e3a60d3e2d4d694931b1388aa5f59e381902d75c04ef03d34b88144072502",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 37,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-container-v4.2.9-management",
       "path": "authority/locator-drafts/rabbitmq-container-v4.2.9-management.json",
-      "digest": "sha256:a525307eca3ad4433255aabfc2e1426d378c6214eb7763b969029869df33bc5a",
+      "digest": "sha256:a29f97e45fc3faae9c336e4a4a9b2dceac93be67a0771471a3c7349786649cd0",
       "locked_digest_match": false,
       "candidate_surfaces": 0,
+      "body_structure_status": "not-evaluated-stale-body",
+      "body_sections": 0,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-container-v4.3.5-management",
       "path": "authority/locator-drafts/rabbitmq-container-v4.3.5-management.json",
-      "digest": "sha256:0709883e926c33b311657ba62e8b039621e2f43327ea7f2df69c0b4e1a2352da",
+      "digest": "sha256:f630377a8c474d3cedb3e004339d90ab09d34013eedc373a1ea56c8b84e3a46f",
       "locked_digest_match": false,
       "candidate_surfaces": 0,
+      "body_structure_status": "not-evaluated-stale-body",
+      "body_sections": 0,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-protocols",
       "path": "authority/locator-drafts/rabbitmq-4.3-protocols.json",
-      "digest": "sha256:9ff4ac0384e94b6a623c62594abe067f4e5424a68b52ae5dfde713f430f86251",
+      "digest": "sha256:ef5d923ea29081b530e856cdb84f0a7d5221a756b974b7d4e47dbd96324faa47",
       "locked_digest_match": true,
       "candidate_surfaces": 7,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 8,
       "locator_status": {
         "fragment-found": 7
       }
@@ -338,9 +397,11 @@
     {
       "id": "rabbitmq-4.3-amqp-1.0",
       "path": "authority/locator-drafts/rabbitmq-4.3-amqp-1.0.json",
-      "digest": "sha256:caa4d664a90462db514d759b466085d04b2a107184ea161e979e7454539d27da",
+      "digest": "sha256:1f86b9220f7663f74f24fd9821ccb7611d84e31d6b0b14157963f3900239a673",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 22,
       "locator_status": {
         "fragment-found": 4
       }
@@ -348,9 +409,11 @@
     {
       "id": "rabbitmq-4.3-mqtt",
       "path": "authority/locator-drafts/rabbitmq-4.3-mqtt.json",
-      "digest": "sha256:106261c11b2827ae3fbdcf057abfb59c5e4818f0d0517f82a909530e98471b4c",
+      "digest": "sha256:2b00f5c30618e23d63bf4f887d4e8f64bcd884c5385b678e4651f03482e568ea",
       "locked_digest_match": true,
       "candidate_surfaces": 15,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 44,
       "locator_status": {
         "fragment-found": 14,
         "fragment-not-found": 1
@@ -359,9 +422,11 @@
     {
       "id": "rabbitmq-4.3-stomp",
       "path": "authority/locator-drafts/rabbitmq-4.3-stomp.json",
-      "digest": "sha256:f85db541fc8b300284214d816d5fbbf6f2f81870dd29db3227ccd57ad064f4dc",
+      "digest": "sha256:86a02a3fd42c9962c2b9bbcc60416f5c7d85ded4e769d68e1dc6693e4f8a07cb",
       "locked_digest_match": true,
       "candidate_surfaces": 16,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 40,
       "locator_status": {
         "fragment-found": 16
       }
@@ -369,9 +434,11 @@
     {
       "id": "rabbitmq-4.3-stream-plugin",
       "path": "authority/locator-drafts/rabbitmq-4.3-stream-plugin.json",
-      "digest": "sha256:c791bd09175160397337e35db1e50eb32cc1c0c20a91096e84264dd0cb57738d",
+      "digest": "sha256:3604c4938395f7a1a86cd65dd0d2e90dab9313ff659b4b9118db271f59b52570",
       "locked_digest_match": true,
       "candidate_surfaces": 10,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 12,
       "locator_status": {
         "fragment-found": 5,
         "fragment-not-found": 5
@@ -380,17 +447,21 @@
     {
       "id": "rabbitmq-4.3-stream-comparison",
       "path": "authority/locator-drafts/rabbitmq-4.3-stream-comparison.json",
-      "digest": "sha256:b64052b67ebd7280f1a04f0cbf7ff6aca11601e73f3a82d07fc9bbdb1e4dbc1b",
+      "digest": "sha256:029603e44dfae6815d0f175ceacd4aeafd4e0f5566a04bbc36300738be82c562",
       "locked_digest_match": true,
       "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 5,
       "locator_status": {}
     },
     {
       "id": "rabbitmq-4.3-federation",
       "path": "authority/locator-drafts/rabbitmq-4.3-federation.json",
-      "digest": "sha256:a88fe72aa8ec68f568830c4dfea249abfc7ef592a51c725e1343326cbe7c5756",
+      "digest": "sha256:c5fb97ca683cf5e5ca1ba9ee80e9071f97ea043d99a7e2bc4b4d1a03fc0060c6",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 20,
       "locator_status": {
         "fragment-not-found": 4
       }
@@ -398,9 +469,11 @@
     {
       "id": "rabbitmq-4.3-shovel",
       "path": "authority/locator-drafts/rabbitmq-4.3-shovel.json",
-      "digest": "sha256:36519cc4cd4bacf09ec51b70a35197142168affe447ea55b2fa2e763058a5dba",
+      "digest": "sha256:5d88449ea24d4f74d951267e3570eefb994d01353269048bfe912402b1616872",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 20,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 2
@@ -409,9 +482,11 @@
     {
       "id": "rabbitmq-4.3-oauth2",
       "path": "authority/locator-drafts/rabbitmq-4.3-oauth2.json",
-      "digest": "sha256:c66cc7ae18cb0e735e064162405b199c5af6d23bcfc5da3833f7e38b005a0805",
+      "digest": "sha256:538917d107a6c82369eb233a5c3519fb9077b4ed5a24076d5243032550189a8c",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 64,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 2
@@ -420,9 +495,11 @@
     {
       "id": "rabbitmq-4.3-ldap",
       "path": "authority/locator-drafts/rabbitmq-4.3-ldap.json",
-      "digest": "sha256:9e582be3bddadd0aa6df48c56132635ec6b6a43000774d6471be381a627571c6",
+      "digest": "sha256:8a600180214a97a501ea67347066374c661c29f43f807c5adf8be121e04b8923",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 43,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 2
@@ -431,9 +508,11 @@
     {
       "id": "rabbitmq-4.3-backup",
       "path": "authority/locator-drafts/rabbitmq-4.3-backup.json",
-      "digest": "sha256:d7d41409b89cc53d712d72e69985ad1119f19c3b8bb0cf194c4e9c38f76140a4",
+      "digest": "sha256:0ae61055b67f23e982aa995b4d10f2d4bf88f22c2e371d7196ad8fa810569b62",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 14,
       "locator_status": {
         "fragment-not-found": 4
       }
@@ -441,9 +520,11 @@
     {
       "id": "rabbitmq-4.3-cli",
       "path": "authority/locator-drafts/rabbitmq-4.3-cli.json",
-      "digest": "sha256:1363a2a0cff1d22ae3c1f0e7fd2d69dd140d2a47b81e3fda66a9cb6c93dd1e0e",
+      "digest": "sha256:79d62aaefc9f57d049c5c64ae7d56f68dfb145decc6c15dcddc908b35ff2fa14",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 47,
       "locator_status": {
         "fragment-found": 3,
         "fragment-not-found": 1
@@ -452,9 +533,11 @@
     {
       "id": "rabbitmq-4.3-configuration",
       "path": "authority/locator-drafts/rabbitmq-4.3-configuration.json",
-      "digest": "sha256:bfc1b0cda77dd169f1126f2ae23e1990ff83e33be65f01ada32146611d13df8f",
+      "digest": "sha256:400d716e94dc5911b500408ead0b251d31c5eb7dad20535cd84db375c10e38ef",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 43,
       "locator_status": {
         "fragment-found": 1,
         "fragment-not-found": 3
@@ -463,9 +546,11 @@
     {
       "id": "rabbitmq-4.3-plugins",
       "path": "authority/locator-drafts/rabbitmq-4.3-plugins.json",
-      "digest": "sha256:f1338bdfdc90bc101c826387ee07517d4db84a78bea30f50cb4803046562fb90",
+      "digest": "sha256:3a03e1fcfcb3de9c48f1cd4f706c05862829bb88c383f3f4a815b791f3736588",
       "locked_digest_match": true,
       "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 16,
       "locator_status": {
         "fragment-not-found": 3
       }
@@ -473,9 +558,11 @@
     {
       "id": "rabbitmq-4.3-management",
       "path": "authority/locator-drafts/rabbitmq-4.3-management.json",
-      "digest": "sha256:a0c0110e71f0b132e07ebcdf0628e1e361c8b91d5f1035ab9a46d39fdf7e6c51",
+      "digest": "sha256:4db6f8ee834e00faedf5b6b3e6c1af5caa36af2b2cd8a3e2d39e5bfe61da17dd",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 73,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 2
@@ -484,9 +571,11 @@
     {
       "id": "rabbitmq-4.3-classic-queues",
       "path": "authority/locator-drafts/rabbitmq-4.3-classic-queues.json",
-      "digest": "sha256:78d5ce2fb87dfac465ab4fde098d208e01db459098c0f62bcb62b19723819271",
+      "digest": "sha256:c8cafd3ad7998de6df1c321d4d8fbd9bf8b8f19009f6e65409f8a1a6c920d6a8",
       "locked_digest_match": true,
       "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 12,
       "locator_status": {
         "fragment-not-found": 4
       }
@@ -494,9 +583,11 @@
     {
       "id": "rabbitmq-4.3-consumers",
       "path": "authority/locator-drafts/rabbitmq-4.3-consumers.json",
-      "digest": "sha256:091bac2c446025b50147d613ca924ade496616364ae8bbdeec3b9b64d7628300",
+      "digest": "sha256:253a7b0e5471b8ebe1d59cbaf6af20f34ffa4f355c2b5581f799091bc33b9343",
       "locked_digest_match": true,
       "candidate_surfaces": 5,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 43,
       "locator_status": {
         "fragment-found": 4,
         "fragment-not-found": 1
@@ -505,9 +596,11 @@
     {
       "id": "rabbitmq-4.3-publishers",
       "path": "authority/locator-drafts/rabbitmq-4.3-publishers.json",
-      "digest": "sha256:fa07abcbb97dde50595bda687369d98acb63486699350d6089af3503eb41c197",
+      "digest": "sha256:0dbd740349b4cd1c2f86c7898c6b6bb16fdc45a5d325a6b9c43e23596402cb91",
       "locked_digest_match": true,
       "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 41,
       "locator_status": {
         "fragment-found": 1,
         "fragment-not-found": 2
@@ -516,9 +609,11 @@
     {
       "id": "rabbitmq-4.3-policies",
       "path": "authority/locator-drafts/rabbitmq-4.3-policies.json",
-      "digest": "sha256:e7609e2ac67a223142edba96b2f33f49796db7855b454b40a2237c0bde4c9321",
+      "digest": "sha256:82436d801115a7eccec22cb0646921b213ad649bd5b044ed9998380c351ffdf3",
       "locked_digest_match": true,
       "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 31,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 1
@@ -527,9 +622,11 @@
     {
       "id": "rabbitmq-4.3-limits",
       "path": "authority/locator-drafts/rabbitmq-4.3-limits.json",
-      "digest": "sha256:c13beba12cdb3091cd6f791ae9ec17fe6aaebc3b92c9b84f3284a0233903d8b6",
+      "digest": "sha256:714f0b566c33b03abb972d59847fe4652eb5f8eb5ed69e57567469945e7f57d0",
       "locked_digest_match": true,
       "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 13,
       "locator_status": {
         "fragment-found": 2,
         "fragment-not-found": 1
@@ -538,9 +635,11 @@
     {
       "id": "rabbitmq-operator-overview",
       "path": "authority/locator-drafts/rabbitmq-operator-overview.json",
-      "digest": "sha256:480419aeaf5439e085813ec151e967a36d14d57a892f828ea8ef54c0acbf4df4",
+      "digest": "sha256:b8686ce8d62e0afe2e0c542ab24658e76303091f0ddf393c03acc9f260e2a26e",
       "locked_digest_match": true,
       "candidate_surfaces": 6,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 12,
       "locator_status": {
         "fragment-found": 6
       }
@@ -548,9 +647,11 @@
     {
       "id": "rabbitmq-operator-usage",
       "path": "authority/locator-drafts/rabbitmq-operator-usage.json",
-      "digest": "sha256:f83cab264ca6ac56efa0c38363ce4c06cc789be54f4ca2791d127c69e43995d5",
+      "digest": "sha256:3d89931ba3b5bc22cd531ffbcc769e11999d4105dd37a12c825a9fa49559a4a3",
       "locked_digest_match": true,
       "candidate_surfaces": 17,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 49,
       "locator_status": {
         "fragment-found": 14,
         "fragment-not-found": 3
@@ -559,9 +660,11 @@
     {
       "id": "rabbitmq-topology-operator-usage",
       "path": "authority/locator-drafts/rabbitmq-topology-operator-usage.json",
-      "digest": "sha256:c4c9d97139aa7dd0714097ae2c679bff97fc802f4e9c68c3d9394d185aedca6f",
+      "digest": "sha256:576a7a143ec1f4008627c83e0b651aee71abfacd6b58ecaf0786b5855c32a94e",
       "locked_digest_match": true,
       "candidate_surfaces": 15,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 31,
       "locator_status": {
         "fragment-found": 14,
         "fragment-not-found": 1

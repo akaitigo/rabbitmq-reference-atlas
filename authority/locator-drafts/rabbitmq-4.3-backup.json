@@ -19,6 +19,168 @@
     "review_status": "automated-unreviewed",
     "body_storage": "digest-and-locator-context-digest-only"
   },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0000",
+        "locator": "#backup-and-restore",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 812,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:feeacc382686351a1e31d1c803ed3b78940b08a2495f15adc7e329a67f69fa79",
+        "heading_digest": "sha256:d626ad8a5c1e3408fc8b16daf0f214caffdaed0f098da293319f7a2f13ab6fe7",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 812,
+        "section_end": 1486,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c8fe53ee6b8a301016ca3523a9b23505c0e4121d6c6be468556882072911f216",
+        "heading_digest": "sha256:d4b1ea5708dd532930a85188b45aff6f0a3ed458500c7577e0127a538eb0d100",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0002",
+        "locator": "#rabbitmq-data",
+        "level": 2,
+        "section_start": 1486,
+        "section_end": 1731,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d56c74c4b76cb7ad1740263829e53841ff3f21a56ed35dc2d47c0d388188b5f1",
+        "heading_digest": "sha256:61d2076def8362ec32ca5e4abd3f3acc7e769637a3d0fe791208f70007870723",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0003",
+        "locator": "#rabbitmq-definitions",
+        "level": 3,
+        "section_start": 1731,
+        "section_end": 2420,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:e559bc9c9ea2a2fe1f6096e0bbeddca114d9eb50dd30440fd5a929e5c9731190",
+        "heading_digest": "sha256:9db689b13b044b0318c69ea8103e5f0e90c14466fab823311c9b160bbc723760",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0004",
+        "locator": "#rabbitmq-messages",
+        "level": 3,
+        "section_start": 2420,
+        "section_end": 2821,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:35ab0a7a23dedbe8915c143d37b99fcd5325a050b40df7966e01bfb6af2e9c39",
+        "heading_digest": "sha256:4b7cfd90f280971d51d09fb0bfb4674bced0aa626634651fce2d63b76a4b9122",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0005",
+        "locator": "#data-lifespan",
+        "level": 3,
+        "section_start": 2821,
+        "section_end": 3321,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:ab51d47a2f1603a181ed2d19401a520547bf211a1da847b92bc6cf6f919e03de",
+        "heading_digest": "sha256:7a224aebd9a07bbdd872653fadefe8f60d2869b2f045b15457efd313b9d725a8",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0006",
+        "locator": "#definitions-backup",
+        "level": 2,
+        "section_start": 3321,
+        "section_end": 3463,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:1193045357874c940284d6d51a5a8c566668303885fe50d05fa2913a9dc2be6d",
+        "heading_digest": "sha256:767536a189a203730b5eb62873769b8f14fba5f57b7e0a8b0744c817adc0e32e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0007",
+        "locator": "#definitions-export",
+        "level": 3,
+        "section_start": 3463,
+        "section_end": 3602,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:84baa9ecd30180f9b0036be0d3399fcf03a146e78f26b8b07310fd95510ca7e2",
+        "heading_digest": "sha256:6cbb7ff43147cf6b95f577a63d04810250bc3b6111b05669db1b8b0b06ddc7a9",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0008",
+        "locator": "#definitions-import",
+        "level": 3,
+        "section_start": 3602,
+        "section_end": 3912,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:43b18aa872af7629ab799e46d0bc5ca1d8d06a05ce79116f8ff220e33924267c",
+        "heading_digest": "sha256:c947285613333a92c15d428447d79b82a8e8e51a0f7c2462ae70b5d9b3808533",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0009",
+        "locator": "#manual-definitions-backup",
+        "level": 3,
+        "section_start": 3912,
+        "section_end": 4684,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c8285ab9cb524afeaec6222d6360329b6dc5ff8cb382e925e71f9cc4e2c4bf79",
+        "heading_digest": "sha256:29b6e31f3d75e63de086af43e78fc78d39e0851eeef830dd10bb523879273dd9",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0010",
+        "locator": "#manual-definitions-restore",
+        "level": 3,
+        "section_start": 4684,
+        "section_end": 4937,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:62ebd7da0a0ed426459a40934a5fd5c504a28760873fb0e2561da0110f98bb84",
+        "heading_digest": "sha256:5296c3a9dbc9a4f015ca7759408be26fc0c1123e169727cd4d06095161a42d55",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0011",
+        "locator": "#messages-backup",
+        "level": 2,
+        "section_start": 4937,
+        "section_end": 5496,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:88add79cdcc82fa16025da8a05fee069a157a84e07d2f6c20a3e0c00c4816a92",
+        "heading_digest": "sha256:b33ca52248774e7b8a1cefd10121128e11f06dbd7c5b08a529813993ed80b1b6",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0012",
+        "locator": "#manual-messages-backup",
+        "level": 3,
+        "section_start": 5496,
+        "section_end": 5676,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:6a765d780073266e3b50c02eb5fb4d5f1bf7322b47258257709a436ad266743b",
+        "heading_digest": "sha256:11376196464c9c1c4acaa084b7bbefd53272a0af3400ae2f115f5d268cd31a2a",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-backup.0013",
+        "locator": "#manual-messages-restore",
+        "level": 3,
+        "section_start": 5676,
+        "section_end": 6448,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7633d6ac5b0ce3d8987462c4247b92a83dfd1293e3688cb6727ef0d0124d4684",
+        "heading_digest": "sha256:b01eb24787575ceb1d3deda237d866f8c4453b91feefef6ea56bda8cec48b292",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
   "candidate_surfaces": [
     {
       "edge_id": "edge.backup.definitions.rabbitmq-4.3-backup",

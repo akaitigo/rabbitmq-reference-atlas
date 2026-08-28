@@ -19,6 +19,289 @@
     "review_status": "automated-unreviewed",
     "body_storage": "digest-and-locator-context-digest-only"
   },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0000",
+        "locator": "#consumer-acknowledgements-and-publisher-confirms",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 872,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:dce2e17e748a9670c333cff3cc11c5332b48be5c0c269ac837b90464e68f948a",
+        "heading_digest": "sha256:dfe8c04b8f9a1456501e41f58be7e1a715198948900e8530dfbbfe9305e8dce5",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 872,
+        "section_end": 1875,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:f657c10932e238bad3f57c02b8077435533e2ad2e248e825618d09ce7043bf5a",
+        "heading_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0002",
+        "locator": "#basics",
+        "level": 2,
+        "section_start": 1875,
+        "section_end": 2950,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b343c9628108b252b85eb755541c6e9ace8b4c0acb4aa60641f1d3b316d41bc3",
+        "heading_digest": "sha256:907f9ce16d80a2073aac403ed1e498f694db0aee2c839b0d3485779472baecb2",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0003",
+        "locator": "#relation",
+        "level": 3,
+        "section_start": 2950,
+        "section_end": 4400,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a4dd3b1f33ec38fb6fb22317fb2b3ffdb9441b1329192c231a797f86b9312538",
+        "heading_digest": "sha256:faced0c2e0f8c57474fed5066015f3a4dbb891bcc21479c8f104714d527a8a25",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0004",
+        "locator": "#consumer-acknowledgements",
+        "level": 2,
+        "section_start": 4400,
+        "section_end": 4993,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:81a7d130c7a74d77442620f6a3d66fcd1ebb8759ae5424faa57979a9068ed72a",
+        "heading_digest": "sha256:43699bb8af67afc7c60438e933c807f623fb528bfaab83cc80e43409d117943d",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0005",
+        "locator": "#consumer-acks-delivery-tags",
+        "level": 3,
+        "section_start": 4993,
+        "section_end": 5929,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:9fa8803bc17d9790728f7942330963d9e962a17025159efe3144b5ddf7e6a04d",
+        "heading_digest": "sha256:763575677ecc9a9e725a7aa320394bb0d172832f9c3cfb288c6a45ce57068a4b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0006",
+        "locator": "#acknowledgement-modes",
+        "level": 3,
+        "section_start": 5929,
+        "section_end": 9023,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:31f583ffe4e1ff2a5aab6aeb027436ca8f74c3050676d6cd566e166e518988e6",
+        "heading_digest": "sha256:20b518fa0f6c38ea5668af9546167852117d57c61d739e0f983bedfab661a12b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0007",
+        "locator": "#consumer-acks-api-elements",
+        "level": 3,
+        "section_start": 9023,
+        "section_end": 10792,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:de8c681832047555fd0cea136f38095b8470fa4be164ae9a8fe63f4adc581aaa",
+        "heading_digest": "sha256:5992bebec178ddc41895aea0525775a448601db39b2ad88e6e0481648a3801c3",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0008",
+        "locator": "#consumer-acks-multiple-parameter",
+        "level": 3,
+        "section_start": 10792,
+        "section_end": 13130,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:ca4311c4c48555d89428d8b8abb33a342d2b1a4c5959ffd3f8bb8e847ef8bf3c",
+        "heading_digest": "sha256:e34ee36ef1a3cffc22490f501fbbc33f1c84d30395560e45d04a2a4d87f22546",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0009",
+        "locator": "#consumer-nacks-requeue",
+        "level": 3,
+        "section_start": 13130,
+        "section_end": 18865,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:cfd437c2c02d204b603cda028ac01326519b150b1bba3be3e7a516401f40880a",
+        "heading_digest": "sha256:580d55dd1b382869d1e1353d0ca2ad7e4b1357a248c33b7b8538bdc9220f86e2",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0010",
+        "locator": "#channel-qos-prefetch",
+        "level": 3,
+        "section_start": 18865,
+        "section_end": 20715,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d08b577d23ef27d07005b1126bcdf133d8b9049040b01d057da7abc91a2076f2",
+        "heading_digest": "sha256:66b739fca734b23adf26ecfc6e7b9a5cf5820c2d8d61ba5c13eacf91bfb15bde",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0011",
+        "locator": "#unlimited-prefetch",
+        "level": 4,
+        "section_start": 20715,
+        "section_end": 21777,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a2465d5e251f406fe10481e7f78fe8ec3fa29fca34f1fe2687a2c5f1fed3c9aa",
+        "heading_digest": "sha256:978e20758b0945a704f1bfca5523e2fd499b4905e0c0e409851a5534b09239ce",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0012",
+        "locator": "#per-channel-per-consumer-and-global-prefetch",
+        "level": 4,
+        "section_start": 21777,
+        "section_end": 22000,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:ca3443ebc3ad0431c2edbdd1f4f6465711f7f3bcb7a40bb604cc53c7672b9583",
+        "heading_digest": "sha256:f3d425d0a887433d1c8816ad815135326c9340b5e3dcdf4cd073f4f2f7478dc4",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0013",
+        "locator": "#prefetch-and-polling-consumers",
+        "level": 4,
+        "section_start": 22000,
+        "section_end": 22167,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:f008c37d373af7fe9c0a52ed7cbea070d3df2530e3910bb74ac85febe58cb883",
+        "heading_digest": "sha256:94d2dca7efc70a00ee207330ddf750bef227bbbb5e367e763651b6cc7d24c318",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0014",
+        "locator": "#channel-qos-prefetch-throughput",
+        "level": 3,
+        "section_start": 22167,
+        "section_end": 23490,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:0ef0afc1d0083fba956c1000e6fcb7ee747eee19013fc0dae539b4518cc222ae",
+        "heading_digest": "sha256:fa99c4133f491009a9e17f792075a2aaa5e7aaf608ac3bc510a88bcf895ec0ea",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0015",
+        "locator": "#automatic-requeueing",
+        "level": 3,
+        "section_start": 23490,
+        "section_end": 24402,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:24e16d3fac57f971d1bbb861a3b2bdc91b6953d88d709432bb5cac3861609de8",
+        "heading_digest": "sha256:39666ab5f453385a9e4b06a6f88996257cecdfa0dc83ab4012a04e9f12d05ad0",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0016",
+        "locator": "#consumer-acks-double-acking",
+        "level": 3,
+        "section_start": 24402,
+        "section_end": 25005,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b2b0937881982d5848f9b035ca6209c54cdb04a2bdec1868629a55771dc8c79c",
+        "heading_digest": "sha256:8d619a554740ef331485a4630aecb92cb0c0fe721bf210a38ab6b0b615fd1b6c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0017",
+        "locator": "#publisher-confirms",
+        "level": 2,
+        "section_start": 25005,
+        "section_end": 26733,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:2d9a09c2c8d48f73edac1558e46b9669a9cf52123d0a90ef18268a8a5ecd3701",
+        "heading_digest": "sha256:127c986011bfef47f845fe23aaf0d5622e4b176a2b847113fda27c7f33d455c5",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0018",
+        "locator": "#server-sent-nacks",
+        "level": 3,
+        "section_start": 26733,
+        "section_end": 27628,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7a9113c7ebbc6998e597a5a931e1a726c861d6384283e88f74b3a2d84197464e",
+        "heading_digest": "sha256:87c6760387d8d33a242d69e2cc6f11d93f8824d592c7b4fe480d1ec5a7a2669f",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0019",
+        "locator": "#when-publishes-are-confirmed",
+        "level": 3,
+        "section_start": 27628,
+        "section_end": 28381,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:bbbc9154ad57bc1789d9efe15083fa5e72258465b25374d2511743910908a429",
+        "heading_digest": "sha256:7d0c27016683192def57c7dbc99829f74d6a6e39ed2d8417207e5d7ad28790b5",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0020",
+        "locator": "#publisher-confirms-latency",
+        "level": 3,
+        "section_start": 28381,
+        "section_end": 29083,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:531268481d4432e24112824fbab8ca67122f25e6b54db0962676be30ee0550ae",
+        "heading_digest": "sha256:ebfa112bbce30dd6570c539ce3492d0aaa5c985ca8fc3301c883c54c9fa91254",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0021",
+        "locator": "#publisher-confirms-ordering",
+        "level": 3,
+        "section_start": 29083,
+        "section_end": 29921,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:64995ec5f6058d05df32dbed2504faf7d54cbe1f1ebb74db4ad3f85eeb2a7d94",
+        "heading_digest": "sha256:403b429c5e01dd72d121be8280fd17f8aee00d403bc07d3e74586830228bd960",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0022",
+        "locator": "#publisher-confirms-and-guaranteed-delivery",
+        "level": 3,
+        "section_start": 29921,
+        "section_end": 30873,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:8c209937ec87e1ce988a21b704fdb1ea2af9baee2bd5ddeb250ab97aa50fab82",
+        "heading_digest": "sha256:c14e246edc7d7eb514ff64316aa550d9f40adf7054c7535e4821dc8966960599",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0023",
+        "locator": "#limitations",
+        "level": 2,
+        "section_start": 30873,
+        "section_end": 30904,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7bd2382cfb66ab62450a11d3af5711be302d0613eb014271c4d2f10e615c34e0",
+        "heading_digest": "sha256:2325faa95e0c165a8be3920fad7fc0f46edac4c68fafc41a5b5f146ec1113530",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-confirms.0024",
+        "locator": "#publisher-confirms-and-guaranteed-delivery",
+        "level": 3,
+        "section_start": 30904,
+        "section_end": 31197,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a1d95da25fca4aa0ebb1a40bd4692059655cc1bfc8d45a5f9422885267138fe7",
+        "heading_digest": "sha256:b5f915939fcc4feb79a7f4c47e93946d84b449bf887181391fc14db2665f357b",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
   "candidate_surfaces": [
     {
       "edge_id": "edge.delivery.consumer-ack.rabbitmq-4.3-confirms",

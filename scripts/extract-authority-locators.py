@@ -90,6 +90,40 @@ def locate(body: bytes, locator: str) -> dict:
             "heading_digest": sha(heading_line) if heading_line else None}
 
 
+def scan_body_structure(body: bytes, source_id: str) -> list[dict]:
+    """Markdown本文を非重複sectionへ分割し、文字列を保存せずoffset/digestだけ返す。"""
+    headings = []
+    offset = 0
+    fence = None
+    for line in body.splitlines(keepends=True):
+        stripped = line.lstrip()
+        marker = stripped[:3]
+        if marker in {b"```", b"~~~"}:
+            fence = None if fence == marker else (marker if fence is None else fence)
+            offset += len(line)
+            continue
+        match = None if fence else re.match(rb"^(#{1,6})[ \t]+([^\r\n]+)", line)
+        if match:
+            raw_heading = match.group(2)
+            explicit = re.search(rb"\{#([^}]+)\}\s*$", raw_heading)
+            locator = "#" + (explicit.group(1).decode("utf-8", errors="replace") if explicit else slug(raw_heading.decode("utf-8", errors="replace")))
+            headings.append((offset, len(match.group(1)), locator, sha(raw_heading)))
+        offset += len(line)
+    if not headings:
+        return [{"section_id": f"section.{source_id}.0000", "locator": "document-root", "level": 0,
+                 "section_start": 0, "section_end": len(body), "context_unit": "utf8-byte",
+                 "section_digest": sha(body), "heading_digest": None, "classification": "automated-section-unreviewed"}]
+    sections = []
+    for index, (heading_offset, level, locator, heading_digest) in enumerate(headings):
+        start = 0 if index == 0 else heading_offset
+        end = headings[index + 1][0] if index + 1 < len(headings) else len(body)
+        sections.append({"section_id": f"section.{source_id}.{index:04d}", "locator": locator, "level": level,
+                         "section_start": start, "section_end": end, "context_unit": "utf8-byte",
+                         "section_digest": sha(body[start:end]), "heading_digest": heading_digest,
+                         "classification": "automated-section-unreviewed"})
+    return sections
+
+
 def denominator(source_ids: list[str], needle: tuple[str, ...]) -> dict:
     selected = sorted(source_id for source_id in source_ids if any(value in source_id for value in needle))
     return {"source_ids": selected, "sources": len(selected), "body_exhaustive": 0,
@@ -128,6 +162,10 @@ def main() -> None:
                     "locator_status": "not-evaluated-stale-body", "context_digest": None,
                     "context_start": None, "context_end": None, "context_unit": None, "heading_digest": None,
                 } for edge in edges.get(source["id"], [])]
+                body_structure = {"status": "structurally-scanned" if matched else "not-evaluated-stale-body",
+                                  "method": "markdown-section-byte-partition-v1", "review_status": "automated-unreviewed",
+                                  "body_storage": "digest-and-locator-context-digest-only",
+                                  "sections": scan_body_structure(body, source["id"]) if matched else []}
         except Exception as error:  # network/HTTPの文字列は保存せずdigestだけを残す
             fetch = {"status": "failed", "fetched_digest": None, "locked_digest_match": False,
                      "http_status": error.code if isinstance(error, urllib.error.HTTPError) else None,
@@ -136,11 +174,15 @@ def main() -> None:
             locations = [{"locator_status": "not-evaluated-fetch-failed", "context_digest": None,
                           "context_start": None, "context_end": None, "context_unit": None,
                           "heading_digest": None} for _ in edges.get(source["id"], [])]
+            body_structure = {"status": "not-evaluated-fetch-failed", "method": "markdown-section-byte-partition-v1",
+                              "review_status": "automated-unreviewed", "body_storage": "digest-and-locator-context-digest-only",
+                              "sections": []}
         artifact = {
             "schema_version": 1, "source_id": source["id"], "source_url": source["url"],
             "locked_source_digest": source["digest"], "fetch": fetch,
             "extraction": {"method": "locked-body-locator-context-digest", "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
                            "review_status": "automated-unreviewed", "body_storage": "digest-and-locator-context-digest-only"},
+            "body_structure": body_structure,
             "candidate_surfaces": [{**edge, **location, "classification": "candidate-included-unreviewed"}
                                    for edge, location in zip(edges.get(source["id"], []), locations)],
         }
@@ -150,6 +192,7 @@ def main() -> None:
         print(f"extracted {index}/{len(sources)} {source['id']} {fetch['status']}")
 
     candidates = [candidate for artifact, _ in artifacts for candidate in artifact["candidate_surfaces"]]
+    body_sections = [section for artifact, _ in artifacts for section in artifact["body_structure"]["sections"]]
     status = Counter(artifact["fetch"]["status"] for artifact, _ in artifacts)
     locator_status = Counter(candidate["locator_status"] for candidate in candidates)
     source_ids = [source["id"] for source in sources]
@@ -164,6 +207,9 @@ def main() -> None:
             "fragments_found": locator_status["fragment-found"], "fragments_not_found": locator_status["fragment-not-found"],
             "locator_evaluations_deferred": locator_status["not-evaluated-stale-body"] + locator_status["not-evaluated-fetch-failed"],
             "reference_edges_classified": len(candidates), "unclassified_reference_edges": 0,
+            "body_structure_sources_scanned": sum(artifact["body_structure"]["status"] == "structurally-scanned" for artifact, _ in artifacts),
+            "body_structure_sources_deferred": sum(artifact["body_structure"]["status"] != "structurally-scanned" for artifact, _ in artifacts),
+            "body_section_candidates": len(body_sections),
             "authority_text_surfaces_exhaustive": False, "human_reviewed_surfaces": 0, "core_v2_eligible_surfaces": 0,
         },
         "denominators": {
@@ -174,12 +220,14 @@ def main() -> None:
         "sources": [{"id": artifact["source_id"], "path": path.relative_to(ROOT).as_posix(),
                      "digest": sha(path.read_bytes()), "locked_digest_match": artifact["fetch"]["locked_digest_match"],
                      "candidate_surfaces": len(artifact["candidate_surfaces"]),
+                     "body_structure_status": artifact["body_structure"]["status"],
+                     "body_sections": len(artifact["body_structure"]["sections"]),
                      "locator_status": dict(sorted(Counter(item["locator_status"] for item in artifact["candidate_surfaces"]).items()))}
                     for artifact, path in artifacts],
     }
     INDEX.parent.mkdir(parents=True, exist_ok=True)
     INDEX.write_text(json.dumps(snapshot, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Authority locator snapshot: matched={status['matched']} stale={status['stale']} failed={status['failed']} candidates={len(candidates)} human_reviewed=0 exhaustive=false")
+    print(f"Authority locator snapshot: matched={status['matched']} stale={status['stale']} failed={status['failed']} candidates={len(candidates)} sections={len(body_sections)} human_reviewed=0 exhaustive=false")
 
 
 if __name__ == "__main__":

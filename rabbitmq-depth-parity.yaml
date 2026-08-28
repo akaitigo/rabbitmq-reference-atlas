@@ -77,6 +77,9 @@ axes:
     located_reference_edges: 137
     fragment_not_found: 69
     locator_evaluations_deferred: 0
+    body_structure_sources_scanned: 48
+    body_structure_sources_deferred: 2
+    body_section_candidates: 1471
     authority_text_surfaces_exhaustive: false
     human_reviewed_surfaces: 0
     protocol_plugin_operator_denominators:
@@ -414,7 +417,7 @@ axes:
     evidence:
     - authority/extraction.snapshot.json
     - authority/locator-drafts/
-    gap_ids:
+    gap_ids: &id001
     - authority.body-stale.rabbitmq-container-v4.2.9-management
     - authority.body-stale.rabbitmq-container-v4.3.5-management
   - id: authority.existing-surface-classification
@@ -502,6 +505,14 @@ axes:
     - authority.locator.edge.operator-usage.pause-reconciliation.rabbitmq-operator-usage
     - authority.locator.edge.operator-usage.pod-disruption-budget.rabbitmq-operator-usage
     - authority.locator.edge.topology-operator.immutable-update-rejection.rabbitmq-topology-operator-usage
+  - id: authority.body-structure-scan
+    required: 固定body全体を非重複sectionへpartitionし、offsetとdigestだけを保持する。
+    observed: 48/50 sources; 1471 sections
+    status: partial
+    evidence:
+    - authority/extraction.snapshot.json
+    - authority/locator-drafts/
+    gap_ids: *id001
   - id: authority.surface-exhaustiveness
     required: Authority本文全体からSurfaceを抽出し、未分類をゼロにする。
     observed: false
