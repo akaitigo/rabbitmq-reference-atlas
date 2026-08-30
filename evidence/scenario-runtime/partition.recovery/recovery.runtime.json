@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "behavior_id": "partition.recovery",
+  "authority_surface_id": "partition.recovery",
+  "scenario": "recovery",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "cmd/rmq-lab/main.go",
+    "digest": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-lab",
+        "version": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870",
+        "source_digest": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.partition.recovery.recovery.node-1",
+        "assertions": [
+          "reconnect後の専用TCP/AMQP probeが成功した",
+          "quorum queueのonline membersが3へ復帰した",
+          "cluster running membersが3へ復帰した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-lab/main.go",
+        "digest": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/packet.json",
+          "digest": "sha256:3f4bd054fa8dbcf5dccdbaecad3d8d14b5a2e1cc2271ac5e560585314cd25da5",
+          "size_bytes": 860,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/log.txt",
+          "digest": "sha256:ad09c64bd2df3cf86b3dc197af20b6741fa745b3eb85423c97565dc16b5a5615",
+          "size_bytes": 31574,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/metric.json",
+          "digest": "sha256:874876af5b4b3b7d7ccc9372471a81a356a46886b6a35ca90228699a4efb2eb9",
+          "size_bytes": 58702,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-lab",
+        "version": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870",
+        "source_digest": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.partition.recovery.recovery.node-2",
+        "assertions": [
+          "reconnect後の専用TCP/AMQP probeが成功した",
+          "quorum queueのonline membersが3へ復帰した",
+          "cluster running membersが3へ復帰した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-lab/main.go",
+        "digest": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/packet.json",
+          "digest": "sha256:2cc7d3fe8ef6adc29ee66b95537178608ab56e2b61a660bd8cae460cfe064496",
+          "size_bytes": 860,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/log.txt",
+          "digest": "sha256:08b02c27a491f0129fd825364e17802a800ffff3dd5c8f9deec47da163a06172",
+          "size_bytes": 36900,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/metric.json",
+          "digest": "sha256:59a9c49daa9298ff4143241da7a8dd9669ce156807775583158e77b298f756fa",
+          "size_bytes": 59549,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-lab",
+        "version": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870",
+        "source_digest": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.partition.recovery.recovery.node-3",
+        "assertions": [
+          "reconnect後の専用TCP/AMQP probeが成功した",
+          "quorum queueのonline membersが3へ復帰した",
+          "cluster running membersが3へ復帰した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-lab/main.go",
+        "digest": "sha256:ea326bc934c6f5004305b691b3be519e76a6a06b516382bf8081c1b0dc0bb870"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/packet.json",
+          "digest": "sha256:d89096e285c6a48e126a8f6a2561429ee992b0c750c2e9140d857460ae9f0309",
+          "size_bytes": 860,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/log.txt",
+          "digest": "sha256:4fff96095ba38076efa8ee6b913de7236d8f3f7ef34add00a1e6adbafdd4760a",
+          "size_bytes": 35400,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/metric.json",
+          "digest": "sha256:b9b95ed86e05a787e4985e7aee84e75bd3ef0ca6ee782043765bcff997bfb5b8",
+          "size_bytes": 59549,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

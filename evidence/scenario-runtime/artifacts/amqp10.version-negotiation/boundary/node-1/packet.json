@@ -1,0 +1,13 @@
+{
+  "transport": "tcp",
+  "protocol": "amqp10",
+  "endpoint": "127.0.0.1:25672",
+  "request_response": {
+    "endpoint": "127.0.0.1:25672",
+    "sent_hex": "414d515000000901",
+    "received_hex": "0100000000020900",
+    "passed": true,
+    "oracle": "the shared listener accepts AMQP 0-9-1 and starts a method frame"
+  },
+  "source_run_created_at": "2026-08-30T11:42:39.789416Z"
+}

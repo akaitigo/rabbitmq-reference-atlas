@@ -2,6 +2,11 @@ schema_version: 1
 id: public-main-baseline-v2
 baseline: baseline/public-main-22ab07c.yaml
 policy: preserve-or-strengthen
+evidence_refresh:
+  id: public-main-runtime-evidence-refresh-20260830
+  proof: evidence/migrations/public-main-runtime-evidence-refresh-20260830.json
+  strength: stronger
+  reason: 既存21 Evidence ID、Claim、Verdict、Harness要件を維持し、実Broker full-runとEvidence Dependency Graphへ現在digestを再固定するため。
 replacements:
   - id: ci.install-pinned-atlas-validator
     category: ci-matrix

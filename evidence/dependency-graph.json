@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "atlas_id": "rabbitmq-reference-atlas",
-  "generated_at": "2026-08-28T16:02:53.714803Z",
+  "generated_at": "2026-08-30T11:47:47.395744Z",
   "status": "current",
   "policy": {
     "transitive_staleness": true,
@@ -104,12 +104,13 @@
         "scripts/generate-evidence.py",
         "scripts/generate-plugin-protocol-evidence.py",
         "scripts/generate-scenario-proofs.py",
+        "scripts/generate-scenario-runtime.py",
         "scripts/run-labs.sh",
         "scripts/scenario_proof.py"
       ],
       "baseline_digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50",
-      "current_digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50",
-      "observed_at": "2026-08-28T00:00:00+09:00"
+      "current_digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60",
+      "observed_at": "2026-08-30T11:42:31Z"
     },
     {
       "id": "harness.skill-router-eval",
@@ -310,8 +311,8 @@
         "evidence/raw/upgrade-migration.json"
       ],
       "baseline_digest": "sha256:c2ff25be3bbf97803c2e42cd7ba112762195856f23d9ad5098e838b087628fc6",
-      "current_digest": "sha256:c2ff25be3bbf97803c2e42cd7ba112762195856f23d9ad5098e838b087628fc6",
-      "observed_at": "2026-08-28T00:00:00+09:00"
+      "current_digest": "sha256:11bfdab979923b9e4ba3015b0bf534fb660363ce4c35990284f49edd50ffd3fc",
+      "observed_at": "2026-08-30T11:42:31Z"
     }
   ],
   "outputs": [
@@ -375,7 +376,7 @@
       "id": "output.evals.rabbitmq.reference.atlas.skill.routing.eval.json",
       "kind": "skill-eval",
       "path": "evals/rabbitmq-reference-atlas.skill-routing-eval.json",
-      "digest": "sha256:cdc25945b7ac6f44563d918c008597ffabd0412971933483767f297b78e670b5",
+      "digest": "sha256:9da6b9d3605bfa69a2324dda164d8d471cc06091d1eca92a3dd50dee9dc89d0b",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.skill-router-eval",
@@ -403,7 +404,7 @@
       "id": "output.evidence.definitive.amqp10.version.negotiation.boundary.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.amqp10.version-negotiation.boundary.evidence.json",
-      "digest": "sha256:4f95f2fcca2597825da746c25ecaab85fea8c7a707e3ed55017e5d10fc81e52f",
+      "digest": "sha256:053c8fcf44a9d178ce96a0a6227714a0427bcdaa0e7dd435db9fc147073f2c5a",
       "depends_on": [
         "output.evidence.raw.definitive.amqp10.version.negotiation.boundary.json",
         "harness.evidence-reporters"
@@ -415,7 +416,7 @@
       "id": "output.evidence.definitive.amqp10.version.negotiation.normal.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.amqp10.version-negotiation.normal.evidence.json",
-      "digest": "sha256:90090f80af4d676274ac80e3fc6679490424551fd939941b2d1132eb7abd1866",
+      "digest": "sha256:6627a62e89363491c4aafc5f4575d605164e7b486aa5569f073bce729c4c1f7c",
       "depends_on": [
         "output.evidence.raw.definitive.amqp10.version.negotiation.normal.json",
         "harness.evidence-reporters"
@@ -427,7 +428,7 @@
       "id": "output.evidence.definitive.amqp10.version.negotiation.rejection.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.amqp10.version-negotiation.rejection.evidence.json",
-      "digest": "sha256:28e37fcb832117d0fca5a8a430da5035f7d087771842fbab2df1cb149bed7c96",
+      "digest": "sha256:e409454aa434d28d0f07b312bd45fe2dfc90bd647dee0da23a005726730e8887",
       "depends_on": [
         "output.evidence.raw.definitive.amqp10.version.negotiation.rejection.json",
         "harness.evidence-reporters"
@@ -439,7 +440,7 @@
       "id": "output.evidence.definitive.amqp10.version.negotiation.security.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.amqp10.version-negotiation.security.evidence.json",
-      "digest": "sha256:ff44fce974ca44e5e8cea6e3101666594d2a63693d1a2a57346fc2ed28f11fc4",
+      "digest": "sha256:6a4c169b213b02abb6bb901d3aea037e55058d5598783cd29cb4dbf922e2e519",
       "depends_on": [
         "output.evidence.raw.definitive.amqp10.version.negotiation.security.json",
         "harness.evidence-reporters"
@@ -451,7 +452,7 @@
       "id": "output.evidence.definitive.mqtt.protocol.versions.qos.boundary.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.mqtt.protocol-versions-qos.boundary.evidence.json",
-      "digest": "sha256:881530692f916c252daaa6b24708e60c763a497c68234115db5b4cbed8c50882",
+      "digest": "sha256:9edecfe22a46f93c8accd36c1c6a5928e1cdd1219a49ee1166b436200b6c7064",
       "depends_on": [
         "output.evidence.raw.definitive.mqtt.protocol.versions.qos.boundary.json",
         "harness.evidence-reporters"
@@ -463,7 +464,7 @@
       "id": "output.evidence.definitive.mqtt.protocol.versions.qos.compatibility.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.mqtt.protocol-versions-qos.compatibility.evidence.json",
-      "digest": "sha256:d24752927ec400929519ced470c586cf47d77e0aaba0c1ea2440910304dd78ad",
+      "digest": "sha256:d34d59b991eaa067742efe4d7126860b411a2cdbcffce8a9f03be3ea4f69697c",
       "depends_on": [
         "output.evidence.raw.definitive.mqtt.protocol.versions.qos.compatibility.json",
         "harness.evidence-reporters"
@@ -475,7 +476,7 @@
       "id": "output.evidence.definitive.mqtt.protocol.versions.qos.normal.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.mqtt.protocol-versions-qos.normal.evidence.json",
-      "digest": "sha256:05127d6073f9b58d1a391e5819486c531e2117109acd48b5770fddad706e6cde",
+      "digest": "sha256:e7d1f2d9e892feaebda38d8d4b6d3a7835f54dedefbc0a5ee38b2bca2631f82c",
       "depends_on": [
         "output.evidence.raw.definitive.mqtt.protocol.versions.qos.normal.json",
         "harness.evidence-reporters"
@@ -487,7 +488,7 @@
       "id": "output.evidence.definitive.mqtt.protocol.versions.qos.rejection.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.mqtt.protocol-versions-qos.rejection.evidence.json",
-      "digest": "sha256:cb083bce7b89b6461fe5758c201202f39df1e3eab8251dea1752710881e361a1",
+      "digest": "sha256:c56e7bc03707bacdbe737fec941627cc9fa2e6f3cebf51258a7c9627f84bbe6c",
       "depends_on": [
         "output.evidence.raw.definitive.mqtt.protocol.versions.qos.rejection.json",
         "harness.evidence-reporters"
@@ -499,7 +500,7 @@
       "id": "output.evidence.definitive.stomp.protocol.plugin.boundary.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.stomp.protocol-plugin.boundary.evidence.json",
-      "digest": "sha256:567a2fd9147d818acaea8768cf513256ee067090ec172e655c10c28c7b371272",
+      "digest": "sha256:faecf3e1cf32a4d5e636bc601d25488b5ca4d8630d1b7739859b082c08dc01d9",
       "depends_on": [
         "output.evidence.raw.definitive.stomp.protocol.plugin.boundary.json",
         "harness.evidence-reporters"
@@ -511,7 +512,7 @@
       "id": "output.evidence.definitive.stomp.protocol.plugin.compatibility.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.stomp.protocol-plugin.compatibility.evidence.json",
-      "digest": "sha256:8239846e225c5e4ee3af1981a8d314d34f37a09968d0048ee5a998522874b972",
+      "digest": "sha256:01872d94275207d634b9e2f975a8c7ab567ced50ac13769d624e84c882731817",
       "depends_on": [
         "output.evidence.raw.definitive.stomp.protocol.plugin.compatibility.json",
         "harness.evidence-reporters"
@@ -523,7 +524,7 @@
       "id": "output.evidence.definitive.stomp.protocol.plugin.normal.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.stomp.protocol-plugin.normal.evidence.json",
-      "digest": "sha256:abe6a3d062522929239740fb511a2d30efd0628b041d8b9adefc7e56f1a61435",
+      "digest": "sha256:d9bfc96146bf605532083e2c2976439c20aa1df995eca60f07f6adb680289af5",
       "depends_on": [
         "output.evidence.raw.definitive.stomp.protocol.plugin.normal.json",
         "harness.evidence-reporters"
@@ -535,7 +536,7 @@
       "id": "output.evidence.definitive.stomp.protocol.plugin.rejection.evidence.json",
       "kind": "compatibility",
       "path": "evidence/definitive.stomp.protocol-plugin.rejection.evidence.json",
-      "digest": "sha256:379524f4f8d951ee1d98c89d5bd9a048fe9fbd46690c29f37929a14357b5a4c9",
+      "digest": "sha256:c124c8e6fa2dc3ae3ed4cf441349b8902ae9da39ac2807735df041d5445065d9",
       "depends_on": [
         "output.evidence.raw.definitive.stomp.protocol.plugin.rejection.json",
         "harness.evidence-reporters"
@@ -547,7 +548,7 @@
       "id": "output.evidence.eval.router.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/eval.router.evidence.json",
-      "digest": "sha256:19a28b4d2472a7345b3d55a008bce0fecd6a68eb0c9b70a0a9fd4038378217e2",
+      "digest": "sha256:c99ce874b97396c28b8b8cac69663b545d8b9ba43040f7a57bce9eaf3efce923",
       "depends_on": [
         "output.evidence.raw.skill.eval.json",
         "harness.evidence-reporters"
@@ -559,7 +560,7 @@
       "id": "output.evidence.lab.ack.redelivery.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.ack-redelivery.evidence.json",
-      "digest": "sha256:198e23ee119b032a67d30900e2fe44c01481690782652613b287bcb8f2d3e036",
+      "digest": "sha256:b778469434bc53e01b56276b071b3a7de9ec1135958627a103441f16ae58623e",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -571,7 +572,7 @@
       "id": "output.evidence.lab.amqp.model.evidence.json",
       "kind": "compatibility",
       "path": "evidence/lab.amqp-model.evidence.json",
-      "digest": "sha256:c1c1a41f51ba9085774d09cb82528ba71a2654987d67efc6bb7e6acccfc4fd42",
+      "digest": "sha256:87ebe9fc151243813f3666cdba75086f5ded4e29280fe2ce76ba1fd7b744390a",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -583,7 +584,7 @@
       "id": "output.evidence.lab.cluster.failure.recovery.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.cluster-failure-recovery.evidence.json",
-      "digest": "sha256:bccefd9173de7171c8cc7e9e4ae4102944e3795428acdf72fb79a0cc70bd2b88",
+      "digest": "sha256:ffc6646c0a3c0d13fb8ba8d437ebcd5fc054c0174bf130d27e4fd52190bfee9a",
       "depends_on": [
         "output.evidence.raw.cluster.failure.recovery.json",
         "harness.evidence-reporters"
@@ -595,7 +596,7 @@
       "id": "output.evidence.lab.cluster.membership.evidence.json",
       "kind": "compatibility",
       "path": "evidence/lab.cluster-membership.evidence.json",
-      "digest": "sha256:25a5b5b58f289978fe733c135f1e3117ba57d7f1e4779a2fcbbd2f76367411cb",
+      "digest": "sha256:51463f8b4318db6183416f8a059bef99c0e0c93e3eb6e24ba35b5fe949e78bcc",
       "depends_on": [
         "output.evidence.raw.cluster.before.json",
         "harness.evidence-reporters"
@@ -607,7 +608,7 @@
       "id": "output.evidence.lab.consumer.flow.control.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.consumer-flow-control.evidence.json",
-      "digest": "sha256:69ae78c41c8f7f2fa68518b72cd1bff19c9a20f7e4c8171087825eed98df88ca",
+      "digest": "sha256:515c962a04eda7c2b2e8fa0baff1d64305a601f330664a264c240a9343115935",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -619,7 +620,7 @@
       "id": "output.evidence.lab.dead.letter.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.dead-letter.evidence.json",
-      "digest": "sha256:d3ffaaf0c7eb19acfe8472db890e88dd64677dfbe4f62ec6b2268ef01832bfba",
+      "digest": "sha256:c774dea8d25a7f4b1d7432e109ec303b8e3720c7da09ca0d48cbaa51c99c616f",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -631,7 +632,7 @@
       "id": "output.evidence.lab.exchange.binding.matrix.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.exchange-binding-matrix.evidence.json",
-      "digest": "sha256:223f7ae4f7cd10ea9702daffb6b9ae514e699c588540f9f4b99e2017b3420480",
+      "digest": "sha256:cc4652771f43dfd9fd05a7b1dc9a7e133e6fb01992259ec4a86ec946213de90b",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -643,7 +644,7 @@
       "id": "output.evidence.lab.exchange.queue.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.exchange-queue.evidence.json",
-      "digest": "sha256:8c9de96d96485d4e1b09cd874f156661b9459356160423731a666d923038a021",
+      "digest": "sha256:b44b38cdbe0b00ef3fbc9d821bfcc540442cecc472b45637b68d801c3ae8f8da",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -655,7 +656,7 @@
       "id": "output.evidence.lab.network.partition.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.network-partition.evidence.json",
-      "digest": "sha256:d55959f8f9867c2417235aaca23d56903ee454b1952a1ecd260d61ea8ddf9b62",
+      "digest": "sha256:f7395b98a88ee95dc818b0c210fb93a7f0cb5cfed037660eea14b505cf825af8",
       "depends_on": [
         "output.evidence.raw.network.partition.json",
         "harness.evidence-reporters"
@@ -667,7 +668,7 @@
       "id": "output.evidence.lab.observability.health.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.observability-health.evidence.json",
-      "digest": "sha256:8647eeb88142e855bce0afdb6846290eef43b5032120e0289e15afc931da672c",
+      "digest": "sha256:588800c9755bb7d60d85d2f5fbff0eddc494fe57aaa43ee137978c1d12daa002",
       "depends_on": [
         "output.evidence.raw.security.observability.json",
         "harness.evidence-reporters"
@@ -679,7 +680,7 @@
       "id": "output.evidence.lab.observability.state.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.observability-state.evidence.json",
-      "digest": "sha256:b249d2e1cb69e522138ce0351e1bd5538c57ba27e8e1bcb223a07f14fd98b8ee",
+      "digest": "sha256:1b1b8fc355f98ed38e213e48ad5dbd576c19289735f4befcec19a4875cb84441",
       "depends_on": [
         "output.evidence.raw.observability.state.json",
         "harness.evidence-reporters"
@@ -691,7 +692,7 @@
       "id": "output.evidence.lab.ordering.idempotency.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.ordering-idempotency.evidence.json",
-      "digest": "sha256:22342f6dff4724900f49c17760530e5768322dd8dbf4296a550554962d865e82",
+      "digest": "sha256:0e680bc3239c69c3ab685f55c922b929196d6e937e59068b648eeaec27125bbf",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -703,7 +704,7 @@
       "id": "output.evidence.lab.performance.capacity.evidence.json",
       "kind": "benchmark",
       "path": "evidence/lab.performance-capacity.evidence.json",
-      "digest": "sha256:09699bc8cda47f6b29ec3b6d5e83260be42b7cdad6d639655c1873d01b1b3d14",
+      "digest": "sha256:74fac9d9af1cee6bcf299667b0b48163fea95c14b76866be142bae9a8140946b",
       "depends_on": [
         "output.evidence.raw.performance.json",
         "harness.evidence-reporters"
@@ -715,7 +716,7 @@
       "id": "output.evidence.lab.publisher.flow.control.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.publisher-flow-control.evidence.json",
-      "digest": "sha256:0d63eb38f8d72282637c93368b6ba74f546e896762e83671c36b8381a028a31b",
+      "digest": "sha256:5c17c45b5370b192c620749d7fd09b0d1eff8a1c061b86feaf6199eb0d4e5a90",
       "depends_on": [
         "output.evidence.raw.publisher.flow.control.json",
         "harness.evidence-reporters"
@@ -727,7 +728,7 @@
       "id": "output.evidence.lab.quorum.stream.evidence.json",
       "kind": "compatibility",
       "path": "evidence/lab.quorum-stream.evidence.json",
-      "digest": "sha256:c093a2c7e64532b790ebace555a733b1bb3ea41107da80b7dabb1ee4b1796eb9",
+      "digest": "sha256:6ec7ab1e3641193a19048dc1d5dc0a4ee553f3c54f257b6244f56686413f6460",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -739,7 +740,7 @@
       "id": "output.evidence.lab.rolling.upgrade.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.rolling-upgrade.evidence.json",
-      "digest": "sha256:df8291d60929b42865684b3533cb77e8c0c57a15c478548a9fb0b0b55bc1bac0",
+      "digest": "sha256:40507b59bf6f1554ea2954c45529a58661d6cf18d0bada1d3708237ea200681a",
       "depends_on": [
         "output.evidence.raw.upgrade.migration.json",
         "harness.evidence-reporters"
@@ -751,7 +752,7 @@
       "id": "output.evidence.lab.security.authz.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.security-authz.evidence.json",
-      "digest": "sha256:fcc07dc3a7a19f38eefecb8c0fa0f0225511a993bfe70e680d78a04c9d0ba2d8",
+      "digest": "sha256:a0d07f7f23e5bfdf1bc7d57adf77b2872038be9fdac530ff5d01464ce2970180",
       "depends_on": [
         "output.evidence.raw.security.observability.json",
         "harness.evidence-reporters"
@@ -763,7 +764,7 @@
       "id": "output.evidence.lab.security.tls.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.security-tls.evidence.json",
-      "digest": "sha256:b3c0c3e9e9b12d37d0e8fcd5ba536ce60b5f19daf6688c5d8e2998dbaa126f55",
+      "digest": "sha256:2fdb07bfb80a9d5b40a49488137094f7492f491641720dea0daa35bfd278abf2",
       "depends_on": [
         "output.evidence.raw.security.tls.json",
         "harness.evidence-reporters"
@@ -775,7 +776,7 @@
       "id": "output.evidence.lab.ttl.dead.letter.evidence.json",
       "kind": "runtime-evidence",
       "path": "evidence/lab.ttl-dead-letter.evidence.json",
-      "digest": "sha256:21654db51278acfc8a6239a5a482705b816bda304f425c5a7d8636958880e39b",
+      "digest": "sha256:6fb173bf80b17507e2039a56b9f1f78e12f8e422bfa865b77d33fc2057bece87",
       "depends_on": [
         "output.evidence.raw.core.json",
         "harness.evidence-reporters"
@@ -787,7 +788,7 @@
       "id": "output.evidence.operation.evidence.generation.evidence.json",
       "kind": "compatibility",
       "path": "evidence/operation.evidence-generation.evidence.json",
-      "digest": "sha256:c4ccdc834151689d86ba00bdfd8f5099219fd445c8323321c9001fd584e55520",
+      "digest": "sha256:2ebf86fa17a85f28f1208aed37ee7239a4d8cdd6a15659ba62b7fc2d67943bc4",
       "depends_on": [
         "output.evidence.raw.evidence.generation.json",
         "harness.evidence-reporters"
@@ -799,7 +800,7 @@
       "id": "output.evidence.raw.cluster.after.partition.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/cluster-after-partition.json",
-      "digest": "sha256:d1d5656b320f6641951e4f45ee9cf4dc6ff2e0cd50d6787ebfe7a96272e7b9fa",
+      "digest": "sha256:4b9fd0e97c90b2a1753b8bb994faf58f53f82a54b9026515e7fc8b8fbdc4da29",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -814,7 +815,7 @@
       "id": "output.evidence.raw.cluster.after.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/cluster-after.json",
-      "digest": "sha256:837a5442c9a50e5a2ef77d7566c87ab849191461296b4a740c62e75f9032b3d9",
+      "digest": "sha256:25606f49b1d2faaed53917896c23bdf76322a37bb4e4ff505f94a245f494a6dc",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -829,7 +830,7 @@
       "id": "output.evidence.raw.cluster.before.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/cluster-before.json",
-      "digest": "sha256:42668f833142cad43499401484b560bc83184f4d0516e26f069ee4184cfe7858",
+      "digest": "sha256:6b8fcab5724b9c77b24781fa88e2643fc8fca9c9a60829eb540378358e5ef687",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -844,7 +845,7 @@
       "id": "output.evidence.raw.cluster.failure.recovery.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/cluster-failure-recovery.json",
-      "digest": "sha256:687eda593ae005fd151a0b7add40ad9cbc87c56fe180e6508ec931904c339e5a",
+      "digest": "sha256:01d2b6c267d892cb7274d587e08534948ae6b0080f39dec1d2a1754d36ffa1b6",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -859,7 +860,7 @@
       "id": "output.evidence.raw.core.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/core.json",
-      "digest": "sha256:3ab5e3105faf76e2e7531d0fc387b20d1db4a198338c8c2ed04d7d6f1293e696",
+      "digest": "sha256:84661e479dce3276d304b3212e8e3cb5e26ec17f364e5d948d19790a4a85b94d",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -874,7 +875,7 @@
       "id": "output.evidence.raw.definitive.amqp10.version.negotiation.boundary.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.amqp10.version-negotiation.boundary.json",
-      "digest": "sha256:40d5b407b0cee951c5822da6c0ea082bb967d4661b5caaaebf8f042bd6121965",
+      "digest": "sha256:e08d524141bfc8f67e5b12181b0b0077eef064788b90c43c44b6725c21d160ff",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -889,7 +890,7 @@
       "id": "output.evidence.raw.definitive.amqp10.version.negotiation.normal.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.amqp10.version-negotiation.normal.json",
-      "digest": "sha256:5cde4f19149bfdb604603c3bccb5cbc7a3b3071348471d8fa1cd75fb702f273f",
+      "digest": "sha256:3c7ea1f3324e317b38a7c08d745c51e9437890c1cbc1a00b098069a699e3163b",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -904,7 +905,7 @@
       "id": "output.evidence.raw.definitive.amqp10.version.negotiation.rejection.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.amqp10.version-negotiation.rejection.json",
-      "digest": "sha256:288340efc3188752d644fd84e32ad46c621e81f38a976034d67b4f89edf3046e",
+      "digest": "sha256:f0e92075c7f55f8266ea047f1e10d717bdae686e04f1d1f31059e5248dfacfb1",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -919,7 +920,7 @@
       "id": "output.evidence.raw.definitive.amqp10.version.negotiation.security.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.amqp10.version-negotiation.security.json",
-      "digest": "sha256:b33bcacfbb2a9ef07925edfe53503b2007a71c68db9730eb8b4dc2cffa7d9be1",
+      "digest": "sha256:58464827c3268e4af3fd10f16771976518d381560ad61fb5ce8e68ecfe45f685",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -934,7 +935,7 @@
       "id": "output.evidence.raw.definitive.mqtt.protocol.versions.qos.boundary.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.boundary.json",
-      "digest": "sha256:d9ea9836908db76b904bcacade74fe4e054b4de01a4b3a80fdd3ea4c90e278ef",
+      "digest": "sha256:502bd28afd739750f1b86d1104d5bda201f98d83fa84902d5f11fde0e5f62c18",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -949,7 +950,7 @@
       "id": "output.evidence.raw.definitive.mqtt.protocol.versions.qos.compatibility.json",
       "kind": "compatibility",
       "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.compatibility.json",
-      "digest": "sha256:e5ea3791d9ade91f20fff5d9c7e3fd53e1427aba4a860cd903399e4bc653e0bc",
+      "digest": "sha256:2cbc69b28994b49909e3b1bc9ee39aa9f83522d14eca84798beb961d5bb0aac4",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -964,7 +965,7 @@
       "id": "output.evidence.raw.definitive.mqtt.protocol.versions.qos.normal.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.normal.json",
-      "digest": "sha256:ac4525ed1e92fd6b65b92f794f833325f3145487ecf78aa83f45c2d5a11ead62",
+      "digest": "sha256:dbce9ee45e6bb1b055390ee623eb5ee9f9f678f362061daa34ef5981e206b98c",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -979,7 +980,7 @@
       "id": "output.evidence.raw.definitive.mqtt.protocol.versions.qos.rejection.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.rejection.json",
-      "digest": "sha256:3fa2aa087cd09474e9170078fcf062278bcdba25f2ff6ef881027fec3e7d58a1",
+      "digest": "sha256:3579fdd533b54e6abde90882946e8161ec99d775171dc0a485d19bdb61ad7b00",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -994,7 +995,7 @@
       "id": "output.evidence.raw.definitive.stomp.protocol.plugin.boundary.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.stomp.protocol-plugin.boundary.json",
-      "digest": "sha256:2c1ea264592661eb8c18fe524d78c3cadabd5f6be6a1e73ae74d9076cdf09426",
+      "digest": "sha256:0f1ba405d44f1c0cfc8bf82624ba9dd008cb2d190ad2c5243df8f0946df40d3a",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1009,7 +1010,7 @@
       "id": "output.evidence.raw.definitive.stomp.protocol.plugin.compatibility.json",
       "kind": "compatibility",
       "path": "evidence/raw/definitive.stomp.protocol-plugin.compatibility.json",
-      "digest": "sha256:b4a68332364794122c90d56116a93d3fe1ce8e428de83aa9430a3a33ab64255c",
+      "digest": "sha256:f8f67debba2b0327487b0b56e213f8ad02bda2aec9966e5bd5821eeb01b0b066",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1024,7 +1025,7 @@
       "id": "output.evidence.raw.definitive.stomp.protocol.plugin.normal.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.stomp.protocol-plugin.normal.json",
-      "digest": "sha256:31f823344e808b761f9daa83f2734e44f7743574c2c509752735a9158f93c8ea",
+      "digest": "sha256:51782c4101fd3709d546c9f42c77871703ba85aab91df6994e69e8bac0861d25",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1039,7 +1040,7 @@
       "id": "output.evidence.raw.definitive.stomp.protocol.plugin.rejection.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/definitive.stomp.protocol-plugin.rejection.json",
-      "digest": "sha256:f481f8d0f7193e7dd8e0b80e3ad796b1d139aafa1ced54097e30f1e5f87c9ddc",
+      "digest": "sha256:f7ece3ba99827566202562881bc5394e89657668679447c7f34f8d19e6a1f2b6",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1054,7 +1055,7 @@
       "id": "output.evidence.raw.evidence.generation.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/evidence-generation.json",
-      "digest": "sha256:eed68f7e130331209c63165d2c36e890e61ce3441f2a2dcb05f7e6d69a551726",
+      "digest": "sha256:0a7e837104d631bbbfc2d445a0a23cf8efacbe77f8b317387293991664fc3f6b",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1069,7 +1070,7 @@
       "id": "output.evidence.raw.network.partition.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/network-partition.json",
-      "digest": "sha256:1432ab93b30948a4c65977ee16c4a053c80894144dfca01706c4dd20d552e8a5",
+      "digest": "sha256:050fa33196d1b85af8b779fb78b1b7528a5b2381732e2a82cc5918a3dcdfff78",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1084,7 +1085,7 @@
       "id": "output.evidence.raw.observability.state.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/observability-state.json",
-      "digest": "sha256:e6155b1b631f746f7d3a86f3c91af9e0636132b3ead8c8ab39b1e02254241a7f",
+      "digest": "sha256:9ed5c92cd2eb619ed66498f495ccc5322ce133b0767f681eefdcdc1ac8e60039",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1099,7 +1100,7 @@
       "id": "output.evidence.raw.partition.majority.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/partition-majority.json",
-      "digest": "sha256:656823e8dc1eb6c73428ea9ec8dbf242865559df96bc902493ad662f39a6f14f",
+      "digest": "sha256:05e260e4dd9d99e3827818cd3383e40b7fbde0490b54cbc89a4021f204fd62b5",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1114,7 +1115,7 @@
       "id": "output.evidence.raw.partition.minority.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/partition-minority.json",
-      "digest": "sha256:d7bccf6c76038f78fafbdeca884cdcb262b2d37d73924a91b88a3d6b0bb6e513",
+      "digest": "sha256:e31ab5a6ac244f8341ed1fa562df5f191ecaaf8135e82f31381fdd8b9b576369",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1129,7 +1130,7 @@
       "id": "output.evidence.raw.partition.prepare.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/partition-prepare.json",
-      "digest": "sha256:860f60ede04e0789de8acc942f8e70c01662024c51f457f7d08ab15b85ec1620",
+      "digest": "sha256:cd44321f5d213436fc7fbc5e5a10a87a9f1bb4f49df43838832e45a096ca307d",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1144,7 +1145,7 @@
       "id": "output.evidence.raw.partition.recovery.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/partition-recovery.json",
-      "digest": "sha256:e32295dd2687aeaddf7a1a5b85c96d04d98d1d2995e6e28568c3664e7c8332ff",
+      "digest": "sha256:b759bcbae3a399387017ce1c96b15584b800f7d06579984ac224a3ec10295dc1",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1159,7 +1160,7 @@
       "id": "output.evidence.raw.performance.json",
       "kind": "benchmark",
       "path": "evidence/raw/performance.json",
-      "digest": "sha256:ca8245623f3bb424f0eb9b29ab0da0ecf37a5831fb47541c8eebc14248f55916",
+      "digest": "sha256:3a44098159b98a7559acfd3ec41b9577c5bb29dd2178b2de449eee91cd181414",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1174,7 +1175,7 @@
       "id": "output.evidence.raw.prepare.failure.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/prepare-failure.json",
-      "digest": "sha256:e33c0e45defe3273e7e9f98bec71b0fb016b03ec0fa9bd57cb690a6721c17935",
+      "digest": "sha256:a5907b317357b2bff880baa574b5f2ad09d98760e5601ca57ee913b485b4087d",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1189,7 +1190,7 @@
       "id": "output.evidence.raw.publisher.flow.blocked.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/publisher-flow-blocked.json",
-      "digest": "sha256:c3a899ba53ce1466f4f4099d65b045fb804f74fa49cb0cde926a3b58071e0bbc",
+      "digest": "sha256:adf597b762c5b1e2ac93800adeb85d9502759f0c1770891fcd52fc70e3973243",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1204,7 +1205,7 @@
       "id": "output.evidence.raw.publisher.flow.control.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/publisher-flow-control.json",
-      "digest": "sha256:7a74272bb5d81902c50002f96ff07ac2fe89d9531ebcfe00c7bd4590d4f55ae5",
+      "digest": "sha256:3283cf37a398190032d18ef186965cec456a2d21fbf1fb7c6e6310f795bf34ee",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1219,7 +1220,7 @@
       "id": "output.evidence.raw.publisher.flow.resumed.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/publisher-flow-resumed.json",
-      "digest": "sha256:479cfe71fbd686cb12e59c4c84777d4fac4cefda8e6a7a125235b556534fb508",
+      "digest": "sha256:14f559bcc4f052a27762ce9e61f7905bfb629338eb8ed3933c07c4da76f13be8",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1234,7 +1235,7 @@
       "id": "output.evidence.raw.recovery.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/recovery.json",
-      "digest": "sha256:366e5676485860373226f0b1cd8c3d3af98e17fdea1cfcf9309c306db314e1a6",
+      "digest": "sha256:94d0e4ba90ee05899a825bca1efcad501dcc64727521ea8ae67cd2c6a70d3315",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1249,7 +1250,7 @@
       "id": "output.evidence.raw.security.observability.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/security-observability.json",
-      "digest": "sha256:4a3be46850c5e01356684973fb1c5e78fd2d1c16b593097bbbfced1beb670f24",
+      "digest": "sha256:11e3485f1b940db1bf62da3f39c81680370bcfcd6be1038e61d8a0a43c68bd90",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1264,7 +1265,7 @@
       "id": "output.evidence.raw.security.tls.json",
       "kind": "runtime-evidence",
       "path": "evidence/raw/security-tls.json",
-      "digest": "sha256:ce86099bfea2b91245e320161c8715b633ded616b7a519f0c6ba2f375e71b0b5",
+      "digest": "sha256:c9fffca03ee21964656420d493dc67e63389c71c6027d3c4cf66054a115c1246",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1294,7 +1295,7 @@
       "id": "output.evidence.raw.upgrade.migration.json",
       "kind": "compatibility",
       "path": "evidence/raw/upgrade-migration.json",
-      "digest": "sha256:c4ec16ec971b179f5c0450b02e61a7474f1ee125052d5322d3fd47f446abe0ef",
+      "digest": "sha256:883a762f393f0cbb24644ac83db614775e002099133decd51c651a311d32c328",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "runtime.rabbitmq-broker-and-client",
@@ -1318,6 +1319,1555 @@
       ],
       "status": "current",
       "run_id": "run.derived.scenario-proof-and-reference-system"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.amqp10.version.negotiation.boundary.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/amqp10.version-negotiation/boundary.runtime.json",
+      "digest": "sha256:0f1e2aa2bc7335b6ec727cd846476a3aa44a8941f70351b50f84454b8ea0a0a0",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.amqp10.version.negotiation.normal.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/amqp10.version-negotiation/normal.runtime.json",
+      "digest": "sha256:9fe452f402bc8861565eb498c56d66435c6dfe286dddcf96efe80450ba6fde1c",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.amqp10.version.negotiation.rejection.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/amqp10.version-negotiation/rejection.runtime.json",
+      "digest": "sha256:b553a9ec0d1d0e2a99715e7dda0fa48a8ee0d9669d3540b7e7a1ffb42897c8e4",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.amqp10.version.negotiation.security.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/amqp10.version-negotiation/security.runtime.json",
+      "digest": "sha256:957f0ebe2d3d9337b847d22c1b0cf79eade81058e09a9be8ae42b2e1af3aab58",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/log.txt",
+      "digest": "sha256:82bbc008ba514a288f5295d7762043faa7aa4c5cb0b8a2323a8540b3ca6f6920",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/metric.json",
+      "digest": "sha256:a952fccfa6386f9556adb44b555f7f238272547c35659de60e25bcd76aa94775",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/packet.json",
+      "digest": "sha256:4e67cc78ff94596359117abbf611c6cca71dfe25f7e040214310bb5c8f89763c",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/log.txt",
+      "digest": "sha256:573873b76f4f5bf1f34a6c8b8b108fe6dc276c6694cee1a0a6e2b84831e0f1d8",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/metric.json",
+      "digest": "sha256:d23a400c937bc7f34a6d513b6ad5abb00b04517f4abbb726d82507d936760a01",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/packet.json",
+      "digest": "sha256:a10ad8d5c296c9c9b491237b1a9cb47c7011e97c50a0df811fb8603d2effa9ca",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/log.txt",
+      "digest": "sha256:c662efa3b66ccd109c0bd78c8d972124106f611ad845cdfe5c63e3ee6f703f4b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/metric.json",
+      "digest": "sha256:09e745d947acec1b3424d1761011f95cbb17b220e3c11257f5c67c9bba75718a",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/packet.json",
+      "digest": "sha256:d73a04b34be4a7d2c7a861575f898c351134d4cc09152f81cc6fbf3e525349a3",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.c6112410b0acae78"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/log.txt",
+      "digest": "sha256:7f6d8f806f311d40f88b9595d41a3918033a2994453d43768bdfeba64e303f8a",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/metric.json",
+      "digest": "sha256:a952fccfa6386f9556adb44b555f7f238272547c35659de60e25bcd76aa94775",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/packet.json",
+      "digest": "sha256:3db8709b6f689c2fd114699b0f5825df5d7e6c40338997406c4080a229f26ee5",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/log.txt",
+      "digest": "sha256:4d07765bbd7a7b4d37b9bd5132008a97c082e4ad492ab81b4cf3196cd8ddcc26",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/metric.json",
+      "digest": "sha256:534a33371490083a4e63df978ad5c37790ac17db4127eebfc1b26524f456c5ed",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/packet.json",
+      "digest": "sha256:effc781b20d0e6d365d8dfd68b7f4a19fd481d722a6604cc77412ba4e980570b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/log.txt",
+      "digest": "sha256:7132ee3e637d296204e452ccf766c7a88bfeef5d1991b74cf6e4636809508063",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/metric.json",
+      "digest": "sha256:81451714ddd8d99157edc88df962bfd9df2f7aa5d31335c9a4e376ac6cd2bd58",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/packet.json",
+      "digest": "sha256:5225006604c34e0c9ab703ddfed1b233f90126f6a1ddd3111fca26001ddb4e52",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.bb37e6ef4fc4a16e"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/log.txt",
+      "digest": "sha256:e1397f02558b99fbfc9670ffbb8ae9745b57e4048292bf02ed476f853407c115",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/metric.json",
+      "digest": "sha256:ed252594b78b916e785c09da240ad8d581558d52bae7eb0fb084669736183dd0",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/packet.json",
+      "digest": "sha256:9ebc7d4cfe238933f8b34dc1c4f919698a587a3698341c3ddd98f9287a4105d0",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/log.txt",
+      "digest": "sha256:01fe38eb9bc3efca9550ba4b5491639bd9bae94b7adaa3d2ac3de2af39d48b11",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/metric.json",
+      "digest": "sha256:d23a400c937bc7f34a6d513b6ad5abb00b04517f4abbb726d82507d936760a01",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/packet.json",
+      "digest": "sha256:ac9e513ed447bbd829e29a4dc3f24ef13523f64fda64da485e000e5dff7f3b98",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/log.txt",
+      "digest": "sha256:c483606e02664037c01239676a19d2301f9d648006139bd17213162b96ffa1e7",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/metric.json",
+      "digest": "sha256:09e745d947acec1b3424d1761011f95cbb17b220e3c11257f5c67c9bba75718a",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/packet.json",
+      "digest": "sha256:a331d3235fbd80681e23054fcc58136c6a2d73e2b582a79b9885f9f610a31996",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.73b00113433e5b2f"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/log.txt",
+      "digest": "sha256:1156f8bffe822f5e90e3738f5081f4f775cc82f74923b8b1da7e4a0e16084842",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/metric.json",
+      "digest": "sha256:ed252594b78b916e785c09da240ad8d581558d52bae7eb0fb084669736183dd0",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/packet.json",
+      "digest": "sha256:9dedc7009dba9be7796d9475201ca40db23a6f134a514cabe5e006a0600c43c6",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/log.txt",
+      "digest": "sha256:ff3a2e637016fdeafd9f05d9ae50ca918033d3b8b1fa33a451e919fc966ed93b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/metric.json",
+      "digest": "sha256:d23a400c937bc7f34a6d513b6ad5abb00b04517f4abbb726d82507d936760a01",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/packet.json",
+      "digest": "sha256:7e487de65315b765a4310a33ab629c6cf82986b199c38c7034b6fd41c3325436",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/log.txt",
+      "digest": "sha256:239dbaa6a4898de5a6729daf23e0a68b9e474fa8852aa3f7ec3e2dc953ade7b2",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/metric.json",
+      "digest": "sha256:09e745d947acec1b3424d1761011f95cbb17b220e3c11257f5c67c9bba75718a",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/packet.json",
+      "digest": "sha256:8d48b18e71d7e9da0933252ef8dc18fa4a014d205f1e1074d673c5aaf4ec92a7",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.ddee38a005f87e2a"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/log.txt",
+      "digest": "sha256:57d3dad16ae15f967f415ff9b4e85de814ca56e9e73376260de978c98580bc7b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/metric.json",
+      "digest": "sha256:ed252594b78b916e785c09da240ad8d581558d52bae7eb0fb084669736183dd0",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/packet.json",
+      "digest": "sha256:1920363473e518e15e5bf5dc48183bd230549fcbb0c0a510e0cc39a1478fbfe5",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/log.txt",
+      "digest": "sha256:031eff775e04ad8421ae5523486e0672da478742766ff82fe363145014af7f82",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/metric.json",
+      "digest": "sha256:0dcd5590f9abab07672e55946d53ed8ab725e8aa97fc9e4f6a81c1f010577250",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/packet.json",
+      "digest": "sha256:f90181a8e3f43b780dac3a10b9aa664f44a44867d54ee5a65b840d7594172abe",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/log.txt",
+      "digest": "sha256:2095e38f307dd0a68af16e84a9d155305fb00b7215b798e51cb6c634170ed29e",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/metric.json",
+      "digest": "sha256:945d3bdb7402aab30399be25d7e6988b722c40be4391db7dc681b7aa64933dfc",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/packet.json",
+      "digest": "sha256:313dbb5f8008ac50e593933b351136fa31d1ee8b913fbe96e8030370a33a0e88",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/log.txt",
+      "digest": "sha256:545a5a06de8def100b647ae9dd45e9406b69825168d68dac1cecd74f0c9667bd",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/metric.json",
+      "digest": "sha256:0aec3c05b67c62caaacdf24ac8d82dd03f11da51a6c851fb8227bc5ec29fd553",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/packet.json",
+      "digest": "sha256:b819b9e712f56ec463e364265692903e27cdd34764cf18cf8940ae9c3d0ae9d9",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/log.txt",
+      "digest": "sha256:d239f4afc2029ad9c56a6a8ac8834a95dda5f5772686e039e0066a4831254ca6",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/metric.json",
+      "digest": "sha256:0e323cf7355ec531625da2773d6f13234dae4a8505b940bd4b29fdcc8bd0b7b9",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/packet.json",
+      "digest": "sha256:bb4b743cef7fdcb8952bca09da77a490ed73005e671376e00f800833d7ae1a0d",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/log.txt",
+      "digest": "sha256:ada07a218ae38efb34ea6e0cf308d7d5b8da74140989612c5383feb7064a1988",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/metric.json",
+      "digest": "sha256:ae68829a5ff177636f4067bba2e5b32e2e0a02fc4ecce0b6866e84a8c71aec16",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/packet.json",
+      "digest": "sha256:83e3070760ba679868811e0e655ebf5d56c6d1038a898c58ff36f4fabf112a38",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/log.txt",
+      "digest": "sha256:ad09c64bd2df3cf86b3dc197af20b6741fa745b3eb85423c97565dc16b5a5615",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/metric.json",
+      "digest": "sha256:874876af5b4b3b7d7ccc9372471a81a356a46886b6a35ca90228699a4efb2eb9",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/packet.json",
+      "digest": "sha256:3f4bd054fa8dbcf5dccdbaecad3d8d14b5a2e1cc2271ac5e560585314cd25da5",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/log.txt",
+      "digest": "sha256:08b02c27a491f0129fd825364e17802a800ffff3dd5c8f9deec47da163a06172",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/metric.json",
+      "digest": "sha256:59a9c49daa9298ff4143241da7a8dd9669ce156807775583158e77b298f756fa",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/packet.json",
+      "digest": "sha256:2cc7d3fe8ef6adc29ee66b95537178608ab56e2b61a660bd8cae460cfe064496",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/log.txt",
+      "digest": "sha256:4fff96095ba38076efa8ee6b913de7236d8f3f7ef34add00a1e6adbafdd4760a",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/metric.json",
+      "digest": "sha256:b9b95ed86e05a787e4985e7aee84e75bd3ef0ca6ee782043765bcff997bfb5b8",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/packet.json",
+      "digest": "sha256:d89096e285c6a48e126a8f6a2561429ee992b0c750c2e9140d857460ae9f0309",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/log.txt",
+      "digest": "sha256:e312888619bf7224cb668ba9241abd78267fdfd7cabd31947d67011624071c6b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/metric.json",
+      "digest": "sha256:0aec3c05b67c62caaacdf24ac8d82dd03f11da51a6c851fb8227bc5ec29fd553",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/packet.json",
+      "digest": "sha256:b819b9e712f56ec463e364265692903e27cdd34764cf18cf8940ae9c3d0ae9d9",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/log.txt",
+      "digest": "sha256:e09780361d885c71bd515cfb1adeefc8a3d775aeeb78cff289f48a3560f0c33a",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/metric.json",
+      "digest": "sha256:0739a6010e7773967eac47d0e295f90ebfbe233c99947e51389092260fa944cf",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/packet.json",
+      "digest": "sha256:bb4b743cef7fdcb8952bca09da77a490ed73005e671376e00f800833d7ae1a0d",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/log.txt",
+      "digest": "sha256:dd649d2348f9ad43d01fbe271a48c31479844f2ecb83fa02ed5427894fd8c02b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/metric.json",
+      "digest": "sha256:bb7e3b7bc0fa118d3a47c14e2d9273d9a9a6dbc53871168a209e6fb1b153bdb4",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/packet.json",
+      "digest": "sha256:83e3070760ba679868811e0e655ebf5d56c6d1038a898c58ff36f4fabf112a38",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/log.txt",
+      "digest": "sha256:cf3ee81bd6ef13e4fb78b035cd83f82b246c4152d06282e5931ea459fae56324",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/metric.json",
+      "digest": "sha256:f6288fd281893d010b3fdc9cb85f2faeda0d011dc80b0fd5d609a8da687bb62b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/packet.json",
+      "digest": "sha256:b1cb97d600b18213b31634f37387cb5bf598b65a3f92a6ad86c1c2fd725402fa",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/log.txt",
+      "digest": "sha256:27baa766ab87703089a0402c20d9fe65ab9873a0bbd93881f0882c886af1bfd8",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/metric.json",
+      "digest": "sha256:d50839846c8b552562fea9d56418fa394db0b54dc08e4b14a0e159c3b87ce568",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/packet.json",
+      "digest": "sha256:ddf720df507ca03d58e76e6dc3713f6912f9ef32bbd4aecbb0353e447861c5a6",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.log.txt",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/log.txt",
+      "digest": "sha256:dcb3ba87bccd9e0b2285ebc81841116f4139873912050e10f026a11adbf6826b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.metric.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/metric.json",
+      "digest": "sha256:945d3bdb7402aab30399be25d7e6988b722c40be4391db7dc681b7aa64933dfc",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.packet.json",
+      "kind": "capture",
+      "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/packet.json",
+      "digest": "sha256:f2e167697ac105437b73508b0816f36b364b0f2798febd68936010f2c2b3fcba",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.delivery-ack-retry-dlx"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.index.json",
+      "kind": "derived-evidence",
+      "path": "evidence/scenario-runtime/index.json",
+      "digest": "sha256:1f039910681306e78b074c251bc0f9f3636d06822518ee10cbc3adc7d00e9cfa",
+      "depends_on": [
+        "output.evidence.scenario.runtime.amqp10.version.negotiation.boundary.runtime.json",
+        "output.evidence.scenario.runtime.amqp10.version.negotiation.normal.runtime.json",
+        "output.evidence.scenario.runtime.amqp10.version.negotiation.rejection.runtime.json",
+        "output.evidence.scenario.runtime.amqp10.version.negotiation.security.runtime.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.packet.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.packet.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.packet.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.packet.json",
+        "output.evidence.scenario.runtime.mqtt.protocol.versions.qos.compatibility.runtime.json",
+        "output.evidence.scenario.runtime.partition.detection.operations.runtime.json",
+        "output.evidence.scenario.runtime.partition.recovery.recovery.runtime.json",
+        "output.evidence.scenario.runtime.quorum.replication.failure.runtime.json",
+        "output.evidence.scenario.runtime.stomp.protocol.plugin.compatibility.runtime.json",
+        "output.evidence.scenarios.behaviors.amqp10.version.negotiation.boundary.proof.json",
+        "output.evidence.scenarios.behaviors.amqp10.version.negotiation.normal.proof.json",
+        "output.evidence.scenarios.behaviors.amqp10.version.negotiation.rejection.proof.json",
+        "output.evidence.scenarios.behaviors.amqp10.version.negotiation.security.proof.json",
+        "output.evidence.scenarios.behaviors.mqtt.protocol.versions.qos.compatibility.proof.json",
+        "output.evidence.scenarios.behaviors.partition.detection.operations.proof.json",
+        "output.evidence.scenarios.behaviors.partition.recovery.recovery.proof.json",
+        "output.evidence.scenarios.behaviors.quorum.replication.failure.proof.json",
+        "output.evidence.scenarios.behaviors.stomp.protocol.plugin.compatibility.proof.json"
+      ],
+      "status": "current",
+      "run_id": "run.derived.scenario-runtime-binding-index"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.mqtt.protocol.versions.qos.compatibility.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/mqtt.protocol-versions-qos/compatibility.runtime.json",
+      "digest": "sha256:9d66fce97f597e3185ce08d66b2df933faa5bcf07357776a8b04111d0d6c234b",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.aaa374dbe3e98512"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.partition.detection.operations.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/partition.detection/operations.runtime.json",
+      "digest": "sha256:565236a4de799bfa2ca4316d0c0c67cc586d9b5fcc6b1f6c6a8c8368abe7143d",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.4ba25f0303b554e2"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.partition.recovery.recovery.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/partition.recovery/recovery.runtime.json",
+      "digest": "sha256:3d0baf7b3ea6a8999df3e8cc7d1b47e61093c11f4fd63a33dabff9465ba7b7e8",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.eb9ae16afc29bb42"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.quorum.replication.failure.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/quorum.replication/failure.runtime.json",
+      "digest": "sha256:d8ce1795a94b9ee6ade4255ba7653e48cf317deddc5704a3e86366056cab2a6e",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.quorum-failure-recovery"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.a522e0000cc5525d"
+    },
+    {
+      "id": "output.evidence.scenario.runtime.stomp.protocol.plugin.compatibility.runtime.json",
+      "kind": "scenario-proof",
+      "path": "evidence/scenario-runtime/stomp.protocol-plugin/compatibility.runtime.json",
+      "digest": "sha256:392e0e89638a41b8b3d799817e8aa41bc557b99b94b01010127abe6c47320682",
+      "depends_on": [
+        "source.rabbitmq-authority-and-coverage",
+        "runtime.rabbitmq-broker-and-client",
+        "harness.producer-clients",
+        "harness.consumer-clients",
+        "harness.evidence-reporters",
+        "profile.performance-and-compatibility"
+      ],
+      "status": "current",
+      "run_id": "run.runtime.scenario.f243e0f045633fdc"
     },
     {
       "id": "output.evidence.scenarios.behaviors.alarm.cluster.wide.boundary.proof.json",
@@ -2303,7 +3853,7 @@
       "id": "output.evidence.scenarios.behaviors.amqp10.version.negotiation.boundary.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/boundary.proof.json",
-      "digest": "sha256:1b8e1a92de4dd6f42acdf171ae18b1b0b67cf3980e8b8e1e8bd4c991104b7032",
+      "digest": "sha256:a8fc401225ad9295f46f4aab64b8781c033beb37b818b8eb52ecc99ec03107f1",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -2359,7 +3909,7 @@
       "id": "output.evidence.scenarios.behaviors.amqp10.version.negotiation.normal.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/normal.proof.json",
-      "digest": "sha256:2dd9a6f9f7ac40afb579ae2478b54733f8520573a59242145a58f1a7f8384c98",
+      "digest": "sha256:f3d46fe2f58f8d99eea24dcf9b78f6605f2b8596e6c573e2ef02a46ea93ae9d0",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -2415,7 +3965,7 @@
       "id": "output.evidence.scenarios.behaviors.amqp10.version.negotiation.rejection.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/rejection.proof.json",
-      "digest": "sha256:e9b0b513962e8b4899ab9219984380cc81369cfe6822b29f54045daf62b9b1a1",
+      "digest": "sha256:f0af586cc7fa489b5f1a19ddf7540091e1b43d6bfed94b6613a3020cf6859b14",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -2429,7 +3979,7 @@
       "id": "output.evidence.scenarios.behaviors.amqp10.version.negotiation.security.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/security.proof.json",
-      "digest": "sha256:41496a4339ba24735c28e4db4560eb06f336a0592bcefab760efd3683f630818",
+      "digest": "sha256:ee393242907845162d0e4d622d29d0803decea20a1719b1ccd2d90d51236a2e5",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -11403,7 +12953,7 @@
       "id": "output.evidence.scenarios.behaviors.mqtt.protocol.versions.qos.boundary.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/boundary.proof.json",
-      "digest": "sha256:e368f82807f6106affd0f5ff1261594621d02ea30a69750c876e32a7eb82abe1",
+      "digest": "sha256:a58e03de6e83fffbc9bb5254cdbbb4c4cca9c1fa1876315f2e547748f818b86c",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -11417,7 +12967,7 @@
       "id": "output.evidence.scenarios.behaviors.mqtt.protocol.versions.qos.compatibility.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/compatibility.proof.json",
-      "digest": "sha256:04b4a12d512867acc34f8d984fdce88f8d7fe1ac789eb405720787a51064c432",
+      "digest": "sha256:4b0383951f252463d3da5ece3024841b800049b1aaf18c1e4d03da8052baa5a5",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -11459,7 +13009,7 @@
       "id": "output.evidence.scenarios.behaviors.mqtt.protocol.versions.qos.normal.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/normal.proof.json",
-      "digest": "sha256:b44dd897ceb2a31cb5d612fc21619d60cc1624d56dfc76371628f22ea9110e6b",
+      "digest": "sha256:beabba9c49105da9e2a8270071367aa270e69cf91c55bf3dba1538271190b7ca",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -11515,7 +13065,7 @@
       "id": "output.evidence.scenarios.behaviors.mqtt.protocol.versions.qos.rejection.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/rejection.proof.json",
-      "digest": "sha256:3cc30cea47d918679291246d91db266b7737f755f41637c304e2e30468eb505c",
+      "digest": "sha256:f801eccdf9154af48f7efdf8df3b06ee159b6b9dfe22418057e6d05b9144454e",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -16513,7 +18063,7 @@
       "id": "output.evidence.scenarios.behaviors.partition.detection.operations.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/partition.detection/operations.proof.json",
-      "digest": "sha256:f3949caaf62012faedfaa8114d8f66b6fe1ff2dfe372f87c90304c0b93097ff5",
+      "digest": "sha256:da975c244c136888be2d357c2a6357f2b0c4724e0242d44d2de209a57cc54eb8",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -16821,7 +18371,7 @@
       "id": "output.evidence.scenarios.behaviors.partition.recovery.recovery.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/partition.recovery/recovery.proof.json",
-      "digest": "sha256:cec99f4e1f89ebbea566bba161f9149540242ca399e441ba54708e1afee71a32",
+      "digest": "sha256:b74c5961c2c5513e4837a220c7eb92df06c33e17bbef9622b9349b499162cf9f",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -21371,7 +22921,7 @@
       "id": "output.evidence.scenarios.behaviors.quorum.replication.failure.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/quorum.replication/failure.proof.json",
-      "digest": "sha256:ff0c4d6c8d3c1df58586bc3358c8e6562c33c285b1fc67dfd00716975dd9ab01",
+      "digest": "sha256:8eb3163f4b1460ef02e2e00e11f7ceb60a122ad57b331e7ed4674ede55295acd",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -24003,7 +25553,7 @@
       "id": "output.evidence.scenarios.behaviors.stomp.protocol.plugin.boundary.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/boundary.proof.json",
-      "digest": "sha256:cb5688008953da71047733d4156040823f2845f3df7b44e8e60f6e43d8d1db29",
+      "digest": "sha256:a2f756e1b71e724944547719512688fe1f99bfa634079ecbb25169d28481bc4b",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -24017,7 +25567,7 @@
       "id": "output.evidence.scenarios.behaviors.stomp.protocol.plugin.compatibility.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/compatibility.proof.json",
-      "digest": "sha256:28240f99e693242dde2bb93cec8382fcece96d2c93cb8c8551b5b5d38f3c6393",
+      "digest": "sha256:9c3b03b49e46425a4c63089eaa2b85222d281385d0cbf1ba1d8ac0e6828b947a",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -24059,7 +25609,7 @@
       "id": "output.evidence.scenarios.behaviors.stomp.protocol.plugin.normal.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/normal.proof.json",
-      "digest": "sha256:e3f60e346fdeb8aef4de3e2058f1d20b432aa794200b9988a8e5e8488bc3c840",
+      "digest": "sha256:ba97a358bac97bf324d731b966a805e515de62e412a779f716c9edf52f63784a",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -24115,7 +25665,7 @@
       "id": "output.evidence.scenarios.behaviors.stomp.protocol.plugin.rejection.proof.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/rejection.proof.json",
-      "digest": "sha256:6d58eacbd9ce9209ff3305cdfea517e23e625237ed6b63a20204c51ab0f728bf",
+      "digest": "sha256:53539c3895ca176fdc13c624561a1e962c141e633eedb886a4ed4b15ca414f76",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -30163,7 +31713,7 @@
       "id": "output.evidence.scenarios.closure.plan.json",
       "kind": "closure-plan",
       "path": "evidence/scenarios/closure-plan.json",
-      "digest": "sha256:0b1e2e87e4c7de8cfbad783c17fbc3a3b8d381c349c5ac7cbeb52a3c2a9e7ae8",
+      "digest": "sha256:c2443191e9f15fb8845a3d4aef97eddd5f165a0d843726290a629b3af70d9cda",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -30177,7 +31727,7 @@
       "id": "output.evidence.scenarios.index.json",
       "kind": "scenario-proof",
       "path": "evidence/scenarios/index.json",
-      "digest": "sha256:b76d253d39b251eb2ad6f711d3230e1fae96108527fcd415b72eeffebc2626d0",
+      "digest": "sha256:07d5469fa6739e1d3d05cabfabe89e7c26bc9138bd64061ef7d963bec0d683ba",
       "depends_on": [
         "source.rabbitmq-authority-and-coverage",
         "harness.evidence-reporters",
@@ -30193,14 +31743,14 @@
       "id": "run.derived.scenario-proof-and-reference-system",
       "execution_kind": "derived",
       "command": "python3 scripts/generate-scenario-proofs.py && python3 scripts/evidence_dependency_graph.py generate",
-      "started_at": "2026-08-28T16:02:53.714803Z",
-      "completed_at": "2026-08-28T16:02:53.714803Z",
+      "started_at": "2026-08-30T11:42:31Z",
+      "completed_at": "2026-08-30T11:42:31Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "profile.scenario-and-reference-system",
@@ -30208,7 +31758,7 @@
         },
         {
           "input_id": "runtime.evidence-observation-set",
-          "digest": "sha256:c2ff25be3bbf97803c2e42cd7ba112762195856f23d9ad5098e838b087628fc6"
+          "digest": "sha256:11bfdab979923b9e4ba3015b0bf534fb660363ce4c35990284f49edd50ffd3fc"
         },
         {
           "input_id": "source.rabbitmq-authority-and-coverage",
@@ -32282,11 +33832,65 @@
       ]
     },
     {
+      "id": "run.derived.scenario-runtime-binding-index",
+      "execution_kind": "derived",
+      "command": "python3 scripts/evidence_dependency_graph.py generate",
+      "started_at": "2026-08-30T11:42:31Z",
+      "completed_at": "2026-08-30T11:42:31Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.performance-and-compatibility",
+          "digest": "sha256:8b41a2c9ddd8d3c38b86fe25a27e48c47bae6e71fdbf11cf9f3e02085251e07c"
+        },
+        {
+          "input_id": "profile.quorum-failure-recovery",
+          "digest": "sha256:cfb7af5bf80ac7ec2ded3e0e18640ad2cab7bfcfeb6474da3bff7894844b6b33"
+        },
+        {
+          "input_id": "profile.scenario-and-reference-system",
+          "digest": "sha256:4d95f80e0b6e563b23bd8a90fb0b011faad3ba5d8c9a96b2b2adb1319dfdc1c3"
+        },
+        {
+          "input_id": "runtime.evidence-observation-set",
+          "digest": "sha256:11bfdab979923b9e4ba3015b0bf534fb660363ce4c35990284f49edd50ffd3fc"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.index.json"
+      ]
+    },
+    {
       "id": "run.derived.skill-eval",
       "execution_kind": "derived",
       "command": "python3 scripts/run-skill-evals.py",
-      "started_at": "2026-08-28T16:02:53.714803Z",
-      "completed_at": "2026-08-28T16:02:53.714803Z",
+      "started_at": "2026-08-30T11:42:31Z",
+      "completed_at": "2026-08-30T11:42:31Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32300,7 +33904,7 @@
         },
         {
           "input_id": "runtime.evidence-observation-set",
-          "digest": "sha256:c2ff25be3bbf97803c2e42cd7ba112762195856f23d9ad5098e838b087628fc6"
+          "digest": "sha256:11bfdab979923b9e4ba3015b0bf534fb660363ce4c35990284f49edd50ffd3fc"
         },
         {
           "input_id": "source.rabbitmq-authority-and-coverage",
@@ -32320,8 +33924,8 @@
       "id": "run.runtime.045a47364c0f3066",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32331,7 +33935,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32358,15 +33962,15 @@
         "broker": "RabbitMQ 4.3.5",
         "profile": "local",
         "nodes": null,
-        "identity": "sha256:983deab77e627154b0e8101c241414003b34005f080d2d7779e3a21ec6005481"
+        "identity": "sha256:7441c74c73c3884973980cb27a9aa6b65c94dd6329e9ab065897a5a9eca09a48"
       }
     },
     {
       "id": "run.runtime.05ddee3933b439bd",
       "execution_kind": "runtime",
       "command": "bash scripts/run-plugin-protocol-lab.sh",
-      "started_at": "2026-08-28T11:16:17.793547127Z",
-      "completed_at": "2026-08-28T11:16:17.793547127Z",
+      "started_at": "2026-08-30T11:42:52.487707759Z",
+      "completed_at": "2026-08-30T11:42:52.487707759Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32376,7 +33980,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32410,8 +34014,8 @@
       "id": "run.runtime.0a896ab77dd8aa36",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32421,7 +34025,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32455,8 +34059,8 @@
       "id": "run.runtime.0f53d86c1f393eb6",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32466,7 +34070,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32508,8 +34112,8 @@
       "id": "run.runtime.109d7a2d8e8e724c",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32519,7 +34123,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32553,8 +34157,8 @@
       "id": "run.runtime.14aa4ffb07d77c84",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32564,7 +34168,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32598,8 +34202,8 @@
       "id": "run.runtime.15a128f1d8c87648",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32609,7 +34213,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32643,8 +34247,8 @@
       "id": "run.runtime.1a216ac9392141d0",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.922782Z",
-      "completed_at": "2026-08-28T08:43:56.922782Z",
+      "started_at": "2026-08-30T11:44:46.053644Z",
+      "completed_at": "2026-08-30T11:44:46.053644Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32684,8 +34288,8 @@
       "id": "run.runtime.25e5880d888bd563",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.915620Z",
-      "completed_at": "2026-08-28T08:43:56.915620Z",
+      "started_at": "2026-08-30T11:45:18.658034Z",
+      "completed_at": "2026-08-30T11:45:18.658034Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32725,8 +34329,8 @@
       "id": "run.runtime.318f2b0e194352bd",
       "execution_kind": "runtime",
       "command": "go run ./cmd/rmq-amqp10-handshake --endpoints 127.0.0.1:25672,127.0.0.1:25673,127.0.0.1:25674 --output-dir evidence/raw",
-      "started_at": "2026-08-28T10:51:26.571611Z",
-      "completed_at": "2026-08-28T10:51:26.571611Z",
+      "started_at": "2026-08-30T11:42:39.788591Z",
+      "completed_at": "2026-08-30T11:42:39.788591Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32736,7 +34340,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32770,8 +34374,8 @@
       "id": "run.runtime.39032076544043cf",
       "execution_kind": "runtime",
       "command": "bash scripts/run-plugin-protocol-lab.sh",
-      "started_at": "2026-08-28T11:16:26.836266089Z",
-      "completed_at": "2026-08-28T11:16:26.836266089Z",
+      "started_at": "2026-08-30T11:43:01.539415805Z",
+      "completed_at": "2026-08-30T11:43:01.539415805Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32781,7 +34385,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32815,8 +34419,8 @@
       "id": "run.runtime.45239d0e10232ef4",
       "execution_kind": "runtime",
       "command": "bash scripts/run-plugin-protocol-lab.sh",
-      "started_at": "2026-08-28T11:16:17.816141293Z",
-      "completed_at": "2026-08-28T11:16:17.816141293Z",
+      "started_at": "2026-08-30T11:42:52.508596551Z",
+      "completed_at": "2026-08-30T11:42:52.508596551Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32826,7 +34430,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32860,8 +34464,8 @@
       "id": "run.runtime.45a1845fd679c569",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32871,7 +34475,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32905,8 +34509,8 @@
       "id": "run.runtime.47b364f76b01c18f",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.905756Z",
-      "completed_at": "2026-08-28T08:43:56.905756Z",
+      "started_at": "2026-08-30T11:46:32.234689Z",
+      "completed_at": "2026-08-30T11:46:32.234689Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32946,8 +34550,8 @@
       "id": "run.runtime.56a963a5a9cb2eec",
       "execution_kind": "runtime",
       "command": "bash scripts/run-plugin-protocol-lab.sh",
-      "started_at": "2026-08-28T11:16:17.81605646Z",
-      "completed_at": "2026-08-28T11:16:17.81605646Z",
+      "started_at": "2026-08-30T11:42:52.508430093Z",
+      "completed_at": "2026-08-30T11:42:52.508430093Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -32957,7 +34561,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -32991,8 +34595,8 @@
       "id": "run.runtime.74442be2e78d9b98",
       "execution_kind": "runtime",
       "command": "make skill-eval",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33002,7 +34606,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33029,15 +34633,15 @@
         "broker": "RabbitMQ 4.3.5",
         "profile": "local",
         "nodes": null,
-        "identity": "sha256:983deab77e627154b0e8101c241414003b34005f080d2d7779e3a21ec6005481"
+        "identity": "sha256:7441c74c73c3884973980cb27a9aa6b65c94dd6329e9ab065897a5a9eca09a48"
       }
     },
     {
       "id": "run.runtime.8410393cee30b7f3",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.909013Z",
-      "completed_at": "2026-08-28T08:43:56.909013Z",
+      "started_at": "2026-08-30T11:44:56.931998Z",
+      "completed_at": "2026-08-30T11:44:56.931998Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33077,8 +34681,8 @@
       "id": "run.runtime.9037fc63dff30b6c",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.927411Z",
-      "completed_at": "2026-08-28T08:43:56.927411Z",
+      "started_at": "2026-08-30T11:44:46.588142Z",
+      "completed_at": "2026-08-30T11:44:46.588142Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33118,8 +34722,8 @@
       "id": "run.runtime.91ce5357ac909b3e",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.914791Z",
-      "completed_at": "2026-08-28T08:43:56.914791Z",
+      "started_at": "2026-08-30T11:46:03.968275Z",
+      "completed_at": "2026-08-30T11:46:03.968275Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33159,8 +34763,8 @@
       "id": "run.runtime.92ee379448650c98",
       "execution_kind": "runtime",
       "command": "bash scripts/run-plugin-protocol-lab.sh",
-      "started_at": "2026-08-28T11:16:26.860036423Z",
-      "completed_at": "2026-08-28T11:16:26.860036423Z",
+      "started_at": "2026-08-30T11:43:01.57260093Z",
+      "completed_at": "2026-08-30T11:43:01.57260093Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33170,7 +34774,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33204,8 +34808,8 @@
       "id": "run.runtime.9b5fc2561f31bc75",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33215,7 +34819,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33249,8 +34853,8 @@
       "id": "run.runtime.a3e5aa195f0b3723",
       "execution_kind": "runtime",
       "command": "bash scripts/run-plugin-protocol-lab.sh",
-      "started_at": "2026-08-28T11:16:17.79341821Z",
-      "completed_at": "2026-08-28T11:16:17.79341821Z",
+      "started_at": "2026-08-30T11:42:52.487430676Z",
+      "completed_at": "2026-08-30T11:42:52.487430676Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33260,7 +34864,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33294,8 +34898,8 @@
       "id": "run.runtime.a5fd305f07838548",
       "execution_kind": "runtime",
       "command": "go run ./cmd/rmq-amqp10-handshake --endpoints 127.0.0.1:25672,127.0.0.1:25673,127.0.0.1:25674 --output-dir evidence/raw",
-      "started_at": "2026-08-28T10:51:26.573097Z",
-      "completed_at": "2026-08-28T10:51:26.573097Z",
+      "started_at": "2026-08-30T11:42:39.789416Z",
+      "completed_at": "2026-08-30T11:42:39.789416Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33305,7 +34909,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33339,8 +34943,8 @@
       "id": "run.runtime.aafefbfc1f8605d5",
       "execution_kind": "runtime",
       "command": "bash scripts/run-plugin-protocol-lab.sh",
-      "started_at": "2026-08-28T11:16:26.836399589Z",
-      "completed_at": "2026-08-28T11:16:26.836399589Z",
+      "started_at": "2026-08-30T11:43:01.539893639Z",
+      "completed_at": "2026-08-30T11:43:01.539893639Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33350,7 +34954,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33384,8 +34988,8 @@
       "id": "run.runtime.ac4e7dff91d6a064",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33395,7 +34999,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33429,8 +35033,8 @@
       "id": "run.runtime.b46188b7c91b0630",
       "execution_kind": "runtime",
       "command": "go run ./cmd/rmq-amqp10-handshake --endpoints 127.0.0.1:25672,127.0.0.1:25673,127.0.0.1:25674 --output-dir evidence/raw",
-      "started_at": "2026-08-28T10:51:26.574182Z",
-      "completed_at": "2026-08-28T10:51:26.574182Z",
+      "started_at": "2026-08-30T11:42:39.789881Z",
+      "completed_at": "2026-08-30T11:42:39.789881Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33440,7 +35044,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33474,8 +35078,8 @@
       "id": "run.runtime.b5731fe4eaa99d6d",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.919266Z",
-      "completed_at": "2026-08-28T08:43:56.919266Z",
+      "started_at": "2026-08-30T11:44:46.757994Z",
+      "completed_at": "2026-08-30T11:44:46.757994Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33515,8 +35119,8 @@
       "id": "run.runtime.bb496d4dd093a91c",
       "execution_kind": "runtime",
       "command": "go run ./cmd/rmq-amqp10-handshake --endpoints 127.0.0.1:25672,127.0.0.1:25673,127.0.0.1:25674 --output-dir evidence/raw",
-      "started_at": "2026-08-28T10:51:26.573687Z",
-      "completed_at": "2026-08-28T10:51:26.573687Z",
+      "started_at": "2026-08-30T11:42:39.789676Z",
+      "completed_at": "2026-08-30T11:42:39.789676Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33526,7 +35130,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33560,8 +35164,8 @@
       "id": "run.runtime.bc62bf37934cb186",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.928513Z",
-      "completed_at": "2026-08-28T08:43:56.928513Z",
+      "started_at": "2026-08-30T11:44:53.527367Z",
+      "completed_at": "2026-08-30T11:44:53.527367Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33601,8 +35205,8 @@
       "id": "run.runtime.c77453445fb3dc40",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33612,7 +35216,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33646,8 +35250,8 @@
       "id": "run.runtime.e78c50bad4d8d00d",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:39:32.278717Z",
-      "completed_at": "2026-08-28T08:39:32.278717Z",
+      "started_at": "2026-08-30T11:47:43.192787Z",
+      "completed_at": "2026-08-30T11:47:43.192787Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33657,7 +35261,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33692,8 +35296,8 @@
       "id": "run.runtime.e7a83c2498d3d002",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.916713Z",
-      "completed_at": "2026-08-28T08:43:56.916713Z",
+      "started_at": "2026-08-30T11:44:57.107733Z",
+      "completed_at": "2026-08-30T11:44:57.107733Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33733,8 +35337,8 @@
       "id": "run.runtime.eadb83b21172b545",
       "execution_kind": "runtime",
       "command": "bash scripts/run-plugin-protocol-lab.sh",
-      "started_at": "2026-08-28T11:16:26.860150048Z",
-      "completed_at": "2026-08-28T11:16:26.860150048Z",
+      "started_at": "2026-08-30T11:43:01.572708597Z",
+      "completed_at": "2026-08-30T11:43:01.572708597Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33744,7 +35348,7 @@
         },
         {
           "input_id": "harness.evidence-reporters",
-          "digest": "sha256:806fd10f25e32aa5988aef42aed00f3715dfb0178d004a85419c730611eb7e50"
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
         },
         {
           "input_id": "harness.producer-clients",
@@ -33778,8 +35382,8 @@
       "id": "run.runtime.f0ea5be3f12d5c68",
       "execution_kind": "runtime",
       "command": "make labs",
-      "started_at": "2026-08-28T08:43:56.917513Z",
-      "completed_at": "2026-08-28T08:43:56.917513Z",
+      "started_at": "2026-08-30T11:46:32.083527Z",
+      "completed_at": "2026-08-30T11:46:32.083527Z",
       "result": "passed",
       "attempts": 1,
       "input_bindings": [
@@ -33812,6 +35416,609 @@
         "profile": "container",
         "artifact_set": [
           "evidence/raw/partition-recovery.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.4ba25f0303b554e2",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:46:18.774334Z",
+      "completed_at": "2026-08-30T11:46:18.774334Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.quorum-failure-recovery",
+          "digest": "sha256:cfb7af5bf80ac7ec2ded3e0e18640ad2cab7bfcfeb6474da3bff7894844b6b33"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.detection.operations.node.3.packet.json",
+        "output.evidence.scenario.runtime.partition.detection.operations.runtime.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/packet.json",
+          "evidence/scenario-runtime/partition.detection/operations.runtime.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.73b00113433e5b2f",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:43:57.030033Z",
+      "completed_at": "2026-08-30T11:43:57.030033Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.performance-and-compatibility",
+          "digest": "sha256:8b41a2c9ddd8d3c38b86fe25a27e48c47bae6e71fdbf11cf9f3e02085251e07c"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.amqp10.version.negotiation.rejection.runtime.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.rejection.node.3.packet.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/amqp10.version-negotiation/rejection.runtime.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/packet.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.a522e0000cc5525d",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:46:07.314044Z",
+      "completed_at": "2026-08-30T11:46:07.314044Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.quorum-failure-recovery",
+          "digest": "sha256:cfb7af5bf80ac7ec2ded3e0e18640ad2cab7bfcfeb6474da3bff7894844b6b33"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.quorum.replication.failure.node.3.packet.json",
+        "output.evidence.scenario.runtime.quorum.replication.failure.runtime.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/packet.json",
+          "evidence/scenario-runtime/quorum.replication/failure.runtime.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.aaa374dbe3e98512",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:44:00.255403Z",
+      "completed_at": "2026-08-30T11:44:00.255403Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.performance-and-compatibility",
+          "digest": "sha256:8b41a2c9ddd8d3c38b86fe25a27e48c47bae6e71fdbf11cf9f3e02085251e07c"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.mqtt.protocol.versions.qos.compatibility.node.3.packet.json",
+        "output.evidence.scenario.runtime.mqtt.protocol.versions.qos.compatibility.runtime.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/packet.json",
+          "evidence/scenario-runtime/mqtt.protocol-versions-qos/compatibility.runtime.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.bb37e6ef4fc4a16e",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:43:53.513130Z",
+      "completed_at": "2026-08-30T11:43:53.513130Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.performance-and-compatibility",
+          "digest": "sha256:8b41a2c9ddd8d3c38b86fe25a27e48c47bae6e71fdbf11cf9f3e02085251e07c"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.amqp10.version.negotiation.normal.runtime.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.normal.node.3.packet.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/amqp10.version-negotiation/normal.runtime.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/packet.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.c6112410b0acae78",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:43:55.436135Z",
+      "completed_at": "2026-08-30T11:43:55.436135Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.performance-and-compatibility",
+          "digest": "sha256:8b41a2c9ddd8d3c38b86fe25a27e48c47bae6e71fdbf11cf9f3e02085251e07c"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.amqp10.version.negotiation.boundary.runtime.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.boundary.node.3.packet.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/amqp10.version-negotiation/boundary.runtime.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/packet.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.ddee38a005f87e2a",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:43:58.617095Z",
+      "completed_at": "2026-08-30T11:43:58.617095Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.performance-and-compatibility",
+          "digest": "sha256:8b41a2c9ddd8d3c38b86fe25a27e48c47bae6e71fdbf11cf9f3e02085251e07c"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.amqp10.version.negotiation.security.runtime.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.amqp10.version.negotiation.security.node.3.packet.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/amqp10.version-negotiation/security.runtime.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/packet.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.eb9ae16afc29bb42",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:46:32.410022Z",
+      "completed_at": "2026-08-30T11:46:32.410022Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.quorum-failure-recovery",
+          "digest": "sha256:cfb7af5bf80ac7ec2ded3e0e18640ad2cab7bfcfeb6474da3bff7894844b6b33"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.partition.recovery.recovery.node.3.packet.json",
+        "output.evidence.scenario.runtime.partition.recovery.recovery.runtime.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/packet.json",
+          "evidence/scenario-runtime/partition.recovery/recovery.runtime.json"
+        ]
+      }
+    },
+    {
+      "id": "run.runtime.scenario.f243e0f045633fdc",
+      "execution_kind": "runtime",
+      "command": "make labs",
+      "started_at": "2026-08-30T11:44:02.006517Z",
+      "completed_at": "2026-08-30T11:44:02.006517Z",
+      "result": "passed",
+      "attempts": 1,
+      "input_bindings": [
+        {
+          "input_id": "harness.consumer-clients",
+          "digest": "sha256:d9a2d5ac39d4a29834fe00a0c788ebc342d3688805d12071c94001e9b06a19dc"
+        },
+        {
+          "input_id": "harness.evidence-reporters",
+          "digest": "sha256:f25c460c1250f1b26c97da13659ed96183732944347be9baa39f0377ece9de60"
+        },
+        {
+          "input_id": "harness.producer-clients",
+          "digest": "sha256:697826d3a0aa957c3e8ef4fbaec7204f262d20cbdc113061d4197029c4418d60"
+        },
+        {
+          "input_id": "profile.delivery-ack-retry-dlx",
+          "digest": "sha256:7ed359e929687ec19ffc20649c49c7474b20525165d806af8e76ecd9ce0cf8ec"
+        },
+        {
+          "input_id": "profile.performance-and-compatibility",
+          "digest": "sha256:8b41a2c9ddd8d3c38b86fe25a27e48c47bae6e71fdbf11cf9f3e02085251e07c"
+        },
+        {
+          "input_id": "runtime.rabbitmq-broker-and-client",
+          "digest": "sha256:096ba3993af5e5e93e9033f630c6a2c477121192d2f0af6587bf6ac625da072c"
+        },
+        {
+          "input_id": "source.rabbitmq-authority-and-coverage",
+          "digest": "sha256:efe737d02dcab934d0e1409218880cee90c3890051e5ef811238b52c96c8533e"
+        }
+      ],
+      "output_ids": [
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.log.txt",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.metric.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.1.packet.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.log.txt",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.metric.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.2.packet.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.log.txt",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.metric.json",
+        "output.evidence.scenario.runtime.artifacts.stomp.protocol.plugin.compatibility.node.3.packet.json",
+        "output.evidence.scenario.runtime.stomp.protocol.plugin.compatibility.runtime.json"
+      ],
+      "runtime_identity": {
+        "broker": "RabbitMQ 4.3.5",
+        "profile": "container",
+        "artifact_set": [
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/log.txt",
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/metric.json",
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/packet.json",
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/log.txt",
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/metric.json",
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/packet.json",
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/log.txt",
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/metric.json",
+          "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/packet.json",
+          "evidence/scenario-runtime/stomp.protocol-plugin/compatibility.runtime.json"
         ]
       }
     }
@@ -33891,6 +36098,97 @@
     "evidence/raw/skill-eval.json",
     "evidence/raw/upgrade-migration.json",
     "evidence/reference-system/results.json",
+    "evidence/scenario-runtime/amqp10.version-negotiation/boundary.runtime.json",
+    "evidence/scenario-runtime/amqp10.version-negotiation/normal.runtime.json",
+    "evidence/scenario-runtime/amqp10.version-negotiation/rejection.runtime.json",
+    "evidence/scenario-runtime/amqp10.version-negotiation/security.runtime.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/packet.json",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/packet.json",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/packet.json",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/packet.json",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/packet.json",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/log.txt",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/metric.json",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/packet.json",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/log.txt",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/metric.json",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/packet.json",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/log.txt",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/metric.json",
+    "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/packet.json",
+    "evidence/scenario-runtime/index.json",
+    "evidence/scenario-runtime/mqtt.protocol-versions-qos/compatibility.runtime.json",
+    "evidence/scenario-runtime/partition.detection/operations.runtime.json",
+    "evidence/scenario-runtime/partition.recovery/recovery.runtime.json",
+    "evidence/scenario-runtime/quorum.replication/failure.runtime.json",
+    "evidence/scenario-runtime/stomp.protocol-plugin/compatibility.runtime.json",
     "evidence/scenarios/behaviors/alarm.cluster-wide/boundary.proof.json",
     "evidence/scenarios/behaviors/alarm.cluster-wide/compatibility.proof.json",
     "evidence/scenarios/behaviors/alarm.cluster-wide/failure.proof.json",

@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import pathlib
 import re
 from collections import Counter, defaultdict
@@ -73,6 +74,7 @@ def tokens(value: str) -> set[str]:
 class RoutingContext:
     def __init__(self, root: pathlib.Path = ROOT) -> None:
         self.root = root
+        self.evidence_root = pathlib.Path(os.environ.get("RABBITMQ_EVIDENCE_ROOT", root / "evidence"))
         self.mastery = load_yaml(root / "mastery.yaml")
         self.coverage = load_yaml(root / "coverage.yaml")
         self.inventory = load_yaml(root / "surface.inventory.yaml")
@@ -101,7 +103,7 @@ class RoutingContext:
 
     def _load_evidence(self) -> dict[str, tuple[dict[str, Any], pathlib.Path]]:
         result = {}
-        for path in sorted((self.root / "evidence").glob("*.evidence.json")):
+        for path in sorted(self.evidence_root.glob("*.evidence.json")):
             item = json.loads(path.read_text())
             result[item["id"]] = (item, path)
         return result
@@ -199,7 +201,7 @@ def evidence_bindings(context: RoutingContext, evidence_ids: list[str]) -> list[
         record, path = found
         bindings.append({
             "id": evidence_id,
-            "path": path.relative_to(context.root).as_posix(),
+            "path": "evidence/" + path.relative_to(context.evidence_root).as_posix(),
             "digest": sha_file(path),
             "verdict": record.get("verdict"),
             "execution_mode": record.get("execution_mode"),

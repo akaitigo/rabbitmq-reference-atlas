@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "behavior_id": "amqp10.version-negotiation",
+  "authority_surface_id": "amqp10.version-negotiation",
+  "scenario": "security",
+  "runtime_profile": "protocol-amqp10",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "cmd/rmq-amqp10-handshake/main.go",
+    "digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-amqp10-handshake",
+        "version": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b",
+        "source_digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.version-negotiation.security.node-1",
+        "assertions": [
+          "bare AMQP 1.0 is rejected by requiring SASL negotiation",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-amqp10-handshake/main.go",
+        "digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/packet.json",
+          "digest": "sha256:9dedc7009dba9be7796d9475201ca40db23a6f134a514cabe5e006a0600c43c6",
+          "size_bytes": 372,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/log.txt",
+          "digest": "sha256:1156f8bffe822f5e90e3738f5081f4f775cc82f74923b8b1da7e4a0e16084842",
+          "size_bytes": 31575,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/metric.json",
+          "digest": "sha256:ed252594b78b916e785c09da240ad8d581558d52bae7eb0fb084669736183dd0",
+          "size_bytes": 64952,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-amqp10-handshake",
+        "version": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b",
+        "source_digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.version-negotiation.security.node-2",
+        "assertions": [
+          "bare AMQP 1.0 is rejected by requiring SASL negotiation",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-amqp10-handshake/main.go",
+        "digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/packet.json",
+          "digest": "sha256:7e487de65315b765a4310a33ab629c6cf82986b199c38c7034b6fd41c3325436",
+          "size_bytes": 372,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/log.txt",
+          "digest": "sha256:ff3a2e637016fdeafd9f05d9ae50ca918033d3b8b1fa33a451e919fc966ed93b",
+          "size_bytes": 31401,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/metric.json",
+          "digest": "sha256:d23a400c937bc7f34a6d513b6ad5abb00b04517f4abbb726d82507d936760a01",
+          "size_bytes": 64952,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-amqp10-handshake",
+        "version": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b",
+        "source_digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.version-negotiation.security.node-3",
+        "assertions": [
+          "bare AMQP 1.0 is rejected by requiring SASL negotiation",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-amqp10-handshake/main.go",
+        "digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/packet.json",
+          "digest": "sha256:8d48b18e71d7e9da0933252ef8dc18fa4a014d205f1e1074d673c5aaf4ec92a7",
+          "size_bytes": 372,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/log.txt",
+          "digest": "sha256:239dbaa6a4898de5a6729daf23e0a68b9e474fa8852aa3f7ec3e2dc953ade7b2",
+          "size_bytes": 31611,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/metric.json",
+          "digest": "sha256:09e745d947acec1b3424d1761011f95cbb17b220e3c11257f5c67c9bba75718a",
+          "size_bytes": 64952,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

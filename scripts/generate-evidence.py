@@ -107,8 +107,6 @@ def main() -> None:
     compose_cluster_failure_artifact()
     compose_network_partition_artifact()
     compose_publisher_flow_artifact()
-    for _, _, _, relative_artifact, _, required_checks in MAPPINGS:
-        require_passed_checks(relative_artifact, required_checks)
     source_digest = sha(ROOT / "sources.lock.yaml")
     environment_paths = [ROOT / "environments/compose.yaml", ROOT / "environments/rabbitmq.conf", ROOT / "environments/container.lock.yaml"]
     environment_paths.extend(sorted(path for path in (ROOT / "environments").rglob("*") if path.is_file() and path not in environment_paths))
@@ -127,6 +125,9 @@ def main() -> None:
         "created_at": created_at,
     }
     (RAW / "evidence-generation.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n")
+    # 自己記述Artifactはこのrunで先に生成し、直前runのcopyへ依存させない。
+    for _, _, _, relative_artifact, _, required_checks in MAPPINGS:
+        require_passed_checks(relative_artifact, required_checks)
     for evidence_id, claims, kind, relative_artifact, profile, _ in MAPPINGS:
         artifact = EVIDENCE_ROOT / relative_artifact
         if not artifact.exists():

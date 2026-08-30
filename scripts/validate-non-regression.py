@@ -67,6 +67,10 @@ def main() -> int:
         row["old_id"]: row for row in migration.get("replacements", [])
         if row.get("category") == "target-copy"
     }
+    evidence_refresh = migration.get("evidence_refresh", {})
+    refresh_proof_path = ROOT / evidence_refresh.get("proof", "")
+    refresh_proof = json.loads(refresh_proof_path.read_text(encoding="utf-8")) if refresh_proof_path.is_file() else {}
+    refresh_mappings = {row.get("path"): row for row in refresh_proof.get("mappings", [])}
     for target_id, old in baseline_targets.items():
         new = current_targets.get(target_id)
         if not new:
@@ -123,7 +127,42 @@ def main() -> int:
             if not path.is_file():
                 failures.append(f"{group} artifact deleted: {row['path']}")
             elif sha256(path) != row["digest"]:
-                failures.append(f"{group} artifact changed without migration: {row['path']}")
+                if group != "evidence":
+                    failures.append(f"{group} artifact changed without migration: {row['path']}")
+                    continue
+                mapping = refresh_mappings.get(row["path"])
+                current = json.loads(path.read_text(encoding="utf-8"))
+                if (
+                    evidence_refresh.get("strength") != "stronger"
+                    or refresh_proof.get("verdict") != "pass"
+                    or mapping is None
+                    or mapping.get("old_id") != row["id"]
+                    or mapping.get("new_id") != row["id"]
+                    or mapping.get("old_digest") != row["digest"]
+                    or mapping.get("new_digest") != sha256(path)
+                    or current.get("id") != row["id"]
+                    or current.get("verdict") != "pass"
+                    or not contains_all(current.get("claim_ids", []), row.get("claim_ids", []))
+                    or current.get("producer") != row.get("producer")
+                    or current.get("command") != row.get("command")
+                    or not mapping.get("reason")
+                ):
+                    failures.append(f"evidence artifact changed without valid migration: {row['path']}")
+
+    if refresh_mappings:
+        expected_paths = {row["path"] for row in baseline["artifacts"]["evidence"] if sha256(ROOT / row["path"]) != row["digest"]}
+        if set(refresh_mappings) != expected_paths:
+            failures.append("evidence refresh migration mapping set is incomplete or excessive")
+        run_report_path = ROOT / refresh_proof.get("runtime_proof", {}).get("run_report", {}).get("path", "")
+        graph_path = ROOT / refresh_proof.get("runtime_proof", {}).get("dependency_graph", {}).get("path", "")
+        if (not run_report_path.is_file()
+                or sha256(run_report_path) != refresh_proof.get("runtime_proof", {}).get("run_report", {}).get("digest")
+                or json.loads(run_report_path.read_text(encoding="utf-8")).get("status") != "full-run-passed"):
+            failures.append("evidence refresh migration lacks current full-run publication proof")
+        if (not graph_path.is_file()
+                or sha256(graph_path) != refresh_proof.get("runtime_proof", {}).get("dependency_graph", {}).get("digest")
+                or json.loads(graph_path.read_text(encoding="utf-8")).get("status") != "current"):
+            failures.append("evidence refresh migration lacks current dependency graph proof")
 
     eval_baseline = baseline["artifacts"]["skill_eval"]
     eval_path = ROOT / eval_baseline["path"]

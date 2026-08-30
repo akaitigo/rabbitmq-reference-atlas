@@ -1,0 +1,16 @@
+{
+  "transport": "tcp",
+  "protocol": "mqtt",
+  "endpoint": "rabbitmq-2:1883",
+  "request_response": {
+    "endpoint": "rabbitmq-2:1883",
+    "passed": true,
+    "oracle": "compatibility",
+    "observed": {
+      "3.1": true,
+      "3.1.1": true,
+      "5.0": true
+    }
+  },
+  "source_run_created_at": "2026-08-30T11:43:01.57260093Z"
+}

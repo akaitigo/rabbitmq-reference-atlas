@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "id": "public-main-runtime-evidence-refresh-20260830",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "baseline": "baseline/public-main-22ab07c.yaml",
+  "verdict": "pass",
+  "policy": "same-id-stronger-runtime-refresh-no-test-or-claim-retreat",
+  "runtime_proof": {
+    "run_report": {
+      "path": "evidence/run-report.json",
+      "digest": "sha256:4ffcba5a16604f638b6c749bb452901ec845babab400fc3de3e39484207fa06d"
+    },
+    "dependency_graph": {
+      "path": "evidence/dependency-graph.json",
+      "digest": "sha256:2841035f65e742c297154182c9fcf961efb76c475e3b7d45320752dc321b2713"
+    },
+    "core_commit": "072d7ca77981f51754e824d70c6d4ecd55ea67e5"
+  },
+  "checks": [
+    {
+      "id": "same-evidence-ids-preserved",
+      "verdict": "pass"
+    },
+    {
+      "id": "baseline-claims-preserved",
+      "verdict": "pass"
+    },
+    {
+      "id": "pass-verdicts-preserved",
+      "verdict": "pass"
+    },
+    {
+      "id": "full-run-publication-bound",
+      "verdict": "pass"
+    },
+    {
+      "id": "dependency-graph-current",
+      "verdict": "pass"
+    }
+  ],
+  "mappings": [
+    {
+      "old_id": "eval.router",
+      "new_id": "eval.router",
+      "path": "evidence/eval.router.evidence.json",
+      "old_digest": "sha256:19a28b4d2472a7345b3d55a008bce0fecd6a68eb0c9b70a0a9fd4038378217e2",
+      "new_digest": "sha256:c99ce874b97396c28b8b8cac69663b545d8b9ba43040f7a57bce9eaf3efce923",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.ack-redelivery",
+      "new_id": "lab.ack-redelivery",
+      "path": "evidence/lab.ack-redelivery.evidence.json",
+      "old_digest": "sha256:198e23ee119b032a67d30900e2fe44c01481690782652613b287bcb8f2d3e036",
+      "new_digest": "sha256:b778469434bc53e01b56276b071b3a7de9ec1135958627a103441f16ae58623e",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.amqp-model",
+      "new_id": "lab.amqp-model",
+      "path": "evidence/lab.amqp-model.evidence.json",
+      "old_digest": "sha256:c1c1a41f51ba9085774d09cb82528ba71a2654987d67efc6bb7e6acccfc4fd42",
+      "new_digest": "sha256:87ebe9fc151243813f3666cdba75086f5ded4e29280fe2ce76ba1fd7b744390a",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.cluster-failure-recovery",
+      "new_id": "lab.cluster-failure-recovery",
+      "path": "evidence/lab.cluster-failure-recovery.evidence.json",
+      "old_digest": "sha256:bccefd9173de7171c8cc7e9e4ae4102944e3795428acdf72fb79a0cc70bd2b88",
+      "new_digest": "sha256:ffc6646c0a3c0d13fb8ba8d437ebcd5fc054c0174bf130d27e4fd52190bfee9a",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.cluster-membership",
+      "new_id": "lab.cluster-membership",
+      "path": "evidence/lab.cluster-membership.evidence.json",
+      "old_digest": "sha256:25a5b5b58f289978fe733c135f1e3117ba57d7f1e4779a2fcbbd2f76367411cb",
+      "new_digest": "sha256:51463f8b4318db6183416f8a059bef99c0e0c93e3eb6e24ba35b5fe949e78bcc",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.consumer-flow-control",
+      "new_id": "lab.consumer-flow-control",
+      "path": "evidence/lab.consumer-flow-control.evidence.json",
+      "old_digest": "sha256:69ae78c41c8f7f2fa68518b72cd1bff19c9a20f7e4c8171087825eed98df88ca",
+      "new_digest": "sha256:515c962a04eda7c2b2e8fa0baff1d64305a601f330664a264c240a9343115935",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.dead-letter",
+      "new_id": "lab.dead-letter",
+      "path": "evidence/lab.dead-letter.evidence.json",
+      "old_digest": "sha256:d3ffaaf0c7eb19acfe8472db890e88dd64677dfbe4f62ec6b2268ef01832bfba",
+      "new_digest": "sha256:c774dea8d25a7f4b1d7432e109ec303b8e3720c7da09ca0d48cbaa51c99c616f",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.exchange-binding-matrix",
+      "new_id": "lab.exchange-binding-matrix",
+      "path": "evidence/lab.exchange-binding-matrix.evidence.json",
+      "old_digest": "sha256:223f7ae4f7cd10ea9702daffb6b9ae514e699c588540f9f4b99e2017b3420480",
+      "new_digest": "sha256:cc4652771f43dfd9fd05a7b1dc9a7e133e6fb01992259ec4a86ec946213de90b",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.exchange-queue",
+      "new_id": "lab.exchange-queue",
+      "path": "evidence/lab.exchange-queue.evidence.json",
+      "old_digest": "sha256:8c9de96d96485d4e1b09cd874f156661b9459356160423731a666d923038a021",
+      "new_digest": "sha256:b44b38cdbe0b00ef3fbc9d821bfcc540442cecc472b45637b68d801c3ae8f8da",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.network-partition",
+      "new_id": "lab.network-partition",
+      "path": "evidence/lab.network-partition.evidence.json",
+      "old_digest": "sha256:d55959f8f9867c2417235aaca23d56903ee454b1952a1ecd260d61ea8ddf9b62",
+      "new_digest": "sha256:f7395b98a88ee95dc818b0c210fb93a7f0cb5cfed037660eea14b505cf825af8",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.observability-health",
+      "new_id": "lab.observability-health",
+      "path": "evidence/lab.observability-health.evidence.json",
+      "old_digest": "sha256:8647eeb88142e855bce0afdb6846290eef43b5032120e0289e15afc931da672c",
+      "new_digest": "sha256:588800c9755bb7d60d85d2f5fbff0eddc494fe57aaa43ee137978c1d12daa002",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.observability-state",
+      "new_id": "lab.observability-state",
+      "path": "evidence/lab.observability-state.evidence.json",
+      "old_digest": "sha256:b249d2e1cb69e522138ce0351e1bd5538c57ba27e8e1bcb223a07f14fd98b8ee",
+      "new_digest": "sha256:1b1b8fc355f98ed38e213e48ad5dbd576c19289735f4befcec19a4875cb84441",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.ordering-idempotency",
+      "new_id": "lab.ordering-idempotency",
+      "path": "evidence/lab.ordering-idempotency.evidence.json",
+      "old_digest": "sha256:22342f6dff4724900f49c17760530e5768322dd8dbf4296a550554962d865e82",
+      "new_digest": "sha256:0e680bc3239c69c3ab685f55c922b929196d6e937e59068b648eeaec27125bbf",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.performance-capacity",
+      "new_id": "lab.performance-capacity",
+      "path": "evidence/lab.performance-capacity.evidence.json",
+      "old_digest": "sha256:09699bc8cda47f6b29ec3b6d5e83260be42b7cdad6d639655c1873d01b1b3d14",
+      "new_digest": "sha256:74fac9d9af1cee6bcf299667b0b48163fea95c14b76866be142bae9a8140946b",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.publisher-flow-control",
+      "new_id": "lab.publisher-flow-control",
+      "path": "evidence/lab.publisher-flow-control.evidence.json",
+      "old_digest": "sha256:0d63eb38f8d72282637c93368b6ba74f546e896762e83671c36b8381a028a31b",
+      "new_digest": "sha256:5c17c45b5370b192c620749d7fd09b0d1eff8a1c061b86feaf6199eb0d4e5a90",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.quorum-stream",
+      "new_id": "lab.quorum-stream",
+      "path": "evidence/lab.quorum-stream.evidence.json",
+      "old_digest": "sha256:c093a2c7e64532b790ebace555a733b1bb3ea41107da80b7dabb1ee4b1796eb9",
+      "new_digest": "sha256:6ec7ab1e3641193a19048dc1d5dc0a4ee553f3c54f257b6244f56686413f6460",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.rolling-upgrade",
+      "new_id": "lab.rolling-upgrade",
+      "path": "evidence/lab.rolling-upgrade.evidence.json",
+      "old_digest": "sha256:df8291d60929b42865684b3533cb77e8c0c57a15c478548a9fb0b0b55bc1bac0",
+      "new_digest": "sha256:40507b59bf6f1554ea2954c45529a58661d6cf18d0bada1d3708237ea200681a",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.security-authz",
+      "new_id": "lab.security-authz",
+      "path": "evidence/lab.security-authz.evidence.json",
+      "old_digest": "sha256:fcc07dc3a7a19f38eefecb8c0fa0f0225511a993bfe70e680d78a04c9d0ba2d8",
+      "new_digest": "sha256:a0d07f7f23e5bfdf1bc7d57adf77b2872038be9fdac530ff5d01464ce2970180",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.security-tls",
+      "new_id": "lab.security-tls",
+      "path": "evidence/lab.security-tls.evidence.json",
+      "old_digest": "sha256:b3c0c3e9e9b12d37d0e8fcd5ba536ce60b5f19daf6688c5d8e2998dbaa126f55",
+      "new_digest": "sha256:2fdb07bfb80a9d5b40a49488137094f7492f491641720dea0daa35bfd278abf2",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "lab.ttl-dead-letter",
+      "new_id": "lab.ttl-dead-letter",
+      "path": "evidence/lab.ttl-dead-letter.evidence.json",
+      "old_digest": "sha256:21654db51278acfc8a6239a5a482705b816bda304f425c5a7d8636958880e39b",
+      "new_digest": "sha256:6fb173bf80b17507e2039a56b9f1f78e12f8e422bfa865b77d33fc2057bece87",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    },
+    {
+      "old_id": "operation.evidence-generation",
+      "new_id": "operation.evidence-generation",
+      "path": "evidence/operation.evidence-generation.evidence.json",
+      "old_digest": "sha256:c4ccdc834151689d86ba00bdfd8f5099219fd445c8323321c9001fd584e55520",
+      "new_digest": "sha256:2ebf86fa17a85f28f1208aed37ee7239a4d8cdd6a15659ba62b7fc2d67943bc4",
+      "reason": "同一Evidence IDとClaim/Verifier契約を維持し、2026-08-30の実Broker full-run Artifact、runtime identity、現在Harness digestへ再固定する。"
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "behavior_id": "mqtt.protocol-versions-qos",
+  "authority_surface_id": "mqtt.protocol-versions-qos",
+  "scenario": "compatibility",
+  "runtime_profile": "plugin-mqtt",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "cmd/rmq-plugin-protocols/main.go",
+    "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-plugin-protocols",
+        "version": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592",
+        "source_digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "runtime": {
+        "profile": "plugin-mqtt",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.mqtt.protocol-versions-qos.compatibility.node-1",
+        "assertions": [
+          "compatibility",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-plugin-protocols/main.go",
+        "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/packet.json",
+          "digest": "sha256:1920363473e518e15e5bf5dc48183bd230549fcbb0c0a510e0cc39a1478fbfe5",
+          "size_bytes": 337,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/log.txt",
+          "digest": "sha256:57d3dad16ae15f967f415ff9b4e85de814ca56e9e73376260de978c98580bc7b",
+          "size_bytes": 31614,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/metric.json",
+          "digest": "sha256:ed252594b78b916e785c09da240ad8d581558d52bae7eb0fb084669736183dd0",
+          "size_bytes": 64952,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-plugin-protocols",
+        "version": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592",
+        "source_digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "runtime": {
+        "profile": "plugin-mqtt",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.mqtt.protocol-versions-qos.compatibility.node-2",
+        "assertions": [
+          "compatibility",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-plugin-protocols/main.go",
+        "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/packet.json",
+          "digest": "sha256:f90181a8e3f43b780dac3a10b9aa664f44a44867d54ee5a65b840d7594172abe",
+          "size_bytes": 337,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/log.txt",
+          "digest": "sha256:031eff775e04ad8421ae5523486e0672da478742766ff82fe363145014af7f82",
+          "size_bytes": 31443,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/metric.json",
+          "digest": "sha256:0dcd5590f9abab07672e55946d53ed8ab725e8aa97fc9e4f6a81c1f010577250",
+          "size_bytes": 64693,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-plugin-protocols",
+        "version": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592",
+        "source_digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "runtime": {
+        "profile": "plugin-mqtt",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.mqtt.protocol-versions-qos.compatibility.node-3",
+        "assertions": [
+          "compatibility",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-plugin-protocols/main.go",
+        "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/packet.json",
+          "digest": "sha256:313dbb5f8008ac50e593933b351136fa31d1ee8b913fbe96e8030370a33a0e88",
+          "size_bytes": 337,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/log.txt",
+          "digest": "sha256:2095e38f307dd0a68af16e84a9d155305fb00b7215b798e51cb6c634170ed29e",
+          "size_bytes": 31653,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/metric.json",
+          "digest": "sha256:945d3bdb7402aab30399be25d7e6988b722c40be4391db7dc681b7aa64933dfc",
+          "size_bytes": 64693,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

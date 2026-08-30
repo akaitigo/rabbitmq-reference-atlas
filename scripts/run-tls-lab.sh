@@ -84,6 +84,23 @@ fi
 
 "${COMPOSE[@]}" up -d --wait
 
+# rabbitmq-diagnostics pingはErlang nodeの起動を示すが、TLS listenerの
+# 証明書読込完了より先に成功する場合がある。Scenario clientは一度だけ
+# 実行し、listener readinessはBroker内のlistener inventoryで待つ。
+TLS_LISTENER_READY=''
+for _ in $(seq 1 60); do
+  if "${COMPOSE[@]}" exec -T rabbitmq-tls rabbitmq-diagnostics listeners 2>/dev/null | grep -q 'port: 5671'; then
+    TLS_LISTENER_READY=1
+    break
+  fi
+  sleep 1
+done
+if [[ -z "$TLS_LISTENER_READY" ]]; then
+  "${COMPOSE[@]}" logs --no-color --tail 200 rabbitmq-tls >&2
+  echo "RabbitMQ TLS listener 5671がreadiness期限内に起動しませんでした。" >&2
+  exit 1
+fi
+
 (cd "$ROOT" && go run ./cmd/rmq-tls-lab \
   --ca "$TLS_RUNTIME/ca-cert.pem" \
   --bad-ca "$TLS_RUNTIME/untrusted-ca-cert.pem" \

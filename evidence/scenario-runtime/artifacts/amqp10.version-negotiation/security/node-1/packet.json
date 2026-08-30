@@ -1,0 +1,13 @@
+{
+  "transport": "tcp",
+  "protocol": "amqp10",
+  "endpoint": "127.0.0.1:25672",
+  "request_response": {
+    "endpoint": "127.0.0.1:25672",
+    "sent_hex": "414d515000010000",
+    "received_hex": "414d515003010000",
+    "passed": true,
+    "oracle": "bare AMQP 1.0 is rejected by requiring SASL negotiation"
+  },
+  "source_run_created_at": "2026-08-30T11:42:39.789881Z"
+}

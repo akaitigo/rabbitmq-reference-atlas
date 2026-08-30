@@ -1,0 +1,1602 @@
+{
+  "node": "rabbitmq-1",
+  "management_nodes": {
+    "status": 200,
+    "body": [
+      {
+        "partitions": [],
+        "os_pid": "1",
+        "fd_total": 1048576,
+        "sockets_total": 0,
+        "mem_limit": 4991542886,
+        "mem_alarm": false,
+        "disk_free_limit": 50000000,
+        "disk_free_alarm": false,
+        "proc_total": 1048576,
+        "rates_mode": "basic",
+        "uptime": 92653,
+        "run_queue": 1,
+        "processors": 12,
+        "exchange_types": [
+          {
+            "name": "fanout",
+            "description": "AMQP fanout exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "headers",
+            "description": "AMQP headers exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "x-local-random",
+            "description": "Picks one random local binding (queue) to route via (to).",
+            "enabled": true
+          },
+          {
+            "name": "topic",
+            "description": "AMQP topic exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "x-modulus-hash",
+            "description": "Modulus Hashing Exchange",
+            "enabled": true
+          },
+          {
+            "name": "direct",
+            "description": "AMQP direct exchange, as per the AMQP specification",
+            "enabled": true
+          }
+        ],
+        "auth_mechanisms": [
+          {
+            "name": "AMQPLAIN",
+            "description": "QPid AMQPLAIN mechanism",
+            "enabled": true
+          },
+          {
+            "name": "PLAIN",
+            "description": "SASL PLAIN authentication mechanism",
+            "enabled": true
+          },
+          {
+            "name": "ANONYMOUS",
+            "description": "SASL ANONYMOUS authentication mechanism",
+            "enabled": true
+          },
+          {
+            "name": "RABBIT-CR-DEMO",
+            "description": "RabbitMQ Demo challenge-response authentication mechanism",
+            "enabled": false
+          }
+        ],
+        "applications": [
+          {
+            "name": "amqp10_common",
+            "description": "Modules shared by rabbitmq-amqp1.0 and rabbitmq-amqp1.0-client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "amqp_client",
+            "description": "RabbitMQ AMQP Client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "asn1",
+            "description": "The Erlang ASN1 compiler version 5.3.4.2",
+            "version": "5.3.4.2"
+          },
+          {
+            "name": "aten",
+            "description": "Erlang node failure detector",
+            "version": "0.6.0"
+          },
+          {
+            "name": "compiler",
+            "description": "ERTS  CXC 138 10",
+            "version": "8.6.1.5"
+          },
+          {
+            "name": "cowboy",
+            "description": "Small, fast, modern HTTP server.",
+            "version": "2.18.0"
+          },
+          {
+            "name": "cowlib",
+            "description": "Support library for manipulating Web protocols.",
+            "version": "2.19.0"
+          },
+          {
+            "name": "credentials_obfuscation",
+            "description": "Helper library that obfuscates sensitive values in process state",
+            "version": "3.5.0"
+          },
+          {
+            "name": "crypto",
+            "description": "CRYPTO",
+            "version": "5.5.3.4"
+          },
+          {
+            "name": "cuttlefish",
+            "description": "cuttlefish configuration abstraction",
+            "version": "3.9.1"
+          },
+          {
+            "name": "ddskerl",
+            "description": "DDSketch in Erlang",
+            "version": "0.4.2"
+          },
+          {
+            "name": "enough",
+            "description": "A gen_server implementation with additional, overload-protected call type",
+            "version": "0.1.0"
+          },
+          {
+            "name": "erts",
+            "description": "ERTS  CXC 138 10",
+            "version": "15.2.7.12"
+          },
+          {
+            "name": "gen_batch_server",
+            "description": "Generic batching server",
+            "version": "0.10.0"
+          },
+          {
+            "name": "horus",
+            "description": "Creates standalone modules from anonymous functions",
+            "version": "0.4.0"
+          },
+          {
+            "name": "inets",
+            "description": "INETS  CXC 138 49",
+            "version": "9.3.2.6"
+          },
+          {
+            "name": "kernel",
+            "description": "ERTS  CXC 138 10",
+            "version": "10.2.7.4"
+          },
+          {
+            "name": "khepri",
+            "description": "Tree-like replicated on-disk database library",
+            "version": "0.18.0"
+          },
+          {
+            "name": "khepri_mnesia_migration",
+            "description": "Tools to migrate between Mnesia and Khepri",
+            "version": "0.8.1"
+          },
+          {
+            "name": "oauth2_client",
+            "description": "OAuth2 client from the RabbitMQ Project",
+            "version": "4.3.5"
+          },
+          {
+            "name": "observer_cli",
+            "description": "Visualize Erlang Nodes On The Command Line",
+            "version": "1.8.2"
+          },
+          {
+            "name": "os_mon",
+            "description": "CPO  CXC 138 46",
+            "version": "2.10.1"
+          },
+          {
+            "name": "osiris",
+            "description": "Foundation of the log-based streaming subsystem for RabbitMQ",
+            "version": "1.13.1"
+          },
+          {
+            "name": "prometheus",
+            "description": "Prometheus.io client in Erlang",
+            "version": "6.1.1"
+          },
+          {
+            "name": "public_key",
+            "description": "Public key infrastructure",
+            "version": "1.17.1.5"
+          },
+          {
+            "name": "ra",
+            "description": "Raft library",
+            "version": "3.1.10"
+          },
+          {
+            "name": "rabbit",
+            "description": "RabbitMQ",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbit_common",
+            "description": "Modules shared by rabbitmq-server and rabbitmq-erlang-client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_management",
+            "description": "RabbitMQ Management Console",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_management_agent",
+            "description": "RabbitMQ Management Agent",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_prelaunch",
+            "description": "RabbitMQ prelaunch setup",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_prometheus",
+            "description": "Prometheus metrics for RabbitMQ",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_web_dispatch",
+            "description": "RabbitMQ Web Dispatcher",
+            "version": "4.3.5"
+          },
+          {
+            "name": "ranch",
+            "description": "Socket acceptor pool for TCP protocols.",
+            "version": "2.2.1"
+          },
+          {
+            "name": "recon",
+            "description": "Diagnostic tools for production use",
+            "version": "2.5.6"
+          },
+          {
+            "name": "redbug",
+            "description": "Erlang Tracing Debugger",
+            "version": "2.1.0"
+          },
+          {
+            "name": "runtime_tools",
+            "description": "RUNTIME_TOOLS",
+            "version": "2.1.1"
+          },
+          {
+            "name": "sasl",
+            "description": "SASL  CXC 138 11",
+            "version": "4.2.2.1"
+          },
+          {
+            "name": "seshat",
+            "description": "Counters registry",
+            "version": "1.0.1"
+          },
+          {
+            "name": "ssl",
+            "description": "Erlang/OTP SSL application",
+            "version": "11.2.12.11"
+          },
+          {
+            "name": "stdlib",
+            "description": "ERTS  CXC 138 10",
+            "version": "6.2.2.4"
+          },
+          {
+            "name": "stdout_formatter",
+            "description": "Tools to format paragraphs, lists and tables as plain text",
+            "version": "0.2.4"
+          },
+          {
+            "name": "syntax_tools",
+            "description": "Syntax tools",
+            "version": "3.2.2.2"
+          },
+          {
+            "name": "sysmon_handler",
+            "description": "Rate-limiting system_monitor event handler",
+            "version": "1.3.0"
+          },
+          {
+            "name": "systemd",
+            "description": "systemd integration for Erlang applications",
+            "version": "0.6.1"
+          },
+          {
+            "name": "thoas",
+            "description": "A blazing fast JSON parser and generator in pure Erlang.",
+            "version": "1.2.1"
+          },
+          {
+            "name": "tools",
+            "description": "DEVTOOLS  CXC 138 16",
+            "version": "4.1.1"
+          }
+        ],
+        "contexts": [
+          {
+            "description": "RabbitMQ Management",
+            "path": "/",
+            "cowboy_opts": "[{sendfile,false}]",
+            "port": "15672"
+          },
+          {
+            "description": "RabbitMQ Prometheus",
+            "path": "/",
+            "port": "15692",
+            "protocol": "'http/prometheus'",
+            "cowboy_opts": "[{sendfile,false}]"
+          }
+        ],
+        "log_files": [
+          "<stdout>"
+        ],
+        "db_dir": "/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1",
+        "config_files": [
+          "/etc/rabbitmq/rabbitmq.conf",
+          "/etc/rabbitmq/conf.d/10-defaults.conf"
+        ],
+        "net_ticktime": 60,
+        "enabled_plugins": [
+          "rabbitmq_management",
+          "rabbitmq_prometheus"
+        ],
+        "mem_calculation_strategy": "rss",
+        "ra_open_file_metrics": {
+          "ra_log_wal": 0,
+          "ra_log_segment_writer": 0
+        },
+        "rabbitmq_version": "4.3.5",
+        "erlang_version": "27.3.4.16",
+        "erlang_full_version": "Erlang/OTP 27 [erts-15.2.7.12] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]",
+        "crypto_lib_version": "OpenSSL 3.5.8 25 Aug 2026",
+        "name": "rabbit@rabbitmq-1",
+        "type": "disc",
+        "running": true,
+        "being_drained": false,
+        "mem_used": 166293504,
+        "mem_used_details": {
+          "rate": 9830.4
+        },
+        "fd_used": 40,
+        "fd_used_details": {
+          "rate": 0.0
+        },
+        "sockets_used": 0,
+        "sockets_used_details": {
+          "rate": 0.0
+        },
+        "proc_used": 422,
+        "proc_used_details": {
+          "rate": 0.0
+        },
+        "disk_free": 389002100736,
+        "disk_free_details": {
+          "rate": -1638.4
+        },
+        "gc_num": 5839,
+        "gc_num_details": {
+          "rate": 16.0
+        },
+        "gc_bytes_reclaimed": 416903880,
+        "gc_bytes_reclaimed_details": {
+          "rate": 94460.8
+        },
+        "context_switches": 120792,
+        "context_switches_details": {
+          "rate": 125.6
+        },
+        "io_read_count": 0,
+        "io_read_count_details": {
+          "rate": 0.0
+        },
+        "io_read_bytes": 0,
+        "io_read_bytes_details": {
+          "rate": 0.0
+        },
+        "io_read_avg_time": 0.0,
+        "io_read_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_write_count": 0,
+        "io_write_count_details": {
+          "rate": 0.0
+        },
+        "io_write_bytes": 0,
+        "io_write_bytes_details": {
+          "rate": 0.0
+        },
+        "io_write_avg_time": 0.0,
+        "io_write_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_sync_count": 0,
+        "io_sync_count_details": {
+          "rate": 0.0
+        },
+        "io_sync_avg_time": 0.0,
+        "io_sync_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_seek_count": 0,
+        "io_seek_count_details": {
+          "rate": 0.0
+        },
+        "io_seek_avg_time": 0.0,
+        "io_seek_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_reopen_count": 0,
+        "io_reopen_count_details": {
+          "rate": 0.0
+        },
+        "mnesia_ram_tx_count": 0,
+        "mnesia_ram_tx_count_details": {
+          "rate": 0.0
+        },
+        "mnesia_disk_tx_count": 0,
+        "mnesia_disk_tx_count_details": {
+          "rate": 0.0
+        },
+        "msg_store_read_count": 0,
+        "msg_store_read_count_details": {
+          "rate": 0.0
+        },
+        "msg_store_write_count": 0,
+        "msg_store_write_count_details": {
+          "rate": 0.0
+        },
+        "queue_index_write_count": 0,
+        "queue_index_write_count_details": {
+          "rate": 0.0
+        },
+        "queue_index_read_count": 0,
+        "queue_index_read_count_details": {
+          "rate": 0.0
+        },
+        "connection_created": 1,
+        "connection_created_details": {
+          "rate": 0.0
+        },
+        "connection_closed": 1,
+        "connection_closed_details": {
+          "rate": 0.0
+        },
+        "channel_created": 1,
+        "channel_created_details": {
+          "rate": 0.0
+        },
+        "channel_closed": 1,
+        "channel_closed_details": {
+          "rate": 0.0
+        },
+        "queue_declared": 1,
+        "queue_declared_details": {
+          "rate": 0.0
+        },
+        "queue_created": 1,
+        "queue_created_details": {
+          "rate": 0.0
+        },
+        "queue_deleted": 0,
+        "queue_deleted_details": {
+          "rate": 0.0
+        },
+        "cluster_links": [
+          {
+            "stats": {
+              "send_bytes": 85282,
+              "send_bytes_details": {
+                "rate": 0.0
+              },
+              "recv_bytes": 105636,
+              "recv_bytes_details": {
+                "rate": 0.0
+              }
+            },
+            "name": "rabbit@rabbitmq-2",
+            "peer_addr": "192.168.80.4",
+            "peer_port": 41202,
+            "sock_addr": "192.168.80.2",
+            "sock_port": 25672,
+            "recv_bytes": 9973,
+            "send_bytes": 9731
+          },
+          {
+            "stats": {
+              "send_bytes": 50696,
+              "send_bytes_details": {
+                "rate": 0.0
+              },
+              "recv_bytes": 68658,
+              "recv_bytes_details": {
+                "rate": 0.0
+              }
+            },
+            "name": "rabbit@rabbitmq-3",
+            "peer_addr": "192.168.80.3",
+            "peer_port": 58718,
+            "sock_addr": "192.168.80.2",
+            "sock_port": 25672,
+            "recv_bytes": 14800,
+            "send_bytes": 11023
+          }
+        ],
+        "metrics_gc_queue_length": {
+          "connection_closed": 0,
+          "channel_closed": 0,
+          "consumer_deleted": 0,
+          "exchange_deleted": 0,
+          "queue_deleted": 0,
+          "vhost_deleted": 0,
+          "node_node_deleted": 0,
+          "channel_consumer_deleted": 0
+        }
+      },
+      {
+        "partitions": [],
+        "os_pid": "1",
+        "fd_total": 1048576,
+        "sockets_total": 0,
+        "mem_limit": 4991542886,
+        "mem_alarm": false,
+        "disk_free_limit": 50000000,
+        "disk_free_alarm": false,
+        "proc_total": 1048576,
+        "rates_mode": "basic",
+        "uptime": 233828,
+        "run_queue": 0,
+        "processors": 12,
+        "exchange_types": [
+          {
+            "name": "fanout",
+            "description": "AMQP fanout exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "x-modulus-hash",
+            "description": "Modulus Hashing Exchange",
+            "enabled": true
+          },
+          {
+            "name": "headers",
+            "description": "AMQP headers exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "direct",
+            "description": "AMQP direct exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "topic",
+            "description": "AMQP topic exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "x-local-random",
+            "description": "Picks one random local binding (queue) to route via (to).",
+            "enabled": true
+          }
+        ],
+        "auth_mechanisms": [
+          {
+            "name": "PLAIN",
+            "description": "SASL PLAIN authentication mechanism",
+            "enabled": true
+          },
+          {
+            "name": "RABBIT-CR-DEMO",
+            "description": "RabbitMQ Demo challenge-response authentication mechanism",
+            "enabled": false
+          },
+          {
+            "name": "AMQPLAIN",
+            "description": "QPid AMQPLAIN mechanism",
+            "enabled": true
+          },
+          {
+            "name": "ANONYMOUS",
+            "description": "SASL ANONYMOUS authentication mechanism",
+            "enabled": true
+          }
+        ],
+        "applications": [
+          {
+            "name": "amqp10_common",
+            "description": "Modules shared by rabbitmq-amqp1.0 and rabbitmq-amqp1.0-client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "amqp_client",
+            "description": "RabbitMQ AMQP Client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "asn1",
+            "description": "The Erlang ASN1 compiler version 5.3.4.2",
+            "version": "5.3.4.2"
+          },
+          {
+            "name": "aten",
+            "description": "Erlang node failure detector",
+            "version": "0.6.0"
+          },
+          {
+            "name": "compiler",
+            "description": "ERTS  CXC 138 10",
+            "version": "8.6.1.5"
+          },
+          {
+            "name": "cowboy",
+            "description": "Small, fast, modern HTTP server.",
+            "version": "2.18.0"
+          },
+          {
+            "name": "cowlib",
+            "description": "Support library for manipulating Web protocols.",
+            "version": "2.19.0"
+          },
+          {
+            "name": "credentials_obfuscation",
+            "description": "Helper library that obfuscates sensitive values in process state",
+            "version": "3.5.0"
+          },
+          {
+            "name": "crypto",
+            "description": "CRYPTO",
+            "version": "5.5.3.4"
+          },
+          {
+            "name": "cuttlefish",
+            "description": "cuttlefish configuration abstraction",
+            "version": "3.9.1"
+          },
+          {
+            "name": "ddskerl",
+            "description": "DDSketch in Erlang",
+            "version": "0.4.2"
+          },
+          {
+            "name": "enough",
+            "description": "A gen_server implementation with additional, overload-protected call type",
+            "version": "0.1.0"
+          },
+          {
+            "name": "erts",
+            "description": "ERTS  CXC 138 10",
+            "version": "15.2.7.12"
+          },
+          {
+            "name": "gen_batch_server",
+            "description": "Generic batching server",
+            "version": "0.10.0"
+          },
+          {
+            "name": "horus",
+            "description": "Creates standalone modules from anonymous functions",
+            "version": "0.4.0"
+          },
+          {
+            "name": "inets",
+            "description": "INETS  CXC 138 49",
+            "version": "9.3.2.6"
+          },
+          {
+            "name": "kernel",
+            "description": "ERTS  CXC 138 10",
+            "version": "10.2.7.4"
+          },
+          {
+            "name": "khepri",
+            "description": "Tree-like replicated on-disk database library",
+            "version": "0.18.0"
+          },
+          {
+            "name": "khepri_mnesia_migration",
+            "description": "Tools to migrate between Mnesia and Khepri",
+            "version": "0.8.1"
+          },
+          {
+            "name": "oauth2_client",
+            "description": "OAuth2 client from the RabbitMQ Project",
+            "version": "4.3.5"
+          },
+          {
+            "name": "observer_cli",
+            "description": "Visualize Erlang Nodes On The Command Line",
+            "version": "1.8.2"
+          },
+          {
+            "name": "os_mon",
+            "description": "CPO  CXC 138 46",
+            "version": "2.10.1"
+          },
+          {
+            "name": "osiris",
+            "description": "Foundation of the log-based streaming subsystem for RabbitMQ",
+            "version": "1.13.1"
+          },
+          {
+            "name": "prometheus",
+            "description": "Prometheus.io client in Erlang",
+            "version": "6.1.1"
+          },
+          {
+            "name": "public_key",
+            "description": "Public key infrastructure",
+            "version": "1.17.1.5"
+          },
+          {
+            "name": "ra",
+            "description": "Raft library",
+            "version": "3.1.10"
+          },
+          {
+            "name": "rabbit",
+            "description": "RabbitMQ",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbit_common",
+            "description": "Modules shared by rabbitmq-server and rabbitmq-erlang-client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_management",
+            "description": "RabbitMQ Management Console",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_management_agent",
+            "description": "RabbitMQ Management Agent",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_prelaunch",
+            "description": "RabbitMQ prelaunch setup",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_prometheus",
+            "description": "Prometheus metrics for RabbitMQ",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_web_dispatch",
+            "description": "RabbitMQ Web Dispatcher",
+            "version": "4.3.5"
+          },
+          {
+            "name": "ranch",
+            "description": "Socket acceptor pool for TCP protocols.",
+            "version": "2.2.1"
+          },
+          {
+            "name": "recon",
+            "description": "Diagnostic tools for production use",
+            "version": "2.5.6"
+          },
+          {
+            "name": "redbug",
+            "description": "Erlang Tracing Debugger",
+            "version": "2.1.0"
+          },
+          {
+            "name": "runtime_tools",
+            "description": "RUNTIME_TOOLS",
+            "version": "2.1.1"
+          },
+          {
+            "name": "sasl",
+            "description": "SASL  CXC 138 11",
+            "version": "4.2.2.1"
+          },
+          {
+            "name": "seshat",
+            "description": "Counters registry",
+            "version": "1.0.1"
+          },
+          {
+            "name": "ssl",
+            "description": "Erlang/OTP SSL application",
+            "version": "11.2.12.11"
+          },
+          {
+            "name": "stdlib",
+            "description": "ERTS  CXC 138 10",
+            "version": "6.2.2.4"
+          },
+          {
+            "name": "stdout_formatter",
+            "description": "Tools to format paragraphs, lists and tables as plain text",
+            "version": "0.2.4"
+          },
+          {
+            "name": "syntax_tools",
+            "description": "Syntax tools",
+            "version": "3.2.2.2"
+          },
+          {
+            "name": "sysmon_handler",
+            "description": "Rate-limiting system_monitor event handler",
+            "version": "1.3.0"
+          },
+          {
+            "name": "systemd",
+            "description": "systemd integration for Erlang applications",
+            "version": "0.6.1"
+          },
+          {
+            "name": "thoas",
+            "description": "A blazing fast JSON parser and generator in pure Erlang.",
+            "version": "1.2.1"
+          },
+          {
+            "name": "tools",
+            "description": "DEVTOOLS  CXC 138 16",
+            "version": "4.1.1"
+          }
+        ],
+        "contexts": [
+          {
+            "description": "RabbitMQ Management",
+            "path": "/",
+            "cowboy_opts": "[{sendfile,false}]",
+            "port": "15672"
+          },
+          {
+            "description": "RabbitMQ Prometheus",
+            "path": "/",
+            "port": "15692",
+            "protocol": "'http/prometheus'",
+            "cowboy_opts": "[{sendfile,false}]"
+          }
+        ],
+        "log_files": [
+          "<stdout>"
+        ],
+        "db_dir": "/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-2",
+        "config_files": [
+          "/etc/rabbitmq/rabbitmq.conf",
+          "/etc/rabbitmq/conf.d/10-defaults.conf"
+        ],
+        "net_ticktime": 60,
+        "enabled_plugins": [
+          "rabbitmq_management",
+          "rabbitmq_prometheus"
+        ],
+        "mem_calculation_strategy": "rss",
+        "ra_open_file_metrics": {
+          "ra_log_wal": 0,
+          "ra_log_segment_writer": 0
+        },
+        "rabbitmq_version": "4.3.5",
+        "erlang_version": "27.3.4.16",
+        "erlang_full_version": "Erlang/OTP 27 [erts-15.2.7.12] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]",
+        "crypto_lib_version": "OpenSSL 3.5.8 25 Aug 2026",
+        "name": "rabbit@rabbitmq-2",
+        "type": "disc",
+        "running": true,
+        "being_drained": false,
+        "mem_used": 166305792,
+        "mem_used_details": {
+          "rate": 9011.2
+        },
+        "fd_used": 40,
+        "fd_used_details": {
+          "rate": 0.0
+        },
+        "sockets_used": 0,
+        "sockets_used_details": {
+          "rate": 0.0
+        },
+        "proc_used": 423,
+        "proc_used_details": {
+          "rate": 0.0
+        },
+        "disk_free": 389002108928,
+        "disk_free_details": {
+          "rate": 0.0
+        },
+        "gc_num": 12161,
+        "gc_num_details": {
+          "rate": 27.0
+        },
+        "gc_bytes_reclaimed": 598810584,
+        "gc_bytes_reclaimed_details": {
+          "rate": 344244.8
+        },
+        "context_switches": 186131,
+        "context_switches_details": {
+          "rate": 141.4
+        },
+        "io_read_count": 0,
+        "io_read_count_details": {
+          "rate": 0.0
+        },
+        "io_read_bytes": 0,
+        "io_read_bytes_details": {
+          "rate": 0.0
+        },
+        "io_read_avg_time": 0.0,
+        "io_read_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_write_count": 0,
+        "io_write_count_details": {
+          "rate": 0.0
+        },
+        "io_write_bytes": 0,
+        "io_write_bytes_details": {
+          "rate": 0.0
+        },
+        "io_write_avg_time": 0.0,
+        "io_write_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_sync_count": 0,
+        "io_sync_count_details": {
+          "rate": 0.0
+        },
+        "io_sync_avg_time": 0.0,
+        "io_sync_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_seek_count": 0,
+        "io_seek_count_details": {
+          "rate": 0.0
+        },
+        "io_seek_avg_time": 0.0,
+        "io_seek_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_reopen_count": 0,
+        "io_reopen_count_details": {
+          "rate": 0.0
+        },
+        "mnesia_ram_tx_count": 0,
+        "mnesia_ram_tx_count_details": {
+          "rate": 0.0
+        },
+        "mnesia_disk_tx_count": 0,
+        "mnesia_disk_tx_count_details": {
+          "rate": 0.0
+        },
+        "msg_store_read_count": 0,
+        "msg_store_read_count_details": {
+          "rate": 0.0
+        },
+        "msg_store_write_count": 0,
+        "msg_store_write_count_details": {
+          "rate": 0.0
+        },
+        "queue_index_write_count": 0,
+        "queue_index_write_count_details": {
+          "rate": 0.0
+        },
+        "queue_index_read_count": 0,
+        "queue_index_read_count_details": {
+          "rate": 0.0
+        },
+        "connection_created": 15,
+        "connection_created_details": {
+          "rate": 0.0
+        },
+        "connection_closed": 24,
+        "connection_closed_details": {
+          "rate": 0.0
+        },
+        "channel_created": 8,
+        "channel_created_details": {
+          "rate": 0.0
+        },
+        "channel_closed": 8,
+        "channel_closed_details": {
+          "rate": 0.0
+        },
+        "queue_declared": 2,
+        "queue_declared_details": {
+          "rate": 0.0
+        },
+        "queue_created": 2,
+        "queue_created_details": {
+          "rate": 0.0
+        },
+        "queue_deleted": 4,
+        "queue_deleted_details": {
+          "rate": 0.0
+        },
+        "cluster_links": [
+          {
+            "stats": {
+              "send_bytes": 136265,
+              "send_bytes_details": {
+                "rate": 0.0
+              },
+              "recv_bytes": 50750,
+              "recv_bytes_details": {
+                "rate": 0.0
+              }
+            },
+            "name": "rabbit@rabbitmq-1",
+            "peer_addr": "192.168.80.2",
+            "peer_port": 25672,
+            "sock_addr": "192.168.80.4",
+            "sock_port": 41202,
+            "recv_bytes": 9635,
+            "send_bytes": 9877
+          },
+          {
+            "stats": {
+              "send_bytes": 710344,
+              "send_bytes_details": {
+                "rate": 3380.2
+              },
+              "recv_bytes": 440765,
+              "recv_bytes_details": {
+                "rate": 3462.8
+              }
+            },
+            "name": "rabbit@rabbitmq-3",
+            "peer_addr": "192.168.80.3",
+            "peer_port": 25672,
+            "sock_addr": "192.168.80.4",
+            "sock_port": 57186,
+            "recv_bytes": 446030,
+            "send_bytes": 715583
+          }
+        ],
+        "metrics_gc_queue_length": {
+          "connection_closed": 0,
+          "channel_closed": 0,
+          "consumer_deleted": 0,
+          "exchange_deleted": 0,
+          "queue_deleted": 0,
+          "vhost_deleted": 0,
+          "node_node_deleted": 0,
+          "channel_consumer_deleted": 0
+        }
+      },
+      {
+        "partitions": [],
+        "os_pid": "1",
+        "fd_total": 1048576,
+        "sockets_total": 0,
+        "mem_limit": 4991542886,
+        "mem_alarm": false,
+        "disk_free_limit": 50000000,
+        "disk_free_alarm": false,
+        "proc_total": 1048576,
+        "rates_mode": "basic",
+        "uptime": 233581,
+        "run_queue": 1,
+        "processors": 12,
+        "exchange_types": [
+          {
+            "name": "x-modulus-hash",
+            "description": "Modulus Hashing Exchange",
+            "enabled": true
+          },
+          {
+            "name": "fanout",
+            "description": "AMQP fanout exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "headers",
+            "description": "AMQP headers exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "x-local-random",
+            "description": "Picks one random local binding (queue) to route via (to).",
+            "enabled": true
+          },
+          {
+            "name": "topic",
+            "description": "AMQP topic exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "direct",
+            "description": "AMQP direct exchange, as per the AMQP specification",
+            "enabled": true
+          }
+        ],
+        "auth_mechanisms": [
+          {
+            "name": "AMQPLAIN",
+            "description": "QPid AMQPLAIN mechanism",
+            "enabled": true
+          },
+          {
+            "name": "PLAIN",
+            "description": "SASL PLAIN authentication mechanism",
+            "enabled": true
+          },
+          {
+            "name": "ANONYMOUS",
+            "description": "SASL ANONYMOUS authentication mechanism",
+            "enabled": true
+          },
+          {
+            "name": "RABBIT-CR-DEMO",
+            "description": "RabbitMQ Demo challenge-response authentication mechanism",
+            "enabled": false
+          }
+        ],
+        "applications": [
+          {
+            "name": "amqp10_common",
+            "description": "Modules shared by rabbitmq-amqp1.0 and rabbitmq-amqp1.0-client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "amqp_client",
+            "description": "RabbitMQ AMQP Client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "asn1",
+            "description": "The Erlang ASN1 compiler version 5.3.4.2",
+            "version": "5.3.4.2"
+          },
+          {
+            "name": "aten",
+            "description": "Erlang node failure detector",
+            "version": "0.6.0"
+          },
+          {
+            "name": "compiler",
+            "description": "ERTS  CXC 138 10",
+            "version": "8.6.1.5"
+          },
+          {
+            "name": "cowboy",
+            "description": "Small, fast, modern HTTP server.",
+            "version": "2.18.0"
+          },
+          {
+            "name": "cowlib",
+            "description": "Support library for manipulating Web protocols.",
+            "version": "2.19.0"
+          },
+          {
+            "name": "credentials_obfuscation",
+            "description": "Helper library that obfuscates sensitive values in process state",
+            "version": "3.5.0"
+          },
+          {
+            "name": "crypto",
+            "description": "CRYPTO",
+            "version": "5.5.3.4"
+          },
+          {
+            "name": "cuttlefish",
+            "description": "cuttlefish configuration abstraction",
+            "version": "3.9.1"
+          },
+          {
+            "name": "ddskerl",
+            "description": "DDSketch in Erlang",
+            "version": "0.4.2"
+          },
+          {
+            "name": "enough",
+            "description": "A gen_server implementation with additional, overload-protected call type",
+            "version": "0.1.0"
+          },
+          {
+            "name": "erts",
+            "description": "ERTS  CXC 138 10",
+            "version": "15.2.7.12"
+          },
+          {
+            "name": "gen_batch_server",
+            "description": "Generic batching server",
+            "version": "0.10.0"
+          },
+          {
+            "name": "horus",
+            "description": "Creates standalone modules from anonymous functions",
+            "version": "0.4.0"
+          },
+          {
+            "name": "inets",
+            "description": "INETS  CXC 138 49",
+            "version": "9.3.2.6"
+          },
+          {
+            "name": "kernel",
+            "description": "ERTS  CXC 138 10",
+            "version": "10.2.7.4"
+          },
+          {
+            "name": "khepri",
+            "description": "Tree-like replicated on-disk database library",
+            "version": "0.18.0"
+          },
+          {
+            "name": "khepri_mnesia_migration",
+            "description": "Tools to migrate between Mnesia and Khepri",
+            "version": "0.8.1"
+          },
+          {
+            "name": "oauth2_client",
+            "description": "OAuth2 client from the RabbitMQ Project",
+            "version": "4.3.5"
+          },
+          {
+            "name": "observer_cli",
+            "description": "Visualize Erlang Nodes On The Command Line",
+            "version": "1.8.2"
+          },
+          {
+            "name": "os_mon",
+            "description": "CPO  CXC 138 46",
+            "version": "2.10.1"
+          },
+          {
+            "name": "osiris",
+            "description": "Foundation of the log-based streaming subsystem for RabbitMQ",
+            "version": "1.13.1"
+          },
+          {
+            "name": "prometheus",
+            "description": "Prometheus.io client in Erlang",
+            "version": "6.1.1"
+          },
+          {
+            "name": "public_key",
+            "description": "Public key infrastructure",
+            "version": "1.17.1.5"
+          },
+          {
+            "name": "ra",
+            "description": "Raft library",
+            "version": "3.1.10"
+          },
+          {
+            "name": "rabbit",
+            "description": "RabbitMQ",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbit_common",
+            "description": "Modules shared by rabbitmq-server and rabbitmq-erlang-client",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_management",
+            "description": "RabbitMQ Management Console",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_management_agent",
+            "description": "RabbitMQ Management Agent",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_prelaunch",
+            "description": "RabbitMQ prelaunch setup",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_prometheus",
+            "description": "Prometheus metrics for RabbitMQ",
+            "version": "4.3.5"
+          },
+          {
+            "name": "rabbitmq_web_dispatch",
+            "description": "RabbitMQ Web Dispatcher",
+            "version": "4.3.5"
+          },
+          {
+            "name": "ranch",
+            "description": "Socket acceptor pool for TCP protocols.",
+            "version": "2.2.1"
+          },
+          {
+            "name": "recon",
+            "description": "Diagnostic tools for production use",
+            "version": "2.5.6"
+          },
+          {
+            "name": "redbug",
+            "description": "Erlang Tracing Debugger",
+            "version": "2.1.0"
+          },
+          {
+            "name": "runtime_tools",
+            "description": "RUNTIME_TOOLS",
+            "version": "2.1.1"
+          },
+          {
+            "name": "sasl",
+            "description": "SASL  CXC 138 11",
+            "version": "4.2.2.1"
+          },
+          {
+            "name": "seshat",
+            "description": "Counters registry",
+            "version": "1.0.1"
+          },
+          {
+            "name": "ssl",
+            "description": "Erlang/OTP SSL application",
+            "version": "11.2.12.11"
+          },
+          {
+            "name": "stdlib",
+            "description": "ERTS  CXC 138 10",
+            "version": "6.2.2.4"
+          },
+          {
+            "name": "stdout_formatter",
+            "description": "Tools to format paragraphs, lists and tables as plain text",
+            "version": "0.2.4"
+          },
+          {
+            "name": "syntax_tools",
+            "description": "Syntax tools",
+            "version": "3.2.2.2"
+          },
+          {
+            "name": "sysmon_handler",
+            "description": "Rate-limiting system_monitor event handler",
+            "version": "1.3.0"
+          },
+          {
+            "name": "systemd",
+            "description": "systemd integration for Erlang applications",
+            "version": "0.6.1"
+          },
+          {
+            "name": "thoas",
+            "description": "A blazing fast JSON parser and generator in pure Erlang.",
+            "version": "1.2.1"
+          },
+          {
+            "name": "tools",
+            "description": "DEVTOOLS  CXC 138 16",
+            "version": "4.1.1"
+          }
+        ],
+        "contexts": [
+          {
+            "description": "RabbitMQ Management",
+            "path": "/",
+            "cowboy_opts": "[{sendfile,false}]",
+            "port": "15672"
+          },
+          {
+            "description": "RabbitMQ Prometheus",
+            "path": "/",
+            "port": "15692",
+            "protocol": "'http/prometheus'",
+            "cowboy_opts": "[{sendfile,false}]"
+          }
+        ],
+        "log_files": [
+          "<stdout>"
+        ],
+        "db_dir": "/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3",
+        "config_files": [
+          "/etc/rabbitmq/rabbitmq.conf",
+          "/etc/rabbitmq/conf.d/10-defaults.conf"
+        ],
+        "net_ticktime": 60,
+        "enabled_plugins": [
+          "rabbitmq_management",
+          "rabbitmq_prometheus"
+        ],
+        "mem_calculation_strategy": "rss",
+        "ra_open_file_metrics": {
+          "ra_log_wal": 0,
+          "ra_log_segment_writer": 0
+        },
+        "rabbitmq_version": "4.3.5",
+        "erlang_version": "27.3.4.16",
+        "erlang_full_version": "Erlang/OTP 27 [erts-15.2.7.12] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]",
+        "crypto_lib_version": "OpenSSL 3.5.8 25 Aug 2026",
+        "name": "rabbit@rabbitmq-3",
+        "type": "disc",
+        "running": true,
+        "being_drained": false,
+        "mem_used": 174829568,
+        "mem_used_details": {
+          "rate": -82739.2
+        },
+        "fd_used": 40,
+        "fd_used_details": {
+          "rate": 0.0
+        },
+        "sockets_used": 0,
+        "sockets_used_details": {
+          "rate": 0.0
+        },
+        "proc_used": 423,
+        "proc_used_details": {
+          "rate": 0.0
+        },
+        "disk_free": 389002108928,
+        "disk_free_details": {
+          "rate": 0.0
+        },
+        "gc_num": 11610,
+        "gc_num_details": {
+          "rate": 12.2
+        },
+        "gc_bytes_reclaimed": 587634104,
+        "gc_bytes_reclaimed_details": {
+          "rate": 113684.8
+        },
+        "context_switches": 183556,
+        "context_switches_details": {
+          "rate": 103.6
+        },
+        "io_read_count": 0,
+        "io_read_count_details": {
+          "rate": 0.0
+        },
+        "io_read_bytes": 0,
+        "io_read_bytes_details": {
+          "rate": 0.0
+        },
+        "io_read_avg_time": 0.0,
+        "io_read_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_write_count": 0,
+        "io_write_count_details": {
+          "rate": 0.0
+        },
+        "io_write_bytes": 0,
+        "io_write_bytes_details": {
+          "rate": 0.0
+        },
+        "io_write_avg_time": 0.0,
+        "io_write_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_sync_count": 0,
+        "io_sync_count_details": {
+          "rate": 0.0
+        },
+        "io_sync_avg_time": 0.0,
+        "io_sync_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_seek_count": 0,
+        "io_seek_count_details": {
+          "rate": 0.0
+        },
+        "io_seek_avg_time": 0.0,
+        "io_seek_avg_time_details": {
+          "rate": 0.0
+        },
+        "io_reopen_count": 0,
+        "io_reopen_count_details": {
+          "rate": 0.0
+        },
+        "mnesia_ram_tx_count": 0,
+        "mnesia_ram_tx_count_details": {
+          "rate": 0.0
+        },
+        "mnesia_disk_tx_count": 0,
+        "mnesia_disk_tx_count_details": {
+          "rate": 0.0
+        },
+        "msg_store_read_count": 0,
+        "msg_store_read_count_details": {
+          "rate": 0.0
+        },
+        "msg_store_write_count": 0,
+        "msg_store_write_count_details": {
+          "rate": 0.0
+        },
+        "queue_index_write_count": 0,
+        "queue_index_write_count_details": {
+          "rate": 0.0
+        },
+        "queue_index_read_count": 0,
+        "queue_index_read_count_details": {
+          "rate": 0.0
+        },
+        "connection_created": 11,
+        "connection_created_details": {
+          "rate": 0.0
+        },
+        "connection_closed": 21,
+        "connection_closed_details": {
+          "rate": 0.0
+        },
+        "channel_created": 5,
+        "channel_created_details": {
+          "rate": 0.0
+        },
+        "channel_closed": 5,
+        "channel_closed_details": {
+          "rate": 0.0
+        },
+        "queue_declared": 2,
+        "queue_declared_details": {
+          "rate": 0.0
+        },
+        "queue_created": 2,
+        "queue_created_details": {
+          "rate": 0.0
+        },
+        "queue_deleted": 2,
+        "queue_deleted_details": {
+          "rate": 0.0
+        },
+        "cluster_links": [
+          {
+            "stats": {
+              "send_bytes": 99314,
+              "send_bytes_details": {
+                "rate": 0.0
+              },
+              "recv_bytes": 19568,
+              "recv_bytes_details": {
+                "rate": 0.0
+              }
+            },
+            "name": "rabbit@rabbitmq-1",
+            "peer_addr": "192.168.80.2",
+            "peer_port": 25672,
+            "sock_addr": "192.168.80.3",
+            "sock_port": 58718,
+            "recv_bytes": 9985,
+            "send_bytes": 13352
+          },
+          {
+            "stats": {
+              "send_bytes": 438685,
+              "send_bytes_details": {
+                "rate": 3075.6
+              },
+              "recv_bytes": 698055,
+              "recv_bytes_details": {
+                "rate": 951.2
+              }
+            },
+            "name": "rabbit@rabbitmq-2",
+            "peer_addr": "192.168.80.4",
+            "peer_port": 57186,
+            "sock_addr": "192.168.80.3",
+            "sock_port": 25672,
+            "recv_bytes": 715487,
+            "send_bytes": 445934
+          }
+        ],
+        "metrics_gc_queue_length": {
+          "connection_closed": 0,
+          "channel_closed": 0,
+          "consumer_deleted": 0,
+          "exchange_deleted": 0,
+          "queue_deleted": 0,
+          "vhost_deleted": 0,
+          "node_node_deleted": 0,
+          "channel_consumer_deleted": 0
+        }
+      }
+    ],
+    "error": null
+  },
+  "cluster_status": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-1",
+      "rabbitmqctl",
+      "cluster_status",
+      "--formatter",
+      "json"
+    ],
+    "returncode": 0,
+    "stdout": "{\"alarms\":[],\"cluster_tags\":[],\"listeners\":{\"rabbit@rabbitmq-1\":[{\"node\":\"rabbit@rabbitmq-1\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}],\"rabbit@rabbitmq-2\":[{\"node\":\"rabbit@rabbitmq-2\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}],\"rabbit@rabbitmq-3\":[{\"node\":\"rabbit@rabbitmq-3\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}]},\"cpu_cores\":{\"rabbit@rabbitmq-1\":12,\"rabbit@rabbitmq-2\":12,\"rabbit@rabbitmq-3\":12},\"cluster_name\":\"rabbit@rabbitmq-1\",\"disk_nodes\":[\"rabbit@rabbitmq-1\",\"rabbit@rabbitmq-2\",\"rabbit@rabbitmq-3\"],\"running_nodes\":[\"rabbit@rabbitmq-1\",\"rabbit@rabbitmq-2\",\"rabbit@rabbitmq-3\"],\"versions\":{\"rabbit@rabbitmq-1\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"},\"rabbit@rabbitmq-2\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"},\"rabbit@rabbitmq-3\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"}},\"partitions\":{},\"maintenance_status\":{\"rabbit@rabbitmq-1\":\"not under maintenance\",\"rabbit@rabbitmq-2\":\"not under maintenance\",\"rabbit@rabbitmq-3\":\"not under maintenance\"},\"feature_flags\":[{\"name\":\"classic_mirrored_queue_version\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support setting version for classic mirrored queues\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"classic_queue_type_delivery_support\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix for classic queue deliveries using mixed versions\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/5931\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"detailed_queues_endpoint\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Add a detailed queues HTTP API endpoint. Reduce number of metrics in the default endpoint.\",\"provided_by\":\"rabbitmq_management\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"direct_exchange_routing_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"v2 direct exchange routing implementation\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"drop_unroutable_metric\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Count unroutable publishes to be dropped in stats\",\"provided_by\":\"rabbitmq_management_agent\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"empty_basic_get_metric\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Count AMQP `basic.get` on empty queues in stats\",\"provided_by\":\"rabbitmq_management_agent\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"feature_flags_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Feature flags subsystem V2\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"implicit_default_bindings\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Default bindings are now implicit, instead of being stored in the database\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"khepri_db\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"New Raft-based metadata store.\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/next/metadata-store\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"listener_records_in_ets\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Store listener records in ETS instead of Mnesia\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"maintenance_mode_status\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Maintenance mode status\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"message_containers\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Message containers.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"message_containers_deaths_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix for dead letter cycle detection\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/11159\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"quorum_queue\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support queues of type `quorum`\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/quorum-queues\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"quorum_queue_non_voters\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows new quorum queue members to be added as non voters initially.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbit_exchange_type_local_random\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Local random exchange\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.0.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades from 3.13.x to 4.0.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.1.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades to 4.1.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.2.0\",\"state\":\"enabled\",\"callbacks\":[\"enable\"],\"desc\":\"Allows rolling upgrades to 4.2.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.3.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades to 4.3.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"restart_streams\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support for restarting streams with optional preferred next leader argument.Used to implement stream leader rebalancing\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_filtering\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support for stream filtering.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_queue\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support queues of type `stream`\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/stream\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_sac_coordinator_unblock_group\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix to unblock a group of consumers in a super stream partition\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/7743\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_single_active_consumer\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Single active consumer for streams\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/stream\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_update_config_command\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"A new internal command that is used to update streams as part of a policy.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"tie_binding_to_dest_with_keep_while_cond\",\"state\":\"enabled\",\"callbacks\":[\"enable\"],\"desc\":\"Use keep_while condition to tie a binding record lifetime to its destination record in Khepri\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"topic_binding_projection_v4\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"Enable the topic binding Khepri projection v4\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"topic_binding_projection_v5\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"Enable the topic binding Khepri projection v5\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"track_qq_members_uids\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Track queue members UIDs in the metadata store\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"tracking_records_in_ets\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Store tracking records in ETS instead of Mnesia\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"user_limits\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Configure connection and channel limits for a user\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"virtual_host_metadata\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Virtual host metadata (description, tags, etc)\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"}]}\n",
+    "stderr": ""
+  }
+}

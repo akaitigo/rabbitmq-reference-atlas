@@ -24,4 +24,4 @@ python3 scripts/test-scenario-proofs.py
 python3 scripts/validate-scenario-proofs.py
 ```
 
-現時点はRequired 951 row、legacy runtime observation 12、専用runtime report 0、Scenario gap closed 0、Completion eligible 0である。
+現時点はRequired 951 row、legacy runtime observation 12、専用runtime report 9、Scenario gap closed 9、Completion eligible 0である。専用reportはAMQP 1.0のnormal/boundary/rejection/security、MQTTとSTOMPのcompatibility、Quorumのfailure、Partitionのoperations/recoveryをRabbitMQ 4.3.5の3-node runtimeで駆動し、3 Variant × 3 channelの81 Artifact bindingを保持する。残り942 rowとAuthority atomic bindingは未Closureである。

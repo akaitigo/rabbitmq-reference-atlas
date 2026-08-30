@@ -120,7 +120,9 @@ print("Evidence transaction tests PASS: partial/mixed/failed-run/swap-failureを
 # Python producerがRABBITMQ_EVIDENCE_ROOT外のlive Evidenceへ書かないことを確認する。
 repository_root = Path(__file__).resolve().parents[1]
 live_evidence = repository_root / "evidence"
-owned_before = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in ("raw/*.json", "*.evidence.json", "dependency-graph.json", "reference-system/*.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json")
+owned_patterns = ("raw/*.json", "*.evidence.json", "dependency-graph.json", "reference-system/*.json", "scenarios/*.json",
+                  "scenarios/behaviors/**/*.proof.json", "scenario-runtime/**/*.json", "scenario-runtime/**/*.txt")
+owned_before = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in owned_patterns
                 for item in live_evidence.glob(pattern)}
 with tempfile.TemporaryDirectory() as directory:
     staged_evidence = Path(directory) / "evidence"
@@ -142,7 +144,7 @@ with tempfile.TemporaryDirectory() as directory:
     assert (staged_evidence / "dependency-graph.json").is_file()
     assert (staged_evidence / "scenarios/closure-plan.json").is_file()
     assert (staged_evidence / "reference-system/results.json").is_file()
-owned_after = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in ("raw/*.json", "*.evidence.json", "dependency-graph.json", "reference-system/*.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json")
+owned_after = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in owned_patterns
                for item in live_evidence.glob(pattern)}
 assert owned_after == owned_before
 print("Evidence staging producer tests PASS: Raw/Record生成先をtransaction stagingへ隔離")

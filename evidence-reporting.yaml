@@ -21,6 +21,8 @@ publication:
   - reference-system/*.json
   - scenarios/*.json
   - scenarios/behaviors/**/*.proof.json
+  - scenario-runtime/**/*.json
+  - scenario-runtime/**/*.txt
   run_report: run-report.json
   historical_live_without_run_report_allowed: true
   next_success_requires_run_report: true

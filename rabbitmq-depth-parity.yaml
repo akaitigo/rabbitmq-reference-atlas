@@ -88,9 +88,9 @@ scenario_mapping:
 summary:
   axes: 18
   satisfied: 1
-  partial: 6
-  missing: 11
-  total_gaps: 4283
+  partial: 14
+  missing: 3
+  total_gaps: 4265
   definitive_allowed: false
 axes:
 - id: authority-body-digestion
@@ -4530,9 +4530,9 @@ axes:
     unit: authority-derived behavior requiring normal
     required: 206
     legacy_runtime_observation: 3
-    scenario_gap_closed: 0
+    scenario_gap_closed: 1
     completion_eligible: 0
-    remaining: 206
+    remaining: 205
     profile_partitions:
       broker-cluster-3:
         required: 81
@@ -4597,7 +4597,7 @@ axes:
       protocol-amqp10:
         required: 5
         legacy_runtime_observation: 1
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       rolling-upgrade:
         required: 4
@@ -4609,8 +4609,8 @@ axes:
         legacy_runtime_observation: 0
         scenario_gap_closed: 0
         completion_eligible: 0
-  status: missing
-  gap_count: 206
+  status: partial
+  gap_count: 205
   gap_ids:
   - proof.alarm.cluster-wide.normal
   - proof.alarm.disk.normal
@@ -4619,7 +4619,6 @@ axes:
   - proof.amqp10.address-v2.normal
   - proof.amqp10.authentication-options.normal
   - proof.amqp10.protocol-interoperability.normal
-  - proof.amqp10.version-negotiation.normal
   - proof.backup.definitions.normal
   - proof.backup.message-data.normal
   - proof.backup.node-identity.normal
@@ -4822,8 +4821,8 @@ axes:
   - id: scenario-normal.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=3/206; scenario-gap-closed=0/206; completion-eligible=0/206
-    status: gap
+    observed: legacy-observation=3/206; scenario-gap-closed=1/206; completion-eligible=0/206
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -4839,7 +4838,6 @@ axes:
     - proof.alarm.disk.normal
     - proof.alarm.cluster-wide.normal
     - proof.alarm.recovery.normal
-    - proof.amqp10.version-negotiation.normal
     - proof.amqp10.authentication-options.normal
     - proof.amqp10.protocol-interoperability.normal
     - proof.amqp10.address-v2.normal
@@ -5043,9 +5041,9 @@ axes:
     unit: authority-derived behavior requiring boundary
     required: 206
     legacy_runtime_observation: 3
-    scenario_gap_closed: 0
+    scenario_gap_closed: 1
     completion_eligible: 0
-    remaining: 206
+    remaining: 205
     profile_partitions:
       broker-cluster-3:
         required: 81
@@ -5110,7 +5108,7 @@ axes:
       protocol-amqp10:
         required: 5
         legacy_runtime_observation: 1
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       rolling-upgrade:
         required: 4
@@ -5122,8 +5120,8 @@ axes:
         legacy_runtime_observation: 0
         scenario_gap_closed: 0
         completion_eligible: 0
-  status: missing
-  gap_count: 206
+  status: partial
+  gap_count: 205
   gap_ids:
   - proof.alarm.cluster-wide.boundary
   - proof.alarm.disk.boundary
@@ -5132,7 +5130,6 @@ axes:
   - proof.amqp10.address-v2.boundary
   - proof.amqp10.authentication-options.boundary
   - proof.amqp10.protocol-interoperability.boundary
-  - proof.amqp10.version-negotiation.boundary
   - proof.backup.definitions.boundary
   - proof.backup.message-data.boundary
   - proof.backup.node-identity.boundary
@@ -5335,8 +5332,8 @@ axes:
   - id: scenario-boundary.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=3/206; scenario-gap-closed=0/206; completion-eligible=0/206
-    status: gap
+    observed: legacy-observation=3/206; scenario-gap-closed=1/206; completion-eligible=0/206
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -5352,7 +5349,6 @@ axes:
     - proof.alarm.disk.boundary
     - proof.alarm.cluster-wide.boundary
     - proof.alarm.recovery.boundary
-    - proof.amqp10.version-negotiation.boundary
     - proof.amqp10.authentication-options.boundary
     - proof.amqp10.protocol-interoperability.boundary
     - proof.amqp10.address-v2.boundary
@@ -5556,9 +5552,9 @@ axes:
     unit: authority-derived behavior requiring rejection
     required: 206
     legacy_runtime_observation: 3
-    scenario_gap_closed: 0
+    scenario_gap_closed: 1
     completion_eligible: 0
-    remaining: 206
+    remaining: 205
     profile_partitions:
       broker-cluster-3:
         required: 81
@@ -5623,7 +5619,7 @@ axes:
       protocol-amqp10:
         required: 5
         legacy_runtime_observation: 1
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       rolling-upgrade:
         required: 4
@@ -5635,8 +5631,8 @@ axes:
         legacy_runtime_observation: 0
         scenario_gap_closed: 0
         completion_eligible: 0
-  status: missing
-  gap_count: 206
+  status: partial
+  gap_count: 205
   gap_ids:
   - proof.alarm.cluster-wide.rejection
   - proof.alarm.disk.rejection
@@ -5645,7 +5641,6 @@ axes:
   - proof.amqp10.address-v2.rejection
   - proof.amqp10.authentication-options.rejection
   - proof.amqp10.protocol-interoperability.rejection
-  - proof.amqp10.version-negotiation.rejection
   - proof.backup.definitions.rejection
   - proof.backup.message-data.rejection
   - proof.backup.node-identity.rejection
@@ -5848,8 +5843,8 @@ axes:
   - id: scenario-refusal.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=3/206; scenario-gap-closed=0/206; completion-eligible=0/206
-    status: gap
+    observed: legacy-observation=3/206; scenario-gap-closed=1/206; completion-eligible=0/206
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -5865,7 +5860,6 @@ axes:
     - proof.alarm.disk.rejection
     - proof.alarm.cluster-wide.rejection
     - proof.alarm.recovery.rejection
-    - proof.amqp10.version-negotiation.rejection
     - proof.amqp10.authentication-options.rejection
     - proof.amqp10.protocol-interoperability.rejection
     - proof.amqp10.address-v2.rejection
@@ -6069,14 +6063,14 @@ axes:
     unit: authority-derived behavior requiring failure
     required: 74
     legacy_runtime_observation: 0
-    scenario_gap_closed: 0
+    scenario_gap_closed: 1
     completion_eligible: 0
-    remaining: 74
+    remaining: 73
     profile_partitions:
       broker-cluster-3:
         required: 31
         legacy_runtime_observation: 0
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       capacity-benchmark:
         required: 4
@@ -6133,8 +6127,8 @@ axes:
         legacy_runtime_observation: 0
         scenario_gap_closed: 0
         completion_eligible: 0
-  status: missing
-  gap_count: 74
+  status: partial
+  gap_count: 73
   gap_ids:
   - proof.alarm.cluster-wide.failure
   - proof.alarm.disk.failure
@@ -6191,7 +6185,6 @@ axes:
   - proof.quorum.dead-letter-safety.failure
   - proof.quorum.delivery-limit.failure
   - proof.quorum.membership.failure
-  - proof.quorum.replication.failure
   - proof.shovel.failure-recovery.failure
   - proof.stomp.ack-nack.failure
   - proof.stomp.durable-topic-subscription.failure
@@ -6214,8 +6207,8 @@ axes:
   - id: scenario-failure.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=0/74; scenario-gap-closed=0/74; completion-eligible=0/74
-    status: gap
+    observed: legacy-observation=0/74; scenario-gap-closed=1/74; completion-eligible=0/74
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -6260,7 +6253,6 @@ axes:
     - proof.queue.server-named.failure
     - proof.queue.exclusive.failure
     - proof.queue.temporary-race.failure
-    - proof.quorum.replication.failure
     - proof.quorum.membership.failure
     - proof.quorum.delivery-limit.failure
     - proof.quorum.dead-letter-safety.failure
@@ -6303,14 +6295,14 @@ axes:
     unit: authority-derived behavior requiring recovery
     required: 74
     legacy_runtime_observation: 0
-    scenario_gap_closed: 0
+    scenario_gap_closed: 1
     completion_eligible: 0
-    remaining: 74
+    remaining: 73
     profile_partitions:
       broker-cluster-3:
         required: 31
         legacy_runtime_observation: 0
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       capacity-benchmark:
         required: 4
@@ -6367,8 +6359,8 @@ axes:
         legacy_runtime_observation: 0
         scenario_gap_closed: 0
         completion_eligible: 0
-  status: missing
-  gap_count: 74
+  status: partial
+  gap_count: 73
   gap_ids:
   - proof.alarm.cluster-wide.recovery
   - proof.alarm.disk.recovery
@@ -6413,7 +6405,6 @@ axes:
   - proof.operator.topology-rejection.recovery
   - proof.partition.autoheal.recovery
   - proof.partition.pause-minority.recovery
-  - proof.partition.recovery.recovery
   - proof.production.data-safety.recovery
   - proof.production.monitoring.recovery
   - proof.prometheus.alerting.recovery
@@ -6448,8 +6439,8 @@ axes:
   - id: scenario-recovery.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=0/74; scenario-gap-closed=0/74; completion-eligible=0/74
-    status: gap
+    observed: legacy-observation=0/74; scenario-gap-closed=1/74; completion-eligible=0/74
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -6485,7 +6476,6 @@ axes:
     - proof.oauth2.key-rotation.recovery
     - proof.partition.pause-minority.recovery
     - proof.partition.autoheal.recovery
-    - proof.partition.recovery.recovery
     - proof.production.monitoring.recovery
     - proof.production.data-safety.recovery
     - proof.prometheus.alerting.recovery
@@ -6633,14 +6623,14 @@ axes:
     unit: authority-derived behavior requiring operations
     required: 50
     legacy_runtime_observation: 0
-    scenario_gap_closed: 0
+    scenario_gap_closed: 1
     completion_eligible: 0
-    remaining: 50
+    remaining: 49
     profile_partitions:
       broker-cluster-3:
         required: 23
         legacy_runtime_observation: 0
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       capacity-benchmark:
         required: 2
@@ -6697,8 +6687,8 @@ axes:
         legacy_runtime_observation: 0
         scenario_gap_closed: 0
         completion_eligible: 0
-  status: missing
-  gap_count: 50
+  status: partial
+  gap_count: 49
   gap_ids:
   - proof.alarm.disk.operations
   - proof.alarm.memory.operations
@@ -6731,7 +6721,6 @@ axes:
   - proof.operator.cluster-reconciliation.operations
   - proof.operator.rolling-upgrade.operations
   - proof.operator.topology-reconciliation.operations
-  - proof.partition.detection.operations
   - proof.plugin.enable-disable.operations
   - proof.policy.update.operations
   - proof.production.monitoring.operations
@@ -6754,8 +6743,8 @@ axes:
   - id: scenario-operations.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=0/50; scenario-gap-closed=0/50; completion-eligible=0/50
-    status: gap
+    observed: legacy-observation=0/50; scenario-gap-closed=1/50; completion-eligible=0/50
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -6785,7 +6774,6 @@ axes:
     - proof.mqtt.qos0-overload-drop.operations
     - proof.mqtt.metrics-capacity.operations
     - proof.oauth2.key-rotation.operations
-    - proof.partition.detection.operations
     - proof.plugin.enable-disable.operations
     - proof.policy.update.operations
     - proof.production.monitoring.operations
@@ -6819,9 +6807,9 @@ axes:
     unit: authority-derived behavior requiring security
     required: 47
     legacy_runtime_observation: 1
-    scenario_gap_closed: 0
+    scenario_gap_closed: 1
     completion_eligible: 0
-    remaining: 47
+    remaining: 46
     profile_partitions:
       broker-cluster-3:
         required: 7
@@ -6876,18 +6864,17 @@ axes:
       protocol-amqp10:
         required: 2
         legacy_runtime_observation: 1
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       tls-cluster-client:
         required: 3
         legacy_runtime_observation: 0
         scenario_gap_closed: 0
         completion_eligible: 0
-  status: missing
-  gap_count: 47
+  status: partial
+  gap_count: 46
   gap_ids:
   - proof.amqp10.authentication-options.security
-  - proof.amqp10.version-negotiation.security
   - proof.ldap.authentication.security
   - proof.ldap.authorization.security
   - proof.ldap.tls.security
@@ -6937,8 +6924,8 @@ axes:
   - id: scenario-security.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=1/47; scenario-gap-closed=0/47; completion-eligible=0/47
-    status: gap
+    observed: legacy-observation=1/47; scenario-gap-closed=1/47; completion-eligible=0/47
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -6950,7 +6937,6 @@ axes:
     - proof.security.vhost-permissions.security
     - proof.security.topic-permissions.security
     - proof.security.credential-rotation.security
-    - proof.amqp10.version-negotiation.security
     - proof.amqp10.authentication-options.security
     - proof.ldap.authentication.security
     - proof.ldap.authorization.security
@@ -7112,9 +7098,9 @@ axes:
     unit: authority-derived behavior requiring compatibility
     required: 42
     legacy_runtime_observation: 2
-    scenario_gap_closed: 0
+    scenario_gap_closed: 2
     completion_eligible: 0
-    remaining: 42
+    remaining: 40
     profile_partitions:
       broker-cluster-3:
         required: 9
@@ -7144,7 +7130,7 @@ axes:
       plugin-mqtt:
         required: 6
         legacy_runtime_observation: 1
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       plugin-oauth2-idp:
         required: 1
@@ -7154,7 +7140,7 @@ axes:
       plugin-stomp:
         required: 8
         legacy_runtime_observation: 1
-        scenario_gap_closed: 0
+        scenario_gap_closed: 1
         completion_eligible: 0
       plugin-stream:
         required: 3
@@ -7176,8 +7162,8 @@ axes:
         legacy_runtime_observation: 0
         scenario_gap_closed: 0
         completion_eligible: 0
-  status: missing
-  gap_count: 42
+  status: partial
+  gap_count: 40
   gap_ids:
   - proof.amqp10.authentication-options.compatibility
   - proof.amqp10.protocol-interoperability.compatibility
@@ -7191,7 +7177,6 @@ axes:
   - proof.management.oauth.compatibility
   - proof.mqtt.cross-protocol-routing.compatibility
   - proof.mqtt.listener-tls.compatibility
-  - proof.mqtt.protocol-versions-qos.compatibility
   - proof.mqtt.topic-translation.compatibility
   - proof.mqtt.x509-authentication.compatibility
   - proof.oauth2.multi-resource-server.compatibility
@@ -7214,7 +7199,6 @@ axes:
   - proof.stomp.amq-queue-destination.compatibility
   - proof.stomp.exchange-destination.compatibility
   - proof.stomp.listeners-tls.compatibility
-  - proof.stomp.protocol-plugin.compatibility
   - proof.stomp.queue-parameters.compatibility
   - proof.stomp.stream-support.compatibility
   - proof.stream-plugin.protocol-client.compatibility
@@ -7225,8 +7209,8 @@ axes:
   - id: scenario-compatibility.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=2/42; scenario-gap-closed=0/42; completion-eligible=0/42
-    status: gap
+    observed: legacy-observation=2/42; scenario-gap-closed=2/42; completion-eligible=0/42
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -7243,7 +7227,6 @@ axes:
     - proof.federation.queue.compatibility
     - proof.ldap.tls.compatibility
     - proof.management.oauth.compatibility
-    - proof.mqtt.protocol-versions-qos.compatibility
     - proof.mqtt.cross-protocol-routing.compatibility
     - proof.mqtt.topic-translation.compatibility
     - proof.mqtt.listener-tls.compatibility
@@ -7260,7 +7243,6 @@ axes:
     - proof.publisher.connection-failure.compatibility
     - proof.queue.temporary-race.compatibility
     - proof.shovel.protocol-variants.compatibility
-    - proof.stomp.protocol-plugin.compatibility
     - proof.stomp.listeners-tls.compatibility
     - proof.stomp.exchange-destination.compatibility
     - proof.stomp.amq-queue-destination.compatibility
@@ -7282,16 +7264,16 @@ axes:
     unit: required behavior × scenario × profile × proof × artifact
     required: 951
     legacy_runtime_observation: 12
-    dedicated_runtime_reports: 0
-    scenario_gap_closed: 0
+    dedicated_runtime_reports: 9
+    scenario_gap_closed: 9
     completion_eligible: 0
-    remaining: 951
+    remaining: 942
     required_channels:
     - packet
     - log
     - metric
   status: partial
-  gap_count: 951
+  gap_count: 942
   gap_ids:
   - proof.alarm.cluster-wide.boundary
   - proof.alarm.cluster-wide.failure
@@ -7330,10 +7312,6 @@ axes:
   - proof.amqp10.protocol-interoperability.compatibility
   - proof.amqp10.protocol-interoperability.normal
   - proof.amqp10.protocol-interoperability.rejection
-  - proof.amqp10.version-negotiation.boundary
-  - proof.amqp10.version-negotiation.normal
-  - proof.amqp10.version-negotiation.rejection
-  - proof.amqp10.version-negotiation.security
   - proof.backup.definitions.boundary
   - proof.backup.definitions.migration
   - proof.backup.definitions.normal
@@ -7617,7 +7595,6 @@ axes:
   - proof.mqtt.metrics-capacity.performance
   - proof.mqtt.metrics-capacity.rejection
   - proof.mqtt.protocol-versions-qos.boundary
-  - proof.mqtt.protocol-versions-qos.compatibility
   - proof.mqtt.protocol-versions-qos.normal
   - proof.mqtt.protocol-versions-qos.rejection
   - proof.mqtt.qos0-overload-drop.boundary
@@ -7800,7 +7777,6 @@ axes:
   - proof.partition.autoheal.rejection
   - proof.partition.detection.boundary
   - proof.partition.detection.normal
-  - proof.partition.detection.operations
   - proof.partition.detection.rejection
   - proof.partition.pause-minority.boundary
   - proof.partition.pause-minority.failure
@@ -7810,7 +7786,6 @@ axes:
   - proof.partition.recovery.boundary
   - proof.partition.recovery.failure
   - proof.partition.recovery.normal
-  - proof.partition.recovery.recovery
   - proof.partition.recovery.rejection
   - proof.plugin.compatibility.boundary
   - proof.plugin.compatibility.compatibility
@@ -7957,7 +7932,6 @@ axes:
   - proof.quorum.membership.recovery
   - proof.quorum.membership.rejection
   - proof.quorum.replication.boundary
-  - proof.quorum.replication.failure
   - proof.quorum.replication.normal
   - proof.quorum.replication.recovery
   - proof.quorum.replication.rejection
@@ -8042,7 +8016,6 @@ axes:
   - proof.stomp.prefetch.performance
   - proof.stomp.prefetch.rejection
   - proof.stomp.protocol-plugin.boundary
-  - proof.stomp.protocol-plugin.compatibility
   - proof.stomp.protocol-plugin.normal
   - proof.stomp.protocol-plugin.rejection
   - proof.stomp.queue-destination.boundary
@@ -8247,8 +8220,8 @@ axes:
   checks:
   - id: artifact.unique-binding
     required: 各Required rowの全Variantへ共有しないpacket/log/metric Artifactを専用pathとdigestで接続する。
-    observed: legacy-observation=12/951; scenario-gap-closed=0/951
-    status: gap
+    observed: legacy-observation=12/951; scenario-gap-closed=9/951
+    status: partial
     evidence:
     - scenario-closure.yaml
     - verification.plan.yaml
@@ -8300,10 +8273,6 @@ axes:
     - proof.alarm.recovery.rejection
     - proof.alarm.recovery.failure
     - proof.alarm.recovery.recovery
-    - proof.amqp10.version-negotiation.normal
-    - proof.amqp10.version-negotiation.boundary
-    - proof.amqp10.version-negotiation.rejection
-    - proof.amqp10.version-negotiation.security
     - proof.amqp10.authentication-options.normal
     - proof.amqp10.authentication-options.boundary
     - proof.amqp10.authentication-options.rejection
@@ -8571,7 +8540,6 @@ axes:
     - proof.mqtt.protocol-versions-qos.normal
     - proof.mqtt.protocol-versions-qos.boundary
     - proof.mqtt.protocol-versions-qos.rejection
-    - proof.mqtt.protocol-versions-qos.compatibility
     - proof.mqtt.message-expiry-will-retained.normal
     - proof.mqtt.message-expiry-will-retained.boundary
     - proof.mqtt.message-expiry-will-retained.rejection
@@ -8658,7 +8626,6 @@ axes:
     - proof.partition.detection.normal
     - proof.partition.detection.boundary
     - proof.partition.detection.rejection
-    - proof.partition.detection.operations
     - proof.partition.pause-minority.normal
     - proof.partition.pause-minority.boundary
     - proof.partition.pause-minority.rejection
@@ -8673,7 +8640,6 @@ axes:
     - proof.partition.recovery.boundary
     - proof.partition.recovery.rejection
     - proof.partition.recovery.failure
-    - proof.partition.recovery.recovery
     - proof.plugin.discovery.normal
     - proof.plugin.discovery.boundary
     - proof.plugin.discovery.rejection
@@ -8800,7 +8766,6 @@ axes:
     - proof.quorum.replication.normal
     - proof.quorum.replication.boundary
     - proof.quorum.replication.rejection
-    - proof.quorum.replication.failure
     - proof.quorum.replication.recovery
     - proof.quorum.membership.normal
     - proof.quorum.membership.boundary
@@ -8843,7 +8808,6 @@ axes:
     - proof.stomp.protocol-plugin.normal
     - proof.stomp.protocol-plugin.boundary
     - proof.stomp.protocol-plugin.rejection
-    - proof.stomp.protocol-plugin.compatibility
     - proof.stomp.listeners-tls.normal
     - proof.stomp.listeners-tls.boundary
     - proof.stomp.listeners-tls.rejection

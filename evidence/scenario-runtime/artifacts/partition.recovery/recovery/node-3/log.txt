@@ -1,0 +1,240 @@
+rabbitmq-3-1  | 2026-08-30 11:42:35.611539+00:00 [info] <0.209.0> Running boot step rabbit_core_metrics_gc defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611609+00:00 [info] <0.209.0> Running boot step background_gc defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611673+00:00 [info] <0.209.0> Running boot step rabbit_observer_cli_classic_queues defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611711+00:00 [info] <0.209.0> Running boot step rabbit_observer_cli_quorum_queues defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611743+00:00 [info] <0.209.0> Running boot step routing_ready defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611753+00:00 [info] <0.209.0> Running boot step pre_flight defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611788+00:00 [info] <0.209.0> Running boot step notify_cluster defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611809+00:00 [info] <0.209.0> Running boot step networking defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611822+00:00 [info] <0.209.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611846+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611923+00:00 [info] <0.209.0> Running boot step definition_import_worker_pool defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.611951+00:00 [info] <0.550.0> Starting worker pool 'definition_import_pool' with 12 processes in it[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.612011+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-2' up[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.612184+00:00 [info] <0.209.0> Running boot step cluster_name defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.612200+00:00 [info] <0.209.0> Running boot step virtual_host_reconciliation defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.613119+00:00 [info] <0.209.0> Running boot step direct_client defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.613173+00:00 [info] <0.209.0> Running boot step logger_exchange defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.614808+00:00 [info] <0.209.0> Running boot step cluster_tags defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.616233+00:00 [info] <0.209.0> Running boot step queue_type_registrations defined by app rabbit[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.616249+00:00 [info] <0.209.0> Running boot step rabbit_management_load_definitions defined by app rabbitmq_management[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.616329+00:00 [info] <0.842.0> Resetting node maintenance status[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:35.623790+00:00 [warning] <0.859.0> Deprecated features: `management_metrics_collection`: Feature `management_metrics_collection` is deprecated.[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:35.623790+00:00 [warning] <0.859.0> By default, this feature can still be used for now.[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:35.623790+00:00 [warning] <0.859.0> Its use will not be permitted by default in a future minor RabbitMQ version and the feature will be removed from a future major RabbitMQ version; actual versions to be determined.[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:35.623790+00:00 [warning] <0.859.0> To continue using this feature when it is not permitted by default, set the following parameter in your configuration:[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:35.623790+00:00 [warning] <0.859.0>     "deprecated_features.permit.management_metrics_collection = true"[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:35.623790+00:00 [warning] <0.859.0> To test RabbitMQ as if the feature was removed, set this in your configuration:[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:35.623790+00:00 [warning] <0.859.0>     "deprecated_features.permit.management_metrics_collection = false"[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.642801+00:00 [info] <0.895.0> Management plugin: HTTP (non-TLS) listener started on port 15672[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.642876+00:00 [info] <0.926.0> Statistics database started.[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.642904+00:00 [info] <0.925.0> Starting worker pool 'management_worker_pool' with 3 processes in it[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.651251+00:00 [info] <0.938.0> Prometheus metrics: HTTP (non-TLS) listener started on port 15692[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.651307+00:00 [info] <0.842.0> Ready to start client connection listeners[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.652807+00:00 [info] <0.982.0> started TCP listener on [::]:5672[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.711342+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  |  completed with 4 plugins.
+rabbitmq-3-1  | 2026-08-30 11:42:35.734704+00:00 [info] <0.842.0> Server startup complete; 4 plugins started.[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.734704+00:00 [info] <0.842.0>  * rabbitmq_prometheus[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.734704+00:00 [info] <0.842.0>  * rabbitmq_management[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.734704+00:00 [info] <0.842.0>  * rabbitmq_management_agent[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.734704+00:00 [info] <0.842.0>  * rabbitmq_web_dispatch[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.784994+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-2' up[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.817106+00:00 [info] <0.10.0> Time to start RabbitMQ: 3291 ms[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.889300+00:00 [info] <0.786.0> rabbit_stream_coordinator: granting vote for {rabbit_stream_coordinator,'rabbit@rabbitmq-2'} with last {index, term} {448,14} for term 16 previous term was 15[0m
+rabbitmq-3-1  | 2026-08-30 11:42:35.891542+00:00 [info] <0.786.0> rabbit_stream_coordinator: detected a new leader {rabbit_stream_coordinator,'rabbit@rabbitmq-2'} in term 16[0m
+rabbitmq-3-1  | 2026-08-30 11:42:39.772607+00:00 [info] <0.1032.0> accepting AMQP connection 192.168.80.1:29956 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | 2026-08-30 11:42:39.775491+00:00 [info] <0.1036.0> accepting AMQP connection 192.168.80.1:19486 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:39.784692+00:00 [warning] <0.1036.0> closing AMQP connection <0.1036.0> (192.168.80.1:19486 -> 192.168.80.3:5672, duration: '9ms'):[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:39.784692+00:00 [warning] <0.1036.0> client unexpectedly closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:42:39.786125+00:00 [info] <0.1042.0> accepting AMQP connection 192.168.80.1:20937 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:42:39.786234+00:00 [error] <0.1042.0> closing AMQP connection <0.1042.0> (192.168.80.1:20937 -> 192.168.80.3:5672, duration: '0ms'):[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:42:39.786234+00:00 [error] <0.1042.0> {bad_version,{3,2,0,0}}[0m
+rabbitmq-3-1  | 2026-08-30 11:42:39.787824+00:00 [info] <0.1048.0> accepting AMQP connection 192.168.80.1:37761 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:42:39.787980+00:00 [error] <0.1048.0> closing AMQP 1.0 connection (192.168.80.1:37761 -> 192.168.80.3:5672, duration: '0ms'): RabbitMQ requires SASL security layer (expected protocol ID 3, but client sent protocol ID 0)[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:39.797868+00:00 [warning] <0.1032.0> closing AMQP connection <0.1032.0> (192.168.80.1:29956 -> 192.168.80.3:5672, duration: '25ms'):[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:39.797868+00:00 [warning] <0.1032.0> client unexpectedly closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:42:44.152629+00:00 [info] <0.1243.0> rabbit_stomp: default user 'guest' enabled[0m
+rabbitmq-3-1  | 2026-08-30 11:42:44.153763+00:00 [info] <0.1262.0> started STOMP TCP listener on [::]:61613[0m
+rabbitmq-3-1  | 2026-08-30 11:42:44.157734+00:00 [info] <0.1284.0> started Stream TCP listener on [::]:5552[0m
+rabbitmq-3-1  | 2026-08-30 11:42:44.160813+00:00 [info] <0.1290.0> Starting MQTT retained message store rabbit_mqtt_retained_msg_store_dets for vhost '/'[0m
+rabbitmq-3-1  | 2026-08-30 11:42:44.162292+00:00 [info] <0.1290.0> Recovered MQTT retained message store rabbit_mqtt_retained_msg_store_dets for vhost '/'[0m
+rabbitmq-3-1  | 2026-08-30 11:42:44.162849+00:00 [info] <0.1310.0> started MQTT TCP listener on [::]:1883[0m
+rabbitmq-3-1  | 2026-08-30 11:42:44.163323+00:00 [info] <0.1186.0> Plugins changed; enabled [rabbitmq_stream_common,rabbitmq_stomp,[0m
+rabbitmq-3-1  | 2026-08-30 11:42:44.163323+00:00 [info] <0.1186.0>                           rabbitmq_stream,rabbitmq_mqtt][0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.400939+00:00 [info] <0.1422.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.405199+00:00 [info] <0.1422.0> Accepted MQTT connection 192.168.80.2:57088 -> 192.168.80.3:1883 for client ID sub-qos1-rabbitmq-3-1883[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.433360+00:00 [info] <0.1429.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.433780+00:00 [info] <0.1429.0> Accepted MQTT connection 192.168.80.2:57098 -> 192.168.80.3:1883 for client ID pub-qos1-rabbitmq-3-1883[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.434677+00:00 [info] <0.1429.0> MQTT connection <<"192.168.80.2:57098 -> 192.168.80.3:1883">> will terminate because peer closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.434709+00:00 [info] <0.1422.0> MQTT connection <<"192.168.80.2:57088 -> 192.168.80.3:1883">> will terminate because peer closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.473232+00:00 [info] <0.1438.0> accepting STOMP connection <0.1438.0> (192.168.80.2:38878 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:52.475737+00:00 [warning] <0.1438.0> AMQP 0-9-1 client call timeout was 70000 ms, is updated to a safe effective value of 130000 ms[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.479053+00:00 [info] <0.1442.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.487531+00:00 [info] <0.1438.0> closing STOMP connection <0.1438.0> (192.168.80.2:38878 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.497951+00:00 [info] <0.1463.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.498670+00:00 [info] <0.1463.0> Accepted MQTT connection 192.168.80.2:57104 -> 192.168.80.3:1883 for client ID sub-qos0-rabbitmq-3-1883[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.501762+00:00 [info] <0.1466.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.502180+00:00 [info] <0.1466.0> Accepted MQTT connection 192.168.80.2:57118 -> 192.168.80.3:1883 for client ID pub-qos0-rabbitmq-3-1883[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.502474+00:00 [info] <0.1466.0> MQTT connection <<"192.168.80.2:57118 -> 192.168.80.3:1883">> will terminate because peer closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.502563+00:00 [info] <0.1463.0> MQTT connection <<"192.168.80.2:57104 -> 192.168.80.3:1883">> will terminate because peer closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.507084+00:00 [info] <0.1475.0> accepting STOMP connection <0.1475.0> (192.168.80.2:38892 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.507366+00:00 [info] <0.1479.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:42:52.508518+00:00 [info] <0.1475.0> closing STOMP connection <0.1475.0> (192.168.80.2:38892 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:42:58.514543+00:00 [warning] <0.1500.0> User 'atlas' failed to authenticate: user 'atlas' - invalid credentials[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:42:58.514633+00:00 [error] <0.1500.0> MQTT connection failed: access refused for user 'atlas':user 'atlas' - invalid credentials[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:43:01.515873+00:00 [error] <0.1500.0> Rejected MQTT connection 192.168.80.2:59886 -> 192.168.80.3:1883 with Connect Reason Code 134[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.536548+00:00 [info] <0.1505.0> accepting STOMP connection <0.1505.0> (192.168.80.2:55248 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:43:01.538425+00:00 [warning] <0.1509.0> User 'atlas' failed to authenticate: user 'atlas' - invalid credentials[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:43:01.538867+00:00 [warning] <0.1505.0> STOMP login failed for user 'atlas': authentication failed[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:43:01.539004+00:00 [error] <0.1505.0> STOMP error frame sent:[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:43:01.539004+00:00 [error] <0.1505.0> Message: "Bad CONNECT"[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:43:01.539004+00:00 [error] <0.1505.0> Detail: "Access refused for user 'atlas'"[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:43:01.539004+00:00 [error] <0.1505.0> Server private detail: none[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.539557+00:00 [info] <0.1505.0> closing STOMP connection <0.1505.0> (192.168.80.2:55248 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.549653+00:00 [info] <0.1517.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.550502+00:00 [info] <0.1517.0> Accepted MQTT connection 192.168.80.2:59894 -> 192.168.80.3:1883 for client ID compat-31[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.550630+00:00 [info] <0.1517.0> MQTT detected network error for <<"192.168.80.2:59894 -> 192.168.80.3:1883">>: einval[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.551365+00:00 [info] <0.1521.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.551949+00:00 [info] <0.1521.0> Accepted MQTT connection 192.168.80.2:59908 -> 192.168.80.3:1883 for client ID compat-311[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.552066+00:00 [info] <0.1521.0> MQTT connection <<"192.168.80.2:59908 -> 192.168.80.3:1883">> will terminate because peer closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.552723+00:00 [info] <0.1526.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.553165+00:00 [info] <0.1526.0> Accepted MQTT connection 192.168.80.2:59920 -> 192.168.80.3:1883 for client ID compat-50[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.553255+00:00 [info] <0.1526.0> MQTT connection <<"192.168.80.2:59920 -> 192.168.80.3:1883">> will terminate because peer closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.567798+00:00 [info] <0.1533.0> accepting STOMP connection <0.1533.0> (192.168.80.2:55258 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.568185+00:00 [info] <0.1537.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.569721+00:00 [info] <0.1533.0> closing STOMP connection <0.1533.0> (192.168.80.2:55258 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.570056+00:00 [info] <0.1556.0> accepting STOMP connection <0.1556.0> (192.168.80.2:55264 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.570322+00:00 [info] <0.1560.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.571234+00:00 [info] <0.1556.0> closing STOMP connection <0.1556.0> (192.168.80.2:55264 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.571515+00:00 [info] <0.1579.0> accepting STOMP connection <0.1579.0> (192.168.80.2:55280 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.571760+00:00 [info] <0.1583.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:01.572644+00:00 [info] <0.1579.0> closing STOMP connection <0.1579.0> (192.168.80.2:55280 -> 192.168.80.3:61613)[0m
+rabbitmq-3-1  | 2026-08-30 11:43:41.743219+00:00 [info] <0.1729.0> Stopping RabbitMQ applications and their dependencies in the following order:[0m
+rabbitmq-3-1  | 2026-08-30 11:43:41.743219+00:00 [info] <0.1729.0>     rabbitmq_mqtt[0m
+rabbitmq-3-1  | 2026-08-30 11:43:41.743219+00:00 [info] <0.1729.0> [0m
+rabbitmq-3-1  | 2026-08-30 11:43:41.743488+00:00 [info] <0.1729.0> Stopping application 'rabbitmq_mqtt'[0m
+rabbitmq-3-1  | 2026-08-30 11:43:41.744830+00:00 [info] <0.1310.0> stopped MQTT TCP listener on [::]:1883[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:43:41.763044+00:00 [notice] <0.45.0> Application rabbitmq_mqtt exited with reason: stopped[0m
+rabbitmq-3-1  | 2026-08-30 11:43:41.775910+00:00 [info] <0.1729.0> Plugins changed; disabled [rabbitmq_mqtt][0m
+rabbitmq-3-1  | 2026-08-30 11:43:47.517839+00:00 [info] <0.1817.0> Stopping RabbitMQ applications and their dependencies in the following order:[0m
+rabbitmq-3-1  | 2026-08-30 11:43:47.517839+00:00 [info] <0.1817.0>     rabbitmq_stomp[0m
+rabbitmq-3-1  | 2026-08-30 11:43:47.517839+00:00 [info] <0.1817.0> [0m
+rabbitmq-3-1  | 2026-08-30 11:43:47.517898+00:00 [info] <0.1817.0> Stopping application 'rabbitmq_stomp'[0m
+rabbitmq-3-1  | 2026-08-30 11:43:47.518031+00:00 [info] <0.1262.0> stopped STOMP TCP listener on [::]:61613[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:43:47.519508+00:00 [notice] <0.45.0> Application rabbitmq_stomp exited with reason: stopped[0m
+rabbitmq-3-1  | 2026-08-30 11:43:47.525742+00:00 [info] <0.1817.0> Plugins changed; disabled [rabbitmq_stomp][0m
+rabbitmq-3-1  | 2026-08-30 11:43:53.185664+00:00 [info] <0.1906.0> Stopping RabbitMQ applications and their dependencies in the following order:[0m
+rabbitmq-3-1  | 2026-08-30 11:43:53.185664+00:00 [info] <0.1906.0>     rabbitmq_stream[0m
+rabbitmq-3-1  | 2026-08-30 11:43:53.185664+00:00 [info] <0.1906.0>     rabbitmq_stream_common[0m
+rabbitmq-3-1  | 2026-08-30 11:43:53.185664+00:00 [info] <0.1906.0> [0m
+rabbitmq-3-1  | 2026-08-30 11:43:53.185758+00:00 [info] <0.1906.0> Stopping application 'rabbitmq_stream'[0m
+rabbitmq-3-1  | 2026-08-30 11:43:53.186113+00:00 [info] <0.1284.0> stopped Stream TCP listener on [::]:5552[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:43:53.190450+00:00 [notice] <0.45.0> Application rabbitmq_stream exited with reason: stopped[0m
+rabbitmq-3-1  | 2026-08-30 11:43:53.190514+00:00 [info] <0.1906.0> Stopping application 'rabbitmq_stream_common'[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:43:53.190554+00:00 [notice] <0.45.0> Application rabbitmq_stream_common exited with reason: stopped[0m
+rabbitmq-3-1  | 2026-08-30 11:43:53.202386+00:00 [info] <0.1906.0> Plugins changed; disabled [rabbitmq_stream,rabbitmq_stream_common][0m
+rabbitmq-3-1  | 2026-08-30 11:43:54.810071+00:00 [info] <0.1947.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:56.462463+00:00 [info] <0.2006.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:58.022169+00:00 [info] <0.2063.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:43:59.653691+00:00 [info] <0.2122.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:44:01.402980+00:00 [info] <0.2179.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:44:03.071746+00:00 [info] <0.2238.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.395821+00:00 [info] <0.2271.0> queue 'atlas.1788090244052163000.quorum' in vhost '/': granting vote for {'%2F_atlas.1788090244052163000.quorum','rabbit@rabbitmq-1'} with last {index, term} {0,0} for term 1 previous term was 0[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.398611+00:00 [info] <0.2271.0> queue 'atlas.1788090244052163000.quorum' in vhost '/': detected a new leader {'%2F_atlas.1788090244052163000.quorum','rabbit@rabbitmq-1'} in term 1[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.441323+00:00 [info] <0.2276.0> Stream: __atlas_1788090244052163000_stream_1788090245416906639 will use /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/stream/__atlas_1788090244052163000_stream_1788090245416906639 for osiris log data directory[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.447362+00:00 [info] <0.2276.0> __atlas_1788090244052163000_stream_1788090245416906639 [osiris_replica:handle_continue/2] osiris replica starting in epoch 1, next offset 0, tail info {0,empty}[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:44:05.480390+00:00 [notice] <0.2271.0> queue 'atlas.1788090244052163000.quorum' in vhost '/': terminating with reason 'delete'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.483068+00:00 [info] <0.2281.0> Deleting server '%2F_atlas.1788090244052163000.quorum' and its data directory.[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.731560+00:00 [info] <0.2295.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/msg_stores/vhosts/3UQATRR54XVT6A9I8PML6P200' for vhost 'atlas-secops-1788090245667282000' exists[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.732886+00:00 [info] <0.2295.0> Setting segment_entry_count for vhost 'atlas-secops-1788090245667282000' with 0 queues to '2048'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.742879+00:00 [info] <0.2295.0> Starting message stores for vhost 'atlas-secops-1788090245667282000'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.744331+00:00 [info] <0.2295.0> Started message store of type transient for vhost 'atlas-secops-1788090245667282000'[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:05.745240+00:00 [warning] <0.2308.0> Message store "3UQATRR54XVT6A9I8PML6P200/msg_store_persistent": rebuilding indices from scratch[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.745801+00:00 [info] <0.2295.0> Started message store of type persistent for vhost 'atlas-secops-1788090245667282000'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.745937+00:00 [info] <0.2295.0> Recovering 0 queues of type rabbit_classic_queue took 7ms[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.745981+00:00 [info] <0.2295.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+rabbitmq-3-1  | 2026-08-30 11:44:05.746030+00:00 [info] <0.2295.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+rabbitmq-3-1  | 2026-08-30 11:44:11.773324+00:00 [info] <0.2339.0> accepting AMQP connection 192.168.80.1:57045 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:11.775266+00:00 [warning] <0.2339.0> User 'atlas-secops-1788090245667282000-user' failed to authenticate: user 'atlas-secops-1788090245667282000-user' - invalid credentials[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:44:11.775381+00:00 [error] <0.2339.0> Error on AMQP connection <0.2339.0> (192.168.80.1:57045 -> 192.168.80.3:5672, state: starting):[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:44:11.775381+00:00 [error] <0.2339.0> PLAIN login refused: user 'atlas-secops-1788090245667282000-user' - invalid credentials[0m
+rabbitmq-3-1  | 2026-08-30 11:44:14.773637+00:00 [info] <0.2339.0> closing AMQP connection (192.168.80.1:57045 -> 192.168.80.3:5672, duration: '3s')[0m
+rabbitmq-3-1  | 2026-08-30 11:44:14.783281+00:00 [info] <0.2345.0> accepting AMQP connection 192.168.80.1:48829 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | 2026-08-30 11:44:14.784655+00:00 [info] <0.2345.0> User 'atlas-secops-1788090245667282000-user' authenticated successfully[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:44:14.785462+00:00 [error] <0.2345.0> Error on AMQP connection <0.2345.0> (192.168.80.1:48829 -> 192.168.80.3:5672, user: 'atlas-secops-1788090245667282000-user', state: opening):[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:44:14.785462+00:00 [error] <0.2345.0> access to vhost '/' refused for user 'atlas-secops-1788090245667282000-user'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:14.786324+00:00 [info] <0.2345.0> closing AMQP connection (192.168.80.1:48829 -> 192.168.80.3:5672, vhost: 'none', user: 'atlas-secops-1788090245667282000-user', duration: '3ms')[0m
+rabbitmq-3-1  | 2026-08-30 11:44:20.847507+00:00 [info] <0.2358.0> accepting AMQP connection 192.168.80.1:43406 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:20.849523+00:00 [warning] <0.2358.0> User 'atlas-secops-1788090245667282000-user' failed to authenticate: user 'atlas-secops-1788090245667282000-user' - invalid credentials[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:44:20.849644+00:00 [error] <0.2358.0> Error on AMQP connection <0.2358.0> (192.168.80.1:43406 -> 192.168.80.3:5672, state: starting):[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:44:20.849644+00:00 [error] <0.2358.0> PLAIN login refused: user 'atlas-secops-1788090245667282000-user' - invalid credentials[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.849190+00:00 [info] <0.2358.0> closing AMQP connection (192.168.80.1:43406 -> 192.168.80.3:5672, duration: '3s')[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.873115+00:00 [info] <0.2366.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.939647+00:00 [info] <0.2376.0> Stopping vhost supervisor <0.2294.0> for vhost 'atlas-secops-1788090245667282000'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.940649+00:00 [info] <0.2295.0> Virtual host 'atlas-secops-1788090245667282000' is stopping[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.940939+00:00 [info] <0.2377.0> Closing all connections in vhost 'atlas-secops-1788090245667282000' on node 'rabbit@rabbitmq-3' because the vhost is stopping[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.941879+00:00 [info] <0.2308.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/msg_stores/vhosts/3UQATRR54XVT6A9I8PML6P200/msg_store_persistent'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.948012+00:00 [info] <0.2308.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/msg_stores/vhosts/3UQATRR54XVT6A9I8PML6P200/msg_store_persistent' is stopped[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.948707+00:00 [info] <0.2304.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/msg_stores/vhosts/3UQATRR54XVT6A9I8PML6P200/msg_store_transient'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.951882+00:00 [info] <0.2304.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/msg_stores/vhosts/3UQATRR54XVT6A9I8PML6P200/msg_store_transient' is stopped[0m
+rabbitmq-3-1  | 2026-08-30 11:44:23.952979+00:00 [info] <0.2376.0> Deleting message store directory for vhost 'atlas-secops-1788090245667282000' at '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/msg_stores/vhosts/3UQATRR54XVT6A9I8PML6P200'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:37.843528+00:00 [info] <0.2435.0> queue 'atlas.1788090277644135000.performance.quorum' in vhost '/': granting vote for {'%2F_atlas.1788090277644135000.performance.quorum','rabbit@rabbitmq-1'} with last {index, term} {0,0} for term 1 previous term was 0[0m
+rabbitmq-3-1  | 2026-08-30 11:44:37.845361+00:00 [info] <0.2435.0> queue 'atlas.1788090277644135000.performance.quorum' in vhost '/': detected a new leader {'%2F_atlas.1788090277644135000.performance.quorum','rabbit@rabbitmq-1'} in term 1[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:44:38.178526+00:00 [notice] <0.2435.0> queue 'atlas.1788090277644135000.performance.quorum' in vhost '/': terminating with reason 'delete'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:38.181813+00:00 [info] <0.2443.0> Deleting server '%2F_atlas.1788090277644135000.performance.quorum' and its data directory.[0m
+rabbitmq-3-1  | 2026-08-30 11:44:38.189551+00:00 [info] <0.2445.0> Stream: __atlas_1788090277644135000_performance_stream_1788090278184600252 will use /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/stream/__atlas_1788090277644135000_performance_stream_1788090278184600252 for osiris log data directory[0m
+rabbitmq-3-1  | 2026-08-30 11:44:38.190698+00:00 [info] <0.2445.0> __atlas_1788090277644135000_performance_stream_1788090278184600252 [osiris_replica:handle_continue/2] osiris replica starting in epoch 1, next offset 0, tail info {0,empty}[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:38.837185+00:00 [warning] <0.747.0> memory resource limit alarm set on node 'rabbit@rabbitmq-1'.[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:38.837185+00:00 [warning] <0.747.0> [0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:38.837185+00:00 [warning] <0.747.0> **********************************************************[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:38.837185+00:00 [warning] <0.747.0> *** Publishers will be blocked until this alarm clears ***[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:38.837185+00:00 [warning] <0.747.0> **********************************************************[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:38.837185+00:00 [warning] <0.747.0> [0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:46.422185+00:00 [warning] <0.747.0> memory resource limit alarm cleared on node 'rabbit@rabbitmq-1'[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:44:46.423092+00:00 [warning] <0.747.0> memory resource limit alarm cleared across the cluster[0m
+rabbitmq-3-1  | 2026-08-30 11:44:46.737111+00:00 [info] <0.2472.0> queue 'atlas.1788090286708398000.quorum-recovery' in vhost '/': granting vote for {'%2F_atlas.1788090286708398000.quorum-recovery','rabbit@rabbitmq-1'} with last {index, term} {0,0} for term 1 previous term was 0[0m
+rabbitmq-3-1  | 2026-08-30 11:44:46.738663+00:00 [info] <0.2472.0> queue 'atlas.1788090286708398000.quorum-recovery' in vhost '/': detected a new leader {'%2F_atlas.1788090286708398000.quorum-recovery','rabbit@rabbitmq-1'} in term 1[0m
+rabbitmq-3-1  | 2026-08-30 11:44:46.955967+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' down[0m
+rabbitmq-3-1  | 2026-08-30 11:44:46.962162+00:00 [info] <0.2472.0> queue 'atlas.1788090286708398000.quorum-recovery' in vhost '/': Leader monitor down with shutdown, setting election timeout[0m
+rabbitmq-3-1  | 2026-08-30 11:44:46.973557+00:00 [info] <0.2472.0> queue 'atlas.1788090286708398000.quorum-recovery' in vhost '/': granting vote for {'%2F_atlas.1788090286708398000.quorum-recovery','rabbit@rabbitmq-2'} with last {index, term} {9,1} for term 2 previous term was 1[0m
+rabbitmq-3-1  | 2026-08-30 11:44:46.975474+00:00 [info] <0.2472.0> queue 'atlas.1788090286708398000.quorum-recovery' in vhost '/': detected a new leader {'%2F_atlas.1788090286708398000.quorum-recovery','rabbit@rabbitmq-2'} in term 2[0m
+rabbitmq-3-1  | 2026-08-30 11:44:46.978156+00:00 [info] <0.764.0> node 'rabbit@rabbitmq-1' down: connection_closed[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:44:48.493447+00:00 [notice] <0.2472.0> queue 'atlas.1788090286708398000.quorum-recovery' in vhost '/': terminating with reason 'delete'[0m
+rabbitmq-3-1  | 2026-08-30 11:44:53.513834+00:00 [info] <0.2503.0> Deleting server '%2F_atlas.1788090286708398000.quorum-recovery' and its data directory.[0m
+rabbitmq-3-1  | 2026-08-30 11:44:55.521431+00:00 [info] <0.764.0> node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  | 2026-08-30 11:44:55.521559+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  | 2026-08-30 11:44:55.522077+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-2' up[0m
+rabbitmq-3-1  | 2026-08-30 11:44:55.522316+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-2' up[0m
+rabbitmq-3-1  | 2026-08-30 11:44:55.522515+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' down[0m
+rabbitmq-3-1  | 2026-08-30 11:44:56.223396+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  | 2026-08-30 11:44:57.085796+00:00 [info] <0.2549.0> queue 'atlas.1788090297066272000.quorum-recovery' in vhost '/': granting vote for {'%2F_atlas.1788090297066272000.quorum-recovery','rabbit@rabbitmq-1'} with last {index, term} {0,0} for term 1 previous term was 0[0m
+rabbitmq-3-1  | 2026-08-30 11:44:57.088153+00:00 [info] <0.2549.0> queue 'atlas.1788090297066272000.quorum-recovery' in vhost '/': detected a new leader {'%2F_atlas.1788090297066272000.quorum-recovery','rabbit@rabbitmq-1'} in term 1[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:46:03.501838+00:00 [error] <0.2512.0> ** Node 'rabbit@rabbitmq-1' not responding **[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:46:03.501838+00:00 [error] <0.2512.0> ** Removing (timedout) connection **[0m
+rabbitmq-3-1  | [38;5;160m2026-08-30 11:46:03.501838+00:00 [error] <0.2512.0> [0m
+rabbitmq-3-1  | 2026-08-30 11:46:03.503246+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' down[0m
+rabbitmq-3-1  | 2026-08-30 11:46:03.503836+00:00 [info] <0.2549.0> queue 'atlas.1788090297066272000.quorum-recovery' in vhost '/': Leader monitor down with noconnection, setting election timeout[0m
+rabbitmq-3-1  | 2026-08-30 11:46:03.504029+00:00 [info] <0.764.0> node 'rabbit@rabbitmq-1' down: net_tick_timeout[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:46:03.805403+00:00 [notice] <0.2549.0> queue 'atlas.1788090297066272000.quorum-recovery' in vhost '/': candidate -> leader in term: 2 machine version: 8, last applied 9[0m
+rabbitmq-3-1  | 2026-08-30 11:46:07.283208+00:00 [info] <0.2643.0> accepting AMQP connection 192.168.80.1:20870 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:46:07.285289+00:00 [warning] <0.2643.0> closing AMQP connection <0.2643.0> (192.168.80.1:20870 -> 192.168.80.3:5672, duration: '2ms'):[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:46:07.285289+00:00 [warning] <0.2643.0> client unexpectedly closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:46:15.090744+00:00 [info] <0.2692.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:46:15.503115+00:00 [info] <0.2719.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:46:18.740897+00:00 [info] <0.2735.0> accepting AMQP connection 192.168.80.1:19195 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:46:18.742590+00:00 [warning] <0.2735.0> closing AMQP connection <0.2735.0> (192.168.80.1:19195 -> 192.168.80.3:5672, duration: '2ms'):[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:46:18.742590+00:00 [warning] <0.2735.0> client unexpectedly closed TCP connection[0m
+rabbitmq-3-1  | 2026-08-30 11:46:26.056080+00:00 [info] <0.2780.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:46:26.505243+00:00 [info] <0.2807.0> User 'atlas' authenticated successfully[0m
+rabbitmq-3-1  | 2026-08-30 11:46:26.701445+00:00 [info] <0.764.0> node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  | 2026-08-30 11:46:26.701640+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  | 2026-08-30 11:46:26.701896+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  | 2026-08-30 11:46:26.702125+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-2' up[0m
+rabbitmq-3-1  | 2026-08-30 11:46:26.913008+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-1' up[0m
+rabbitmq-3-1  | 2026-08-30 11:46:26.914292+00:00 [info] <0.764.0> rabbit on node 'rabbit@rabbitmq-2' up[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:46:32.072699+00:00 [notice] <0.2549.0> queue 'atlas.1788090297066272000.quorum-recovery' in vhost '/': leader -> terminating_leader in term: 2 machine version: 8, last applied 22[0m
+rabbitmq-3-1  | [38;5;87m2026-08-30 11:46:32.074788+00:00 [notice] <0.2549.0> queue 'atlas.1788090297066272000.quorum-recovery' in vhost '/': terminating with reason 'delete'[0m
+rabbitmq-3-1  | 2026-08-30 11:46:32.384347+00:00 [info] <0.2842.0> accepting AMQP connection 192.168.80.1:42574 -> 192.168.80.3:5672[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:46:32.385623+00:00 [warning] <0.2842.0> closing AMQP connection <0.2842.0> (192.168.80.1:42574 -> 192.168.80.3:5672, duration: '1ms'):[0m
+rabbitmq-3-1  | [38;5;214m2026-08-30 11:46:32.385623+00:00 [warning] <0.2842.0> client unexpectedly closed TCP connection[0m

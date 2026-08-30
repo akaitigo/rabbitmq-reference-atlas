@@ -1,10 +1,10 @@
 {
   "schema_version": 1,
   "mode": "security-observability-operations",
-  "run_id": "1787906252465215000",
-  "created_at": "2026-08-28T08:37:32Z",
+  "run_id": "1788090245667282000",
+  "created_at": "2026-08-30T11:44:05Z",
   "rabbitmq_version": "4.3.5",
-  "namespace": "atlas-secops-1787906252465215000",
+  "namespace": "atlas-secops-1788090245667282000",
   "checks": [
     {
       "name": "environment.version-lock-management-authentication",
@@ -55,8 +55,8 @@
       "passed": true,
       "observed": {
         "endpoint_count": 3,
-        "user": "atlas-secops-1787906252465215000-user",
-        "vhost": "atlas-secops-1787906252465215000"
+        "user": "atlas-secops-1788090245667282000-user",
+        "vhost": "atlas-secops-1788090245667282000"
       }
     },
     {
@@ -66,7 +66,7 @@
       "observed": {
         "consume_and_ack": true,
         "exchange_declare": "allowed.exchange",
-        "message_id": "secops-1787906252465215000",
+        "message_id": "secops-1788090245667282000",
         "publisher_confirm": "ack",
         "queue_bind": true,
         "queue_declare": "allowed.queue"
@@ -79,7 +79,7 @@
       "observed": {
         "operation": "queue.declare",
         "reply_code": 403,
-        "reply_text": "ACCESS_REFUSED - configure access to queue 'forbidden.queue-new' in vhost 'atlas-secops-1787906252465215000' refused for user 'atlas-secops-1787906252465215000-user'",
+        "reply_text": "ACCESS_REFUSED - configure access to queue 'forbidden.queue-new' in vhost 'atlas-secops-1788090245667282000' refused for user 'atlas-secops-1788090245667282000-user'",
         "resource": "forbidden.queue-new"
       }
     },
@@ -90,7 +90,7 @@
       "observed": {
         "operation": "basic.consume",
         "reply_code": 403,
-        "reply_text": "ACCESS_REFUSED - read access to queue 'forbidden.queue' in vhost 'atlas-secops-1787906252465215000' refused for user 'atlas-secops-1787906252465215000-user'",
+        "reply_text": "ACCESS_REFUSED - read access to queue 'forbidden.queue' in vhost 'atlas-secops-1788090245667282000' refused for user 'atlas-secops-1788090245667282000-user'",
         "resource": "forbidden.queue"
       }
     },
@@ -149,7 +149,7 @@
         "node": "rabbit@rabbitmq-1",
         "state": "running",
         "type": "classic",
-        "vhost": "atlas-secops-1787906252465215000"
+        "vhost": "atlas-secops-1788090245667282000"
       }
     },
     {

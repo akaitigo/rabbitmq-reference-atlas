@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "behavior_id": "amqp10.version-negotiation",
+  "authority_surface_id": "amqp10.version-negotiation",
+  "scenario": "boundary",
+  "runtime_profile": "protocol-amqp10",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "cmd/rmq-amqp10-handshake/main.go",
+    "digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-amqp10-handshake",
+        "version": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b",
+        "source_digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.version-negotiation.boundary.node-1",
+        "assertions": [
+          "the shared listener accepts AMQP 0-9-1 and starts a method frame",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-amqp10-handshake/main.go",
+        "digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/packet.json",
+          "digest": "sha256:4e67cc78ff94596359117abbf611c6cca71dfe25f7e040214310bb5c8f89763c",
+          "size_bytes": 381,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/log.txt",
+          "digest": "sha256:82bbc008ba514a288f5295d7762043faa7aa4c5cb0b8a2323a8540b3ca6f6920",
+          "size_bytes": 31488,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/metric.json",
+          "digest": "sha256:a952fccfa6386f9556adb44b555f7f238272547c35659de60e25bcd76aa94775",
+          "size_bytes": 64583,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-amqp10-handshake",
+        "version": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b",
+        "source_digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.version-negotiation.boundary.node-2",
+        "assertions": [
+          "the shared listener accepts AMQP 0-9-1 and starts a method frame",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-amqp10-handshake/main.go",
+        "digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/packet.json",
+          "digest": "sha256:a10ad8d5c296c9c9b491237b1a9cb47c7011e97c50a0df811fb8603d2effa9ca",
+          "size_bytes": 381,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/log.txt",
+          "digest": "sha256:573873b76f4f5bf1f34a6c8b8b108fe6dc276c6694cee1a0a6e2b84831e0f1d8",
+          "size_bytes": 31256,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/metric.json",
+          "digest": "sha256:d23a400c937bc7f34a6d513b6ad5abb00b04517f4abbb726d82507d936760a01",
+          "size_bytes": 64952,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-amqp10-handshake",
+        "version": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b",
+        "source_digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T114229Z-54707"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.version-negotiation.boundary.node-3",
+        "assertions": [
+          "the shared listener accepts AMQP 0-9-1 and starts a method frame",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-amqp10-handshake/main.go",
+        "digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/packet.json",
+          "digest": "sha256:d73a04b34be4a7d2c7a861575f898c351134d4cc09152f81cc6fbf3e525349a3",
+          "size_bytes": 381,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/log.txt",
+          "digest": "sha256:c662efa3b66ccd109c0bd78c8d972124106f611ad845cdfe5c63e3ee6f703f4b",
+          "size_bytes": 31527,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/metric.json",
+          "digest": "sha256:09e745d947acec1b3424d1761011f95cbb17b220e3c11257f5c67c9bba75718a",
+          "size_bytes": 64952,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

@@ -68,7 +68,10 @@ def iso_now() -> str:
 
 def parse_time(value: str) -> dt.datetime:
     normalized = value.replace("Z", "+00:00")
-    normalized = re.sub(r"(\.\d{6})\d+(?=[+-]\d\d:\d\d$)", r"\1", normalized)
+    match = re.match(r"^(.*?)(?:\.(\d+))?([+-]\d\d:\d\d)$", normalized)
+    if match and match.group(2):
+        fraction = match.group(2)[:6].ljust(6, "0")
+        normalized = f"{match.group(1)}.{fraction}{match.group(3)}"
     return dt.datetime.fromisoformat(normalized)
 
 
@@ -105,6 +108,7 @@ def input_specs() -> list[dict[str, Any]]:
         ("harness.evidence-reporters", "harness", [
             "scripts/run-labs.sh", "scripts/generate-evidence.py", "scripts/generate-amqp10-evidence.py",
             "scripts/generate-plugin-protocol-evidence.py", "scripts/generate-scenario-proofs.py",
+            "scripts/generate-scenario-runtime.py",
             "scripts/scenario_proof.py", "scripts/evidence_transaction.py", "scripts/evidence_dependency_graph.py",
             "evidence-reporting.yaml",
         ]),
@@ -168,6 +172,10 @@ def profile_for(path: str) -> str:
 
 
 def output_kind(path: str, record: dict[str, Any] | None = None) -> str:
+    if path.startswith("evidence/scenario-runtime/artifacts/"):
+        return "capture"
+    if path.startswith("evidence/scenario-runtime/"):
+        return "derived-evidence" if path.endswith("/index.json") else "scenario-proof"
     if path.endswith(".proof.json"):
         return "scenario-proof"
     if path.endswith("scenarios/index.json") or path.endswith("scenarios/closure-plan.json"):
@@ -191,7 +199,7 @@ def build_closure_plan(index: dict[str, Any]) -> dict[str, Any]:
     rows = []
     for descriptor in index["files"]:
         proof = load(actual_path(descriptor["path"], ROOT, EVIDENCE_ROOT))
-        if proof["applicability"] != "required" or proof["closure"]["scenario_gap_closed"]:
+        if proof["applicability"] != "required":
             continue
         row_id = f"closure.{proof['behavior_id']}.{proof['scenario']}"
         rows.append({
@@ -201,6 +209,7 @@ def build_closure_plan(index: dict[str, Any]) -> dict[str, Any]:
             "risk_rank": risk[proof["scenario"]],
             "proof_path": descriptor["path"],
             "variant_ids": proof["dedicated_runtime"]["required_variants"],
+            "status": "completed" if proof["closure"]["scenario_gap_closed"] else "planned",
         })
     rows.sort(key=lambda row: (row["risk_rank"], row["behavior_id"]))
     tranches = []
@@ -211,16 +220,20 @@ def build_closure_plan(index: dict[str, Any]) -> dict[str, Any]:
         scenario_rows = by_scenario[scenario]
         for offset in range(0, len(scenario_rows), 4):
             selected = scenario_rows[offset:offset + 4]
+            status = "completed" if all(row["status"] == "completed" for row in selected) else ("in-progress" if any(row["status"] == "completed" for row in selected) else "planned")
             tranches.append({
                 "id": f"{scenario}-{offset // 4 + 1:03d}",
                 "risk_rank": risk[scenario],
                 "scenario": scenario,
-                "status": "planned",
+                "status": status,
                 "row_ids": [row["id"] for row in selected],
                 "pattern_rows": len(selected),
                 "variant_runs": sum(len(row["variant_ids"]) for row in selected),
                 "commit_policy": "one-reviewed-tranche-with-non-regression-runtime-identity-and-oracle-validation",
             })
+    completed = [item for item in tranches if item["status"] == "completed"]
+    pending = [item for item in tranches if item["status"] != "completed"]
+    completed_rows = sum(row["status"] == "completed" for row in rows)
     return {
         "schema_version": 1,
         "id": "rabbitmq-scenario-closure-plan-v1",
@@ -241,11 +254,11 @@ def build_closure_plan(index: dict[str, Any]) -> dict[str, Any]:
             "authority_behaviors": index["summary"]["behaviors"],
             "scenarios": index["summary"]["scenarios"],
         },
-        "completed_tranches": [],
-        "tranches": tranches,
+        "completed_tranches": completed,
+        "tranches": pending,
         "rows": rows,
-        "next_tranche": tranches[0] if tranches else None,
-        "summary": {"remaining_rows": len(rows), "planned_tranches": len(tranches), "completed_rows": 0},
+        "next_tranche": pending[0] if pending else None,
+        "summary": {"remaining_rows": len(rows) - completed_rows, "planned_tranches": len(pending), "completed_rows": completed_rows},
     }
 
 
@@ -269,8 +282,8 @@ def structure_digest(kind: str, path: str, root: Path = ROOT, evidence_root: Pat
     elif kind == "scenario-closure-plan":
         tranches = [{key: item.get(key) for key in ("id", "risk_rank", "scenario", "row_ids", "pattern_rows", "variant_runs", "commit_policy")}
                      for field in ("completed_tranches", "tranches") for item in document.get(field, [])]
-        ordered = [row_id for item in document.get("completed_tranches", []) for row_id in item.get("row_ids", [])]
-        ordered += [item["id"] for item in document.get("rows", [])]
+        tranches.sort(key=lambda item: (item["risk_rank"], item["id"]))
+        ordered = [item["id"] for item in document.get("rows", [])]
         value = {"id": document.get("id"), "scope": document.get("scope"), "policy": document.get("policy"),
                  "baseline": document.get("baseline"), "tranches": tranches, "ordered_row_ids": ordered}
     else:
@@ -279,7 +292,7 @@ def structure_digest(kind: str, path: str, root: Path = ROOT, evidence_root: Pat
 
 
 def discover_outputs(root: Path = ROOT, evidence_root: Path | None = None) -> list[str]:
-    evidence = evidence_root or (root / "evidence")
+    evidence = evidence_root or (EVIDENCE_ROOT if root == ROOT else root / "evidence")
     def logical(path: Path) -> str:
         try:
             return "evidence/" + path.relative_to(evidence).as_posix()
@@ -288,6 +301,7 @@ def discover_outputs(root: Path = ROOT, evidence_root: Path | None = None) -> li
     paths = [logical(path) for path in sorted(evidence.glob("raw/*.json"))]
     paths += [logical(path) for path in sorted(evidence.glob("*.evidence.json"))]
     paths += [logical(path) for path in sorted(evidence.glob("scenarios/behaviors/**/*.proof.json"))]
+    paths += [logical(path) for path in sorted(evidence.glob("scenario-runtime/**/*")) if path.is_file()]
     for relative in ("evidence/scenarios/index.json", "evidence/scenarios/closure-plan.json", "evidence/reference-system/results.json"):
         if actual_path(relative, root, evidence).is_file():
             paths.append(relative)
@@ -297,6 +311,34 @@ def discover_outputs(root: Path = ROOT, evidence_root: Path | None = None) -> li
     if (root / "provenance.yaml").is_file():
         paths.append("provenance.yaml")
     return sorted(set(paths))
+
+
+def build_scenario_runtime_index() -> dict[str, Any]:
+    rows = []
+    for report_path in sorted(EVIDENCE_ROOT.glob("scenario-runtime/**/*.runtime.json")):
+        report = load(report_path)
+        behavior = report["behavior_id"].replace("/", "_")
+        scenario = report["scenario"]
+        artifacts = []
+        for variant in report.get("variants", []):
+            for channel, item in sorted(variant.get("artifact_channels", {}).items()):
+                artifacts.append({
+                    "variant_id": variant["id"], "channel": channel,
+                    "path": item["path"], "digest": item["digest"],
+                })
+        proof_path = f"evidence/scenarios/behaviors/{behavior}/{scenario}.proof.json"
+        rows.append({
+            "id": f"runtime-binding.{report['behavior_id']}.{scenario}",
+            "behavior_id": report["behavior_id"], "scenario": scenario,
+            "report": {"path": logical_path(report_path), "digest": sha_file(report_path)},
+            "proof": {"path": proof_path, "digest": sha_file(actual_path(proof_path))},
+            "artifacts": artifacts,
+        })
+    return {
+        "schema_version": 1, "id": "rabbitmq-scenario-runtime-binding-index-v1",
+        "atlas_id": "rabbitmq-reference-atlas", "status": "current",
+        "rows": rows, "summary": {"runtime_reports": len(rows), "artifact_bindings": sum(len(row["artifacts"]) for row in rows)},
+    }
 
 
 def build_graph(previous: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -321,6 +363,7 @@ def build_graph(previous: dict[str, Any] | None = None) -> dict[str, Any]:
     closure = build_closure_plan(index)
     write_json(EVIDENCE_ROOT / "scenarios/closure-plan.json", closure)
     write_json(EVIDENCE_ROOT / "reference-system/results.json", load(ROOT / "reference-system/results.json"))
+    write_json(EVIDENCE_ROOT / "scenario-runtime/index.json", build_scenario_runtime_index())
 
     paths = discover_outputs()
     output_by_path: dict[str, dict[str, Any]] = {}
@@ -335,7 +378,21 @@ def build_graph(previous: dict[str, Any] | None = None) -> dict[str, Any]:
               "harness.producer-clients", "harness.consumer-clients"]
     for path in paths:
         record = load(actual_path(path, ROOT, EVIDENCE_ROOT)) if path.endswith(".evidence.json") else None
-        if path.startswith("evidence/scenarios/") or path == "evidence/reference-system/results.json" or path == "reference-system/results.json":
+        if path == "evidence/scenario-runtime/index.json":
+            runtime_paths = [candidate for candidate in paths if candidate.startswith("evidence/scenario-runtime/") and candidate != path]
+            index_document = load(actual_path(path, ROOT, EVIDENCE_ROOT))
+            proof_paths = [row["proof"]["path"] for row in index_document["rows"]]
+            dependencies = [output_id(candidate) for candidate in sorted(set(runtime_paths + proof_paths))]
+            run_id = "run.derived.scenario-runtime-binding-index"
+        elif path.startswith("evidence/scenario-runtime/"):
+            dependencies = [*common, "harness.evidence-reporters", profile_for(path)]
+            parts = path.split("/")
+            if "/artifacts/" in path:
+                run_key = "/".join((parts[3], parts[4]))
+            else:
+                run_key = "/".join((parts[2], parts[3].removesuffix(".runtime.json")))
+            run_id = "run.runtime.scenario." + hashlib.sha256(run_key.encode()).hexdigest()[:16]
+        elif path.startswith("evidence/scenarios/") or path == "evidence/reference-system/results.json" or path == "reference-system/results.json":
             dependencies = ["source.rabbitmq-authority-and-coverage", "harness.evidence-reporters",
                             "runtime.evidence-observation-set", "profile.scenario-and-reference-system"]
             run_id = "run.derived.scenario-proof-and-reference-system"
@@ -408,6 +465,7 @@ def build_graph(previous: dict[str, Any] | None = None) -> dict[str, Any]:
             started_at = completed_at = rerun_at
             command = {
                 "run.derived.scenario-proof-and-reference-system": "python3 scripts/generate-scenario-proofs.py && python3 scripts/evidence_dependency_graph.py generate",
+                "run.derived.scenario-runtime-binding-index": "python3 scripts/evidence_dependency_graph.py generate",
                 "run.derived.skill-eval": "python3 scripts/run-skill-evals.py",
                 "run.derived.repository-report": "make authority-body repo-validate",
             }[run_id]
@@ -485,8 +543,15 @@ def validate_graph(graph: dict[str, Any], root: Path = ROOT, baseline: dict[str,
     discovered = set(discover_outputs(root, evidence_root))
     if graph["status"] != "current":
         errors.append("dependency graph status is stale")
-    if set(graph["required_outputs"]) != set(output_paths) or discovered - set(graph["required_outputs"]):
-        errors.append("required output enumeration is missing or retreated")
+    required = set(graph["required_outputs"])
+    represented = set(output_paths)
+    if required != represented or discovered - required:
+        errors.append(
+            "required output enumeration is missing or retreated: "
+            f"required_not_represented={sorted(required - represented)} "
+            f"represented_not_required={sorted(represented - required)} "
+            f"discovered_not_required={sorted(discovered - required)}"
+        )
 
     def ancestors(identifier: str, visiting: set[str] | None = None) -> set[str]:
         visiting = visiting or set()
@@ -566,7 +631,8 @@ def main() -> int:
     parser.add_argument("command", choices=("generate", "check", "initialize-baseline"))
     args = parser.parse_args()
     if args.command == "generate":
-        previous = load(GRAPH_PATH) if GRAPH_PATH.is_file() else None
+        previous_path = Path(os.environ.get("RABBITMQ_EVIDENCE_PREVIOUS_GRAPH", GRAPH_PATH))
+        previous = load(previous_path) if previous_path.is_file() else None
         graph = build_graph(previous)
         write_json(GRAPH_PATH, graph)
     elif not GRAPH_PATH.is_file():

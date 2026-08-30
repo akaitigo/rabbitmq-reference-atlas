@@ -22,9 +22,9 @@
     "not_applicable_rows": 1109,
     "dedicated_proof_files": 2060,
     "legacy_runtime_observation_rows": 12,
-    "dedicated_runtime_report_rows": 0,
-    "scenario_gap_closed_rows": 0,
-    "scenario_gap_open_rows": 951,
+    "dedicated_runtime_report_rows": 9,
+    "scenario_gap_closed_rows": 9,
+    "scenario_gap_open_rows": 942,
     "authority_atomic_rows": 0,
     "completion_eligible_rows": 0,
     "integrated_scenarios": 10,
@@ -42,8 +42,8 @@
     "broker-cluster-3": {
       "required": 358,
       "legacy_runtime_observation": 0,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 3,
+      "scenario_gap_closed": 3,
       "completion_eligible": 0
     },
     "capacity-benchmark": {
@@ -91,8 +91,8 @@
     "plugin-mqtt": {
       "required": 72,
       "legacy_runtime_observation": 4,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "plugin-oauth2-idp": {
@@ -105,8 +105,8 @@
     "plugin-stomp": {
       "required": 75,
       "legacy_runtime_observation": 4,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "plugin-stream": {
@@ -126,8 +126,8 @@
     "protocol-amqp10": {
       "required": 21,
       "legacy_runtime_observation": 4,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 4,
+      "scenario_gap_closed": 4,
       "completion_eligible": 0
     },
     "rolling-upgrade": {
@@ -149,36 +149,36 @@
     "normal": {
       "required": 206,
       "legacy_runtime_observation": 3,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "boundary": {
       "required": 206,
       "legacy_runtime_observation": 3,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "rejection": {
       "required": 206,
       "legacy_runtime_observation": 3,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "failure": {
       "required": 74,
       "legacy_runtime_observation": 0,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "recovery": {
       "required": 74,
       "legacy_runtime_observation": 0,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "migration": {
@@ -191,15 +191,15 @@
     "operations": {
       "required": 50,
       "legacy_runtime_observation": 0,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "security": {
       "required": 47,
       "legacy_runtime_observation": 1,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 1,
+      "scenario_gap_closed": 1,
       "completion_eligible": 0
     },
     "performance": {
@@ -212,8 +212,8 @@
     "compatibility": {
       "required": 42,
       "legacy_runtime_observation": 2,
-      "dedicated_runtime_report": 0,
-      "scenario_gap_closed": 0,
+      "dedicated_runtime_report": 2,
+      "scenario_gap_closed": 2,
       "completion_eligible": 0
     }
   },
@@ -1168,11 +1168,11 @@
       "behavior_id": "amqp10.version-negotiation",
       "scenario": "boundary",
       "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/boundary.proof.json",
-      "digest": "sha256:1b8e1a92de4dd6f42acdf171ae18b1b0b67cf3980e8b8e1e8bd4c991104b7032",
-      "status": "legacy-runtime-observation-gap-open",
+      "digest": "sha256:a8fc401225ad9295f46f4aab64b8781c033beb37b818b8eb52ecc99ec03107f1",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": true,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -1216,11 +1216,11 @@
       "behavior_id": "amqp10.version-negotiation",
       "scenario": "normal",
       "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/normal.proof.json",
-      "digest": "sha256:2dd9a6f9f7ac40afb579ae2478b54733f8520573a59242145a58f1a7f8384c98",
-      "status": "legacy-runtime-observation-gap-open",
+      "digest": "sha256:f3d46fe2f58f8d99eea24dcf9b78f6605f2b8596e6c573e2ef02a46ea93ae9d0",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": true,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -1264,11 +1264,11 @@
       "behavior_id": "amqp10.version-negotiation",
       "scenario": "rejection",
       "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/rejection.proof.json",
-      "digest": "sha256:e9b0b513962e8b4899ab9219984380cc81369cfe6822b29f54045daf62b9b1a1",
-      "status": "legacy-runtime-observation-gap-open",
+      "digest": "sha256:f0af586cc7fa489b5f1a19ddf7540091e1b43d6bfed94b6613a3020cf6859b14",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": true,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -1276,11 +1276,11 @@
       "behavior_id": "amqp10.version-negotiation",
       "scenario": "security",
       "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/security.proof.json",
-      "digest": "sha256:41496a4339ba24735c28e4db4560eb06f336a0592bcefab760efd3683f630818",
-      "status": "legacy-runtime-observation-gap-open",
+      "digest": "sha256:ee393242907845162d0e4d622d29d0803decea20a1719b1ccd2d90d51236a2e5",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": true,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -8968,7 +8968,7 @@
       "behavior_id": "mqtt.protocol-versions-qos",
       "scenario": "boundary",
       "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/boundary.proof.json",
-      "digest": "sha256:e368f82807f6106affd0f5ff1261594621d02ea30a69750c876e32a7eb82abe1",
+      "digest": "sha256:a58e03de6e83fffbc9bb5254cdbbb4c4cca9c1fa1876315f2e547748f818b86c",
       "status": "legacy-runtime-observation-gap-open",
       "legacy_runtime_observation": true,
       "dedicated_runtime_report": false,
@@ -8980,11 +8980,11 @@
       "behavior_id": "mqtt.protocol-versions-qos",
       "scenario": "compatibility",
       "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/compatibility.proof.json",
-      "digest": "sha256:04b4a12d512867acc34f8d984fdce88f8d7fe1ac789eb405720787a51064c432",
-      "status": "legacy-runtime-observation-gap-open",
+      "digest": "sha256:4b0383951f252463d3da5ece3024841b800049b1aaf18c1e4d03da8052baa5a5",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": true,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -9016,7 +9016,7 @@
       "behavior_id": "mqtt.protocol-versions-qos",
       "scenario": "normal",
       "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/normal.proof.json",
-      "digest": "sha256:b44dd897ceb2a31cb5d612fc21619d60cc1624d56dfc76371628f22ea9110e6b",
+      "digest": "sha256:beabba9c49105da9e2a8270071367aa270e69cf91c55bf3dba1538271190b7ca",
       "status": "legacy-runtime-observation-gap-open",
       "legacy_runtime_observation": true,
       "dedicated_runtime_report": false,
@@ -9064,7 +9064,7 @@
       "behavior_id": "mqtt.protocol-versions-qos",
       "scenario": "rejection",
       "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/rejection.proof.json",
-      "digest": "sha256:3cc30cea47d918679291246d91db266b7737f755f41637c304e2e30468eb505c",
+      "digest": "sha256:f801eccdf9154af48f7efdf8df3b06ee159b6b9dfe22418057e6d05b9144454e",
       "status": "legacy-runtime-observation-gap-open",
       "legacy_runtime_observation": true,
       "dedicated_runtime_report": false,
@@ -13348,11 +13348,11 @@
       "behavior_id": "partition.detection",
       "scenario": "operations",
       "path": "evidence/scenarios/behaviors/partition.detection/operations.proof.json",
-      "digest": "sha256:f3949caaf62012faedfaa8114d8f66b6fe1ff2dfe372f87c90304c0b93097ff5",
-      "status": "scenario-gap-open",
+      "digest": "sha256:da975c244c136888be2d357c2a6357f2b0c4724e0242d44d2de209a57cc54eb8",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": false,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -13612,11 +13612,11 @@
       "behavior_id": "partition.recovery",
       "scenario": "recovery",
       "path": "evidence/scenarios/behaviors/partition.recovery/recovery.proof.json",
-      "digest": "sha256:cec99f4e1f89ebbea566bba161f9149540242ca399e441ba54708e1afee71a32",
-      "status": "scenario-gap-open",
+      "digest": "sha256:b74c5961c2c5513e4837a220c7eb92df06c33e17bbef9622b9349b499162cf9f",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": false,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -17512,11 +17512,11 @@
       "behavior_id": "quorum.replication",
       "scenario": "failure",
       "path": "evidence/scenarios/behaviors/quorum.replication/failure.proof.json",
-      "digest": "sha256:ff0c4d6c8d3c1df58586bc3358c8e6562c33c285b1fc67dfd00716975dd9ab01",
-      "status": "scenario-gap-open",
+      "digest": "sha256:8eb3163f4b1460ef02e2e00e11f7ceb60a122ad57b331e7ed4674ede55295acd",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": false,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -19768,7 +19768,7 @@
       "behavior_id": "stomp.protocol-plugin",
       "scenario": "boundary",
       "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/boundary.proof.json",
-      "digest": "sha256:cb5688008953da71047733d4156040823f2845f3df7b44e8e60f6e43d8d1db29",
+      "digest": "sha256:a2f756e1b71e724944547719512688fe1f99bfa634079ecbb25169d28481bc4b",
       "status": "legacy-runtime-observation-gap-open",
       "legacy_runtime_observation": true,
       "dedicated_runtime_report": false,
@@ -19780,11 +19780,11 @@
       "behavior_id": "stomp.protocol-plugin",
       "scenario": "compatibility",
       "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/compatibility.proof.json",
-      "digest": "sha256:28240f99e693242dde2bb93cec8382fcece96d2c93cb8c8551b5b5d38f3c6393",
-      "status": "legacy-runtime-observation-gap-open",
+      "digest": "sha256:9c3b03b49e46425a4c63089eaa2b85222d281385d0cbf1ba1d8ac0e6828b947a",
+      "status": "scenario-gap-closed",
       "legacy_runtime_observation": true,
-      "dedicated_runtime_report": false,
-      "scenario_gap_closed": false,
+      "dedicated_runtime_report": true,
+      "scenario_gap_closed": true,
       "completion_eligible": false
     },
     {
@@ -19816,7 +19816,7 @@
       "behavior_id": "stomp.protocol-plugin",
       "scenario": "normal",
       "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/normal.proof.json",
-      "digest": "sha256:e3f60e346fdeb8aef4de3e2058f1d20b432aa794200b9988a8e5e8488bc3c840",
+      "digest": "sha256:ba97a358bac97bf324d731b966a805e515de62e412a779f716c9edf52f63784a",
       "status": "legacy-runtime-observation-gap-open",
       "legacy_runtime_observation": true,
       "dedicated_runtime_report": false,
@@ -19864,7 +19864,7 @@
       "behavior_id": "stomp.protocol-plugin",
       "scenario": "rejection",
       "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/rejection.proof.json",
-      "digest": "sha256:6d58eacbd9ce9209ff3305cdfea517e23e625237ed6b63a20204c51ab0f728bf",
+      "digest": "sha256:53539c3895ca176fdc13c624561a1e962c141e633eedb886a4ed4b15ca414f76",
       "status": "legacy-runtime-observation-gap-open",
       "legacy_runtime_observation": true,
       "dedicated_runtime_report": false,

@@ -240,7 +240,7 @@ def main() -> int:
             or publication.get("mixed_generation") != expected_atomic["mixed_generation"]
             or publication.get("historical_live_without_run_report_allowed") is not True
             or publication.get("next_success_requires_run_report") is not True
-            or publication.get("owned_globs") != ["raw/*.json", "*.evidence.json", "dependency-graph.json", "reference-system/*.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json"]):
+            or publication.get("owned_globs") != ["raw/*.json", "*.evidence.json", "dependency-graph.json", "reference-system/*.json", "scenarios/*.json", "scenarios/behaviors/**/*.proof.json", "scenario-runtime/**/*.json", "scenario-runtime/**/*.txt"]):
         fail(errors, "RabbitMQ Atomic Evidence publication local contract mismatch")
     if (parity["reference"].get("atomic_evidence_publication_source_commit") != expected_atomic["source_commit"]
             or parity["reference"].get("atomic_evidence_publish_on") != expected_atomic["publish_on"]

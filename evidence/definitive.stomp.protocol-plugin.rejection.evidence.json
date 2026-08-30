@@ -8,7 +8,7 @@
   "kind": "conformance",
   "producer": "cmd/rmq-plugin-protocols",
   "command": "bash scripts/run-plugin-protocol-lab.sh",
-  "created_at": "2026-08-28T11:16:26.836399589Z",
+  "created_at": "2026-08-30T11:43:01.539893639Z",
   "environment": {
     "profile": "cluster",
     "runtime_profile": "plugin-stomp",
@@ -23,13 +23,13 @@
     "scenario": "rejection"
   },
   "source_digest": "sha256:09c7e172622e8ad1dde0401f01e625586f1e9231165f10ab40cd8e60f7ddcb0c",
-  "harness_digest": "sha256:b05df0bfa1939c0c22933cb2030638247a68e96b4b9e3d8df252a5529e8907d4",
+  "harness_digest": "sha256:eca90ce40208a879abd7baf0d0d517d64bde76409a38fd86233c3d91206f5a01",
   "harness_path": "cmd/rmq-plugin-protocols/main.go",
   "execution_mode": "runtime",
   "runtime_identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins",
   "artifact": {
     "uri": "evidence/raw/definitive.stomp.protocol-plugin.rejection.json",
-    "digest": "sha256:f481f8d0f7193e7dd8e0b80e3ad796b1d139aafa1ced54097e30f1e5f87c9ddc",
+    "digest": "sha256:f7ece3ba99827566202562881bc5394e89657668679447c7f34f8d19e6a1f2b6",
     "media_type": "application/json",
     "size_bytes": 941
   },

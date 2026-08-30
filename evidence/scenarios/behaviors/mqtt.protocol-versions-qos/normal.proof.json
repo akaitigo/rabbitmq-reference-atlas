@@ -40,13 +40,13 @@
       "client": {
         "name": "cmd/rmq-plugin-protocols",
         "version_kind": "harness-sha256",
-        "version": "sha256:b05df0bfa1939c0c22933cb2030638247a68e96b4b9e3d8df252a5529e8907d4",
+        "version": "sha256:eca90ce40208a879abd7baf0d0d517d64bde76409a38fd86233c3d91206f5a01",
         "source": "cmd/rmq-plugin-protocols/main.go"
       },
       "runtime": {
         "profile": "plugin-mqtt",
         "execution_mode": "runtime",
-        "created_at": "2026-08-28T11:16:17.79341821Z",
+        "created_at": "2026-08-30T11:42:52.487430676Z",
         "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins"
       }
     },
@@ -62,9 +62,9 @@
           {
             "channel": "client-log",
             "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.normal.json",
-            "digest": "sha256:ac4525ed1e92fd6b65b92f794f833325f3145487ecf78aa83f45c2d5a11ead62",
+            "digest": "sha256:dbce9ee45e6bb1b055390ee623eb5ee9f9f678f362061daa34ef5981e206b98c",
             "media_type": "application/json",
-            "size_bytes": 876
+            "size_bytes": 877
           }
         ],
         "gap_ids": []
