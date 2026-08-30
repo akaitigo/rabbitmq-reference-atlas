@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "id": "historical-certificate-adapter-v1",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "status": "active",
+  "source_commit": "22ab07cc6c3d92ab489fe6ff8855c9fb8a97db5a",
+  "mapping": {
+    "old_id": "rabbitmq-bounded-complete-v0.1.0-legacy-custom",
+    "new_id": "rabbitmq-bounded-complete-v0.1.0-core-v2-adapter",
+    "old_path": "evidence/history/v0.1.0/completion-certificate.json",
+    "new_path": "evidence/history/v0.1.0/core-v2-adapter/completion-certificate.json",
+    "old_digest": "sha256:8dbf8e2820e0e839eef7574e447f5607350f84f7a6367af58022d34a6ce69099",
+    "new_digest": "sha256:da935bc1b1003776f7aa062431064912da04d5a88a865eec145dc71a2460a052",
+    "relationship": "derived-adapter-preserves-immutable-source",
+    "field_sources": {
+      "atlas_release": "skill.package.yaml@source_commit",
+      "authority_lock_digest": "coverage.yaml@source_commit",
+      "core_policy_version": "atlas.yaml@source_commit",
+      "required_profiles": "legacy Evidence environment.profile@source_commit",
+      "graph_digest": "legacy Certificate manifests+evidence canonical digest",
+      "evidence_set_digest": "legacy Certificate evidence canonical digest",
+      "skill_package_digest": "skill.package.yaml bytes@source_commit",
+      "skill_eval": "evidence/raw/skill-eval.json bytes and pass_rate@source_commit",
+      "sbom_digest": "sbom.spdx.json bytes@source_commit",
+      "provenance_digest": "evidence/history/v0.1.0/core-v2-adapter/provenance.json",
+      "issued_at": "adapter issuance time; not the legacy created_at",
+      "commit": "22ab07cc6c3d92ab489fe6ff8855c9fb8a97db5a",
+      "signature": "canonical adapter payload SHA-256"
+    },
+    "reason": "旧custom形式を上書きせず、固定source commitのArtifactからCore Schema必須fieldを再導出してbounded履歴だけを検証可能にするため。"
+  },
+  "migration_evidence": "evidence/migrations/historical-certificate-adapter-v1.json",
+  "non_regression": {
+    "legacy_file_retained": true,
+    "legacy_digest_unchanged": true,
+    "classification_only_allowed": false,
+    "subject_definitive_credit": false
+  }
+}

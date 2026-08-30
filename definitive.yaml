@@ -16,7 +16,7 @@ skill_eval: evals/rabbitmq-reference-atlas.definitive-skill-eval.json
 skill_router: evals/definitive-skill-router.json
 certificate: evidence/definitive-certificate.json
 historical_certificates:
-- path: evidence/history/v0.1.0/completion-certificate.json
+- path: evidence/history/v0.1.0/core-v2-adapter/completion-certificate.json
   classification: bounded-complete
 reference_systems:
 - id: rabbitmq-reference-system

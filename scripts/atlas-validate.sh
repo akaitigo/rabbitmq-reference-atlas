@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 CORE_COMMIT=072d7ca77981f51754e824d70c6d4ecd55ea67e5
-FILES=("$ROOT/atlas.yaml" "$ROOT/sources.lock.yaml" "$ROOT/coverage.yaml" "$ROOT/skill.package.yaml" "$ROOT/mastery.yaml" "$ROOT/definitive.yaml" "$ROOT/surface.inventory.yaml" "$ROOT/migrations/definitive-v2.yaml" "$ROOT/evals/rabbitmq-reference-atlas.definitive-skill-eval.json" "$ROOT/evidence/dependency-graph.json")
+FILES=("$ROOT/atlas.yaml" "$ROOT/sources.lock.yaml" "$ROOT/coverage.yaml" "$ROOT/skill.package.yaml" "$ROOT/mastery.yaml" "$ROOT/definitive.yaml" "$ROOT/surface.inventory.yaml" "$ROOT/migrations/definitive-v2.yaml" "$ROOT/evidence/history/v0.1.0/core-v2-adapter/completion-certificate.json" "$ROOT/evals/rabbitmq-reference-atlas.definitive-skill-eval.json" "$ROOT/evidence/dependency-graph.json")
 while IFS= read -r file; do FILES+=("$file"); done < <(find "$ROOT/evidence" -maxdepth 1 -type f \( -name '*.evidence.json' -o -name '*.evidence.yaml' \) | sort)
 while IFS= read -r file; do FILES+=("$file"); done < <(find "$ROOT/surface/authority" -maxdepth 1 -type f -name '*.authority-surfaces.yaml' | sort)
 while IFS= read -r file; do FILES+=("$file"); done < <(find "$ROOT/claims" -maxdepth 1 -type f -name '*.claim.yaml' | sort)

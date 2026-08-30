@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "id": "bounded-complete-v1-core-v2-adapter-provenance",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "kind": "historical-certificate-adapter-provenance",
+  "status": "pass",
+  "adapter_issued_at": "2026-08-31T00:00:00+09:00",
+  "legacy_source": {
+    "path": "evidence/history/v0.1.0/completion-certificate.json",
+    "digest": "sha256:8dbf8e2820e0e839eef7574e447f5607350f84f7a6367af58022d34a6ce69099",
+    "format": "rabbitmq-atlas-legacy-custom-v1",
+    "source_commit": "22ab07cc6c3d92ab489fe6ff8855c9fb8a97db5a",
+    "immutable": true
+  },
+  "derivation": {
+    "policy": "core-v2-historical-adapter-v1",
+    "graph_digest": "canonical SHA-256 of the immutable legacy manifests and evidence collections",
+    "evidence_set_digest": "canonical SHA-256 of the immutable legacy evidence collection",
+    "profile_bindings": "environment.profile from each legacy Evidence record at source_commit",
+    "authority_skill_sbom": "values or bytes fixed at source_commit",
+    "skill_eval": "legacy skill-eval Artifact bytes and observed pass_rate at source_commit",
+    "provenance_digest": "SHA-256 of this adapter provenance Artifact"
+  },
+  "limitations": [
+    "このAdapterは旧custom Certificate自体をCore Certificateだったものとして書き換えない。",
+    "このAdapterは当時の有限Coverageに対するbounded-complete履歴だけを表し、subject-definitive昇格や現在EvidenceのClosureを証明しない。",
+    "旧形式に存在しなかったfieldはsource commitの固定Artifactまたは本migration provenanceから導出し、mapping Evidenceなしに再解釈しない。"
+  ]
+}

@@ -1,4 +1,4 @@
-.PHONY: test skill-eval definitive-skill-eval scenario-proof scenario-runtime verification-matrix core-depth-parity security-tranche-contract security-tranche-cleanup workflow-pins upgrade-cleanup atomic-evidence evidence-dependency atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal check labs amqp10-lab plugin-protocol-lab tls-lab observability-lab upgrade-lab lock-sources completion
+.PHONY: test skill-eval definitive-skill-eval scenario-proof scenario-runtime verification-matrix core-depth-parity historical-certificate security-tranche-contract security-tranche-cleanup workflow-pins upgrade-cleanup atomic-evidence evidence-dependency atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal check labs amqp10-lab plugin-protocol-lab tls-lab observability-lab upgrade-lab lock-sources completion
 
 export GOCACHE := $(CURDIR)/.cache/go-build
 export GOMODCACHE := $(CURDIR)/.cache/go-mod
@@ -28,6 +28,10 @@ verification-matrix:
 core-depth-parity:
 	python3 scripts/generate-core-depth-parity.py --check
 	python3 scripts/test-core-depth-parity.py
+
+historical-certificate:
+	python3 scripts/generate-historical-certificate-adapter.py --check
+	python3 scripts/test-historical-certificate-adapter.py
 
 security-tranche-contract:
 	python3 scripts/test-security-tranche-contract.py
@@ -81,7 +85,7 @@ legal:
 	test -s sbom.spdx.json
 	test -s third_party/sbom.cdx.json
 
-check: test skill-eval definitive-skill-eval scenario-proof scenario-runtime verification-matrix core-depth-parity security-tranche-contract security-tranche-cleanup workflow-pins upgrade-cleanup atomic-evidence evidence-dependency atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal
+check: test skill-eval definitive-skill-eval scenario-proof scenario-runtime verification-matrix core-depth-parity historical-certificate security-tranche-contract security-tranche-cleanup workflow-pins upgrade-cleanup atomic-evidence evidence-dependency atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal
 
 labs:
 	bash scripts/run-labs.sh
