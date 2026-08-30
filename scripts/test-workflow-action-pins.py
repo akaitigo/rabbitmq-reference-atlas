@@ -32,6 +32,23 @@ def validate(documents: dict[str, str]) -> None:
     missing = [name for name, count in found.items() if count == 0]
     if missing:
         raise WorkflowPinError("required-action-pin-missing:" + ",".join(missing))
+    checkout_documents = {
+        path: yaml.safe_load(source)
+        for path, source in documents.items()
+        if "actions/checkout@" in source
+    }
+    for path, document in checkout_documents.items():
+        jobs = document.get("jobs", {}) if isinstance(document, dict) else {}
+        checkout_steps = [
+            step
+            for job in jobs.values()
+            if isinstance(job, dict)
+            for step in job.get("steps", [])
+            if isinstance(step, dict) and str(step.get("uses", "")).startswith("actions/checkout@")
+        ]
+        for step in checkout_steps:
+            if step.get("with", {}).get("fetch-depth") != 0:
+                raise WorkflowPinError(f"historical-source-commit-unavailable:{path}:fetch-depth")
 
 
 documents = {
@@ -64,4 +81,14 @@ for action, mutable in (("checkout", "v4"), ("setup-go", "v5")):
     else:
         raise WorkflowPinError(f"mutable fixture accepted: actions/{action}@{mutable}")
 
-print("workflow action pin contract PASS: checkout/setup-go exact commit、mutable tag negative fixtureを確認")
+shallow = dict(documents)
+checkout_workflow = next(path for path, source in shallow.items() if "actions/checkout@" in source)
+shallow[checkout_workflow] = shallow[checkout_workflow].replace("fetch-depth: 0", "fetch-depth: 1", 1)
+try:
+    validate(shallow)
+except WorkflowPinError as error:
+    assert str(error).startswith("historical-source-commit-unavailable:"), error
+else:
+    raise WorkflowPinError("shallow checkout fixture accepted")
+
+print("workflow action pin contract PASS: checkout/setup-go exact commit、全履歴、mutable/shallow negative fixtureを確認")
