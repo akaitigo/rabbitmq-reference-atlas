@@ -1,0 +1,21 @@
+schema_version: 1
+id: definitive.exchange.topic.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: routing.exchange
+statement: Topic exchange wildcard routingのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-exchanges
+proof_obligations:
+- id: proof.exchange.topic.normal
+  statement: Topic exchange wildcard routingのnormal Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.exchange.topic.boundary
+  statement: Topic exchange wildcard routingのboundary Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.exchange.topic.rejection
+  statement: Topic exchange wildcard routingのrejection Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。

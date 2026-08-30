@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "behavior_id": "cli.rabbitmq-plugins",
+  "authority_surface_id": "cli.rabbitmq-plugins",
+  "scenario": "rejection",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "run_metadata": {
+    "execution_id": "20260830T171233Z-40300",
+    "started_at": "2026-08-30T17:12:33Z",
+    "completed_at": "2026-08-30T17:19:49.960601Z"
+  },
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-plugins-4.3.5",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-plugins.rejection.node-1",
+        "assertions": [
+          "到達不能なtarget nodeへのonline plugin applyが非zeroで拒否された",
+          "拒否前後でenabled plugin inventoryが変化しなかった"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-1/packet.json",
+          "digest": "sha256:09e707ae6ab77b5ad0296b4d9df6da9b16e04f1611e1dca507e6266c90eaf38c",
+          "size_bytes": 1495,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-1/log.txt",
+          "digest": "sha256:1f9d1d3593ee457ad9ba8128fb666716a418d070d69f77c2a4da71f7800c52b9",
+          "size_bytes": 36216,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-1/metric.json",
+          "digest": "sha256:35aaefd7e6c009a160cb49b7fa30f1d21d484f1a38d6a2f733a90c1848dd33f6",
+          "size_bytes": 59500,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-plugins-4.3.5",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-plugins.rejection.node-2",
+        "assertions": [
+          "到達不能なtarget nodeへのonline plugin applyが非zeroで拒否された",
+          "拒否前後でenabled plugin inventoryが変化しなかった"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-2/packet.json",
+          "digest": "sha256:d68d908dfbca4e93b2839cda545a31de5a2b139d3d04f29a81851f48c36668f2",
+          "size_bytes": 1495,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-2/log.txt",
+          "digest": "sha256:8aa83ca9f7721fe3e85280ce7710784a2bf0420da87c769cd66a881eb74a992e",
+          "size_bytes": 33861,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-2/metric.json",
+          "digest": "sha256:d875bb1cfe4d8857b63a810312992d53bdcb14efbd102df34cf92d5a4b663f0f",
+          "size_bytes": 59488,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-plugins-4.3.5",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-plugins.rejection.node-3",
+        "assertions": [
+          "到達不能なtarget nodeへのonline plugin applyが非zeroで拒否された",
+          "拒否前後でenabled plugin inventoryが変化しなかった"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-3/packet.json",
+          "digest": "sha256:ca240462e24294d45ad2d3a6fcb2143610bdf0685ab77b6e99e822baf22cf761",
+          "size_bytes": 1495,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-3/log.txt",
+          "digest": "sha256:96e42d8548ce4706e890a3f3e2586a6d39b4b4d3f9186879f03ffe6b5a4e0c99",
+          "size_bytes": 34139,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-3/metric.json",
+          "digest": "sha256:70b5bc8f8938f724d17be891f6b9fc3544994a726f61a32496ec7f43c2a3b86c",
+          "size_bytes": 59526,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

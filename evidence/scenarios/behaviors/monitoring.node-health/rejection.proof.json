@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.monitoring.node-health.rejection",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "monitoring.node-health",
+  "target_id": "definitive.monitoring.node-health",
+  "scenario": "rejection",
+  "applicability": "required",
+  "status": "scenario-gap-closed",
+  "runtime_profile": "broker-cluster-3",
+  "proof_obligation_id": "proof.monitoring.node-health.rejection",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.monitoring.node-health",
+      "authority_artifact_id": "rabbitmq-4-3-monitoring",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-monitoring.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:4433f2dcf37a196c0e30dc91bd08a779cf2b1c183c0d6263c5607447e2d1bf12",
+      "source_id": "rabbitmq-4.3-monitoring",
+      "source_digest": "sha256:f8ab65c35c95b92aad8d5cc0bdb94560136849a3dfacfd2b827475e7c73ff73d",
+      "surface_id": "monitoring.node-health",
+      "locator": "#health-checks",
+      "behavior_id": "monitoring.node-health"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "legacy_observation": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "identity": {
+      "broker": null,
+      "client": null,
+      "runtime": null
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.missing"
+        ]
+      },
+      "log": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.log.missing"
+        ]
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.log.missing",
+      "artifact.metric.missing",
+      "artifact.packet.missing",
+      "evidence.behavior-specific-single-record-missing",
+      "identity.broker.missing",
+      "identity.client-version.missing",
+      "identity.runtime.missing"
+    ],
+    "counts_toward_scenario_gap_closure": false,
+    "aggregate_evidence_allowed": false
+  },
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/monitoring.node-health/rejection.runtime.json",
+      "present": true,
+      "digest": "sha256:43f2f7e348ea1101a8ea12419b3e2767f89a57737b0dbdc1fd0fa4b499a1d449"
+    },
+    "required_variants": [
+      "node-1",
+      "node-2",
+      "node-3"
+    ],
+    "variant_proofs": [
+      {
+        "id": "node-1",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "rabbitmq-diagnostics-4.3.5",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.monitoring.node-health.rejection.node-1",
+          "assertions": [
+            "停止nodeへのhealth probeが非zeroで拒否された",
+            "拒否Traceが停止対象node identityへ結び付いた"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/packet.json",
+              "digest": "sha256:c0071bebe0b3384eab46a1dec687ab08dd27e7d5deaa4a90851c68b42c43e9b0",
+              "size_bytes": 432,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/log.txt",
+              "digest": "sha256:d96c4cd67c23d399fa392098fc16d908d15231a12ed7c9038a9619e455ffad08",
+              "size_bytes": 35449,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/metric.json",
+              "digest": "sha256:db053aa749138c002102a30d91f16ec0dda7ae3470e6cb06f62c4e21c2b217ff",
+              "size_bytes": 506,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      },
+      {
+        "id": "node-2",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "rabbitmq-diagnostics-4.3.5",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.monitoring.node-health.rejection.node-2",
+          "assertions": [
+            "停止nodeへのhealth probeが非zeroで拒否された",
+            "拒否Traceが停止対象node identityへ結び付いた"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/packet.json",
+              "digest": "sha256:bd7394ea3666c390de3631f81b943e5d008d82ca5dbe2a1101bd89189cc12287",
+              "size_bytes": 510,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/log.txt",
+              "digest": "sha256:2a8197fa8e47a0caf4fb19428841b5510220a11f71cf69ee9dc683ea0aca737d",
+              "size_bytes": 35043,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/metric.json",
+              "digest": "sha256:6b1407b19079577b2c23f0757c6500df80957c6cd7bceec59e166957e358bb20",
+              "size_bytes": 44060,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      },
+      {
+        "id": "node-3",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "rabbitmq-diagnostics-4.3.5",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.monitoring.node-health.rejection.node-3",
+          "assertions": [
+            "停止nodeへのhealth probeが非zeroで拒否された",
+            "拒否Traceが停止対象node identityへ結び付いた"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/packet.json",
+              "digest": "sha256:87913f31f141c14fba957b73cc5d187efdf8e6d4cf19164f7381cfc4774b52ed",
+              "size_bytes": 510,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/log.txt",
+              "digest": "sha256:fc5f06324a09ecf03b00b8ed2619b2cb3c4b88e2ebc11474d38d45c537659403",
+              "size_bytes": 36003,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/metric.json",
+              "digest": "sha256:d92ae1993d21db83b89d73702a0316e8afecfba6b602f469552bf6706fde8242",
+              "size_bytes": 44056,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      }
+    ],
+    "requirements": {
+      "dedicated_surface_scenario_report": true,
+      "all_variants_driven": true,
+      "attempts_one_retry_zero": true,
+      "oracle_pass_per_variant": true,
+      "source_harness_digest_bound": true,
+      "broker_client_runtime_identity": true,
+      "packet_log_metric_dedicated": true
+    },
+    "scenario_gap_closed": true
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.rejection",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_surface_scenario_report": true,
+    "all_variants_driven": true,
+    "attempts_one_retry_zero": true,
+    "oracle_pass_per_variant": true,
+    "source_harness_digest_bound": true,
+    "broker_client_runtime_identity": true,
+    "packet_log_metric_dedicated": true,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": true,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "scenario_gap_ids": [],
+  "completion_gap_ids": [
+    "authority.atomic-human-promotion-missing"
+  ],
+  "gap_ids": [
+    "authority.atomic-human-promotion-missing"
+  ]
+}

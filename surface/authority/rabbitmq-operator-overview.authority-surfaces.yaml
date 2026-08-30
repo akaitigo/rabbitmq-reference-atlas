@@ -1,0 +1,51 @@
+schema_version: 2
+source_id: rabbitmq-operator-overview
+source_digest: sha256:d5311b55df339af1032ca249417a6dc7b58f529aac79152f1266df83610ce586
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: operator.cluster-provisioning
+  locator: '#rabbitmq-cluster-kubernetes-operator'
+  kind: capability
+  capability_id: operator.cluster
+  behavior_id: operator.cluster-provisioning
+  title: Single-node and multi-node RabbitMQ cluster provisioning
+  surface_ids: [implementation-construction, operations-observability]
+- id: operator.cluster-reconciliation
+  locator: '#rabbitmq-cluster-kubernetes-operator'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator.cluster-reconciliation
+  title: Desired state reconciliation and day-two operations
+  surface_ids: [failure-recovery, operations-observability]
+- id: operator.rolling-upgrade
+  locator: '#rabbitmq-cluster-kubernetes-operator'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator.rolling-upgrade
+  title: Operator-driven scaling and rolling upgrades
+  surface_ids: [operations-observability, migration-evolution-deprecation]
+- id: operator.feature-flags
+  locator: '#rabbitmq-cluster-kubernetes-operator-design-principles'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator.feature-flags
+  title: Operator feature flag enablement policy
+  surface_ids: [compatibility-integration, migration-evolution-deprecation]
+- id: operator.topology
+  locator: '#rabbitmq-messaging-topology-operator'
+  kind: capability
+  capability_id: operator.topology
+  behavior_id: operator.topology-reconciliation
+  title: Declarative messaging topology reconciliation
+  surface_ids: [implementation-construction, operations-observability]
+- id: operator.topology-limitations
+  locator: '#limitations'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: operator.topology-rejection
+  title: Topology Operator credential and reconciliation limitations
+  surface_ids: [testing-verification, failure-recovery, security-privacy-safety]

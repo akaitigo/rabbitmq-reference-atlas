@@ -1,0 +1,114 @@
+schema_version: 2
+source_id: rabbitmq-topology-operator-usage
+source_digest: sha256:2ff6c8d5dfc8d25a52978f7d4a791362de3a9712464019a736b4a8a619ff6a40
+extraction:
+  method: primary-text-reviewed
+  tool: heading-and-contract-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+  - id: topology-operator.secret-label
+    locator: '#secret-label-requirement'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.secret-label-admission
+    title: Labeled Secret cache and unlabeled or missing Secret admission rejection
+    surface_ids: [testing-verification, security-privacy-safety]
+  - id: topology-operator.namespace-scope
+    locator: '#scope-across-multiple-namespaces'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.namespace-scope
+    title: Same-namespace and explicitly allowed cross-namespace reconciliation
+    surface_ids: [testing-verification, security-privacy-safety]
+  - id: topology-operator.external-cluster
+    locator: '#non-operator-managed-rabbitmq'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.external-cluster
+    title: External RabbitMQ connection Secret and immutable cluster reference
+    surface_ids: [implementation-construction, testing-verification, security-privacy-safety, compatibility-integration]
+  - id: topology-operator.queue-policy
+    locator: '#queues-and-policies'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.queue-policy
+    title: Queue and policy creation, update, drift, and declaration rejection
+    surface_ids: [implementation-construction, testing-verification, failure-recovery]
+  - id: topology-operator.exchange-binding
+    locator: '#exchanges-and-bindings'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.exchange-binding
+    title: Exchange and binding creation, update, and missing dependency failure
+    surface_ids: [implementation-construction, testing-verification, failure-recovery]
+  - id: topology-operator.user-permissions
+    locator: '#users-and-user-permissions'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.user-permissions
+    title: User credential Secret, permission, and topic permission reconciliation
+    surface_ids: [implementation-construction, testing-verification, security-privacy-safety]
+  - id: topology-operator.vhost
+    locator: '#virtual-hosts'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.vhost
+    title: Virtual host creation, limits, default queue type, and deletion
+    surface_ids: [implementation-construction, testing-verification, security-privacy-safety]
+  - id: topology-operator.federation
+    locator: '#federation'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.federation
+    title: Federation URI Secret and upstream reconciliation
+    surface_ids: [implementation-construction, testing-verification, failure-recovery, security-privacy-safety]
+  - id: topology-operator.shovel
+    locator: '#shovel'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.shovel
+    title: Shovel URI Secret, acknowledgement mode, and recovery reconciliation
+    surface_ids: [implementation-construction, testing-verification, failure-recovery, security-privacy-safety]
+  - id: topology-operator.immutable-update
+    locator: '#update-a-resource'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.immutable-update-rejection
+    title: Mutable update reconciliation and immutable field webhook rejection
+    surface_ids: [testing-verification, migration-evolution-deprecation]
+  - id: topology-operator.deletion-policy
+    locator: '#delete-a-resource'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.deletion-policy
+    title: Finalizer and delete versus retain policy behavior
+    surface_ids: [testing-verification, failure-recovery, migration-evolution-deprecation]
+  - id: topology-operator.tls
+    locator: '#tls'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.tls
+    title: Topology Operator HTTPS management connection trust
+    surface_ids: [testing-verification, security-privacy-safety]
+  - id: topology-operator.time-reconciliation
+    locator: '#time-based-reconciliation'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.time-reconciliation
+    title: Periodic reconciliation, deleted topology recovery, and message loss boundary
+    surface_ids: [testing-verification, failure-recovery, operations-observability, performance-capacity-cost]
+  - id: topology-operator.monitoring
+    locator: '#monitoring'
+    kind: capability
+    capability_id: operator.topology
+    behavior_id: topology-operator.monitoring
+    title: Topology Operator reconciliation logs and Prometheus metrics
+    surface_ids: [testing-verification, operations-observability]
+  - id: topology-operator.imported-definitions
+    locator: '#limitations'
+    kind: behavior
+    capability_id: operator.topology
+    behavior_id: topology-operator.imported-definitions-failure
+    title: Imported definitions credential overwrite failure and recovery boundary
+    surface_ids: [testing-verification, failure-recovery, security-privacy-safety]

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "id": "migration.core-evidence-dependency-main",
+  "created_at": "2026-08-29T00:00:00+09:00",
+  "baseline_commit": "22ab07cc6c3d92ab489fe6ff8855c9fb8a97db5a",
+  "old_core_commit": "be19ddaa411fe60dcf12f0f5d457902bb57b9eb3",
+  "new_core_commit": "072d7ca77981f51754e824d70c6d4ecd55ea67e5",
+  "new_core_ref": "main",
+  "new_core_ci": "passed",
+  "verdict": "pass",
+  "checks": [
+    {
+      "id": "go-test-reference-atlas-core",
+      "command": "go test ./...",
+      "working_tree": "reference-atlas-core@072d7ca77981f51754e824d70c6d4ecd55ea67e5",
+      "verdict": "pass",
+      "result": "cmd/atlas, internal/project, internal/validate, schemas passed; internal/validate 235.447s"
+    },
+    {
+      "id": "atlas-evidence-dependency-gate",
+      "command": "atlas audit <repo-root> --gate evidence-dependency",
+      "working_tree": "rabbitmq-reference-atlas feature/definitive-coverage-v2",
+      "verdict": "pass",
+      "result": "inputs=14 changed_inputs=0 outputs=2136 affected_outputs=0 reruns=36 digest_only_closure=false"
+    },
+    {
+      "id": "atlas-audit-incomplete",
+      "command": "make atlas-validate",
+      "working_tree": "rabbitmq-reference-atlas feature/definitive-coverage-v2",
+      "verdict": "pass",
+      "result": "Core main Schema and Evidence Dependency Gate passed; completion_class=incomplete, open_required=203"
+    },
+    {
+      "id": "make-check-rabbitmq-reference-atlas",
+      "command": "make check",
+      "working_tree": "rabbitmq-reference-atlas feature/definitive-coverage-v2",
+      "verdict": "pass",
+      "result": "Graph, negative fixtures, atomic staging, Core Schema/Audit, repository, non-regression, parity and legal gates passed"
+    }
+  ],
+  "strength": {
+    "existing_public_main_baseline_preserved": true,
+    "evidence_dependency_graph_added": true,
+    "input_change_transitive_staleness_added": true,
+    "digest_only_closure_rejected": true,
+    "actual_first_attempt_rerun_required": true,
+    "runtime_identity_required": true,
+    "required_outputs_mechanically_enumerated": true,
+    "proof_and_closure_structure_fixed": true,
+    "core_main_pin": true
+  }
+}

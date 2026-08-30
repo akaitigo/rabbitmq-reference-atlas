@@ -1,0 +1,37 @@
+schema_version: 2
+source_id: rabbitmq-4.3-amqp-1.0
+source_digest: sha256:522b01d62ef577956e55fda6355c9994c11ebe8a6353b6fb6c0bcf034f561f88
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: amqp10.version-negotiation
+  locator: '#version-negotiation'
+  kind: behavior
+  capability_id: protocol.amqp10
+  behavior_id: amqp10.version-negotiation
+  title: AMQP 1.0 protocol header negotiation and SASL rejection
+  surface_ids: [foundations-mechanics, testing-verification, security-privacy-safety]
+- id: amqp10.authentication-options
+  locator: '#authentication-options'
+  kind: capability
+  capability_id: protocol.amqp10
+  behavior_id: amqp10.authentication-options
+  title: Username, OAuth token, and x.509 authentication options
+  surface_ids: [security-privacy-safety, compatibility-integration]
+- id: amqp10.protocol-interoperability
+  locator: '#protocol-interoperability'
+  kind: behavior
+  capability_id: protocol.amqp10
+  behavior_id: amqp10.protocol-interoperability
+  title: Native message storage and cross-protocol conversion
+  surface_ids: [foundations-mechanics, testing-verification, compatibility-integration]
+- id: amqp10.address-v2
+  locator: '#address-v2'
+  kind: behavior
+  capability_id: protocol.amqp10
+  behavior_id: amqp10.address-v2
+  title: RabbitMQ AMQP 1.0 address format v2
+  surface_ids: [implementation-construction, migration-evolution-deprecation]

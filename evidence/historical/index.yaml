@@ -1,0 +1,17 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+records:
+  - id: bounded-closure-2026-08-28-22ab07c
+    status: historical
+    definitive: false
+    source_commit: 22ab07cc6c3d92ab489fe6ff8855c9fb8a97db5a
+    source_path: evidence/history/v0.1.0/completion-certificate.json
+    certificate_digest: sha256:8dbf8e2820e0e839eef7574e447f5607350f84f7a6367af58022d34a6ce69099
+    coverage_epoch: "2026-08-28"
+    bounded_targets: 32
+    evidence_records: 21
+    limitations:
+      - AMQP 1.0、MQTT、STOMP、Super StreamsをCoverage Targetとして閉包していない。
+      - Federation、Shovel、OAuth/LDAP、Kubernetes Operator、Backup/RestoreをCoverage Targetとして閉包していない。
+      - Authority由来の全Surface Inventoryに対する未分類ゼロを証明していない。
+    superseded_by: null

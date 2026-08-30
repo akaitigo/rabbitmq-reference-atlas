@@ -1,0 +1,260 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-classic-queues",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md",
+  "locked_source_digest": "sha256:084b58f037d5285d78a0c6665ddec2602c962b542d1bb273ea940e48821f9283",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:084b58f037d5285d78a0c6665ddec2602c962b542d1bb273ea940e48821f9283",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 10435,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0000",
+        "locator": "#classic-queues",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 835,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:eb45783a80f2975cb6d5acfacb8f10c8d458ee733b1f3336d9f9599ae0f4096c",
+        "heading_digest": "sha256:635f2908bcfe4feba0c6284eae4fba9c89733253f8da7f3dcf5b51920e8c0210",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 835,
+        "section_end": 1405,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:2a7fb26d45917e5c9ecba26c30af3be9f3588d358a81061cc4f622ee29fba120",
+        "heading_digest": "sha256:6c6a37ebc69a6187109e54f6b6e9e12283eb4b8285bfc92fb742195cd05da2f5",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0002",
+        "locator": "#features",
+        "level": 2,
+        "section_start": 1405,
+        "section_end": 2834,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7b5dbd68e52afb5427167ddc69e04112770f930b3330dcdca5ee2327f1c06f17",
+        "heading_digest": "sha256:a99408679433a8d902ffb753973141c6bd00521c47efdef8aa2e49a38dd42c14",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0003",
+        "locator": "#persistence",
+        "level": 2,
+        "section_start": 2834,
+        "section_end": 4805,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a60fab517313d7a5556a1b8f962726001d42f0c843006629949c9ca1ad131ae1",
+        "heading_digest": "sha256:241315e047adcb2e6869f7c47f5e73e0c5c4f250562da553117ed4fb6e8777dc",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0004",
+        "locator": "#versions",
+        "level": 2,
+        "section_start": 4805,
+        "section_end": 5102,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:8031f30f552a024b274433a8c755179c3a6f714c43d8cc3b377bec99bbeac3b7",
+        "heading_digest": "sha256:4d139381a8db88d12254bec3a84d066eb7c16e2cc99e44d2fd8d2d1de4c89c82",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0005",
+        "locator": "#classic-queue-implementation-version-1",
+        "level": 4,
+        "section_start": 5102,
+        "section_end": 5207,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:5f4cba881f470f8e7a08c91477ea55e6f9e50a7fd05640460320054c28a3441c",
+        "heading_digest": "sha256:ecaebbb985488fac0a50ca05b7276fe6d5acd2b710d9ccf522095a9fcb9625de",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0006",
+        "locator": "#classic-queue-implementation-version-2",
+        "level": 3,
+        "section_start": 5207,
+        "section_end": 5678,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:09aca28f4c12040f7d1ccb5d198341e9647d75331d732c9315d6939fd9f73038",
+        "heading_digest": "sha256:29b64a6f7c9114eae36981a8aee140b28ef11e8c2d5b1c4bfb095b411feefe9e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0007",
+        "locator": "#migration",
+        "level": 2,
+        "section_start": 5678,
+        "section_end": 6675,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:568ad58e4e8a71f4a3c73e288689f63b2f67ca0dbd7cf50143de37b4fcca05b2",
+        "heading_digest": "sha256:f071069810b97a48678b36c0cc52bc6e67553b4a3a6dd0e48ad5de68f275d68f",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0008",
+        "locator": "#resource-use",
+        "level": 2,
+        "section_start": 6675,
+        "section_end": 7424,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d0fabf2d971ce5837b38095122bcd28ea2d1e9866c87ca62101c74e6aba7e6d4",
+        "heading_digest": "sha256:95a71881f1d8d4a8f587b5acfc7600055f3b872a9dc2250c5e6af24544d6d622",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0009",
+        "locator": "#file-handles",
+        "level": 3,
+        "section_start": 7424,
+        "section_end": 8520,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:847492ed1fddbd948f562b809d4721806a22db5e71978ecb7df780b268353401",
+        "heading_digest": "sha256:11940e3a4f5c320083cd1be1a42255cb8fceb1c2197475963658d314ca571888",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0010",
+        "locator": "#memory",
+        "level": 3,
+        "section_start": 8520,
+        "section_end": 9922,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:604876f0f0c405d6c482d8466aa8d6474d09aad853101d3516e2a36a39ca3ed0",
+        "heading_digest": "sha256:680eb1604e39c3640fe96a26fd7af45c2763882873227587e89fc1689e675b39",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-classic-queues.0011",
+        "locator": "#msg-store-index-implementations",
+        "level": 2,
+        "section_start": 9922,
+        "section_end": 10435,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a4105f6a9da675685baced62971bac7603394977fe557f5da1d88694652a2c28",
+        "heading_digest": "sha256:b642f1c91b80d18d7f193363e82d21d99e5cb64157491dcabe059e140bb8411b",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.classic-queue.durability.rabbitmq-4.3-classic-queues",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md#durability",
+      "locator": "#durability",
+      "authority_surface_id": "classic-queue.durability",
+      "candidate_behavior_id": "candidate.classic-queue.durability",
+      "capability_id": "queue.classic",
+      "target_id": "definitive.classic-queue.durability",
+      "claim_id": "definitive.classic-queue.durability.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:121646d3a189d5c753f987621d1dcf867d8151297df258607ca527380383d52d",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.classic-queue.exclusive-auto-delete.rabbitmq-4.3-classic-queues",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md#exclusive-and-auto-delete-queues",
+      "locator": "#exclusive-and-auto-delete-queues",
+      "authority_surface_id": "classic-queue.exclusive-auto-delete",
+      "candidate_behavior_id": "candidate.classic-queue.exclusive-auto-delete",
+      "capability_id": "queue.classic",
+      "target_id": "definitive.classic-queue.exclusive-auto-delete",
+      "claim_id": "definitive.classic-queue.exclusive-auto-delete.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:2e4111866817c4a811953976b5e24917bbf94ee1a51f24b172866ca462deafbc",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.classic-queue.overflow.rabbitmq-4.3-classic-queues",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md#queue-and-message-ttl",
+      "locator": "#queue-and-message-ttl",
+      "authority_surface_id": "classic-queue.overflow",
+      "candidate_behavior_id": "candidate.classic-queue.overflow",
+      "capability_id": "queue.classic",
+      "target_id": "definitive.classic-queue.overflow",
+      "claim_id": "definitive.classic-queue.overflow.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:7c09023a2140bae6199d406db5e31392a40e295e3cf22898ebe5f6d3ba245384",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.classic-queue.priority.rabbitmq-4.3-classic-queues",
+      "source_id": "rabbitmq-4.3-classic-queues",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/classic-queues.md#priority-queues",
+      "locator": "#priority-queues",
+      "authority_surface_id": "classic-queue.priority",
+      "candidate_behavior_id": "candidate.classic-queue.priority",
+      "capability_id": "queue.classic",
+      "target_id": "definitive.classic-queue.priority",
+      "claim_id": "definitive.classic-queue.priority.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "performance-capacity-cost"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:f21a5ed97f57947524b4b602b1056fa71f66ad7760a94fdcf6592fa05ee4ae40",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

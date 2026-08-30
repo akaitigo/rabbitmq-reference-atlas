@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.monitoring.logs.operations",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "monitoring.logs",
+  "target_id": "definitive.monitoring.logs",
+  "scenario": "operations",
+  "applicability": "required",
+  "status": "scenario-gap-closed",
+  "runtime_profile": "broker-cluster-3",
+  "proof_obligation_id": "proof.monitoring.logs.operations",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.monitoring.logs",
+      "authority_artifact_id": "rabbitmq-4-3-monitoring",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-monitoring.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:4433f2dcf37a196c0e30dc91bd08a779cf2b1c183c0d6263c5607447e2d1bf12",
+      "source_id": "rabbitmq-4.3-monitoring",
+      "source_digest": "sha256:f8ab65c35c95b92aad8d5cc0bdb94560136849a3dfacfd2b827475e7c73ff73d",
+      "surface_id": "monitoring.logs",
+      "locator": "#logs",
+      "behavior_id": "monitoring.logs"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "legacy_observation": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "identity": {
+      "broker": null,
+      "client": null,
+      "runtime": null
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.missing"
+        ]
+      },
+      "log": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.log.missing"
+        ]
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.log.missing",
+      "artifact.metric.missing",
+      "artifact.packet.missing",
+      "evidence.behavior-specific-single-record-missing",
+      "identity.broker.missing",
+      "identity.client-version.missing",
+      "identity.runtime.missing"
+    ],
+    "counts_toward_scenario_gap_closure": false,
+    "aggregate_evidence_allowed": false
+  },
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/monitoring.logs/operations.runtime.json",
+      "present": true,
+      "digest": "sha256:d7995145fd6005314972d5f99459a011da370e17e07d0115bcaba72805b25aea"
+    },
+    "required_variants": [
+      "node-1",
+      "node-2",
+      "node-3"
+    ],
+    "variant_proofs": [
+      {
+        "id": "node-1",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "docker-compose-log-client",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.monitoring.logs.operations.node-1",
+          "assertions": [
+            "対象nodeの実broker logをruntimeから取得できた",
+            "log streamが空でなくcommand traceと結び付いた"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-1/packet.json",
+              "digest": "sha256:e9f927fcdaffbf8adbf60036ded592b3c2f590f47936e92faa384a3c8bb0c12b",
+              "size_bytes": 13677,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-1/log.txt",
+              "digest": "sha256:711eb296da251f55a7ed93b761a1fe42423cf0416d80e61bc5e1f8af470d1cbb",
+              "size_bytes": 35939,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-1/metric.json",
+              "digest": "sha256:8f536e6a8f3f00d9f33756b27002d641c3adfb47922a80c9fcd60d35865ad33d",
+              "size_bytes": 61222,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      },
+      {
+        "id": "node-2",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "docker-compose-log-client",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.monitoring.logs.operations.node-2",
+          "assertions": [
+            "対象nodeの実broker logをruntimeから取得できた",
+            "log streamが空でなくcommand traceと結び付いた"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-2/packet.json",
+              "digest": "sha256:d49d66453555455c8934511cf9b4ed7310e2db4f5f9d1f3b3e3ad1263e989b8a",
+              "size_bytes": 13066,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-2/log.txt",
+              "digest": "sha256:d205b37bbbeaeb1c53973ddabf88f74a0e3c1f1b8a7bc716dacc664b1ea02f14",
+              "size_bytes": 33878,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-2/metric.json",
+              "digest": "sha256:a32045c6ac5753b4e1ca0e976b5bf3b5893c9e092016cdf61df703686ee47c49",
+              "size_bytes": 61207,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      },
+      {
+        "id": "node-3",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "docker-compose-log-client",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.monitoring.logs.operations.node-3",
+          "assertions": [
+            "対象nodeの実broker logをruntimeから取得できた",
+            "log streamが空でなくcommand traceと結び付いた"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-3/packet.json",
+              "digest": "sha256:526b1a845dc96d030152afda6eb63906e3b02613dbd623ec354c2b94ea8c83b9",
+              "size_bytes": 13585,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-3/log.txt",
+              "digest": "sha256:efddfe589a56cf3aae38b6276dc37e5087d1a45135189fbd9683e94e90740800",
+              "size_bytes": 34201,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-3/metric.json",
+              "digest": "sha256:75d586027c844cea68707fc5520cb00ba3a80bf32f3be0357a9ccf017f39afa0",
+              "size_bytes": 61181,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      }
+    ],
+    "requirements": {
+      "dedicated_surface_scenario_report": true,
+      "all_variants_driven": true,
+      "attempts_one_retry_zero": true,
+      "oracle_pass_per_variant": true,
+      "source_harness_digest_bound": true,
+      "broker_client_runtime_identity": true,
+      "packet_log_metric_dedicated": true
+    },
+    "scenario_gap_closed": true
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.operations",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_surface_scenario_report": true,
+    "all_variants_driven": true,
+    "attempts_one_retry_zero": true,
+    "oracle_pass_per_variant": true,
+    "source_harness_digest_bound": true,
+    "broker_client_runtime_identity": true,
+    "packet_log_metric_dedicated": true,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": true,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "scenario_gap_ids": [],
+  "completion_gap_ids": [
+    "authority.atomic-human-promotion-missing"
+  ],
+  "gap_ids": [
+    "authority.atomic-human-promotion-missing"
+  ]
+}

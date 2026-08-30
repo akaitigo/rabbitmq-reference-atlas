@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "queue_id": "authority-review-847612e358adc84d78cc",
+  "batch_id": "review-p0-markdown-atx-heading-0f",
+  "status": "pending-human",
+  "machine_assistance": "priority-cluster-batch-proposals-only",
+  "semantic_decisions": "none",
+  "items": [
+    {
+      "anchor_id": "anchor-c22bc44329660a570c14",
+      "document_id": "document-raw-githubusercontent-com-e1309abcc960",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/stream.md",
+      "source_ids": [
+        "rabbitmq-4.3-stream-plugin"
+      ],
+      "locked_source_digest": "sha256:772204455494ca191c54d1aea15926e148fe5120cd698ad2177f3a9deaf8bb69",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#tcp-listeners",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-82224b3f602c8407ac7b",
+      "context_start": 2586,
+      "context_end": 7741,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:fb66a23551ccb45c1aaeb431cf4c5c4c0bb8b384474edc24975b176749978062",
+      "label_digest": "sha256:88847e9abcb54b4dd24c2201293dbdc080b878d8b43fa52e052cd85bc8a25994",
+      "existing_reference_edge_ids": [
+        "edge.stream-plugin.listeners.rabbitmq-4.3-stream-plugin"
+      ],
+      "proposed_priority": 0,
+      "priority_proposal_reasons": [
+        "existing-domain-reference-locator-match"
+      ],
+      "proposed_candidate_cluster_id": "candidate-cluster-b1fb3205ee7712dfe34f",
+      "proposed_batch_id": "review-p0-markdown-atx-heading-0f",
+      "state": "pending-human"
+    }
+  ]
+}

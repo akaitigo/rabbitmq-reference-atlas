@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.mqtt.authorization.compatibility",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "mqtt.authorization",
+  "target_id": "definitive.mqtt.authorization",
+  "scenario": "compatibility",
+  "applicability": "not-applicable",
+  "status": "not-applicable-contract",
+  "runtime_profile": null,
+  "proof_obligation_id": null,
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.mqtt.authorization",
+      "authority_artifact_id": "rabbitmq-4-3-mqtt",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-mqtt.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:3a1d140de293a119b882859c6673292fafe893b7cd3abfce97196e76413f2516",
+      "source_id": "rabbitmq-4.3-mqtt",
+      "source_digest": "sha256:7922a386475a80084c3e34beae46fa1c083bc9c27555b36f5141671bea2963d3",
+      "surface_id": "mqtt.authorization",
+      "locator": "#authorization-and-queue-permissions",
+      "behavior_id": "mqtt.authorization"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "legacy_observation": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "identity": {
+      "broker": null,
+      "client": null,
+      "runtime": null
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.missing"
+        ]
+      },
+      "log": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.log.missing"
+        ]
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.log.missing",
+      "artifact.metric.missing",
+      "artifact.packet.missing",
+      "identity.broker.missing",
+      "identity.client-version.missing",
+      "identity.runtime.missing",
+      "scenario.not-applicable-by-surface-contract"
+    ],
+    "counts_toward_scenario_gap_closure": false,
+    "aggregate_evidence_allowed": false
+  },
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/mqtt.authorization/compatibility.runtime.json",
+      "present": false,
+      "digest": null
+    },
+    "required_variants": [],
+    "variant_proofs": [],
+    "requirements": {},
+    "scenario_gap_closed": false
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.compatibility",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "scenario_gap_ids": [
+    "scenario.not-applicable-by-surface-contract"
+  ],
+  "completion_gap_ids": [],
+  "gap_ids": [
+    "scenario.not-applicable-by-surface-contract"
+  ]
+}

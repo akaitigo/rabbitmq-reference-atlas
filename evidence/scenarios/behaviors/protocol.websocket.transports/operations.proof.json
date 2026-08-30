@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.protocol.websocket.transports.operations",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "protocol.websocket.transports",
+  "target_id": "definitive.protocol.websocket.transports",
+  "scenario": "operations",
+  "applicability": "not-applicable",
+  "status": "not-applicable-contract",
+  "runtime_profile": null,
+  "proof_obligation_id": null,
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.protocol.websocket.transports",
+      "authority_artifact_id": "rabbitmq-4-3-protocols",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-protocols.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:007c0a1492ec52d9c37f16b6a1cbfa551058b5d012c32ef009e896f8100ae447",
+      "source_id": "rabbitmq-4.3-protocols",
+      "source_digest": "sha256:d1c98a952efce14040a90d2192eec14d3c8fe92e608be8e839714ad8724348a8",
+      "surface_id": "protocol.websocket.transports",
+      "locator": "#websocket",
+      "behavior_id": "protocol.websocket.transports"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "legacy_observation": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "identity": {
+      "broker": null,
+      "client": null,
+      "runtime": null
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.missing"
+        ]
+      },
+      "log": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.log.missing"
+        ]
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.log.missing",
+      "artifact.metric.missing",
+      "artifact.packet.missing",
+      "identity.broker.missing",
+      "identity.client-version.missing",
+      "identity.runtime.missing",
+      "scenario.not-applicable-by-surface-contract"
+    ],
+    "counts_toward_scenario_gap_closure": false,
+    "aggregate_evidence_allowed": false
+  },
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/protocol.websocket.transports/operations.runtime.json",
+      "present": false,
+      "digest": null
+    },
+    "required_variants": [],
+    "variant_proofs": [],
+    "requirements": {},
+    "scenario_gap_closed": false
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.operations",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "scenario_gap_ids": [
+    "scenario.not-applicable-by-surface-contract"
+  ],
+  "completion_gap_ids": [],
+  "gap_ids": [
+    "scenario.not-applicable-by-surface-contract"
+  ]
+}

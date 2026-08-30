@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-stream-comparison",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/stream-core-plugin-comparison.md",
+  "locked_source_digest": "sha256:1b837f5c89e25126b2fba9a88437ad6375e268968aa150aed3d27c2293081fe1",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:1b837f5c89e25126b2fba9a88437ad6375e268968aa150aed3d27c2293081fe1",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/stream-core-plugin-comparison.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 5560,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-stream-comparison.0000",
+        "locator": "#rabbitmq-core-vs-stream-plugin",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 864,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7096ff71960affa9c406cfe36d48c4a47d69c07c2305e1ea6fefa355ab17b867",
+        "heading_digest": "sha256:72e996462fc032b25d916f6ea0300d2d522b4567ed7efa4a4eb86685b6024877",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-comparison.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 864,
+        "section_end": 1152,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b008888d85b6ce2e79e52721e96c415a36cd68b94eaa7f9a70e699413d1ef93b",
+        "heading_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-comparison.0002",
+        "locator": "#feature-matrix",
+        "level": 3,
+        "section_start": 1152,
+        "section_end": 3018,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:08dc77a34bda1993dbfc890929a5e6b4b7908ec771c33608bf4426ebee318827",
+        "heading_digest": "sha256:c5838a080676f2a7fb53fa97e34208ad8dd99d8effd514a5b6f8a596483060f7",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-comparison.0003",
+        "locator": "#interoperabilty",
+        "level": 3,
+        "section_start": 3018,
+        "section_end": 3726,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d20a4c310b752b6c4de9c56bc3a3355e2044e0cc713308e47f128d29d4fc9e81",
+        "heading_digest": "sha256:3beb7d67de47feff7594264ebea3ce8840fe14f4e49b200ed5004df8701db588",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-stream-comparison.0004",
+        "locator": "#stream-clients-sub-entry-batching-compression-options",
+        "level": 3,
+        "section_start": 3726,
+        "section_end": 5560,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:143eb07091caa6b0a2658dcc38f6a41170e67c6325bda7ac52df3d75abe4dcf6",
+        "heading_digest": "sha256:980071135cb5ce23a6b8c662b2040f3ffb5b5c5fa0af4635a3a7867e812b0376",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": []
+}

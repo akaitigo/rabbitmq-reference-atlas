@@ -10,7 +10,7 @@
 bash scripts/run-upgrade-migration-lab.sh
 ```
 
-成功時は`evidence/raw/upgrade-migration.json`へRaw Evidenceを保存し、Compose Resourceを削除します。調査のため環境を残す場合だけ`KEEP_UPGRADE_ENV=1`を指定します。
+成功時は`evidence/raw/upgrade-migration.json`へRaw Evidenceを保存します。成功・失敗のどちらでもtask固有Composeのcontainer、network、volumeを削除し、別runや別SubjectのResourceには触れません。失敗時はcleanup前にtask固有Projectの`compose ps --all`と末尾300行のtimestamp付きlogを標準エラーへ出力します。
 
 ## 安全条件
 
@@ -20,6 +20,8 @@ bash scripts/run-upgrade-migration-lab.sh
 - `rabbitmq-diagnostics check_if_new_quorum_queue_replicas_have_finished_initial_sync`
 - `rabbitmq-upgrade await_online_quorum_plus_one`
 - `rabbitmq-upgrade drain`
+
+fresh named volumeでは、Broker起動前に各Nodeの`.erlang.cookie`をtask固有volume内へ生成し、owner `999:999`（`rabbitmq:rabbitmq`）とmode `0400`を検証します。不一致はBroker起動前に失敗させ、既存volumeや他Projectのcookieは操作しません。
 
 Node Name、Data Volume、Erlang Cookie、Cluster設定を維持し、`upgrade-3`、`upgrade-2`、`upgrade-1`の順に置換します。全Node置換後に全Stable Feature Flagを有効化し、Queue LeaderをRebalanceします。
 

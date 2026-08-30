@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "id": "migration.evidence-dependency.structure.scenario-closure-plan.core-v2",
+  "structure_id": "structure.scenario-closure-plan",
+  "kind": "scenario-closure-plan",
+  "path": "evidence/scenarios/closure-plan.json",
+  "from": {
+    "algorithm": "rabbitmq-local-v1-sorted-tranches-and-pending-row-order",
+    "digest": "sha256:2ab928d02a7202497e806fb2d6874ac240dc769a6834ddbfa1d6c0f5b1485a94"
+  },
+  "to": {
+    "algorithm": "reference-atlas-core-v2-completed-then-pending-order",
+    "digest": "sha256:d75f2bb7eacb339ae89b0fd0a044d3951d8d7a50f22282c11562a24f2aae1e33"
+  },
+  "core_commit": "072d7ca77981f51754e824d70c6d4ecd55ea67e5",
+  "invariants": {
+    "matrix_rows": 2060,
+    "required_rows": 951,
+    "authority_behaviors": 206,
+    "scenarios": 10,
+    "plan_row_count": 951,
+    "tranche_count": 242,
+    "completed_tranche_ids": [
+      "security-001"
+    ],
+    "row_id_digest": "sha256:6cdad2a8a488abe6791824e0fa073009b2c13dc83e0f293fa04c33822af57d38",
+    "tranche_membership_digest": "sha256:70bb6ee07a3d69c7f5e4452435dc0c851e8e475e0b9c743ca5e74179ed173a4d"
+  },
+  "execution_proof": "scripts/test-evidence-dependency.py",
+  "migration_evidence": "evidence/dependency-graph.json",
+  "reason": "Closure Planの内容を変更せず、構造digestの正規化だけをCore v2契約と一致させる"
+}

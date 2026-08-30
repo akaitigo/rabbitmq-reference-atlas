@@ -1,0 +1,25 @@
+schema_version: 1
+id: definitive.protocol.mqtt.native.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: protocol.mqtt
+statement: MQTT 3.1, 3.1.1, and 5.0 pluginのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-protocols
+proof_obligations:
+- id: proof.protocol.mqtt.native.normal
+  statement: MQTT 3.1, 3.1.1, and 5.0 pluginのnormal Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.protocol.mqtt.native.boundary
+  statement: MQTT 3.1, 3.1.1, and 5.0 pluginのboundary Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.protocol.mqtt.native.rejection
+  statement: MQTT 3.1, 3.1.1, and 5.0 pluginのrejection Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.protocol.mqtt.native.compatibility
+  statement: MQTT 3.1, 3.1.1, and 5.0 pluginのcompatibility Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 二つ以上のProtocol、Client、Queue、PluginまたはVersion Variantを同一Oracleで比較する。

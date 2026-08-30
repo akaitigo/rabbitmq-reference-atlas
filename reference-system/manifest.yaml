@@ -1,0 +1,63 @@
+schema_version: 1
+id: rabbitmq-reference-system-scenario-contract-v1
+atlas_id: rabbitmq-reference-atlas
+epoch: '2026-08-28'
+status: incomplete
+runtime_profile: integrated-reference-system
+scenario_order:
+- normal
+- boundary
+- rejection
+- failure
+- recovery
+- migration
+- operations
+- security
+- performance
+- compatibility
+runtime_contract:
+  broker:
+    product: RabbitMQ
+    version: 4.3.5
+    minimum_nodes: 3
+  clients:
+    version_identity_required: true
+  boundaries:
+  - AMQP 0-9-1 producer and consumer
+  - AMQP 1.0 protocol endpoint
+  - MQTT and STOMP official plugins
+  - Stream protocol and queue semantics
+  - Management API and metrics
+  - three-node cluster failure and recovery
+  artifact_channels:
+  - packet
+  - log
+  - metric
+scenarios:
+- id: normal
+  intent: 複数Protocolから投入したmessageをrouting、confirm、ack、telemetryまで一つの相関IDで追跡する。
+- id: boundary
+  intent: Queue、prefetch、payload、routing、Protocol制約の境界を同じSystem状態で観測する。
+- id: rejection
+  intent: 認証、認可、routing、Protocol negotiationの拒否を成功経路と混同せず観測する。
+- id: failure
+  intent: 継続Workload中の接続断またはNode障害と未完了deliveryを観測する。
+- id: recovery
+  intent: 障害後の再接続、redelivery、重複処理、Cluster収束を相関IDで観測する。
+- id: migration
+  intent: VersionまたはFeature Flag境界を跨ぐ継続Workloadと互換性を観測する。
+- id: operations
+  intent: CLI、Management、log、metricから同じSystem状態を照合し、cleanupを確認する。
+- id: security
+  intent: TLS、authN、authZ、credential境界を複数Protocolで照合する。
+- id: performance
+  intent: 固定Workloadのrate、latency、backlog、resource metricを同時に記録する。
+- id: compatibility
+  intent: Protocol、Plugin、Queue type、Client、Broker versionの対応・劣化・非対応境界を区別する。
+reuse_policy:
+  behavior_completion: forbidden
+  reason: 統合Systemの成功は個別Protocol、Plugin、Cluster Behaviorの専用Proofを代替しない。
+completion_limits:
+- 各ScenarioはBroker、Client、Version、Runtime identityを実行結果へ固定する。
+- packet、log、metricはArtifactへdigest束縛し、存在しないchannelはgapを明示する。
+- Authority atomic bindingとBehavior固有Artifactが揃わないrowはcompletion eligibleにしない。

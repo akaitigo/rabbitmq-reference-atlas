@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "behavior_id": "stomp.protocol-plugin",
+  "scenario": "compatibility",
+  "created_at": "2026-08-30T17:14:49.369062046Z",
+  "runtime": "RabbitMQ 4.3.5 official plugins; three nodes",
+  "checks": [
+    {
+      "endpoint": "rabbitmq-1:61613",
+      "passed": true,
+      "oracle": "compatibility",
+      "observed": {
+        "1.0": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.0"
+        },
+        "1.1": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.1"
+        },
+        "1.2": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.2"
+        }
+      }
+    },
+    {
+      "endpoint": "rabbitmq-2:61613",
+      "passed": true,
+      "oracle": "compatibility",
+      "observed": {
+        "1.0": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.0"
+        },
+        "1.1": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.1"
+        },
+        "1.2": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.2"
+        }
+      }
+    },
+    {
+      "endpoint": "rabbitmq-3:61613",
+      "passed": true,
+      "oracle": "compatibility",
+      "observed": {
+        "1.0": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.0"
+        },
+        "1.1": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.1"
+        },
+        "1.2": {
+          "command": "CONNECTED",
+          "negotiated_version": "1.2"
+        }
+      }
+    }
+  ],
+  "passed": true
+}

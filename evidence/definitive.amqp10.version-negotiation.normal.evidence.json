@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "id": "definitive.amqp10.version-negotiation.normal",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "claim_ids": [
+    "definitive.amqp10.version-negotiation.claim"
+  ],
+  "kind": "conformance",
+  "producer": "cmd/rmq-amqp10-handshake",
+  "command": "go run ./cmd/rmq-amqp10-handshake --endpoints 127.0.0.1:25672,127.0.0.1:25673,127.0.0.1:25674 --output-dir evidence/raw",
+  "created_at": "2026-08-30T17:13:06.593745Z",
+  "environment": {
+    "profile": "cluster",
+    "runtime_profile": "protocol-amqp10",
+    "manifest_digest": "sha256:58a6621a5d7ef9eebf5248bbf15a25d21f32cd9c901d4945c94a33e4d60c2807",
+    "nodes": 3,
+    "protocol": "AMQP 1.0",
+    "scenario": "normal"
+  },
+  "source_digest": "sha256:09c7e172622e8ad1dde0401f01e625586f1e9231165f10ab40cd8e60f7ddcb0c",
+  "harness_digest": "sha256:303479e0b0123e32df9e4082d07ae4236e225a5da65dcb818f556ca97f3f5e5b",
+  "harness_path": "cmd/rmq-amqp10-handshake/main.go",
+  "execution_mode": "runtime",
+  "runtime_identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3",
+  "artifact": {
+    "uri": "evidence/raw/definitive.amqp10.version-negotiation.normal.json",
+    "digest": "sha256:688f9f4ac98f2f178cbc4ce005a5265dfabaef112d006c253ead031df2754808",
+    "media_type": "application/json",
+    "size_bytes": 891
+  },
+  "verdict": "pass",
+  "retention": "git"
+}

@@ -1,0 +1,8 @@
+schema_version: 2
+source_id: rabbitmq-4.3-limits
+source_digest: sha256:8f06c53e089b3c72a9a12e81fc4ad0ce3711422bf7c46584ca75ea5dcc1d61c3
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: limit.connections-channels, locator: '#per-node-limits', kind: behavior, capability_id: capacity.limits, behavior_id: limit.connections-channels, title: Per-node connection and channel limits, surface_ids: [testing-verification, performance-capacity-cost]}
+- {id: limit.queues, locator: '#per-virtual-host-limits', kind: behavior, capability_id: capacity.limits, behavior_id: limit.queues, title: Per-virtual-host queue and connection limits, surface_ids: [security-privacy-safety, performance-capacity-cost]}
+- {id: limit.message-size, locator: '#message-size', kind: behavior, capability_id: capacity.limits, behavior_id: limit.message-size, title: Maximum message size rejection boundary, surface_ids: [testing-verification, performance-capacity-cost]}

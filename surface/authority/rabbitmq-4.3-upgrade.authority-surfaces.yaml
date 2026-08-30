@@ -1,0 +1,37 @@
+schema_version: 2
+source_id: rabbitmq-4.3-upgrade
+source_digest: sha256:6eb02dcbc7ca6b504229d185d21ab2293c2fe2cc098a120a5d702c3a94192a5e
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: upgrade.path
+  locator: '#rabbitmq-version-upgradability'
+  kind: behavior
+  capability_id: migration.upgrade
+  behavior_id: upgrade.path
+  title: Supported RabbitMQ version upgrade path
+  surface_ids: [compatibility-integration, migration-evolution-deprecation]
+- id: upgrade.feature-flags
+  locator: '#feature-flags'
+  kind: behavior
+  capability_id: migration.upgrade
+  behavior_id: upgrade.feature-flags
+  title: Feature flag preconditions and compatibility boundary
+  surface_ids: [testing-verification, migration-evolution-deprecation]
+- id: upgrade.rolling
+  locator: '#rolling-upgrade'
+  kind: capability
+  capability_id: migration.upgrade
+  behavior_id: upgrade.rolling
+  title: Rolling upgrade with mixed-version cluster
+  surface_ids: [implementation-construction, migration-evolution-deprecation]
+- id: upgrade.rollback
+  locator: '#rollback'
+  kind: behavior
+  capability_id: migration.upgrade
+  behavior_id: upgrade.rollback
+  title: Rollback support and irreversible boundary
+  surface_ids: [failure-recovery, migration-evolution-deprecation]

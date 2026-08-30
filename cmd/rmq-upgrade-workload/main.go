@@ -6,6 +6,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
+	"net/url"
 	"os"
 	"sort"
 	"strings"
@@ -107,6 +108,20 @@ func split(value string) []string {
 		if item = strings.TrimSpace(item); item != "" {
 			result = append(result, item)
 		}
+	}
+	return result
+}
+
+func sanitizedEndpoints(endpoints []string) []string {
+	result := make([]string, 0, len(endpoints))
+	for _, endpoint := range endpoints {
+		parsed, err := url.Parse(endpoint)
+		if err != nil {
+			result = append(result, "[invalid-endpoint]")
+			continue
+		}
+		parsed.User = nil
+		result = append(result, parsed.String())
 	}
 	return result
 }
@@ -327,7 +342,7 @@ func (r *runner) writeReport() error {
 		StartedAt:           r.started.Format(time.RFC3339Nano),
 		FinishedAt:          time.Now().UTC().Format(time.RFC3339Nano),
 		Queue:               r.queue,
-		Endpoints:           r.endpoints,
+		Endpoints:           sanitizedEndpoints(r.endpoints),
 		ConfirmedIDs:        sortedBoolKeys(r.confirmed),
 		ReceivedIDs:         sortedIntKeys(r.received),
 		MissingConfirmed:    missing,

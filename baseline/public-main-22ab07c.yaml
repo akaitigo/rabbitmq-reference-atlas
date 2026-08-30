@@ -1,0 +1,1305 @@
+schema_version: 1
+id: public-main-22ab07c
+source_commit: 22ab07cc6c3d92ab489fe6ff8855c9fb8a97db5a
+captured_from: refs/heads/main
+policy:
+  state: immutable-non-regression-baseline
+  replacement_contract: migrations/public-main-baseline-v2.yaml
+  forbidden:
+  - delete
+  - skip-or-disable
+  - required-downgrade
+  - excluded-or-infeasible-retreat
+  - coarse-aggregation
+  - assertion-or-threshold-reduction
+  - protocol-plugin-version-or-ci-reduction
+  - real-runtime-to-mock-or-static
+  - failure-evidence-deletion
+counts:
+  targets: 32
+  sources: 27
+  claims: 32
+  proof_files: 7
+  evidence_records: 21
+  labs: 17
+  go_test_files: 4
+  skill_eval_cases: 21
+  ci_steps: 6
+targets:
+- id: messaging.amqp-model
+  title: AMQP 0-9-1 model boundary
+  target_set: foundations-design
+  kind: concept
+  requirement: required
+  state: covered
+  rationale: Exchange、Binding、Queueの役割と宣言同値性を、競合宣言の拒否を含む実行結果で境界付ける。
+  claim_ids:
+  - messaging.amqp-model-boundary
+  evidence_ids:
+  - lab.amqp-model
+- id: messaging.exchange-binding-matrix
+  title: Exchange, binding, and queue routing matrix
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Direct、Topic、Fanout、Headersの正Routingと非一致Routingを同一固定環境で比較する。
+  claim_ids:
+  - messaging.exchange-binding-matrix
+  evidence_ids:
+  - lab.exchange-binding-matrix
+- id: messaging.exchange-routing
+  title: Exchange routing
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Direct ExchangeのBindingとRouting Keyにより、意図したQueueだけへ配送されることを実行証拠で確認する。
+  claim_ids:
+  - messaging.exchange-routing
+  evidence_ids:
+  - lab.exchange-queue
+- id: messaging.queue-lifecycle
+  title: Queue lifecycle
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Queueの宣言、利用、削除を隔離されたLabで再現し、残存ResourceをCleanupできる必要がある。
+  claim_ids:
+  - messaging.queue-lifecycle
+  evidence_ids:
+  - lab.exchange-queue
+- id: delivery.acknowledgement
+  title: Consumer acknowledgement
+  target_set: messaging-surface
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Consumer AcknowledgementがBrokerからConsumerまでの配送境界を表すことを観測可能に検証する。
+  claim_ids:
+  - delivery.acknowledgement
+  evidence_ids:
+  - lab.ack-redelivery
+- id: delivery.redelivery
+  title: Redelivery after requeue
+  target_set: messaging-surface
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: 未確認MessageをRequeueした際にRedelivered Flagを伴って再配送されることを検証する。
+  claim_ids:
+  - delivery.redelivery
+  evidence_ids:
+  - lab.ack-redelivery
+- id: delivery.dead-lettering
+  title: Dead letter routing
+  target_set: messaging-surface
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: RejectされたMessageが指定したDead Letter Exchangeを経由して隔離Queueへ到達することを検証する。
+  claim_ids:
+  - delivery.dead-lettering
+  evidence_ids:
+  - lab.dead-letter
+- id: delivery.ttl-dead-lettering
+  title: Message TTL and dead letter routing
+  target_set: messaging-surface
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: RejectだけでなくTTL超過によるDead LetteringをSource残数とx-death Headerで検証する。
+  claim_ids:
+  - delivery.ttl-dead-lettering
+  evidence_ids:
+  - lab.ttl-dead-letter
+- id: delivery.flow-control
+  title: Consumer flow control
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Prefetch一件の条件でAcknowledgement前に二件目が配送されず、確認後に配送が再開することを検証する。
+  claim_ids:
+  - delivery.flow-control
+  evidence_ids:
+  - lab.consumer-flow-control
+- id: delivery.publisher-flow-control
+  title: Publisher flow control under resource alarm
+  target_set: delivery-pressure
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: Consumer PrefetchとBroker Resource AlarmによるPublisher Blockを区別し、Alarm解除後の再開まで検証する。
+  claim_ids:
+  - delivery.publisher-flow-control
+  evidence_ids:
+  - lab.publisher-flow-control
+- id: delivery.publisher-confirm
+  title: Publisher confirm
+  target_set: delivery-pressure
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: Publish処理とConsumer処理を混同せず、Broker受理をPublisher Confirmとして個別に検証する。
+  claim_ids:
+  - delivery.publisher-confirm
+  evidence_ids:
+  - lab.exchange-queue
+- id: queue.quorum-stream
+  title: Quorum queue and stream queue semantics
+  target_set: foundations-design
+  kind: capability
+  requirement: required
+  state: covered
+  rationale: 複製Queueと追記型Streamを同一視せず、Confirm/AckとOffset Replayの異なる操作を固定Clusterで検証する。
+  claim_ids:
+  - queue.quorum-semantics
+  - queue.stream-semantics
+  evidence_ids:
+  - lab.quorum-stream
+  - lab.cluster-failure-recovery
+- id: delivery.ordering-idempotency
+  title: Ordering and application idempotency boundary
+  target_set: delivery-pressure
+  kind: concept
+  requirement: required
+  state: covered
+  rationale: 順序を保証できる限定条件と、重複排除がApplication責任である境界を同じWorkloadで反証可能にする。
+  claim_ids:
+  - delivery.ordering-boundary
+  - delivery.idempotency-boundary
+  evidence_ids:
+  - lab.ordering-idempotency
+- id: cluster.three-node-membership
+  title: Three-node cluster membership
+  target_set: cluster-resilience
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 固定OCI Imageと構成から三ノードClusterを作り、全NodeがRunning Membersであることを確認する。
+  claim_ids:
+  - cluster.three-node-membership
+  evidence_ids:
+  - lab.cluster-membership
+- id: cluster.leader-failure
+  title: Quorum queue leader failure
+  target_set: cluster-resilience
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: Quorum QueueのLeader Nodeを停止しても多数派が残る条件で確定済みMessageを回収できることを検証する。
+  claim_ids:
+  - cluster.leader-failure
+  evidence_ids:
+  - lab.cluster-failure-recovery
+- id: cluster.node-recovery
+  title: Cluster node recovery
+  target_set: cluster-resilience
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 停止したNodeを再起動し、Cluster Membershipへ復帰するまでを同一Harnessで確認する必要がある。
+  claim_ids:
+  - cluster.node-recovery
+  evidence_ids:
+  - lab.cluster-failure-recovery
+- id: cluster.network-partition-recovery
+  title: Network partition majority and replica recovery
+  target_set: cluster-resilience
+  kind: failure
+  requirement: required
+  state: covered
+  rationale: Node停止とNetwork Partitionを区別し、多数派継続、少数派拒否、再接続後Replica復帰を専用Networkで検証する。
+  claim_ids:
+  - cluster.network-partition
+  - cluster.partition-recovery
+  evidence_ids:
+  - lab.network-partition
+- id: operation.reproducible-evidence
+  title: Reproducible evidence
+  target_set: atlas-operation
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 実行結果をSource、Harness、Environment、ArtifactのDigestへ束縛して再検証可能にする。
+  claim_ids:
+  - operation.reproducible-evidence
+  evidence_ids:
+  - operation.evidence-generation
+- id: skill.router-evaluation
+  title: Router Skill evaluation
+  target_set: atlas-operation
+  kind: skill
+  requirement: required
+  state: covered
+  rationale: Routerが問い合わせを正しいModeとEvidenceへ案内し、対象外機能を捏造せずCoverage Gapを返すことを検証する。
+  claim_ids:
+  - skill.router-evaluation
+  evidence_ids:
+  - eval.router
+- id: compatibility.fixed-client-queue-types
+  title: Fixed AMQP client and queue type compatibility
+  target_set: compatibility-integration
+  kind: compatibility
+  requirement: required
+  state: covered
+  rationale: ClientとBrokerのVersionを固定し、Classic、Quorum、Streamの対象操作を同一Harnessで実証する。
+  claim_ids:
+  - compatibility.fixed-client-queue-types
+  evidence_ids:
+  - lab.quorum-stream
+- id: security.authorization-isolation
+  title: Authentication, authorization, and vhost isolation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: covered
+  rationale: 正常認証だけでなくResource Permissionの許可・拒否を専用vhostで実証する。
+  claim_ids:
+  - security.least-privilege
+  evidence_ids:
+  - lab.security-authz
+- id: security.tls-transport
+  title: TLS and mutual TLS transport boundary
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: covered
+  rationale: 正常なmTLSだけでなくTrust、Hostname、Client Identity、Plaintext拒否を専用環境で実証する。
+  claim_ids:
+  - security.tls-transport
+  evidence_ids:
+  - lab.security-tls
+- id: observability.management-health
+  title: Management health, alarms, and safe cleanup
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 三NodeとQueueの状態、正常Health/Alarm、Lab Resource Cleanupを構造化Evidenceへ接続する。
+  claim_ids:
+  - observability.management-api
+  - operation.health-and-alarms
+  - operation.safe-cleanup
+  evidence_ids:
+  - lab.observability-health
+- id: observability.queue-state-prometheus
+  title: Queue state transition and Prometheus metrics
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: 静的なQueue=0だけでなくready→unacked→acked遷移と三Node Metricsを同一Runへ接続する。
+  claim_ids:
+  - observability.queue-state-transition
+  - observability.prometheus-metrics
+  evidence_ids:
+  - lab.observability-state
+- id: performance.fixed-workload
+  title: Fixed workload performance measurement
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: covered
+  rationale: 普遍値を主張せず、固定条件のRaw Sample、分位、Rate、Resource Snapshotを容量判断の入力として再測定する。
+  claim_ids:
+  - performance.fixed-workload
+  evidence_ids:
+  - lab.performance-capacity
+- id: migration.rolling-upgrade
+  title: Three-node rolling upgrade from 4.2.9 to 4.3.5
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: covered
+  rationale: 実在してDigest固定できる4.2.9から4.3.5へ、Mixed-versionと継続Workloadを含む一台ずつのUpgradeを実証する。
+  claim_ids:
+  - migration.rolling-upgrade
+  evidence_ids:
+  - lab.rolling-upgrade
+- id: mastery.foundations-and-decisions
+  title: RabbitMQ foundations and design decisions
+  target_set: foundations-design
+  kind: concept
+  requirement: required
+  state: covered
+  rationale: 決定版として機能一覧だけでなく、配送、複製、Storage、Protocolの原理と採否判断を追跡可能にする必要がある。
+  claim_ids:
+  - messaging.amqp-model-boundary
+  - messaging.exchange-binding-matrix
+  - queue.quorum-semantics
+  - queue.stream-semantics
+  - delivery.ordering-boundary
+  - delivery.idempotency-boundary
+  evidence_ids:
+  - lab.amqp-model
+  - lab.exchange-binding-matrix
+  - lab.quorum-stream
+  - lab.ordering-idempotency
+- id: mastery.operations-observability
+  title: Operational observability and runbooks
+  target_set: operations-observability
+  kind: operation
+  requirement: required
+  state: covered
+  rationale: Backlog、未Ack、Alarm、Replica、Connectionを観測し、Alertから安全な復旧へ到達できる証拠が必要である。
+  claim_ids:
+  - observability.management-api
+  - observability.queue-state-transition
+  - observability.prometheus-metrics
+  - operation.health-and-alarms
+  - operation.safe-cleanup
+  - delivery.publisher-flow-control
+  evidence_ids:
+  - lab.observability-health
+  - lab.observability-state
+  - lab.publisher-flow-control
+- id: mastery.security-safety
+  title: Security and isolation
+  target_set: security-safety
+  kind: security
+  requirement: required
+  state: covered
+  rationale: Transport、Identity、Authorization、Secret Rotation、Tenant Isolationを正常系と拒否系の両方で証明する必要がある。
+  claim_ids:
+  - security.least-privilege
+  - security.tls-transport
+  evidence_ids:
+  - lab.security-authz
+  - lab.security-tls
+- id: mastery.performance-capacity
+  title: Performance and capacity model
+  target_set: performance-capacity
+  kind: performance
+  requirement: required
+  state: covered
+  rationale: 一般化した性能値ではなく、固定条件の測定とRaw Dataから利用者が自身の容量判断を行える必要がある。
+  claim_ids:
+  - performance.fixed-workload
+  evidence_ids:
+  - lab.performance-capacity
+- id: mastery.compatibility-integration
+  title: Protocol and client compatibility
+  target_set: compatibility-integration
+  kind: compatibility
+  requirement: required
+  state: covered
+  rationale: AMQP 0-9-1以外のProtocol、Client、Plugin、Queue Type間の互換性を未検証のまま一般化しないために必要である。
+  claim_ids:
+  - compatibility.fixed-client-queue-types
+  - queue.quorum-semantics
+  - queue.stream-semantics
+  evidence_ids:
+  - lab.quorum-stream
+- id: mastery.migration-evolution
+  title: Upgrade migration and deprecation
+  target_set: migration-evolution
+  kind: migration
+  requirement: required
+  state: covered
+  rationale: RabbitMQ 4.3.5への公式Upgrade Path、削除済み機能、Rollback不能点をWorkload付きで実証する必要がある。
+  claim_ids:
+  - migration.rolling-upgrade
+  evidence_ids:
+  - lab.rolling-upgrade
+sources:
+- id: rabbitmq-server-v4.3.5
+  kind: source
+  title: RabbitMQ Server v4.3.5 source release
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.5/release-notes/4.3.5.md
+  version: v4.3.5-0dde27bfdd1984ff7e157226fd97656854a7f359
+  retrieved_at: '2026-08-28'
+  digest: sha256:31bc3e0b69ccb97d0c266ba90db5055337772ffb7d0108d7ffcd71803c4ec334
+  license: MPL-2.0
+  redistribution: link-only
+- id: rabbitmq-4.3-exchanges
+  kind: official-documentation
+  title: RabbitMQ Exchanges
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/exchanges.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:a0a6d3fae2073fe28ffe7fd016bbd3830262db554195e670f5dc57a123832f6c
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-queues
+  kind: official-documentation
+  title: RabbitMQ Queues
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/queues.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:70a81800b3df6e9e0295391a2fae37f67421af5b097d112e06a3ac9ba3087025
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-confirms
+  kind: official-documentation
+  title: RabbitMQ Consumer Acknowledgements and Publisher Confirms
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:861abccf819fddcdaddd661255914d867d6ed511a9ff19311bfef73d0907b127
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-dlx
+  kind: official-documentation
+  title: RabbitMQ Dead Letter Exchanges
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/dlx.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:29bead1952a76facc60f98748860271da24c0feba82b9049ae9fc2eb41cd2a29
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-flow-control
+  kind: official-documentation
+  title: RabbitMQ Flow Control
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/flow-control.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:ce5d0876c0a35e13dc12ee6e199e758a51c5223c05f448b8aed9ebb7e4c13c79
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-clustering
+  kind: official-documentation
+  title: RabbitMQ Clustering Guide
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/clustering.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:f76eea55c22ddac659f4a20c48d236e7e7902527b7b70fb92dc2f55753b02ece
+  license: null
+  redistribution: link-only
+- id: rabbitmq-amqp-concepts
+  kind: official-documentation
+  title: RabbitMQ AMQP 0-9-1 Model Explained
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/tutorials/amqp-concepts/index.md
+  version: 1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:4443361280acd6e415ba8687a63fa022b0e4a4d582a6f8a07d29d29872f3986f
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-ttl
+  kind: official-documentation
+  title: RabbitMQ Time-To-Live and Expiration
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ttl.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:47b24f48ab6c7099d6d140a19fc66a7a94708d57e6b9d16bbabaa1dfbd1ccc8c
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-streams
+  kind: official-documentation
+  title: RabbitMQ Streams
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/streams.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:1719c724d9d6877aad0b8830bc935d26644710aa7cd510a9fb554c0a239d99a0
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-quorum-queues
+  kind: official-documentation
+  title: RabbitMQ Quorum Queues
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:a9a41aca4560ded658c6ada1229258ba8f0a185bc026cb5784dfb831383ff41d
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-partitions
+  kind: official-documentation
+  title: RabbitMQ Network Partitions
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/partitions.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:f3d281f456f88d62af329e2aa2ca8f9f9f7231b430532a0df5dd7a3ad9684df0
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-reliability
+  kind: official-documentation
+  title: RabbitMQ Reliability Guide
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/reliability.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-access-control
+  kind: official-documentation
+  title: RabbitMQ Access Control
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/access-control.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:9cccc858072cf3a8fe7dede63cc198289b2414e33e9128d9eb941bfbaa417f7a
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-tls
+  kind: official-documentation
+  title: RabbitMQ TLS Support
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ssl/index.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:d33e05a1821a2c0ebbbe804050d6c85a320eaba15e6128aa3573deb41dfe31db
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-monitoring
+  kind: official-documentation
+  title: RabbitMQ Monitoring
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/monitoring/index.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:f8ab65c35c95b92aad8d5cc0bdb94560136849a3dfacfd2b827475e7c73ff73d
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-prometheus
+  kind: official-documentation
+  title: RabbitMQ Prometheus Monitoring
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/prometheus/index.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:012c5705ec820fe3d75c92aac79183db5c21b53bf1fa988a271fca2376a58dfe
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-alarms
+  kind: official-documentation
+  title: RabbitMQ Resource Alarms
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/alarms.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:f8dbb38f401201d31da0f6e7151c9519747c44bd4516ed0d2da05e228366a095
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-definitions
+  kind: official-documentation
+  title: RabbitMQ Definition Export and Import
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/definitions.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:37a06b2c2fd6b74d28d3482d719898afcdec29c961cd211b4406c1cb9b5bb3f5
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-feature-flags
+  kind: official-documentation
+  title: RabbitMQ Feature Flags
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/feature-flags/index.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:ed43e6c64fb3076623ced45d42c4bf0de9786cad356f51d01013a3cd488fc62a
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-upgrade
+  kind: official-documentation
+  title: RabbitMQ Upgrade Guide
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/upgrade.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:6eb02dcbc7ca6b504229d185d21ab2293c2fe2cc098a120a5d702c3a94192a5e
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-rolling-upgrade
+  kind: official-documentation
+  title: RabbitMQ Rolling Upgrade Guide
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/rolling-upgrade.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:5cb611d8a2a4bec39c046b37d81578cc369c5427feaf3a17cb2abf02ae94eaf3
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-blue-green-upgrade
+  kind: official-documentation
+  title: RabbitMQ Blue-Green Upgrade Guide
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/blue-green-upgrade.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:e889ac3b44c13b974f2bf2cefe0fcebd11e3e7b143351931a2e3ed023d49ee49
+  license: null
+  redistribution: link-only
+- id: rabbitmq-4.3-production-checklist
+  kind: official-documentation
+  title: RabbitMQ Production Checklist
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/production-checklist.md
+  version: 4.3-1c99c9687f012ad700385c1e9a6990f6520720d3
+  retrieved_at: '2026-08-28'
+  digest: sha256:8f944214046052ee6a5134f53715f4cd6207d8390c5946c7b245e2c45abe2c9e
+  license: null
+  redistribution: link-only
+- id: rabbitmq-server-v4.2.9-release-notes
+  kind: source
+  title: RabbitMQ Server 4.2.9 release notes
+  url: https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/be72851326e038e90fc16354953bd7d31d176766/release-notes/4.2.9.md
+  version: v4.2.9-47d6d6457c7d1a440daed643cb7d76bba313e79c
+  retrieved_at: '2026-08-28'
+  digest: sha256:8a06a67f85b81983b09001c95d3c698affb0660d0ab87166fad6afebc6d7c524
+  license: MPL-2.0
+  redistribution: link-only
+- id: rabbitmq-container-v4.2.9-management
+  kind: runtime-inventory
+  title: RabbitMQ 4.2.9 management OCI image
+  url: https://github.com/docker-library/rabbitmq/tree/d9ae078e0eee51a50ad48c41914c06f0e6e20da5/4.2/ubuntu/management
+  version: rabbitmq:4.2.9-management-d9ae078e0eee51a50ad48c41914c06f0e6e20da5
+  retrieved_at: '2026-08-28'
+  digest: sha256:59935db6392a27b5192f1be080df9b4194bc22f104a7a1bf3b31479a8e0d1031
+  license: MPL-2.0
+  redistribution: metadata-only
+- id: rabbitmq-container-v4.3.5-management
+  kind: runtime-inventory
+  title: RabbitMQ 4.3.5 management OCI image
+  url: https://github.com/docker-library/rabbitmq/tree/fe08e8852f66fde85461be4eed35675a4b8e35d8/4.3/ubuntu/management
+  version: rabbitmq:4.3.5-management-fe08e8852f66fde85461be4eed35675a4b8e35d8
+  retrieved_at: '2026-08-28'
+  digest: sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031
+  license: MPL-2.0
+  redistribution: metadata-only
+claims:
+- id: messaging.amqp-model-boundary
+  capability_id: amqp091.entity-declaration
+  statement: AMQP 0-9-1のExchange、Binding、QueueはBroker上の独立Entityであり、既存Queueと非同値な再宣言はPRECONDITION_FAILEDで拒否される。
+  acceptance:
+  - Durable Queueを宣言した後、同名かつnon-durableな宣言を試みること
+  - 競合宣言がPRECONDITION_FAILEDで拒否され、Connection自体は利用可能であること
+  proof_obligation: atlas/proof-obligations/messaging.yaml#amqp-model-boundary
+- id: messaging.exchange-binding-matrix
+  capability_id: exchange.binding-routing
+  statement: Direct、Topic、Fanout、Headers Exchangeは、それぞれのBinding規則に従って対象Queueへ配送し、非一致Direct Routing Keyは配送しない。
+  acceptance:
+  - 4種類のExchangeを同一の固定Broker Versionで宣言すること
+  - 正のRouting結果と非一致Direct Routing Keyの負の結果を同時に判定すること
+  proof_obligation: atlas/proof-obligations/messaging.yaml#exchange-binding-matrix
+- id: messaging.exchange-routing
+  capability_id: exchange.direct
+  statement: Direct ExchangeはBinding Keyと一致するRouting KeyのMessageを対象Queueへ配送する。
+  acceptance:
+  - Publisher Confirmがackであること
+  - 対象Queueから同一Message IDを取得できること
+  proof_obligation: atlas/proof-obligations/messaging.yaml#exchange-routing
+- id: messaging.queue-lifecycle
+  capability_id: queue.classic
+  statement: Lab固有Queueは宣言、利用、削除を再実行でき、Cleanup後に残存しない。
+  acceptance:
+  - Lab実行ごとに一意なQueue Namespaceを使用すること
+  - CleanupでQueueとExchangeを削除すること
+  proof_obligation: atlas/proof-obligations/messaging.yaml#queue-lifecycle
+- id: delivery.publisher-confirm
+  capability_id: publisher.confirm
+  statement: Confirm ModeのChannelでBrokerがPublishを受理するとackのConfirmationを返す。
+  acceptance:
+  - Confirm Modeを有効化してからPublishすること
+  - nackまたはTimeoutを成功として扱わないこと
+  proof_obligation: atlas/proof-obligations/delivery.yaml#publisher-confirm
+- id: delivery.acknowledgement
+  capability_id: consumer.ack
+  statement: Manual Acknowledgement前のDeliveryは未確定で、同じChannelからAckするとQueueから除去される。
+  acceptance:
+  - autoAckを無効にすること
+  - Ack後にQueueのMessageがゼロになること
+  proof_obligation: atlas/proof-obligations/delivery.yaml#acknowledgement
+- id: delivery.redelivery
+  capability_id: consumer.redelivery
+  statement: DeliveryをNackしてRequeueすると同一Messageがredelivered=trueで再配送される。
+  acceptance:
+  - 最初のDeliveryではredelivered=falseであること
+  - 再配送のMessage IDが一致しredelivered=trueであること
+  proof_obligation: atlas/proof-obligations/delivery.yaml#redelivery
+- id: delivery.dead-lettering
+  capability_id: queue.dead-lettering
+  statement: requeue=falseでRejectしたMessageは構成済みDead Letter Exchangeから隔離Queueへ配送される。
+  acceptance:
+  - Source QueueにDead Letter Exchangeを設定すること
+  - 隔離Queueでx-death Headerと元Message IDを確認すること
+  proof_obligation: atlas/proof-obligations/delivery.yaml#dead-lettering
+- id: delivery.ttl-dead-lettering
+  capability_id: queue.ttl-dead-lettering
+  statement: Queue TTLを超過したMessageはSource Queueから除去され、構成済みDead Letter Exchangeを経由して隔離Queueへ配送される。
+  acceptance:
+  - 固定TTLを持つSource QueueとDLX、隔離Queueを宣言すること
+  - Source Queueが空になり、隔離Queueで同一Message IDとx-death Headerを確認すること
+  proof_obligation: atlas/proof-obligations/delivery.yaml#ttl-dead-lettering
+- id: delivery.flow-control
+  capability_id: consumer.prefetch
+  statement: prefetch=1では一件目をAckするまで同一Consumerへ二件目が配送されない。
+  acceptance:
+  - 一件目を未Ackのまま観測Windowを待つこと
+  - Ack後に二件目が配送されること
+  proof_obligation: atlas/proof-obligations/delivery.yaml#consumer-prefetch
+- id: delivery.publisher-flow-control
+  capability_id: publisher.resource-alarm-flow-control
+  statement: Cluster Resource Alarm中はPublisher ConnectionへBlocked通知が届き、Publish Confirmは成立せず、Alarm解除後に新規ConnectionのPublish
+    Confirmが成立する。
+  acceptance:
+  - Consumer Prefetchとは別に専用Compose内だけでMemory Alarmを注入すること
+  - Alarm Health非正常、Connection.Blocked、Confirm未成立、解除後Health正常とConfirm ackを確認すること
+  proof_obligation: atlas/proof-obligations/delivery.yaml#publisher-flow-control
+- id: delivery.ordering-boundary
+  capability_id: queue.single-consumer-ordering
+  statement: 単一Channelから順次Confirm付きでPublishし、単一Queueを単一Consumerで取得する固定条件では、観測したMessage ID列がPublish順と一致する。
+  acceptance:
+  - 二十Messageを同一Channelから順次Publishして各Confirmを得ること
+  - 単一Consumerの取得順がMessage IDのPublish順と一致すること
+  proof_obligation: atlas/proof-obligations/delivery.yaml#ordering-boundary
+- id: delivery.idempotency-boundary
+  capability_id: application.idempotency-ledger
+  statement: RabbitMQは同一Message IDの重複Publishを排除せず、Application側Ledgerが同一IDの副作用を一回へ制限する。
+  acceptance:
+  - 同一Message IDを二回Publishし、二Deliveryを観測すること
+  - Message BrokerではなくApplication Ledgerが副作用を一回だけ適用したことを記録すること
+  proof_obligation: atlas/proof-obligations/delivery.yaml#idempotency-boundary
+- id: queue.quorum-semantics
+  capability_id: queue.quorum
+  statement: 三Replicaを要求したQuorum QueueはConfirm付きPublishとManual Ack Consumeを完了できる。
+  acceptance:
+  - 三Node Clusterでx-queue-type=quorumかつinitial-group-size=3を宣言し、三Online Memberを観測すること
+  - Confirm ackと同一Message IDのManual Ack Consumeを確認すること
+  proof_obligation: atlas/proof-obligations/messaging.yaml#quorum-queue
+- id: queue.stream-semantics
+  capability_id: queue.stream
+  statement: Stream Queueは保持したMessageをx-stream-offset=firstの複数ConsumerへPublish順に非破壊で再生する。
+  acceptance:
+  - x-queue-type=streamのQueueへ三MessageをConfirm付きでPublishすること
+  - 独立した二Consumerがoffset=firstから同じ三Message IDをPublish順に取得すること
+  proof_obligation: atlas/proof-obligations/messaging.yaml#stream-queue
+- id: compatibility.fixed-client-queue-types
+  capability_id: compatibility.amqp091-go
+  statement: amqp091-go v1.10.0はRabbitMQ 4.3.5のAMQP 0-9-1 Listenerに接続し、Classic、Quorum、Stream Queueの対象操作を同一Harnessで完了する。
+  acceptance:
+  - Client Module Version、RabbitMQ OCI Digest、RabbitMQ VersionをEvidence Digestへ固定すること
+  - Classic、Quorum、Stream Queueの宣言、Confirm付きPublish、対象Consumeが成功すること
+  proof_obligation: atlas/proof-obligations/messaging.yaml#fixed-client-queue-types
+- id: security.least-privilege
+  capability_id: security.rabbitmq-permissions
+  statement: 専用vhostの無Tag Userへallowed.*だけを許可すると、対象Topologyの構築と配送は成功し、誤Password、別vhost、forbidden.*操作は拒否され、Password Rotation後は旧Credentialが失効する。
+  acceptance:
+  - 実行ごとに専用vhost、User、正規表現Permissionを作ること
+  - 許可操作のConfirm/Ack成功と、禁止Configure/Readのreply_code=403を確認すること
+  - 誤Passwordと別vhost接続を拒否し、Rotation後に旧Password拒否と新Password受理を確認すること
+  proof_obligation: atlas/proof-obligations/security-operations.yaml#least-privilege
+- id: security.tls-transport
+  capability_id: security.tls-mtls
+  statement: RabbitMQ 4.3.5のTLS専用Listenerは固定CA、Server Name、Client証明書でAMQPS配送を許可し、不正CA、Hostname不一致、Client証明書なし、Plaintext AMQPを拒否する。
+  acceptance:
+  - Runtime一時領域でCA、Server、Client、不正CA証明書を生成し秘密鍵を残さないこと
+  - Server証明書Fingerprint、RabbitMQ Version、Confirm/Consume/Ack成功を記録すること
+  - 不正CA、Hostname不一致、Client証明書なし、Plaintext Listenerを個別に拒否すること
+  proof_obligation: atlas/proof-obligations/security-operations.yaml#tls-transport
+- id: observability.management-api
+  capability_id: observability.management-api
+  statement: 固定ClusterのManagement APIは三NodeのRunning/Alarm/Partition状態と対象QueueのMessage状態を取得できる。
+  acceptance:
+  - RabbitMQ Version 4.3.5をAPI応答で確認すること
+  - 三Nodeと対象Queueを構造化JSONとして保存すること
+  proof_obligation: atlas/proof-obligations/security-operations.yaml#management-observability
+- id: observability.queue-state-transition
+  capability_id: observability.queue-state
+  statement: Management APIは同一Messageのready=1、Manual Ack前のunacked=1、Ack後のready=0/unacked=0を時刻付きSnapshotとして区別できる。
+  acceptance:
+  - Confirm付きPublish、Manual Ack Consume、Ackを同一Run IDで実行すること
+  - ready、unacked、ackedの三状態を上限付きPollで取得すること
+  proof_obligation: atlas/proof-obligations/security-operations.yaml#queue-state-transition
+- id: observability.prometheus-metrics
+  capability_id: observability.prometheus
+  statement: 固定三Node Clusterの各NodeはPrometheus EndpointからRabbitMQ Metric FamilyとAlarm/到達不能Peer Sampleを取得できる。
+  acceptance:
+  - 各Container内部のlocalhost:15692からMetricsを取得すること
+  - 三PayloadのSHA-256、byte数、Metric Family数と選択Sampleを保存すること
+  proof_obligation: atlas/proof-obligations/security-operations.yaml#prometheus-metrics
+- id: operation.health-and-alarms
+  capability_id: operation.health-checks
+  statement: 各Nodeのready-to-serve-clientsとCluster alarms Health Endpointが正常状態をstatus=okとして返す。
+  acceptance:
+  - 三つのManagement Endpointを個別に検査すること
+  - HealthとAlarmのHTTP 200およびstatus=okを確認すること
+  proof_obligation: atlas/proof-obligations/security-operations.yaml#health-and-alarms
+- id: operation.safe-cleanup
+  capability_id: operation.lab-cleanup
+  statement: Security Labは専用Userとvhostを削除し、GET 404で不存在を確認して既存Resourceを変更しない。
+  acceptance:
+  - 専用UserとvhostのDelete成功を確認すること
+  - 削除後の個別GETが404であること
+  proof_obligation: atlas/proof-obligations/security-operations.yaml#safe-cleanup
+- id: performance.fixed-workload
+  capability_id: performance.fixed-workload
+  statement: 固定したRabbitMQ 4.3.5 Cluster、Client、Message数、Payload、Confirm、Ack条件で、Classic、Quorum、Streamの送受信件数、Confirm Latency分位、Rate、Broker
+    Memoryを再測定できる。
+  acceptance:
+  - 各Queue Typeで300件すべてをPublish、Confirm、Consumeし、一意ID数も300であること
+  - Confirm Raw Sampleとp50/p95/p99、Rate、測定前後のBroker Memoryを記録すること
+  - 測定値を固定条件外の容量やQueue Typeの普遍的優劣へ一般化しないこと
+  proof_obligation: atlas/proof-obligations/performance.yaml#fixed-workload
+- id: migration.rolling-upgrade
+  capability_id: migration.rolling-upgrade
+  statement: 三Node RabbitMQ 4.2.9 Clusterは全Stable Feature Flagを事前有効化し、各NodeのQuorum安全性を確認して一台ずつ固定4.3.5 Imageへ置換すると、Mixed-version
+    Phaseを経て三Node 4.3.5へ到達し、低Rate Confirm/Ack Workloadを継続できる。
+  acceptance:
+  - Source/Target OCI Digest、Node Name、Data Volume、Erlang Cookieを固定すること
+  - source、mixed-1、mixed-2、targetのVersion、Membership、Alarm、Partition、Replicaを保存すること
+  - 各Node停止前Check、全PhaseのConfirm/Consume、Confirm済みID欠落ゼロを確認すること
+  - Downgrade、別Cluster Message移送、Exactly-once、Upgrade中性能を主張しないこと
+  proof_obligation: atlas/proof-obligations/migration.yaml#rolling-upgrade
+- id: cluster.three-node-membership
+  capability_id: cluster.membership
+  statement: 固定Compose環境は三つのRunning RabbitMQ Nodeからなる一つのClusterを形成する。
+  acceptance:
+  - rabbitmq-diagnostics cluster_statusで三Nodeを確認すること
+  - 全NodeがRunning Membersであること
+  proof_obligation: atlas/proof-obligations/resilience.yaml#membership
+- id: cluster.leader-failure
+  capability_id: quorum-queue.leader-election
+  statement: 三ReplicaのQuorum QueueはLeader一Node停止後も多数派が残ればConfirm済みMessageを配送できる。
+  acceptance:
+  - 停止前に五MessageすべてのConfirmを得ること
+  - Queue Leader Nodeを特定して停止すること
+  - 残存Nodeから五Messageを重複なく取得すること
+  proof_obligation: atlas/proof-obligations/resilience.yaml#leader-failure
+- id: cluster.node-recovery
+  capability_id: cluster.recovery
+  statement: 停止したNodeは再起動後にClusterのRunning Membersへ復帰する。
+  acceptance:
+  - 停止Nodeを同一Volumeで再起動すること
+  - 三NodeのRunning Membershipを再確認すること
+  proof_obligation: atlas/proof-obligations/resilience.yaml#node-recovery
+- id: cluster.network-partition
+  capability_id: cluster.network-partition
+  statement: 三Replica Quorum QueueのLeaderをNetwork隔離した場合、多数派側はConfirm済みMessageを配送でき、少数派側は新規WriteをConfirmできない。
+  acceptance:
+  - Process停止ではなく専用Compose Networkから一Nodeを切断すること
+  - 多数派で全Message IDを一意に取得し、少数派WriteがConfirmされないこと
+  proof_obligation: atlas/proof-obligations/resilience.yaml#network-partition
+- id: cluster.partition-recovery
+  capability_id: cluster.partition-recovery
+  statement: 隔離Nodeを専用Networkへ再接続すると、Cluster Membershipと対象Quorum Queueの三Online Replicaが回復する。
+  acceptance:
+  - Trapを含む再接続処理を持つこと
+  - 三Node Running Membershipと三Online Queue Memberを再確認すること
+  proof_obligation: atlas/proof-obligations/resilience.yaml#partition-recovery
+- id: operation.reproducible-evidence
+  capability_id: atlas.evidence
+  statement: 各Evidenceは固定Source、Environment、Harness、ArtifactのSHA-256へ束縛される。
+  acceptance:
+  - Evidence Schemaに適合すること
+  - 参照ArtifactのDigestと実ファイルが一致すること
+  proof_obligation: atlas/proof-obligations/atlas-operation.yaml#evidence
+- id: skill.router-evaluation
+  capability_id: skill.router
+  statement: Routerは代表Taskを正しいModeへ分類し、Coverage外の要求をgapとして返す。
+  acceptance:
+  - 全Eval Caseが期待ModeとReferenceに一致すること
+  - minimum_pass_rateを満たすこと
+  proof_obligation: atlas/proof-obligations/atlas-operation.yaml#skill-eval
+artifacts:
+  proofs:
+  - path: atlas/proof-obligations/atlas-operation.yaml
+    digest: sha256:c55cf97a2ed158f43d4a1f518678a2d176acc6d402a4a7e833374bbf21460e5b
+    ids:
+    - evidence
+    - skill-eval
+  - path: atlas/proof-obligations/delivery.yaml
+    digest: sha256:de5d416cff8a66d6b57929fa301998b8daf126d170ef6bfe49aafa75fd076d59
+    ids:
+    - publisher-confirm
+    - acknowledgement
+    - redelivery
+    - dead-lettering
+    - ttl-dead-lettering
+    - consumer-prefetch
+    - publisher-flow-control
+    - ordering-boundary
+    - idempotency-boundary
+  - path: atlas/proof-obligations/messaging.yaml
+    digest: sha256:e0c8c346d90a0dbb8185befc48fef9b8ca57b8bd44eafa4c5560af0df46fe3c4
+    ids:
+    - amqp-model-boundary
+    - exchange-binding-matrix
+    - exchange-routing
+    - queue-lifecycle
+    - quorum-queue
+    - stream-queue
+    - fixed-client-queue-types
+  - path: atlas/proof-obligations/migration.yaml
+    digest: sha256:0dc78e842793a5e9da6364de8c663d033d9c698bd95f04a3251fc29b0d83d5a3
+    ids:
+    - rolling-upgrade
+  - path: atlas/proof-obligations/performance.yaml
+    digest: sha256:bc9e7c3dd85fc5c0d99740642dd5286fce9b0c7314df51277d7b2111823807e5
+    ids:
+    - fixed-workload
+  - path: atlas/proof-obligations/resilience.yaml
+    digest: sha256:58041d40e311aee41407f44a0ce05d52654b2aa9ea9770e70b9fc9da85fbd003
+    ids:
+    - membership
+    - leader-failure
+    - node-recovery
+    - network-partition
+    - partition-recovery
+  - path: atlas/proof-obligations/security-operations.yaml
+    digest: sha256:399b7244514a474dbadcff2fff5d1c9a16a75872dd5310377392bec6e772180f
+    ids:
+    - tls-transport
+    - least-privilege
+    - management-observability
+    - queue-state-transition
+    - prometheus-metrics
+    - health-and-alarms
+    - safe-cleanup
+  evidence:
+  - path: evidence/eval.router.evidence.json
+    digest: sha256:19a28b4d2472a7345b3d55a008bce0fecd6a68eb0c9b70a0a9fd4038378217e2
+    id: eval.router
+    claim_ids:
+    - skill.router-evaluation
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make skill-eval
+  - path: evidence/lab.ack-redelivery.evidence.json
+    digest: sha256:198e23ee119b032a67d30900e2fe44c01481690782652613b287bcb8f2d3e036
+    id: lab.ack-redelivery
+    claim_ids:
+    - delivery.acknowledgement
+    - delivery.redelivery
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.amqp-model.evidence.json
+    digest: sha256:c1c1a41f51ba9085774d09cb82528ba71a2654987d67efc6bb7e6acccfc4fd42
+    id: lab.amqp-model
+    claim_ids:
+    - messaging.amqp-model-boundary
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.cluster-failure-recovery.evidence.json
+    digest: sha256:bccefd9173de7171c8cc7e9e4ae4102944e3795428acdf72fb79a0cc70bd2b88
+    id: lab.cluster-failure-recovery
+    claim_ids:
+    - cluster.leader-failure
+    - cluster.node-recovery
+    - queue.quorum-semantics
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.cluster-membership.evidence.json
+    digest: sha256:25a5b5b58f289978fe733c135f1e3117ba57d7f1e4779a2fcbbd2f76367411cb
+    id: lab.cluster-membership
+    claim_ids:
+    - cluster.three-node-membership
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.consumer-flow-control.evidence.json
+    digest: sha256:69ae78c41c8f7f2fa68518b72cd1bff19c9a20f7e4c8171087825eed98df88ca
+    id: lab.consumer-flow-control
+    claim_ids:
+    - delivery.flow-control
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.dead-letter.evidence.json
+    digest: sha256:d3ffaaf0c7eb19acfe8472db890e88dd64677dfbe4f62ec6b2268ef01832bfba
+    id: lab.dead-letter
+    claim_ids:
+    - delivery.dead-lettering
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.exchange-binding-matrix.evidence.json
+    digest: sha256:223f7ae4f7cd10ea9702daffb6b9ae514e699c588540f9f4b99e2017b3420480
+    id: lab.exchange-binding-matrix
+    claim_ids:
+    - messaging.exchange-binding-matrix
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.exchange-queue.evidence.json
+    digest: sha256:8c9de96d96485d4e1b09cd874f156661b9459356160423731a666d923038a021
+    id: lab.exchange-queue
+    claim_ids:
+    - messaging.exchange-routing
+    - messaging.queue-lifecycle
+    - delivery.publisher-confirm
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.network-partition.evidence.json
+    digest: sha256:d55959f8f9867c2417235aaca23d56903ee454b1952a1ecd260d61ea8ddf9b62
+    id: lab.network-partition
+    claim_ids:
+    - cluster.network-partition
+    - cluster.partition-recovery
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.observability-health.evidence.json
+    digest: sha256:8647eeb88142e855bce0afdb6846290eef43b5032120e0289e15afc931da672c
+    id: lab.observability-health
+    claim_ids:
+    - observability.management-api
+    - operation.health-and-alarms
+    - operation.safe-cleanup
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.observability-state.evidence.json
+    digest: sha256:b249d2e1cb69e522138ce0351e1bd5538c57ba27e8e1bcb223a07f14fd98b8ee
+    id: lab.observability-state
+    claim_ids:
+    - observability.queue-state-transition
+    - observability.prometheus-metrics
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.ordering-idempotency.evidence.json
+    digest: sha256:22342f6dff4724900f49c17760530e5768322dd8dbf4296a550554962d865e82
+    id: lab.ordering-idempotency
+    claim_ids:
+    - delivery.ordering-boundary
+    - delivery.idempotency-boundary
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.performance-capacity.evidence.json
+    digest: sha256:09699bc8cda47f6b29ec3b6d5e83260be42b7cdad6d639655c1873d01b1b3d14
+    id: lab.performance-capacity
+    claim_ids:
+    - performance.fixed-workload
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.publisher-flow-control.evidence.json
+    digest: sha256:0d63eb38f8d72282637c93368b6ba74f546e896762e83671c36b8381a028a31b
+    id: lab.publisher-flow-control
+    claim_ids:
+    - delivery.publisher-flow-control
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.quorum-stream.evidence.json
+    digest: sha256:c093a2c7e64532b790ebace555a733b1bb3ea41107da80b7dabb1ee4b1796eb9
+    id: lab.quorum-stream
+    claim_ids:
+    - queue.quorum-semantics
+    - queue.stream-semantics
+    - compatibility.fixed-client-queue-types
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.rolling-upgrade.evidence.json
+    digest: sha256:df8291d60929b42865684b3533cb77e8c0c57a15c478548a9fb0b0b55bc1bac0
+    id: lab.rolling-upgrade
+    claim_ids:
+    - migration.rolling-upgrade
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.security-authz.evidence.json
+    digest: sha256:fcc07dc3a7a19f38eefecb8c0fa0f0225511a993bfe70e680d78a04c9d0ba2d8
+    id: lab.security-authz
+    claim_ids:
+    - security.least-privilege
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.security-tls.evidence.json
+    digest: sha256:b3c0c3e9e9b12d37d0e8fcd5ba536ce60b5f19daf6688c5d8e2998dbaa126f55
+    id: lab.security-tls
+    claim_ids:
+    - security.tls-transport
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/lab.ttl-dead-letter.evidence.json
+    digest: sha256:21654db51278acfc8a6239a5a482705b816bda304f425c5a7d8636958880e39b
+    id: lab.ttl-dead-letter
+    claim_ids:
+    - delivery.ttl-dead-lettering
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  - path: evidence/operation.evidence-generation.evidence.json
+    digest: sha256:c4ccdc834151689d86ba00bdfd8f5099219fd445c8323321c9001fd584e55520
+    id: operation.evidence-generation
+    claim_ids:
+    - operation.reproducible-evidence
+    verdict: pass
+    producer: rabbitmq-reference-atlas harness
+    command: make labs
+  labs:
+  - path: labs/ack-redelivery/lab.yaml
+    digest: sha256:fb20d3368f9b268b73f613f5c5126dd88469e154c99adae98ed084d5b4a01397
+    id: ack-redelivery
+  - path: labs/amqp-model/lab.yaml
+    digest: sha256:5836dc583fddb1775628cce47cfa204ab6f23720d2cef30ba1b31941229101ef
+    id: amqp-model
+  - path: labs/cluster-failure-recovery/lab.yaml
+    digest: sha256:3f7c04db35fc9b01194963421edd909b6240c4a8c70a645b2d3362fad62da936
+    id: cluster-failure-recovery
+  - path: labs/consumer-flow-control/lab.yaml
+    digest: sha256:75e5ff657d5d22a3be081bb7b873ee1abca6aa6ef223f2365ef63ce129468aa1
+    id: consumer-flow-control
+  - path: labs/dead-letter/lab.yaml
+    digest: sha256:0ca52ddb61efc2a49a7b67ab5ac0c265b28d05856d1d275f9e9757c652ef23c0
+    id: dead-letter
+  - path: labs/exchange-binding-matrix/lab.yaml
+    digest: sha256:de177b166eb6f3424298d7f02f969073f1cce77882d743eb3a9731ff587af780
+    id: exchange-binding-matrix
+  - path: labs/exchange-queue/lab.yaml
+    digest: sha256:a4093fcdbb66f415f7f81e06e384b8da4d7f4ae5bd02545c6df876ec019e7f30
+    id: exchange-queue
+  - path: labs/network-partition/lab.yaml
+    digest: sha256:7ae7d4181f82f584137d259db612c9986d7b10bdcefdc01f6aa44f9bb7dbc8b4
+    id: network-partition
+  - path: labs/observability-state/lab.yaml
+    digest: sha256:85a7aa5155c283752434890919f80e9e8bf69b17369ddc1c07e5fcc23f4413be
+    id: observability-state
+  - path: labs/ordering-idempotency/lab.yaml
+    digest: sha256:0994dc6fd35d80b7f687afdf08369f4b42e86d58fa06985d0506d0b45b60238e
+    id: ordering-idempotency
+  - path: labs/performance-capacity/lab.yaml
+    digest: sha256:8123b886d3b10ae329ec111133fb258dd5bbb6a6f18cb8685262e91fed2b92b9
+    id: performance-capacity
+  - path: labs/publisher-flow-control/lab.yaml
+    digest: sha256:efd982ff44d1b586540bf11f91ac00df04b30ab3250ac581a8fdb7a104a078b4
+    id: publisher-flow-control
+  - path: labs/quorum-stream/lab.yaml
+    digest: sha256:09067060f4422445c8ede8985b5ebb40bf66848bc166918bfc34005110283074
+    id: quorum-stream
+  - path: labs/rolling-upgrade/lab.yaml
+    digest: sha256:be68353417eaa428d9f412cb151bd2981484174e53b3e0102281b0cb26fee3ef
+    id: rolling-upgrade-4.2.9-to-4.3.5
+  - path: labs/security-observability/lab.yaml
+    digest: sha256:bfb3acf046b46038455c82fc3d364f43c189a0f43445537fa2e7323dcd060f89
+    id: security-observability
+  - path: labs/security-tls/lab.yaml
+    digest: sha256:46cc1eb9e01327d392187f044a5661858bf7460c63a2a1919408ecb7597b55f8
+    id: security-tls
+  - path: labs/ttl-dead-letter/lab.yaml
+    digest: sha256:6e6a42b5461d61f02fafef3692e54116e5305ee7c7d77f273a8690698b1be20a
+    id: ttl-dead-letter
+  go_tests:
+  - path: cmd/rmq-lab/recovery_test.go
+    digest: sha256:4e3608a8c91634cf0ca42a36d61813bb934be960cac27774c364158dd50c5d6c
+    test_functions:
+    - TestRecoverMessagesReopensClosedChannelAfterLeaderElection
+    - TestRecoverMessagesDoesNotCountFailedAcknowledgement
+  - path: cmd/rmq-observability/main_test.go
+    digest: sha256:dd6d472a72a0fa33e9c3026825ae98b24b0c73ca121e9fbe79d8d8f45dd53829
+    test_functions:
+    - TestMatchesQueueStates
+    - TestSafeEndpointRemovesCredentials
+  - path: cmd/rmq-secops/main_test.go
+    digest: sha256:6a0c3d70659f9d52718ab2e8aa1e8789346bc04e13f111534a3e780b00036fda
+    test_functions:
+    - TestCredentialedEndpoints
+    - TestAPIClientAndSafeEndpoint
+    - TestFinalizeMakesEveryFailedCheckFatal
+  - path: cmd/rmq-tls-lab/main_test.go
+    digest: sha256:c16ef655c6a1e7ed25bf3802eb6323b3a64e74080d5c40f5b7d5764268c46271
+    test_functions:
+    - TestURIsEscapeCredentialsAndUseExpectedSchemes
+    - TestRejectedCheck
+  skill_eval:
+    path: evals/router-cases.json
+    digest: sha256:3f53662235edbb78b0a05e468843138fbf7d1875489f5c06a8f805ca8bf3c3b4
+    cases:
+    - id: design.exchange-selection
+      query: Routing Keyで配送先を分けるExchange設計を考えたい
+      expected_mode: design
+      expected_reference: .agents/skills/rabbitmq-reference-router/references/decision-matrix.md
+    - id: implement.manual-ack
+      query: manual ackとnackによる再配送を実装したい
+      expected_mode: implement
+      expected_reference: labs/README.md
+    - id: diagnose.redelivery-loop
+      query: redelivery loopと重複配送を診断したい
+      expected_mode: diagnose
+      expected_reference: operations/runbooks/index.yaml
+    - id: recover.leader-failure
+      query: Quorum Queueのleader停止から復旧したい
+      expected_mode: recover
+      expected_reference: operations/runbooks/cluster-leader-failure.md
+    - id: migrate.classic-mirrored
+      query: mirrored classic queueから移行したい
+      expected_mode: migrate
+      expected_reference: versions/baseline.yaml
+    - id: review.topology
+      query: このQueueとDLQのTopologyをレビューして
+      expected_mode: review
+      expected_reference: coverage.yaml
+    - id: gap.mqtt
+      query: MQTT 5.0とAMQP 0-9-1の相互運用を証明して
+      expected_mode: gap
+      expected_reference: .agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md
+    - id: design.amqp-model
+      query: AMQP EntityとQueue宣言同値性を設計したい
+      expected_mode: design
+      expected_reference: .agents/skills/rabbitmq-reference-router/references/decision-matrix.md
+    - id: design.exchange-matrix
+      query: Topic Fanout Headers Exchangeの選定基準を知りたい
+      expected_mode: design
+      expected_reference: coverage.yaml
+    - id: implement.ttl-dlx
+      query: TTLで期限切れになったMessageをDLXへ送る実装
+      expected_mode: implement
+      expected_reference: labs/README.md
+    - id: design.quorum-stream
+      query: Quorum QueueとStreamの使い分けを設計したい
+      expected_mode: design
+      expected_reference: .agents/skills/rabbitmq-reference-router/references/decision-matrix.md
+    - id: diagnose.publisher-blocked
+      query: memory alarmでpublisher blockedになった原因を診断
+      expected_mode: diagnose
+      expected_reference: operations/runbooks/index.yaml
+    - id: design.ordering
+      query: 単一Consumerで順序を保つ条件を設計したい
+      expected_mode: design
+      expected_reference: coverage.yaml
+    - id: diagnose.idempotency
+      query: 重複配送時のApplication Idempotencyを診断したい
+      expected_mode: diagnose
+      expected_reference: .agents/skills/rabbitmq-reference-router/references/runbook-index.yaml
+    - id: recover.partition
+      query: Quorum Queueのネットワーク分断から復旧したい
+      expected_mode: recover
+      expected_reference: labs/cluster-failure-recovery/lab.yaml
+    - id: diagnose.access-refused
+      query: ACCESS_REFUSEDのpermission問題を診断
+      expected_mode: diagnose
+      expected_reference: operations/runbooks/index.yaml
+    - id: diagnose.prometheus
+      query: Prometheus metricsとalarmから診断したい
+      expected_mode: diagnose
+      expected_reference: .agents/skills/rabbitmq-reference-router/references/runbook-index.yaml
+    - id: design.performance
+      query: 固定Workloadで性能と容量を比較したい
+      expected_mode: design
+      expected_reference: .agents/skills/rabbitmq-reference-router/references/decision-matrix.md
+    - id: migrate.upgrade
+      query: RabbitMQ 4.2から4.3へrolling upgradeしたい
+      expected_mode: migrate
+      expected_reference: versions/baseline.yaml
+    - id: gap.amqp10
+      query: AMQP 1.0固有のtransaction挙動を証明して
+      expected_mode: gap
+      expected_reference: .agents/skills/rabbitmq-reference-router/references/coverage-boundaries.md
+    - id: gap.super-stream
+      query: Super Streamのpartition key挙動を証明して
+      expected_mode: gap
+      expected_reference: coverage.yaml
+ci:
+  path: .github/workflows/validate.yaml
+  job: validate
+  timeout_minutes: 30
+  steps:
+  - name: null
+    uses: actions/checkout@v4
+    run: null
+  - name: null
+    uses: actions/setup-go@v5
+    run: null
+  - name: Install pinned atlas validator
+    uses: null
+    run: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@d5c0a6ce757fd5f43af837edd26f55c7325b811e
+  - name: Validate manifests, Router Skill, rights and repository graph
+    uses: null
+    run: make check
+  - name: Execute RabbitMQ Labs and regenerate Evidence
+    uses: null
+    run: make labs
+  - name: Verify generated Evidence with atlas validate
+    uses: null
+    run: make atlas-validate repo-validate

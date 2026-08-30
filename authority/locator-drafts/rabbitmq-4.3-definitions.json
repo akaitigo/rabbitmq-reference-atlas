@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-definitions",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/definitions.md",
+  "locked_source_digest": "sha256:37a06b2c2fd6b74d28d3482d719898afcdec29c961cd211b4406c1cb9b5bb3f5",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:37a06b2c2fd6b74d28d3482d719898afcdec29c961cd211b4406c1cb9b5bb3f5",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/definitions.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 15006,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0000",
+        "locator": "#schema-definition-export-and-import",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 917,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:3ea4aa3cf877afbcfdf68b37886265cd6ce3138ad58caa44dd323f27cf5b0bb5",
+        "heading_digest": "sha256:beb499164836c7d38bb4d1c7ab88a3f3233fbbbed330176896e4796982410abb",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 917,
+        "section_end": 2168,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c0eea718e9bfe758a06daff21dffe775b4c18fc825ae662f592995156a30b561",
+        "heading_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0002",
+        "locator": "#export",
+        "level": 2,
+        "section_start": 2168,
+        "section_end": 5060,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:bd60522fc5eb156fc4450a14986b13a619286448f9c27065de92a1f9442e0a6d",
+        "heading_digest": "sha256:2ba2320de25f0a0fa7f152ca10d0c07c4b2acf372fd1eab516caf5e497956916",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0003",
+        "locator": "#export-and-transform-definitions",
+        "level": 2,
+        "section_start": 5060,
+        "section_end": 7534,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7b9d18b8be3fa3e8194712c99fb64a1b5cf2f1ba784b42fa5577e5c9038c60ff",
+        "heading_digest": "sha256:e7b2a6a110bb14009fc4d23f790f7617786378d28e0640ed92e73a37931c60c3",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0004",
+        "locator": "#examples",
+        "level": 3,
+        "section_start": 7534,
+        "section_end": 8773,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:807a664d01509e74e761c954befa67510c26ebc07c16e7424112af5db4c74089",
+        "heading_digest": "sha256:e68ee04dff59551b7d1ae07a2f8a00dc61d841628948da3d2781630706a05e92",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0005",
+        "locator": "#import",
+        "level": 2,
+        "section_start": 8773,
+        "section_end": 10215,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a8b83923e7026213485a822b5594eb227678a214e99b19d410c1b703eb74dd2d",
+        "heading_digest": "sha256:2c4c060b82c16f071fbed86993fb1fe78846f0df5a14b43254416236ed3d21b0",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0006",
+        "locator": "#import-on-boot",
+        "level": 2,
+        "section_start": 10215,
+        "section_end": 11668,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:57a5fdebdb1380e97609068c926a390aecbf260918de747f0bdc93a784752659",
+        "heading_digest": "sha256:37533c434622048e1f0e97afdd474a4cd1449be25102c23b11787451a503591d",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0007",
+        "locator": "#import-on-boot-nuances",
+        "level": 3,
+        "section_start": 11668,
+        "section_end": 12875,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:10aaa1724597050af0de40e6c95bc793aa971eedd5c88738294c7faa3da1246d",
+        "heading_digest": "sha256:6a41af6ef0cd6860efcfb2adea6c3e2c26a352697e86b9cb5a174b9f28740527",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0008",
+        "locator": "#import-on-boot-skip-if-unchanged",
+        "level": 3,
+        "section_start": 12875,
+        "section_end": 14432,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:6b53a737602957962a9ddd93406efe6323c8cf65f4439efa3d3aab8ccf876505",
+        "heading_digest": "sha256:a8045edfd32c2d03b9201a7b9a1e7b2bda8a3e1b09e15d75807270d290711b1c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-definitions.0009",
+        "locator": "#import-after-boot",
+        "level": 2,
+        "section_start": 14432,
+        "section_end": 15006,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:00e5b2799fdf23de37e123810eaf21575c0a649bc3e39e28df5f3eb2b995015a",
+        "heading_digest": "sha256:575a666a620c44158eea42ab04612f16bf8a4460c9fb60774f3a076dd3f8a9c1",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": []
+}

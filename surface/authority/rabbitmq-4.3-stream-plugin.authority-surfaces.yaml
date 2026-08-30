@@ -1,0 +1,79 @@
+schema_version: 2
+source_id: rabbitmq-4.3-stream-plugin
+source_digest: sha256:772204455494ca191c54d1aea15926e148fe5120cd698ad2177f3a9deaf8bb69
+extraction:
+  method: primary-text-reviewed
+  tool: heading-and-contract-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+  - id: stream-plugin.protocol-client
+    locator: '#overview'
+    kind: capability
+    capability_id: protocol.stream
+    behavior_id: stream-plugin.protocol-client
+    title: RabbitMQ Stream binary protocol and official client contract
+    surface_ids: [foundations-mechanics, testing-verification, compatibility-integration]
+  - id: stream-plugin.enablement
+    locator: '#enabling-the-plugin'
+    kind: behavior
+    capability_id: protocol.stream
+    behavior_id: stream-plugin.enablement
+    title: Stream plugin enablement and listener availability
+    surface_ids: [implementation-construction, testing-verification, operations-observability]
+  - id: stream-plugin.listeners
+    locator: '#tcp-listeners'
+    kind: behavior
+    capability_id: protocol.stream
+    behavior_id: stream-plugin.listeners
+    title: Stream TCP listener address and option configuration
+    surface_ids: [implementation-construction, testing-verification, operations-observability]
+  - id: stream-plugin.tls
+    locator: '#tls-support'
+    kind: behavior
+    capability_id: security.stream
+    behavior_id: stream-plugin.tls
+    title: Stream protocol TLS listener and peer verification
+    surface_ids: [testing-verification, security-privacy-safety, compatibility-integration]
+  - id: stream-plugin.publisher-credit
+    locator: '#publisher-credit-flow'
+    kind: behavior
+    capability_id: delivery.stream
+    behavior_id: stream-plugin.publisher-credit
+    title: Stream publisher credit flow, batching, and memory trade-off
+    surface_ids: [testing-verification, failure-recovery, performance-capacity-cost]
+  - id: stream-plugin.consumer-credit
+    locator: '#consumer-credit-flow'
+    kind: behavior
+    capability_id: delivery.stream
+    behavior_id: stream-plugin.consumer-credit
+    title: Stream consumer chunk credit and replenishment behavior
+    surface_ids: [testing-verification, failure-recovery, performance-capacity-cost]
+  - id: stream-plugin.authorization
+    locator: '#authentication-and-authorisation'
+    kind: behavior
+    capability_id: security.stream
+    behavior_id: stream-plugin.authorization
+    title: Stream protocol authentication and virtual host permissions
+    surface_ids: [testing-verification, security-privacy-safety]
+  - id: stream-plugin.cluster-topology
+    locator: '#connecting-to-streams'
+    kind: behavior
+    capability_id: protocol.stream
+    behavior_id: stream-plugin.cluster-topology
+    title: Stream leader and replica topology discovery across three nodes
+    surface_ids: [architecture-design, testing-verification, failure-recovery]
+  - id: stream-plugin.load-balancer-locality
+    locator: '#using-a-load-balancer'
+    kind: behavior
+    capability_id: protocol.stream
+    behavior_id: stream-plugin.load-balancer-locality
+    title: Stream load balancer reconnect for leader and replica locality
+    surface_ids: [testing-verification, failure-recovery, performance-capacity-cost, decision-comparison]
+  - id: stream-plugin.metrics-performance
+    locator: '#monitoring-and-performance'
+    kind: capability
+    capability_id: observability.stream
+    behavior_id: stream-plugin.metrics-performance
+    title: Stream connection, credit, throughput, latency, and resource telemetry
+    surface_ids: [operations-observability, performance-capacity-cost]

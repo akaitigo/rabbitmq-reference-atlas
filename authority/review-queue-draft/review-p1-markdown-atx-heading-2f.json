@@ -1,0 +1,661 @@
+{
+  "schema_version": 1,
+  "queue_id": "authority-review-847612e358adc84d78cc",
+  "batch_id": "review-p1-markdown-atx-heading-2f",
+  "status": "pending-human",
+  "machine_assistance": "priority-cluster-batch-proposals-only",
+  "semantic_decisions": "none",
+  "items": [
+    {
+      "anchor_id": "anchor-121398f33484db6753ad",
+      "document_id": "document-raw-githubusercontent-com-42e548af5f27",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ldap.md",
+      "source_ids": [
+        "rabbitmq-4.3-ldap"
+      ],
+      "locked_source_digest": "sha256:d98bf6830d5ab29c2a3c0f39a5a79758f433b010724430941115b484f6ea8ae4",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#prerequisites",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-ccea86ba3fa7934c9b45",
+      "context_start": 1376,
+      "context_end": 6530,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:e5b7aa036631b31f033a46fd6a3dda84154c0d936307687d746f373d77dc6fbb",
+      "label_digest": "sha256:62b887b75f624a31a4b9c26f844dd9362d3602b31daa6c9fe30f16fdea10ffad",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": "candidate-cluster-33515dca03a7d8a12daa",
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-23a81a8bfa70ba1fd431",
+      "document_id": "document-raw-githubusercontent-com-ab5093f6e02b",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ssl/index.md",
+      "source_ids": [
+        "rabbitmq-4.3-tls"
+      ],
+      "locked_source_digest": "sha256:d33e05a1821a2c0ebbbe804050d6c85a320eaba15e6128aa3573deb41dfe31db",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#dotnet-client",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-2c98bc3046214d733cd5",
+      "context_start": 39746,
+      "context_end": 44915,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:329004d6b5a20277dde381fc7773fd15714c274a38a953f2789b2ea98f697def",
+      "label_digest": "sha256:15aaeca031166d94033747f3dba2b5cdd95eb8e32f2368b234e7ffd9823cdbda",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-2a3924611761437c631c",
+      "document_id": "document-raw-githubusercontent-com-0ee1984b73a6",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/policies.md",
+      "source_ids": [
+        "rabbitmq-4.3-policies"
+      ],
+      "locked_source_digest": "sha256:39c707f940467ef8a95a77b0ee151d79e8e495b8e2973c93ff0483d19780f1f2",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#deleting-keys",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-415be3dd1559e276c88b",
+      "context_start": 17619,
+      "context_end": 22792,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:01587ee9ac25b237e4d8fe2ea1c58460802ef6606153e93b95fd93e984fd7db2",
+      "label_digest": "sha256:91b417638b6c968b03903150d668a0fc1e18efe35e5e75de8056ca790a5e66ac",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-2bbf12c04a3acbf72941",
+      "document_id": "document-raw-githubusercontent-com-1137cc19e31e",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md",
+      "source_ids": [
+        "rabbitmq-4.3-consumers"
+      ],
+      "locked_source_digest": "sha256:48339d265f8081f413fe13fbc822aa1fdf80248bff28a8eb21593a0edf6bd07a",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "offset:utf8:17658",
+      "locator_kind": "locked-body-offset",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-42dcd53f87291905d63f",
+      "context_start": 16634,
+      "context_end": 21782,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:b9aa332ab766f95182dbf13cce8fd7ca24c1fbff110e7d8ce0aef5f5bf65e15d",
+      "label_digest": "sha256:0b38092945b7e3e769095adb68641e77166688693b3bce8fdeb6b108bbb9de56",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-2e2673b9585cbd122722",
+      "document_id": "document-raw-githubusercontent-com-a18c11ff4705",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/backup.md",
+      "source_ids": [
+        "rabbitmq-4.3-backup"
+      ],
+      "locked_source_digest": "sha256:a93c321b41d3fc8040eb631b61caff9e2257810c28cf4d33ff13a51f68066c81",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#rabbitmq-definitions",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-9837eedf63c43f6326bb",
+      "context_start": 707,
+      "context_end": 5878,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:3950089355648761b70365ee65061f0265e6020322a2ec741a1fdba178b67f4e",
+      "label_digest": "sha256:9db689b13b044b0318c69ea8103e5f0e90c14466fab823311c9b160bbc723760",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-32b50c26306a4097fa57",
+      "document_id": "document-raw-githubusercontent-com-e98b052f9f88",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/kubernetes/operator/using-topology-operator.md",
+      "source_ids": [
+        "rabbitmq-topology-operator-usage"
+      ],
+      "locked_source_digest": "sha256:2ff6c8d5dfc8d25a52978f7d4a791362de3a9712464019a736b4a8a619ff6a40",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#delete",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-443410ca852ade4c3ac3",
+      "context_start": 33655,
+      "context_end": 38806,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:1dbc8d078af0ae15e2bc10c150a07f5beeb4924f16e7f77993de6df3e8ea0485",
+      "label_digest": "sha256:7ed98db516f33587283ef3f91805eaf47a511bdad68da27e1ef393ade4ec30a2",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-40bfc7e520585f5a6e1c",
+      "document_id": "document-raw-githubusercontent-com-42e548af5f27",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ldap.md",
+      "source_ids": [
+        "rabbitmq-4.3-ldap"
+      ],
+      "locked_source_digest": "sha256:d98bf6830d5ab29c2a3c0f39a5a79758f433b010724430941115b484f6ea8ae4",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#in-group-query",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-1e29babe614ea15bb1c9",
+      "context_start": 30817,
+      "context_end": 35974,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:7719d90d549e08dd9ab73dc1205bf162db4bf8af120ebaa97d15678030dac9a6",
+      "label_digest": "sha256:bf4f3c9890730b4cfad6f3ef692e1df3cad9882593d056a4a93766ca9dfdc781",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-6e91d090ffa8d684e0f0",
+      "document_id": "document-raw-githubusercontent-com-e439566e98f0",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/confirms.md",
+      "source_ids": [
+        "rabbitmq-4.3-confirms"
+      ],
+      "locked_source_digest": "sha256:861abccf819fddcdaddd661255914d867d6ed511a9ff19311bfef73d0907b127",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#consumer-acks-delivery-tags",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-2f4d835969bee5b6a6d6",
+      "context_start": 3969,
+      "context_end": 9160,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:595b39dac3c31563376478a3232697e3c35efbdf021edf31a6856bd8be5d2f77",
+      "label_digest": "sha256:763575677ecc9a9e725a7aa320394bb0d172832f9c3cfb288c6a45ce57068a4b",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-764ae26448c2905228b7",
+      "document_id": "document-raw-githubusercontent-com-e473db6f025d",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/configure.md",
+      "source_ids": [
+        "rabbitmq-4.3-configuration"
+      ],
+      "locked_source_digest": "sha256:bf0e6f05185356bd4491fd04a1fbee8e82622b80b80b08565033a10c911426bf",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "offset:utf8:14239",
+      "locator_kind": "locked-body-offset",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-7a1197ec4ed80d3daf6b",
+      "context_start": 13215,
+      "context_end": 18354,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:e2685dbd2769a67598100a8f77e525d7f6c743189ecc6ea705f06ea029986f6e",
+      "label_digest": "sha256:769291368ba30b946ae79e37026318b85f9bdf0553ee00fd11f1413f31e2bcfc",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-82224b3f602c8407ac7b",
+      "document_id": "document-raw-githubusercontent-com-e1309abcc960",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/stream.md",
+      "source_ids": [
+        "rabbitmq-4.3-stream-plugin"
+      ],
+      "locked_source_digest": "sha256:772204455494ca191c54d1aea15926e148fe5120cd698ad2177f3a9deaf8bb69",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#configuration",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-78c4d9b1f1ca2c3d32cf",
+      "context_start": 2544,
+      "context_end": 7705,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:14166fecf71420a8b489df489a9085db623710d70751c49d9efe8beaa0bb94e7",
+      "label_digest": "sha256:422d771c5a0a6cb0ee6e8c67c2dac6ad795af0d52dc621e5e17edac0b7418c04",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": "candidate-cluster-1a5b4dc1a79d9cd89284",
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-86c2d737501a4f5c4b6e",
+      "document_id": "document-raw-githubusercontent-com-5a833d664e43",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/tutorials/amqp-concepts/index.md",
+      "source_ids": [
+        "rabbitmq-amqp-concepts"
+      ],
+      "locked_source_digest": "sha256:4443361280acd6e415ba8687a63fa022b0e4a4d582a6f8a07d29d29872f3986f",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#messages-reject",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-20dbcd79cc551e3915c7",
+      "context_start": 15653,
+      "context_end": 20815,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:66d252af4edce0944c9e5bb04a4f4da9eb85c595bb2ed2584afcebd7d4bcc6e0",
+      "label_digest": "sha256:326d7380e881d205a1c5fff49936805a189cee2c17ac0e252cb1635b34cc2498",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-95d0106715ce636dd461",
+      "document_id": "document-raw-githubusercontent-com-990eb98fae1c",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/mqtt.md",
+      "source_ids": [
+        "rabbitmq-4.3-mqtt"
+      ],
+      "locked_source_digest": "sha256:7922a386475a80084c3e34beae46fa1c083bc9c27555b36f5141671bea2963d3",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#local-vs-remote",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-78c314312ba60f0e5718",
+      "context_start": 17404,
+      "context_end": 22583,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:aee2a2c631aa95848b9611c2ea67a6e89df23e94c1e7949ebc5144e34bbec072",
+      "label_digest": "sha256:52f09f0eef504e7cea75352fb04ec3a739c0095440f895bad2f3e86cce8ed610",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-9ba6326b72c7c88ae1dc",
+      "document_id": "document-raw-githubusercontent-com-64e3f75155f2",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/management/index.md",
+      "source_ids": [
+        "rabbitmq-4.3-management"
+      ],
+      "locked_source_digest": "sha256:138604ee91db6d078c835dd9cdaf33e53eeda67d063d95336ca91c70f28900b1",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "offset:utf8:39663",
+      "locator_kind": "locked-body-offset",
+      "selector": "markdown-atx-heading-4",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h4",
+      "heading_level": 4,
+      "parent_anchor_id": "anchor-b2335bf514f5cbc38321",
+      "context_start": 38639,
+      "context_end": 43771,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:8a1297d55fd9de28a753e5ce06b543404b7ad16e1252854dbc54fd863d11987d",
+      "label_digest": "sha256:87ec4027e1c873944291bdd61ee07ed30d74d45cbb418c85ae256e0a18e9e2cc",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-a32d053350a3563ce783",
+      "document_id": "document-raw-githubusercontent-com-e473db6f025d",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/configure.md",
+      "source_ids": [
+        "rabbitmq-4.3-configuration"
+      ],
+      "locked_source_digest": "sha256:bf0e6f05185356bd4491fd04a1fbee8e82622b80b80b08565033a10c911426bf",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#overview",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-cefbd0fac0be05aa080a",
+      "context_start": 0,
+      "context_end": 5074,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:6bb6edfcfa22785d41247c0f569d7021012309d45ba7bb1668da2959a5643a4a",
+      "label_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": "candidate-cluster-5868cf0ddc96321e6938",
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-b0c9f01eb80009b6a3aa",
+      "document_id": "document-raw-githubusercontent-com-d0e65e6c1f81",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md",
+      "source_ids": [
+        "rabbitmq-4.3-shovel"
+      ],
+      "locked_source_digest": "sha256:e92ab6a923117c7faa48f662bb86da2c03ae9d61505dd5def1fb87dcce69eab5",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#clustering",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-19800d1a885c6654bd05",
+      "context_start": 8742,
+      "context_end": 13915,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:597cc7279484c186777985862b4e5f74feb748e4241b724712db32db4a689c6b",
+      "label_digest": "sha256:4fd8f37cc9bcf0967e2934ad784b67b5c419976c1647f309dd60046a0b71bfd9",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-b93c8a1f0469c1f2c3cb",
+      "document_id": "document-raw-githubusercontent-com-990eb98fae1c",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/mqtt.md",
+      "source_ids": [
+        "rabbitmq-4.3-mqtt"
+      ],
+      "locked_source_digest": "sha256:7922a386475a80084c3e34beae46fa1c083bc9c27555b36f5141671bea2963d3",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#overview",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-cff2db768501241007d7",
+      "context_start": 0,
+      "context_end": 4989,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:31fe8b4642f53371a0e604681c14eab7a62ec5d7398c1c061f2fedbae34a2c18",
+      "label_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": "candidate-cluster-5868cf0ddc96321e6938",
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-bd1773b612c5cba9b373",
+      "document_id": "document-raw-githubusercontent-com-a472c24e7f64",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md",
+      "source_ids": [
+        "rabbitmq-4.3-quorum-queues"
+      ],
+      "locked_source_digest": "sha256:a9a41aca4560ded658c6ada1229258ba8f0a185bc026cb5784dfb831383ff41d",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#policy-support",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-66765bc82669a9f2aa45",
+      "context_start": 32911,
+      "context_end": 38068,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:301167a044f62c05cb85b9e4f586bae61fb2cd0d8fce3cbcfbb7510afd9e9ef8",
+      "label_digest": "sha256:db8174c29864c778a2356ea56aada31e98672bb50e51b87522090002bf1dac7c",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-c0cbfbe6cc3434389b1d",
+      "document_id": "document-raw-githubusercontent-com-96ed37d93079",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/plugins.md",
+      "source_ids": [
+        "rabbitmq-4.3-plugins"
+      ],
+      "locked_source_digest": "sha256:b014bdbb814fd894d42b9484c88a9a8a8c5e32360f0ea27fa8186c7a2946b3cc",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#troubleshooting-plugin-not-found",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-d13ea7dff779ecc475af",
+      "context_start": 9240,
+      "context_end": 14427,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:1dd764fb0f496d568a61d6a1ad1504e48af312fdf1af7c888c1137b14acc0975",
+      "label_digest": "sha256:9648f0ef2bedee69e865f43b041e989fad86f668aa302dd8e0faa63cd768ac90",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-db86e9872bd89979f0ce",
+      "document_id": "document-raw-githubusercontent-com-4a57549bc02d",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/amqp.md",
+      "source_ids": [
+        "rabbitmq-4.3-amqp-1.0"
+      ],
+      "locked_source_digest": "sha256:522b01d62ef577956e55fda6355c9994c11ebe8a6353b6fb6c0bcf034f561f88",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "offset:utf8:19332",
+      "locator_kind": "locked-body-offset",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-e0658be1ba10c655bf16",
+      "context_start": 18308,
+      "context_end": 23455,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:2d1cb284b6a2ab184fe43971c24823e99e2c1a94c4238e44bbab8546b949d980",
+      "label_digest": "sha256:ae8e03c669d1e8f672b0dcb5d086d0c0bde2dbc6b9585f532fdfefceacc57412",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-df89c6c03229c99c652f",
+      "document_id": "document-raw-githubusercontent-com-1137cc19e31e",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/consumers.md",
+      "source_ids": [
+        "rabbitmq-4.3-consumers"
+      ],
+      "locked_source_digest": "sha256:48339d265f8081f413fe13fbc822aa1fdf80248bff28a8eb21593a0edf6bd07a",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#terminology",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-2",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h2",
+      "heading_level": 2,
+      "parent_anchor_id": "anchor-125aa2f0c2f1d6e565cb",
+      "context_start": 763,
+      "context_end": 5913,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:f36455f935a5fe9e4bdb0024ed74a89894dfacfe4ffac0fab89d15e34506772b",
+      "label_digest": "sha256:dccbf836786be621e9eed1673f7772ef0ba9387262054aa590656581f31ae428",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": "candidate-cluster-da4d3c2a087ec428ea28",
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-e6c74e48e2aed0ba15c7",
+      "document_id": "document-raw-githubusercontent-com-a18c11ff4705",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/backup.md",
+      "source_ids": [
+        "rabbitmq-4.3-backup"
+      ],
+      "locked_source_digest": "sha256:a93c321b41d3fc8040eb631b61caff9e2257810c28cf4d33ff13a51f68066c81",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "#manual-definitions-backup",
+      "locator_kind": "fragment",
+      "selector": "markdown-atx-heading-3",
+      "selector_kind": "markdown-atx-heading",
+      "tag": "h3",
+      "heading_level": 3,
+      "parent_anchor_id": "anchor-dcb12067f14a864c6574",
+      "context_start": 2888,
+      "context_end": 6448,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:5138fba41dccf13aa541a655f8254a1a24f22c6cdd42e9852ee43f7dcdf39fe1",
+      "label_digest": "sha256:29b6e31f3d75e63de086af43e78fc78d39e0851eeef830dd10bb523879273dd9",
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 1,
+      "priority_proposal_reasons": [
+        "label-bearing-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p1-markdown-atx-heading-2f",
+      "state": "pending-human"
+    }
+  ]
+}

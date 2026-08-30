@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.tls.client-listener.performance",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "tls.client-listener",
+  "target_id": "definitive.tls.client-listener",
+  "scenario": "performance",
+  "applicability": "not-applicable",
+  "status": "not-applicable-contract",
+  "runtime_profile": null,
+  "proof_obligation_id": null,
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.tls.client-listener",
+      "authority_artifact_id": "rabbitmq-4-3-tls",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-tls.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:7847566969369bdfc5b118c5bd3ac3a571e1e7232782af255f575f16da6bb7cb",
+      "source_id": "rabbitmq-4.3-tls",
+      "source_digest": "sha256:d33e05a1821a2c0ebbbe804050d6c85a320eaba15e6128aa3573deb41dfe31db",
+      "surface_id": "tls.client-listener",
+      "locator": "#enabling-tls-support-in-rabbitmq",
+      "behavior_id": "tls.client-listener"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "legacy_observation": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "identity": {
+      "broker": null,
+      "client": null,
+      "runtime": null
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.missing"
+        ]
+      },
+      "log": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.log.missing"
+        ]
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.log.missing",
+      "artifact.metric.missing",
+      "artifact.packet.missing",
+      "identity.broker.missing",
+      "identity.client-version.missing",
+      "identity.runtime.missing",
+      "scenario.not-applicable-by-surface-contract"
+    ],
+    "counts_toward_scenario_gap_closure": false,
+    "aggregate_evidence_allowed": false
+  },
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/tls.client-listener/performance.runtime.json",
+      "present": false,
+      "digest": null
+    },
+    "required_variants": [],
+    "variant_proofs": [],
+    "requirements": {},
+    "scenario_gap_closed": false
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.performance",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "scenario_gap_ids": [
+    "scenario.not-applicable-by-surface-contract"
+  ],
+  "completion_gap_ids": [],
+  "gap_ids": [
+    "scenario.not-applicable-by-surface-contract"
+  ]
+}

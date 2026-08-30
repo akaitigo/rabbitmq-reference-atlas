@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-flow-control",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/flow-control.md",
+  "locked_source_digest": "sha256:ce5d0876c0a35e13dc12ee6e199e758a51c5223c05f448b8aed9ebb7e4c13c79",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:ce5d0876c0a35e13dc12ee6e199e758a51c5223c05f448b8aed9ebb7e4c13c79",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/flow-control.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 2483,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-flow-control.0000",
+        "locator": "#flow-control",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 799,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:3fe2980fbab759088c5910bb0a427a54db6d2f1baaff08db55b023962ffad866",
+        "heading_digest": "sha256:89590a706a2d52050ed61174cc2ea83e1a3e9d2f87edb813af74ae00ae8539aa",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-flow-control.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 799,
+        "section_end": 1206,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:8da7d3ef643ec5a92d3cf17952d95999f612ad307df816da10918ef5cff7de8b",
+        "heading_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-flow-control.0002",
+        "locator": "#flow-control",
+        "level": 2,
+        "section_start": 1206,
+        "section_end": 2483,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:4c61f379f8786748efa0bd71632001cae3f8ea06231791ed73e954f71d3f3801",
+        "heading_digest": "sha256:656674c4b0424d874d4468d52e6177a51581aa96d1ecf3103c73115e86615f33",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": []
+}

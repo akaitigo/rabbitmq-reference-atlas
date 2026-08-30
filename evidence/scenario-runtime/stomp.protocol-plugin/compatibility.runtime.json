@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "behavior_id": "stomp.protocol-plugin",
+  "authority_surface_id": "stomp.protocol-plugin",
+  "scenario": "compatibility",
+  "runtime_profile": "plugin-stomp",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "run_metadata": {
+    "execution_id": "20260830T171233Z-40300",
+    "started_at": "2026-08-30T17:12:33Z",
+    "completed_at": "2026-08-30T17:17:30.646574Z"
+  },
+  "source": {
+    "path": "cmd/rmq-plugin-protocols/main.go",
+    "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-plugin-protocols",
+        "version": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592",
+        "source_digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "runtime": {
+        "profile": "plugin-stomp",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.stomp.protocol-plugin.compatibility.node-1",
+        "assertions": [
+          "compatibility",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-plugin-protocols/main.go",
+        "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/packet.json",
+          "digest": "sha256:031fad3dad26833bed2f4f0b72abb00afd5c593e853d19e9d004d2cac471b638",
+          "size_bytes": 558,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/log.txt",
+          "digest": "sha256:7573a0eb774fe00f53f8be3c905a38b23f4ddcfb5cc3ed91151ba2580428c6bb",
+          "size_bytes": 31787,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/metric.json",
+          "digest": "sha256:34500e6c191dd99614336b9346e9bd0b460920bd53761e825bdd85e77f686127",
+          "size_bytes": 60403,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-plugin-protocols",
+        "version": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592",
+        "source_digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "runtime": {
+        "profile": "plugin-stomp",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.stomp.protocol-plugin.compatibility.node-2",
+        "assertions": [
+          "compatibility",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-plugin-protocols/main.go",
+        "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/packet.json",
+          "digest": "sha256:c48cc779dee347c9cd6783d638e6ce72517e04ce365dd3c40c63bad272dd9f5d",
+          "size_bytes": 558,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/log.txt",
+          "digest": "sha256:90565919395482f66b8dc3492316de950873b8484208ad31f91749fac387f2bf",
+          "size_bytes": 31458,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/metric.json",
+          "digest": "sha256:2e6e3e0202c32f0cc38adf28d98e352ab3ab11254b67b4cd602e5e992dde9bed",
+          "size_bytes": 60421,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rmq-plugin-protocols",
+        "version": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592",
+        "source_digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "runtime": {
+        "profile": "plugin-stomp",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.stomp.protocol-plugin.compatibility.node-3",
+        "assertions": [
+          "compatibility",
+          "実Brokerへの専用Protocol client実行が初回で成功した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "cmd/rmq-plugin-protocols/main.go",
+        "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/packet.json",
+          "digest": "sha256:97911eb80ef0b8151a2e316b2726ede5d619ab05c47947b68701819a28dd943b",
+          "size_bytes": 558,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/log.txt",
+          "digest": "sha256:7113acf686445ae51c2f4c8c3d0ce82ff6b58696158a1a0a049969da214a748a",
+          "size_bytes": 31425,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/metric.json",
+          "digest": "sha256:8dc6eeea705ef3db398a850e73f94ac5f155271a100c712c801202d31e0d846f",
+          "size_bytes": 60402,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

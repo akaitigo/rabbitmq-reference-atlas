@@ -1,0 +1,8 @@
+schema_version: 2
+source_id: rabbitmq-4.3-policies
+source_digest: sha256:39c707f940467ef8a95a77b0ee151d79e8e495b8e2973c93ff0483d19780f1f2
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: policy.application, locator: '#how-policies-work', kind: behavior, capability_id: configuration.policies, behavior_id: policy.application, title: Policy pattern priority and application, surface_ids: [implementation-construction, testing-verification]}
+- {id: policy.argument-precedence, locator: '#optional-arguments-and-policy-defined-key-precedence', kind: behavior, capability_id: configuration.policies, behavior_id: policy.argument-precedence, title: Client argument policy and operator policy precedence, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: policy.update, locator: '#updating-policies', kind: behavior, capability_id: configuration.policies, behavior_id: policy.update, title: Runtime policy update and resource effect, surface_ids: [operations-observability, migration-evolution-deprecation]}

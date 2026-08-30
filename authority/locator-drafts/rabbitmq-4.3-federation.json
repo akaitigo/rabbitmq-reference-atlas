@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-federation",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md",
+  "locked_source_digest": "sha256:15ebce32a18d44382698ffc52ec60f15288751b1e1de021471caae0a3b1a9064",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:15ebce32a18d44382698ffc52ec60f15288751b1e1de021471caae0a3b1a9064",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 23489,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0000",
+        "locator": "#exchange-and-queue-federation",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 1364,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:ceebc00b51691085da55be890f62e037a9f2f9b5284347d8dc9ffd386c0e1018",
+        "heading_digest": "sha256:13dedb03f201eeb9362ca7baa36b53186b48fc0780e2e69fe83138a43e108a6f",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 1364,
+        "section_end": 1592,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:80e0cd93f010e2fd6df6ba4685a58a968ae5c6c07cdb2284bd5b617f8dfa4a73",
+        "heading_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0002",
+        "locator": "#loose-coupling-of-nodes-or-clusters",
+        "level": 3,
+        "section_start": 1592,
+        "section_end": 1999,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:1188bb4989476cc43ade3e10e4ac02fe7a2b9d3e776a4ed07261870d804759fa",
+        "heading_digest": "sha256:4cb2057aba76a83ece5aef6d5985c2cc835ff4a6f5516173ecbd182de0ff88be",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0003",
+        "locator": "#wan-friendliness",
+        "level": 3,
+        "section_start": 1999,
+        "section_end": 2286,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b39f321ee2675c0a92e693fc7273fb0b16df3b033af79f1f7eafaf8fe6526834",
+        "heading_digest": "sha256:a57658adb66b5e705439465feaec96704b183f749f6503e9b373f69ba28f2756",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0004",
+        "locator": "#specificity",
+        "level": 3,
+        "section_start": 2286,
+        "section_end": 2415,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:3a90afc4c651d3e8f22430503702bae7c333316f45ef09b59be39d97d422bdde",
+        "heading_digest": "sha256:bde4f8d2a9416f07a87c7588ff8130b7d9ea63f3fe509a44d73fbbf5b7ca6fc5",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0005",
+        "locator": "#scalability-with-growing-connected-node-count",
+        "level": 3,
+        "section_start": 2415,
+        "section_end": 2598,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:8534663227401a8cb9029170a8bfc9b45d440d2025eb60beb0f5581de348262e",
+        "heading_digest": "sha256:c88c0fac182f3c5c421e2708e0c233e0358c49c4c50394f6e08f76ba5fd9a74d",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0006",
+        "locator": "#what-does-it-do",
+        "level": 2,
+        "section_start": 2598,
+        "section_end": 3970,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:56f2de4f7c635d05d3fe3d1993ae963a5cd60fcdb09a042c82b52e5216f73bb6",
+        "heading_digest": "sha256:37f6d383b7b8f78473c5a934c3440846a34cb2c3455238903b5727e49d827416",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0007",
+        "locator": "#how-is-it-configured",
+        "level": 2,
+        "section_start": 3970,
+        "section_end": 4704,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c80288c5555c370d0eb47a02a3479a875221e864adeb65128a85243d70656141",
+        "heading_digest": "sha256:2b5fc6bb2a7acea36726ce6bab3c4ae6efa19774cdd98ab8f33bc0066460cd2e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0008",
+        "locator": "#getting-started",
+        "level": 2,
+        "section_start": 4704,
+        "section_end": 6664,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b35c5166e40d7d15f9d98f8e83c8a469d8cf3f44ac5d9ce3eebda8fa26319ba7",
+        "heading_digest": "sha256:31bc3c4adf3738c78ebb65ba801b4b431f24d8d249b3cfaaa9bf37a5b85bb613",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0009",
+        "locator": "#tutorial",
+        "level": 2,
+        "section_start": 6664,
+        "section_end": 12187,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a6f0a731e56afbda4eaaeaf51b88caf9103279bd865289c0a211a9b7ca9e56ca",
+        "heading_digest": "sha256:8fddf356f5e2ffee979bc8abe1e7f4ec7de176c48ae93ec724d2a2859c18268d",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0010",
+        "locator": "#link-failures",
+        "level": 2,
+        "section_start": 12187,
+        "section_end": 13282,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:3d24046ea35e99a1d201858d9be229a7c8a9b7d8e31774465aeb0f0c9d585b6d",
+        "heading_digest": "sha256:408a66f6c210ef2102310e299d960103b85ca8b0f12cbc4d8604f76d4dcad3dc",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0011",
+        "locator": "#clustering",
+        "level": 2,
+        "section_start": 13282,
+        "section_end": 14251,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c0c9087252697ac46a35d6d4fb46792cd0ef6c575d83b89538412019231e95c5",
+        "heading_digest": "sha256:a4e885095e35a341ab810d9bbd2dd680a3d2ca5b6741af8dc609c5acdd97d347",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0012",
+        "locator": "#tls-connections",
+        "level": 2,
+        "section_start": 14251,
+        "section_end": 18907,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7bd72395f5528a1d6929d3b7a9fbfed890b374e46c97fd49a35adf04bcb9018b",
+        "heading_digest": "sha256:9cb9aa64d03f20469587bfd1e9bba70966fe8bdc0b43e7ae5f531c2b35ab15cb",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0013",
+        "locator": "#status",
+        "level": 2,
+        "section_start": 18907,
+        "section_end": 19216,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b99ddb08ac1c068181d357e2bb7f3020b5df0785f3ee86f2ad25de8ba6d67cf5",
+        "heading_digest": "sha256:efb119b86c9637bc39bd87afc20e13d0fad6a111424311cad000620749e67872",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0014",
+        "locator": "#using-cli-tools",
+        "level": 3,
+        "section_start": 19216,
+        "section_end": 21174,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:bacf1b34de893754ca0c4eae737bc86f47a8e6d8534afe3efbe5ecefa5326823",
+        "heading_digest": "sha256:d27bfb63190d44c2c6e572cf8ca18efd7aae5d7beaf677730d2c4693946aaf12",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0015",
+        "locator": "#using-the-management-ui",
+        "level": 3,
+        "section_start": 21174,
+        "section_end": 21491,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:e6b5c629ec4f72a8748eeea1e4c7bb23019f74c3d9ff01349bcfca85d665c504",
+        "heading_digest": "sha256:7046217eb74a383722ae3f311dfc11ed9303fc4939800c03b56a7af355acc47b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0016",
+        "locator": "#troubleshooting",
+        "level": 2,
+        "section_start": 21491,
+        "section_end": 21530,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:82c55e98591210d57ebe722c80539f536f96d66a787032a2f7431886dbb84f27",
+        "heading_digest": "sha256:100a9d13545f73eada56ca94d64297d102f1441608b9d32469178fde9297b74c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0017",
+        "locator": "#federation-links-do-not-start",
+        "level": 3,
+        "section_start": 21530,
+        "section_end": 22030,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:1898c03db3240d4b897d3fa0a91904d3915b3141546ea763f266e7af31ae175d",
+        "heading_digest": "sha256:b90ecf61f7faf4ae7d067d24340e0e86942f70c1158759684f69e7758836df4e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0018",
+        "locator": "#inspect-federation-upstreams",
+        "level": 4,
+        "section_start": 22030,
+        "section_end": 23004,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:f112c4f27b65a65a060887cae3de57ec67253a2711d792824e4054a4692d79e4",
+        "heading_digest": "sha256:6528a85c16c49fc18c76a21ab4c0e5bbe64a5c5a5ad728d392c850e8f9dcd3dd",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-federation.0019",
+        "locator": "#inspect-policies",
+        "level": 4,
+        "section_start": 23004,
+        "section_end": 23489,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:bf01a47884fd52985f4e5304f4dce2ead9bdf777edc84f2765326109dd3bb145",
+        "heading_digest": "sha256:c8ec904d1249524f96e104c8efe0463b14e130958af016aeb8b9685b266944ef",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.federation.exchange.rabbitmq-4.3-federation",
+      "source_id": "rabbitmq-4.3-federation",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md#federated-exchanges",
+      "locator": "#federated-exchanges",
+      "authority_surface_id": "federation.exchange",
+      "candidate_behavior_id": "candidate.federation.exchange",
+      "capability_id": "crosscluster.federation",
+      "target_id": "definitive.federation.exchange",
+      "claim_id": "definitive.federation.exchange.claim",
+      "surface_ids": [
+        "architecture-design",
+        "compatibility-integration",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:04f8597eb2a3aa961e63894740aeb0f79b4f8c26b5d8559cc4464ee26cbb9b71",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.federation.link-recovery.rabbitmq-4.3-federation",
+      "source_id": "rabbitmq-4.3-federation",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md#federation-links",
+      "locator": "#federation-links",
+      "authority_surface_id": "federation.link-recovery",
+      "candidate_behavior_id": "candidate.federation.link-recovery",
+      "capability_id": "crosscluster.federation",
+      "target_id": "definitive.federation.link-recovery",
+      "claim_id": "definitive.federation.link-recovery.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:5587bfb2e8054a7203e194bfe9b25bb3a4a6808b84cc78ed81b26191e2e5fa5e",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.federation.queue.rabbitmq-4.3-federation",
+      "source_id": "rabbitmq-4.3-federation",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md#federated-queues",
+      "locator": "#federated-queues",
+      "authority_surface_id": "federation.queue",
+      "candidate_behavior_id": "candidate.federation.queue",
+      "capability_id": "crosscluster.federation",
+      "target_id": "definitive.federation.queue",
+      "claim_id": "definitive.federation.queue.claim",
+      "surface_ids": [
+        "architecture-design",
+        "compatibility-integration",
+        "implementation-construction"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:232e54a46d2b3d2d212b9b45e111e9d1430635e5b26711b5a361efc33018fd8d",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.federation.topology-boundary.rabbitmq-4.3-federation",
+      "source_id": "rabbitmq-4.3-federation",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md#federation-plugin",
+      "locator": "#federation-plugin",
+      "authority_surface_id": "federation.topology-boundary",
+      "candidate_behavior_id": "candidate.federation.topology-boundary",
+      "capability_id": "crosscluster.federation",
+      "target_id": "definitive.federation.topology-boundary",
+      "claim_id": "definitive.federation.topology-boundary.claim",
+      "surface_ids": [
+        "decision-comparison",
+        "orientation-scope"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:a1dff11ab9fb7c7521ab8c0b332627a92e1a696586d14a0eca085b2b00558283",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

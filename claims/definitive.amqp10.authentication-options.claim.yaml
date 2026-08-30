@@ -1,0 +1,34 @@
+schema_version: 1
+id: definitive.amqp10.authentication-options.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: protocol.amqp10
+statement: Username, OAuth token, and x.509 authentication optionsのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-amqp-1.0
+proof_obligations:
+- id: proof.amqp10.authentication-options.normal
+  statement: Username, OAuth token, and x.509 authentication optionsのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.amqp10.authentication-options.boundary
+  statement: Username, OAuth token, and x.509 authentication optionsのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.amqp10.authentication-options.rejection
+  statement: Username, OAuth token, and x.509 authentication optionsのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.amqp10.authentication-options.security
+  statement: Username, OAuth token, and x.509 authentication optionsのsecurity Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 最小権限の許可と、誤Credential、不正なTrust、越権操作の拒否を同一隔離Environmentで検証する。
+- id: proof.amqp10.authentication-options.compatibility
+  statement: Username, OAuth token, and x.509 authentication optionsのcompatibility
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 二つ以上のProtocol、Client、Queue、PluginまたはVersion Variantを同一Oracleで比較する。

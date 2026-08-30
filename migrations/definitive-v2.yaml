@@ -1,0 +1,22 @@
+schema_version: 2
+atlas_id: rabbitmq-reference-atlas
+from: bounded-complete-v1
+to: subject-definitive-v2
+generated_at: '2026-08-28T12:00:00+09:00'
+historical_certificate:
+  path: evidence/history/v0.1.0/completion-certificate.json
+  digest: sha256:8dbf8e2820e0e839eef7574e447f5607350f84f7a6367af58022d34a6ce69099
+  classification: bounded-complete
+status: proof-required
+required_actions:
+- lock-authority-artifacts
+- classify-all-surfaces
+- split-behavior-proofs
+- complete-scenario-matrix
+- verify-evidence-durability
+- verify-evidence-dependency-reruns
+- collect-runtime-evidence
+- add-reference-system-if-applicable
+- add-comparisons-if-applicable
+- upgrade-skill-eval
+- issue-definitive-certificate

@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-confirms
+source_digest: sha256:861abccf819fddcdaddd661255914d867d6ed511a9ff19311bfef73d0907b127
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: delivery.consumer-ack, locator: '#consumer-delivery-acknowledgements', kind: behavior, capability_id: delivery.acknowledgement, behavior_id: delivery.consumer-ack, title: Manual consumer delivery acknowledgement, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: delivery.negative-ack, locator: '#negative-acknowledgement-and-requeuing-of-deliveries', kind: behavior, capability_id: delivery.acknowledgement, behavior_id: delivery.negative-ack, title: Reject nack and requeue redelivery behavior, surface_ids: [testing-verification, failure-recovery]}
+- {id: delivery.prefetch, locator: '#channel-prefetch-setting-qos', kind: behavior, capability_id: delivery.flow-control, behavior_id: delivery.prefetch, title: Consumer prefetch and unacknowledged delivery bound, surface_ids: [testing-verification, performance-capacity-cost]}
+- {id: delivery.publisher-confirms, locator: '#publisher-confirms', kind: behavior, capability_id: delivery.publisher-confirm, behavior_id: delivery.publisher-confirms, title: Publisher confirm acknowledgement and nack boundary, surface_ids: [foundations-mechanics, testing-verification, failure-recovery]}

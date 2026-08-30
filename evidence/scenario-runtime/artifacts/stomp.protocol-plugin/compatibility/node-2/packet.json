@@ -1,0 +1,25 @@
+{
+  "transport": "tcp",
+  "protocol": "stomp",
+  "endpoint": "rabbitmq-2:61613",
+  "request_response": {
+    "endpoint": "rabbitmq-2:61613",
+    "passed": true,
+    "oracle": "compatibility",
+    "observed": {
+      "1.0": {
+        "command": "CONNECTED",
+        "negotiated_version": "1.0"
+      },
+      "1.1": {
+        "command": "CONNECTED",
+        "negotiated_version": "1.1"
+      },
+      "1.2": {
+        "command": "CONNECTED",
+        "negotiated_version": "1.2"
+      }
+    }
+  },
+  "source_run_created_at": "2026-08-30T17:14:49.369062046Z"
+}

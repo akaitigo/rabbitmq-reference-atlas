@@ -1,0 +1,674 @@
+{
+  "schema_version": 1,
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "status": "incomplete-human-review-required",
+  "input_digest": "sha256:d0423cfb574ca57e978981a4e2af6a1c1bcb49a04444763aff3790a1dee28ee0",
+  "body_storage": "digest-and-locator-context-digest-only",
+  "summary": {
+    "locked_sources": 50,
+    "fetched_digest_matched": 48,
+    "fetched_digest_stale": 2,
+    "fetch_failed": 0,
+    "candidate_surfaces": 206,
+    "root_locators": 0,
+    "fragments_found": 137,
+    "fragments_not_found": 69,
+    "locator_evaluations_deferred": 0,
+    "reference_edges_classified": 206,
+    "unclassified_reference_edges": 0,
+    "body_structure_sources_scanned": 48,
+    "body_structure_sources_deferred": 2,
+    "body_section_candidates": 1471,
+    "authority_text_surfaces_exhaustive": false,
+    "human_reviewed_surfaces": 0,
+    "core_v2_eligible_surfaces": 0
+  },
+  "denominators": {
+    "protocol": {
+      "source_ids": [
+        "rabbitmq-4.3-amqp-1.0",
+        "rabbitmq-4.3-mqtt",
+        "rabbitmq-4.3-protocols",
+        "rabbitmq-4.3-stomp",
+        "rabbitmq-4.3-stream-comparison",
+        "rabbitmq-4.3-stream-plugin",
+        "rabbitmq-4.3-streams",
+        "rabbitmq-amqp-concepts"
+      ],
+      "sources": 8,
+      "body_exhaustive": 0,
+      "human_reviewed_surfaces": 0,
+      "status": "partial"
+    },
+    "plugin": {
+      "source_ids": [
+        "rabbitmq-4.3-federation",
+        "rabbitmq-4.3-ldap",
+        "rabbitmq-4.3-mqtt",
+        "rabbitmq-4.3-oauth2",
+        "rabbitmq-4.3-plugins",
+        "rabbitmq-4.3-prometheus",
+        "rabbitmq-4.3-shovel",
+        "rabbitmq-4.3-stomp",
+        "rabbitmq-4.3-stream-plugin"
+      ],
+      "sources": 9,
+      "body_exhaustive": 0,
+      "human_reviewed_surfaces": 0,
+      "status": "partial"
+    },
+    "operator": {
+      "source_ids": [
+        "rabbitmq-operator-overview",
+        "rabbitmq-operator-usage",
+        "rabbitmq-topology-operator-usage"
+      ],
+      "sources": 3,
+      "body_exhaustive": 0,
+      "human_reviewed_surfaces": 0,
+      "status": "partial"
+    }
+  },
+  "sources": [
+    {
+      "id": "rabbitmq-server-v4.3.5",
+      "path": "authority/locator-drafts/rabbitmq-server-v4.3.5.json",
+      "digest": "sha256:c7a3c58fc220375b0514e2912551e7cef2d6f978370ed1dfa60b0cdb96697516",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 30,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-exchanges",
+      "path": "authority/locator-drafts/rabbitmq-4.3-exchanges.json",
+      "digest": "sha256:a0611877f6291bd6ce1a49dc3a6d1e6c28f1b80c81bbd64ef477a9f6e2ad37ec",
+      "locked_digest_match": true,
+      "candidate_surfaces": 6,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 24,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 4
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-queues",
+      "path": "authority/locator-drafts/rabbitmq-4.3-queues.json",
+      "digest": "sha256:991cb643d7c75da5cd8af8ce14de95d856d05902848ea16ad84597dbb5883bcf",
+      "locked_digest_match": true,
+      "candidate_surfaces": 5,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 29,
+      "locator_status": {
+        "fragment-found": 5
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-confirms",
+      "path": "authority/locator-drafts/rabbitmq-4.3-confirms.json",
+      "digest": "sha256:5f0e9c810100cfbce3b689c8ca4e43089e46b13a6ea7c2c104fbfd4d5ea449d8",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 25,
+      "locator_status": {
+        "fragment-found": 4
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-dlx",
+      "path": "authority/locator-drafts/rabbitmq-4.3-dlx.json",
+      "digest": "sha256:133e08543bdf9326578fca1f7dfcad7f6eb9f3705209d44c69b83e370a3dd7bf",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 10,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-flow-control",
+      "path": "authority/locator-drafts/rabbitmq-4.3-flow-control.json",
+      "digest": "sha256:f0efcc91c1940bdea8c3b939a205f8967713951bfcb259955807bc9e2294f306",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 3,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-clustering",
+      "path": "authority/locator-drafts/rabbitmq-4.3-clustering.json",
+      "digest": "sha256:74de574dad836aa57079fdccdbbfe021a9731a8f50a036e0755ca1061316aec3",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 61,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-amqp-concepts",
+      "path": "authority/locator-drafts/rabbitmq-amqp-concepts.json",
+      "digest": "sha256:a41a5573c54160f4f83ffad17ddd8c8d96dab4b4f213b368fa18c8162d488e27",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 29,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-ttl",
+      "path": "authority/locator-drafts/rabbitmq-4.3-ttl.json",
+      "digest": "sha256:f3e5f35874e32c04dccc95ef6a742aff12cc144bf1bc962dc6aa834d03a26a5a",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 13,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-streams",
+      "path": "authority/locator-drafts/rabbitmq-4.3-streams.json",
+      "digest": "sha256:44931afbf92c5cdfab1298cd9be778e20e52c23b991bb3ad6d7b80d36ccbfa5b",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 38,
+      "locator_status": {
+        "fragment-found": 4
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-quorum-queues",
+      "path": "authority/locator-drafts/rabbitmq-4.3-quorum-queues.json",
+      "digest": "sha256:d56466274bd994f68ab9c3255b7f28f527a10021aa0d5088ac7c7137bbe74c09",
+      "locked_digest_match": true,
+      "candidate_surfaces": 5,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 93,
+      "locator_status": {
+        "fragment-found": 4,
+        "fragment-not-found": 1
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-partitions",
+      "path": "authority/locator-drafts/rabbitmq-4.3-partitions.json",
+      "digest": "sha256:ffa1baccfb2224e144449a233e7732262127f7dd7ddc8ce39596994ee9013640",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 13,
+      "locator_status": {
+        "fragment-not-found": 4
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-reliability",
+      "path": "authority/locator-drafts/rabbitmq-4.3-reliability.json",
+      "digest": "sha256:54201777b0328427eb0e2999b9ea992fb58c2c671b88897bb40ec57c102a6d03",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 15,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-access-control",
+      "path": "authority/locator-drafts/rabbitmq-4.3-access-control.json",
+      "digest": "sha256:42d9330e4738b8a318d06c97be4905e72016a9e38ba3706a6fd18a07645076eb",
+      "locked_digest_match": true,
+      "candidate_surfaces": 5,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 45,
+      "locator_status": {
+        "fragment-found": 4,
+        "fragment-not-found": 1
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-tls",
+      "path": "authority/locator-drafts/rabbitmq-4.3-tls.json",
+      "digest": "sha256:2e621f9241a03261c13e28f1b55a636b6a107e0c3f790824e7c19100b28f0605",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 74,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-monitoring",
+      "path": "authority/locator-drafts/rabbitmq-4.3-monitoring.json",
+      "digest": "sha256:48119b2d092ae385169d6e29b89f01aaf85cf26be611f3ef8ca97958962d0dcd",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 36,
+      "locator_status": {
+        "fragment-found": 1,
+        "fragment-not-found": 3
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-prometheus",
+      "path": "authority/locator-drafts/rabbitmq-4.3-prometheus.json",
+      "digest": "sha256:367cb21a68e6d2efbe0c430367f0d87c6a2f63d61d647ce5d357524eb47dc7f2",
+      "locked_digest_match": true,
+      "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 56,
+      "locator_status": {
+        "fragment-found": 1,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-alarms",
+      "path": "authority/locator-drafts/rabbitmq-4.3-alarms.json",
+      "digest": "sha256:0cc947ec74cef889e6168b18a819969d567e6276faab124c9fb959b5f3b16020",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 8,
+      "locator_status": {
+        "fragment-found": 1,
+        "fragment-not-found": 3
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-definitions",
+      "path": "authority/locator-drafts/rabbitmq-4.3-definitions.json",
+      "digest": "sha256:3b1d3fe26434b7e347772d78011dbde71f73fdce1310a9f8c52eb36599f1adb5",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 10,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-feature-flags",
+      "path": "authority/locator-drafts/rabbitmq-4.3-feature-flags.json",
+      "digest": "sha256:9d4faf483912659ade2063761a2bb5b15f830127871030e3bd423d67840434aa",
+      "locked_digest_match": true,
+      "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 29,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 1
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-upgrade",
+      "path": "authority/locator-drafts/rabbitmq-4.3-upgrade.json",
+      "digest": "sha256:91f7345215544691a20227a19298ab7e52406b08b2989fb663c0366d04d5031d",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 23,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-rolling-upgrade",
+      "path": "authority/locator-drafts/rabbitmq-4.3-rolling-upgrade.json",
+      "digest": "sha256:2820b60cb6a61a60a20ad3c9d6e85910f4ef23f1f8c1aa14b324acc0f4836dbd",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 17,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-blue-green-upgrade",
+      "path": "authority/locator-drafts/rabbitmq-4.3-blue-green-upgrade.json",
+      "digest": "sha256:9aecf9245cb3e6c1d66124409230e91d5948da64488af1c26d9fd389e2346d6e",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 8,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-production-checklist",
+      "path": "authority/locator-drafts/rabbitmq-4.3-production-checklist.json",
+      "digest": "sha256:5416fe9bbbeca3aec193c3082b08d486ea33f3c0a47dc6e54e3dd64a27347399",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 42,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-server-v4.2.9-release-notes",
+      "path": "authority/locator-drafts/rabbitmq-server-v4.2.9-release-notes.json",
+      "digest": "sha256:b66e3a60d3e2d4d694931b1388aa5f59e381902d75c04ef03d34b88144072502",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 37,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-container-v4.2.9-management",
+      "path": "authority/locator-drafts/rabbitmq-container-v4.2.9-management.json",
+      "digest": "sha256:a29f97e45fc3faae9c336e4a4a9b2dceac93be67a0771471a3c7349786649cd0",
+      "locked_digest_match": false,
+      "candidate_surfaces": 0,
+      "body_structure_status": "not-evaluated-stale-body",
+      "body_sections": 0,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-container-v4.3.5-management",
+      "path": "authority/locator-drafts/rabbitmq-container-v4.3.5-management.json",
+      "digest": "sha256:f630377a8c474d3cedb3e004339d90ab09d34013eedc373a1ea56c8b84e3a46f",
+      "locked_digest_match": false,
+      "candidate_surfaces": 0,
+      "body_structure_status": "not-evaluated-stale-body",
+      "body_sections": 0,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-protocols",
+      "path": "authority/locator-drafts/rabbitmq-4.3-protocols.json",
+      "digest": "sha256:ef5d923ea29081b530e856cdb84f0a7d5221a756b974b7d4e47dbd96324faa47",
+      "locked_digest_match": true,
+      "candidate_surfaces": 7,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 8,
+      "locator_status": {
+        "fragment-found": 7
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-amqp-1.0",
+      "path": "authority/locator-drafts/rabbitmq-4.3-amqp-1.0.json",
+      "digest": "sha256:1f86b9220f7663f74f24fd9821ccb7611d84e31d6b0b14157963f3900239a673",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 22,
+      "locator_status": {
+        "fragment-found": 4
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-mqtt",
+      "path": "authority/locator-drafts/rabbitmq-4.3-mqtt.json",
+      "digest": "sha256:2b00f5c30618e23d63bf4f887d4e8f64bcd884c5385b678e4651f03482e568ea",
+      "locked_digest_match": true,
+      "candidate_surfaces": 15,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 44,
+      "locator_status": {
+        "fragment-found": 14,
+        "fragment-not-found": 1
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-stomp",
+      "path": "authority/locator-drafts/rabbitmq-4.3-stomp.json",
+      "digest": "sha256:86a02a3fd42c9962c2b9bbcc60416f5c7d85ded4e769d68e1dc6693e4f8a07cb",
+      "locked_digest_match": true,
+      "candidate_surfaces": 16,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 40,
+      "locator_status": {
+        "fragment-found": 16
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-stream-plugin",
+      "path": "authority/locator-drafts/rabbitmq-4.3-stream-plugin.json",
+      "digest": "sha256:3604c4938395f7a1a86cd65dd0d2e90dab9313ff659b4b9118db271f59b52570",
+      "locked_digest_match": true,
+      "candidate_surfaces": 10,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 12,
+      "locator_status": {
+        "fragment-found": 5,
+        "fragment-not-found": 5
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-stream-comparison",
+      "path": "authority/locator-drafts/rabbitmq-4.3-stream-comparison.json",
+      "digest": "sha256:029603e44dfae6815d0f175ceacd4aeafd4e0f5566a04bbc36300738be82c562",
+      "locked_digest_match": true,
+      "candidate_surfaces": 0,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 5,
+      "locator_status": {}
+    },
+    {
+      "id": "rabbitmq-4.3-federation",
+      "path": "authority/locator-drafts/rabbitmq-4.3-federation.json",
+      "digest": "sha256:c5fb97ca683cf5e5ca1ba9ee80e9071f97ea043d99a7e2bc4b4d1a03fc0060c6",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 20,
+      "locator_status": {
+        "fragment-not-found": 4
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-shovel",
+      "path": "authority/locator-drafts/rabbitmq-4.3-shovel.json",
+      "digest": "sha256:5d88449ea24d4f74d951267e3570eefb994d01353269048bfe912402b1616872",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 20,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-oauth2",
+      "path": "authority/locator-drafts/rabbitmq-4.3-oauth2.json",
+      "digest": "sha256:538917d107a6c82369eb233a5c3519fb9077b4ed5a24076d5243032550189a8c",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 64,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-ldap",
+      "path": "authority/locator-drafts/rabbitmq-4.3-ldap.json",
+      "digest": "sha256:8a600180214a97a501ea67347066374c661c29f43f807c5adf8be121e04b8923",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 43,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-backup",
+      "path": "authority/locator-drafts/rabbitmq-4.3-backup.json",
+      "digest": "sha256:0ae61055b67f23e982aa995b4d10f2d4bf88f22c2e371d7196ad8fa810569b62",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 14,
+      "locator_status": {
+        "fragment-not-found": 4
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-cli",
+      "path": "authority/locator-drafts/rabbitmq-4.3-cli.json",
+      "digest": "sha256:79d62aaefc9f57d049c5c64ae7d56f68dfb145decc6c15dcddc908b35ff2fa14",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 47,
+      "locator_status": {
+        "fragment-found": 3,
+        "fragment-not-found": 1
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-configuration",
+      "path": "authority/locator-drafts/rabbitmq-4.3-configuration.json",
+      "digest": "sha256:400d716e94dc5911b500408ead0b251d31c5eb7dad20535cd84db375c10e38ef",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 43,
+      "locator_status": {
+        "fragment-found": 1,
+        "fragment-not-found": 3
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-plugins",
+      "path": "authority/locator-drafts/rabbitmq-4.3-plugins.json",
+      "digest": "sha256:3a03e1fcfcb3de9c48f1cd4f706c05862829bb88c383f3f4a815b791f3736588",
+      "locked_digest_match": true,
+      "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 16,
+      "locator_status": {
+        "fragment-not-found": 3
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-management",
+      "path": "authority/locator-drafts/rabbitmq-4.3-management.json",
+      "digest": "sha256:4db6f8ee834e00faedf5b6b3e6c1af5caa36af2b2cd8a3e2d39e5bfe61da17dd",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 73,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-classic-queues",
+      "path": "authority/locator-drafts/rabbitmq-4.3-classic-queues.json",
+      "digest": "sha256:c8cafd3ad7998de6df1c321d4d8fbd9bf8b8f19009f6e65409f8a1a6c920d6a8",
+      "locked_digest_match": true,
+      "candidate_surfaces": 4,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 12,
+      "locator_status": {
+        "fragment-not-found": 4
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-consumers",
+      "path": "authority/locator-drafts/rabbitmq-4.3-consumers.json",
+      "digest": "sha256:253a7b0e5471b8ebe1d59cbaf6af20f34ffa4f355c2b5581f799091bc33b9343",
+      "locked_digest_match": true,
+      "candidate_surfaces": 5,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 43,
+      "locator_status": {
+        "fragment-found": 4,
+        "fragment-not-found": 1
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-publishers",
+      "path": "authority/locator-drafts/rabbitmq-4.3-publishers.json",
+      "digest": "sha256:0dbd740349b4cd1c2f86c7898c6b6bb16fdc45a5d325a6b9c43e23596402cb91",
+      "locked_digest_match": true,
+      "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 41,
+      "locator_status": {
+        "fragment-found": 1,
+        "fragment-not-found": 2
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-policies",
+      "path": "authority/locator-drafts/rabbitmq-4.3-policies.json",
+      "digest": "sha256:82436d801115a7eccec22cb0646921b213ad649bd5b044ed9998380c351ffdf3",
+      "locked_digest_match": true,
+      "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 31,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 1
+      }
+    },
+    {
+      "id": "rabbitmq-4.3-limits",
+      "path": "authority/locator-drafts/rabbitmq-4.3-limits.json",
+      "digest": "sha256:714f0b566c33b03abb972d59847fe4652eb5f8eb5ed69e57567469945e7f57d0",
+      "locked_digest_match": true,
+      "candidate_surfaces": 3,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 13,
+      "locator_status": {
+        "fragment-found": 2,
+        "fragment-not-found": 1
+      }
+    },
+    {
+      "id": "rabbitmq-operator-overview",
+      "path": "authority/locator-drafts/rabbitmq-operator-overview.json",
+      "digest": "sha256:b8686ce8d62e0afe2e0c542ab24658e76303091f0ddf393c03acc9f260e2a26e",
+      "locked_digest_match": true,
+      "candidate_surfaces": 6,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 12,
+      "locator_status": {
+        "fragment-found": 6
+      }
+    },
+    {
+      "id": "rabbitmq-operator-usage",
+      "path": "authority/locator-drafts/rabbitmq-operator-usage.json",
+      "digest": "sha256:3d89931ba3b5bc22cd531ffbcc769e11999d4105dd37a12c825a9fa49559a4a3",
+      "locked_digest_match": true,
+      "candidate_surfaces": 17,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 49,
+      "locator_status": {
+        "fragment-found": 14,
+        "fragment-not-found": 3
+      }
+    },
+    {
+      "id": "rabbitmq-topology-operator-usage",
+      "path": "authority/locator-drafts/rabbitmq-topology-operator-usage.json",
+      "digest": "sha256:576a7a143ec1f4008627c83e0b651aee71abfacd6b58ecaf0786b5855c32a94e",
+      "locked_digest_match": true,
+      "candidate_surfaces": 15,
+      "body_structure_status": "structurally-scanned",
+      "body_sections": 31,
+      "locator_status": {
+        "fragment-found": 14,
+        "fragment-not-found": 1
+      }
+    }
+  ]
+}

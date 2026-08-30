@@ -1,0 +1,27 @@
+{
+  "transport": "HTTP",
+  "endpoint": "http://127.0.0.1:35673/api/vhosts/%2Fatlas-metadata-20260830T171233Z-40300",
+  "fault_removed": "broker-process-restarted",
+  "query": {
+    "status": 200,
+    "body": {
+      "name": "/atlas-metadata-20260830T171233Z-40300",
+      "description": "",
+      "tags": [],
+      "default_queue_type": "classic",
+      "protected_from_deletion": false,
+      "metadata": {
+        "description": "",
+        "tags": [],
+        "default_queue_type": "classic"
+      },
+      "tracing": false,
+      "cluster_state": {
+        "rabbit@rabbitmq-1": "running",
+        "rabbit@rabbitmq-2": "running",
+        "rabbit@rabbitmq-3": "running"
+      }
+    },
+    "error": null
+  }
+}

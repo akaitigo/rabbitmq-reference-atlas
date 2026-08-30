@@ -1,0 +1,10 @@
+schema_version: 2
+source_id: rabbitmq-4.3-queues
+source_digest: sha256:70a81800b3df6e9e0295391a2fae37f67421af5b097d112e06a3ac9ba3087025
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: queue.declaration-equivalence, locator: '#declaration-and-property-equivalence', kind: behavior, capability_id: queue.lifecycle, behavior_id: queue.declaration-equivalence, title: Queue redeclaration property equivalence and rejection, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: queue.server-named, locator: '#server-named-queues', kind: behavior, capability_id: queue.lifecycle, behavior_id: queue.server-named, title: Server-named queue declaration and recovery, surface_ids: [implementation-construction, failure-recovery]}
+- {id: queue.durability, locator: '#durability', kind: behavior, capability_id: queue.lifecycle, behavior_id: queue.durability, title: Queue and message durability boundary, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: queue.exclusive, locator: '#exclusive-client-connection-specific-queues', kind: behavior, capability_id: queue.lifecycle, behavior_id: queue.exclusive, title: Connection-scoped exclusive queue ownership, surface_ids: [testing-verification, failure-recovery]}
+- {id: queue.temporary-race, locator: '#temporary-queues', kind: behavior, capability_id: queue.lifecycle, behavior_id: queue.temporary-race, title: Auto-delete and exclusive queue recovery race, surface_ids: [failure-recovery, compatibility-integration]}

@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-partitions
+source_digest: sha256:f3d281f456f88d62af329e2aa2ca8f9f9f7231b430532a0df5dd7a3ad9684df0
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: partition.detection, locator: '#detecting-network-partitions', kind: behavior, capability_id: cluster.partition, behavior_id: partition.detection, title: Network partition detection and diagnostics, surface_ids: [testing-verification, operations-observability]}
+- {id: partition.pause-minority, locator: '#pause-minority-mode', kind: behavior, capability_id: cluster.partition, behavior_id: partition.pause-minority, title: Pause minority partition handling mode, surface_ids: [architecture-design, failure-recovery]}
+- {id: partition.autoheal, locator: '#autoheal-mode', kind: behavior, capability_id: cluster.partition, behavior_id: partition.autoheal, title: Autoheal partition handling and data-loss boundary, surface_ids: [failure-recovery, decision-comparison]}
+- {id: partition.recovery, locator: '#recovering-from-a-network-partition', kind: behavior, capability_id: cluster.partition, behavior_id: partition.recovery, title: Partition recovery and cluster convergence, surface_ids: [testing-verification, failure-recovery]}

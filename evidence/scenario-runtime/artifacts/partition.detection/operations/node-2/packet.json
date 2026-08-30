@@ -1,0 +1,40 @@
+{
+  "transport": "tcp",
+  "protocol": "AMQP 0-9-1",
+  "endpoint": "127.0.0.1:25673",
+  "sent_hex": "414d515000000901",
+  "received_hex": "0100000000020900",
+  "error": null,
+  "fault": "docker-network-disconnect",
+  "isolated_service": "rabbitmq-1",
+  "queue": "atlas.1788110717686593000.quorum-recovery",
+  "minority_oracle": [
+    {
+      "name": "partition-minority-write-rejected",
+      "passed": true,
+      "observed": {
+        "connection": "unavailable",
+        "error": "no AMQP endpoint became ready: Exception (501) Reason: \"read tcp 127.0.0.1:55963->127.0.0.1:25672: i/o timeout\"",
+        "write_confirmed": false
+      }
+    }
+  ],
+  "majority_oracle": [
+    {
+      "name": "partition-majority-delivery",
+      "passed": true,
+      "observed": {
+        "duplicate_deliveries": 0,
+        "expected": 5,
+        "queue_deleted": false,
+        "received": 5,
+        "reconnects": 0,
+        "sessions": 1,
+        "transient_ack_errors": 0,
+        "transient_get_errors": 0,
+        "transient_open_errors": 0,
+        "unique": 5
+      }
+    }
+  ]
+}

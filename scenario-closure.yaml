@@ -1,0 +1,54 @@
+schema_version: 1
+id: rabbitmq-scenario-gap-closure-v1
+atlas_id: rabbitmq-reference-atlas
+epoch: '2026-08-28'
+status: incomplete
+closure_unit: authority-surface-x-scenario-x-all-runtime-and-semantic-variants
+report_root: evidence/scenario-runtime
+execution:
+  actual_broker_client_required: true
+  attempts: 1
+  retries: 0
+  mock_or_static_substitution: forbidden
+identity:
+  broker_runtime_kind: actual-broker
+  broker_product: RabbitMQ
+  broker_version: 4.3.5
+  broker_image_digest: sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031
+  client_name_version_source_digest_required: true
+  client_runtime_kind: actual-client
+  client_source_digest_must_equal_report_source_digest: true
+  runtime_profile_platform_execution_id_required: true
+proof:
+  oracle_per_variant_required: true
+  source_path_digest_required: true
+  harness_path_digest_required: true
+  artifact_channels_per_variant:
+  - packet
+  - log
+  - metric
+  artifact_path_layout: evidence/scenario-runtime/artifacts/<behavior>/<scenario>/<variant>/<channel>.*
+  artifact_paths_unique_across_rows: true
+  artifact_paths_unique_across_channels: true
+  integrated_system_reuse: forbidden
+  other_evidence_metadata_reuse: forbidden
+profile_variants:
+  broker-cluster-3: [node-1, node-2, node-3]
+  protocol-amqp10: [node-1, node-2, node-3]
+  protocol-amqp091-control-plane: [node-1, node-2, node-3]
+  plugin-mqtt: [node-1, node-2, node-3]
+  plugin-stomp: [node-1, node-2, node-3]
+  plugin-stream: [node-1, node-2, node-3]
+  cross-cluster-federation: [cluster-1-node-1, cluster-1-node-2, cluster-1-node-3, cluster-2-node-1, cluster-2-node-2, cluster-2-node-3]
+  cross-cluster-shovel: [cluster-1-node-1, cluster-1-node-2, cluster-1-node-3, cluster-2-node-1, cluster-2-node-2, cluster-2-node-3]
+  plugin-oauth2-idp: [node-1-with-oidc, node-2-with-oidc, node-3-with-oidc]
+  plugin-ldap-directory: [node-1-with-ldap, node-2-with-ldap, node-3-with-ldap]
+  tls-cluster-client: [node-1-tls-client, node-2-tls-client, node-3-tls-client]
+  rolling-upgrade: [source-version-node-1, source-version-node-2, source-version-node-3, target-version-node-1, target-version-node-2, target-version-node-3]
+  capacity-benchmark: [node-1-workload, node-2-workload, node-3-workload]
+  kubernetes-operator: [broker-replica-1, broker-replica-2, broker-replica-3]
+  integrated-reference-system: [node-1, node-2, node-3]
+semantic_variants: {}
+completion:
+  scenario_gap_closed_requires_all_above: true
+  authority_atomic_binding_required_for_completion_eligible: true

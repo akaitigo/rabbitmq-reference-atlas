@@ -1,0 +1,24 @@
+{
+  "transport": "container-exec",
+  "stopped_service": "rabbitmq-1",
+  "target_node": "rabbit@rabbitmq-1",
+  "diagnostic": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-3",
+      "rabbitmq-diagnostics",
+      "-q",
+      "-n",
+      "rabbit@rabbitmq-1",
+      "ping"
+    ],
+    "returncode": 69,
+    "stdout": "",
+    "stderr": "Error:\nFailed to connect and authenticate to rabbit@rabbitmq-1 in 60000 ms\n"
+  }
+}

@@ -1,0 +1,4 @@
+id: fixture.security-002.missing-queue-limit
+mutation_path: rows.1.required_oracles.1
+operation: delete
+expected_error: required-oracle-missing

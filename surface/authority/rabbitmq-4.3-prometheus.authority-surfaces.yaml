@@ -1,0 +1,8 @@
+schema_version: 2
+source_id: rabbitmq-4.3-prometheus
+source_digest: sha256:012c5705ec820fe3d75c92aac79183db5c21b53bf1fa988a271fca2376a58dfe
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: prometheus.endpoint, locator: '#prometheus-endpoint', kind: capability, capability_id: observability.prometheus, behavior_id: prometheus.endpoint, title: RabbitMQ Prometheus metrics endpoint, surface_ids: [implementation-construction, operations-observability]}
+- {id: prometheus.aggregation, locator: '#metric-aggregation', kind: behavior, capability_id: observability.prometheus, behavior_id: prometheus.aggregation, title: Per-object and aggregated metric tradeoff, surface_ids: [operations-observability, performance-capacity-cost, decision-comparison]}
+- {id: prometheus.alerting, locator: '#alerting', kind: behavior, capability_id: observability.prometheus, behavior_id: prometheus.alerting, title: Prometheus alert rules and diagnostic transition, surface_ids: [failure-recovery, operations-observability]}

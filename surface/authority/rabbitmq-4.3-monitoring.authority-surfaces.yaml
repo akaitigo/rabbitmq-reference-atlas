@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-monitoring
+source_digest: sha256:f8ab65c35c95b92aad8d5cc0bdb94560136849a3dfacfd2b827475e7c73ff73d
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: monitoring.node-health, locator: '#health-checks', kind: behavior, capability_id: observability.monitoring, behavior_id: monitoring.node-health, title: Node and cluster health checks, surface_ids: [testing-verification, operations-observability]}
+- {id: monitoring.logs, locator: '#logs', kind: behavior, capability_id: observability.monitoring, behavior_id: monitoring.logs, title: RabbitMQ log collection and interpretation, surface_ids: [failure-recovery, operations-observability]}
+- {id: monitoring.metrics, locator: '#metrics', kind: behavior, capability_id: observability.monitoring, behavior_id: monitoring.metrics, title: Broker client queue and system metrics, surface_ids: [operations-observability, performance-capacity-cost]}
+- {id: monitoring.correlation, locator: '#what-to-monitor', kind: behavior, capability_id: observability.monitoring, behavior_id: monitoring.correlation, title: Infrastructure broker and application signal correlation, surface_ids: [failure-recovery, operations-observability]}

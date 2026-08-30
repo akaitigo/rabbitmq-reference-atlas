@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "behavior_id": "monitoring.logs",
+  "authority_surface_id": "monitoring.logs",
+  "scenario": "recovery",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "run_metadata": {
+    "execution_id": "20260830T171233Z-40300",
+    "started_at": "2026-08-30T17:12:33Z",
+    "completed_at": "2026-08-30T17:25:17.304017Z"
+  },
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "docker-compose-log-client",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.monitoring.logs.recovery.node-1",
+        "assertions": [
+          "service stateがUpへ復帰した",
+          "recovery時点のbroker logを取得できた",
+          "同じ時点のcluster statusが3-node onlineを示した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-1/packet.json",
+          "digest": "sha256:d51cc9232ab78ce8411ff1ae1493fc84e56c0b1d2b36c9601e2ccc5200fb6247",
+          "size_bytes": 24906,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-1/log.txt",
+          "digest": "sha256:728a5b66f2305aaed2837f36149746136918b98350d94deecbbbbeba897e9982",
+          "size_bytes": 32248,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-1/metric.json",
+          "digest": "sha256:1b8eed8150ceb4ce4b4ac63b5550d19a5078299d9db1bcde2bc6b5f368ff0467",
+          "size_bytes": 58660,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "docker-compose-log-client",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.monitoring.logs.recovery.node-2",
+        "assertions": [
+          "service stateがUpへ復帰した",
+          "recovery時点のbroker logを取得できた",
+          "同じ時点のcluster statusが3-node onlineを示した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-2/packet.json",
+          "digest": "sha256:b75d75e7addbd5c9c07d459a4d9a8e890e3893c7aefa386065e2d14c1e960f36",
+          "size_bytes": 26131,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-2/log.txt",
+          "digest": "sha256:f62ada4b133441498a924e1bc204e6553d2d69406c76c24f471a881e02346993",
+          "size_bytes": 34949,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-2/metric.json",
+          "digest": "sha256:ded6c5a4561bb59dc2351a9f70730a8a0691676631e0a18446e6ccf0af9b6ef8",
+          "size_bytes": 59508,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "docker-compose-log-client",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.monitoring.logs.recovery.node-3",
+        "assertions": [
+          "service stateがUpへ復帰した",
+          "recovery時点のbroker logを取得できた",
+          "同じ時点のcluster statusが3-node onlineを示した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-3/packet.json",
+          "digest": "sha256:1c09b77ab7940f7f289d59c676df9f304eb0bd62e153bf8e8e550e0144dce1f7",
+          "size_bytes": 27958,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-3/log.txt",
+          "digest": "sha256:3bf55a0394545b2ac997d39710a256aa50db24e00e2fbdeb0004de49f4411544",
+          "size_bytes": 36562,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-3/metric.json",
+          "digest": "sha256:e3a945915022d586e0c9690794ea37093311e97d518c5210ffb5d0ad81daa09a",
+          "size_bytes": 59508,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

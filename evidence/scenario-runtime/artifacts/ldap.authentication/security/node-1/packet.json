@@ -1,0 +1,38 @@
+{
+  "transport": "AMQP 0-9-1 with LDAP backend",
+  "client_result": {
+    "variant": "node-1",
+    "endpoint": "127.0.0.1:26672",
+    "passed": true,
+    "oracle": "同一LDAP userの正しいCredentialだけが接続を確立し、誤Credentialは拒否される",
+    "outcomes": [
+      {
+        "operation": "allowed-credential-connect",
+        "result": "accepted"
+      },
+      {
+        "operation": "wrong-credential-connect",
+        "result": "rejected",
+        "error": "Exception (403) Reason: \"username or password not allowed\""
+      }
+    ]
+  },
+  "directory_result": {
+    "runtime": {
+      "product": "OpenLDAP",
+      "version": "2.6.10",
+      "image_digest": "sha256:966fd39ed25813890e9bd57dac56def163bbcfe64967e0bae59ab018d505bd93",
+      "runtime_kind": "actual-directory"
+    },
+    "endpoint": "ldap://ldap-directory:1389",
+    "bind_dn": "cn=admin,dc=atlas,dc=local",
+    "credential": "[redacted]",
+    "base_dn": "ou=users,dc=atlas,dc=local",
+    "search_filter": "(uid=*)",
+    "entry_dns": [
+      "cn=atlas-denied,ou=users,dc=atlas,dc=local",
+      "cn=atlas-allowed,ou=users,dc=atlas,dc=local"
+    ],
+    "returncode": 0
+  }
+}

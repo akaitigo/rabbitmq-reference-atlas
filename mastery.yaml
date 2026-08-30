@@ -9,111 +9,110 @@ audiences: [learner, practitioner, architect, operator, maintainer, reviewer, ed
 outcomes:
   - id: understand
     title: 原理、保証境界、適用範囲を説明できる
-    target_sets: [foundations-design, messaging-surface, delivery-pressure, cluster-resilience]
+    target_sets: [foundations-design, messaging-surface, delivery-pressure, cluster-resilience, protocols-client-contracts, control-plane-configuration]
   - id: choose
     title: 要件とFailure Modelから方式を選択できる
-    target_sets: [foundations-design, messaging-surface, delivery-pressure, cluster-resilience, performance-capacity]
+    target_sets: [foundations-design, messaging-surface, delivery-pressure, cluster-resilience, performance-capacity, protocols-client-contracts, cross-cluster-messaging, operator-platform]
   - id: build
     title: TopologyとClient処理を安全に構築できる
-    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, security-safety]
+    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, security-safety, protocols-client-contracts, control-plane-configuration, operator-platform, integrated-reference-system]
   - id: verify
     title: 主張を試験とEvidenceで検証できる
-    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, atlas-operation]
+    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, atlas-operation, definitive-assurance, integrated-reference-system]
   - id: operate
     title: BrokerとWorkloadを観測し安全に運用できる
-    target_sets: [operations-observability, cluster-resilience, security-safety, performance-capacity]
+    target_sets: [operations-observability, cluster-resilience, security-safety, performance-capacity, control-plane-configuration, cross-cluster-messaging, data-protection, operator-platform]
   - id: troubleshoot
     title: 配送、Cluster、依存先の失敗を診断・復旧できる
-    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, operations-observability]
+    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, operations-observability, protocols-client-contracts, cross-cluster-messaging, data-protection, operator-platform, integrated-reference-system]
   - id: evolve
     title: 互換性を守ってUpgrade、移行、廃止できる
-    target_sets: [compatibility-integration, migration-evolution]
+    target_sets: [compatibility-integration, migration-evolution, protocols-client-contracts, control-plane-configuration, data-protection, operator-platform]
   - id: delegate
     title: Agentへ安全に委任しEvidenceから結果をReviewできる
-    target_sets: [atlas-operation]
+    target_sets: [atlas-operation, definitive-assurance]
 surfaces:
   - id: orientation-scope
     title: 定義・目的・境界
     applicability: required
     rationale: RabbitMQ機能、Messaging Pattern、商用機能、Community Pluginの境界を誤らず入口を選ぶために必要である。
-    target_sets: [foundations-design]
+    target_sets: [foundations-design, protocols-client-contracts, control-plane-configuration, cross-cluster-messaging, data-protection, operator-platform]
     required_deliverables: [concept, decision]
   - id: foundations-mechanics
     title: 原理・内部機構・Invariant
     applicability: required
     rationale: Exchange Routing、Delivery State、Khepri、Raft多数決と保証の理由を説明するために必要である。
-    target_sets: [foundations-design, messaging-surface, delivery-pressure, cluster-resilience]
+    target_sets: [foundations-design, messaging-surface, delivery-pressure, cluster-resilience, protocols-client-contracts, control-plane-configuration, cross-cluster-messaging]
     required_deliverables: [concept, lab, evidence]
   - id: architecture-design
     title: Architecture・設計
     applicability: required
     rationale: Queue Type、Topology、Delivery Guarantee、Cluster境界を要件とFailure Modelから設計するために必要である。
-    target_sets: [foundations-design, messaging-surface, cluster-resilience]
+    target_sets: [foundations-design, messaging-surface, cluster-resilience, protocols-client-contracts, cross-cluster-messaging, operator-platform, integrated-reference-system]
     required_deliverables: [decision, reference-implementation]
   - id: implementation-construction
     title: 実装・構築
     applicability: required
     rationale: 宣言、Publish、Consume、Ack、Retry、DLQ、Cluster設定を実行可能な形へ落とすために必要である。
-    target_sets: [messaging-surface, delivery-pressure, cluster-resilience]
+    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, protocols-client-contracts, control-plane-configuration, cross-cluster-messaging, operator-platform, integrated-reference-system]
     required_deliverables: [reference-implementation, lab]
   - id: testing-verification
     title: 試験・検証
     applicability: required
     rationale: 正常、拒否、再配送、Leader停止、復旧を反復可能なOracleとDigest固定Evidenceで確かめるために必要である。
-    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, atlas-operation]
+    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, atlas-operation, protocols-client-contracts, control-plane-configuration, cross-cluster-messaging, data-protection, operator-platform, integrated-reference-system, definitive-assurance]
     required_deliverables: [test, evidence]
   - id: failure-recovery
     title: 失敗・診断・回復
     applicability: required
     rationale: Delivery境界とCluster多数派の失敗を区別し、データ安全性を壊さず回復するために必要である。
-    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, operations-observability]
+    target_sets: [messaging-surface, delivery-pressure, cluster-resilience, operations-observability, protocols-client-contracts, cross-cluster-messaging, data-protection, operator-platform, integrated-reference-system]
     required_deliverables: [failure-catalog, runbook, evidence]
   - id: operations-observability
     title: 運用・Observability
     applicability: required
     rationale: Queue Backlog、未Ack、Alarm、Node、Replica、Client状態をTelemetryから診断するために必要である。
-    target_sets: [operations-observability, cluster-resilience]
+    target_sets: [operations-observability, cluster-resilience, control-plane-configuration, cross-cluster-messaging, operator-platform, integrated-reference-system]
     required_deliverables: [runbook, evidence]
   - id: security-privacy-safety
     title: Security・Privacy・Safety
     applicability: required
     rationale: TLS、認証、認可、Credential Lifecycle、Tenant境界とFailure Labの隔離を安全に扱うために必要である。
-    target_sets: [security-safety]
+    target_sets: [security-safety, protocols-client-contracts, control-plane-configuration, cross-cluster-messaging, operator-platform, integrated-reference-system]
     required_deliverables: [security-review, test, evidence]
   - id: performance-capacity-cost
     title: 性能・容量・Cost
     applicability: required
     rationale: Throughput、Latency、Backlog、Replica、Disk、Memoryの条件を測定し容量設計へ戻すために必要である。
-    target_sets: [performance-capacity]
+    target_sets: [performance-capacity, protocols-client-contracts, cross-cluster-messaging, operator-platform, integrated-reference-system]
     required_deliverables: [benchmark, evidence, decision]
   - id: compatibility-integration
     title: 互換性・Integration
     applicability: required
     rationale: Protocol、Client、Plugin、Queue Type、Feature Flagの対応差と相互運用境界を判断するために必要である。
-    target_sets: [compatibility-integration]
+    target_sets: [compatibility-integration, protocols-client-contracts, control-plane-configuration, cross-cluster-messaging, operator-platform, integrated-reference-system]
     required_deliverables: [test, evidence, decision]
   - id: migration-evolution-deprecation
     title: 移行・進化・廃止
     applicability: required
     rationale: Upgrade Path、削除済み機能、Queue Type変更、Blue-Green境界を安全に扱うために必要である。
-    target_sets: [migration-evolution]
+    target_sets: [migration-evolution, control-plane-configuration, cross-cluster-messaging, data-protection, operator-platform]
     required_deliverables: [migration-guide, test, evidence]
   - id: decision-comparison
     title: 選択・比較・Trade-off
     applicability: required
     rationale: Classic、Quorum、Streamと各Routing、Retry、Cross-cluster方式を同じ要件軸で比較するために必要である。
-    target_sets: [foundations-design, performance-capacity, compatibility-integration]
+    target_sets: [foundations-design, performance-capacity, compatibility-integration, protocols-client-contracts, cross-cluster-messaging, data-protection, operator-platform]
     required_deliverables: [decision, benchmark]
   - id: provenance-rights
     title: 出典・来歴・権利
     applicability: required
     rationale: RabbitMQ本体、Docker Packaging、Client依存、文書、商標の出典と再配布条件を追跡するために必要である。
-    target_sets: [atlas-operation]
+    target_sets: [atlas-operation, definitive-assurance]
     required_deliverables: [provenance-record, evidence]
   - id: agent-skill
     title: Agent Skill・評価
     applicability: required
     rationale: AgentがCoverage外を捏造せず、設計、実装、診断、復旧、移行、Reviewへ到達するために必要である。
-    target_sets: [atlas-operation]
+    target_sets: [atlas-operation, definitive-assurance]
     required_deliverables: [skill-reference, skill-eval]
-

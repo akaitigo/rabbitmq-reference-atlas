@@ -1,0 +1,23 @@
+schema_version: 1
+atlas_id: rabbitmq-reference-atlas
+coverage_epoch: '2026-08-28'
+status: planned
+kubernetes:
+  minimum_version: '1.31'
+  execution_profile: actual-cluster
+cluster_operator:
+  repository: https://github.com/rabbitmq/cluster-operator
+  version: v2.22.5
+  source_commit: 17dd297f71de40a722baf69167b8af511072175e
+  released_at: '2026-08-24T09:58:34Z'
+  runtime_image_digest: null
+messaging_topology_operator:
+  repository: https://github.com/rabbitmq/messaging-topology-operator
+  version: v1.20.2
+  source_commit: 58cdfa3610a8bbac51a0fc8a7fd90f2fa448b960
+  released_at: '2026-08-24T09:58:16Z'
+  runtime_image_digest: null
+closure:
+- Operator image digestsを取得し、Kubernetes Node ImageとともにEnvironment Manifestへ固定する。
+- 三Replica RabbitmqCluster、Drift、Pod停止、Scale、Rolling Update、Recoveryを実Clusterで証明する。
+- Topology Resourceの正常、境界、拒否、障害、回復を専用Artifact Evidenceへ分離する。

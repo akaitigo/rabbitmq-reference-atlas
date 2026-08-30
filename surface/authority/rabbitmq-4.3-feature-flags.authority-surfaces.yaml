@@ -1,0 +1,8 @@
+schema_version: 2
+source_id: rabbitmq-4.3-feature-flags
+source_digest: sha256:ed43e6c64fb3076623ced45d42c4bf0de9786cad356f51d01013a3cd488fc62a
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: feature-flags.compatibility, locator: '#feature-flags-and-rabbitmq-versions', kind: behavior, capability_id: migration.feature-flags, behavior_id: feature-flags.compatibility, title: Node version compatibility through feature flags, surface_ids: [compatibility-integration, migration-evolution-deprecation]}
+- {id: feature-flags.enablement, locator: '#how-to-enable-feature-flags', kind: behavior, capability_id: migration.feature-flags, behavior_id: feature-flags.enablement, title: Feature flag enablement lifecycle, surface_ids: [implementation-construction, migration-evolution-deprecation]}
+- {id: feature-flags.irreversibility, locator: '#feature-flag-states', kind: behavior, capability_id: migration.feature-flags, behavior_id: feature-flags.irreversibility, title: Enabled feature flag rollback boundary, surface_ids: [failure-recovery, migration-evolution-deprecation]}

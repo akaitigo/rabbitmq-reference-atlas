@@ -1,0 +1,348 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-shovel",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md",
+  "locked_source_digest": "sha256:e92ab6a923117c7faa48f662bb86da2c03ae9d61505dd5def1fb87dcce69eab5",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:e92ab6a923117c7faa48f662bb86da2c03ae9d61505dd5def1fb87dcce69eab5",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 15932,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0000",
+        "locator": "#shovel-plugin",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 802,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b1c0364f742bd1207489fd53ec20f256544cffe87f32037c91e3017ced695a32",
+        "heading_digest": "sha256:5b30f61b45cf1cc04b593cfdaf9bf4d2586b50d196c875bfc30ca1349d9e218e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 802,
+        "section_end": 2808,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d1b90a0543c4e492f30f1103e313ad34b647412a5b1bebb4c4f6649298adf5dc",
+        "heading_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0002",
+        "locator": "#benefits",
+        "level": 2,
+        "section_start": 2808,
+        "section_end": 3017,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:68293ed27e5419c90271b9fe7d797ee2731d22817d6d582f3edc74faec66f5cb",
+        "heading_digest": "sha256:c17623d592ffbcc7156672443e01c30a969540e2300ca8f5e5f0b409c52c5c41",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0003",
+        "locator": "#loose-coupling",
+        "level": 3,
+        "section_start": 3017,
+        "section_end": 3342,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:520f02aefc94b02d2c8433e2407f3c59ccba0ac54fa3ec3d1def2efce7ee4854",
+        "heading_digest": "sha256:4f4792cff5f96e89ec275e4caedc77329fac4d9f34d16aa1a04dcc1cb5629789",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0004",
+        "locator": "#wan-friendly",
+        "level": 3,
+        "section_start": 3342,
+        "section_end": 3562,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:2d597d3c3ea6c63d77858465f16bb9079cc2842a5656c5994d7a484bd3078f24",
+        "heading_digest": "sha256:9476db7d6e716b9ae67ac9acf463d988f468a87f63691b89d14bff8a3115d631",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0005",
+        "locator": "#cross-protocol-and-product-message-transfers",
+        "level": 3,
+        "section_start": 3562,
+        "section_end": 3853,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:ad43a50d67c882ee947ab5118cbd55e07ed90e693aed7a34f6b29fcce66a4023",
+        "heading_digest": "sha256:9f5dae7e35ebeb869d102b3ff4499c165fad2ba90992af89e13208f60e4595e2",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0006",
+        "locator": "#flexibility",
+        "level": 3,
+        "section_start": 3853,
+        "section_end": 4351,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:dee1bf243a762c3deb629e4560d456ad07e8d0fde12f1532f5312ac8ca41a8ba",
+        "heading_digest": "sha256:52f61ed0009abaaa29133689e54f382185d90d375799b756b2f5946a0b16fe32",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0007",
+        "locator": "#what-it-does",
+        "level": 2,
+        "section_start": 4351,
+        "section_end": 4778,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a8fe434cedc82ff8479f9a0f6402abe81407e66e06fbe49faaa9344cbe28ed78",
+        "heading_digest": "sha256:eee338f0fd4725294b57f3a8e3d7b9f760f819ac363c6227820a70f3973f64d1",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0008",
+        "locator": "#connection",
+        "level": 3,
+        "section_start": 4778,
+        "section_end": 5473,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:e1f66323fa2d6476bd4b66c20a516d017f7d8b3f94d5eb1f1cde4a245d27f2d3",
+        "heading_digest": "sha256:639a40e82b9a96f0cbeed5f006cf5634c8d1b990b3c83753c00a910fc268d2a6",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0009",
+        "locator": "#consumption",
+        "level": 3,
+        "section_start": 5473,
+        "section_end": 5855,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7ae44e7c343df171c2971950b63105e5c2475854e47c5482921b4ab008f82d37",
+        "heading_digest": "sha256:36fad7931ef8cf0312837feba838e8721fa10adff056bb72b9050e7c1dd28528",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0010",
+        "locator": "#re-publishing",
+        "level": 3,
+        "section_start": 5855,
+        "section_end": 5947,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:fe7efeb32ca64569aff17badb728dbaf79f721ef3c43ed6a249acb8da680b66e",
+        "heading_digest": "sha256:8b56a7ce2a7816ae1b69807976bb36aa08fe5beac69377914ba7956cbeda1563",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0011",
+        "locator": "#how-are-shovels-different-from-queue-federation",
+        "level": 2,
+        "section_start": 5947,
+        "section_end": 6719,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:da4719ed36fbf9a414d60dbebf7e47bc0f2c5666520c2108245686367bd23b4e",
+        "heading_digest": "sha256:6b7d77662def8cf4d5a0d426aa385dc9ca052785f1cfa4c849a3a0277b9a6744",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0012",
+        "locator": "#getting-started",
+        "level": 2,
+        "section_start": 6719,
+        "section_end": 8475,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:643566c260446b2d6a849a4d5f45294e80f8fba60d7021f2168e15e5a1f830ff",
+        "heading_digest": "sha256:2b404776fd3e2000e399d6ea0f0f57bfd5f869cb819eba61cd2bf9cd59de7d68",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0013",
+        "locator": "#shovel-connection-endpoints",
+        "level": 2,
+        "section_start": 8475,
+        "section_end": 8947,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7ed4c53c169114a8dcdbef205ce6c48877f93de43750f8da43cdb820c372bb7e",
+        "heading_digest": "sha256:fec1ec63dd2915d30fc237b10f34db6e171d67393a0b9029df5a3a84411a63e2",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0014",
+        "locator": "#authn-authz-for-shovels",
+        "level": 2,
+        "section_start": 8947,
+        "section_end": 9766,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:287055340ecd2b1aea3554c4274c2ab6493e0ddc4e8ba52a58a26e9ed0bb8961",
+        "heading_digest": "sha256:a3ccc12d272ef37a1bc6155364a9518248a3e7e8dcb487c3058b6b7457ae7ea5",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0015",
+        "locator": "#clustering",
+        "level": 2,
+        "section_start": 9766,
+        "section_end": 10622,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:fbd89c66f2efeeace9a4c9e29e0d455e9349a7205907d0e0ced3449bf8a91840",
+        "heading_digest": "sha256:4fd8f37cc9bcf0967e2934ad784b67b5c419976c1647f309dd60046a0b71bfd9",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0016",
+        "locator": "#tls",
+        "level": 2,
+        "section_start": 10622,
+        "section_end": 13656,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:31de0d2b7bb61cfa3002749f44382c29902b709484d7846ce98c292dcd96a52a",
+        "heading_digest": "sha256:44b08477724e3ffbcd237d62a8f5c5e58197fc00e120e94350586d136492e769",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0017",
+        "locator": "#status",
+        "level": 2,
+        "section_start": 13656,
+        "section_end": 13747,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:05c1af4efe0cedda2abf3a2423339975a90955b5122a4597fcac517760a52038",
+        "heading_digest": "sha256:17892ccb22630f6f0df5e28ecc9b58f91557f73fdf71f8808120a4fbc7c66739",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0018",
+        "locator": "#status-management",
+        "level": 3,
+        "section_start": 13747,
+        "section_end": 14035,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:3d29557938aca96544a6c83e8d87df5e1405ed7807b5f1dc35db2e84ce6c68c9",
+        "heading_digest": "sha256:825b11767b71f48086f7e0ba4b16fdcee7abe894834b612a9112b28902000000",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-shovel.0019",
+        "locator": "#status-cli",
+        "level": 3,
+        "section_start": 14035,
+        "section_end": 15932,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:7c62c8a64fad75253841e521c858bca262b3d2a9614ff96799095cec6a30fea7",
+        "heading_digest": "sha256:1c7c5b817206707bec6b06a2f1c8ebe6362e370368c145e5e52d6fb6126372a6",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.shovel.acknowledgement.rabbitmq-4.3-shovel",
+      "source_id": "rabbitmq-4.3-shovel",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md#acknowledgement-modes",
+      "locator": "#acknowledgement-modes",
+      "authority_surface_id": "shovel.acknowledgement",
+      "candidate_behavior_id": "candidate.shovel.acknowledgement",
+      "capability_id": "crosscluster.shovel",
+      "target_id": "definitive.shovel.acknowledgement",
+      "claim_id": "definitive.shovel.acknowledgement.claim",
+      "surface_ids": [
+        "foundations-mechanics",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:9d2b97405b40ba2273ae770cabe6fc6374c4d94539f125b70874d817955e1a12",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.shovel.dynamic.rabbitmq-4.3-shovel",
+      "source_id": "rabbitmq-4.3-shovel",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md#getting-started",
+      "locator": "#getting-started",
+      "authority_surface_id": "shovel.dynamic",
+      "candidate_behavior_id": "candidate.shovel.dynamic",
+      "capability_id": "crosscluster.shovel",
+      "target_id": "definitive.shovel.dynamic",
+      "claim_id": "definitive.shovel.dynamic.claim",
+      "surface_ids": [
+        "implementation-construction",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:b5d15f85541ae42c1cd2d80a97821968ca683d72a384f87fa950c40568571010",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:6448205991f5e7ade2ea1a88b91094eb2b60fde0c97600bdff5c85149239b053",
+      "context_start": 2642,
+      "context_end": 15932,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.shovel.failure-recovery.rabbitmq-4.3-shovel",
+      "source_id": "rabbitmq-4.3-shovel",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md#reconnection-behaviour",
+      "locator": "#reconnection-behaviour",
+      "authority_surface_id": "shovel.failure-recovery",
+      "candidate_behavior_id": "candidate.shovel.failure-recovery",
+      "capability_id": "crosscluster.shovel",
+      "target_id": "definitive.shovel.failure-recovery",
+      "claim_id": "definitive.shovel.failure-recovery.claim",
+      "surface_ids": [
+        "failure-recovery",
+        "operations-observability"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:92e9e308c75d822aab506b23f225c228991c7052ee4affe8a526bf0aedbc0337",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.shovel.protocol-variants.rabbitmq-4.3-shovel",
+      "source_id": "rabbitmq-4.3-shovel",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/shovel.md#overview",
+      "locator": "#overview",
+      "authority_surface_id": "shovel.protocol-variants",
+      "candidate_behavior_id": "candidate.shovel.protocol-variants",
+      "capability_id": "crosscluster.shovel",
+      "target_id": "definitive.shovel.protocol-variants",
+      "claim_id": "definitive.shovel.protocol-variants.claim",
+      "surface_ids": [
+        "compatibility-integration",
+        "decision-comparison"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:9f3ace0b7d877140b6195e67474ba2bdb15585857ef8c495e56cb9ed4f297e5d",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:e92ab6a923117c7faa48f662bb86da2c03ae9d61505dd5def1fb87dcce69eab5",
+      "context_start": 0,
+      "context_end": 15932,
+      "context_unit": "utf8-byte",
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

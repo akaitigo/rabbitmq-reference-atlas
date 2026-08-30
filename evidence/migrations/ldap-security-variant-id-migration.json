@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "id": "migration.security-001-ldap-variant-ids",
+  "reason": "Closure PlanのLDAP固有Variant IDへ正本bindingを合わせ、初回runで公開した短縮IDのArtifact pathは非後退aliasとして毎run再生成する。",
+  "migration_evidence": "evidence/migrations/ldap-security-variant-id-migration.json",
+  "replacements": [
+    {
+      "old_id": "node-1",
+      "new_id": "node-1-with-ldap"
+    },
+    {
+      "old_id": "node-2",
+      "new_id": "node-2-with-ldap"
+    },
+    {
+      "old_id": "node-3",
+      "new_id": "node-3-with-ldap"
+    }
+  ],
+  "execution_proofs": [
+    "evidence/scenario-runtime/ldap.authentication/security.runtime.json",
+    "evidence/scenario-runtime/ldap.authorization/security.runtime.json"
+  ],
+  "artifact_policy": {
+    "canonical_path_template": "evidence/scenario-runtime/artifacts/{behavior}/security/{new_id}/{channel}",
+    "legacy_alias_path_template": "evidence/scenario-runtime/artifacts/{behavior}/security/{old_id}/{channel}",
+    "channels": [
+      "packet.json",
+      "log.txt",
+      "metric.json"
+    ],
+    "legacy_alias_regenerated_each_full_run": true,
+    "deletion_allowed": false
+  }
+}

@@ -12,13 +12,16 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-go@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          # Historical certificate adapters bind to immutable source commits.
+          fetch-depth: 0
+      - uses: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff # v5
         with:
           go-version: "1.26.0"
           cache: true
       - name: Install pinned atlas validator
-        run: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@d5c0a6ce757fd5f43af837edd26f55c7325b811e
+        run: go install github.com/akaitigo/reference-atlas-core/cmd/atlas@072d7ca77981f51754e824d70c6d4ecd55ea67e5
       - name: Validate manifests, Router Skill, rights and repository graph
         env:
           ATLAS_BIN: /home/runner/go/bin/atlas

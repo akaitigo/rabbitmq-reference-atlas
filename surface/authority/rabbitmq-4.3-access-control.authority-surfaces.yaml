@@ -1,0 +1,44 @@
+schema_version: 2
+source_id: rabbitmq-4.3-access-control
+source_digest: sha256:9cccc858072cf3a8fe7dede63cc198289b2414e33e9128d9eb941bfbaa417f7a
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: security.authn-authz-split
+  locator: '#authentication-and-authorisation-backends'
+  kind: behavior
+  capability_id: security.auth-backends
+  behavior_id: security.authn-authz-split
+  title: Pluggable authentication and authorisation separation
+  surface_ids: [foundations-mechanics, security-privacy-safety]
+- id: security.backend-chain
+  locator: '#authentication-and-authorisation-backends'
+  kind: capability
+  capability_id: security.auth-backends
+  behavior_id: security.backend-chain
+  title: Ordered backend chaining and fallback
+  surface_ids: [architecture-design, testing-verification, security-privacy-safety]
+- id: security.vhost-permissions
+  locator: '#authorisation-how-permissions-work'
+  kind: behavior
+  capability_id: security.permissions
+  behavior_id: security.vhost-permissions
+  title: Virtual host configure, write, and read permissions
+  surface_ids: [implementation-construction, testing-verification, security-privacy-safety]
+- id: security.topic-permissions
+  locator: '#topic-authorisation'
+  kind: behavior
+  capability_id: security.permissions
+  behavior_id: security.topic-permissions
+  title: Topic exchange routing-key authorisation
+  surface_ids: [testing-verification, security-privacy-safety]
+- id: security.credential-rotation
+  locator: '#credential-management'
+  kind: behavior
+  capability_id: security.credentials
+  behavior_id: security.credential-rotation
+  title: Credential change and revocation lifecycle
+  surface_ids: [operations-observability, security-privacy-safety]

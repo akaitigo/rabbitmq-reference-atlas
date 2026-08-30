@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.mqtt.protocol-versions-qos.boundary",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "mqtt.protocol-versions-qos",
+  "target_id": "definitive.mqtt.protocol-versions-qos",
+  "scenario": "boundary",
+  "applicability": "required",
+  "status": "legacy-runtime-observation-gap-open",
+  "runtime_profile": "plugin-mqtt",
+  "proof_obligation_id": "proof.mqtt.protocol-versions-qos.boundary",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.mqtt.protocol-versions-qos",
+      "authority_artifact_id": "rabbitmq-4-3-mqtt",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-mqtt.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:3a1d140de293a119b882859c6673292fafe893b7cd3abfce97196e76413f2516",
+      "source_id": "rabbitmq-4.3-mqtt",
+      "source_digest": "sha256:7922a386475a80084c3e34beae46fa1c083bc9c27555b36f5141671bea2963d3",
+      "surface_id": "mqtt.protocol-versions-qos",
+      "locator": "#supported-mqtt-features",
+      "behavior_id": "mqtt.protocol-versions-qos"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "legacy_observation": {
+    "evidence_id": "definitive.mqtt.protocol-versions-qos.boundary",
+    "evidence_record": "evidence/definitive.mqtt.protocol-versions-qos.boundary.evidence.json",
+    "behavior_specific": true,
+    "identity": {
+      "broker": {
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins",
+        "manifest_digest": "sha256:00098566c5ceb6359261fb10265a3ba9e71e312c50219f842a99bf2dede7bed6",
+        "nodes": 3
+      },
+      "client": {
+        "name": "cmd/rmq-plugin-protocols",
+        "version_kind": "harness-sha256",
+        "version": "sha256:eca90ce40208a879abd7baf0d0d517d64bde76409a38fd86233c3d91206f5a01",
+        "source": "cmd/rmq-plugin-protocols/main.go"
+      },
+      "runtime": {
+        "profile": "plugin-mqtt",
+        "execution_mode": "runtime",
+        "created_at": "2026-08-30T17:14:39.962622389Z",
+        "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins"
+      }
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.capture-missing"
+        ]
+      },
+      "log": {
+        "artifacts": [
+          {
+            "channel": "client-log",
+            "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.boundary.json",
+            "digest": "sha256:0ce31e421175e6c9d8ee8b4bd379ad11a4c473e111f7f43d0a7bbfa1f9a82fc8",
+            "media_type": "application/json",
+            "size_bytes": 879
+          }
+        ],
+        "gap_ids": []
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.record-missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.metric.record-missing",
+      "artifact.packet.capture-missing"
+    ],
+    "counts_toward_scenario_gap_closure": false,
+    "aggregate_evidence_allowed": false
+  },
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/mqtt.protocol-versions-qos/boundary.runtime.json",
+      "present": false,
+      "digest": null
+    },
+    "required_variants": [
+      "node-1",
+      "node-2",
+      "node-3"
+    ],
+    "variant_proofs": [
+      {
+        "id": "node-1",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1.metric.missing"
+            ]
+          }
+        }
+      },
+      {
+        "id": "node-2",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2.metric.missing"
+            ]
+          }
+        }
+      },
+      {
+        "id": "node-3",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3.metric.missing"
+            ]
+          }
+        }
+      }
+    ],
+    "requirements": {
+      "dedicated_surface_scenario_report": false,
+      "all_variants_driven": false,
+      "attempts_one_retry_zero": false,
+      "oracle_pass_per_variant": false,
+      "source_harness_digest_bound": false,
+      "broker_client_runtime_identity": false,
+      "packet_log_metric_dedicated": false
+    },
+    "scenario_gap_closed": false
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.boundary",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_surface_scenario_report": false,
+    "all_variants_driven": false,
+    "attempts_one_retry_zero": false,
+    "oracle_pass_per_variant": false,
+    "source_harness_digest_bound": false,
+    "broker_client_runtime_identity": false,
+    "packet_log_metric_dedicated": false,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "scenario_gap_ids": [
+    "artifact.node-1.log.missing",
+    "artifact.node-1.metric.missing",
+    "artifact.node-1.packet.missing",
+    "artifact.node-2.log.missing",
+    "artifact.node-2.metric.missing",
+    "artifact.node-2.packet.missing",
+    "artifact.node-3.log.missing",
+    "artifact.node-3.metric.missing",
+    "artifact.node-3.packet.missing",
+    "digest.source-harness-missing",
+    "execution.attempts-not-one",
+    "execution.retries-not-zero",
+    "identity.broker-client-runtime-missing",
+    "oracle.variant-pass-missing",
+    "runtime.dedicated-report-missing",
+    "variant.execution-missing"
+  ],
+  "completion_gap_ids": [
+    "authority.atomic-human-promotion-missing"
+  ],
+  "gap_ids": [
+    "artifact.node-1.log.missing",
+    "artifact.node-1.metric.missing",
+    "artifact.node-1.packet.missing",
+    "artifact.node-2.log.missing",
+    "artifact.node-2.metric.missing",
+    "artifact.node-2.packet.missing",
+    "artifact.node-3.log.missing",
+    "artifact.node-3.metric.missing",
+    "artifact.node-3.packet.missing",
+    "authority.atomic-human-promotion-missing",
+    "digest.source-harness-missing",
+    "execution.attempts-not-one",
+    "execution.retries-not-zero",
+    "identity.broker-client-runtime-missing",
+    "oracle.variant-pass-missing",
+    "runtime.dedicated-report-missing",
+    "variant.execution-missing"
+  ]
+}

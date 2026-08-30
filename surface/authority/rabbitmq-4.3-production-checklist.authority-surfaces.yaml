@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-production-checklist
+source_digest: sha256:8f944214046052ee6a5134f53715f4cd6207d8390c5946c7b245e2c45abe2c9e
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: production.resource-planning, locator: '#resource-limits', kind: behavior, capability_id: system.reference, behavior_id: production.resource-planning, title: Production resource and capacity planning, surface_ids: [architecture-design, performance-capacity-cost]}
+- {id: production.monitoring, locator: '#monitoring', kind: behavior, capability_id: system.reference, behavior_id: production.monitoring, title: Production monitoring and alerting baseline, surface_ids: [operations-observability, failure-recovery]}
+- {id: production.security, locator: '#security', kind: behavior, capability_id: system.reference, behavior_id: production.security, title: Production network identity TLS and access baseline, surface_ids: [architecture-design, security-privacy-safety]}
+- {id: production.data-safety, locator: '#data-safety', kind: behavior, capability_id: system.reference, behavior_id: production.data-safety, title: Production queue replication confirms and recovery baseline, surface_ids: [architecture-design, failure-recovery]}

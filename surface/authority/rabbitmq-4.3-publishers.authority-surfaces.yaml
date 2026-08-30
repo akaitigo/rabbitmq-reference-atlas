@@ -1,0 +1,8 @@
+schema_version: 2
+source_id: rabbitmq-4.3-publishers
+source_digest: sha256:d60b79cb06d56403d516262bd2b4612fd2799a7adad30ee8378d235698c7afe7
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: publisher.unroutable, locator: '#unroutable-message-handling', kind: behavior, capability_id: publisher.delivery, behavior_id: publisher.unroutable, title: Unroutable message return and discard behavior, surface_ids: [testing-verification, failure-recovery]}
+- {id: publisher.confirm-boundary, locator: '#data-safety-on-the-publisher-side', kind: behavior, capability_id: publisher.delivery, behavior_id: publisher.confirm-boundary, title: Publisher confirm acceptance boundary, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: publisher.connection-failure, locator: '#connection-failures', kind: behavior, capability_id: publisher.delivery, behavior_id: publisher.connection-failure, title: Publish outcome under connection failure, surface_ids: [failure-recovery, compatibility-integration]}

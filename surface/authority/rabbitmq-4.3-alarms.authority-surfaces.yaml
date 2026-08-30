@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-alarms
+source_digest: sha256:f8dbb38f401201d31da0f6e7151c9519747c44bd4516ed0d2da05e228366a095
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: alarm.memory, locator: '#memory-alarms', kind: behavior, capability_id: capacity.alarms, behavior_id: alarm.memory, title: Memory watermark alarm and publisher blocking, surface_ids: [failure-recovery, operations-observability, performance-capacity-cost]}
+- {id: alarm.disk, locator: '#disk-alarms', kind: behavior, capability_id: capacity.alarms, behavior_id: alarm.disk, title: Disk free space alarm and publisher blocking, surface_ids: [failure-recovery, operations-observability, performance-capacity-cost]}
+- {id: alarm.cluster-wide, locator: '#alarms-in-clusters', kind: behavior, capability_id: capacity.alarms, behavior_id: alarm.cluster-wide, title: Cluster-wide resource alarm propagation, surface_ids: [foundations-mechanics, failure-recovery]}
+- {id: alarm.recovery, locator: '#resource-alarm-effects', kind: behavior, capability_id: capacity.alarms, behavior_id: alarm.recovery, title: Publisher flow recovery after alarm clearance, surface_ids: [testing-verification, failure-recovery]}

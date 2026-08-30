@@ -1,0 +1,11 @@
+schema_version: 2
+source_id: rabbitmq-4.3-exchanges
+source_digest: sha256:a0a6d3fae2073fe28ffe7fd016bbd3830262db554195e670f5dc57a123832f6c
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: exchange.direct, locator: '#direct-exchange', kind: behavior, capability_id: routing.exchange, behavior_id: exchange.direct, title: Direct exchange exact routing-key matching, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: exchange.topic, locator: '#topic-exchange', kind: behavior, capability_id: routing.exchange, behavior_id: exchange.topic, title: Topic exchange wildcard routing, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: exchange.fanout, locator: '#fanout-exchange', kind: behavior, capability_id: routing.exchange, behavior_id: exchange.fanout, title: Fanout exchange broadcast routing, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: exchange.headers, locator: '#headers-exchange', kind: behavior, capability_id: routing.exchange, behavior_id: exchange.headers, title: Headers exchange argument matching, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: exchange.default, locator: '#default-exchange', kind: behavior, capability_id: routing.exchange, behavior_id: exchange.default, title: Default exchange implicit queue binding, surface_ids: [orientation-scope, implementation-construction]}
+- {id: exchange.alternate, locator: '#alternate-exchanges', kind: behavior, capability_id: routing.exchange, behavior_id: exchange.alternate, title: Alternate exchange unroutable message routing, surface_ids: [failure-recovery, decision-comparison]}

@@ -1,0 +1,3537 @@
+schema_version: 2
+atlas_id: rabbitmq-reference-atlas
+epoch: '2026-08-28'
+authority_lock_digest: sha256:09c7e172622e8ad1dde0401f01e625586f1e9231165f10ab40cd8e60f7ddcb0c
+authority_artifacts:
+- id: rabbitmq-4-3-access-control
+  source_id: rabbitmq-4.3-access-control
+  path: surface/authority/rabbitmq-4.3-access-control.authority-surfaces.yaml
+  digest: sha256:c06845dae727288c466e1eb9ac97bf2ae5f2107f7cfae3d0dbd0477b8beee7c0
+- id: rabbitmq-4-3-alarms
+  source_id: rabbitmq-4.3-alarms
+  path: surface/authority/rabbitmq-4.3-alarms.authority-surfaces.yaml
+  digest: sha256:80cc91962a57e1b7b5c58e2d2a891715a61c98c684d6dce607304f2043836e9c
+- id: rabbitmq-4-3-amqp-1-0
+  source_id: rabbitmq-4.3-amqp-1.0
+  path: surface/authority/rabbitmq-4.3-amqp-1.0.authority-surfaces.yaml
+  digest: sha256:328dc7dae21cb3c0ad3c3c1f3f764b78055e8a3976b74503302ca34bfea281b5
+- id: rabbitmq-4-3-backup
+  source_id: rabbitmq-4.3-backup
+  path: surface/authority/rabbitmq-4.3-backup.authority-surfaces.yaml
+  digest: sha256:29d0d590e00d6a54bdbbfec3f74ba59b962bb9c998c784bfdd4c45850594b0f7
+- id: rabbitmq-4-3-classic-queues
+  source_id: rabbitmq-4.3-classic-queues
+  path: surface/authority/rabbitmq-4.3-classic-queues.authority-surfaces.yaml
+  digest: sha256:b4f492499b176fc0ecc2c29143160dc90c7cd95dea9f0cbf7afa7599d9612670
+- id: rabbitmq-4-3-cli
+  source_id: rabbitmq-4.3-cli
+  path: surface/authority/rabbitmq-4.3-cli.authority-surfaces.yaml
+  digest: sha256:3e3c83be76da5ab5f72dd50cfeca38f2eb0a4bdb04468a0e581799b334a6cc16
+- id: rabbitmq-4-3-clustering
+  source_id: rabbitmq-4.3-clustering
+  path: surface/authority/rabbitmq-4.3-clustering.authority-surfaces.yaml
+  digest: sha256:fc49a0152bbbb04d1c8d7a1882cd6e5530eb696aca68a5540d6931d2e8c0e122
+- id: rabbitmq-4-3-configuration
+  source_id: rabbitmq-4.3-configuration
+  path: surface/authority/rabbitmq-4.3-configuration.authority-surfaces.yaml
+  digest: sha256:1583e7cd1d4b3ced722b4cbaaae7a8c6c0e24a16e5e7952449bced6944857dbf
+- id: rabbitmq-4-3-confirms
+  source_id: rabbitmq-4.3-confirms
+  path: surface/authority/rabbitmq-4.3-confirms.authority-surfaces.yaml
+  digest: sha256:70db2332ed6756d9adf44f40c24376ebfa30ff0f93c4d59cba3e9619e74d56c4
+- id: rabbitmq-4-3-consumers
+  source_id: rabbitmq-4.3-consumers
+  path: surface/authority/rabbitmq-4.3-consumers.authority-surfaces.yaml
+  digest: sha256:a4add1e496e5fdcf127f9d13a1ba24359b515cbd0c561b6bd590690342e00a1c
+- id: rabbitmq-4-3-exchanges
+  source_id: rabbitmq-4.3-exchanges
+  path: surface/authority/rabbitmq-4.3-exchanges.authority-surfaces.yaml
+  digest: sha256:239ba11b03618255a103026bf900901c6e92349d7963a3002068075b5e473cbd
+- id: rabbitmq-4-3-feature-flags
+  source_id: rabbitmq-4.3-feature-flags
+  path: surface/authority/rabbitmq-4.3-feature-flags.authority-surfaces.yaml
+  digest: sha256:8a87a74fb47518cb6fecfd9829cbd4ef8bae134d6b592804ce9f981a03fc3d05
+- id: rabbitmq-4-3-federation
+  source_id: rabbitmq-4.3-federation
+  path: surface/authority/rabbitmq-4.3-federation.authority-surfaces.yaml
+  digest: sha256:7be400d129fd7664d29b3310cea97ba1b505bbdf9632cde218f8f9473a54a193
+- id: rabbitmq-4-3-ldap
+  source_id: rabbitmq-4.3-ldap
+  path: surface/authority/rabbitmq-4.3-ldap.authority-surfaces.yaml
+  digest: sha256:a4b15ef91b10a04a1ec67a820dab029a14d24c32c19cfaaf3fd60435a6d44230
+- id: rabbitmq-4-3-limits
+  source_id: rabbitmq-4.3-limits
+  path: surface/authority/rabbitmq-4.3-limits.authority-surfaces.yaml
+  digest: sha256:344496d47aeac965ffce4a954a0b66fe02d33641359acbef965c30de1c8430c0
+- id: rabbitmq-4-3-management
+  source_id: rabbitmq-4.3-management
+  path: surface/authority/rabbitmq-4.3-management.authority-surfaces.yaml
+  digest: sha256:2b4e650b057a9a2cdac0630f3fc95459407571e58e52f6e985b7a9d9acb49532
+- id: rabbitmq-4-3-monitoring
+  source_id: rabbitmq-4.3-monitoring
+  path: surface/authority/rabbitmq-4.3-monitoring.authority-surfaces.yaml
+  digest: sha256:4433f2dcf37a196c0e30dc91bd08a779cf2b1c183c0d6263c5607447e2d1bf12
+- id: rabbitmq-4-3-mqtt
+  source_id: rabbitmq-4.3-mqtt
+  path: surface/authority/rabbitmq-4.3-mqtt.authority-surfaces.yaml
+  digest: sha256:3a1d140de293a119b882859c6673292fafe893b7cd3abfce97196e76413f2516
+- id: rabbitmq-4-3-oauth2
+  source_id: rabbitmq-4.3-oauth2
+  path: surface/authority/rabbitmq-4.3-oauth2.authority-surfaces.yaml
+  digest: sha256:8517788f26dddfb6a6541d7a27083615f9c2113dfa5b3624e29fe97726c884f1
+- id: rabbitmq-4-3-partitions
+  source_id: rabbitmq-4.3-partitions
+  path: surface/authority/rabbitmq-4.3-partitions.authority-surfaces.yaml
+  digest: sha256:60876028a04433df5a1a5f23885e3fc97bb52dcc3de3dccb3a1930e6082f3968
+- id: rabbitmq-4-3-plugins
+  source_id: rabbitmq-4.3-plugins
+  path: surface/authority/rabbitmq-4.3-plugins.authority-surfaces.yaml
+  digest: sha256:fca5d56be2fc7c05354a9c87a0d41c3914377a54bec58182169c8a4a9aa6c7b7
+- id: rabbitmq-4-3-policies
+  source_id: rabbitmq-4.3-policies
+  path: surface/authority/rabbitmq-4.3-policies.authority-surfaces.yaml
+  digest: sha256:859907bc1db77c64b39849fd07557e1af1ae79ee4f115f1b8722dd238a0691ed
+- id: rabbitmq-4-3-production-checklist
+  source_id: rabbitmq-4.3-production-checklist
+  path: surface/authority/rabbitmq-4.3-production-checklist.authority-surfaces.yaml
+  digest: sha256:33bc47825a13aaf9ceedbd8abc4096862c8aa64ee91856040467b7c67742ec24
+- id: rabbitmq-4-3-prometheus
+  source_id: rabbitmq-4.3-prometheus
+  path: surface/authority/rabbitmq-4.3-prometheus.authority-surfaces.yaml
+  digest: sha256:c6b56587e010ff91ac08f0e2c2777bd14dffe2f2bfb7907832e3b9d1f0d3d7c3
+- id: rabbitmq-4-3-protocols
+  source_id: rabbitmq-4.3-protocols
+  path: surface/authority/rabbitmq-4.3-protocols.authority-surfaces.yaml
+  digest: sha256:007c0a1492ec52d9c37f16b6a1cbfa551058b5d012c32ef009e896f8100ae447
+- id: rabbitmq-4-3-publishers
+  source_id: rabbitmq-4.3-publishers
+  path: surface/authority/rabbitmq-4.3-publishers.authority-surfaces.yaml
+  digest: sha256:8f4dc417a94aa38ab796fc79189c77d3f709d5e31d524e7a52683a46107bfb7b
+- id: rabbitmq-4-3-queues
+  source_id: rabbitmq-4.3-queues
+  path: surface/authority/rabbitmq-4.3-queues.authority-surfaces.yaml
+  digest: sha256:0552f3bb9c4aac9b0afc2adb24017192e1020bcc1c6bd5e379283a7c035f7f81
+- id: rabbitmq-4-3-quorum-queues
+  source_id: rabbitmq-4.3-quorum-queues
+  path: surface/authority/rabbitmq-4.3-quorum-queues.authority-surfaces.yaml
+  digest: sha256:6365027002110903f4b3927dd90ada0f125bc18830d686b76a9e12ec1b2f11d3
+- id: rabbitmq-4-3-shovel
+  source_id: rabbitmq-4.3-shovel
+  path: surface/authority/rabbitmq-4.3-shovel.authority-surfaces.yaml
+  digest: sha256:7e3bd194b9250a149eb733ceca1f105889b51e4ceba993f3af41440fb759610f
+- id: rabbitmq-4-3-stomp
+  source_id: rabbitmq-4.3-stomp
+  path: surface/authority/rabbitmq-4.3-stomp.authority-surfaces.yaml
+  digest: sha256:d6689269824cd9b3a8a0d58dfb1f038e592f175b00eb788fb1f4cd71da146548
+- id: rabbitmq-4-3-stream-plugin
+  source_id: rabbitmq-4.3-stream-plugin
+  path: surface/authority/rabbitmq-4.3-stream-plugin.authority-surfaces.yaml
+  digest: sha256:6c36f0074bc897c6a33663eae2fc706a5a4124afaec95d0fd3b56b229db34804
+- id: rabbitmq-4-3-streams
+  source_id: rabbitmq-4.3-streams
+  path: surface/authority/rabbitmq-4.3-streams.authority-surfaces.yaml
+  digest: sha256:2c9314746339486b5bfee1ba9e1b13abed4fc3c44e1ceaff1edeb569098bee67
+- id: rabbitmq-4-3-tls
+  source_id: rabbitmq-4.3-tls
+  path: surface/authority/rabbitmq-4.3-tls.authority-surfaces.yaml
+  digest: sha256:7847566969369bdfc5b118c5bd3ac3a571e1e7232782af255f575f16da6bb7cb
+- id: rabbitmq-4-3-upgrade
+  source_id: rabbitmq-4.3-upgrade
+  path: surface/authority/rabbitmq-4.3-upgrade.authority-surfaces.yaml
+  digest: sha256:a0743a25780de4d868befca53c0b91cba338b9711ca3c267876b5794bcc0ee6e
+- id: rabbitmq-operator-overview
+  source_id: rabbitmq-operator-overview
+  path: surface/authority/rabbitmq-operator-overview.authority-surfaces.yaml
+  digest: sha256:c4a3b33d643250d514bf8957083224c9d99975ed834283ed5d930083ec5cd198
+- id: rabbitmq-operator-usage
+  source_id: rabbitmq-operator-usage
+  path: surface/authority/rabbitmq-operator-usage.authority-surfaces.yaml
+  digest: sha256:e1a8ad10e928ad3b1bc91889a8e6ea87bd4a70388397ae82db6c0853d4714552
+- id: rabbitmq-topology-operator-usage
+  source_id: rabbitmq-topology-operator-usage
+  path: surface/authority/rabbitmq-topology-operator-usage.authority-surfaces.yaml
+  digest: sha256:eb59b574da70cb0748cc071c4939c305cef9dd7968a80eb93c31b5948ec52146
+items:
+- id: inventory.security.authn-authz-split
+  authority_artifact_id: rabbitmq-4-3-access-control
+  authority_surface_id: security.authn-authz-split
+  locator: '#authentication-and-authorisation-backends'
+  kind: behavior
+  capability_id: security.auth-backends
+  behavior_id: security.authn-authz-split
+  target_id: definitive.security.authn-authz-split
+  title: Pluggable authentication and authorisation separation
+  surface_ids:
+  - foundations-mechanics
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.security.authn-authz-split.claim
+- id: inventory.security.backend-chain
+  authority_artifact_id: rabbitmq-4-3-access-control
+  authority_surface_id: security.backend-chain
+  locator: '#authentication-and-authorisation-backends'
+  kind: capability
+  capability_id: security.auth-backends
+  behavior_id: security.backend-chain
+  target_id: definitive.security.backend-chain
+  title: Ordered backend chaining and fallback
+  surface_ids:
+  - architecture-design
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.security.backend-chain.claim
+- id: inventory.security.vhost-permissions
+  authority_artifact_id: rabbitmq-4-3-access-control
+  authority_surface_id: security.vhost-permissions
+  locator: '#authorisation-how-permissions-work'
+  kind: behavior
+  capability_id: security.permissions
+  behavior_id: security.vhost-permissions
+  target_id: definitive.security.vhost-permissions
+  title: Virtual host configure, write, and read permissions
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.security.vhost-permissions.claim
+- id: inventory.security.topic-permissions
+  authority_artifact_id: rabbitmq-4-3-access-control
+  authority_surface_id: security.topic-permissions
+  locator: '#topic-authorisation'
+  kind: behavior
+  capability_id: security.permissions
+  behavior_id: security.topic-permissions
+  target_id: definitive.security.topic-permissions
+  title: Topic exchange routing-key authorisation
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.security.topic-permissions.claim
+- id: inventory.security.credential-rotation
+  authority_artifact_id: rabbitmq-4-3-access-control
+  authority_surface_id: security.credential-rotation
+  locator: '#credential-management'
+  kind: behavior
+  capability_id: security.credentials
+  behavior_id: security.credential-rotation
+  target_id: definitive.security.credential-rotation
+  title: Credential change and revocation lifecycle
+  surface_ids:
+  - operations-observability
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.security.credential-rotation.claim
+- id: inventory.alarm.memory
+  authority_artifact_id: rabbitmq-4-3-alarms
+  authority_surface_id: alarm.memory
+  locator: '#memory-alarms'
+  kind: behavior
+  capability_id: capacity.alarms
+  behavior_id: alarm.memory
+  target_id: definitive.alarm.memory
+  title: Memory watermark alarm and publisher blocking
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.alarm.memory.claim
+- id: inventory.alarm.disk
+  authority_artifact_id: rabbitmq-4-3-alarms
+  authority_surface_id: alarm.disk
+  locator: '#disk-alarms'
+  kind: behavior
+  capability_id: capacity.alarms
+  behavior_id: alarm.disk
+  target_id: definitive.alarm.disk
+  title: Disk free space alarm and publisher blocking
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.alarm.disk.claim
+- id: inventory.alarm.cluster-wide
+  authority_artifact_id: rabbitmq-4-3-alarms
+  authority_surface_id: alarm.cluster-wide
+  locator: '#alarms-in-clusters'
+  kind: behavior
+  capability_id: capacity.alarms
+  behavior_id: alarm.cluster-wide
+  target_id: definitive.alarm.cluster-wide
+  title: Cluster-wide resource alarm propagation
+  surface_ids:
+  - foundations-mechanics
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.alarm.cluster-wide.claim
+- id: inventory.alarm.recovery
+  authority_artifact_id: rabbitmq-4-3-alarms
+  authority_surface_id: alarm.recovery
+  locator: '#resource-alarm-effects'
+  kind: behavior
+  capability_id: capacity.alarms
+  behavior_id: alarm.recovery
+  target_id: definitive.alarm.recovery
+  title: Publisher flow recovery after alarm clearance
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.alarm.recovery.claim
+- id: inventory.amqp10.version-negotiation
+  authority_artifact_id: rabbitmq-4-3-amqp-1-0
+  authority_surface_id: amqp10.version-negotiation
+  locator: '#version-negotiation'
+  kind: behavior
+  capability_id: protocol.amqp10
+  behavior_id: amqp10.version-negotiation
+  target_id: definitive.amqp10.version-negotiation
+  title: AMQP 1.0 protocol header negotiation and SASL rejection
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.amqp10.version-negotiation.claim
+- id: inventory.amqp10.authentication-options
+  authority_artifact_id: rabbitmq-4-3-amqp-1-0
+  authority_surface_id: amqp10.authentication-options
+  locator: '#authentication-options'
+  kind: capability
+  capability_id: protocol.amqp10
+  behavior_id: amqp10.authentication-options
+  target_id: definitive.amqp10.authentication-options
+  title: Username, OAuth token, and x.509 authentication options
+  surface_ids:
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.amqp10.authentication-options.claim
+- id: inventory.amqp10.protocol-interoperability
+  authority_artifact_id: rabbitmq-4-3-amqp-1-0
+  authority_surface_id: amqp10.protocol-interoperability
+  locator: '#protocol-interoperability'
+  kind: behavior
+  capability_id: protocol.amqp10
+  behavior_id: amqp10.protocol-interoperability
+  target_id: definitive.amqp10.protocol-interoperability
+  title: Native message storage and cross-protocol conversion
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.amqp10.protocol-interoperability.claim
+- id: inventory.amqp10.address-v2
+  authority_artifact_id: rabbitmq-4-3-amqp-1-0
+  authority_surface_id: amqp10.address-v2
+  locator: '#address-v2'
+  kind: behavior
+  capability_id: protocol.amqp10
+  behavior_id: amqp10.address-v2
+  target_id: definitive.amqp10.address-v2
+  title: RabbitMQ AMQP 1.0 address format v2
+  surface_ids:
+  - implementation-construction
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.amqp10.address-v2.claim
+- id: inventory.backup.definitions
+  authority_artifact_id: rabbitmq-4-3-backup
+  authority_surface_id: backup.definitions
+  locator: '#definitions-export-and-import'
+  kind: capability
+  capability_id: recovery.backup
+  behavior_id: backup.definitions
+  target_id: definitive.backup.definitions
+  title: Definition export and import
+  surface_ids:
+  - operations-observability
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.backup.definitions.claim
+- id: inventory.backup.message-data
+  authority_artifact_id: rabbitmq-4-3-backup
+  authority_surface_id: backup.message-data
+  locator: '#message-store-data'
+  kind: capability
+  capability_id: recovery.backup
+  behavior_id: backup.message-data
+  target_id: definitive.backup.message-data
+  title: Message store data backup boundary
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.backup.message-data.claim
+- id: inventory.backup.node-identity
+  authority_artifact_id: rabbitmq-4-3-backup
+  authority_surface_id: backup.node-identity
+  locator: '#node-data-directory'
+  kind: behavior
+  capability_id: recovery.backup
+  behavior_id: backup.node-identity
+  target_id: definitive.backup.node-identity
+  title: Node identity and data directory restore constraint
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.backup.node-identity.claim
+- id: inventory.backup.restore-verification
+  authority_artifact_id: rabbitmq-4-3-backup
+  authority_surface_id: backup.restore-verification
+  locator: '#restoring-from-a-backup'
+  kind: behavior
+  capability_id: recovery.backup
+  behavior_id: backup.restore-verification
+  target_id: definitive.backup.restore-verification
+  title: Restore procedure and post-restore verification
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.backup.restore-verification.claim
+- id: inventory.classic-queue.durability
+  authority_artifact_id: rabbitmq-4-3-classic-queues
+  authority_surface_id: classic-queue.durability
+  locator: '#durability'
+  kind: behavior
+  capability_id: queue.classic
+  behavior_id: classic-queue.durability
+  target_id: definitive.classic-queue.durability
+  title: Classic queue durability and restart behavior
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.classic-queue.durability.claim
+- id: inventory.classic-queue.priority
+  authority_artifact_id: rabbitmq-4-3-classic-queues
+  authority_surface_id: classic-queue.priority
+  locator: '#priority-queues'
+  kind: capability
+  capability_id: queue.classic
+  behavior_id: classic-queue.priority
+  target_id: definitive.classic-queue.priority
+  title: Classic queue message priority
+  surface_ids:
+  - implementation-construction
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.classic-queue.priority.claim
+- id: inventory.classic-queue.overflow
+  authority_artifact_id: rabbitmq-4-3-classic-queues
+  authority_surface_id: classic-queue.overflow
+  locator: '#queue-and-message-ttl'
+  kind: behavior
+  capability_id: queue.classic
+  behavior_id: classic-queue.overflow
+  target_id: definitive.classic-queue.overflow
+  title: Classic queue length TTL and overflow behavior
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.classic-queue.overflow.claim
+- id: inventory.classic-queue.exclusive-auto-delete
+  authority_artifact_id: rabbitmq-4-3-classic-queues
+  authority_surface_id: classic-queue.exclusive-auto-delete
+  locator: '#exclusive-and-auto-delete-queues'
+  kind: behavior
+  capability_id: queue.classic
+  behavior_id: classic-queue.exclusive-auto-delete
+  target_id: definitive.classic-queue.exclusive-auto-delete
+  title: Exclusive and auto-delete queue lifecycle
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.classic-queue.exclusive-auto-delete.claim
+- id: inventory.cli.rabbitmqctl
+  authority_artifact_id: rabbitmq-4-3-cli
+  authority_surface_id: cli.rabbitmqctl
+  locator: '#rabbitmqctl'
+  kind: capability
+  capability_id: management.cli
+  behavior_id: cli.rabbitmqctl
+  target_id: definitive.cli.rabbitmqctl
+  title: rabbitmqctl administrative operations
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.cli.rabbitmqctl.claim
+- id: inventory.cli.rabbitmq-diagnostics
+  authority_artifact_id: rabbitmq-4-3-cli
+  authority_surface_id: cli.rabbitmq-diagnostics
+  locator: '#rabbitmq-diagnostics'
+  kind: capability
+  capability_id: management.cli
+  behavior_id: cli.rabbitmq-diagnostics
+  target_id: definitive.cli.rabbitmq-diagnostics
+  title: rabbitmq-diagnostics health and diagnostic operations
+  surface_ids:
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.cli.rabbitmq-diagnostics.claim
+- id: inventory.cli.rabbitmq-plugins
+  authority_artifact_id: rabbitmq-4-3-cli
+  authority_surface_id: cli.rabbitmq-plugins
+  locator: '#rabbitmq-plugins'
+  kind: capability
+  capability_id: management.cli
+  behavior_id: cli.rabbitmq-plugins
+  target_id: definitive.cli.rabbitmq-plugins
+  title: rabbitmq-plugins lifecycle operations
+  surface_ids:
+  - implementation-construction
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.cli.rabbitmq-plugins.claim
+- id: inventory.cli.exit-timeout
+  authority_artifact_id: rabbitmq-4-3-cli
+  authority_surface_id: cli.exit-timeout
+  locator: '#common-options'
+  kind: behavior
+  capability_id: management.cli
+  behavior_id: cli.exit-timeout
+  target_id: definitive.cli.exit-timeout
+  title: CLI node selection timeout exit and output contracts
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.cli.exit-timeout.claim
+- id: inventory.cluster.membership
+  authority_artifact_id: rabbitmq-4-3-clustering
+  authority_surface_id: cluster.membership
+  locator: '#cluster-formation-requirements'
+  kind: capability
+  capability_id: cluster.membership
+  behavior_id: cluster.membership
+  target_id: definitive.cluster.membership
+  title: RabbitMQ node cluster membership and identity
+  surface_ids:
+  - foundations-mechanics
+  - implementation-construction
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.cluster.membership.claim
+- id: inventory.cluster.metadata-replication
+  authority_artifact_id: rabbitmq-4-3-clustering
+  authority_surface_id: cluster.metadata-replication
+  locator: '#what-is-replicated'
+  kind: behavior
+  capability_id: cluster.membership
+  behavior_id: cluster.metadata-replication
+  target_id: definitive.cluster.metadata-replication
+  title: Cluster metadata replication boundary
+  surface_ids:
+  - foundations-mechanics
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.cluster.metadata-replication.claim
+- id: inventory.cluster.client-connection
+  authority_artifact_id: rabbitmq-4-3-clustering
+  authority_surface_id: cluster.client-connection
+  locator: '#client-connections'
+  kind: behavior
+  capability_id: cluster.client
+  behavior_id: cluster.client-connection
+  target_id: definitive.cluster.client-connection
+  title: Client node selection and reconnection boundary
+  surface_ids:
+  - architecture-design
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.cluster.client-connection.claim
+- id: inventory.cluster.node-removal
+  authority_artifact_id: rabbitmq-4-3-clustering
+  authority_surface_id: cluster.node-removal
+  locator: '#removing-nodes-from-a-cluster'
+  kind: behavior
+  capability_id: cluster.membership
+  behavior_id: cluster.node-removal
+  target_id: definitive.cluster.node-removal
+  title: Safe node removal and rejoin lifecycle
+  surface_ids:
+  - operations-observability
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.cluster.node-removal.claim
+- id: inventory.configuration.rabbitmq-conf
+  authority_artifact_id: rabbitmq-4-3-configuration
+  authority_surface_id: configuration.rabbitmq-conf
+  locator: '#the-main-configuration-file-rabbitmqconf'
+  kind: capability
+  capability_id: configuration.files
+  behavior_id: configuration.rabbitmq-conf
+  target_id: definitive.configuration.rabbitmq-conf
+  title: rabbitmq.conf primary configuration file
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.configuration.rabbitmq-conf.claim
+- id: inventory.configuration.advanced-config
+  authority_artifact_id: rabbitmq-4-3-configuration
+  authority_surface_id: configuration.advanced-config
+  locator: '#the-advanced-config-file'
+  kind: capability
+  capability_id: configuration.files
+  behavior_id: configuration.advanced-config
+  target_id: definitive.configuration.advanced-config
+  title: advanced.config Erlang term configuration
+  surface_ids:
+  - implementation-construction
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.configuration.advanced-config.claim
+- id: inventory.configuration.environment
+  authority_artifact_id: rabbitmq-4-3-configuration
+  authority_surface_id: configuration.environment
+  locator: '#customise-rabbitmq-environment-variables'
+  kind: behavior
+  capability_id: configuration.environment
+  behavior_id: configuration.environment
+  target_id: definitive.configuration.environment
+  title: Environment variable based node configuration
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.configuration.environment.claim
+- id: inventory.configuration.reload-boundary
+  authority_artifact_id: rabbitmq-4-3-configuration
+  authority_surface_id: configuration.reload-boundary
+  locator: '#configuration-file-changes-and-node-restarts'
+  kind: behavior
+  capability_id: configuration.files
+  behavior_id: configuration.reload-boundary
+  target_id: definitive.configuration.reload-boundary
+  title: Restart and dynamic configuration boundary
+  surface_ids:
+  - testing-verification
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.configuration.reload-boundary.claim
+- id: inventory.delivery.consumer-ack
+  authority_artifact_id: rabbitmq-4-3-confirms
+  authority_surface_id: delivery.consumer-ack
+  locator: '#consumer-delivery-acknowledgements'
+  kind: behavior
+  capability_id: delivery.acknowledgement
+  behavior_id: delivery.consumer-ack
+  target_id: definitive.delivery.consumer-ack
+  title: Manual consumer delivery acknowledgement
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.delivery.consumer-ack.claim
+- id: inventory.delivery.negative-ack
+  authority_artifact_id: rabbitmq-4-3-confirms
+  authority_surface_id: delivery.negative-ack
+  locator: '#negative-acknowledgement-and-requeuing-of-deliveries'
+  kind: behavior
+  capability_id: delivery.acknowledgement
+  behavior_id: delivery.negative-ack
+  target_id: definitive.delivery.negative-ack
+  title: Reject nack and requeue redelivery behavior
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.delivery.negative-ack.claim
+- id: inventory.delivery.prefetch
+  authority_artifact_id: rabbitmq-4-3-confirms
+  authority_surface_id: delivery.prefetch
+  locator: '#channel-prefetch-setting-qos'
+  kind: behavior
+  capability_id: delivery.flow-control
+  behavior_id: delivery.prefetch
+  target_id: definitive.delivery.prefetch
+  title: Consumer prefetch and unacknowledged delivery bound
+  surface_ids:
+  - testing-verification
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.delivery.prefetch.claim
+- id: inventory.delivery.publisher-confirms
+  authority_artifact_id: rabbitmq-4-3-confirms
+  authority_surface_id: delivery.publisher-confirms
+  locator: '#publisher-confirms'
+  kind: behavior
+  capability_id: delivery.publisher-confirm
+  behavior_id: delivery.publisher-confirms
+  target_id: definitive.delivery.publisher-confirms
+  title: Publisher confirm acknowledgement and nack boundary
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.delivery.publisher-confirms.claim
+- id: inventory.consumer.lifecycle
+  authority_artifact_id: rabbitmq-4-3-consumers
+  authority_surface_id: consumer.lifecycle
+  locator: '#consumer-lifecycle'
+  kind: behavior
+  capability_id: consumer.lifecycle
+  behavior_id: consumer.lifecycle
+  target_id: definitive.consumer.lifecycle
+  title: Consumer registration and cancellation lifecycle
+  surface_ids:
+  - implementation-construction
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.consumer.lifecycle.claim
+- id: inventory.consumer.priority
+  authority_artifact_id: rabbitmq-4-3-consumers
+  authority_surface_id: consumer.priority
+  locator: '#consumer-priority'
+  kind: behavior
+  capability_id: consumer.lifecycle
+  behavior_id: consumer.priority
+  target_id: definitive.consumer.priority
+  title: Consumer priority dispatch behavior
+  surface_ids:
+  - testing-verification
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.consumer.priority.claim
+- id: inventory.consumer.exclusive
+  authority_artifact_id: rabbitmq-4-3-consumers
+  authority_surface_id: consumer.exclusive
+  locator: '#exclusivity'
+  kind: behavior
+  capability_id: consumer.lifecycle
+  behavior_id: consumer.exclusive
+  target_id: definitive.consumer.exclusive
+  title: Exclusive consumer rejection and ownership
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.consumer.exclusive.claim
+- id: inventory.consumer.ack-timeout
+  authority_artifact_id: rabbitmq-4-3-consumers
+  authority_surface_id: consumer.ack-timeout
+  locator: '#delivery-acknowledgement-timeout'
+  kind: behavior
+  capability_id: consumer.lifecycle
+  behavior_id: consumer.ack-timeout
+  target_id: definitive.consumer.ack-timeout
+  title: Delivery acknowledgement timeout enforcement
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.consumer.ack-timeout.claim
+- id: inventory.client.connection-recovery
+  authority_artifact_id: rabbitmq-4-3-consumers
+  authority_surface_id: consumer.connection-recovery
+  locator: '#connection-recovery'
+  kind: behavior
+  capability_id: client.recovery
+  behavior_id: client.connection-recovery
+  target_id: definitive.client.connection-recovery
+  title: Client connection and consumer recovery responsibility
+  surface_ids:
+  - failure-recovery
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.client.connection-recovery.claim
+- id: inventory.exchange.direct
+  authority_artifact_id: rabbitmq-4-3-exchanges
+  authority_surface_id: exchange.direct
+  locator: '#direct-exchange'
+  kind: behavior
+  capability_id: routing.exchange
+  behavior_id: exchange.direct
+  target_id: definitive.exchange.direct
+  title: Direct exchange exact routing-key matching
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.exchange.direct.claim
+- id: inventory.exchange.topic
+  authority_artifact_id: rabbitmq-4-3-exchanges
+  authority_surface_id: exchange.topic
+  locator: '#topic-exchange'
+  kind: behavior
+  capability_id: routing.exchange
+  behavior_id: exchange.topic
+  target_id: definitive.exchange.topic
+  title: Topic exchange wildcard routing
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.exchange.topic.claim
+- id: inventory.exchange.fanout
+  authority_artifact_id: rabbitmq-4-3-exchanges
+  authority_surface_id: exchange.fanout
+  locator: '#fanout-exchange'
+  kind: behavior
+  capability_id: routing.exchange
+  behavior_id: exchange.fanout
+  target_id: definitive.exchange.fanout
+  title: Fanout exchange broadcast routing
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.exchange.fanout.claim
+- id: inventory.exchange.headers
+  authority_artifact_id: rabbitmq-4-3-exchanges
+  authority_surface_id: exchange.headers
+  locator: '#headers-exchange'
+  kind: behavior
+  capability_id: routing.exchange
+  behavior_id: exchange.headers
+  target_id: definitive.exchange.headers
+  title: Headers exchange argument matching
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.exchange.headers.claim
+- id: inventory.exchange.default
+  authority_artifact_id: rabbitmq-4-3-exchanges
+  authority_surface_id: exchange.default
+  locator: '#default-exchange'
+  kind: behavior
+  capability_id: routing.exchange
+  behavior_id: exchange.default
+  target_id: definitive.exchange.default
+  title: Default exchange implicit queue binding
+  surface_ids:
+  - orientation-scope
+  - implementation-construction
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.exchange.default.claim
+- id: inventory.exchange.alternate
+  authority_artifact_id: rabbitmq-4-3-exchanges
+  authority_surface_id: exchange.alternate
+  locator: '#alternate-exchanges'
+  kind: behavior
+  capability_id: routing.exchange
+  behavior_id: exchange.alternate
+  target_id: definitive.exchange.alternate
+  title: Alternate exchange unroutable message routing
+  surface_ids:
+  - failure-recovery
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.exchange.alternate.claim
+- id: inventory.feature-flags.compatibility
+  authority_artifact_id: rabbitmq-4-3-feature-flags
+  authority_surface_id: feature-flags.compatibility
+  locator: '#feature-flags-and-rabbitmq-versions'
+  kind: behavior
+  capability_id: migration.feature-flags
+  behavior_id: feature-flags.compatibility
+  target_id: definitive.feature-flags.compatibility
+  title: Node version compatibility through feature flags
+  surface_ids:
+  - compatibility-integration
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.feature-flags.compatibility.claim
+- id: inventory.feature-flags.enablement
+  authority_artifact_id: rabbitmq-4-3-feature-flags
+  authority_surface_id: feature-flags.enablement
+  locator: '#how-to-enable-feature-flags'
+  kind: behavior
+  capability_id: migration.feature-flags
+  behavior_id: feature-flags.enablement
+  target_id: definitive.feature-flags.enablement
+  title: Feature flag enablement lifecycle
+  surface_ids:
+  - implementation-construction
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.feature-flags.enablement.claim
+- id: inventory.feature-flags.irreversibility
+  authority_artifact_id: rabbitmq-4-3-feature-flags
+  authority_surface_id: feature-flags.irreversibility
+  locator: '#feature-flag-states'
+  kind: behavior
+  capability_id: migration.feature-flags
+  behavior_id: feature-flags.irreversibility
+  target_id: definitive.feature-flags.irreversibility
+  title: Enabled feature flag rollback boundary
+  surface_ids:
+  - failure-recovery
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.feature-flags.irreversibility.claim
+- id: inventory.federation.exchange
+  authority_artifact_id: rabbitmq-4-3-federation
+  authority_surface_id: federation.exchange
+  locator: '#federated-exchanges'
+  kind: capability
+  capability_id: crosscluster.federation
+  behavior_id: federation.exchange
+  target_id: definitive.federation.exchange
+  title: Federated exchanges across independent clusters
+  surface_ids:
+  - architecture-design
+  - implementation-construction
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.federation.exchange.claim
+- id: inventory.federation.queue
+  authority_artifact_id: rabbitmq-4-3-federation
+  authority_surface_id: federation.queue
+  locator: '#federated-queues'
+  kind: capability
+  capability_id: crosscluster.federation
+  behavior_id: federation.queue
+  target_id: definitive.federation.queue
+  title: Federated queues across independent clusters
+  surface_ids:
+  - architecture-design
+  - implementation-construction
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.federation.queue.claim
+- id: inventory.federation.link-recovery
+  authority_artifact_id: rabbitmq-4-3-federation
+  authority_surface_id: federation.link-recovery
+  locator: '#federation-links'
+  kind: behavior
+  capability_id: crosscluster.federation
+  behavior_id: federation.link-recovery
+  target_id: definitive.federation.link-recovery
+  title: Federation link status, disconnect, and recovery
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.federation.link-recovery.claim
+- id: inventory.federation.topology-boundary
+  authority_artifact_id: rabbitmq-4-3-federation
+  authority_surface_id: federation.topology-boundary
+  locator: '#federation-plugin'
+  kind: behavior
+  capability_id: crosscluster.federation
+  behavior_id: federation.topology-boundary
+  target_id: definitive.federation.topology-boundary
+  title: Federation topology and coupling boundary
+  surface_ids:
+  - orientation-scope
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.federation.topology-boundary.claim
+- id: inventory.ldap.authentication
+  authority_artifact_id: rabbitmq-4-3-ldap
+  authority_surface_id: ldap.authentication
+  locator: '#authentication'
+  kind: behavior
+  capability_id: security.ldap
+  behavior_id: ldap.authentication
+  target_id: definitive.ldap.authentication
+  title: LDAP user lookup and bind authentication
+  surface_ids:
+  - implementation-construction
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.ldap.authentication.claim
+- id: inventory.ldap.authorization
+  authority_artifact_id: rabbitmq-4-3-ldap
+  authority_surface_id: ldap.authorization
+  locator: '#authorisation'
+  kind: behavior
+  capability_id: security.ldap
+  behavior_id: ldap.authorization
+  target_id: definitive.ldap.authorization
+  title: LDAP vhost resource and topic authorization queries
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.ldap.authorization.claim
+- id: inventory.ldap.tls
+  authority_artifact_id: rabbitmq-4-3-ldap
+  authority_surface_id: ldap.tls
+  locator: '#using-tls'
+  kind: behavior
+  capability_id: security.ldap
+  behavior_id: ldap.tls
+  target_id: definitive.ldap.tls
+  title: TLS protected LDAP backend connection
+  surface_ids:
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.ldap.tls.claim
+- id: inventory.ldap.outage
+  authority_artifact_id: rabbitmq-4-3-ldap
+  authority_surface_id: ldap.outage
+  locator: '#troubleshooting'
+  kind: behavior
+  capability_id: security.ldap
+  behavior_id: ldap.outage
+  target_id: definitive.ldap.outage
+  title: LDAP timeout outage and diagnostic behavior
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.ldap.outage.claim
+- id: inventory.limit.connections-channels
+  authority_artifact_id: rabbitmq-4-3-limits
+  authority_surface_id: limit.connections-channels
+  locator: '#per-node-limits'
+  kind: behavior
+  capability_id: capacity.limits
+  behavior_id: limit.connections-channels
+  target_id: definitive.limit.connections-channels
+  title: Per-node connection and channel limits
+  surface_ids:
+  - testing-verification
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.limit.connections-channels.claim
+- id: inventory.limit.queues
+  authority_artifact_id: rabbitmq-4-3-limits
+  authority_surface_id: limit.queues
+  locator: '#per-virtual-host-limits'
+  kind: behavior
+  capability_id: capacity.limits
+  behavior_id: limit.queues
+  target_id: definitive.limit.queues
+  title: Per-virtual-host queue and connection limits
+  surface_ids:
+  - security-privacy-safety
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.limit.queues.claim
+- id: inventory.limit.message-size
+  authority_artifact_id: rabbitmq-4-3-limits
+  authority_surface_id: limit.message-size
+  locator: '#message-size'
+  kind: behavior
+  capability_id: capacity.limits
+  behavior_id: limit.message-size
+  target_id: definitive.limit.message-size
+  title: Maximum message size rejection boundary
+  surface_ids:
+  - testing-verification
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.limit.message-size.claim
+- id: inventory.management.http-api
+  authority_artifact_id: rabbitmq-4-3-management
+  authority_surface_id: management.http-api
+  locator: '#http-api'
+  kind: capability
+  capability_id: management.http-api
+  behavior_id: management.http-api
+  target_id: definitive.management.http-api
+  title: Management HTTP API resource and monitoring operations
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.management.http-api.claim
+- id: inventory.management.authorization
+  authority_artifact_id: rabbitmq-4-3-management
+  authority_surface_id: management.authorization
+  locator: '#access-and-permissions'
+  kind: behavior
+  capability_id: management.http-api
+  behavior_id: management.authorization
+  target_id: definitive.management.authorization
+  title: Management user tag and permission boundary
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.management.authorization.claim
+- id: inventory.management.metrics-cost
+  authority_artifact_id: rabbitmq-4-3-management
+  authority_surface_id: management.metrics-cost
+  locator: '#management-database'
+  kind: behavior
+  capability_id: management.metrics
+  behavior_id: management.metrics-cost
+  target_id: definitive.management.metrics-cost
+  title: Management statistics collection and resource cost
+  surface_ids:
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.management.metrics-cost.claim
+- id: inventory.management.oauth
+  authority_artifact_id: rabbitmq-4-3-management
+  authority_surface_id: management.oauth
+  locator: '#oauth-20-authentication'
+  kind: capability
+  capability_id: management.oauth
+  behavior_id: management.oauth
+  target_id: definitive.management.oauth
+  title: Management UI OAuth 2.0 authentication
+  surface_ids:
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.management.oauth.claim
+- id: inventory.monitoring.node-health
+  authority_artifact_id: rabbitmq-4-3-monitoring
+  authority_surface_id: monitoring.node-health
+  locator: '#health-checks'
+  kind: behavior
+  capability_id: observability.monitoring
+  behavior_id: monitoring.node-health
+  target_id: definitive.monitoring.node-health
+  title: Node and cluster health checks
+  surface_ids:
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.monitoring.node-health.claim
+- id: inventory.monitoring.logs
+  authority_artifact_id: rabbitmq-4-3-monitoring
+  authority_surface_id: monitoring.logs
+  locator: '#logs'
+  kind: behavior
+  capability_id: observability.monitoring
+  behavior_id: monitoring.logs
+  target_id: definitive.monitoring.logs
+  title: RabbitMQ log collection and interpretation
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.monitoring.logs.claim
+- id: inventory.monitoring.metrics
+  authority_artifact_id: rabbitmq-4-3-monitoring
+  authority_surface_id: monitoring.metrics
+  locator: '#metrics'
+  kind: behavior
+  capability_id: observability.monitoring
+  behavior_id: monitoring.metrics
+  target_id: definitive.monitoring.metrics
+  title: Broker client queue and system metrics
+  surface_ids:
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.monitoring.metrics.claim
+- id: inventory.monitoring.correlation
+  authority_artifact_id: rabbitmq-4-3-monitoring
+  authority_surface_id: monitoring.correlation
+  locator: '#what-to-monitor'
+  kind: behavior
+  capability_id: observability.monitoring
+  behavior_id: monitoring.correlation
+  target_id: definitive.monitoring.correlation
+  title: Infrastructure broker and application signal correlation
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.monitoring.correlation.claim
+- id: inventory.mqtt.protocol-versions-qos
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.protocol-versions-qos
+  locator: '#supported-mqtt-features'
+  kind: capability
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.protocol-versions-qos
+  target_id: definitive.mqtt.protocol-versions-qos
+  title: MQTT 3.1, 3.1.1, 5.0 and QoS 0/1 behavior
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.protocol-versions-qos.claim
+- id: inventory.mqtt.message-expiry-will-retained
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.message-lifecycle-features
+  locator: '#supported-mqtt-features'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.message-expiry-will-retained
+  target_id: definitive.mqtt.message-expiry-will-retained
+  title: MQTT expiry, will, retained message, and subscription option behavior
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.message-expiry-will-retained.claim
+- id: inventory.mqtt.cross-protocol-routing
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.cross-protocol-routing
+  locator: '#how-the-mqtt-plugin-works'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.cross-protocol-routing
+  target_id: definitive.mqtt.cross-protocol-routing
+  title: MQTT interoperability with AMQP 0-9-1, AMQP 1.0, and STOMP
+  surface_ids:
+  - architecture-design
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.cross-protocol-routing.claim
+- id: inventory.mqtt.session-queue-cardinality
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.session-queue-cardinality
+  locator: '#mapping-mqtt-to-the-amqp-091-model'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.session-queue-cardinality
+  target_id: definitive.mqtt.session-queue-cardinality
+  title: Subscriber session creation of zero, one, or two QoS queues
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.session-queue-cardinality.claim
+- id: inventory.mqtt.session-expiry-clean
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.session-expiry
+  locator: '#queue-properties-and-arguments'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.session-expiry-clean
+  target_id: definitive.mqtt.session-expiry-clean
+  title: Clean session, session expiry, queue TTL, and state deletion boundary
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.session-expiry-clean.claim
+- id: inventory.mqtt.topic-translation
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.topic-translation
+  locator: '#topic-level-separator-and-wildcards'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.topic-translation
+  target_id: definitive.mqtt.topic-translation
+  title: MQTT slash and wildcard translation to AMQP topic routing
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.topic-translation.claim
+- id: inventory.mqtt.durable-quorum-boundary
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.durable-quorum
+  locator: '#using-quorum-queues'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.durable-quorum-boundary
+  target_id: definitive.mqtt.durable-quorum-boundary
+  title: Durable MQTT subscription quorum queue opt-in and mismatch rejection
+  surface_ids:
+  - architecture-design
+  - testing-verification
+  - migration-evolution-deprecation
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.durable-quorum-boundary.claim
+- id: inventory.mqtt.qos0-queue
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.qos0-queue
+  locator: '#mqtt-qos-0-queue-type'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.qos0-queue
+  target_id: definitive.mqtt.qos0-queue
+  title: MQTT QoS 0 pseudo-queue online-only delivery semantics
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - performance-capacity-cost
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.qos0-queue.claim
+- id: inventory.mqtt.qos0-overload-drop
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.qos0-overload
+  locator: '#overload-protection'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.qos0-overload-drop
+  target_id: definitive.mqtt.qos0-overload-drop
+  title: MQTT QoS 0 mailbox soft limit drop and metric behavior
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.qos0-overload-drop.claim
+- id: inventory.mqtt.authentication-anonymous
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.authentication
+  locator: '#users-and-access'
+  kind: behavior
+  capability_id: security.mqtt
+  behavior_id: mqtt.authentication-anonymous
+  target_id: definitive.mqtt.authentication-anonymous
+  title: MQTT credential, remote guest, and anonymous connection rejection
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.authentication-anonymous.claim
+- id: inventory.mqtt.authorization
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.authorization
+  locator: '#authorization-and-queue-permissions'
+  kind: behavior
+  capability_id: security.mqtt
+  behavior_id: mqtt.authorization
+  target_id: definitive.mqtt.authorization
+  title: MQTT exchange, queue, and topic authorization boundaries
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.authorization.claim
+- id: inventory.mqtt.listener-tls
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.listener-tls
+  locator: '#tls-support'
+  kind: capability
+  capability_id: security.mqtt
+  behavior_id: mqtt.listener-tls
+  target_id: definitive.mqtt.listener-tls
+  title: MQTT TCP and TLS listener transport behavior
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.listener-tls.claim
+- id: inventory.mqtt.vhost-precedence
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.vhost-precedence
+  locator: '#virtual-hosts'
+  kind: behavior
+  capability_id: protocol.mqtt
+  behavior_id: mqtt.vhost-precedence
+  target_id: definitive.mqtt.vhost-precedence
+  title: MQTT username, port mapping, and default virtual host precedence
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.vhost-precedence.claim
+- id: inventory.mqtt.x509-authentication
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.x509-authentication
+  locator: '#authentication-with-tlsx509-client-certificates'
+  kind: behavior
+  capability_id: security.mqtt
+  behavior_id: mqtt.x509-authentication
+  target_id: definitive.mqtt.x509-authentication
+  title: MQTT mutual TLS x.509 identity extraction and user lookup
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.x509-authentication.claim
+- id: inventory.mqtt.metrics-capacity
+  authority_artifact_id: rabbitmq-4-3-mqtt
+  authority_surface_id: mqtt.metrics-capacity
+  locator: '#metrics'
+  kind: capability
+  capability_id: observability.mqtt
+  behavior_id: mqtt.metrics-capacity
+  target_id: definitive.mqtt.metrics-capacity
+  title: MQTT connection, delivery, drop, and capacity telemetry
+  surface_ids:
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.mqtt.metrics-capacity.claim
+- id: inventory.oauth2.jwt-validation
+  authority_artifact_id: rabbitmq-4-3-oauth2
+  authority_surface_id: oauth2.jwt-validation
+  locator: '#how-it-works'
+  kind: behavior
+  capability_id: security.oauth2
+  behavior_id: oauth2.jwt-validation
+  target_id: definitive.oauth2.jwt-validation
+  title: JWT signature, issuer, audience, and lifetime validation
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.oauth2.jwt-validation.claim
+- id: inventory.oauth2.scope-mapping
+  authority_artifact_id: rabbitmq-4-3-oauth2
+  authority_surface_id: oauth2.scope-mapping
+  locator: '#scope-based-authorisation'
+  kind: behavior
+  capability_id: security.oauth2
+  behavior_id: oauth2.scope-mapping
+  target_id: definitive.oauth2.scope-mapping
+  title: OAuth scopes to RabbitMQ permissions mapping
+  surface_ids:
+  - implementation-construction
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.oauth2.scope-mapping.claim
+- id: inventory.oauth2.key-rotation
+  authority_artifact_id: rabbitmq-4-3-oauth2
+  authority_surface_id: oauth2.key-rotation
+  locator: '#jwks'
+  kind: behavior
+  capability_id: security.oauth2
+  behavior_id: oauth2.key-rotation
+  target_id: definitive.oauth2.key-rotation
+  title: JWKS refresh and signing key rotation
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.oauth2.key-rotation.claim
+- id: inventory.oauth2.multi-resource-server
+  authority_artifact_id: rabbitmq-4-3-oauth2
+  authority_surface_id: oauth2.multi-resource-server
+  locator: '#multiple-resource-servers'
+  kind: capability
+  capability_id: security.oauth2
+  behavior_id: oauth2.multi-resource-server
+  target_id: definitive.oauth2.multi-resource-server
+  title: Multiple OAuth resource server selection
+  surface_ids:
+  - architecture-design
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.oauth2.multi-resource-server.claim
+- id: inventory.partition.detection
+  authority_artifact_id: rabbitmq-4-3-partitions
+  authority_surface_id: partition.detection
+  locator: '#detecting-network-partitions'
+  kind: behavior
+  capability_id: cluster.partition
+  behavior_id: partition.detection
+  target_id: definitive.partition.detection
+  title: Network partition detection and diagnostics
+  surface_ids:
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.partition.detection.claim
+- id: inventory.partition.pause-minority
+  authority_artifact_id: rabbitmq-4-3-partitions
+  authority_surface_id: partition.pause-minority
+  locator: '#pause-minority-mode'
+  kind: behavior
+  capability_id: cluster.partition
+  behavior_id: partition.pause-minority
+  target_id: definitive.partition.pause-minority
+  title: Pause minority partition handling mode
+  surface_ids:
+  - architecture-design
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.partition.pause-minority.claim
+- id: inventory.partition.autoheal
+  authority_artifact_id: rabbitmq-4-3-partitions
+  authority_surface_id: partition.autoheal
+  locator: '#autoheal-mode'
+  kind: behavior
+  capability_id: cluster.partition
+  behavior_id: partition.autoheal
+  target_id: definitive.partition.autoheal
+  title: Autoheal partition handling and data-loss boundary
+  surface_ids:
+  - failure-recovery
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.partition.autoheal.claim
+- id: inventory.partition.recovery
+  authority_artifact_id: rabbitmq-4-3-partitions
+  authority_surface_id: partition.recovery
+  locator: '#recovering-from-a-network-partition'
+  kind: behavior
+  capability_id: cluster.partition
+  behavior_id: partition.recovery
+  target_id: definitive.partition.recovery
+  title: Partition recovery and cluster convergence
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.partition.recovery.claim
+- id: inventory.plugin.discovery
+  authority_artifact_id: rabbitmq-4-3-plugins
+  authority_surface_id: plugin.discovery
+  locator: '#plugin-discovery'
+  kind: behavior
+  capability_id: server.plugins
+  behavior_id: plugin.discovery
+  target_id: definitive.plugin.discovery
+  title: Plugin discovery and dependency resolution
+  surface_ids:
+  - orientation-scope
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.plugin.discovery.claim
+- id: inventory.plugin.enable-disable
+  authority_artifact_id: rabbitmq-4-3-plugins
+  authority_surface_id: plugin.enable-disable
+  locator: '#enabling-plugins'
+  kind: behavior
+  capability_id: server.plugins
+  behavior_id: plugin.enable-disable
+  target_id: definitive.plugin.enable-disable
+  title: Online and offline plugin enablement lifecycle
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.plugin.enable-disable.claim
+- id: inventory.plugin.compatibility
+  authority_artifact_id: rabbitmq-4-3-plugins
+  authority_surface_id: plugin.compatibility
+  locator: '#plugin-versioning'
+  kind: behavior
+  capability_id: server.plugins
+  behavior_id: plugin.compatibility
+  target_id: definitive.plugin.compatibility
+  title: Plugin and server version compatibility
+  surface_ids:
+  - compatibility-integration
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.plugin.compatibility.claim
+- id: inventory.policy.application
+  authority_artifact_id: rabbitmq-4-3-policies
+  authority_surface_id: policy.application
+  locator: '#how-policies-work'
+  kind: behavior
+  capability_id: configuration.policies
+  behavior_id: policy.application
+  target_id: definitive.policy.application
+  title: Policy pattern priority and application
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.policy.application.claim
+- id: inventory.policy.argument-precedence
+  authority_artifact_id: rabbitmq-4-3-policies
+  authority_surface_id: policy.argument-precedence
+  locator: '#optional-arguments-and-policy-defined-key-precedence'
+  kind: behavior
+  capability_id: configuration.policies
+  behavior_id: policy.argument-precedence
+  target_id: definitive.policy.argument-precedence
+  title: Client argument policy and operator policy precedence
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.policy.argument-precedence.claim
+- id: inventory.policy.update
+  authority_artifact_id: rabbitmq-4-3-policies
+  authority_surface_id: policy.update
+  locator: '#updating-policies'
+  kind: behavior
+  capability_id: configuration.policies
+  behavior_id: policy.update
+  target_id: definitive.policy.update
+  title: Runtime policy update and resource effect
+  surface_ids:
+  - operations-observability
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.policy.update.claim
+- id: inventory.production.resource-planning
+  authority_artifact_id: rabbitmq-4-3-production-checklist
+  authority_surface_id: production.resource-planning
+  locator: '#resource-limits'
+  kind: behavior
+  capability_id: system.reference
+  behavior_id: production.resource-planning
+  target_id: definitive.production.resource-planning
+  title: Production resource and capacity planning
+  surface_ids:
+  - architecture-design
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.production.resource-planning.claim
+- id: inventory.production.monitoring
+  authority_artifact_id: rabbitmq-4-3-production-checklist
+  authority_surface_id: production.monitoring
+  locator: '#monitoring'
+  kind: behavior
+  capability_id: system.reference
+  behavior_id: production.monitoring
+  target_id: definitive.production.monitoring
+  title: Production monitoring and alerting baseline
+  surface_ids:
+  - operations-observability
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.production.monitoring.claim
+- id: inventory.production.security
+  authority_artifact_id: rabbitmq-4-3-production-checklist
+  authority_surface_id: production.security
+  locator: '#security'
+  kind: behavior
+  capability_id: system.reference
+  behavior_id: production.security
+  target_id: definitive.production.security
+  title: Production network identity TLS and access baseline
+  surface_ids:
+  - architecture-design
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.production.security.claim
+- id: inventory.production.data-safety
+  authority_artifact_id: rabbitmq-4-3-production-checklist
+  authority_surface_id: production.data-safety
+  locator: '#data-safety'
+  kind: behavior
+  capability_id: system.reference
+  behavior_id: production.data-safety
+  target_id: definitive.production.data-safety
+  title: Production queue replication confirms and recovery baseline
+  surface_ids:
+  - architecture-design
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.production.data-safety.claim
+- id: inventory.prometheus.endpoint
+  authority_artifact_id: rabbitmq-4-3-prometheus
+  authority_surface_id: prometheus.endpoint
+  locator: '#prometheus-endpoint'
+  kind: capability
+  capability_id: observability.prometheus
+  behavior_id: prometheus.endpoint
+  target_id: definitive.prometheus.endpoint
+  title: RabbitMQ Prometheus metrics endpoint
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.prometheus.endpoint.claim
+- id: inventory.prometheus.aggregation
+  authority_artifact_id: rabbitmq-4-3-prometheus
+  authority_surface_id: prometheus.aggregation
+  locator: '#metric-aggregation'
+  kind: behavior
+  capability_id: observability.prometheus
+  behavior_id: prometheus.aggregation
+  target_id: definitive.prometheus.aggregation
+  title: Per-object and aggregated metric tradeoff
+  surface_ids:
+  - operations-observability
+  - performance-capacity-cost
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.prometheus.aggregation.claim
+- id: inventory.prometheus.alerting
+  authority_artifact_id: rabbitmq-4-3-prometheus
+  authority_surface_id: prometheus.alerting
+  locator: '#alerting'
+  kind: behavior
+  capability_id: observability.prometheus
+  behavior_id: prometheus.alerting
+  target_id: definitive.prometheus.alerting
+  title: Prometheus alert rules and diagnostic transition
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.prometheus.alerting.claim
+- id: inventory.protocol.amqp091.core
+  authority_artifact_id: rabbitmq-4-3-protocols
+  authority_surface_id: protocol.amqp091.core
+  locator: '#amqp-0-9-1'
+  kind: capability
+  capability_id: protocol.amqp091
+  behavior_id: protocol.amqp091.core
+  target_id: definitive.protocol.amqp091.core
+  title: AMQP 0-9-1 core protocol and RabbitMQ extensions
+  surface_ids:
+  - orientation-scope
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.protocol.amqp091.core.claim
+- id: inventory.protocol.amqp10.native
+  authority_artifact_id: rabbitmq-4-3-protocols
+  authority_surface_id: protocol.amqp10.core
+  locator: '#amqp-10'
+  kind: capability
+  capability_id: protocol.amqp10
+  behavior_id: protocol.amqp10.native
+  target_id: definitive.protocol.amqp10.native
+  title: Native AMQP 1.0 core protocol
+  surface_ids:
+  - foundations-mechanics
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.protocol.amqp10.native.claim
+- id: inventory.protocol.stream.binary
+  authority_artifact_id: rabbitmq-4-3-protocols
+  authority_surface_id: protocol.stream.plugin
+  locator: '#rabbitmq-streams'
+  kind: capability
+  capability_id: protocol.stream
+  behavior_id: protocol.stream.binary
+  target_id: definitive.protocol.stream.binary
+  title: RabbitMQ Stream binary protocol plugin
+  surface_ids:
+  - implementation-construction
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.protocol.stream.binary.claim
+- id: inventory.protocol.mqtt.native
+  authority_artifact_id: rabbitmq-4-3-protocols
+  authority_surface_id: protocol.mqtt.plugin
+  locator: '#mqtt'
+  kind: capability
+  capability_id: protocol.mqtt
+  behavior_id: protocol.mqtt.native
+  target_id: definitive.protocol.mqtt.native
+  title: MQTT 3.1, 3.1.1, and 5.0 plugin
+  surface_ids:
+  - implementation-construction
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.protocol.mqtt.native.claim
+- id: inventory.protocol.stomp.proxy
+  authority_artifact_id: rabbitmq-4-3-protocols
+  authority_surface_id: protocol.stomp.plugin
+  locator: '#stomp'
+  kind: capability
+  capability_id: protocol.stomp
+  behavior_id: protocol.stomp.proxy
+  target_id: definitive.protocol.stomp.proxy
+  title: STOMP protocol plugin and AMQP 0-9-1 proxy boundary
+  surface_ids:
+  - foundations-mechanics
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.protocol.stomp.proxy.claim
+- id: inventory.protocol.websocket.transports
+  authority_artifact_id: rabbitmq-4-3-protocols
+  authority_surface_id: protocol.websocket.transports
+  locator: '#websocket'
+  kind: capability
+  capability_id: protocol.websocket
+  behavior_id: protocol.websocket.transports
+  target_id: definitive.protocol.websocket.transports
+  title: AMQP 1.0, MQTT, and STOMP over WebSocket
+  surface_ids:
+  - implementation-construction
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.protocol.websocket.transports.claim
+- id: inventory.protocol.http.low-volume-diagnostic
+  authority_artifact_id: rabbitmq-4-3-protocols
+  authority_surface_id: protocol.http.diagnostic
+  locator: '#http'
+  kind: behavior
+  capability_id: protocol.http
+  behavior_id: protocol.http.low-volume-diagnostic
+  target_id: definitive.protocol.http.low-volume-diagnostic
+  title: Management HTTP API low-volume diagnostic messaging boundary
+  surface_ids:
+  - orientation-scope
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.protocol.http.low-volume-diagnostic.claim
+- id: inventory.publisher.unroutable
+  authority_artifact_id: rabbitmq-4-3-publishers
+  authority_surface_id: publisher.unroutable
+  locator: '#unroutable-message-handling'
+  kind: behavior
+  capability_id: publisher.delivery
+  behavior_id: publisher.unroutable
+  target_id: definitive.publisher.unroutable
+  title: Unroutable message return and discard behavior
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.publisher.unroutable.claim
+- id: inventory.publisher.confirm-boundary
+  authority_artifact_id: rabbitmq-4-3-publishers
+  authority_surface_id: publisher.confirm-boundary
+  locator: '#data-safety-on-the-publisher-side'
+  kind: behavior
+  capability_id: publisher.delivery
+  behavior_id: publisher.confirm-boundary
+  target_id: definitive.publisher.confirm-boundary
+  title: Publisher confirm acceptance boundary
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.publisher.confirm-boundary.claim
+- id: inventory.publisher.connection-failure
+  authority_artifact_id: rabbitmq-4-3-publishers
+  authority_surface_id: publisher.connection-failure
+  locator: '#connection-failures'
+  kind: behavior
+  capability_id: publisher.delivery
+  behavior_id: publisher.connection-failure
+  target_id: definitive.publisher.connection-failure
+  title: Publish outcome under connection failure
+  surface_ids:
+  - failure-recovery
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.publisher.connection-failure.claim
+- id: inventory.queue.declaration-equivalence
+  authority_artifact_id: rabbitmq-4-3-queues
+  authority_surface_id: queue.declaration-equivalence
+  locator: '#declaration-and-property-equivalence'
+  kind: behavior
+  capability_id: queue.lifecycle
+  behavior_id: queue.declaration-equivalence
+  target_id: definitive.queue.declaration-equivalence
+  title: Queue redeclaration property equivalence and rejection
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.queue.declaration-equivalence.claim
+- id: inventory.queue.server-named
+  authority_artifact_id: rabbitmq-4-3-queues
+  authority_surface_id: queue.server-named
+  locator: '#server-named-queues'
+  kind: behavior
+  capability_id: queue.lifecycle
+  behavior_id: queue.server-named
+  target_id: definitive.queue.server-named
+  title: Server-named queue declaration and recovery
+  surface_ids:
+  - implementation-construction
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.queue.server-named.claim
+- id: inventory.queue.durability
+  authority_artifact_id: rabbitmq-4-3-queues
+  authority_surface_id: queue.durability
+  locator: '#durability'
+  kind: behavior
+  capability_id: queue.lifecycle
+  behavior_id: queue.durability
+  target_id: definitive.queue.durability
+  title: Queue and message durability boundary
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.queue.durability.claim
+- id: inventory.queue.exclusive
+  authority_artifact_id: rabbitmq-4-3-queues
+  authority_surface_id: queue.exclusive
+  locator: '#exclusive-client-connection-specific-queues'
+  kind: behavior
+  capability_id: queue.lifecycle
+  behavior_id: queue.exclusive
+  target_id: definitive.queue.exclusive
+  title: Connection-scoped exclusive queue ownership
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.queue.exclusive.claim
+- id: inventory.queue.temporary-race
+  authority_artifact_id: rabbitmq-4-3-queues
+  authority_surface_id: queue.temporary-race
+  locator: '#temporary-queues'
+  kind: behavior
+  capability_id: queue.lifecycle
+  behavior_id: queue.temporary-race
+  target_id: definitive.queue.temporary-race
+  title: Auto-delete and exclusive queue recovery race
+  surface_ids:
+  - failure-recovery
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.queue.temporary-race.claim
+- id: inventory.quorum.replication
+  authority_artifact_id: rabbitmq-4-3-quorum-queues
+  authority_surface_id: quorum.replication
+  locator: '#overview'
+  kind: capability
+  capability_id: queue.quorum
+  behavior_id: quorum.replication
+  target_id: definitive.quorum.replication
+  title: Quorum queue Raft replication and majority availability
+  surface_ids:
+  - foundations-mechanics
+  - architecture-design
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.quorum.replication.claim
+- id: inventory.quorum.membership
+  authority_artifact_id: rabbitmq-4-3-quorum-queues
+  authority_surface_id: quorum.membership
+  locator: '#managing-members'
+  kind: behavior
+  capability_id: queue.quorum
+  behavior_id: quorum.membership
+  target_id: definitive.quorum.membership
+  title: Quorum queue replica membership management
+  surface_ids:
+  - operations-observability
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.quorum.membership.claim
+- id: inventory.quorum.delivery-limit
+  authority_artifact_id: rabbitmq-4-3-quorum-queues
+  authority_surface_id: quorum.delivery-limit
+  locator: '#poison-message-handling'
+  kind: behavior
+  capability_id: queue.quorum
+  behavior_id: quorum.delivery-limit
+  target_id: definitive.quorum.delivery-limit
+  title: Delivery limit poison message handling
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.quorum.delivery-limit.claim
+- id: inventory.quorum.dead-letter-safety
+  authority_artifact_id: rabbitmq-4-3-quorum-queues
+  authority_surface_id: quorum.dead-letter-safety
+  locator: '#dead-lettering'
+  kind: behavior
+  capability_id: queue.quorum
+  behavior_id: quorum.dead-letter-safety
+  target_id: definitive.quorum.dead-letter-safety
+  title: Quorum queue at-least-once dead lettering
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.quorum.dead-letter-safety.claim
+- id: inventory.quorum.leader-rebalance
+  authority_artifact_id: rabbitmq-4-3-quorum-queues
+  authority_surface_id: quorum.leader-rebalance
+  locator: '#replica-reconciliation-and-rebalancing'
+  kind: behavior
+  capability_id: queue.quorum
+  behavior_id: quorum.leader-rebalance
+  target_id: definitive.quorum.leader-rebalance
+  title: Quorum replica reconciliation and leader rebalance
+  surface_ids:
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.quorum.leader-rebalance.claim
+- id: inventory.shovel.dynamic
+  authority_artifact_id: rabbitmq-4-3-shovel
+  authority_surface_id: shovel.dynamic
+  locator: '#getting-started'
+  kind: capability
+  capability_id: crosscluster.shovel
+  behavior_id: shovel.dynamic
+  target_id: definitive.shovel.dynamic
+  title: Dynamic Shovel lifecycle through runtime parameters
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.shovel.dynamic.claim
+- id: inventory.shovel.protocol-variants
+  authority_artifact_id: rabbitmq-4-3-shovel
+  authority_surface_id: shovel.protocol-variants
+  locator: '#overview'
+  kind: capability
+  capability_id: crosscluster.shovel
+  behavior_id: shovel.protocol-variants
+  target_id: definitive.shovel.protocol-variants
+  title: AMQP 0-9-1, AMQP 1.0, and local Shovel variants
+  surface_ids:
+  - compatibility-integration
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.shovel.protocol-variants.claim
+- id: inventory.shovel.acknowledgement
+  authority_artifact_id: rabbitmq-4-3-shovel
+  authority_surface_id: shovel.acknowledgement
+  locator: '#acknowledgement-modes'
+  kind: behavior
+  capability_id: crosscluster.shovel
+  behavior_id: shovel.acknowledgement
+  target_id: definitive.shovel.acknowledgement
+  title: Source and destination acknowledgement boundary
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.shovel.acknowledgement.claim
+- id: inventory.shovel.failure-recovery
+  authority_artifact_id: rabbitmq-4-3-shovel
+  authority_surface_id: shovel.failure-recovery
+  locator: '#reconnection-behaviour'
+  kind: behavior
+  capability_id: crosscluster.shovel
+  behavior_id: shovel.failure-recovery
+  target_id: definitive.shovel.failure-recovery
+  title: Source or destination outage and reconnect behavior
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.shovel.failure-recovery.claim
+- id: inventory.stomp.protocol-plugin
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.protocol-plugin
+  locator: '#overview'
+  kind: capability
+  capability_id: protocol.stomp
+  behavior_id: stomp.protocol-plugin
+  target_id: definitive.stomp.protocol-plugin
+  title: STOMP 1.0 through 1.2 plugin protocol negotiation
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.protocol-plugin.claim
+- id: inventory.stomp.listeners-tls
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.listeners-tls
+  locator: '#plugin-configuration'
+  kind: capability
+  capability_id: protocol.stomp
+  behavior_id: stomp.listeners-tls
+  target_id: definitive.stomp.listeners-tls
+  title: STOMP TCP, TLS, Web STOMP, and listener configuration
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.listeners-tls.claim
+- id: inventory.stomp.x509-authentication
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.x509-authentication
+  locator: '#authentication-with-tlsx509-client-certificates'
+  kind: behavior
+  capability_id: security.stomp
+  behavior_id: stomp.x509-authentication
+  target_id: definitive.stomp.x509-authentication
+  title: STOMP mutual TLS x.509 identity extraction
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.x509-authentication.claim
+- id: inventory.stomp.frame-size-limit
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.frame-size-limit
+  locator: '#frame-size-limit'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.frame-size-limit
+  target_id: definitive.stomp.frame-size-limit
+  title: STOMP frame size limit boundary and oversized frame rejection
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.frame-size-limit.claim
+- id: inventory.stomp.exchange-destination
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.exchange-destination
+  locator: '#exchange-destinations'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.exchange-destination
+  target_id: definitive.stomp.exchange-destination
+  title: STOMP exchange destination routing and generated subscription queue
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.exchange-destination.claim
+- id: inventory.stomp.queue-destination
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.queue-destination
+  locator: '#queue-destinations'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.queue-destination
+  target_id: definitive.stomp.queue-destination
+  title: STOMP shared queue destination declaration and at-most-one subscriber delivery
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.queue-destination.claim
+- id: inventory.stomp.amq-queue-destination
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.amq-queue-destination
+  locator: '#amq-queue-destinations'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.amq-queue-destination
+  target_id: definitive.stomp.amq-queue-destination
+  title: STOMP existing AMQP queue destination and missing queue rejection
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.amq-queue-destination.claim
+- id: inventory.stomp.topic-destination
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.topic-destination
+  locator: '#topic-destinations'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.topic-destination
+  target_id: definitive.stomp.topic-destination
+  title: STOMP topic fanout and no-subscriber discard behavior
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.topic-destination.claim
+- id: inventory.stomp.durable-topic-subscription
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.durable-topic
+  locator: '#durable-topic-subscriptions'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.durable-topic-subscription
+  target_id: definitive.stomp.durable-topic-subscription
+  title: STOMP durable topic disconnect and replay semantics
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.durable-topic-subscription.claim
+- id: inventory.stomp.temp-queue
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.temp-queue
+  locator: '#temp-queue-destinations'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.temp-queue
+  target_id: definitive.stomp.temp-queue
+  title: STOMP session-private opaque temporary reply queue lifecycle
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.temp-queue.claim
+- id: inventory.stomp.queue-parameters
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.queue-parameters
+  locator: '#controlling-rabbitmq-queue-parameters-with-stomp'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.queue-parameters
+  target_id: definitive.stomp.queue-parameters
+  title: STOMP queue property declaration equivalence and policy interaction
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.queue-parameters.claim
+- id: inventory.stomp.ack-nack
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.ack-nack
+  locator: '#ack-and-nack'
+  kind: behavior
+  capability_id: delivery.stomp
+  behavior_id: stomp.ack-nack
+  target_id: definitive.stomp.ack-nack
+  title: STOMP auto, client, and client-individual ACK and NACK behavior
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - failure-recovery
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.ack-nack.claim
+- id: inventory.stomp.prefetch
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.prefetch
+  locator: '#prefetch'
+  kind: behavior
+  capability_id: delivery.stomp
+  behavior_id: stomp.prefetch
+  target_id: definitive.stomp.prefetch
+  title: STOMP prefetch count and unacknowledged delivery pressure
+  surface_ids:
+  - testing-verification
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.prefetch.claim
+- id: inventory.stomp.stream-support
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.stream-support
+  locator: '#stream-support'
+  kind: behavior
+  capability_id: protocol.stomp
+  behavior_id: stomp.stream-support
+  target_id: definitive.stomp.stream-support
+  title: STOMP stream subscription offset and credit behavior
+  surface_ids:
+  - testing-verification
+  - compatibility-integration
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.stream-support.claim
+- id: inventory.stomp.connection-vhost
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.connection-vhost
+  locator: '#connection-and-virtual-hosts'
+  kind: behavior
+  capability_id: security.stomp
+  behavior_id: stomp.connection-vhost
+  target_id: definitive.stomp.connection-vhost
+  title: STOMP CONNECT authentication and virtual host selection
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.connection-vhost.claim
+- id: inventory.stomp.persistence
+  authority_artifact_id: rabbitmq-4-3-stomp
+  authority_surface_id: stomp.persistence
+  locator: '#message-persistence'
+  kind: behavior
+  capability_id: delivery.stomp
+  behavior_id: stomp.persistence
+  target_id: definitive.stomp.persistence
+  title: STOMP persistent header mapping to durable RabbitMQ storage
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stomp.persistence.claim
+- id: inventory.stream-plugin.protocol-client
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.protocol-client
+  locator: '#overview'
+  kind: capability
+  capability_id: protocol.stream
+  behavior_id: stream-plugin.protocol-client
+  target_id: definitive.stream-plugin.protocol-client
+  title: RabbitMQ Stream binary protocol and official client contract
+  surface_ids:
+  - foundations-mechanics
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.protocol-client.claim
+- id: inventory.stream-plugin.enablement
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.enablement
+  locator: '#enabling-the-plugin'
+  kind: behavior
+  capability_id: protocol.stream
+  behavior_id: stream-plugin.enablement
+  target_id: definitive.stream-plugin.enablement
+  title: Stream plugin enablement and listener availability
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.enablement.claim
+- id: inventory.stream-plugin.listeners
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.listeners
+  locator: '#tcp-listeners'
+  kind: behavior
+  capability_id: protocol.stream
+  behavior_id: stream-plugin.listeners
+  target_id: definitive.stream-plugin.listeners
+  title: Stream TCP listener address and option configuration
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.listeners.claim
+- id: inventory.stream-plugin.tls
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.tls
+  locator: '#tls-support'
+  kind: behavior
+  capability_id: security.stream
+  behavior_id: stream-plugin.tls
+  target_id: definitive.stream-plugin.tls
+  title: Stream protocol TLS listener and peer verification
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.tls.claim
+- id: inventory.stream-plugin.publisher-credit
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.publisher-credit
+  locator: '#publisher-credit-flow'
+  kind: behavior
+  capability_id: delivery.stream
+  behavior_id: stream-plugin.publisher-credit
+  target_id: definitive.stream-plugin.publisher-credit
+  title: Stream publisher credit flow, batching, and memory trade-off
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.publisher-credit.claim
+- id: inventory.stream-plugin.consumer-credit
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.consumer-credit
+  locator: '#consumer-credit-flow'
+  kind: behavior
+  capability_id: delivery.stream
+  behavior_id: stream-plugin.consumer-credit
+  target_id: definitive.stream-plugin.consumer-credit
+  title: Stream consumer chunk credit and replenishment behavior
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.consumer-credit.claim
+- id: inventory.stream-plugin.authorization
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.authorization
+  locator: '#authentication-and-authorisation'
+  kind: behavior
+  capability_id: security.stream
+  behavior_id: stream-plugin.authorization
+  target_id: definitive.stream-plugin.authorization
+  title: Stream protocol authentication and virtual host permissions
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.authorization.claim
+- id: inventory.stream-plugin.cluster-topology
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.cluster-topology
+  locator: '#connecting-to-streams'
+  kind: behavior
+  capability_id: protocol.stream
+  behavior_id: stream-plugin.cluster-topology
+  target_id: definitive.stream-plugin.cluster-topology
+  title: Stream leader and replica topology discovery across three nodes
+  surface_ids:
+  - architecture-design
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.cluster-topology.claim
+- id: inventory.stream-plugin.load-balancer-locality
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.load-balancer-locality
+  locator: '#using-a-load-balancer'
+  kind: behavior
+  capability_id: protocol.stream
+  behavior_id: stream-plugin.load-balancer-locality
+  target_id: definitive.stream-plugin.load-balancer-locality
+  title: Stream load balancer reconnect for leader and replica locality
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - performance-capacity-cost
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.load-balancer-locality.claim
+- id: inventory.stream-plugin.metrics-performance
+  authority_artifact_id: rabbitmq-4-3-stream-plugin
+  authority_surface_id: stream-plugin.metrics-performance
+  locator: '#monitoring-and-performance'
+  kind: capability
+  capability_id: observability.stream
+  behavior_id: stream-plugin.metrics-performance
+  target_id: definitive.stream-plugin.metrics-performance
+  title: Stream connection, credit, throughput, latency, and resource telemetry
+  surface_ids:
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream-plugin.metrics-performance.claim
+- id: inventory.stream.retention-replay
+  authority_artifact_id: rabbitmq-4-3-streams
+  authority_surface_id: stream.append-only-replay
+  locator: '#what-is-a-stream'
+  kind: behavior
+  capability_id: queue.stream
+  behavior_id: stream.retention-replay
+  target_id: definitive.stream.retention-replay
+  title: Append-only retention and non-destructive offset replay
+  surface_ids:
+  - foundations-mechanics
+  - implementation-construction
+  - testing-verification
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream.retention-replay.claim
+- id: inventory.stream.single-active-consumer
+  authority_artifact_id: rabbitmq-4-3-streams
+  authority_surface_id: stream.single-active-consumer
+  locator: '#single-active-consumer'
+  kind: behavior
+  capability_id: queue.stream
+  behavior_id: stream.single-active-consumer
+  target_id: definitive.stream.single-active-consumer
+  title: Single active consumer ordering and continuity
+  surface_ids:
+  - architecture-design
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream.single-active-consumer.claim
+- id: inventory.stream.super-stream
+  authority_artifact_id: rabbitmq-4-3-streams
+  authority_surface_id: stream.super-stream-topology
+  locator: '#super-streams'
+  kind: capability
+  capability_id: stream.super-stream
+  behavior_id: stream.super-stream
+  target_id: definitive.stream.super-stream
+  title: Partitioned super stream topology and client abstraction
+  surface_ids:
+  - architecture-design
+  - implementation-construction
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream.super-stream.claim
+- id: inventory.stream.super-stream-ordering
+  authority_artifact_id: rabbitmq-4-3-streams
+  authority_surface_id: stream.super-stream-ordering
+  locator: '#super-streams'
+  kind: behavior
+  capability_id: stream.super-stream
+  behavior_id: stream.super-stream-ordering
+  target_id: definitive.stream.super-stream-ordering
+  title: Ordering within a super stream partition
+  surface_ids:
+  - testing-verification
+  - decision-comparison
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.stream.super-stream-ordering.claim
+- id: inventory.tls.client-listener
+  authority_artifact_id: rabbitmq-4-3-tls
+  authority_surface_id: tls.client-listener
+  locator: '#enabling-tls-support-in-rabbitmq'
+  kind: capability
+  capability_id: security.tls
+  behavior_id: tls.client-listener
+  target_id: definitive.tls.client-listener
+  title: Client TLS listener and certificate validation
+  surface_ids:
+  - implementation-construction
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.tls.client-listener.claim
+- id: inventory.tls.mutual-authentication
+  authority_artifact_id: rabbitmq-4-3-tls
+  authority_surface_id: tls.mutual-authentication
+  locator: '#peer-verification'
+  kind: behavior
+  capability_id: security.tls
+  behavior_id: tls.mutual-authentication
+  target_id: definitive.tls.mutual-authentication
+  title: Mutual TLS peer verification
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.tls.mutual-authentication.claim
+- id: inventory.tls.certificate-rotation
+  authority_artifact_id: rabbitmq-4-3-tls
+  authority_surface_id: tls.certificate-rotation
+  locator: '#rotating-tls-certificates'
+  kind: behavior
+  capability_id: security.tls
+  behavior_id: tls.certificate-rotation
+  target_id: definitive.tls.certificate-rotation
+  title: TLS certificate rotation lifecycle
+  surface_ids:
+  - operations-observability
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.tls.certificate-rotation.claim
+- id: inventory.tls.inter-node
+  authority_artifact_id: rabbitmq-4-3-tls
+  authority_surface_id: tls.inter-node
+  locator: '#inter-node-traffic'
+  kind: behavior
+  capability_id: security.tls
+  behavior_id: tls.inter-node
+  target_id: definitive.tls.inter-node
+  title: Inter-node and CLI distribution TLS boundary
+  surface_ids:
+  - architecture-design
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.tls.inter-node.claim
+- id: inventory.upgrade.path
+  authority_artifact_id: rabbitmq-4-3-upgrade
+  authority_surface_id: upgrade.path
+  locator: '#rabbitmq-version-upgradability'
+  kind: behavior
+  capability_id: migration.upgrade
+  behavior_id: upgrade.path
+  target_id: definitive.upgrade.path
+  title: Supported RabbitMQ version upgrade path
+  surface_ids:
+  - compatibility-integration
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.upgrade.path.claim
+- id: inventory.upgrade.feature-flags
+  authority_artifact_id: rabbitmq-4-3-upgrade
+  authority_surface_id: upgrade.feature-flags
+  locator: '#feature-flags'
+  kind: behavior
+  capability_id: migration.upgrade
+  behavior_id: upgrade.feature-flags
+  target_id: definitive.upgrade.feature-flags
+  title: Feature flag preconditions and compatibility boundary
+  surface_ids:
+  - testing-verification
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.upgrade.feature-flags.claim
+- id: inventory.upgrade.rolling
+  authority_artifact_id: rabbitmq-4-3-upgrade
+  authority_surface_id: upgrade.rolling
+  locator: '#rolling-upgrade'
+  kind: capability
+  capability_id: migration.upgrade
+  behavior_id: upgrade.rolling
+  target_id: definitive.upgrade.rolling
+  title: Rolling upgrade with mixed-version cluster
+  surface_ids:
+  - implementation-construction
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.upgrade.rolling.claim
+- id: inventory.upgrade.rollback
+  authority_artifact_id: rabbitmq-4-3-upgrade
+  authority_surface_id: upgrade.rollback
+  locator: '#rollback'
+  kind: behavior
+  capability_id: migration.upgrade
+  behavior_id: upgrade.rollback
+  target_id: definitive.upgrade.rollback
+  title: Rollback support and irreversible boundary
+  surface_ids:
+  - failure-recovery
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.upgrade.rollback.claim
+- id: inventory.operator.cluster-provisioning
+  authority_artifact_id: rabbitmq-operator-overview
+  authority_surface_id: operator.cluster-provisioning
+  locator: '#rabbitmq-cluster-kubernetes-operator'
+  kind: capability
+  capability_id: operator.cluster
+  behavior_id: operator.cluster-provisioning
+  target_id: definitive.operator.cluster-provisioning
+  title: Single-node and multi-node RabbitMQ cluster provisioning
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator.cluster-provisioning.claim
+- id: inventory.operator.cluster-reconciliation
+  authority_artifact_id: rabbitmq-operator-overview
+  authority_surface_id: operator.cluster-reconciliation
+  locator: '#rabbitmq-cluster-kubernetes-operator'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator.cluster-reconciliation
+  target_id: definitive.operator.cluster-reconciliation
+  title: Desired state reconciliation and day-two operations
+  surface_ids:
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator.cluster-reconciliation.claim
+- id: inventory.operator.rolling-upgrade
+  authority_artifact_id: rabbitmq-operator-overview
+  authority_surface_id: operator.rolling-upgrade
+  locator: '#rabbitmq-cluster-kubernetes-operator'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator.rolling-upgrade
+  target_id: definitive.operator.rolling-upgrade
+  title: Operator-driven scaling and rolling upgrades
+  surface_ids:
+  - operations-observability
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator.rolling-upgrade.claim
+- id: inventory.operator.feature-flags
+  authority_artifact_id: rabbitmq-operator-overview
+  authority_surface_id: operator.feature-flags
+  locator: '#rabbitmq-cluster-kubernetes-operator-design-principles'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator.feature-flags
+  target_id: definitive.operator.feature-flags
+  title: Operator feature flag enablement policy
+  surface_ids:
+  - compatibility-integration
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator.feature-flags.claim
+- id: inventory.operator.topology-reconciliation
+  authority_artifact_id: rabbitmq-operator-overview
+  authority_surface_id: operator.topology
+  locator: '#rabbitmq-messaging-topology-operator'
+  kind: capability
+  capability_id: operator.topology
+  behavior_id: operator.topology-reconciliation
+  target_id: definitive.operator.topology-reconciliation
+  title: Declarative messaging topology reconciliation
+  surface_ids:
+  - implementation-construction
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator.topology-reconciliation.claim
+- id: inventory.operator.topology-rejection
+  authority_artifact_id: rabbitmq-operator-overview
+  authority_surface_id: operator.topology-limitations
+  locator: '#limitations'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: operator.topology-rejection
+  target_id: definitive.operator.topology-rejection
+  title: Topology Operator credential and reconciliation limitations
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator.topology-rejection.claim
+- id: inventory.operator-usage.crd-availability
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.crd-availability
+  locator: '#confirm-service-availability'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.crd-availability
+  target_id: definitive.operator-usage.crd-availability
+  title: RabbitmqCluster CRD installation and API availability
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.crd-availability.claim
+- id: inventory.operator-usage.instance-creation
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.instance-creation
+  locator: '#create-a-rabbitmq-instance'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.instance-creation
+  target_id: definitive.operator-usage.instance-creation
+  title: RabbitmqCluster reconciliation to StatefulSet, Service, Pods, and credentials
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.instance-creation.claim
+- id: inventory.operator-usage.replica-scaling
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.replica-scaling
+  locator: '#number-of-replicas'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.replica-scaling
+  target_id: definitive.operator-usage.replica-scaling
+  title: Odd replica invariant, scale-to-zero, restore, and downscale rejection
+  surface_ids:
+  - architecture-design
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.replica-scaling.claim
+- id: inventory.operator-usage.persistence
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.persistence
+  locator: '#persistence'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.persistence
+  target_id: definitive.operator-usage.persistence
+  title: PersistentVolume provisioning, capacity, unschedulable rejection, and data
+    retention
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - failure-recovery
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.persistence.claim
+- id: inventory.operator-usage.resources-headroom
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.resources-headroom
+  locator: '#resource-requirements'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.resources-headroom
+  target_id: definitive.operator-usage.resources-headroom
+  title: Resource request validation and RabbitMQ memory headroom calculation
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.resources-headroom.claim
+- id: inventory.operator-usage.scheduling
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.scheduling
+  locator: '#affinity-and-anti-affinity-rules'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.scheduling
+  target_id: definitive.operator-usage.scheduling
+  title: Anti-affinity, toleration, topology spread, and three-node placement
+  surface_ids:
+  - architecture-design
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.scheduling.claim
+- id: inventory.operator-usage.config-precedence
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.config-precedence
+  locator: '#rabbitmq-additional-configuration'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.config-precedence
+  target_id: definitive.operator-usage.config-precedence
+  title: Operator defaults and user RabbitMQ configuration precedence
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.config-precedence.claim
+- id: inventory.operator-usage.additional-plugins
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.additional-plugins
+  locator: '#rabbitmq-additional-plugins'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.additional-plugins
+  target_id: definitive.operator-usage.additional-plugins
+  title: Additional official plugin reconciliation and unavailable plugin failure
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - failure-recovery
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.additional-plugins.claim
+- id: inventory.operator-usage.tls-listeners
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.tls-listeners
+  locator: '#tls-configuration'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.tls-listeners
+  target_id: definitive.operator-usage.tls-listeners
+  title: Kubernetes Secret TLS, mTLS, and non-TLS listener disablement
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.tls-listeners.claim
+- id: inventory.operator-usage.tls-rotation
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.tls-rotation
+  locator: '#tls-configuration'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.tls-rotation
+  target_id: definitive.operator-usage.tls-rotation
+  title: TLS Secret certificate rotation and per-node PEM cache reload
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - security-privacy-safety
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.tls-rotation.claim
+- id: inventory.operator-usage.feature-flags
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.feature-flags
+  locator: '#automatically-enabling-feature-flags'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.feature-flags
+  target_id: definitive.operator-usage.feature-flags
+  title: Automatic feature flag enablement and irreversible state boundary
+  surface_ids:
+  - testing-verification
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.feature-flags.claim
+- id: inventory.operator-usage.rolling-update
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.rolling-update
+  locator: '#update-a-rabbitmq-instance'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.rolling-update
+  target_id: definitive.operator-usage.rolling-update
+  title: StatefulSet rolling reconciliation under continuous workload
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.rolling-update.claim
+- id: inventory.operator-usage.pod-disruption-budget
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.pod-disruption-budget
+  locator: '#set-a-pod-disruption-budget'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.pod-disruption-budget
+  target_id: definitive.operator-usage.pod-disruption-budget
+  title: Pod disruption budget protection of quorum availability
+  surface_ids:
+  - architecture-design
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.pod-disruption-budget.claim
+- id: inventory.operator-usage.network-policy
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.network-policy
+  locator: '#restrict-traffic-using-network-policies'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.network-policy
+  target_id: definitive.operator-usage.network-policy
+  title: Kubernetes NetworkPolicy allowed and denied RabbitMQ traffic
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.network-policy.claim
+- id: inventory.operator-usage.pause-reconciliation
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.pause-reconciliation
+  locator: '#pause-reconciliation-for-a-rabbitmq-instance'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.pause-reconciliation
+  target_id: definitive.operator-usage.pause-reconciliation
+  title: Reconciliation pause, drift observation, and resume recovery
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.pause-reconciliation.claim
+- id: inventory.operator-usage.quorum-monitoring
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.quorum-monitoring
+  locator: '#monitor-quorum-status'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.quorum-monitoring
+  target_id: definitive.operator-usage.quorum-monitoring
+  title: Operator quorum status, RabbitMQ metrics, logs, and alert correlation
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.quorum-monitoring.claim
+- id: inventory.operator-usage.deletion
+  authority_artifact_id: rabbitmq-operator-usage
+  authority_surface_id: operator-usage.deletion
+  locator: '#delete-a-rabbitmq-instance'
+  kind: behavior
+  capability_id: operator.cluster
+  behavior_id: operator-usage.deletion
+  target_id: definitive.operator-usage.deletion
+  title: RabbitmqCluster deletion and persistent data retention boundary
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.operator-usage.deletion.claim
+- id: inventory.topology-operator.secret-label-admission
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.secret-label
+  locator: '#secret-label-requirement'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.secret-label-admission
+  target_id: definitive.topology-operator.secret-label-admission
+  title: Labeled Secret cache and unlabeled or missing Secret admission rejection
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.secret-label-admission.claim
+- id: inventory.topology-operator.namespace-scope
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.namespace-scope
+  locator: '#scope-across-multiple-namespaces'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.namespace-scope
+  target_id: definitive.topology-operator.namespace-scope
+  title: Same-namespace and explicitly allowed cross-namespace reconciliation
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.namespace-scope.claim
+- id: inventory.topology-operator.external-cluster
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.external-cluster
+  locator: '#non-operator-managed-rabbitmq'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.external-cluster
+  target_id: definitive.topology-operator.external-cluster
+  title: External RabbitMQ connection Secret and immutable cluster reference
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - security-privacy-safety
+  - compatibility-integration
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.external-cluster.claim
+- id: inventory.topology-operator.queue-policy
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.queue-policy
+  locator: '#queues-and-policies'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.queue-policy
+  target_id: definitive.topology-operator.queue-policy
+  title: Queue and policy creation, update, drift, and declaration rejection
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.queue-policy.claim
+- id: inventory.topology-operator.exchange-binding
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.exchange-binding
+  locator: '#exchanges-and-bindings'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.exchange-binding
+  target_id: definitive.topology-operator.exchange-binding
+  title: Exchange and binding creation, update, and missing dependency failure
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - failure-recovery
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.exchange-binding.claim
+- id: inventory.topology-operator.user-permissions
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.user-permissions
+  locator: '#users-and-user-permissions'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.user-permissions
+  target_id: definitive.topology-operator.user-permissions
+  title: User credential Secret, permission, and topic permission reconciliation
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.user-permissions.claim
+- id: inventory.topology-operator.vhost
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.vhost
+  locator: '#virtual-hosts'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.vhost
+  target_id: definitive.topology-operator.vhost
+  title: Virtual host creation, limits, default queue type, and deletion
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.vhost.claim
+- id: inventory.topology-operator.federation
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.federation
+  locator: '#federation'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.federation
+  target_id: definitive.topology-operator.federation
+  title: Federation URI Secret and upstream reconciliation
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - failure-recovery
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.federation.claim
+- id: inventory.topology-operator.shovel
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.shovel
+  locator: '#shovel'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.shovel
+  target_id: definitive.topology-operator.shovel
+  title: Shovel URI Secret, acknowledgement mode, and recovery reconciliation
+  surface_ids:
+  - implementation-construction
+  - testing-verification
+  - failure-recovery
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.shovel.claim
+- id: inventory.topology-operator.immutable-update-rejection
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.immutable-update
+  locator: '#update-a-resource'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.immutable-update-rejection
+  target_id: definitive.topology-operator.immutable-update-rejection
+  title: Mutable update reconciliation and immutable field webhook rejection
+  surface_ids:
+  - testing-verification
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.immutable-update-rejection.claim
+- id: inventory.topology-operator.deletion-policy
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.deletion-policy
+  locator: '#delete-a-resource'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.deletion-policy
+  target_id: definitive.topology-operator.deletion-policy
+  title: Finalizer and delete versus retain policy behavior
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - migration-evolution-deprecation
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.deletion-policy.claim
+- id: inventory.topology-operator.tls
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.tls
+  locator: '#tls'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.tls
+  target_id: definitive.topology-operator.tls
+  title: Topology Operator HTTPS management connection trust
+  surface_ids:
+  - testing-verification
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.tls.claim
+- id: inventory.topology-operator.time-reconciliation
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.time-reconciliation
+  locator: '#time-based-reconciliation'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.time-reconciliation
+  target_id: definitive.topology-operator.time-reconciliation
+  title: Periodic reconciliation, deleted topology recovery, and message loss boundary
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - operations-observability
+  - performance-capacity-cost
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.time-reconciliation.claim
+- id: inventory.topology-operator.monitoring
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.monitoring
+  locator: '#monitoring'
+  kind: capability
+  capability_id: operator.topology
+  behavior_id: topology-operator.monitoring
+  target_id: definitive.topology-operator.monitoring
+  title: Topology Operator reconciliation logs and Prometheus metrics
+  surface_ids:
+  - testing-verification
+  - operations-observability
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.monitoring.claim
+- id: inventory.topology-operator.imported-definitions-failure
+  authority_artifact_id: rabbitmq-topology-operator-usage
+  authority_surface_id: topology-operator.imported-definitions
+  locator: '#limitations'
+  kind: behavior
+  capability_id: operator.topology
+  behavior_id: topology-operator.imported-definitions-failure
+  target_id: definitive.topology-operator.imported-definitions-failure
+  title: Imported definitions credential overwrite failure and recovery boundary
+  surface_ids:
+  - testing-verification
+  - failure-recovery
+  - security-privacy-safety
+  classification: included
+  rationale: RabbitMQ公式一次資料が明示する独立Behaviorであり、集約せず専用TargetとClaimでClosureを証明する。
+  claim_ids:
+  - definitive.topology-operator.imported-definitions-failure.claim

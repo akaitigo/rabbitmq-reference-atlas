@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 import argparse
 import json
+import pathlib
+import sys
+
+
+ROOT = pathlib.Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(ROOT / "scripts"))
+
+from skill_routing import RoutingContext, plan_request  # noqa: E402
 
 
 MODES = {
@@ -33,15 +41,31 @@ def route(query: str) -> dict:
     elif any(keyword in value for keyword in ("実装", "implement", "code", "宣言", "publish", "consume", "ack", "nack", "reject")):
         mode, reason, status = "implement", "最小LabとCapability Indexへ案内します。", "candidate-evidence-required"
     else:
-        mode, reason, status = "design", "選択条件と保証境界の判断表へ案内します。", "candidate-evidence-required"
+        mode, reason, status = "gap", "曖昧または未知のQueryです。Targetを断定せず追加条件を要求します。", "fail-closed-query-gap"
     return {"mode": mode, "baseline": "RabbitMQ 4.3.5", "coverage_status": status, "reason": reason, "references": MODES[mode]}
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="RabbitMQ Reference Atlas Router")
     parser.add_argument("--query", required=True)
+    parser.add_argument("--outcome")
+    parser.add_argument("--surface")
+    parser.add_argument("--authorized-change", action="store_true")
+    parser.add_argument("--authority-semantic-decision", action="store_true")
+    parser.add_argument("--stale-source-relock", action="store_true")
     args = parser.parse_args()
-    print(json.dumps(route(args.query), ensure_ascii=False, indent=2))
+    if bool(args.outcome) != bool(args.surface):
+        parser.error("--outcomeと--surfaceは同時に指定してください")
+    if args.outcome and args.surface:
+        result = plan_request(RoutingContext(ROOT), {
+            "id": "cli-request", "outcome": args.outcome, "surface": args.surface, "query": args.query,
+            "authorized_change": args.authorized_change,
+            "authority_semantic_decision": args.authority_semantic_decision,
+            "stale_source_relock": args.stale_source_relock,
+        })
+    else:
+        result = route(args.query)
+    print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":

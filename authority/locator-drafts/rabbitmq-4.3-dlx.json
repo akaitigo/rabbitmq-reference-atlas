@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-dlx",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/dlx.md",
+  "locked_source_digest": "sha256:29bead1952a76facc60f98748860271da24c0feba82b9049ae9fc2eb41cd2a29",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:29bead1952a76facc60f98748860271da24c0feba82b9049ae9fc2eb41cd2a29",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/dlx.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 16664,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0000",
+        "locator": "#dead-letter-exchanges",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 889,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:bd1748c8879b06bc90e2a454a9e9a71d57a18aade015106c02eb501fb8d1c56f",
+        "heading_digest": "sha256:d289738604c1868084d863d25ed529150074b4e74ee452c6823cfcd84449f87c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 889,
+        "section_end": 1888,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:56ff1b6f8740bf465c4c43ee331f282dcfd0261d86f51b6211236703394d4b03",
+        "heading_digest": "sha256:f2cfc0d4b31071c5d1b448201da9bfc509744bbe520e5d92d48cca7b76a639f9",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0002",
+        "locator": "#how-dead-lettering-is-configured",
+        "level": 2,
+        "section_start": 1888,
+        "section_end": 3205,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c229476681e14b348163fdd45a9c33ed333cc429bd5eadd46a73db20e9bac2e5",
+        "heading_digest": "sha256:1bedd4f264f433eb746448f511ea3ddcddae8d3575e59fdcf97d6258ad3ff136",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0003",
+        "locator": "#using-policies",
+        "level": 3,
+        "section_start": 3205,
+        "section_end": 7097,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:5871f13440c0046b19cd7a2544adb0f4890ce44c9536c1ad01f934fd764cc581",
+        "heading_digest": "sha256:c465c8a97a4c4e5e082042f47507434b8af2373e7c7ac7a6b1ea29b137d69a49",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0004",
+        "locator": "#using-optional-queue-arguments",
+        "level": 3,
+        "section_start": 7097,
+        "section_end": 8998,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b42488f05e7ce15a51d09b0e98009ff99dac9bc2772dca11a9667579bb62bb5f",
+        "heading_digest": "sha256:c495044769712948e0fd7d18ab93577f818a798b9b7781c93ff32284022a68a3",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0005",
+        "locator": "#routing",
+        "level": 2,
+        "section_start": 8998,
+        "section_end": 9952,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:658cd171e0f2ed80b48b007839975d21dc9449b51e326f5303abad1e170b490f",
+        "heading_digest": "sha256:55d6cced0a5e094b9fb28cfab8a80aa8e7c1a4cb0ea35da2df308105a0429709",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0006",
+        "locator": "#dead-letter-cycle",
+        "level": 3,
+        "section_start": 9952,
+        "section_end": 10384,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:341abd4d9aacf9154b4d532e8f3fa7df88eb7bfe2e72be1c0af4542a4a17c6eb",
+        "heading_digest": "sha256:75eec6183b63c2a0a627259a634c14d7f5f3f2f056f64ed224ea10b352a91e76",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0007",
+        "locator": "#safety",
+        "level": 2,
+        "section_start": 10384,
+        "section_end": 10979,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:e0154f6945ad7c8d583c183f8ca1d9b52f0363a1374480c4c6f584e49f79c8c7",
+        "heading_digest": "sha256:23ac640f708657e6c14ea9e749fa8b8f501f44f4b77302ca2b567cce8b14bed8",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0008",
+        "locator": "#re-publishing-with-publisher-confirms",
+        "level": 3,
+        "section_start": 10979,
+        "section_end": 11680,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:243544dd2f4ae7ca34f1bf94f688044d40afd51eb6dfcf044fced0d73468800c",
+        "heading_digest": "sha256:d9a1b1fb170bbbd4c3f5c05cc335d00ecb78e2eb4617201df3a99b365bb724fb",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-dlx.0009",
+        "locator": "#effects",
+        "level": 2,
+        "section_start": 11680,
+        "section_end": 16664,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:2c0dba581bca8d85a8ca4c7c08bb6945d04f3ffc17be896aa70dcbc0726d1357",
+        "heading_digest": "sha256:d4646accfe16504082018cd703601dc8a61b6be4030028595eb7e9d2a31de3e4",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": []
+}

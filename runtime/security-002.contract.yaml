@@ -1,0 +1,89 @@
+schema_version: 1
+id: security-002
+atlas_id: rabbitmq-reference-atlas
+closure_plan: evidence/scenarios/closure-plan.json
+status: planned-runtime
+completion_credit: false
+resource_policy:
+  isolated_project_names:
+  - rabbitmq-reference-atlas-security-002-ldap
+  - rabbitmq-reference-atlas-security-002-oauth
+  minimum_free_bytes_before_runtime: 4294967296
+  sequential_environments: true
+  tmpfs_broker_state: true
+  remove_orphans_on_exit: true
+  remove_task_owned_volumes_on_exit: true
+  global_prune_forbidden: true
+  foreign_resource_mutation_forbidden: true
+rows:
+- closure_id: closure.ldap.tls.security
+  behavior_id: ldap.tls
+  state: pending-runtime
+  profile: plugin-ldap-directory
+  variants: [node-1-with-ldap, node-2-with-ldap, node-3-with-ldap]
+  authority_source_ids: [rabbitmq-4.3-ldap]
+  runtime_dependencies:
+  - RabbitMQ 4.3.5 rabbitmq_auth_backend_ldap
+  - OpenLDAP 2.6.10 LDAPS listener
+  - dedicated CA and server certificate
+  required_oracles:
+  - RabbitMQからLDAP backendへのverify_peer付きTLS接続で正しいCredentialを許可する。
+  - 誤Credentialを拒否する。
+  - 同一nodeから不正なCAを使ったLDAP TLS接続を拒否する。
+  required_artifact_channels: [packet, log, metric]
+- closure_id: closure.limit.queues.security
+  behavior_id: limit.queues
+  state: pending-runtime
+  profile: capacity-benchmark
+  variants: [node-1-workload, node-2-workload, node-3-workload]
+  authority_source_ids: [rabbitmq-4.3-limits]
+  runtime_dependencies:
+  - RabbitMQ 4.3.5 three-node cluster
+  - AMQP 0-9-1 client
+  - rabbitmqctl per-vhost limit control
+  required_oracles:
+  - 専用vhostのmax-queues未満ではqueue宣言を許可する。
+  - 同一vhostのmax-queues超過をnodeまたはuser変更で回避できず拒否する。
+  - management tagを持たないuserによるlimit変更を拒否する。
+  required_artifact_channels: [packet, log, metric]
+- closure_id: closure.management.authorization.security
+  behavior_id: management.authorization
+  state: preserve-existing-runtime
+  profile: broker-cluster-3
+  variants: [node-1, node-2, node-3]
+  authority_source_ids: [rabbitmq-4.3-management]
+  existing_runtime_report: evidence/scenario-runtime/management.authorization/security.runtime.json
+  required_oracles:
+  - administrator tag userを許可し、tag無しuserを拒否する既存専用Proofを非後退で維持する。
+  required_artifact_channels: [packet, log, metric]
+- closure_id: closure.management.oauth.security
+  behavior_id: management.oauth
+  state: pending-runtime
+  profile: broker-cluster-3
+  variants: [node-1, node-2, node-3]
+  authority_source_ids: [rabbitmq-4.3-management]
+  runtime_dependencies:
+  - RabbitMQ 4.3.5 rabbitmq_auth_backend_oauth2
+  - Keycloak 26.7.2 OpenID Connect provider
+  - OIDC discovery, JWKS and live token endpoint
+  required_oracles:
+  - 正しいaudienceとmanagement scopeを持つ署名済みaccess tokenを許可する。
+  - management scopeを持たない署名済みaccess tokenを拒否する。
+  - 誤audienceまたは改変されたaccess tokenを拒否する。
+  required_artifact_channels: [packet, log, metric]
+proof_policy:
+  attempts: 1
+  retries: 0
+  first_attempt_required: true
+  dedicated_report_per_row: true
+  source_digest_required: true
+  harness_digest_required: true
+  runtime_identity_required: true
+  atomic_publication_required: true
+  forbidden_substitutions:
+  - mock-oauth-provider
+  - static-jwt
+  - static-success-fixture
+  - simulated-broker
+  - skipped-runtime
+  - reused-cross-row-artifact

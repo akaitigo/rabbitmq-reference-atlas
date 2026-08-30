@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-limits",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md",
+  "locked_source_digest": "sha256:8f06c53e089b3c72a9a12e81fc4ad0ce3711422bf7c46584ca75ea5dcc1d61c3",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:8f06c53e089b3c72a9a12e81fc4ad0ce3711422bf7c46584ca75ea5dcc1d61c3",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 8679,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0000",
+        "locator": "#configurable-limits-and-timeouts",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 72,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:be82217fff1d7ad8d84c644a3d4a466d0f2dac8016e40b185b8bf680410ad52f",
+        "heading_digest": "sha256:d331d8f4cfcfcdfd35d853a523a9c89bafa4083c6bd7331297d08ca8b94efb8c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0001",
+        "locator": "#introduction",
+        "level": 2,
+        "section_start": 72,
+        "section_end": 965,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c4b1a09294e0e9ae5e74e202c25ed0abc39ff58b94714f50f0a11d80deefcf79",
+        "heading_digest": "sha256:b605350bc00209520b7cd8f546322663356ba630708f71bbf30aead6b3dd608e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0002",
+        "locator": "#why",
+        "level": 2,
+        "section_start": 965,
+        "section_end": 1720,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:e42b448dd8397ae283f34f41b7d5c7c1b327fdf23cd371744d0c0d99ddc6ef01",
+        "heading_digest": "sha256:fcc392355ed6532bf2353ee3eaf28b0a157eaf1721d6b0e9199aa40f59e72007",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0003",
+        "locator": "#available-limits",
+        "level": 2,
+        "section_start": 1720,
+        "section_end": 1741,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d5887404f0acdfcafecfbed9c35f3ba5d412552954f966acc84f1164cf9e8913",
+        "heading_digest": "sha256:1e8044f2b37882f18fad32f63b722142d1b0f23c85b19c8abaffcc6d04889f35",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0004",
+        "locator": "#per-virtual-host",
+        "level": 3,
+        "section_start": 1741,
+        "section_end": 2050,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a991848ce4d170f574ac30fd2033d75e8e2334e6224ba934a024c2f082eadd09",
+        "heading_digest": "sha256:66e4a19575c650c76fb8a6dd729586fff742996cd38ee39c8e3a7ee88d0ea35e",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0005",
+        "locator": "#per-user",
+        "level": 3,
+        "section_start": 2050,
+        "section_end": 2327,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:8697448f4e13aea23de0009997b2b244bd3188347f8830cbe1cc7c4d74d7de97",
+        "heading_digest": "sha256:83bccfe44844e85c8e5bcd2cf554ad61a8fc82195dfa5ea5af4062bdca8c211f",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0006",
+        "locator": "#per-connection",
+        "level": 3,
+        "section_start": 2327,
+        "section_end": 3918,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:ae2673d89f114641e6651098f85bfb6706e803b7ac6f011349e74e39dc942b1c",
+        "heading_digest": "sha256:1ca949f09accfd50e9afdc708abaf21f9d7c44665b8cbd6eac73c33b916bbeca",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0007",
+        "locator": "#mqtt",
+        "level": 4,
+        "section_start": 3918,
+        "section_end": 4310,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:489adaf07f3479993d2b59b72fb206c16bf8ab77189c6622d4109a21f9cce2e4",
+        "heading_digest": "sha256:c71d5131c4d871bd9dd58f5592ba7b432bde4381d37f59d071fd4af771abf7ba",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0008",
+        "locator": "#per-channel",
+        "level": 3,
+        "section_start": 4310,
+        "section_end": 4642,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:36a9ed4b38ae477583f636c703276678d8e19c6a3cebedc24c9eb4a38686599a",
+        "heading_digest": "sha256:d09a65cde64385ddad431a265ccb19d6553788c35da6fa73de4a9ea48d306240",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0009",
+        "locator": "#per-cluster",
+        "level": 3,
+        "section_start": 4642,
+        "section_end": 5501,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:a965324a7d22a923afeb84283923275b0f71a5a3034d1c42124fef0458ca3425",
+        "heading_digest": "sha256:c125b2fa8c78f416b1ce60e44b7655fb264dee5c5141683301fcb1379cb1ff98",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0010",
+        "locator": "#per-node",
+        "level": 3,
+        "section_start": 5501,
+        "section_end": 7138,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:c6a8073ce31822549bfda4676e32aeb50a2975b08567a48315f6df417e91f2c3",
+        "heading_digest": "sha256:7db305597f60bf8330e1dcafd84b886d9548b8e3de57f32c2a4aabb3da35667b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0011",
+        "locator": "#per-queue",
+        "level": 3,
+        "section_start": 7138,
+        "section_end": 8155,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:5e498105c40d2f5a59fa23407ca9d1c131583dc24081131f9fe9553b984a8a53",
+        "heading_digest": "sha256:37427e2f37be9f128fbd0878dc7c0f2e3a4388b3d91578445702dafe729803f5",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-limits.0012",
+        "locator": "#per-stream",
+        "level": 3,
+        "section_start": 8155,
+        "section_end": 8679,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:69b8c6f522821ec8b1d66359cb935cfce7f45e6ecda95e3c34ea91f3c7f0df92",
+        "heading_digest": "sha256:7ebd68054183ede478e25cc9e23c6c3212779bb3e75444371d4f3edece2a9985",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": [
+    {
+      "edge_id": "edge.limit.connections-channels.rabbitmq-4.3-limits",
+      "source_id": "rabbitmq-4.3-limits",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md#per-node-limits",
+      "locator": "#per-node-limits",
+      "authority_surface_id": "limit.connections-channels",
+      "candidate_behavior_id": "candidate.limit.connections-channels",
+      "capability_id": "capacity.limits",
+      "target_id": "definitive.limit.connections-channels",
+      "claim_id": "definitive.limit.connections-channels.claim",
+      "surface_ids": [
+        "performance-capacity-cost",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:ec39be0cb81631cdc54f635e50b0b6c2617d189fab78673bcd02980cc9d96a1b",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:972bb5846ca0cf8ec15d214cee37f2f71f33d16848ef965db9a88d59732d178a",
+      "context_start": 1405,
+      "context_end": 8679,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:310bf6043a09f551eab785eac3a30b58f38712b38e155f6998ffa6c5cbb8c788",
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.limit.message-size.rabbitmq-4.3-limits",
+      "source_id": "rabbitmq-4.3-limits",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md#message-size",
+      "locator": "#message-size",
+      "authority_surface_id": "limit.message-size",
+      "candidate_behavior_id": "candidate.limit.message-size",
+      "capability_id": "capacity.limits",
+      "target_id": "definitive.limit.message-size",
+      "claim_id": "definitive.limit.message-size.claim",
+      "surface_ids": [
+        "performance-capacity-cost",
+        "testing-verification"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:4b583ca8b5b694e2d045c47c0da4c1a699fa2088395b14a715b27fb69e69168a",
+      "locator_status": "fragment-not-found",
+      "context_digest": null,
+      "context_start": null,
+      "context_end": null,
+      "context_unit": null,
+      "heading_digest": null,
+      "classification": "candidate-included-unreviewed"
+    },
+    {
+      "edge_id": "edge.limit.queues.rabbitmq-4.3-limits",
+      "source_id": "rabbitmq-4.3-limits",
+      "reference_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/limits.md#per-virtual-host-limits",
+      "locator": "#per-virtual-host-limits",
+      "authority_surface_id": "limit.queues",
+      "candidate_behavior_id": "candidate.limit.queues",
+      "capability_id": "capacity.limits",
+      "target_id": "definitive.limit.queues",
+      "claim_id": "definitive.limit.queues.claim",
+      "surface_ids": [
+        "performance-capacity-cost",
+        "security-privacy-safety"
+      ],
+      "classification_basis": "existing-surface-projection-unreviewed",
+      "domain_metadata_digest": "sha256:3f0478600ce1c232a392b2d2f270b2f2088f18b66345e0ef459210eb792bf493",
+      "locator_status": "fragment-found",
+      "context_digest": "sha256:8f06c53e089b3c72a9a12e81fc4ad0ce3711422bf7c46584ca75ea5dcc1d61c3",
+      "context_start": 0,
+      "context_end": 8679,
+      "context_unit": "utf8-byte",
+      "heading_digest": "sha256:a27c79d8663ef7475a7b6121023e834b595c818f8d8db45dfa71462a8a2e22c6",
+      "classification": "candidate-included-unreviewed"
+    }
+  ]
+}

@@ -1,0 +1,278 @@
+schema_version: 1
+id: frontend-depth-reference-4a0b2df
+classification: normalized-pinned-reference
+source_repository: frontend-behavior-atlas
+source_commit: 4a0b2df8e2091a963bd0e0e1bbccef9c84b49a45
+source_status: incomplete
+source_summary:
+  satisfied: 1
+  partial: 17
+  missing: 0
+authority_extraction_reference:
+  source_commit: cabf687bab769b17928d950acc416f3f77eb4ca3
+  body_storage: digest-and-locator-context-digest-only
+  human_reviewed_surfaces: 0
+  authority_text_surfaces_exhaustive: false
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:699cd8ccf96e8cbfbed3cc176c29bb8a8908e43b7551e6e9fb8aec89d9434f6a
+    - path: authority/extraction.snapshot.json
+      digest: sha256:4708796bd7c05c3ae750c87a9d01291f66ea2a7cc1f54731172638bfffd9a629
+    - path: scripts/lib/authority-extraction.ts
+      digest: sha256:d0efb14e943384b363f6596cff32371368ad69d4aa319de4c7f5ecf189cb8c7c
+    - path: scripts/extract-authority-surfaces.ts
+      digest: sha256:b17bf28e55dd0d778a2b697f3242631315e18e3a0f717431c97920590a7e98b2
+    - path: scripts/verify-authority-extraction.ts
+      digest: sha256:420acbe08bff848786c4a28febb4443c671afdd53ff1643413317a9ce175d9aa
+authority_body_inventory_reference:
+  source_commit: 841ec2fa399606a10305021a8bcd396713b8cee5
+  body_storage: digest-locator-and-offset-only
+  population_unit: unique-document-fixed-selector-raw-anchor
+  raw_anchors_count_toward_semantic_surface: false
+  raw_anchors_count_toward_depth: false
+  initial_classification: pending-human
+  promotion_requires: recorded-human-decision
+  human_reviewed_anchors: 0
+  authority_semantics_exhaustive: false
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:595937e586e307c6331ed1a610c98d2f010234ffdda42f1c84b2c36a03002ab9
+    - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+      digest: sha256:e1ce7244c5e279fd9ddebdaebfbcae1cdb990055934a04848a2bd2683b24047c
+    - path: authority/body-inventory.snapshot.json
+      digest: sha256:8b3d2823ec22b2193c89932017d8fd9308fc1851a13e3515c28da0752cd99a1d
+    - path: scripts/lib/authority-body-inventory.ts
+      digest: sha256:04f62a0b63981c62a7ab90f39637c71745642e84a3bdd4404ce715a0163ebe76
+    - path: scripts/extract-authority-body-inventory.ts
+      digest: sha256:1ce38aae8e9adf2c8095310bf54348eacc482cb19f5edbd7c013a4bf55e6d38c
+    - path: scripts/verify-authority-body-inventory.ts
+      digest: sha256:5ba278737bfedae54b3c3b92fdf16a9ecf6b914bcaf0ab2cd04ff0d6ef24884a
+    - path: scripts/lib/authority-body-baseline.ts
+      digest: sha256:0dc48dc9e62fdc9cd8493e9b5827b4cf5948c4b72df3374d5ebcc73ac344009c
+    - path: scripts/verify-authority-body-baseline.ts
+      digest: sha256:599d6dee6d34b10f8496309c68e5cd3b8752366238311ecfbda4e2a23a8be897
+    - path: baselines/authority-body-inventory-v1.json
+      digest: sha256:22b4eefbadff2e2c0117b70584a2bc5e9ae8ed3997f3dcb35e01358db2ddd82c
+    - path: migrations/authority-body-inventory-v1.json
+      digest: sha256:d6a3201d4cc4d7c7657821ff7bc49ad5bcafdaaab95a7d856a996797568598b5
+authority_review_queue_reference:
+  source_commit: de2f016b8b44ea67afdb08c0552044807505984e
+  population_unit: stable-raw-anchor-human-review-queue
+  machine_assistance: priority-cluster-batch-proposals-only
+  semantic_decisions: human-primary-source-review-only
+  queued_anchor_count_toward_semantic_surface: false
+  queued_anchor_count_toward_depth: false
+  stale_policy: hold-until-source-relock
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:21068ce29adaca303b1cbc40a92d729aecbd7d732db8a1fdc775d20c100a9bb3
+    - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+      digest: sha256:4887965a9e7c9fba846bea35e3a04753ba2f81a321d66ec67d23a819c394e0a7
+    - path: authority/review-queue.snapshot.json
+      digest: sha256:9df1d3669135bf9612eb971b2e8279f8419deb3d0f484c7700ac1a3c19612484
+    - path: authority/reviews/decisions.json
+      digest: sha256:a6a9d05f74e022e3632443ebc0a311f5ca193b9328a995aafb8d4b0170783f08
+    - path: scripts/lib/authority-review-queue.ts
+      digest: sha256:6a0d44da874e7332d2212416bcbaa9ca93ab7a2cda9d5c28b846fecb847c2187
+    - path: scripts/generate-authority-review-queue.ts
+      digest: sha256:0ddb9e1ed3221c89e68449914e37a94a9104123d3ae0578b2e0a4aed3f57f291
+    - path: scripts/verify-authority-review-queue.ts
+      digest: sha256:3849bd25a409742acdcbb8e028a65cf0d51249ac29c23ba606a14d63b81524f9
+    - path: scripts/test-authority-review-queue.ts
+      digest: sha256:cd6ffd8860645b70f85feb262fffc903d3b0a0aa96c6f9a7181f6ed895e965ec
+skill_eval_reference:
+  source_commit: 8a9e34a89a55cc53702032783c06ede7246a286f
+  matrix_unit: 8-outcomes-by-14-surfaces
+  matrix_pass_is_completion: false
+  fail_closed_queries: [ambiguous, unknown]
+  mutation_policy: explicit-authorization-required-for-build-evolve-delegate
+  authority_policy: human-semantic-decision-and-stale-relock-stop
+  binding_unit: target-variant-authority-runtime-evidence
+  independent_agent_forward_eval_required: true
+  artifacts:
+    - path: scripts/lib/definitive-skill-eval.ts
+      digest: sha256:8209f3deb47eff03a2f88822a7a2af52dd9a3a3d44b74e88e42e84e2c3d1b5b6
+    - path: .agents/skills/fe-behavior-advisor/scripts/advisor-router.mjs
+      digest: sha256:993326210fecfafa4843d9c11929cddc5bd93c2c9fac6c85a79b9dcf43120c07
+    - path: evals/fe-behavior-advisor.definitive-skill-eval.json
+      digest: sha256:566c9f3cea248f49c24f769c88695b10c15bbdb956c08bcfa68dbe7e96c18d0a
+    - path: scripts/lib/mastery-contract.ts
+      digest: sha256:cf939059fa698e23c97c0cb8f08ff2289d37f9abca145cb8320a59425c41e363
+reference_system_scenario_proof_reference:
+  source_commit: deadad18b6588d2c907170a451c3b5cea5ea4192
+  integrated_scenarios: 10
+  behavior_specific_proof_separate: true
+  integrated_success_counts_as_behavior_proof: false
+  authority_atomic_binding_required_for_completion: true
+  runtime_identity_required: true
+  artifacts_or_explicit_gaps_required: true
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:4f88b8bfd22a9b8262e4a1e8184e50cded0372dd82458fbbcc308b3647876d0d
+    - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+      digest: sha256:6c8bb8d45a66b7595f22a23596cfa0ab495a4fd593740d9dab6ce138e4d4af89
+    - path: integrations/reference-system/manifest.json
+      digest: sha256:118ae5f25958855e3e1846ab998b6d45db656220ab8e4bd99330c0e208082940
+    - path: artifacts/reference-system/results.json
+      digest: sha256:f16ea6113c829379e10b8def5baf4cf82ba6596ffa4146792315ed688da6985a
+    - path: evidence/scenarios/index.json
+      digest: sha256:c70eeb43b85c4b4f8e57abacd4459fe8b01fa407ce355311f335dd5654c0f669
+    - path: scripts/lib/scenario-proof.ts
+      digest: sha256:089911b3dd1235b320bac592ef23ab0cf176fc17fa113682833ef9a685542092
+    - path: scripts/verify-scenario-proofs.ts
+      digest: sha256:e8367390035bf38f93a29d8b0d8c79762517673cc7a38fb227b8e8f036e1dbe2
+    - path: scripts/verify-reference-system-evidence.ts
+      digest: sha256:0f356e451128294789d7bc6f8b343bc85940258cb612b710d775a7674e10f66c
+scenario_gap_closure_reference:
+  source_commit: f2e4c4b19156f8e993f48cdcbce23679ad881924
+  closure_unit: surface-scenario-all-variants
+  actual_runtime_required: true
+  retries: 0
+  oracle_per_variant_required: true
+  source_harness_digest_required: true
+  runtime_identity_required: true
+  integrated_system_reuse: forbidden
+  other_artifact_metadata_reuse: forbidden
+  rabbitmq_artifact_channels: [packet, log, metric]
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:dca8763eaf3a89ee78883957e351e5e5bfe3e9f78e2b828e74553744d2aeb3b6
+    - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+      digest: sha256:8e6ec1b9277d5bf0a7d8a36618c42212b2037ca43643e64ec0e79150de19a690
+    - path: docs/REFERENCE_SYSTEM.md
+      digest: sha256:5562aa75e57c518c402c31d97885083bed3d1e3abc0af2ecade5c5cb3f188d49
+    - path: artifacts/pattern-scenarios/results.json
+      digest: sha256:6bf5034a3effce130861878081dfb2b3cd7d50698e7075237db13b29d46aecf6
+    - path: pattern-scenario-e2e/reactive-queue-boundary.spec.ts
+      digest: sha256:253f7317c7bc538ece20aa47427457ae92915d3840eab44873ced9ca7565bd35
+    - path: scripts/reporters/pattern-scenario-evidence-reporter.ts
+      digest: sha256:0cc4766e76a23292a50571dfaa76906865e7df55a68c22c5ee70fed840863dcf
+    - path: scripts/verify-pattern-scenario-evidence.ts
+      digest: sha256:3643d1dd6ab6830d1a729fc0684a6691e8fc7af4b2d85bae3e5ec01d89113469
+    - path: scripts/lib/scenario-proof.ts
+      digest: sha256:8b89ff8d0f042b181abe22a2fb1280546f7534f0525a931c6437a177fdb2432f
+    - path: scripts/verify-scenario-proofs.ts
+      digest: sha256:d6192f7da3b160300690f3a4168846711b366b77f8fc6c28918733db221005cd
+atomic_evidence_publication_reference:
+  source_commit: 7175de4305afb308722d5b83475e91c18da64957
+  publish_on: full-run-passed
+  failed_run: retain-prior-success
+  swap: staged-directory-rename-with-rollback
+  partial_overwrite: forbidden
+  mixed_generation: forbidden
+  artifacts:
+    - path: FE_DEPTH_REFERENCE.json
+      digest: sha256:a8d4394bbbc231280fc5b5ea3a0e65475d2d7c9ac0538dd812803ce1d0ca5c08
+    - path: docs/REFERENCE_SYSTEM.md
+      digest: sha256:33d8b7d1c4cd0b01e094f3c1c805cfb0d6e2e7f2862305cb6daffc2852fe8bb9
+    - path: scripts/reporters/pattern-scenario-evidence-reporter.ts
+      digest: sha256:fa93509b82141deb456e1218095de52a147c88d2b7e6f8e0e5df2725e92ad330
+    - path: scripts/verify-pattern-scenario-evidence.ts
+      digest: sha256:fc05990ab4a02a075f72badf60190dc3e584fe62acf52a31c179b99c90e3e0fd
+evidence_dependency_graph_reference:
+  source_repository: reference-atlas-core
+  source_branch: main
+  source_commit: 072d7ca77981f51754e824d70c6d4ecd55ea67e5
+  status: official-main-ci-passed
+  subject_denominator: rabbitmq-real-evidence-files-and-runtime-profiles
+  transplant_frontend_counts: false
+  required_predicates:
+  - transitive-input-staleness
+  - digest-only-closure-forbidden
+  - actual-first-attempt-rerun
+  - current-input-digest-binding
+  - runtime-identity
+  - required-output-mechanical-enumeration
+  - proof-and-closure-plan-structure-invariant
+denominator_policy:
+  source: authority-derived-subject-surface-inventory
+  transplant_absolute_counts: false
+  note: FEの件数はFE自身の非後退floorであり、RabbitMQの合格閾値には使用しない。
+artifacts:
+  - path: FE_DEPTH_REFERENCE.json
+    digest: sha256:2452696f9807b7d4a8ffb22b3ba37f079a25a34ac2370d78423445b96064582a
+  - path: docs/DEFINITIVE_GATE_V2_REFERENCE.md
+    digest: sha256:280a398ed1251438ad244e999c9c9cef9b0b6b78217db82e2b55ef882306d241
+  - path: fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json
+    digest: sha256:01c29cdd29f61968b06791edf3d0d0674462d279422bd312d523ab7964e2a1e4
+  - path: fixtures/definitive-gate-v2/variant-comparison.fixture.json
+    digest: sha256:2964d596201033761c083d06dc705d21a428de043a91a0f1e71e7d5b841f59d3
+  - path: fixtures/definitive-gate-v2/profile-incompatibility.fixture.json
+    digest: sha256:95c07992da4b78db5c5551d7ed0c4425668dde9188c0acb53c3b76b17a91e364
+  - path: fixtures/definitive-gate-v2/evidence-granularity.fixture.json
+    digest: sha256:94506646f1e30429cb84a87927e1af7e1e890d401efd0335ebf911aed6f85126
+  - path: baselines/definitive-gate-v2.json
+    digest: sha256:b6685fac1e11429ed7c203e35aac55c7a82c276dc32aadb97f225af801c3bb67
+axes:
+  - id: authority-body-digestion
+    title: Authority本文消化
+    portable_criterion: 対象分野の母集団を一次資料本文または固定Surface Artifactから導き、本文をDigest固定し、Locator単位で分類・Reviewする。
+    denominator: authority sources and extracted surfaces
+  - id: surface-atomic-behavior-variant
+    title: Surface→Atomic behavior→Variant
+    portable_criterion: Authority Surfaceを一意なAtomic behavior、Target、Claimへ接続し、同じObservable Contractの実装差だけをVariantとして比較する。
+    denominator: authority-derived atomic behaviors
+  - id: real-runtime-lab
+    title: 実Runtime Lab
+    portable_criterion: 各Behaviorを対象RuntimeまたはPlatform上で操作し、Source、Harness、実Versionを記録する。Mockやstatic fixtureは代替にしない。
+    denominator: required behavior × RabbitMQ runtime profile
+  - id: scenario-normal
+    title: Normal Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring normal
+  - id: scenario-boundary
+    title: Boundary Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring boundary
+  - id: scenario-refusal
+    title: Refusal Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring refusal
+  - id: scenario-failure
+    title: Failure Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring failure
+  - id: scenario-recovery
+    title: Recovery Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring recovery
+  - id: scenario-migration
+    title: Migration Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring migration
+  - id: scenario-operations
+    title: Operations Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring operations
+  - id: scenario-security
+    title: Security Scenario
+    portable_criterion: 各Atomic behaviorへ反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。
+    denominator: authority-derived atomic behaviors requiring security
+  - id: scenario-performance
+    title: Performance Scenario
+    portable_criterion: 各Atomic behaviorへ代表Workload、環境、分布、予算、劣化戦略を接続し、Variantを同じOracleで測定する。
+    denominator: required behavior × variant × workload/profile
+  - id: scenario-compatibility
+    title: Compatibility Scenario
+    portable_criterion: 必要Profileを根拠から列挙し、各Atomic behaviorの正常、劣化、非対応境界を実Runtimeで区別する。
+    denominator: required behavior × protocol/plugin/queue/client/version profile
+  - id: artifact-trace
+    title: Artifact・Trace
+    portable_criterion: 各Required Scenarioを専用Artifactへ固定し、Source、Harness、Runtime、Platform、Version、Attemptと追跡可能にする。
+    denominator: required scenario rows
+  - id: integrated-reference-system
+    title: 統合Reference System
+    portable_criterion: 複数Atomic behaviorを実責任境界で接続し、Cross-behavior failure/recoveryを証明する。
+    denominator: authority-derived architecture and integration surfaces
+  - id: skill-eval
+    title: Skill Eval
+    portable_criterion: Skillが8 Outcome、14 Surface、曖昧Query、Coverage Gap、権限境界、実装、診断、移行、Reviewを実行Evidence付きで扱う。
+    denominator: outcome × surface × risk/coverage-gap classes
+  - id: rights-provenance
+    title: 権利・Provenance
+    portable_criterion: Code、Authority、Dependency、Trademark、再配布義務を別々に追跡し、人手判断待ちはFail closedにする。
+    denominator: all repository and transitive publication artifacts
+  - id: non-regression-gate
+    title: 非後退Gate
+    portable_criterion: 公開mainの能力をID、Runtime Contract、Assertion、Version、CI、Evidenceで固定し、置換へMappingとMigration Evidenceを要求する。
+    denominator: tracked baseline capability identities

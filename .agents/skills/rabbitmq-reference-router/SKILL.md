@@ -9,7 +9,7 @@ description: RabbitMQ 4.3.5のAMQP Model、Topology、Delivery、Quorum/Stream�
 
 ## Route
 
-1. `python3 .agents/skills/rabbitmq-reference-router/scripts/route.py --query '<依頼>'`でModeと最初に読むReferenceを決めます。
+1. `python3 .agents/skills/rabbitmq-reference-router/scripts/route.py --outcome '<Outcome>' --surface '<Surface>' --query '<依頼>'`でTarget、検証Variant、Authority、実Broker/Protocol Evidenceを選びます。変更を伴う`build`、`evolve`、`delegate`では明示的な許可がある場合だけ`--authorized-change`を付けます。
 2. Modeに応じて次だけを読みます。
    - `design`または`review`: [references/decision-matrix.md](references/decision-matrix.md)
    - `implement`: [references/capability-index.yaml](references/capability-index.yaml)と対象`labs/*/lab.yaml`
@@ -28,7 +28,10 @@ description: RabbitMQ 4.3.5のAMQP Model、Topology、Delivery、Quorum/Stream�
 - Failure Labは専用Compose projectだけを操作します。外部Clusterを停止しません。
 - Coverage外では既存Capabilityを捏造せず、`gap`と必要な追加Evidenceを返します。
 - ユーザーが実装・変更・公開を依頼していない場合、診断と根拠提示に留めます。
+- 曖昧または未知のQueryはTargetを推測せず`routing-gap`として停止します。
+- `pending-human`のAuthority判断はAgentが昇格せず、`--authority-semantic-decision`では停止します。
+- stale Sourceのrelockは明示手順なしに進めず、`--stale-source-relock`では停止します。
 
 ## 出力
 
-回答には、選択したMode、固定Version、根拠Claim、Evidenceの有無、適用条件、保証しない境界を短く含めます。実行した場合は再現コマンドとObservable Outcomeを示します。
+回答には、選択したMode、固定Version、Target state、Variant、Authority locator、Broker/Protocol Evidenceの有無、適用条件、保証しない境界を短く含めます。実行した場合は再現コマンドとObservable Outcomeを示します。Router matrixの通過だけをRepository完成判定に使用しません。

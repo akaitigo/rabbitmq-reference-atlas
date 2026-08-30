@@ -1,0 +1,37 @@
+schema_version: 2
+source_id: rabbitmq-4.3-management
+source_digest: sha256:138604ee91db6d078c835dd9cdaf33e53eeda67d063d95336ca91c70f28900b1
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: management.http-api
+  locator: '#http-api'
+  kind: capability
+  capability_id: management.http-api
+  behavior_id: management.http-api
+  title: Management HTTP API resource and monitoring operations
+  surface_ids: [implementation-construction, operations-observability]
+- id: management.authorization
+  locator: '#access-and-permissions'
+  kind: behavior
+  capability_id: management.http-api
+  behavior_id: management.authorization
+  title: Management user tag and permission boundary
+  surface_ids: [testing-verification, security-privacy-safety]
+- id: management.metrics-cost
+  locator: '#management-database'
+  kind: behavior
+  capability_id: management.metrics
+  behavior_id: management.metrics-cost
+  title: Management statistics collection and resource cost
+  surface_ids: [operations-observability, performance-capacity-cost]
+- id: management.oauth
+  locator: '#oauth-20-authentication'
+  kind: capability
+  capability_id: management.oauth
+  behavior_id: management.oauth
+  title: Management UI OAuth 2.0 authentication
+  surface_ids: [security-privacy-safety, compatibility-integration]

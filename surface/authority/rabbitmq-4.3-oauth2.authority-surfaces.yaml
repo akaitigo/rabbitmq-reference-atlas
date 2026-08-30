@@ -1,0 +1,37 @@
+schema_version: 2
+source_id: rabbitmq-4.3-oauth2
+source_digest: sha256:36c383bd323acf9df8d86069e6d62ba568dd5ddb463aa640d5661096b4525a40
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: oauth2.jwt-validation
+  locator: '#how-it-works'
+  kind: behavior
+  capability_id: security.oauth2
+  behavior_id: oauth2.jwt-validation
+  title: JWT signature, issuer, audience, and lifetime validation
+  surface_ids: [testing-verification, security-privacy-safety]
+- id: oauth2.scope-mapping
+  locator: '#scope-based-authorisation'
+  kind: behavior
+  capability_id: security.oauth2
+  behavior_id: oauth2.scope-mapping
+  title: OAuth scopes to RabbitMQ permissions mapping
+  surface_ids: [implementation-construction, security-privacy-safety]
+- id: oauth2.key-rotation
+  locator: '#jwks'
+  kind: behavior
+  capability_id: security.oauth2
+  behavior_id: oauth2.key-rotation
+  title: JWKS refresh and signing key rotation
+  surface_ids: [failure-recovery, operations-observability, security-privacy-safety]
+- id: oauth2.multi-resource-server
+  locator: '#multiple-resource-servers'
+  kind: capability
+  capability_id: security.oauth2
+  behavior_id: oauth2.multi-resource-server
+  title: Multiple OAuth resource server selection
+  surface_ids: [architecture-design, compatibility-integration]

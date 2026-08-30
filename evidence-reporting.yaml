@@ -1,0 +1,34 @@
+schema_version: 1
+id: rabbitmq-runtime-evidence-atomic-publication-v1
+atlas_id: rabbitmq-reference-atlas
+status: active
+current_live_evidence: bounded-historical-pre-atomic-contract
+reference:
+  repository: frontend-behavior-atlas
+  commit: 7175de4305afb308722d5b83475e91c18da64957
+publication:
+  live_root: evidence
+  staging: sibling-directory
+  publish_on: full-run-passed
+  failed_run: retain-prior-success
+  swap: staged-directory-rename-with-rollback
+  partial_overwrite: forbidden
+  mixed_generation: forbidden
+  owned_globs:
+  - raw/*.json
+  - '*.evidence.json'
+  - dependency-graph.json
+  - reference-system/*.json
+  - scenarios/*.json
+  - scenarios/behaviors/**/*.proof.json
+  - scenario-runtime/**/*.json
+  - scenario-runtime/**/*.txt
+  run_report: run-report.json
+  historical_live_without_run_report_allowed: true
+  next_success_requires_run_report: true
+validation:
+  require_baseline_owned_paths_regenerated: true
+  require_regular_files: true
+  reject_symlinks: true
+  require_generated_after_transaction_start: true
+  record_digest_and_size: true

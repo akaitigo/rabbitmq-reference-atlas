@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 1,
+  "id": "fe-depth-reference-v1",
+  "subject": "frontend-observable-behavior",
+  "generatedAt": "2026-08-28T00:00:00+09:00",
+  "status": "incomplete",
+  "completionClaim": "neither-bounded-complete-nor-subject-definitive",
+  "denominatorPolicy": {
+    "source": "authority-derived-subject-surface-inventory",
+    "transplantAbsoluteCounts": false,
+    "note": "85 Target、170 Variant、299 E2E TestはFEの非後退floorであり、他分野の件数要件ではない。別分野は自身のAuthorityからSurfaceとAtomic unitを導出する。"
+  },
+  "parityDecision": {
+    "rule": "別分野が同等深度を主張できるのは、自身のAuthority由来denominatorについて全必須Axisをsatisfiedにし、専用実Runtime Proofと非後退Gateを持つ場合だけである。件数比や文書量だけでは代替できない。",
+    "frontendCurrentlyDefinitive": false,
+    "reasons": [
+      "Authority Surface InventoryとAtomic behavior分解が未完了。",
+      "10 ScenarioのBehavior専用Evidence/Artifact closureが未完了。",
+      "実Device/支援技術/外部Runtime Profile、Trace、統合Reference Systemが未完了。",
+      "Human visual/similarity/trademark/license reviewが未完了。"
+    ]
+  },
+  "observedDensity": {
+    "targets": 85,
+    "patterns": 85,
+    "variants": 170,
+    "labs": 170,
+    "authoritySources": 84,
+    "authorityReferenceEdges": 235,
+    "deterministicStates": 326,
+    "lockedE2ETests": 299,
+    "assertionFingerprints": 1201,
+    "captures": 652,
+    "benchmarks": 170,
+    "compatibilityTests": 255,
+    "evidenceRecords": 7,
+    "automatedMaturityPass": 85,
+    "humanMaturityPass": 0,
+    "promotionReady": 0,
+    "note": "観測値はFE自身のbaseline差分監査用であり、portable thresholdではない。"
+  },
+  "summary": {
+    "satisfied": 1,
+    "partial": 17,
+    "missing": 0
+  },
+  "axes": [
+    {
+      "id": "authority-body-digestion",
+      "title": "Authority本文消化",
+      "portableCriterion": "対象分野の母集団を自己申告Scopeではなく一次資料本文または固定Surface Artifactから導き、全本文をDigest固定し、Locator単位で分類・Reviewする。",
+      "denominator": "authority sources and extracted surfaces",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "authority.body-lock",
+          "status": "pass",
+          "required": "全参照Authorityの実Response body metadataとSHA-256を固定する。",
+          "observed": "84/84",
+          "evidence": [
+            "authority/sources.snapshot.json",
+            "sources.lock.yaml"
+          ]
+        },
+        {
+          "id": "authority.pattern-connectivity",
+          "status": "pass",
+          "required": "全Domain behaviorが少なくとも一つのAuthorityへ接続する。",
+          "observed": "85/85",
+          "evidence": [
+            "experiments",
+            "sources.lock.yaml"
+          ]
+        },
+        {
+          "id": "authority.surface-extraction",
+          "status": "gap",
+          "required": "Authority本文の全SurfaceをLocator付きで抽出し、未分類をゼロにする。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        },
+        {
+          "id": "authority.human-review",
+          "status": "gap",
+          "required": "抽出Surfaceの本文解釈と分類を人がReviewする。",
+          "observed": 0,
+          "evidence": [
+            "reviews/publication-review.json"
+          ]
+        }
+      ],
+      "gaps": [
+        "本文自体または固定Surface ArtifactはRepositoryへ保存していない。",
+        "235参照edgeはあるがAuthority Surface Inventoryではない。"
+      ]
+    },
+    {
+      "id": "surface-atomic-behavior-variant",
+      "title": "Surface→Atomic behavior→Variant",
+      "portableCriterion": "Authority Surfaceを一意なAtomic behavior、Target、Claimへ接続し、同じObservable Contractの実装差だけをVariantとして比較する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "behavior.observable-contract",
+          "status": "pass",
+          "required": "各Domain behaviorにObservable Contractと決定論Stateがある。",
+          "observed": "85/85",
+          "evidence": [
+            "experiments",
+            "packages/registry/generated/registry.json"
+          ]
+        },
+        {
+          "id": "behavior.multi-variant",
+          "status": "pass",
+          "required": "比較可能な複数Variantを持つ。",
+          "observed": "85/85",
+          "evidence": [
+            "experiments",
+            "artifacts/benchmark-results.json"
+          ]
+        },
+        {
+          "id": "behavior.target-mapping",
+          "status": "pass",
+          "required": "全Domain behaviorがCoverage Targetへ接続する。",
+          "observed": "85/85",
+          "evidence": [
+            "coverage/targets.json",
+            "migrations/core-v1.yaml"
+          ]
+        },
+        {
+          "id": "behavior.authority-atomicity",
+          "status": "gap",
+          "required": "全Authority Surfaceが重複のないAtomic behaviorへ一対一分類される。",
+          "observed": "11/85 existing Pattern records are labeled atomic",
+          "evidence": [
+            "packages/registry/generated/registry.json"
+          ]
+        }
+      ],
+      "gaps": [
+        "compound/systemic PatternをAuthority由来Atomic behaviorへ分解したv2 Inventoryがない。",
+        "既存85 PatternをそのままAuthority Surface denominatorとみなすことは禁止。"
+      ]
+    },
+    {
+      "id": "real-runtime-lab",
+      "title": "実Runtime Lab",
+      "portableCriterion": "各Behaviorを対象Runtime/Platform上で起動・操作・破棄し、Source/Harness digestと実Versionを記録する。Mock/static fixtureは実Runtime Profileの代替にしない。",
+      "denominator": "required behavior × runtime profile",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "runtime.lab-entry",
+          "status": "pass",
+          "required": "全Variantに実行可能Entryとcleanup contractがある。",
+          "observed": "170/170",
+          "evidence": [
+            "experiments",
+            "apps/runner/src/main.ts"
+          ]
+        },
+        {
+          "id": "runtime.browser-proof",
+          "status": "pass",
+          "required": "Localと固定Containerで同じlocked test planをclean実行する。",
+          "observed": "2/2 profiles",
+          "evidence": [
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json"
+          ]
+        },
+        {
+          "id": "runtime.source-binding",
+          "status": "pass",
+          "required": "実装SourceとHarness digestの変更でEvidenceを失効させる。",
+          "observed": true,
+          "evidence": [
+            "scripts/lib/registry.ts",
+            "scripts/lib/e2e-evidence.ts"
+          ]
+        },
+        {
+          "id": "runtime.external-boundaries",
+          "status": "gap",
+          "required": "権限、Device、Network、GPU等を必要な実Runtime/Profileで専用証明する。",
+          "observed": "local+container desktop browser only",
+          "evidence": [
+            "docs/CORE_V1_MIGRATION.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "cloud-live、hardware-in-the-loop、実Device、実支援技術Profileは未証明。",
+        "決定論Fallback/fixtureはあるが外部Runtime境界の代替ではない。"
+      ]
+    },
+    {
+      "id": "scenario-normal",
+      "title": "Normal Scenario",
+      "portableCriterion": "各Authority由来Atomic behaviorについてScenarioを明示分類し、反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "scenario-normal.bounded-run",
+          "status": "pass",
+          "required": "全PatternのBoot、Control、Reduced motion、Reset/Remountを実Browserで検証する。",
+          "observed": "299 locked tests",
+          "evidence": [
+            "e2e/atlas.spec.ts",
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json",
+            "artifacts/capture-results.json"
+          ]
+        },
+        {
+          "id": "scenario-normal.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに専用Scenario rowと一意なProof/Evidence/Artifactがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行EvidenceはPatternまたはRun単位のBundleであり、全Atomic behaviorのScenario専用rowへ未分割。"
+      ]
+    },
+    {
+      "id": "scenario-boundary",
+      "title": "Boundary Scenario",
+      "portableCriterion": "各Authority由来Atomic behaviorについてScenarioを明示分類し、反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "scenario-boundary.bounded-signal",
+          "status": "pass",
+          "required": "Domain正本に当該Scenarioを観測するStateまたはTestが存在する。",
+          "observed": 67,
+          "evidence": [
+            "e2e/atlas.spec.ts",
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json",
+            "artifacts/capture-results.json"
+          ]
+        },
+        {
+          "id": "scenario-boundary.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに専用Scenario rowと一意なProof/Evidence/Artifactがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行EvidenceはPatternまたはRun単位のBundleであり、全Atomic behaviorのScenario専用rowへ未分割。"
+      ]
+    },
+    {
+      "id": "scenario-refusal",
+      "title": "Refusal Scenario",
+      "portableCriterion": "各Authority由来Atomic behaviorについてScenarioを明示分類し、反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "scenario-refusal.bounded-signal",
+          "status": "pass",
+          "required": "Domain正本に当該Scenarioを観測するStateまたはTestが存在する。",
+          "observed": 2,
+          "evidence": [
+            "e2e/atlas.spec.ts",
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json",
+            "artifacts/capture-results.json"
+          ]
+        },
+        {
+          "id": "scenario-refusal.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに専用Scenario rowと一意なProof/Evidence/Artifactがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行EvidenceはPatternまたはRun単位のBundleであり、全Atomic behaviorのScenario専用rowへ未分割。"
+      ]
+    },
+    {
+      "id": "scenario-failure",
+      "title": "Failure Scenario",
+      "portableCriterion": "各Authority由来Atomic behaviorについてScenarioを明示分類し、反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "scenario-failure.bounded-signal",
+          "status": "pass",
+          "required": "Domain正本に当該Scenarioを観測するStateまたはTestが存在する。",
+          "observed": 60,
+          "evidence": [
+            "e2e/atlas.spec.ts",
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json",
+            "artifacts/capture-results.json"
+          ]
+        },
+        {
+          "id": "scenario-failure.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに専用Scenario rowと一意なProof/Evidence/Artifactがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行EvidenceはPatternまたはRun単位のBundleであり、全Atomic behaviorのScenario専用rowへ未分割。"
+      ]
+    },
+    {
+      "id": "scenario-recovery",
+      "title": "Recovery Scenario",
+      "portableCriterion": "各Authority由来Atomic behaviorについてScenarioを明示分類し、反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "scenario-recovery.bounded-signal",
+          "status": "pass",
+          "required": "Domain正本に当該Scenarioを観測するStateまたはTestが存在する。",
+          "observed": 96,
+          "evidence": [
+            "e2e/atlas.spec.ts",
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json",
+            "artifacts/capture-results.json"
+          ]
+        },
+        {
+          "id": "scenario-recovery.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに専用Scenario rowと一意なProof/Evidence/Artifactがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行EvidenceはPatternまたはRun単位のBundleであり、全Atomic behaviorのScenario専用rowへ未分割。"
+      ]
+    },
+    {
+      "id": "scenario-migration",
+      "title": "Migration Scenario",
+      "portableCriterion": "各Authority由来Atomic behaviorについてScenarioを明示分類し、反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "scenario-migration.bounded-signal",
+          "status": "pass",
+          "required": "Domain正本に当該Scenarioを観測するStateまたはTestが存在する。",
+          "observed": 5,
+          "evidence": [
+            "e2e/atlas.spec.ts",
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json",
+            "artifacts/capture-results.json"
+          ]
+        },
+        {
+          "id": "scenario-migration.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに専用Scenario rowと一意なProof/Evidence/Artifactがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行EvidenceはPatternまたはRun単位のBundleであり、全Atomic behaviorのScenario専用rowへ未分割。"
+      ]
+    },
+    {
+      "id": "scenario-operations",
+      "title": "Operations Scenario",
+      "portableCriterion": "各Authority由来Atomic behaviorについてScenarioを明示分類し、反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "scenario-operations.bounded-signal",
+          "status": "pass",
+          "required": "Domain正本に当該Scenarioを観測するStateまたはTestが存在する。",
+          "observed": 184,
+          "evidence": [
+            "e2e/atlas.spec.ts",
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json",
+            "artifacts/capture-results.json"
+          ]
+        },
+        {
+          "id": "scenario-operations.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに専用Scenario rowと一意なProof/Evidence/Artifactがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行EvidenceはPatternまたはRun単位のBundleであり、全Atomic behaviorのScenario専用rowへ未分割。"
+      ]
+    },
+    {
+      "id": "scenario-security",
+      "title": "Security Scenario",
+      "portableCriterion": "各Authority由来Atomic behaviorについてScenarioを明示分類し、反証可能な専用Oracle、実Runtime Profile、専用Artifactを一対一で接続する。",
+      "denominator": "authority-derived atomic behaviors",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "scenario-security.bounded-signal",
+          "status": "pass",
+          "required": "Domain正本に当該Scenarioを観測するStateまたはTestが存在する。",
+          "observed": 17,
+          "evidence": [
+            "e2e/atlas.spec.ts",
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json",
+            "artifacts/capture-results.json"
+          ]
+        },
+        {
+          "id": "scenario-security.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに専用Scenario rowと一意なProof/Evidence/Artifactがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行EvidenceはPatternまたはRun単位のBundleであり、全Atomic behaviorのScenario専用rowへ未分割。"
+      ]
+    },
+    {
+      "id": "scenario-performance",
+      "title": "Performance Scenario",
+      "portableCriterion": "各Atomic behaviorへ代表Workload、環境、分布、予算、劣化戦略を接続し、全Variantを同じOracleで測定する。",
+      "denominator": "required behavior × variant × workload/profile",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "performance.variant-benchmark",
+          "status": "pass",
+          "required": "全現行Variantの実Browser BenchmarkがBudgetを通過する。",
+          "observed": "170/170",
+          "evidence": [
+            "artifacts/benchmark-results.json",
+            "e2e/benchmark.spec.ts"
+          ]
+        },
+        {
+          "id": "performance.capacity-energy",
+          "status": "gap",
+          "required": "必要な容量境界、分布、Memory/Energy、実Device Profileを専用Evidence化する。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        },
+        {
+          "id": "performance.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorのPerformance Scenarioへ一意なProof/Artifactを接続する。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "現行BenchmarkはVariant単位だが、Authority由来Atomic behaviorのScenario Matrixへ未接続。",
+        "実DeviceのMemory/Energy/Capacity Evidenceがない。"
+      ]
+    },
+    {
+      "id": "scenario-compatibility",
+      "title": "Compatibility Scenario",
+      "portableCriterion": "必要Platform/Profileを根拠から列挙し、各Atomic behaviorの正常・劣化・非対応境界を実Runtimeで区別して証明する。",
+      "denominator": "required behavior × browser/platform/profile",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "compatibility.desktop-engines",
+          "status": "pass",
+          "required": "全PatternをChromium/Firefox/WebKitで実行する。",
+          "observed": "255 tests across 3 engines",
+          "evidence": [
+            "artifacts/compatibility-results.json",
+            "e2e/compatibility.spec.ts"
+          ]
+        },
+        {
+          "id": "compatibility.local-container",
+          "status": "pass",
+          "required": "Localとdigest固定Linux ContainerのProfile差を保持する。",
+          "observed": "local,container",
+          "evidence": [
+            "artifacts/e2e-results.json",
+            "artifacts/e2e-results.container.json"
+          ]
+        },
+        {
+          "id": "compatibility.external-matrix",
+          "status": "gap",
+          "required": "OS、実Device、支援技術、Hardware/Cloud boundaryの必要Profileを専用証明する。",
+          "observed": 0,
+          "evidence": [
+            "fixtures/definitive-gate-v2/profile-incompatibility.fixture.json"
+          ]
+        },
+        {
+          "id": "compatibility.dedicated-row",
+          "status": "gap",
+          "required": "各Atomic behaviorに一意なCompatibility Scenario Evidenceがある。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "Desktop 3 Engineは実証済みだが、全OS/AT/Deviceを意味しない。"
+      ]
+    },
+    {
+      "id": "artifact-trace",
+      "title": "Artifact・Trace",
+      "portableCriterion": "各Required ScenarioのOracle結果を専用Artifactへ固定し、Source/Harness/Runtime/Platform/Version/Attemptと追跡可能にする。",
+      "denominator": "required scenario rows",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "artifact.visual",
+          "status": "pass",
+          "required": "全宣言Captureの画像、Source hash、Harness hashを固定する。",
+          "observed": 652,
+          "evidence": [
+            "artifacts/capture-results.json",
+            "artifacts/capture-manifest.json"
+          ]
+        },
+        {
+          "id": "artifact.execution",
+          "status": "pass",
+          "required": "Local/Container/Cross-browser/Benchmarkの永続Reportを保持する。",
+          "observed": 7,
+          "evidence": [
+            "evidence/core-v1"
+          ]
+        },
+        {
+          "id": "artifact.trace",
+          "status": "gap",
+          "required": "Required ScenarioごとのTrace/Timeline/Network/Console Artifactを保持する。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        },
+        {
+          "id": "artifact.unique-binding",
+          "status": "gap",
+          "required": "一つの集約Evidenceを全Claimへ流用せず、Scenario専用Artifactへ分割する。",
+          "observed": 0,
+          "evidence": [
+            "fixtures/definitive-gate-v2/evidence-granularity.fixture.json"
+          ]
+        }
+      ],
+      "gaps": [
+        "Playwright Traceはfailure時の調査用で、現行Completion EvidenceとしてManifest化されていない。",
+        "Core v1 Evidence 7件は85 Claimへ集約接続されている。"
+      ]
+    },
+    {
+      "id": "integrated-reference-system",
+      "title": "統合Reference System",
+      "portableCriterion": "Architecture/Integration Surfaceが存在する分野では、複数Atomic behaviorを実際の責任境界で接続した統合SystemとCross-behavior failure/recoveryを証明する。",
+      "denominator": "authority-derived architecture and integration surfaces",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "reference.composition-contract",
+          "status": "pass",
+          "required": "Pattern間のrequires/worksWith/conflictsWithを明示する。",
+          "observed": 144,
+          "evidence": [
+            "packages/registry/generated/registry.json"
+          ]
+        },
+        {
+          "id": "reference.runner-catalog",
+          "status": "pass",
+          "required": "全Labを同一Runner/Catalog Protocolで検索・比較・実行する。",
+          "observed": "85 patterns",
+          "evidence": [
+            "apps/catalog",
+            "apps/runner"
+          ]
+        },
+        {
+          "id": "reference.system-manifest",
+          "status": "gap",
+          "required": "複数Behaviorを統合したReference Systemを専用Manifest、Digest、実行Proofへ接続する。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        },
+        {
+          "id": "reference.cross-behavior-proof",
+          "status": "gap",
+          "required": "Cross-behaviorの失敗、回復、運用をSystem境界で証明する。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "Runner/Catalogは実証基盤であり、利用者向け統合Reference System Certificateではない。"
+      ]
+    },
+    {
+      "id": "skill-eval",
+      "title": "Skill Eval",
+      "portableCriterion": "Skillが8 Outcome、14 Surface、曖昧Query、Coverage Gap、権限境界、実装・診断・移行・Reviewを実行Evidence付きで扱う。",
+      "denominator": "outcome × surface × risk/coverage-gap classes",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "skill.router-categories",
+          "status": "pass",
+          "required": "Routerの必須Category Evalが全件passする。",
+          "observed": "8/8",
+          "evidence": [
+            "evals/fe-behavior-advisor.skill-eval.json"
+          ]
+        },
+        {
+          "id": "skill.single-router",
+          "status": "pass",
+          "required": "単一Routerから5 Modeと8 Outcomeを段階開示する。",
+          "observed": true,
+          "evidence": [
+            ".agents/skills/fe-behavior-advisor/SKILL.md",
+            "skill.package.yaml"
+          ]
+        },
+        {
+          "id": "skill.surface-matrix",
+          "status": "gap",
+          "required": "14 Surfaceごとの成功、Gap、拒否を専用Caseで評価する。",
+          "observed": 0,
+          "evidence": [
+            "docs/DEFINITIVE_GATE_V2_REFERENCE.md"
+          ]
+        },
+        {
+          "id": "skill.agent-execution",
+          "status": "gap",
+          "required": "実装・診断・委任・Reviewの変更結果を独立OracleでEnd-to-End評価する。",
+          "observed": 0,
+          "evidence": [
+            "docs/CORE_V1_MIGRATION.md"
+          ]
+        }
+      ],
+      "gaps": [
+        "8/8 Router contractはpassしているがDefinitive Skill Eval Matrixではない。"
+      ]
+    },
+    {
+      "id": "rights-provenance",
+      "title": "権利・Provenance",
+      "portableCriterion": "Code、Asset、Authority、Dependency、Brand/Similarity、再配布義務を別々に追跡し、不明または人手判断待ちなら公開をFail closedにする。",
+      "denominator": "all repository and transitive publication artifacts",
+      "status": "partial",
+      "checks": [
+        {
+          "id": "rights.automated-inventory",
+          "status": "pass",
+          "required": "Transitive dependencyをexact version、license、purl、SBOMへ固定する。",
+          "observed": "114 packages, 0 questionable",
+          "evidence": [
+            "third_party/manifest.yaml",
+            "sbom.spdx.json",
+            "third_party/sbom.cdx.json"
+          ]
+        },
+        {
+          "id": "rights.implementation-provenance",
+          "status": "pass",
+          "required": "全Patternが実装・Asset・Authority・Similarity metadataを持つ。",
+          "observed": "85/85",
+          "evidence": [
+            "experiments",
+            "provenance.yaml"
+          ]
+        },
+        {
+          "id": "rights.human-obligations",
+          "status": "gap",
+          "required": "第三者License義務を人がReviewする。",
+          "observed": "automated-inventory-complete-human-obligations-pending",
+          "evidence": [
+            "third_party/review.json",
+            "reviews/publication-review.json"
+          ]
+        },
+        {
+          "id": "rights.human-brand-similarity",
+          "status": "gap",
+          "required": "Visual similarity、Trademark、Repository名を人がReviewする。",
+          "observed": "human-review-pending",
+          "evidence": [
+            "reviews/publication-review.json"
+          ]
+        }
+      ],
+      "gaps": [
+        "自動Inventoryは完了しているが3 Human review scopeがpending。"
+      ]
+    },
+    {
+      "id": "non-regression-gate",
+      "title": "非後退Gate",
+      "portableCriterion": "公開mainの能力をID集合、Runtime Contract、Assertion、予算、Profile、Version、CI、Evidenceで固定し、置換には一対一以上のMapping、実行Proof、Migration Evidenceを要求する。",
+      "denominator": "tracked baseline capability identities",
+      "status": "satisfied",
+      "checks": [
+        {
+          "id": "non-regression.identity-floor",
+          "status": "pass",
+          "required": "Target/Pattern/Variant/Lab/Source/Test/Artifact/Evidence/CIのbaseline ID集合を保持する。",
+          "observed": {
+            "targets": 85,
+            "patterns": 85,
+            "variants": 170,
+            "labs": 170,
+            "authoritySources": 84,
+            "authorityReferenceEdges": 235,
+            "testStates": 326,
+            "e2eTests": 299,
+            "assertions": 1201,
+            "captures": 652,
+            "benchmarkVariants": 170,
+            "compatibilityTests": 255,
+            "evidenceRecords": 7,
+            "ciMatrixEntries": 6
+          },
+          "evidence": [
+            "baselines/definitive-gate-v2.json",
+            "artifacts/non-regression-report.json"
+          ]
+        },
+        {
+          "id": "non-regression.no-weaken",
+          "status": "pass",
+          "required": "skip/xfail/only、閾値緩和、Profile/Version縮小を機械拒否する。",
+          "observed": true,
+          "evidence": [
+            "scripts/verify-non-regression-baseline.ts"
+          ]
+        },
+        {
+          "id": "non-regression.migration-contract",
+          "status": "pass",
+          "required": "置換は旧→新Mapping、非共有新ID、実行Proof、Migration Evidenceを必須にする。",
+          "observed": true,
+          "evidence": [
+            "migrations/non-regression-v2.json",
+            "scripts/verify-non-regression-baseline.ts"
+          ]
+        },
+        {
+          "id": "non-regression.ci",
+          "status": "pass",
+          "required": "baseline verifierをbuild/check Gateへ統合する。",
+          "observed": true,
+          "evidence": [
+            "package.json",
+            ".github/workflows/ci.yml"
+          ]
+        }
+      ],
+      "gaps": []
+    }
+  ],
+  "referenceFixtures": [
+    "fixtures/definitive-gate-v2/authority-surface-inventory.fixture.json",
+    "fixtures/definitive-gate-v2/variant-comparison.fixture.json",
+    "fixtures/definitive-gate-v2/profile-incompatibility.fixture.json",
+    "fixtures/definitive-gate-v2/evidence-granularity.fixture.json"
+  ]
+}

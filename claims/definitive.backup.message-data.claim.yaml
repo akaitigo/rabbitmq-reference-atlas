@@ -1,0 +1,33 @@
+schema_version: 1
+id: definitive.backup.message-data.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: recovery.backup
+statement: Message store data backup boundaryのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-backup
+proof_obligations:
+- id: proof.backup.message-data.normal
+  statement: Message store data backup boundaryのnormal Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.backup.message-data.boundary
+  statement: Message store data backup boundaryのboundary Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.backup.message-data.rejection
+  statement: Message store data backup boundaryのrejection Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.backup.message-data.failure
+  statement: Message store data backup boundaryのfailure Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 専用Environment内だけに停止、Network断、Resource Alarmまたは依存先障害を注入し、保証Invariantを検証する。
+- id: proof.backup.message-data.recovery
+  statement: Message store data backup boundaryのrecovery Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 障害要因を取り除き、Membership、Delivery、Telemetryとデータ整合性が制限時間内に回復することを確認する。
+- id: proof.backup.message-data.operations
+  statement: Message store data backup boundaryのoperations Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - Metrics、Logs、Health、CLI状態を同一Run IDと時刻で相関し、診断から安全な復旧判定まで接続する。

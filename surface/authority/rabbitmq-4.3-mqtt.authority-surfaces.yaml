@@ -1,0 +1,114 @@
+schema_version: 2
+source_id: rabbitmq-4.3-mqtt
+source_digest: sha256:7922a386475a80084c3e34beae46fa1c083bc9c27555b36f5141671bea2963d3
+extraction:
+  method: primary-text-reviewed
+  tool: heading-and-contract-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+  - id: mqtt.protocol-versions-qos
+    locator: '#supported-mqtt-features'
+    kind: capability
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.protocol-versions-qos
+    title: MQTT 3.1, 3.1.1, 5.0 and QoS 0/1 behavior
+    surface_ids: [foundations-mechanics, testing-verification, compatibility-integration]
+  - id: mqtt.message-lifecycle-features
+    locator: '#supported-mqtt-features'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.message-expiry-will-retained
+    title: MQTT expiry, will, retained message, and subscription option behavior
+    surface_ids: [foundations-mechanics, testing-verification, failure-recovery]
+  - id: mqtt.cross-protocol-routing
+    locator: '#how-the-mqtt-plugin-works'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.cross-protocol-routing
+    title: MQTT interoperability with AMQP 0-9-1, AMQP 1.0, and STOMP
+    surface_ids: [architecture-design, testing-verification, compatibility-integration]
+  - id: mqtt.session-queue-cardinality
+    locator: '#mapping-mqtt-to-the-amqp-091-model'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.session-queue-cardinality
+    title: Subscriber session creation of zero, one, or two QoS queues
+    surface_ids: [foundations-mechanics, testing-verification, operations-observability]
+  - id: mqtt.session-expiry
+    locator: '#queue-properties-and-arguments'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.session-expiry-clean
+    title: Clean session, session expiry, queue TTL, and state deletion boundary
+    surface_ids: [foundations-mechanics, testing-verification, failure-recovery]
+  - id: mqtt.topic-translation
+    locator: '#topic-level-separator-and-wildcards'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.topic-translation
+    title: MQTT slash and wildcard translation to AMQP topic routing
+    surface_ids: [foundations-mechanics, testing-verification, compatibility-integration]
+  - id: mqtt.durable-quorum
+    locator: '#using-quorum-queues'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.durable-quorum-boundary
+    title: Durable MQTT subscription quorum queue opt-in and mismatch rejection
+    surface_ids: [architecture-design, testing-verification, migration-evolution-deprecation, decision-comparison]
+  - id: mqtt.qos0-queue
+    locator: '#mqtt-qos-0-queue-type'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.qos0-queue
+    title: MQTT QoS 0 pseudo-queue online-only delivery semantics
+    surface_ids: [foundations-mechanics, testing-verification, performance-capacity-cost, decision-comparison]
+  - id: mqtt.qos0-overload
+    locator: '#overload-protection'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.qos0-overload-drop
+    title: MQTT QoS 0 mailbox soft limit drop and metric behavior
+    surface_ids: [failure-recovery, operations-observability, performance-capacity-cost]
+  - id: mqtt.authentication
+    locator: '#users-and-access'
+    kind: behavior
+    capability_id: security.mqtt
+    behavior_id: mqtt.authentication-anonymous
+    title: MQTT credential, remote guest, and anonymous connection rejection
+    surface_ids: [testing-verification, security-privacy-safety]
+  - id: mqtt.authorization
+    locator: '#authorization-and-queue-permissions'
+    kind: behavior
+    capability_id: security.mqtt
+    behavior_id: mqtt.authorization
+    title: MQTT exchange, queue, and topic authorization boundaries
+    surface_ids: [testing-verification, security-privacy-safety]
+  - id: mqtt.listener-tls
+    locator: '#tls-support'
+    kind: capability
+    capability_id: security.mqtt
+    behavior_id: mqtt.listener-tls
+    title: MQTT TCP and TLS listener transport behavior
+    surface_ids: [implementation-construction, testing-verification, security-privacy-safety, compatibility-integration]
+  - id: mqtt.vhost-precedence
+    locator: '#virtual-hosts'
+    kind: behavior
+    capability_id: protocol.mqtt
+    behavior_id: mqtt.vhost-precedence
+    title: MQTT username, port mapping, and default virtual host precedence
+    surface_ids: [foundations-mechanics, testing-verification, security-privacy-safety]
+  - id: mqtt.x509-authentication
+    locator: '#authentication-with-tlsx509-client-certificates'
+    kind: behavior
+    capability_id: security.mqtt
+    behavior_id: mqtt.x509-authentication
+    title: MQTT mutual TLS x.509 identity extraction and user lookup
+    surface_ids: [testing-verification, security-privacy-safety, compatibility-integration]
+  - id: mqtt.metrics-capacity
+    locator: '#metrics'
+    kind: capability
+    capability_id: observability.mqtt
+    behavior_id: mqtt.metrics-capacity
+    title: MQTT connection, delivery, drop, and capacity telemetry
+    surface_ids: [operations-observability, performance-capacity-cost]

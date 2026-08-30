@@ -1,0 +1,17 @@
+{
+  "transport": "container-exec",
+  "command": [
+    "docker",
+    "compose",
+    "-f",
+    "environments/compose.yaml",
+    "exec",
+    "-T",
+    "rabbitmq-3",
+    "rabbitmq-diagnostics",
+    "listeners"
+  ],
+  "returncode": 0,
+  "stdout": "Asking node rabbit@rabbitmq-3 to report its protocol listeners ...\nInterface: [::], port: 15672, protocol: http, purpose: HTTP API\nInterface: [::], port: 15692, protocol: http/prometheus, purpose: Prometheus exporter API over HTTP\nInterface: [::], port: 25672, protocol: clustering, purpose: inter-node and CLI tool communication\nInterface: [::], port: 5672, protocol: amqp, purpose: AMQP 0-9-1 and AMQP 1.0\n",
+  "stderr": ""
+}

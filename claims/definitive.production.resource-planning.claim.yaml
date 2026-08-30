@@ -1,0 +1,29 @@
+schema_version: 1
+id: definitive.production.resource-planning.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: system.reference
+statement: Production resource and capacity planningのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-production-checklist
+proof_obligations:
+- id: proof.production.resource-planning.normal
+  statement: Production resource and capacity planningのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.production.resource-planning.boundary
+  statement: Production resource and capacity planningのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.production.resource-planning.rejection
+  statement: Production resource and capacity planningのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.production.resource-planning.performance
+  statement: Production resource and capacity planningのperformance Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 条件を固定した複数VariantでRaw Sample、分位、Rate、Memory、Diskを取得し、適用範囲外へ一般化しない。

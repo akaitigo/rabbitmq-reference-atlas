@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "id": "migration.neutral-language-policy",
+  "created_at": "2026-08-28T11:10:06Z",
+  "verdict": "pass",
+  "scope": "current repository content excluding immutable historical snapshots and required Apache-2.0 license text",
+  "checks": [
+    {
+      "id": "baseline-evidence-digests-preserved",
+      "command": "python3 scripts/validate-non-regression.py",
+      "verdict": "pass",
+      "result": "The 21 public-main Evidence records, 17 Labs, 7 Proof files, and 4 Go test files retain their baseline digests."
+    },
+    {
+      "id": "neutral-language-scan",
+      "command": "python3 scripts/validate-neutral-language.py",
+      "verdict": "pass",
+      "result": "412 current text files passed with zero promotional terms and zero author-praise references."
+    }
+  ],
+  "semantic_effect": {
+    "target_ids_changed": false,
+    "claim_ids_changed": false,
+    "evidence_ids_changed": false,
+    "assertions_changed": false,
+    "thresholds_changed": false,
+    "runtime_proof_changed": false
+  }
+}

@@ -1,0 +1,35 @@
+schema_version: 1
+id: definitive.mqtt.message-expiry-will-retained.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: protocol.mqtt
+statement: MQTT expiry, will, retained message, and subscription option behaviorのRabbitMQ
+  4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-mqtt
+proof_obligations:
+- id: proof.mqtt.message-expiry-will-retained.normal
+  statement: MQTT expiry, will, retained message, and subscription option behaviorのnormal
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.mqtt.message-expiry-will-retained.boundary
+  statement: MQTT expiry, will, retained message, and subscription option behaviorのboundary
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.mqtt.message-expiry-will-retained.rejection
+  statement: MQTT expiry, will, retained message, and subscription option behaviorのrejection
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.mqtt.message-expiry-will-retained.failure
+  statement: MQTT expiry, will, retained message, and subscription option behaviorのfailure
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 専用Environment内だけに停止、Network断、Resource Alarmまたは依存先障害を注入し、保証Invariantを検証する。
+- id: proof.mqtt.message-expiry-will-retained.recovery
+  statement: MQTT expiry, will, retained message, and subscription option behaviorのrecovery
+    Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 障害要因を取り除き、Membership、Delivery、Telemetryとデータ整合性が制限時間内に回復することを確認する。

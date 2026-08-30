@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.management.authorization.security",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "management.authorization",
+  "target_id": "definitive.management.authorization",
+  "scenario": "security",
+  "applicability": "required",
+  "status": "scenario-gap-closed",
+  "runtime_profile": "broker-cluster-3",
+  "proof_obligation_id": "proof.management.authorization.security",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.management.authorization",
+      "authority_artifact_id": "rabbitmq-4-3-management",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-management.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:2b4e650b057a9a2cdac0630f3fc95459407571e58e52f6e985b7a9d9acb49532",
+      "source_id": "rabbitmq-4.3-management",
+      "source_digest": "sha256:138604ee91db6d078c835dd9cdaf33e53eeda67d063d95336ca91c70f28900b1",
+      "surface_id": "management.authorization",
+      "locator": "#access-and-permissions",
+      "behavior_id": "management.authorization"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "legacy_observation": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "identity": {
+      "broker": null,
+      "client": null,
+      "runtime": null
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.missing"
+        ]
+      },
+      "log": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.log.missing"
+        ]
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.log.missing",
+      "artifact.metric.missing",
+      "artifact.packet.missing",
+      "evidence.behavior-specific-single-record-missing",
+      "identity.broker.missing",
+      "identity.client-version.missing",
+      "identity.runtime.missing"
+    ],
+    "counts_toward_scenario_gap_closure": false,
+    "aggregate_evidence_allowed": false
+  },
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/management.authorization/security.runtime.json",
+      "present": true,
+      "digest": "sha256:b89aaa9ce67c54beabf7b8bb7311ff51ccc6552efc6f4ff2dd2dcbe64b16a51a"
+    },
+    "required_variants": [
+      "node-1",
+      "node-2",
+      "node-3"
+    ],
+    "variant_proofs": [
+      {
+        "id": "node-1",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "python-urllib-management-client",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.management.authorization.security.node-1",
+          "assertions": [
+            "administrator tagを持つuserのManagement API requestが成功した",
+            "vhost permissionだけを持ちmanagement tagを持たないuserのrequestが拒否された"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-1/packet.json",
+              "digest": "sha256:15ab3fa2098e80fbc422bd5229b5cf79b53b134316b4df6906883bd9eeaeb619",
+              "size_bytes": 296,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-1/log.txt",
+              "digest": "sha256:05ffe520ef82edee880b53b3f45e4cd6d8a26216b9191b085da4d519464d927a",
+              "size_bytes": 36349,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-1/metric.json",
+              "digest": "sha256:57cf86cc2608e924fb6464e1a405722fcd115076849c0a6b099f8e5dfe4a93f2",
+              "size_bytes": 60422,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      },
+      {
+        "id": "node-2",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "python-urllib-management-client",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.management.authorization.security.node-2",
+          "assertions": [
+            "administrator tagを持つuserのManagement API requestが成功した",
+            "vhost permissionだけを持ちmanagement tagを持たないuserのrequestが拒否された"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-2/packet.json",
+              "digest": "sha256:9436df48bf4bf5c02bfd940d335411a19eab8f1b0893277a432a667f57100ce5",
+              "size_bytes": 296,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-2/log.txt",
+              "digest": "sha256:810934fa977ccba33b37875c90e7be6f0de58cc1b94e3d70c381d77e79c22d81",
+              "size_bytes": 33949,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-2/metric.json",
+              "digest": "sha256:460ed6311f7360830f321dc4f9776f12c1386ec6dffa88da44b4a7163c44ee95",
+              "size_bytes": 60422,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      },
+      {
+        "id": "node-3",
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "python-urllib-management-client",
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "runtime": {
+          "profile": "broker-cluster-3",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
+        },
+        "oracle": {
+          "id": "oracle.management.authorization.security.node-3",
+          "assertions": [
+            "administrator tagを持つuserのManagement API requestが成功した",
+            "vhost permissionだけを持ちmanagement tagを持たないuserのrequestが拒否された"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
+        "artifact_channels": {
+          "packet": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-3/packet.json",
+              "digest": "sha256:cd803d98094cfa8893bfd980c51c85e26a8f718d51bfb1cd5db677a94caee2f3",
+              "size_bytes": 296,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          },
+          "log": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-3/log.txt",
+              "digest": "sha256:c9afbc91990d6d6a5743639c0df5fae83e2fbfb0dda68a821a985b0f0dc192d0",
+              "size_bytes": 34254,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
+          },
+          "metric": {
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-3/metric.json",
+              "digest": "sha256:80d5fa1923b2fccbbf3467938db1ab1d0c701d75270ab13056e70d1cad5fcd30",
+              "size_bytes": 60415,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
+          }
+        }
+      }
+    ],
+    "requirements": {
+      "dedicated_surface_scenario_report": true,
+      "all_variants_driven": true,
+      "attempts_one_retry_zero": true,
+      "oracle_pass_per_variant": true,
+      "source_harness_digest_bound": true,
+      "broker_client_runtime_identity": true,
+      "packet_log_metric_dedicated": true
+    },
+    "scenario_gap_closed": true
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.security",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_surface_scenario_report": true,
+    "all_variants_driven": true,
+    "attempts_one_retry_zero": true,
+    "oracle_pass_per_variant": true,
+    "source_harness_digest_bound": true,
+    "broker_client_runtime_identity": true,
+    "packet_log_metric_dedicated": true,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": true,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "scenario_gap_ids": [],
+  "completion_gap_ids": [
+    "authority.atomic-human-promotion-missing"
+  ],
+  "gap_ids": [
+    "authority.atomic-human-promotion-missing"
+  ]
+}

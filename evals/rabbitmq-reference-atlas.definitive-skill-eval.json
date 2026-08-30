@@ -1,0 +1,1641 @@
+{
+  "schema_version": 2,
+  "id": "rabbitmq.definitive.router",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "atlas_release": "v0.2.0",
+  "skill_id": "rabbitmq-reference-router",
+  "generated_at": "2026-08-28T15:00:00+09:00",
+  "cases": [
+    {
+      "id": "definitive.orientation-authority",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "orientation-scope",
+        "foundations-mechanics",
+        "provenance-rights"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "Authority由来InventoryからRabbitMQ 4.3.5の対象範囲と根拠を説明する。"
+    },
+    {
+      "id": "definitive.architecture-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "architecture-design",
+        "decision-comparison",
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "Queue、Protocol、Federation、Shovelの方式をEvidence付き比較から選択する。"
+    },
+    {
+      "id": "definitive.build-reference-system",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "implementation-construction",
+        "compatibility-integration"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "権限境界を守って統合Reference SystemのTopologyとClient契約を構築する。"
+    },
+    {
+      "id": "definitive.verify-artifacts",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "Behavior専用Claim、Proof、Runtime ArtifactのDigestとOracleを検証する。"
+    },
+    {
+      "id": "definitive.operate-observe",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "operations-observability",
+        "security-privacy-safety"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "最小権限でBroker、Plugin、Cross-cluster、Operatorの状態を観測し運用する。"
+    },
+    {
+      "id": "definitive.troubleshoot-recover",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "Network Partition、Resource Alarm、依存先停止から安全な回復手順へ到達する。"
+    },
+    {
+      "id": "definitive.evolve-migrate",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "Feature FlagとRollback不能境界を守ってRolling Upgradeを計画し検証する。"
+    },
+    {
+      "id": "definitive.delegate-gap",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "未Closure Behaviorを成功扱いせずGapと必要Evidenceを返し、安全に委任する。"
+    },
+    {
+      "id": "matrix.understand.orientation-scope",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×orientation-scopeをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.foundations-mechanics",
+      "result": "pass",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "foundations-mechanics"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "understand×foundations-mechanicsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.architecture-design",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "architecture-design"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×architecture-designをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.implementation-construction",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×implementation-constructionをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.testing-verification",
+      "result": "pass",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "understand×testing-verificationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.failure-recovery",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×failure-recoveryをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.operations-observability",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "operations-observability"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×operations-observabilityをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.security-privacy-safety",
+      "result": "pass",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "security-privacy-safety"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "understand×security-privacy-safetyをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.performance-capacity-cost",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×performance-capacity-costをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.compatibility-integration",
+      "result": "pass",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "compatibility-integration"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "understand×compatibility-integrationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.migration-evolution-deprecation",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×migration-evolution-deprecationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.decision-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×decision-comparisonをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.provenance-rights",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×provenance-rightsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.understand.agent-skill",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "understand×agent-skillをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.orientation-scope",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×orientation-scopeをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.foundations-mechanics",
+      "result": "pass",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "foundations-mechanics"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "choose×foundations-mechanicsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.architecture-design",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "architecture-design"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×architecture-designをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.implementation-construction",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×implementation-constructionをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.testing-verification",
+      "result": "pass",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "choose×testing-verificationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.failure-recovery",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×failure-recoveryをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.operations-observability",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "operations-observability"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×operations-observabilityをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.security-privacy-safety",
+      "result": "pass",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "security-privacy-safety"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "choose×security-privacy-safetyをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.performance-capacity-cost",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×performance-capacity-costをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.compatibility-integration",
+      "result": "pass",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "compatibility-integration"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "choose×compatibility-integrationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.migration-evolution-deprecation",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×migration-evolution-deprecationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.decision-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×decision-comparisonをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.provenance-rights",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×provenance-rightsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.choose.agent-skill",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "choose×agent-skillをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.orientation-scope",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×orientation-scopeをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.foundations-mechanics",
+      "result": "pass",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "foundations-mechanics"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "build×foundations-mechanicsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.architecture-design",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "architecture-design"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×architecture-designをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.implementation-construction",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×implementation-constructionをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.testing-verification",
+      "result": "pass",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "build×testing-verificationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.failure-recovery",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×failure-recoveryをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.operations-observability",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "operations-observability"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×operations-observabilityをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.security-privacy-safety",
+      "result": "pass",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "security-privacy-safety"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "build×security-privacy-safetyをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.performance-capacity-cost",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×performance-capacity-costをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.compatibility-integration",
+      "result": "pass",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "compatibility-integration"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "build×compatibility-integrationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.migration-evolution-deprecation",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×migration-evolution-deprecationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.decision-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×decision-comparisonをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.provenance-rights",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×provenance-rightsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.build.agent-skill",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "build×agent-skillをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.orientation-scope",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×orientation-scopeをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.foundations-mechanics",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "foundations-mechanics"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×foundations-mechanicsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.architecture-design",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "architecture-design"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×architecture-designをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.implementation-construction",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×implementation-constructionをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.testing-verification",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×testing-verificationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.failure-recovery",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×failure-recoveryをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.operations-observability",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "operations-observability"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×operations-observabilityをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.security-privacy-safety",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "security-privacy-safety"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×security-privacy-safetyをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.performance-capacity-cost",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×performance-capacity-costをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.compatibility-integration",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "compatibility-integration"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×compatibility-integrationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.migration-evolution-deprecation",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×migration-evolution-deprecationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.decision-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×decision-comparisonをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.provenance-rights",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×provenance-rightsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.verify.agent-skill",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "verify"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "verify×agent-skillをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.orientation-scope",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×orientation-scopeをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.foundations-mechanics",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "foundations-mechanics"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×foundations-mechanicsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.architecture-design",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "architecture-design"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×architecture-designをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.implementation-construction",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×implementation-constructionをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.testing-verification",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×testing-verificationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.failure-recovery",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×failure-recoveryをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.operations-observability",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "operations-observability"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×operations-observabilityをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.security-privacy-safety",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "security-privacy-safety"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×security-privacy-safetyをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.performance-capacity-cost",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×performance-capacity-costをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.compatibility-integration",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "compatibility-integration"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×compatibility-integrationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.migration-evolution-deprecation",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×migration-evolution-deprecationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.decision-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×decision-comparisonをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.provenance-rights",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×provenance-rightsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.operate.agent-skill",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "operate"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "operate×agent-skillをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.orientation-scope",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×orientation-scopeをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.foundations-mechanics",
+      "result": "pass",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "foundations-mechanics"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×foundations-mechanicsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.architecture-design",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "architecture-design"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×architecture-designをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.implementation-construction",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×implementation-constructionをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.testing-verification",
+      "result": "pass",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×testing-verificationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.failure-recovery",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×failure-recoveryをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.operations-observability",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "operations-observability"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×operations-observabilityをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.security-privacy-safety",
+      "result": "pass",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "security-privacy-safety"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×security-privacy-safetyをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.performance-capacity-cost",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×performance-capacity-costをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.compatibility-integration",
+      "result": "pass",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "compatibility-integration"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×compatibility-integrationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.migration-evolution-deprecation",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×migration-evolution-deprecationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.decision-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×decision-comparisonをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.provenance-rights",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×provenance-rightsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.troubleshoot.agent-skill",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "troubleshoot"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "troubleshoot×agent-skillをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.orientation-scope",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×orientation-scopeをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.foundations-mechanics",
+      "result": "pass",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "foundations-mechanics"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "evolve×foundations-mechanicsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.architecture-design",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "architecture-design"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×architecture-designをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.implementation-construction",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×implementation-constructionをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.testing-verification",
+      "result": "pass",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "evolve×testing-verificationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.failure-recovery",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×failure-recoveryをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.operations-observability",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "operations-observability"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×operations-observabilityをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.security-privacy-safety",
+      "result": "pass",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "security-privacy-safety"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "evolve×security-privacy-safetyをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.performance-capacity-cost",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×performance-capacity-costをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.compatibility-integration",
+      "result": "pass",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "compatibility-integration"
+      ],
+      "gap_behavior": false,
+      "authorization_boundary": true,
+      "assertion": "evolve×compatibility-integrationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.migration-evolution-deprecation",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×migration-evolution-deprecationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.decision-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×decision-comparisonをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.provenance-rights",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×provenance-rightsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.evolve.agent-skill",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "evolve×agent-skillをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.orientation-scope",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×orientation-scopeをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.foundations-mechanics",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "foundations-mechanics"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×foundations-mechanicsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.architecture-design",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "architecture-design"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×architecture-designをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.implementation-construction",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×implementation-constructionをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.testing-verification",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "testing-verification"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×testing-verificationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.failure-recovery",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "failure-recovery"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×failure-recoveryをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.operations-observability",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "operations-observability"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×operations-observabilityをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.security-privacy-safety",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "security-privacy-safety"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×security-privacy-safetyをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.performance-capacity-cost",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "performance-capacity-cost"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×performance-capacity-costをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.compatibility-integration",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "compatibility-integration"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×compatibility-integrationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.migration-evolution-deprecation",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "migration-evolution-deprecation"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×migration-evolution-deprecationをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.decision-comparison",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×decision-comparisonをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.provenance-rights",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×provenance-rightsをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "matrix.delegate.agent-skill",
+      "result": "inconclusive",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "delegate×agent-skillをRabbitMQ Target、Variant、Authority、Broker、Protocol EvidenceへRouteする。"
+    },
+    {
+      "id": "boundary.1",
+      "result": "pass",
+      "outcome_ids": [
+        "choose"
+      ],
+      "surface_ids": [
+        "decision-comparison"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "boundary.ambiguousをfail-closedで判定し、必要な停止条件を保持する。"
+    },
+    {
+      "id": "boundary.2",
+      "result": "pass",
+      "outcome_ids": [
+        "understand"
+      ],
+      "surface_ids": [
+        "orientation-scope"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": false,
+      "assertion": "boundary.unknownをfail-closedで判定し、必要な停止条件を保持する。"
+    },
+    {
+      "id": "boundary.3",
+      "result": "pass",
+      "outcome_ids": [
+        "build"
+      ],
+      "surface_ids": [
+        "implementation-construction"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "boundary.unauthorized-buildをfail-closedで判定し、必要な停止条件を保持する。"
+    },
+    {
+      "id": "boundary.4",
+      "result": "pass",
+      "outcome_ids": [
+        "delegate"
+      ],
+      "surface_ids": [
+        "agent-skill"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "boundary.human-authorityをfail-closedで判定し、必要な停止条件を保持する。"
+    },
+    {
+      "id": "boundary.5",
+      "result": "pass",
+      "outcome_ids": [
+        "evolve"
+      ],
+      "surface_ids": [
+        "provenance-rights"
+      ],
+      "gap_behavior": true,
+      "authorization_boundary": true,
+      "assertion": "boundary.stale-relockをfail-closedで判定し、必要な停止条件を保持する。"
+    }
+  ]
+}

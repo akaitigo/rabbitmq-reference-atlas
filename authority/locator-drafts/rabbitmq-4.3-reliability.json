@@ -1,0 +1,196 @@
+{
+  "schema_version": 1,
+  "source_id": "rabbitmq-4.3-reliability",
+  "source_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/reliability.md",
+  "locked_source_digest": "sha256:25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+  "fetch": {
+    "status": "matched",
+    "fetched_digest": "sha256:25d54e926d450a8676a93ba6282f4eb8456ab60db3242ac6333f14871d3e07e4",
+    "locked_digest_match": true,
+    "http_status": 200,
+    "final_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/reliability.md",
+    "content_type": "text/plain; charset=utf-8",
+    "fetched_bytes": 13916,
+    "error_digest": null
+  },
+  "extraction": {
+    "method": "locked-body-locator-context-digest",
+    "tool": "rabbitmq-reference-atlas-authority-extractor-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only"
+  },
+  "body_structure": {
+    "status": "structurally-scanned",
+    "method": "markdown-section-byte-partition-v1",
+    "review_status": "automated-unreviewed",
+    "body_storage": "digest-and-locator-context-digest-only",
+    "sections": [
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0000",
+        "locator": "#reliability-guide",
+        "level": 1,
+        "section_start": 0,
+        "section_end": 810,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:b1a739d61495faa38385dfa9c4d2f981555ca713935170adeaca2a22724a86d5",
+        "heading_digest": "sha256:ad46d75d60df647759bdea9e2e824068e5dcc86f40e3b2d2ef2a30f634015966",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0001",
+        "locator": "#overview",
+        "level": 2,
+        "section_start": 810,
+        "section_end": 1846,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:6cf9f9ffaa0d315a4606231d63c7510114cd7ac108ceca9324badcd1384c6e88",
+        "heading_digest": "sha256:d96627b7641bfb3e117977b6ccb53c47a2c03ef3e7aed6cc38920e15ae77111c",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0002",
+        "locator": "#what-can-fail",
+        "level": 2,
+        "section_start": 1846,
+        "section_end": 3041,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:33c5aaefdcf604bd990ad357522ad076d7a991dd10274c6eb080acbb60f2b793",
+        "heading_digest": "sha256:389823a3881ec81f7ed285860165bdd40b79a43c71f180754770d75967d17eae",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0003",
+        "locator": "#connection-failures",
+        "level": 2,
+        "section_start": 3041,
+        "section_end": 3904,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:5da5ec7c273b79a756be7e7a449924d761b89eeab06888aac74ff7dc5ebba52d",
+        "heading_digest": "sha256:7bf5096dc7e9ec7f1792386368279c1d4cf8bce464b39222a481ea4c23c3e919",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0004",
+        "locator": "#confirms",
+        "level": 3,
+        "section_start": 3904,
+        "section_end": 5713,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:d1042ebd939848097e51fb7a83975045c97efa6e7c3f91332fbd81ef71301636",
+        "heading_digest": "sha256:bd652310d2ef65c8a33f71518a37ad5086a62190fe64b81e98ee68c9c41f68c1",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0005",
+        "locator": "#heartbeats",
+        "level": 2,
+        "section_start": 5713,
+        "section_end": 6340,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:598c6d893c9937ff743404d262a6ced76ac17e88c845f40db81583e6417adb16",
+        "heading_digest": "sha256:05f92a37079f9687c018a09073fbb04743daa9010d3874eef51d4112d5f3dc1b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0006",
+        "locator": "#broker-side",
+        "level": 2,
+        "section_start": 6340,
+        "section_end": 6926,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:f9aead7fa16acaca81e6311bb9b44454e93cc71e0781ba214d6e518684228b76",
+        "heading_digest": "sha256:c1f059dd4e310d3465a627acc703dd9a97c317504340ef8fd4214dab28b868d2",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0007",
+        "locator": "#clustering",
+        "level": 2,
+        "section_start": 6926,
+        "section_end": 8451,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:2c6913c49f5c99045febfc8fb32fb49b9cb5707eabbf4b44eafb6561bf46fc20",
+        "heading_digest": "sha256:7969e18208609f43d5ae2e2d81af7450687c2078200e4aaa8416e27e65d86d4b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0008",
+        "locator": "#publisher-side",
+        "level": 2,
+        "section_start": 8451,
+        "section_end": 8972,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:1b390ac41aba7366d95e1502b8974a1640d1ddcbf00bd9e50a863987e8ebe42c",
+        "heading_digest": "sha256:755a2cfc7b55fceb4f38eebf4ffa1d78ef17b0d0016a56e3dae71ff3bcad587f",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0009",
+        "locator": "#routing",
+        "level": 3,
+        "section_start": 8972,
+        "section_end": 10191,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:be2ca88f0ca60fe7ba018060031bc18b02093ae426b42cffedc7f9bbc3567685",
+        "heading_digest": "sha256:04d549e8decb56de268e840cf3df449c9189b4a57f27a3e967f57282049e6742",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0010",
+        "locator": "#consumer-side",
+        "level": 2,
+        "section_start": 10191,
+        "section_end": 11298,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:886120827f9b5d04d3dc21235c2651d908c8b1c32df17fa91b541b7ba87880af",
+        "heading_digest": "sha256:cd18fed6cd2854f89cb54626a4ecd40f75f5c70ee0a0e863496ceb1ac13dd54f",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0011",
+        "locator": "#unprocessable-deliveries",
+        "level": 3,
+        "section_start": 11298,
+        "section_end": 11615,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:8ad01f08613278b3bdddbcdac008921356b139648db22899a5a218be1d8f0f3c",
+        "heading_digest": "sha256:f0afb2b4921d533dd5251ed71d7209422bc45e907e419272be11e70b7172a670",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0012",
+        "locator": "#cancel-notification",
+        "level": 3,
+        "section_start": 11615,
+        "section_end": 11974,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:f69c41627844e9768fe2e50268a2f1f76158797ca08492d819e0e0f2d4f19122",
+        "heading_digest": "sha256:b45fcb352c3a5c5dc9b38c27677a68f3e0f654dcae3fc383e2785949a17f63b2",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0013",
+        "locator": "#federation-and-shovel",
+        "level": 2,
+        "section_start": 11974,
+        "section_end": 13054,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:10bf88ab851c84ab00325f6e67a95650f6b603aa18e72ee4e49327aa996e26b9",
+        "heading_digest": "sha256:03f057e430b8d10adeb6d32137908ba9813b034d103f88cee6577a66f7444b1b",
+        "classification": "automated-section-unreviewed"
+      },
+      {
+        "section_id": "section.rabbitmq-4.3-reliability.0014",
+        "locator": "#monitoring",
+        "level": 2,
+        "section_start": 13054,
+        "section_end": 13916,
+        "context_unit": "utf8-byte",
+        "section_digest": "sha256:2a1e74250777932459848b741c9db25e1a5a175c3cd27c23afff956edd725eed",
+        "heading_digest": "sha256:47b3bc8122ad12e546c363b35a873fec83e3c724c1a891e56245af4d9a16e2c5",
+        "classification": "automated-section-unreviewed"
+      }
+    ]
+  },
+  "candidate_surfaces": []
+}

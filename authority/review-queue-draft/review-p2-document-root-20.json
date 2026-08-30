@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "queue_id": "authority-review-847612e358adc84d78cc",
+  "batch_id": "review-p2-document-root-20",
+  "status": "pending-human",
+  "machine_assistance": "priority-cluster-batch-proposals-only",
+  "semantic_decisions": "none",
+  "items": [
+    {
+      "anchor_id": "anchor-2f58322904493de6a4f0",
+      "document_id": "document-raw-githubusercontent-com-da420a7f792d",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/ttl.md",
+      "source_ids": [
+        "rabbitmq-4.3-ttl"
+      ],
+      "locked_source_digest": "sha256:47b24f48ab6c7099d6d140a19fc66a7a94708d57e6b9d16bbabaa1dfbd1ccc8c",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "document-root",
+      "locator_kind": "document-root",
+      "selector": "document-root",
+      "selector_kind": "document-root",
+      "tag": "document",
+      "heading_level": null,
+      "parent_anchor_id": null,
+      "context_start": 0,
+      "context_end": 12063,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:47b24f48ab6c7099d6d140a19fc66a7a94708d57e6b9d16bbabaa1dfbd1ccc8c",
+      "label_digest": null,
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 2,
+      "priority_proposal_reasons": [
+        "structural-or-document-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p2-document-root-20",
+      "state": "pending-human"
+    },
+    {
+      "anchor_id": "anchor-f2835689838d68a08e22",
+      "document_id": "document-raw-githubusercontent-com-8c014affc1b4",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/federation.md",
+      "source_ids": [
+        "rabbitmq-4.3-federation"
+      ],
+      "locked_source_digest": "sha256:15ebce32a18d44382698ffc52ec60f15288751b1e1de021471caae0a3b1a9064",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "document-root",
+      "locator_kind": "document-root",
+      "selector": "document-root",
+      "selector_kind": "document-root",
+      "tag": "document",
+      "heading_level": null,
+      "parent_anchor_id": null,
+      "context_start": 0,
+      "context_end": 23489,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:15ebce32a18d44382698ffc52ec60f15288751b1e1de021471caae0a3b1a9064",
+      "label_digest": null,
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 2,
+      "priority_proposal_reasons": [
+        "structural-or-document-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p2-document-root-20",
+      "state": "pending-human"
+    }
+  ]
+}

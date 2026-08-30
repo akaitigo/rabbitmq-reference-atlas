@@ -1,0 +1,28 @@
+schema_version: 1
+id: definitive.ldap.authentication.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: security.ldap
+statement: LDAP user lookup and bind authenticationのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-ldap
+proof_obligations:
+- id: proof.ldap.authentication.normal
+  statement: LDAP user lookup and bind authenticationのnormal Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.ldap.authentication.boundary
+  statement: LDAP user lookup and bind authenticationのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.ldap.authentication.rejection
+  statement: LDAP user lookup and bind authenticationのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.ldap.authentication.security
+  statement: LDAP user lookup and bind authenticationのsecurity Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 最小権限の許可と、誤Credential、不正なTrust、越権操作の拒否を同一隔離Environmentで検証する。

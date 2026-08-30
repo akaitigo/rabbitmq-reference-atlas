@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "atlas_id": "rabbitmq-reference-atlas",
+  "atlas_release": "v0.1.0",
+  "coverage_epoch": "2026-08-28",
+  "authority_lock_digest": "sha256:91cc188ce4fa664745afdaf5d1b3d7681c0d3647b35ca4fbf702a7df25e9ef69",
+  "core_policy_version": "1.0.0",
+  "required_profiles": [
+    {
+      "profile": "local",
+      "result": "pass",
+      "evidence_ids": [
+        "eval.router",
+        "operation.evidence-generation"
+      ]
+    },
+    {
+      "profile": "container",
+      "result": "pass",
+      "evidence_ids": [
+        "lab.ack-redelivery",
+        "lab.amqp-model",
+        "lab.consumer-flow-control",
+        "lab.dead-letter",
+        "lab.exchange-binding-matrix",
+        "lab.exchange-queue",
+        "lab.ordering-idempotency",
+        "lab.security-tls",
+        "lab.ttl-dead-letter"
+      ]
+    },
+    {
+      "profile": "cluster",
+      "result": "pass",
+      "evidence_ids": [
+        "lab.cluster-failure-recovery",
+        "lab.cluster-membership",
+        "lab.network-partition",
+        "lab.observability-health",
+        "lab.observability-state",
+        "lab.performance-capacity",
+        "lab.publisher-flow-control",
+        "lab.quorum-stream",
+        "lab.rolling-upgrade",
+        "lab.security-authz"
+      ]
+    }
+  ],
+  "graph_digest": "sha256:9df36b9fe4209f0d60ab715c5db11a9cdd53925c46dee3bb5299f8c1747dccc5",
+  "evidence_set_digest": "sha256:f11583a8b2df84f1b8994c0aa539534576ca02506344b031501ab8c9bb7d7584",
+  "skill_package_digest": "sha256:88df90d41d43d0ab22d248418f37ce776aaacb1082f647468124d1d01893076d",
+  "skill_eval": {
+    "digest": "sha256:17e0878ec82d2f61d632b2fbedab5e19793ded98e8412e90c3978c523adb6fd6",
+    "pass_rate": 1
+  },
+  "sbom_digest": "sha256:fcf5b68d0689692dfe0c9823b185013baa42bd43e1452717cee7798d1d3364e5",
+  "provenance_digest": "sha256:9c1617ae27d062522fd54e3e6b0cbbb660044ed321d4bbb20b89f94d96eea515",
+  "issued_at": "2026-08-31T00:00:00+09:00",
+  "commit": "22ab07cc6c3d92ab489fe6ff8855c9fb8a97db5a",
+  "signature": {
+    "type": "payload-sha256",
+    "digest": "sha256:1bb8ccf9c29ca8a2bf7f566d8bd962cde09fe88dcb012ea58bff918cea0c1644"
+  }
+}

@@ -1,0 +1,26 @@
+schema_version: 1
+id: definitive.cli.rabbitmq-plugins.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: management.cli
+statement: rabbitmq-plugins lifecycle operationsのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-cli
+proof_obligations:
+- id: proof.cli.rabbitmq-plugins.normal
+  statement: rabbitmq-plugins lifecycle operationsのnormal Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.cli.rabbitmq-plugins.boundary
+  statement: rabbitmq-plugins lifecycle operationsのboundary Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.cli.rabbitmq-plugins.rejection
+  statement: rabbitmq-plugins lifecycle operationsのrejection Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.cli.rabbitmq-plugins.compatibility
+  statement: rabbitmq-plugins lifecycle operationsのcompatibility Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 二つ以上のProtocol、Client、Queue、PluginまたはVersion Variantを同一Oracleで比較する。

@@ -1,0 +1,10 @@
+schema_version: 2
+source_id: rabbitmq-4.3-consumers
+source_digest: sha256:48339d265f8081f413fe13fbc822aa1fdf80248bff28a8eb21593a0edf6bd07a
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: consumer.lifecycle, locator: '#consumer-lifecycle', kind: behavior, capability_id: consumer.lifecycle, behavior_id: consumer.lifecycle, title: Consumer registration and cancellation lifecycle, surface_ids: [implementation-construction, failure-recovery]}
+- {id: consumer.priority, locator: '#consumer-priority', kind: behavior, capability_id: consumer.lifecycle, behavior_id: consumer.priority, title: Consumer priority dispatch behavior, surface_ids: [testing-verification, decision-comparison]}
+- {id: consumer.exclusive, locator: '#exclusivity', kind: behavior, capability_id: consumer.lifecycle, behavior_id: consumer.exclusive, title: Exclusive consumer rejection and ownership, surface_ids: [testing-verification, failure-recovery]}
+- {id: consumer.ack-timeout, locator: '#delivery-acknowledgement-timeout', kind: behavior, capability_id: consumer.lifecycle, behavior_id: consumer.ack-timeout, title: Delivery acknowledgement timeout enforcement, surface_ids: [failure-recovery, operations-observability]}
+- {id: consumer.connection-recovery, locator: '#connection-recovery', kind: behavior, capability_id: client.recovery, behavior_id: client.connection-recovery, title: Client connection and consumer recovery responsibility, surface_ids: [failure-recovery, compatibility-integration]}

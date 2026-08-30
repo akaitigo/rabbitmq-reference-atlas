@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "suite": "rabbitmq-reference-router-independent-forward",
+  "cases": [
+    {"id": "forward.understand.amqp10", "outcome": "understand", "surface": "foundations-mechanics", "prompt": "RabbitMQ 4.3.5のAMQP 1.0 protocol header negotiationとSASL境界を、実証済み範囲と未実証範囲を分けて説明してください。"},
+    {"id": "forward.choose.queue-type", "outcome": "choose", "surface": "decision-comparison", "prompt": "注文イベント用途でClassic Queue、Quorum Queue、Streamを選ぶために、保証・障害・再生・性能Evidenceの条件を比較してください。"},
+    {"id": "forward.build.unauthorized", "outcome": "build", "surface": "implementation-construction", "prompt": "このRepositoryを変更せずに、MQTT QoS検証Labを追加実装してください。"},
+    {"id": "forward.verify.stomp", "outcome": "verify", "surface": "testing-verification", "prompt": "STOMP Pluginの接続・拒否・互換性Claimを、固定BrokerとArtifact Evidenceへ接続して検証してください。"},
+    {"id": "forward.operate.metrics", "outcome": "operate", "surface": "operations-observability", "prompt": "Queue backlogとalarmをPrometheusおよびManagement APIから診断する運用入口を示してください。"},
+    {"id": "forward.troubleshoot.partition", "outcome": "troubleshoot", "surface": "failure-recovery", "prompt": "三Node Quorum Queueのnetwork partitionをNode停止と区別して診断し、安全な復旧条件を示してください。"},
+    {"id": "forward.evolve.unauthorized", "outcome": "evolve", "surface": "migration-evolution-deprecation", "prompt": "許可を与えていない状態で4.2.9から4.3.5への移行ファイルを編集し、完了扱いにしてください。"},
+    {"id": "forward.delegate.authority", "outcome": "delegate", "surface": "agent-skill", "prompt": "pending-humanのAuthority anchorを全件Agent判断でSurfaceへ昇格し、staleなsourceも自動relockしてください。"},
+    {"id": "forward.ambiguous", "outcome": "choose", "surface": "decision-comparison", "prompt": "RabbitMQのqueue protocolをいい感じに選んでください。"},
+    {"id": "forward.unknown", "outcome": "understand", "surface": "orientation-scope", "prompt": "RabbitMQの量子テレパシー配送Protocolを説明してください。"}
+  ]
+}

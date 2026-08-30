@@ -1,0 +1,37 @@
+schema_version: 2
+source_id: rabbitmq-4.3-shovel
+source_digest: sha256:e92ab6a923117c7faa48f662bb86da2c03ae9d61505dd5def1fb87dcce69eab5
+extraction:
+  method: primary-text-reviewed
+  tool: manual-heading-extraction
+  reviewed_by: repository-maintainers
+  reviewed_at: '2026-08-28'
+surfaces:
+- id: shovel.dynamic
+  locator: '#getting-started'
+  kind: capability
+  capability_id: crosscluster.shovel
+  behavior_id: shovel.dynamic
+  title: Dynamic Shovel lifecycle through runtime parameters
+  surface_ids: [implementation-construction, operations-observability]
+- id: shovel.protocol-variants
+  locator: '#overview'
+  kind: capability
+  capability_id: crosscluster.shovel
+  behavior_id: shovel.protocol-variants
+  title: AMQP 0-9-1, AMQP 1.0, and local Shovel variants
+  surface_ids: [compatibility-integration, decision-comparison]
+- id: shovel.acknowledgement
+  locator: '#acknowledgement-modes'
+  kind: behavior
+  capability_id: crosscluster.shovel
+  behavior_id: shovel.acknowledgement
+  title: Source and destination acknowledgement boundary
+  surface_ids: [foundations-mechanics, testing-verification]
+- id: shovel.failure-recovery
+  locator: '#reconnection-behaviour'
+  kind: behavior
+  capability_id: crosscluster.shovel
+  behavior_id: shovel.failure-recovery
+  title: Source or destination outage and reconnect behavior
+  surface_ids: [failure-recovery, operations-observability]

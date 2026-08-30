@@ -1,0 +1,24 @@
+schema_version: 1
+id: definitive.exchange.direct.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: routing.exchange
+statement: Direct exchange exact routing-key matchingのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-exchanges
+proof_obligations:
+- id: proof.exchange.direct.normal
+  statement: Direct exchange exact routing-key matchingのnormal Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.exchange.direct.boundary
+  statement: Direct exchange exact routing-key matchingのboundary Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.exchange.direct.rejection
+  statement: Direct exchange exact routing-key matchingのrejection Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。

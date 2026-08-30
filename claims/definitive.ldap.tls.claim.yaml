@@ -1,0 +1,30 @@
+schema_version: 1
+id: definitive.ldap.tls.claim
+atlas_id: rabbitmq-reference-atlas
+capability_id: security.ldap
+statement: TLS protected LDAP backend connectionのRabbitMQ 4.3.5における公開契約は、Authorityから導出した各必須Scenarioの実行結果と一致する。
+status: proposed
+source_ids:
+- rabbitmq-4.3-ldap
+proof_obligations:
+- id: proof.ldap.tls.normal
+  statement: TLS protected LDAP backend connectionのnormal Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 固定Versionの実Runtimeで正常入力を実行し、期待Outcomeを構造化Artifactで判定する。
+- id: proof.ldap.tls.boundary
+  statement: TLS protected LDAP backend connectionのboundary Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 上限、下限、空、重複または優先順位の境界を一つずつ変え、反証可能なOracleで判定する。
+- id: proof.ldap.tls.rejection
+  statement: TLS protected LDAP backend connectionのrejection Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 無効な設定、Credential、Protocolまたは操作を与え、部分成功を認めず明示的な拒否を確認する。
+- id: proof.ldap.tls.security
+  statement: TLS protected LDAP backend connectionのsecurity Scenarioを専用実Runtime Evidenceで証明する。
+  acceptance_criteria:
+  - 最小権限の許可と、誤Credential、不正なTrust、越権操作の拒否を同一隔離Environmentで検証する。
+- id: proof.ldap.tls.compatibility
+  statement: TLS protected LDAP backend connectionのcompatibility Scenarioを専用実Runtime
+    Evidenceで証明する。
+  acceptance_criteria:
+  - 二つ以上のProtocol、Client、Queue、PluginまたはVersion Variantを同一Oracleで比較する。

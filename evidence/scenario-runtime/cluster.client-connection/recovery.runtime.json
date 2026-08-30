@@ -1,0 +1,211 @@
+{
+  "schema_version": 1,
+  "behavior_id": "cluster.client-connection",
+  "authority_surface_id": "cluster.client-connection",
+  "scenario": "recovery",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "run_metadata": {
+    "execution_id": "20260830T171233Z-40300",
+    "started_at": "2026-08-30T17:12:33Z",
+    "completed_at": "2026-08-30T17:25:08.019496Z"
+  },
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-socket-amqp091-probe",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.cluster.client-connection.recovery.node-1",
+        "assertions": [
+          "node再起動後に新規AMQP接続のprotocol headerへ応答した",
+          "同じ時点のcluster statusが3-node onlineを示した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-1/packet.json",
+          "digest": "sha256:c2b638d0b288a846b3391fe7fc29907c56081eda0cf0d090a5cec675abf9bbb3",
+          "size_bytes": 222,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-1/log.txt",
+          "digest": "sha256:1248c8bc64926ca40ae23d7bd731c349106245d4761c07bd89c1be8502afffbb",
+          "size_bytes": 31855,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-1/metric.json",
+          "digest": "sha256:8ca60ba75e1673f4000c36f7ebc79bf94dc2fa4fb49fc6d17d7832c30eab84d5",
+          "size_bytes": 43774,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-socket-amqp091-probe",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.cluster.client-connection.recovery.node-2",
+        "assertions": [
+          "node再起動後に新規AMQP接続のprotocol headerへ応答した",
+          "同じ時点のcluster statusが3-node onlineを示した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-2/packet.json",
+          "digest": "sha256:3372813398849e716117a5e9e7910bf01ac146c7407831f329fc66742b03d06c",
+          "size_bytes": 222,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-2/log.txt",
+          "digest": "sha256:25ea737a0616b0ef407fa950e0e81b39b4cd0313ac6e4cd829558541280b5fcb",
+          "size_bytes": 34739,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-2/metric.json",
+          "digest": "sha256:7b7b0e69746b9c721acb075c1c9fc4090a80348e841daca5d6547b9b1fecba59",
+          "size_bytes": 58313,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-socket-amqp091-probe",
+        "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+        "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
+      },
+      "oracle": {
+        "id": "oracle.cluster.client-connection.recovery.node-3",
+        "assertions": [
+          "node再起動後に新規AMQP接続のprotocol headerへ応答した",
+          "同じ時点のcluster statusが3-node onlineを示した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-3/packet.json",
+          "digest": "sha256:75005ed5bec2a979511481ff74e0f20b7b4d9cf8e115bfb7a179144d3b859ec1",
+          "size_bytes": 222,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-3/log.txt",
+          "digest": "sha256:fd0d9c145dd861df7889c6263a7de1ee829314cef4cdc3781a126c30f4586bd9",
+          "size_bytes": 35902,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-3/metric.json",
+          "digest": "sha256:c01c23e6dc9665516aa25cc9e2aa4bee4a59ec1cabf353948bd76923ccfc040c",
+          "size_bytes": 58309,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

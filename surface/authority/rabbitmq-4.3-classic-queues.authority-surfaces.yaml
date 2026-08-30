@@ -1,0 +1,9 @@
+schema_version: 2
+source_id: rabbitmq-4.3-classic-queues
+source_digest: sha256:084b58f037d5285d78a0c6665ddec2602c962b542d1bb273ea940e48821f9283
+extraction: {method: primary-text-reviewed, tool: manual-heading-extraction, reviewed_by: repository-maintainers, reviewed_at: '2026-08-28'}
+surfaces:
+- {id: classic-queue.durability, locator: '#durability', kind: behavior, capability_id: queue.classic, behavior_id: classic-queue.durability, title: Classic queue durability and restart behavior, surface_ids: [foundations-mechanics, testing-verification]}
+- {id: classic-queue.priority, locator: '#priority-queues', kind: capability, capability_id: queue.classic, behavior_id: classic-queue.priority, title: Classic queue message priority, surface_ids: [implementation-construction, performance-capacity-cost]}
+- {id: classic-queue.overflow, locator: '#queue-and-message-ttl', kind: behavior, capability_id: queue.classic, behavior_id: classic-queue.overflow, title: Classic queue length TTL and overflow behavior, surface_ids: [testing-verification, failure-recovery]}
+- {id: classic-queue.exclusive-auto-delete, locator: '#exclusive-and-auto-delete-queues', kind: behavior, capability_id: queue.classic, behavior_id: classic-queue.exclusive-auto-delete, title: Exclusive and auto-delete queue lifecycle, surface_ids: [implementation-construction, testing-verification]}

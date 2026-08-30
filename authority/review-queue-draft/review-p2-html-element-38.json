@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "queue_id": "authority-review-847612e358adc84d78cc",
+  "batch_id": "review-p2-html-element-38",
+  "status": "pending-human",
+  "machine_assistance": "priority-cluster-batch-proposals-only",
+  "semantic_decisions": "none",
+  "items": [
+    {
+      "anchor_id": "anchor-33d8fba9cad293731fd6",
+      "document_id": "document-raw-githubusercontent-com-a472c24e7f64",
+      "document_url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-website/1c99c9687f012ad700385c1e9a6990f6520720d3/versioned_docs/version-4.3/quorum-queues/index.md",
+      "source_ids": [
+        "rabbitmq-4.3-quorum-queues"
+      ],
+      "locked_source_digest": "sha256:a9a41aca4560ded658c6ada1229258ba8f0a185bc026cb5784dfb831383ff41d",
+      "inventory_tool_digest": "sha256:21a48206a5c5fc0e3260b3eb53e7ce216b94477fe4a141279407434b65c8b9c0",
+      "review_queue_tool_digest": "sha256:5b5e18f84cfd4a01ca891f0fd53906155eee38f3369384d7288d89b7cb06e524",
+      "locator": "offset:utf8:47799",
+      "locator_kind": "locked-body-offset",
+      "selector": "html-table",
+      "selector_kind": "html-element",
+      "tag": "table",
+      "heading_level": null,
+      "parent_anchor_id": "anchor-37a71984a56f239e1cd5",
+      "context_start": 46775,
+      "context_end": 52533,
+      "context_unit": "utf8-byte",
+      "context_digest": "sha256:8461c1deb741cb31a9c72ffb6274cbcd7c94d6035dcc1f3d940d13dc0dd49b55",
+      "label_digest": null,
+      "existing_reference_edge_ids": [],
+      "proposed_priority": 2,
+      "priority_proposal_reasons": [
+        "structural-or-document-anchor"
+      ],
+      "proposed_candidate_cluster_id": null,
+      "proposed_batch_id": "review-p2-html-element-38",
+      "state": "pending-human"
+    }
+  ]
+}

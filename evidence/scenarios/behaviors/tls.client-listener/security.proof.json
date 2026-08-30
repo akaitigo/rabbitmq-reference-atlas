@@ -1,0 +1,247 @@
+{
+  "schema_version": 1,
+  "id": "proof.behavior.tls.client-listener.security",
+  "atlas_id": "rabbitmq-reference-atlas",
+  "generated_at": "2026-08-28T00:00:00+09:00",
+  "behavior_id": "tls.client-listener",
+  "target_id": "definitive.tls.client-listener",
+  "scenario": "security",
+  "applicability": "required",
+  "status": "scenario-gap-open",
+  "runtime_profile": "tls-cluster-client",
+  "proof_obligation_id": "proof.tls.client-listener.security",
+  "authority_binding": {
+    "reference_edge": {
+      "inventory_id": "inventory.tls.client-listener",
+      "authority_artifact_id": "rabbitmq-4-3-tls",
+      "authority_artifact_path": "surface/authority/rabbitmq-4.3-tls.authority-surfaces.yaml",
+      "authority_artifact_digest": "sha256:7847566969369bdfc5b118c5bd3ac3a571e1e7232782af255f575f16da6bb7cb",
+      "source_id": "rabbitmq-4.3-tls",
+      "source_digest": "sha256:d33e05a1821a2c0ebbbe804050d6c85a320eaba15e6128aa3573deb41dfe31db",
+      "surface_id": "tls.client-listener",
+      "locator": "#enabling-tls-support-in-rabbitmq",
+      "behavior_id": "tls.client-listener"
+    },
+    "human_review_decision": null,
+    "authority_atomic_behavior": false
+  },
+  "legacy_observation": {
+    "evidence_id": null,
+    "evidence_record": null,
+    "behavior_specific": false,
+    "identity": {
+      "broker": null,
+      "client": null,
+      "runtime": null
+    },
+    "artifact_channels": {
+      "packet": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.packet.missing"
+        ]
+      },
+      "log": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.log.missing"
+        ]
+      },
+      "metric": {
+        "artifacts": [],
+        "gap_ids": [
+          "artifact.metric.missing"
+        ]
+      }
+    },
+    "observation_gap_ids": [
+      "artifact.log.missing",
+      "artifact.metric.missing",
+      "artifact.packet.missing",
+      "evidence.behavior-specific-single-record-missing",
+      "identity.broker.missing",
+      "identity.client-version.missing",
+      "identity.runtime.missing"
+    ],
+    "counts_toward_scenario_gap_closure": false,
+    "aggregate_evidence_allowed": false
+  },
+  "dedicated_runtime": {
+    "report": {
+      "path": "evidence/scenario-runtime/tls.client-listener/security.runtime.json",
+      "present": false,
+      "digest": null
+    },
+    "required_variants": [
+      "node-1-tls-client",
+      "node-2-tls-client",
+      "node-3-tls-client"
+    ],
+    "variant_proofs": [
+      {
+        "id": "node-1-tls-client",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1-tls-client.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1-tls-client.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-1-tls-client.metric.missing"
+            ]
+          }
+        }
+      },
+      {
+        "id": "node-2-tls-client",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2-tls-client.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2-tls-client.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-2-tls-client.metric.missing"
+            ]
+          }
+        }
+      },
+      {
+        "id": "node-3-tls-client",
+        "attempts": null,
+        "retries": null,
+        "broker": null,
+        "client": null,
+        "runtime": null,
+        "oracle": null,
+        "source": null,
+        "harness": null,
+        "artifact_channels": {
+          "packet": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3-tls-client.packet.missing"
+            ]
+          },
+          "log": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3-tls-client.log.missing"
+            ]
+          },
+          "metric": {
+            "artifact": null,
+            "gap_ids": [
+              "artifact.node-3-tls-client.metric.missing"
+            ]
+          }
+        }
+      }
+    ],
+    "requirements": {
+      "dedicated_surface_scenario_report": false,
+      "all_variants_driven": false,
+      "attempts_one_retry_zero": false,
+      "oracle_pass_per_variant": false,
+      "source_harness_digest_bound": false,
+      "broker_client_runtime_identity": false,
+      "packet_log_metric_dedicated": false
+    },
+    "scenario_gap_closed": false
+  },
+  "integrated_reference": {
+    "manifest": "reference-system/manifest.yaml",
+    "result": "reference-system/results.json",
+    "scenario_id": "reference-system.security",
+    "status": "gap-unexecuted",
+    "behavior_completion_reuse_allowed": false
+  },
+  "closure": {
+    "dedicated_row": true,
+    "dedicated_surface_scenario_report": false,
+    "all_variants_driven": false,
+    "attempts_one_retry_zero": false,
+    "oracle_pass_per_variant": false,
+    "source_harness_digest_bound": false,
+    "broker_client_runtime_identity": false,
+    "packet_log_metric_dedicated": false,
+    "artifact_metadata_exclusive": true,
+    "scenario_gap_closed": false,
+    "authority_atomic_behavior": false,
+    "completion_eligible": false
+  },
+  "scenario_gap_ids": [
+    "artifact.node-1-tls-client.log.missing",
+    "artifact.node-1-tls-client.metric.missing",
+    "artifact.node-1-tls-client.packet.missing",
+    "artifact.node-2-tls-client.log.missing",
+    "artifact.node-2-tls-client.metric.missing",
+    "artifact.node-2-tls-client.packet.missing",
+    "artifact.node-3-tls-client.log.missing",
+    "artifact.node-3-tls-client.metric.missing",
+    "artifact.node-3-tls-client.packet.missing",
+    "digest.source-harness-missing",
+    "execution.attempts-not-one",
+    "execution.retries-not-zero",
+    "identity.broker-client-runtime-missing",
+    "oracle.variant-pass-missing",
+    "runtime.dedicated-report-missing",
+    "variant.execution-missing"
+  ],
+  "completion_gap_ids": [
+    "authority.atomic-human-promotion-missing"
+  ],
+  "gap_ids": [
+    "artifact.node-1-tls-client.log.missing",
+    "artifact.node-1-tls-client.metric.missing",
+    "artifact.node-1-tls-client.packet.missing",
+    "artifact.node-2-tls-client.log.missing",
+    "artifact.node-2-tls-client.metric.missing",
+    "artifact.node-2-tls-client.packet.missing",
+    "artifact.node-3-tls-client.log.missing",
+    "artifact.node-3-tls-client.metric.missing",
+    "artifact.node-3-tls-client.packet.missing",
+    "authority.atomic-human-promotion-missing",
+    "digest.source-harness-missing",
+    "execution.attempts-not-one",
+    "execution.retries-not-zero",
+    "identity.broker-client-runtime-missing",
+    "oracle.variant-pass-missing",
+    "runtime.dedicated-report-missing",
+    "variant.execution-missing"
+  ]
+}
