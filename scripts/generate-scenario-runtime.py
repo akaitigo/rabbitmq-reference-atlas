@@ -24,6 +24,7 @@ EVIDENCE_ROOT = Path(os.environ.get("RABBITMQ_EVIDENCE_ROOT", ROOT / "evidence")
 COMPOSE = ["docker", "compose", "-f", str(ROOT / "environments/compose.yaml")]
 IMAGE_DIGEST = "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
 AMQP091_HEADER = bytes((65, 77, 81, 80, 0, 0, 9, 1))
+AMQP10_SASL_HEADER = bytes((65, 77, 81, 80, 3, 1, 0, 0))
 NODES = (
     {"variant": "node-1", "service": "rabbitmq-1", "amqp": ("127.0.0.1", 25672), "management": "http://127.0.0.1:35672"},
     {"variant": "node-2", "service": "rabbitmq-2", "amqp": ("127.0.0.1", 25673), "management": "http://127.0.0.1:35673"},
@@ -81,20 +82,35 @@ def broker_log(service: str) -> str:
     return "\n".join(line.rstrip() for line in result["stdout"].splitlines()) + "\n"
 
 
-def management_get(base: str, path: str, username: str = "atlas",
-                   password: str = "atlas-local-only") -> dict[str, Any]:
-    request = urllib.request.Request(base + path)
+def management_request(base: str, path: str, method: str = "GET", body: Any = None,
+                       username: str = "atlas", password: str = "atlas-local-only") -> dict[str, Any]:
+    data = json.dumps(body).encode() if body is not None else None
+    request = urllib.request.Request(base + path, data=data, method=method)
     token = base64.b64encode(f"{username}:{password}".encode()).decode("ascii")
     request.add_header("Authorization", "Basic " + token)
+    if data is not None:
+        request.add_header("Content-Type", "application/json")
     try:
         with urllib.request.urlopen(request, timeout=8) as response:
-            body = response.read()
-            return {"status": response.status, "body": json.loads(body), "error": None}
+            raw = response.read()
+            if not raw:
+                decoded: Any = None
+            else:
+                try:
+                    decoded = json.loads(raw)
+                except json.JSONDecodeError:
+                    decoded = raw.decode("utf-8", errors="replace")
+            return {"status": response.status, "body": decoded, "error": None}
     except urllib.error.HTTPError as error:
         body = error.read().decode("utf-8", errors="replace")
         return {"status": error.code, "body": body, "error": str(error)}
     except Exception as error:  # Network failure is itself a bounded runtime observation.
         return {"status": None, "body": None, "error": str(error)}
+
+
+def management_get(base: str, path: str, username: str = "atlas",
+                   password: str = "atlas-local-only") -> dict[str, Any]:
+    return management_request(base, path, username=username, password=password)
 
 
 def amqp_header_probe(endpoint: tuple[str, int]) -> dict[str, Any]:
@@ -112,6 +128,41 @@ def amqp_header_probe(endpoint: tuple[str, int]) -> dict[str, Any]:
             connection.sendall(AMQP091_HEADER)
             observation["received_hex"] = connection.recv(8).hex()
     except Exception as error:  # Expected during some failure variants.
+        observation["error"] = str(error)
+    return observation
+
+
+def amqp10_sasl_mechanisms_probe(endpoint: tuple[str, int]) -> dict[str, Any]:
+    observation = {
+        "transport": "tcp",
+        "protocol": "AMQP 1.0 SASL",
+        "endpoint": f"{endpoint[0]}:{endpoint[1]}",
+        "sent_hex": AMQP10_SASL_HEADER.hex(),
+        "received_hex": "",
+        "advertised_mechanisms": [],
+        "error": None,
+    }
+    received = bytearray()
+    try:
+        with socket.create_connection(endpoint, timeout=4) as connection:
+            connection.settimeout(2)
+            connection.sendall(AMQP10_SASL_HEADER)
+            for _ in range(4):
+                try:
+                    chunk = connection.recv(4096)
+                except socket.timeout:
+                    break
+                if not chunk:
+                    break
+                received.extend(chunk)
+                if b"PLAIN" in received:
+                    break
+        observation["received_hex"] = bytes(received).hex()
+        observation["advertised_mechanisms"] = [
+            mechanism for mechanism in ("PLAIN", "AMQPLAIN", "ANONYMOUS", "EXTERNAL")
+            if mechanism.encode() in received
+        ]
+    except Exception as error:
         observation["error"] = str(error)
     return observation
 
@@ -349,6 +400,70 @@ def steady_state_tranche() -> None:
         "scripts/generate-scenario-runtime.py", "rabbitmq-diagnostics-4.3.5", packets, assertions,
     )
 
+    packets, assertions = {}, {}
+    for node in NODES:
+        trace = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmqctl", "status", "--formatter", "json"])
+        try:
+            status = json.loads(trace["stdout"])
+        except json.JSONDecodeError as error:
+            raise RuntimeError(f"rabbitmqctl JSON oracle failed: {node['service']}: {trace}") from error
+        if trace["returncode"] != 0 or status.get("rabbitmq_version") != "4.3.5":
+            raise RuntimeError(f"rabbitmqctl status oracle failed: {node['service']}: {trace}")
+        packets[node["variant"]] = {
+            "transport": "container-exec", "command": trace["command"],
+            "returncode": trace["returncode"], "status": status,
+        }
+        assertions[node["variant"]] = [
+            "rabbitmqctl statusが対象nodeのJSON runtime stateを返した",
+            "statusのRabbitMQ versionが固定Version 4.3.5と一致した",
+        ]
+    report(
+        "cli.rabbitmqctl", "operations", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "rabbitmqctl-4.3.5", packets, assertions,
+    )
+
+    packets, assertions = {}, {}
+    for node in NODES:
+        listeners = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmq-diagnostics", "listeners"])
+        if listeners["returncode"] != 0 or "5672" not in listeners["stdout"]:
+            raise RuntimeError(f"rabbitmq-diagnostics listeners oracle failed: {node['service']}: {listeners}")
+        packets[node["variant"]] = {
+            "transport": "container-exec", "command": listeners["command"],
+            "returncode": listeners["returncode"], "stdout": listeners["stdout"], "stderr": listeners["stderr"],
+        }
+        assertions[node["variant"]] = [
+            "rabbitmq-diagnostics listenersが対象nodeで成功した",
+            "固定AMQP listener port 5672がruntime出力に存在した",
+        ]
+    report(
+        "cli.rabbitmq-diagnostics", "operations", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "rabbitmq-diagnostics-4.3.5", packets, assertions,
+    )
+
+    packets, assertions = {}, {}
+    for node in NODES:
+        before = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmq-plugins", "list", "-e", "-m"])
+        rejected = run([
+            *COMPOSE, "exec", "-T", node["service"], "rabbitmq-plugins",
+            "--node", "rabbit@atlas-missing", "enable", "rabbitmq_management",
+        ])
+        after = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmq-plugins", "list", "-e", "-m"])
+        if before["returncode"] != 0 or rejected["returncode"] == 0 or after["returncode"] != 0:
+            raise RuntimeError(f"plugin rejection command oracle failed: {node['service']}")
+        if sorted(before["stdout"].splitlines()) != sorted(after["stdout"].splitlines()):
+            raise RuntimeError(f"plugin rejection changed inventory: {node['service']}")
+        packets[node["variant"]] = {
+            "transport": "container-exec", "before": before, "rejected_enable": rejected, "after": after,
+        }
+        assertions[node["variant"]] = [
+            "到達不能なtarget nodeへのonline plugin applyが非zeroで拒否された",
+            "拒否前後でenabled plugin inventoryが変化しなかった",
+        ]
+    report(
+        "cli.rabbitmq-plugins", "rejection", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "rabbitmq-plugins-4.3.5", packets, assertions,
+    )
+
     packets, assertions, inventories = {}, {}, {}
     for node in NODES:
         trace = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmq-plugins", "list", "-e", "-m"])
@@ -376,6 +491,25 @@ def steady_state_tranche() -> None:
         "scripts/generate-scenario-runtime.py", "rabbitmq-plugins-4.3.5", packets, assertions,
     )
 
+    packets, assertions, mechanisms = {}, {}, {}
+    for node in NODES:
+        packet = amqp10_sasl_mechanisms_probe(node["amqp"])
+        if packet["error"] or not packet["received_hex"] or "PLAIN" not in packet["advertised_mechanisms"]:
+            raise RuntimeError(f"AMQP 1.0 SASL mechanism oracle failed: {node['service']}: {packet}")
+        mechanisms[node["variant"]] = tuple(packet["advertised_mechanisms"])
+        packets[node["variant"]] = packet
+        assertions[node["variant"]] = [
+            "実BrokerがAMQP 1.0 SASL protocol headerへ応答した",
+            "SASL mechanism frameがPLAINをadvertiseした",
+            "全3 nodeのadvertised mechanism集合が一致した",
+        ]
+    if len(set(mechanisms.values())) != 1:
+        raise RuntimeError(f"AMQP 1.0 SASL mechanism inventory differs across nodes: {mechanisms}")
+    report(
+        "amqp10.authentication-options", "compatibility", "protocol-amqp10",
+        "scripts/generate-scenario-runtime.py", "python-socket-amqp10-sasl-probe", packets, assertions,
+    )
+
 
 def cluster_connection_failure(stopped_service: str) -> None:
     packets, assertions = {}, {}
@@ -398,6 +532,51 @@ def cluster_connection_failure(stopped_service: str) -> None:
         "scripts/generate-scenario-runtime.py", "python-socket-amqp091-probe", packets, assertions,
         unavailable_services={stopped_service},
     )
+    cluster_metadata_failure(stopped_service)
+
+
+def scenario_metadata_vhost() -> str:
+    value = os.environ.get("RABBITMQ_SCENARIO_METADATA_VHOST")
+    if not value or not value.startswith("/atlas-metadata-"):
+        raise RuntimeError("RABBITMQ_SCENARIO_METADATA_VHOST is required")
+    return value
+
+
+def cluster_metadata_failure(stopped_service: str) -> None:
+    vhost = scenario_metadata_vhost()
+    path = "/api/vhosts/" + urllib.parse.quote(vhost, safe="")
+    live_node = next(node for node in NODES if node["service"] != stopped_service)
+    created = management_request(live_node["management"], path, method="PUT", body={})
+    if created["status"] not in (201, 204):
+        raise RuntimeError(f"metadata creation during node failure failed: {created}")
+    try:
+        packets, assertions = {}, {}
+        for node in NODES:
+            observed = management_get(node["management"], path)
+            unavailable = node["service"] == stopped_service
+            if unavailable and observed["status"] is not None:
+                raise RuntimeError(f"stopped node exposed management metadata: {node['service']}: {observed}")
+            if not unavailable and observed["status"] != 200:
+                raise RuntimeError(f"live node lacks replicated metadata: {node['service']}: {observed}")
+            packets[node["variant"]] = {
+                "transport": "HTTP", "endpoint": node["management"] + path,
+                "fault": "broker-process-stopped", "stopped_service": stopped_service,
+                "create_status": created["status"] if node == live_node else None,
+                "query": observed,
+            }
+            assertions[node["variant"]] = [
+                "停止nodeのManagement endpointは到達不能である"
+                if unavailable else
+                "1 node停止中に作成したvhost metadataが稼働nodeから取得できた",
+            ]
+        report(
+            "cluster.metadata-replication", "failure", "broker-cluster-3",
+            "scripts/generate-scenario-runtime.py", "python-urllib-management-client", packets, assertions,
+            unavailable_services={stopped_service},
+        )
+    except Exception:
+        management_request(live_node["management"], path, method="DELETE")
+        raise
 
 
 def cluster_connection_recovery() -> None:
@@ -416,6 +595,34 @@ def cluster_connection_recovery() -> None:
         "cluster.client-connection", "recovery", "broker-cluster-3",
         "scripts/generate-scenario-runtime.py", "python-socket-amqp091-probe", packets, assertions,
     )
+    cluster_metadata_recovery()
+
+
+def cluster_metadata_recovery() -> None:
+    vhost = scenario_metadata_vhost()
+    path = "/api/vhosts/" + urllib.parse.quote(vhost, safe="")
+    try:
+        packets, assertions = {}, {}
+        for node in NODES:
+            observed = management_get(node["management"], path)
+            if observed["status"] != 200 or not isinstance(observed["body"], dict) or observed["body"].get("name") != vhost:
+                raise RuntimeError(f"recovered node lacks replicated metadata: {node['service']}: {observed}")
+            packets[node["variant"]] = {
+                "transport": "HTTP", "endpoint": node["management"] + path,
+                "fault_removed": "broker-process-restarted", "query": observed,
+            }
+            assertions[node["variant"]] = [
+                "停止中に作成されたvhost metadataが再参加nodeを含む全nodeから取得できた",
+                "同じ時点のcluster statusが3-node onlineを示した",
+            ]
+        report(
+            "cluster.metadata-replication", "recovery", "broker-cluster-3",
+            "scripts/generate-scenario-runtime.py", "python-urllib-management-client", packets, assertions,
+        )
+    finally:
+        deleted = management_request(NODES[0]["management"], path, method="DELETE")
+        if deleted["status"] not in (204, 404):
+            raise RuntimeError(f"metadata scenario cleanup failed: {deleted}")
 
 
 def main() -> int:

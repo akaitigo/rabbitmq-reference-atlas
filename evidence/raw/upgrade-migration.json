@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "rolling-upgrade-4.2.9-to-4.3.5",
-  "created_at": "2026-08-30T14:01:24.272007+00:00",
+  "created_at": "2026-08-30T14:28:52.661359+00:00",
   "strategy": "rolling-in-place",
   "source": {
     "rabbitmq_version": "4.2.9",
@@ -24,7 +24,7 @@
     {
       "schema_version": 1,
       "phase": "source",
-      "captured_at": "2026-08-30T14:00:33.090208+00:00",
+      "captured_at": "2026-08-30T14:28:03.516684+00:00",
       "expected_versions": {
         "rabbit@upgrade-1": "4.2.9",
         "rabbit@upgrade-2": "4.2.9",
@@ -92,7 +92,7 @@
     {
       "schema_version": 1,
       "phase": "mixed-1",
-      "captured_at": "2026-08-30T14:00:50.657055+00:00",
+      "captured_at": "2026-08-30T14:28:20.821901+00:00",
       "expected_versions": {
         "rabbit@upgrade-1": "4.2.9",
         "rabbit@upgrade-2": "4.2.9",
@@ -160,7 +160,7 @@
     {
       "schema_version": 1,
       "phase": "mixed-2",
-      "captured_at": "2026-08-30T14:01:04.864020+00:00",
+      "captured_at": "2026-08-30T14:28:35.496856+00:00",
       "expected_versions": {
         "rabbit@upgrade-1": "4.2.9",
         "rabbit@upgrade-2": "4.3.5",
@@ -228,7 +228,7 @@
     {
       "schema_version": 1,
       "phase": "target",
-      "captured_at": "2026-08-30T14:01:22.970022+00:00",
+      "captured_at": "2026-08-30T14:28:51.408307+00:00",
       "expected_versions": {
         "rabbit@upgrade-1": "4.3.5",
         "rabbit@upgrade-2": "4.3.5",
@@ -363,8 +363,8 @@
   ],
   "workload": {
     "schema_version": 1,
-    "started_at": "2026-08-30T14:00:30.116772Z",
-    "finished_at": "2026-08-30T14:01:24.147554Z",
+    "started_at": "2026-08-30T14:28:00.541898Z",
+    "finished_at": "2026-08-30T14:28:52.562664Z",
     "queue": "atlas.upgrade.quorum",
     "endpoints": [
       "amqp://atlas:atlas-local-only@127.0.0.1:27672/",
@@ -840,16 +840,7 @@
       "upgrade-000465",
       "upgrade-000466",
       "upgrade-000467",
-      "upgrade-000468",
-      "upgrade-000469",
-      "upgrade-000470",
-      "upgrade-000471",
-      "upgrade-000472",
-      "upgrade-000473",
-      "upgrade-000474",
-      "upgrade-000475",
-      "upgrade-000476",
-      "upgrade-000477"
+      "upgrade-000468"
     ],
     "received_ids": [
       "upgrade-000000",
@@ -1320,62 +1311,53 @@
       "upgrade-000465",
       "upgrade-000466",
       "upgrade-000467",
-      "upgrade-000468",
-      "upgrade-000469",
-      "upgrade-000470",
-      "upgrade-000471",
-      "upgrade-000472",
-      "upgrade-000473",
-      "upgrade-000474",
-      "upgrade-000475",
-      "upgrade-000476",
-      "upgrade-000477"
+      "upgrade-000468"
     ],
     "missing_confirmed_ids": [],
     "duplicate_deliveries": 0,
     "reconnects": 2,
     "phase_stats": {
       "mixed-1": {
-        "confirmed": 63,
-        "received": 63,
+        "confirmed": 64,
+        "received": 64,
         "errors": 0
       },
       "mixed-2": {
-        "confirmed": 31,
-        "received": 31,
+        "confirmed": 42,
+        "received": 42,
         "errors": 0
       },
       "source": {
-        "confirmed": 28,
-        "received": 28,
+        "confirmed": 26,
+        "received": 26,
         "errors": 0
       },
       "target": {
-        "confirmed": 68,
-        "received": 68,
+        "confirmed": 54,
+        "received": 54,
         "errors": 0
       },
       "upgrading-1": {
-        "confirmed": 91,
-        "received": 91,
+        "confirmed": 92,
+        "received": 92,
         "errors": 1
       },
       "upgrading-2": {
-        "confirmed": 99,
-        "received": 99,
+        "confirmed": 94,
+        "received": 94,
         "errors": 0
       },
       "upgrading-3": {
-        "confirmed": 98,
-        "received": 98,
+        "confirmed": 97,
+        "received": 97,
         "errors": 0
       }
     },
     "errors": [
       {
-        "at": "2026-08-30T14:01:07.23682Z",
+        "at": "2026-08-30T14:28:37.917625Z",
         "phase": "upgrading-1",
-        "message": "publish upgrade-000340: Exception (504) Reason: \"channel/connection is not open\""
+        "message": "publish negatively acknowledged: upgrade-000345"
       }
     ]
   },

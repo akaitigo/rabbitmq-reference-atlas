@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "behavior_id": "amqp10.authentication-options",
+  "authority_surface_id": "amqp10.authentication-options",
+  "scenario": "compatibility",
+  "runtime_profile": "protocol-amqp10",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-socket-amqp10-sasl-probe",
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T141832Z-3367"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.authentication-options.compatibility.node-1",
+        "assertions": [
+          "実BrokerがAMQP 1.0 SASL protocol headerへ応答した",
+          "SASL mechanism frameがPLAINをadvertiseした",
+          "全3 nodeのadvertised mechanism集合が一致した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-1/packet.json",
+          "digest": "sha256:6ea2de16c1a9f63c404b87ea88edcefaf2bd59914c209e31cde40c6268384e6b",
+          "size_bytes": 361,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-1/log.txt",
+          "digest": "sha256:54634997249ab607ebd70e7c47d71a675a7e64927fa1b31d690049d9ece6c910",
+          "size_bytes": 36703,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-1/metric.json",
+          "digest": "sha256:36fa45f43ca53a0d1660469ff756b888355314424ff95f70945ddcca455c0e84",
+          "size_bytes": 62403,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-socket-amqp10-sasl-probe",
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T141832Z-3367"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.authentication-options.compatibility.node-2",
+        "assertions": [
+          "実BrokerがAMQP 1.0 SASL protocol headerへ応答した",
+          "SASL mechanism frameがPLAINをadvertiseした",
+          "全3 nodeのadvertised mechanism集合が一致した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-2/packet.json",
+          "digest": "sha256:53e82f6d94f184b1c91beb47f6e9abd203ebb9b25bbfb918340ac6c38350d17c",
+          "size_bytes": 361,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-2/log.txt",
+          "digest": "sha256:c20ec1e4d76c4add76744ae2246fdd8e7ee2a21ffe3384581fbeb9f679b91aa1",
+          "size_bytes": 33935,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-2/metric.json",
+          "digest": "sha256:ddbff8edd7ffa86690ae23e80faf45b2435e30e893c242406fd569a477b7e902",
+          "size_bytes": 62410,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-socket-amqp10-sasl-probe",
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "runtime": {
+        "profile": "protocol-amqp10",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T141832Z-3367"
+      },
+      "oracle": {
+        "id": "oracle.amqp10.authentication-options.compatibility.node-3",
+        "assertions": [
+          "実BrokerがAMQP 1.0 SASL protocol headerへ応答した",
+          "SASL mechanism frameがPLAINをadvertiseした",
+          "全3 nodeのadvertised mechanism集合が一致した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-3/packet.json",
+          "digest": "sha256:53ca1aeb90458ce83c5ad5da47220540014fd4a2f1e2b3cccce1300342dceca3",
+          "size_bytes": 361,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-3/log.txt",
+          "digest": "sha256:0cb975b75b4b969530f2dcb50e3c2da4dc1d66785a0bb7cc477fb2c4f3768612",
+          "size_bytes": 33961,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-3/metric.json",
+          "digest": "sha256:65dfb51401a3424b061553fce7c6f29d2eca27f04ac1f9cdb56383ea7f854ef1",
+          "size_bytes": 62418,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

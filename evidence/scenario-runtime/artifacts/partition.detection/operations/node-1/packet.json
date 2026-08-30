@@ -7,14 +7,14 @@
   "error": "[Errno 54] Connection reset by peer",
   "fault": "docker-network-disconnect",
   "isolated_service": "rabbitmq-1",
-  "queue": "atlas.1788098287347155000.quorum-recovery",
+  "queue": "atlas.1788099970625764000.quorum-recovery",
   "minority_oracle": [
     {
       "name": "partition-minority-write-rejected",
       "passed": true,
       "observed": {
         "connection": "unavailable",
-        "error": "no AMQP endpoint became ready: Exception (501) Reason: \"read tcp 127.0.0.1:54598->127.0.0.1:25672: i/o timeout\"",
+        "error": "no AMQP endpoint became ready: Exception (501) Reason: \"read tcp 127.0.0.1:65456->127.0.0.1:25672: i/o timeout\"",
         "write_confirmed": false
       }
     }

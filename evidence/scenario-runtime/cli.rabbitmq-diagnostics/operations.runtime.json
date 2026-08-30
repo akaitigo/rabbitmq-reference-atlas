@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "behavior_id": "cli.rabbitmq-diagnostics",
+  "authority_surface_id": "cli.rabbitmq-diagnostics",
+  "scenario": "operations",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T141832Z-3367"
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-diagnostics.operations.node-1",
+        "assertions": [
+          "rabbitmq-diagnostics listenersが対象nodeで成功した",
+          "固定AMQP listener port 5672がruntime出力に存在した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/packet.json",
+          "digest": "sha256:07ffe3c480f5411fe8b3563840259d2176fa7f4abb1598418d34b1b0e1b403e3",
+          "size_bytes": 743,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/log.txt",
+          "digest": "sha256:ad1c209c3ce5a81e9a48215a503dd400016551253b79ee07fab0bc7ce82b5343",
+          "size_bytes": 36691,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/metric.json",
+          "digest": "sha256:e28b6d32ab4c5c4fe956a0382271f7fbb9e4bf5686ae55896c668cafc019358f",
+          "size_bytes": 60725,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T141832Z-3367"
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-diagnostics.operations.node-2",
+        "assertions": [
+          "rabbitmq-diagnostics listenersが対象nodeで成功した",
+          "固定AMQP listener port 5672がruntime出力に存在した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/packet.json",
+          "digest": "sha256:c41ca980a2bbb8fd4f6a3384688b712cd2d4b831837f8f981fa0bbda578c64f8",
+          "size_bytes": 743,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/log.txt",
+          "digest": "sha256:f43b66fc6950e2dcd2be18a9d680ab3bc7a21312ebc4f622937d7cb37f5a9754",
+          "size_bytes": 33995,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/metric.json",
+          "digest": "sha256:408b1c52289bbb7bac6adb17bc4e293c68f7bcb693048dbcb1d517f08e28b0ef",
+          "size_bytes": 60725,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T141832Z-3367"
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-diagnostics.operations.node-3",
+        "assertions": [
+          "rabbitmq-diagnostics listenersが対象nodeで成功した",
+          "固定AMQP listener port 5672がruntime出力に存在した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/packet.json",
+          "digest": "sha256:3817fb2e0d96deb9be58553c53260b6ee80f77f33cbaf47026955c59cf8267b8",
+          "size_bytes": 743,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/log.txt",
+          "digest": "sha256:d9043da4ee92cf47d077e4051a77e35c95c4c6b478a594235d770e60e26a0c43",
+          "size_bytes": 34021,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/metric.json",
+          "digest": "sha256:ed50fbb782716d37055b0fd83d59e5ab4a66db82d4f3a1a97945179f2b59d7cb",
+          "size_bytes": 60725,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

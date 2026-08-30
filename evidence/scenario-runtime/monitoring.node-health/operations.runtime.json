@@ -9,11 +9,11 @@
   "retries": 0,
   "source": {
     "path": "scripts/generate-scenario-runtime.py",
-    "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
   },
   "harness": {
     "path": "scripts/generate-scenario-runtime.py",
-    "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
   },
   "variants": [
     {
@@ -29,13 +29,13 @@
       "client": {
         "runtime_kind": "actual-client",
         "name": "rabbitmq-diagnostics-4.3.5",
-        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
-        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T135414Z-12655"
+        "execution_id": "20260830T141832Z-3367"
       },
       "oracle": {
         "id": "oracle.monitoring.node-health.operations.node-1",
@@ -48,11 +48,11 @@
       },
       "source": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "artifact_channels": {
         "packet": {
@@ -64,15 +64,15 @@
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-1/log.txt",
-          "digest": "sha256:1ed2edef8284a2d55d02289c60a07232143c7dc520a912d30672f650bf60d110",
-          "size_bytes": 36559,
+          "digest": "sha256:526573fc7f583323322d0c19299dd7af358d3bd71811031bd37d037adfda28b7",
+          "size_bytes": 36777,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-1/metric.json",
-          "digest": "sha256:acc351ec050f884834af3428816186ede789960a247cb50630e9aedc1e284247",
-          "size_bytes": 59622,
+          "digest": "sha256:307d58fdb75fc1be5e93a03356bef7d66c2d1354840dffac09dc7dded45cb0f3",
+          "size_bytes": 59598,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -91,13 +91,13 @@
       "client": {
         "runtime_kind": "actual-client",
         "name": "rabbitmq-diagnostics-4.3.5",
-        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
-        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T135414Z-12655"
+        "execution_id": "20260830T141832Z-3367"
       },
       "oracle": {
         "id": "oracle.monitoring.node-health.operations.node-2",
@@ -110,11 +110,11 @@
       },
       "source": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "artifact_channels": {
         "packet": {
@@ -126,15 +126,15 @@
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-2/log.txt",
-          "digest": "sha256:ef9b124e619227d4e59e9e826bf4479392c22f923c9b50cf735771f2463af869",
-          "size_bytes": 34069,
+          "digest": "sha256:bd1e6555890c0d860f050b102791e391cd28fe21df8e1076045e08394cf26555",
+          "size_bytes": 34056,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-2/metric.json",
-          "digest": "sha256:9f15685478054e93b822260be72ef433973e77d40c0c56164d684938d74bcc55",
-          "size_bytes": 59622,
+          "digest": "sha256:d2b1b0e64fef897cbd64b421a789172f4004eb2b30d9cd3366018814d722e33f",
+          "size_bytes": 59598,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -153,13 +153,13 @@
       "client": {
         "runtime_kind": "actual-client",
         "name": "rabbitmq-diagnostics-4.3.5",
-        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
-        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "version": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1",
+        "source_digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T135414Z-12655"
+        "execution_id": "20260830T141832Z-3367"
       },
       "oracle": {
         "id": "oracle.monitoring.node-health.operations.node-3",
@@ -172,11 +172,11 @@
       },
       "source": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "artifact_channels": {
         "packet": {
@@ -188,15 +188,15 @@
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-3/log.txt",
-          "digest": "sha256:cc0f8eb736da8ce77f5d0c79e9f25c814abe833df976c2ef6be4c3370ff0640b",
-          "size_bytes": 34322,
+          "digest": "sha256:12d91b4a80dce4b522bf9c9b4a93409663e2a494115099179f6cf8ce31bb1326",
+          "size_bytes": 34082,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-3/metric.json",
-          "digest": "sha256:b0b7dadd7324571de0947f61bb98ba6f4aa8f1f263d87d061ca8e19a159564ec",
-          "size_bytes": 59576,
+          "digest": "sha256:3fbda8c9b2fa8022692b75c417a93d4dcfdb231a224f923699886f32f9d7b5cd",
+          "size_bytes": 59598,
           "channel": "metric",
           "media_type": "application/json"
         }

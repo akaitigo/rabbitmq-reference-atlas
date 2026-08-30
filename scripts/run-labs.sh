@@ -30,6 +30,11 @@ cleanup() {
   if [[ -n "$ALARM_ACTIVE" ]]; then "${COMPOSE[@]}" exec -T rabbitmq-1 rabbitmqctl set_vm_memory_high_watermark 0.4 >/dev/null 2>&1 || true; fi
   if [[ -n "$DISCONNECTED_CONTAINER" ]]; then docker network connect rabbitmq-reference-atlas-cluster "$DISCONNECTED_CONTAINER" >/dev/null 2>&1 || true; fi
   if [[ -n "$STOPPED_SERVICE" ]]; then "${COMPOSE[@]}" start "$STOPPED_SERVICE" >/dev/null 2>&1 || true; fi
+  if [[ -n "${RABBITMQ_SCENARIO_METADATA_VHOST:-}" ]]; then
+    for service in rabbitmq-1 rabbitmq-2 rabbitmq-3; do
+      "${COMPOSE[@]}" exec -T "$service" rabbitmqctl delete_vhost "$RABBITMQ_SCENARIO_METADATA_VHOST" >/dev/null 2>&1 && break || true
+    done
+  fi
   if [[ "${KEEP_ENV:-0}" != "1" ]]; then "${COMPOSE[@]}" down --remove-orphans >/dev/null 2>&1 || true; fi
   rm -rf -- "$TRANSACTION_TMP"
 }
@@ -51,6 +56,7 @@ export RABBITMQ_EVIDENCE_RUN_TOKEN="$RUN_TOKEN"
 export RABBITMQ_EVIDENCE_OBSERVED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 export RABBITMQ_EVIDENCE_RERUN_AT="$RABBITMQ_EVIDENCE_OBSERVED_AT"
 export RABBITMQ_EVIDENCE_PREVIOUS_GRAPH="$LIVE_EVIDENCE/dependency-graph.json"
+export RABBITMQ_SCENARIO_METADATA_VHOST="/atlas-metadata-$RUN_TOKEN"
 mkdir -p "$RAW"
 "${COMPOSE[@]}" up -d --wait
 

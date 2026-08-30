@@ -1,0 +1,58 @@
+{
+  "transport": "container-exec",
+  "before": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-3",
+      "rabbitmq-plugins",
+      "list",
+      "-e",
+      "-m"
+    ],
+    "returncode": 0,
+    "stdout": "Listing plugins with pattern \".*\" ...\nrabbitmq_management\nrabbitmq_management_agent\nrabbitmq_prometheus\nrabbitmq_web_dispatch\n",
+    "stderr": ""
+  },
+  "rejected_enable": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-3",
+      "rabbitmq-plugins",
+      "--node",
+      "rabbit@atlas-missing",
+      "enable",
+      "rabbitmq_management"
+    ],
+    "returncode": 64,
+    "stdout": "",
+    "stderr": "Error: this command requires the target node to be running.\nArguments given:\n\t--node rabbit@atlas-missing enable rabbitmq_management\n\nUsage\n\nrabbitmq-plugins [--node <node>] [--longnames] [--quiet] enable <plugin1> [ <plugin2>] | --all [--offline] [--online]\n"
+  },
+  "after": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-3",
+      "rabbitmq-plugins",
+      "list",
+      "-e",
+      "-m"
+    ],
+    "returncode": 0,
+    "stdout": "Listing plugins with pattern \".*\" ...\nrabbitmq_management\nrabbitmq_management_agent\nrabbitmq_prometheus\nrabbitmq_web_dispatch\n",
+    "stderr": ""
+  }
+}

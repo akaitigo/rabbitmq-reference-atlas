@@ -13,7 +13,7 @@
   },
   "harness": {
     "path": "scripts/generate-scenario-runtime.py",
-    "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
   },
   "variants": [
     {
@@ -35,7 +35,7 @@
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T135414Z-12655"
+        "execution_id": "20260830T141832Z-3367"
       },
       "oracle": {
         "id": "oracle.quorum.replication.failure.node-1",
@@ -51,20 +51,20 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/packet.json",
-          "digest": "sha256:366f78d3f48bec192208cb77e66eeec040bc7ddba4aa19b97967a2756979a704",
+          "digest": "sha256:612605fc5662b74cc3215ce2c4f66f7d5caa7dfca22cc3d1e4f01d042a5cd9d9",
           "size_bytes": 1091,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/log.txt",
-          "digest": "sha256:db1cbbb449809cf6d8401ee8c89bf2be44917e8f770e55cb194984139b9c3d4d",
-          "size_bytes": 32021,
+          "digest": "sha256:6d276d3b79276e6f476f341fb9f2c615ee6a9c5602a63df5bc12789ee40fd40a",
+          "size_bytes": 32567,
           "channel": "log",
           "media_type": "text/plain"
         },
@@ -96,7 +96,7 @@
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T135414Z-12655"
+        "execution_id": "20260830T141832Z-3367"
       },
       "oracle": {
         "id": "oracle.quorum.replication.failure.node-2",
@@ -112,27 +112,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/packet.json",
-          "digest": "sha256:3998aeabb2381f039aed0e4e155b9a13d1fc5844c316c0fb75d85c48cf7b606d",
+          "digest": "sha256:a5e572a9a68617746b59975ccb33741c2be05f40071841a440ab8818e44fd858",
           "size_bytes": 1074,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/log.txt",
-          "digest": "sha256:c1ab54476c90a69e91385e0a757bccf6a130c9b632f02e5ebd67ca9dd6271be2",
-          "size_bytes": 35753,
+          "digest": "sha256:dba12c5ee016e4a4196552dc6e62ae334e8cdf29eef428e8cc4a7d20384cc95f",
+          "size_bytes": 35752,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/metric.json",
-          "digest": "sha256:8247ce8b111281ea879643536834b800e74c45bed2f612809d4228399e6bdd3d",
-          "size_bytes": 46484,
+          "digest": "sha256:1bf7654c88c1549280766a1d37d50ff667f358b0ca2e62a098cb23b63e5c1961",
+          "size_bytes": 46477,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -157,7 +157,7 @@
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T135414Z-12655"
+        "execution_id": "20260830T141832Z-3367"
       },
       "oracle": {
         "id": "oracle.quorum.replication.failure.node-3",
@@ -173,27 +173,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/packet.json",
-          "digest": "sha256:c83b502afff8bf8226495de7b07b993930eac44c535545a5896c576f18abf302",
+          "digest": "sha256:426ae39ae97ef841b452a4c021c8617e68038c4cdebaf20283c7b167640cc662",
           "size_bytes": 1074,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/log.txt",
-          "digest": "sha256:ba1072d6f9f63a7cee9303bc827fc45229b5b447680031c2047277175e41e71f",
-          "size_bytes": 36141,
+          "digest": "sha256:0391e4fc56276e250ef7b0facb4aab9ae3a0dd25240452767623eff04969f5c8",
+          "size_bytes": 35955,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/metric.json",
-          "digest": "sha256:752ee484b4b0512a1a81a41536b2002d86929312eb50d0f2593e271650df7529",
-          "size_bytes": 46484,
+          "digest": "sha256:cd966376c36c58a2c7234aaeb9acdf02ed61489e0a60f1110848275ec16fa29e",
+          "size_bytes": 46477,
           "channel": "metric",
           "media_type": "application/json"
         }

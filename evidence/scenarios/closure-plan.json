@@ -274,7 +274,7 @@
       "id": "rejection-005",
       "risk_rank": 2,
       "scenario": "rejection",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.cli.exit-timeout.rejection",
         "closure.cli.rabbitmq-diagnostics.rejection",
@@ -1648,7 +1648,7 @@
       "id": "operations-002",
       "risk_rank": 6,
       "scenario": "operations",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.cli.rabbitmq-diagnostics.operations",
         "closure.cli.rabbitmqctl.operations",
@@ -4502,7 +4502,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.cli.rabbitmqctl.rejection",
@@ -7112,7 +7112,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.cluster.node-removal.failure",
@@ -8083,7 +8083,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.cluster.node-removal.recovery",
@@ -9248,7 +9248,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.cli.rabbitmqctl.operations",
@@ -9261,7 +9261,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.cluster.node-removal.operations",
@@ -12907,7 +12907,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.amqp10.protocol-interoperability.compatibility",
@@ -16185,8 +16185,8 @@
     "commit_policy": "one-reviewed-tranche-with-non-regression-runtime-identity-and-oracle-validation"
   },
   "summary": {
-    "remaining_rows": 937,
+    "remaining_rows": 931,
     "planned_tranches": 242,
-    "completed_rows": 14
+    "completed_rows": 20
   }
 }
