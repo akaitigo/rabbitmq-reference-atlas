@@ -151,4 +151,36 @@ assert returned_token == fixture_token
 assert summary["token_value"] == "[redacted]"
 assert "fixture-signature-secret" not in json.dumps(summary)
 
+client_source = (ROOT / "cmd/rmq-security-002/main.go").read_text(encoding="utf-8")
+assert "QueueDeclare(queue, true, false, false, false, nil)" in client_source
+assert client_source.index("fmt.Println(string(data))") < client_source.index("if runErr != nil")
+
+for compose_name in ("security-002-ldap.compose.yaml", "security-002-oauth.compose.yaml"):
+    compose_source = (ROOT / "environments" / compose_name).read_text(encoding="utf-8")
+    assert compose_source.count('["CMD", "rabbitmq-diagnostics", "-q", "check_running"]') == 1
+    assert '["CMD", "rabbitmq-diagnostics", "-q", "ping"]' not in compose_source
+
+oauth_compose = (ROOT / "environments/security-002-oauth.compose.yaml").read_text(encoding="utf-8")
+ldap_compose = (ROOT / "environments/security-002-ldap.compose.yaml").read_text(encoding="utf-8")
+oauth_config = (ROOT / "environments/security-002/oauth-rabbitmq.conf").read_text(encoding="utf-8")
+oauth_reporter = (ROOT / "scripts/generate-security-002-runtime.py").read_text(encoding="utf-8")
+assert "--http-enabled=false" in oauth_compose
+assert "- start\n" in oauth_compose and "- start-dev\n" not in oauth_compose
+assert "--hostname=https://keycloak:8443" in oauth_compose
+assert "127.0.0.1:28443:8443" in oauth_compose
+assert "auth_oauth2.issuer = https://keycloak:8443/realms/rabbitmq" in oauth_config
+assert "auth_oauth2.https.cacertfile = /etc/rabbitmq/oauth-ca/ca.crt" in oauth_config
+assert "auth_oauth2.https.peer_verification = verify_peer" in oauth_config
+assert "https://127.0.0.1:28443/realms/rabbitmq" in oauth_reporter
+assert "http://127.0.0.1:28080/realms/rabbitmq" not in oauth_reporter
+for compose_source in (ldap_compose, oauth_compose):
+    assert "/var/lib/rabbitmq:rw,nosuid,nodev,size=268435456,uid=999,gid=999,mode=0700" in compose_source
+
+runner_source = (ROOT / "scripts/run-security-002-lab.sh").read_text(encoding="utf-8")
+assert "rabbitmqctl -t 60 await_online_nodes 3" in runner_source
+assert "await_enabled_plugin \"$service\" rabbitmq_auth_backend_ldap" in runner_source
+assert "await_enabled_plugin \"$service\" rabbitmq_auth_backend_oauth2" in runner_source
+assert runner_source.index("await_three_node_cluster security-rabbitmq-1") < runner_source.index("go run ./cmd/rmq-security-002")
+assert runner_source.index("await_three_node_cluster oauth-rabbitmq-1") < runner_source.index("generate-security-002-runtime.py oauth")
+
 print("security-002 contract PASS: 4 rows/12 variants、実IdP・不正Trust・queue limit・Artifact条件を固定")

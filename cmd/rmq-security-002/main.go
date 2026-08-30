@@ -86,7 +86,7 @@ func connect(endpoint, vhost, username, password, name string, secrets credentia
 
 func declare(channel *amqp.Channel, queue, operation string, secrets credentials) observation {
 	item := observation{Operation: operation}
-	_, err := channel.QueueDeclare(queue, false, false, false, false, nil)
+	_, err := channel.QueueDeclare(queue, true, false, false, false, nil)
 	if err != nil {
 		item.Result = "rejected"
 		item.Error = redact(err.Error(), secrets)
@@ -177,10 +177,9 @@ func main() {
 		fmt.Fprintln(os.Stderr, marshalErr)
 		os.Exit(1)
 	}
+	fmt.Println(string(data))
 	if runErr != nil {
-		fmt.Fprintln(os.Stderr, string(data))
 		fmt.Fprintln(os.Stderr, runErr)
 		os.Exit(1)
 	}
-	fmt.Println(string(data))
 }

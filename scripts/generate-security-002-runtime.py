@@ -9,6 +9,7 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import ssl
 from typing import Any
 import urllib.error
 import urllib.parse
@@ -83,7 +84,14 @@ def summarize_oauth_token(client_id: str, result: dict[str, Any]) -> tuple[str, 
     }
 
 
-def oauth_token(client_id: str) -> tuple[str, dict[str, Any]]:
+def oauth_tls_context() -> ssl.SSLContext:
+    cert_dir = os.environ.get("SECURITY_002_CERT_DIR")
+    if not cert_dir:
+        raise RuntimeError("SECURITY_002_CERT_DIR is required for Keycloak TLS verification")
+    return ssl.create_default_context(cafile=str(Path(cert_dir) / "ca.crt"))
+
+
+def oauth_token(client_id: str, context: ssl.SSLContext) -> tuple[str, dict[str, Any]]:
     data = urllib.parse.urlencode({
         "grant_type": "password",
         "client_id": client_id,
@@ -92,13 +100,19 @@ def oauth_token(client_id: str) -> tuple[str, dict[str, Any]]:
         "scope": "openid profile",
     }).encode()
     request = urllib.request.Request(
-        "http://127.0.0.1:28080/realms/rabbitmq/protocol/openid-connect/token",
+        "https://127.0.0.1:28443/realms/rabbitmq/protocol/openid-connect/token",
         data=data,
         method="POST",
     )
     request.add_header("Content-Type", "application/x-www-form-urlencoded")
-    with urllib.request.urlopen(request, timeout=10) as response:
-        result = json.loads(response.read())
+    try:
+        with urllib.request.urlopen(request, timeout=10, context=context) as response:
+            result = json.loads(response.read())
+    except urllib.error.HTTPError as error:
+        body = error.read().decode("utf-8", errors="replace")
+        raise RuntimeError(
+            f"Keycloak token endpoint rejected {client_id}: status={error.code} body={body}"
+        ) from error
     return summarize_oauth_token(client_id, result)
 
 
@@ -166,16 +180,17 @@ def ldap_limits() -> None:
 
 
 def oauth() -> None:
-    discovery_url = "http://127.0.0.1:28080/realms/rabbitmq/.well-known/openid-configuration"
-    with urllib.request.urlopen(discovery_url, timeout=10) as response:
+    context = oauth_tls_context()
+    discovery_url = "https://127.0.0.1:28443/realms/rabbitmq/.well-known/openid-configuration"
+    with urllib.request.urlopen(discovery_url, timeout=10, context=context) as response:
         discovery = json.loads(response.read())
-    if discovery.get("issuer") != "http://keycloak:8080/realms/rabbitmq" or not discovery.get("jwks_uri"):
+    if discovery.get("issuer") != "https://keycloak:8443/realms/rabbitmq" or not discovery.get("jwks_uri"):
         raise RuntimeError(f"Keycloak discovery oracle failed: {discovery}")
     packets, assertions = {}, {}
     for node in OAUTH_NODES:
-        allowed_token, allowed_summary = oauth_token("rabbitmq-management")
-        no_scope_token, no_scope_summary = oauth_token("rabbitmq-no-management")
-        wrong_audience_token, wrong_audience_summary = oauth_token("rabbitmq-wrong-audience")
+        allowed_token, allowed_summary = oauth_token("rabbitmq-management", context)
+        no_scope_token, no_scope_summary = oauth_token("rabbitmq-no-management", context)
+        wrong_audience_token, wrong_audience_summary = oauth_token("rabbitmq-wrong-audience", context)
         allowed = bearer_get(node["oauth_management"], allowed_token)
         no_scope = bearer_get(node["oauth_management"], no_scope_token)
         wrong_audience = bearer_get(node["oauth_management"], wrong_audience_token)

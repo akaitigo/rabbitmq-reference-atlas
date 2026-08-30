@@ -21,13 +21,13 @@ x-security-rabbitmq: &security-rabbitmq
     ldap-directory:
       condition: service_healthy
   healthcheck:
-    test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+    test: ["CMD", "rabbitmq-diagnostics", "-q", "check_running"]
     interval: 3s
     timeout: 5s
     retries: 60
     start_period: 10s
   tmpfs:
-  - /var/lib/rabbitmq:rw,nosuid,nodev,size=268435456
+  - /var/lib/rabbitmq:rw,nosuid,nodev,size=268435456,uid=999,gid=999,mode=0700
   networks: [security-002-ldap]
 
 services:

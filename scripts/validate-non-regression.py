@@ -188,7 +188,23 @@ def main() -> int:
         for old_step in baseline["ci"]["steps"]:
             if old_step.get("uses"):
                 if old_step["uses"] not in uses:
-                    failures.append(f"CI action deleted: {old_step['uses']}")
+                    replacement = replacements.get(old_step["uses"])
+                    proof_path = ROOT / replacement.get("runtime_proof", {}).get("evidence", "") if replacement else ROOT
+                    proof = json.loads(proof_path.read_text(encoding="utf-8")) if proof_path.is_file() else {}
+                    mappings = {row.get("old"): row for row in proof.get("mappings", [])}
+                    proof_mapping = mappings.get(old_step["uses"], {})
+                    if (
+                        not replacement
+                        or replacement.get("category") != "ci-action-pin"
+                        or replacement.get("new_value") not in uses
+                        or replacement.get("runtime_proof", {}).get("strength") != "stronger"
+                        or proof.get("verdict") != "pass"
+                        or proof_mapping.get("new") != replacement.get("new_value")
+                        or proof_mapping.get("strength") != "stronger"
+                        or len(replacement.get("reason", "")) < 20
+                        or len(proof_mapping.get("reason", "")) < 20
+                    ):
+                        failures.append(f"CI action deleted without stronger exact-pin migration: {old_step['uses']}")
                 continue
             name = old_step["name"]
             new_step = named.get(name)

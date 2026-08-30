@@ -10,24 +10,37 @@ x-oauth-rabbitmq: &oauth-rabbitmq
     target: /etc/rabbitmq/rabbitmq.conf
   - source: rabbitmq-enabled-plugins
     target: /etc/rabbitmq/enabled_plugins
+  volumes:
+  - type: bind
+    source: ${SECURITY_002_CERT_DIR:?SECURITY_002_CERT_DIR is required}
+    target: /etc/rabbitmq/oauth-ca
+    read_only: true
   depends_on:
     keycloak:
       condition: service_healthy
   healthcheck:
-    test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+    test: ["CMD", "rabbitmq-diagnostics", "-q", "check_running"]
     interval: 3s
     timeout: 5s
     retries: 60
     start_period: 10s
   tmpfs:
-  - /var/lib/rabbitmq:rw,nosuid,nodev,size=268435456
+  - /var/lib/rabbitmq:rw,nosuid,nodev,size=268435456,uid=999,gid=999,mode=0700
   networks: [security-002-oauth]
 
 services:
   keycloak:
     image: quay.io/keycloak/keycloak:26.7.2@sha256:9d1f1b2b7261ff53c66cb1092dfcdc34a5fb77e81f9e6a6e75b8b6a795de8067
     restart: "no"
-    command: ["start-dev", "--import-realm", "--health-enabled=true", "--hostname=http://keycloak:8080"]
+    command:
+    - start
+    - --import-realm
+    - --health-enabled=true
+    - --http-enabled=false
+    - --http-management-scheme=http
+    - --hostname=https://keycloak:8443
+    - --https-certificate-file=/opt/keycloak/conf/tls/keycloak.crt
+    - --https-certificate-key-file=/opt/keycloak/conf/tls/keycloak.key
     environment:
       KC_BOOTSTRAP_ADMIN_USERNAME: atlas-admin
       KC_BOOTSTRAP_ADMIN_PASSWORD: atlas-keycloak-admin-local-only
@@ -36,9 +49,13 @@ services:
       source: ./security-002/keycloak-realm.json
       target: /opt/keycloak/data/import/rabbitmq-realm.json
       read_only: true
+    - type: bind
+      source: ${SECURITY_002_CERT_DIR:?SECURITY_002_CERT_DIR is required}
+      target: /opt/keycloak/conf/tls
+      read_only: true
     tmpfs:
     - /opt/keycloak/data/h2:rw,nosuid,nodev,size=268435456,uid=1000,gid=0,mode=0770
-    ports: ["127.0.0.1:28080:8080"]
+    ports: ["127.0.0.1:28443:8443"]
     healthcheck:
       test:
       - CMD-SHELL

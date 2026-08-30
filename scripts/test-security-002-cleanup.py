@@ -25,6 +25,14 @@ with tempfile.TemporaryDirectory(prefix="rabbitmq-security-002-cleanup-") as dir
         encoding="utf-8",
     )
     fake_docker.chmod(0o755)
+    fake_df = temporary / "df"
+    fake_df.write_text(
+        "#!/usr/bin/env bash\n"
+        "printf 'Filesystem 1024-blocks Used Available Capacity Mounted on\\n'\n"
+        "printf '/dev/fixture 16777216 1048576 8388608 13%% /fixture\\n'\n",
+        encoding="utf-8",
+    )
+    fake_df.chmod(0o755)
     environment = os.environ.copy()
     environment.update({
         "PATH": f"{temporary}:{environment['PATH']}",
@@ -41,6 +49,7 @@ with tempfile.TemporaryDirectory(prefix="rabbitmq-security-002-cleanup-") as dir
         text=True,
     )
     assert result.returncode == 1, (result.returncode, result.stdout, result.stderr)
+    assert calls.is_file(), (result.returncode, result.stdout, result.stderr)
     invocations = calls.read_text(encoding="utf-8").splitlines()
     config_index = next(index for index, call in enumerate(invocations) if " config --quiet" in call)
     up_index = next(index for index, call in enumerate(invocations) if " up -d --wait" in call)
@@ -49,6 +58,9 @@ with tempfile.TemporaryDirectory(prefix="rabbitmq-security-002-cleanup-") as dir
     down_index = next(index for index, call in enumerate(invocations) if " down --volumes --remove-orphans" in call)
     assert config_index < up_index < ps_index < logs_index < down_index, invocations
     assert "security-002 ldap runtime failed" in result.stderr
+    failure_log = temporary / "evidence/raw/security-002-ldap-compose.failure.log"
+    assert failure_log.is_file()
+    assert "security-002 ldap runtime failed" in failure_log.read_text(encoding="utf-8")
     assert all("security-002-ldap.compose.yaml" in call for call in invocations), invocations
     assert all("prune" not in call for call in invocations), invocations
 
@@ -58,5 +70,7 @@ oauth_config = source.index('"${OAUTH_COMPOSE[@]}" config --quiet')
 assert ldap_down < oauth_config
 assert 'minimum_free_bytes_before_runtime' in source
 assert 'failure_logs ldap' in source and 'failure_logs oauth' in source
+assert 'trap handle_error ERR' in source
+assert 'set -Eeuo pipefail' in source
 
 print("security-002 cleanup negative fixture PASS: failure logs、逐次実行、task-owned volume削除を固定")

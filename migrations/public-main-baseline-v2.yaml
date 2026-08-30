@@ -8,6 +8,32 @@ evidence_refresh:
   strength: stronger
   reason: 既存21 Evidence ID、Claim、Verdict、Harness要件を維持し、実Broker full-runとEvidence Dependency Graphへ現在digestを再固定するため。
 replacements:
+  - id: ci.pin-checkout-action
+    category: ci-action-pin
+    old_id: github-actions.validate.checkout-v4
+    new_id: github-actions.validate.checkout-11d5960
+    old_value: actions/checkout@v4
+    new_value: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+    reason: CI stepと入力を維持したまま、mutable major tagを監査済みexact commitへ固定してsupply-chain driftを拒否するため。
+    runtime_proof:
+      strength: stronger
+      evidence: evidence/migrations/github-actions-exact-pin.json
+      required_checks:
+        - workflow-action-pin-contract
+        - baseline-ci-step-preserved
+  - id: ci.pin-setup-go-action
+    category: ci-action-pin
+    old_id: github-actions.validate.setup-go-v5
+    new_id: github-actions.validate.setup-go-40f1582
+    old_value: actions/setup-go@v5
+    new_value: actions/setup-go@40f1582b2485089dde7abd97c1529aa768e1baff
+    reason: Go versionとCI stepを維持したまま、mutable major tagを監査済みexact commitへ固定してsupply-chain driftを拒否するため。
+    runtime_proof:
+      strength: stronger
+      evidence: evidence/migrations/github-actions-exact-pin.json
+      required_checks:
+        - workflow-action-pin-contract
+        - baseline-ci-step-preserved
   - id: ci.install-pinned-atlas-validator
     category: ci-matrix
     old_id: github-actions.validate.install-atlas-d5c0a6c
