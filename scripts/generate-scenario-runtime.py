@@ -510,6 +510,61 @@ def steady_state_tranche() -> None:
         "scripts/generate-scenario-runtime.py", "python-socket-amqp10-sasl-probe", packets, assertions,
     )
 
+    packets, assertions = {}, {}
+    for node in NODES:
+        overview = management_get(node["management"], "/api/overview")
+        nodes = management_get(node["management"], "/api/nodes")
+        if overview["status"] != 200 or nodes["status"] != 200:
+            raise RuntimeError(f"Management HTTP operations oracle failed: {node['service']}")
+        if not isinstance(nodes["body"], list) or len(nodes["body"]) != 3:
+            raise RuntimeError(f"Management HTTP cluster inventory incomplete: {node['service']}: {nodes}")
+        packets[node["variant"]] = {
+            "transport": "HTTP", "overview_endpoint": node["management"] + "/api/overview",
+            "overview": overview, "nodes_endpoint": node["management"] + "/api/nodes", "nodes": nodes,
+        }
+        assertions[node["variant"]] = [
+            "認証済みManagement HTTP overview requestが成功した",
+            "認証済みnodes requestが3-node inventoryを返した",
+        ]
+    report(
+        "management.http-api", "operations", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "python-urllib-management-client", packets, assertions,
+    )
+
+    packets, assertions = {}, {}
+    for node in NODES:
+        trace = run([*COMPOSE, "logs", "--no-color", "--tail", "80", node["service"]])
+        if trace["returncode"] != 0 or not trace["stdout"].strip():
+            raise RuntimeError(f"broker log operations oracle failed: {node['service']}: {trace}")
+        packets[node["variant"]] = {
+            "transport": "docker-log-stream", "command": trace["command"],
+            "returncode": trace["returncode"], "line_count": len(trace["stdout"].splitlines()),
+            "stdout": trace["stdout"], "stderr": trace["stderr"],
+        }
+        assertions[node["variant"]] = [
+            "対象nodeの実broker logをruntimeから取得できた",
+            "log streamが空でなくcommand traceと結び付いた",
+        ]
+    report(
+        "monitoring.logs", "operations", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "docker-compose-log-client", packets, assertions,
+    )
+
+    packets, assertions = {}, {}
+    for node in NODES:
+        rejected = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmqctl", "atlas_missing_command"])
+        if rejected["returncode"] == 0 or not (rejected["stdout"].strip() or rejected["stderr"].strip()):
+            raise RuntimeError(f"rabbitmqctl rejection oracle failed: {node['service']}: {rejected}")
+        packets[node["variant"]] = {"transport": "container-exec", "rejected_command": rejected}
+        assertions[node["variant"]] = [
+            "未知のrabbitmqctl commandが非zeroで拒否された",
+            "拒否理由またはusageがcommand traceへ記録された",
+        ]
+    report(
+        "cli.rabbitmqctl", "rejection", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "rabbitmqctl-4.3.5", packets, assertions,
+    )
+
 
 def cluster_connection_failure(stopped_service: str) -> None:
     packets, assertions = {}, {}
@@ -533,6 +588,7 @@ def cluster_connection_failure(stopped_service: str) -> None:
         unavailable_services={stopped_service},
     )
     cluster_metadata_failure(stopped_service)
+    monitoring_failure_tranche(stopped_service)
 
 
 def scenario_metadata_vhost() -> str:
@@ -579,6 +635,56 @@ def cluster_metadata_failure(stopped_service: str) -> None:
         raise
 
 
+def monitoring_failure_tranche(stopped_service: str) -> None:
+    packets, assertions = {}, {}
+    stopped_node_name = "rabbit@" + stopped_service
+    for node in NODES:
+        if node["service"] == stopped_service:
+            trace = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmq-diagnostics", "-q", "ping"])
+        else:
+            trace = run([
+                *COMPOSE, "exec", "-T", node["service"], "rabbitmq-diagnostics",
+                "-q", "-n", stopped_node_name, "ping",
+            ])
+        if trace["returncode"] == 0:
+            raise RuntimeError(f"stopped node health unexpectedly succeeded: {node['service']}: {trace}")
+        packets[node["variant"]] = {
+            "transport": "container-exec", "stopped_service": stopped_service,
+            "target_node": stopped_node_name, "diagnostic": trace,
+        }
+        assertions[node["variant"]] = [
+            "停止nodeへのhealth probeが非zeroで拒否された",
+            "拒否Traceが停止対象node identityへ結び付いた",
+        ]
+    report(
+        "monitoring.node-health", "rejection", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "rabbitmq-diagnostics-4.3.5", packets, assertions,
+        unavailable_services={stopped_service},
+    )
+
+    packets, assertions = {}, {}
+    for node in NODES:
+        state = run([*COMPOSE, "ps", "-a", node["service"]])
+        logs = run([*COMPOSE, "logs", "--no-color", "--tail", "120", node["service"]])
+        stopped = node["service"] == stopped_service
+        expected_state = "Exited" if stopped else "Up"
+        if state["returncode"] != 0 or expected_state not in state["stdout"] or not logs["stdout"].strip():
+            raise RuntimeError(f"failure log/state oracle failed: {node['service']}: state={state} logs={logs}")
+        packets[node["variant"]] = {
+            "transport": "docker-runtime", "stopped_service": stopped_service,
+            "service_state": state, "log_trace": logs,
+        }
+        assertions[node["variant"]] = [
+            f"service stateが{expected_state}を示した",
+            "failure時点でも対象nodeのbroker logを取得できた",
+        ]
+    report(
+        "monitoring.logs", "failure", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "docker-compose-log-client", packets, assertions,
+        unavailable_services={stopped_service},
+    )
+
+
 def cluster_connection_recovery() -> None:
     packets, assertions = {}, {}
     for node in NODES:
@@ -596,6 +702,7 @@ def cluster_connection_recovery() -> None:
         "scripts/generate-scenario-runtime.py", "python-socket-amqp091-probe", packets, assertions,
     )
     cluster_metadata_recovery()
+    monitoring_logs_recovery()
 
 
 def cluster_metadata_recovery() -> None:
@@ -623,6 +730,28 @@ def cluster_metadata_recovery() -> None:
         deleted = management_request(NODES[0]["management"], path, method="DELETE")
         if deleted["status"] not in (204, 404):
             raise RuntimeError(f"metadata scenario cleanup failed: {deleted}")
+
+
+def monitoring_logs_recovery() -> None:
+    packets, assertions = {}, {}
+    for node in NODES:
+        state = run([*COMPOSE, "ps", "-a", node["service"]])
+        logs = run([*COMPOSE, "logs", "--no-color", "--tail", "160", node["service"]])
+        if state["returncode"] != 0 or "Up" not in state["stdout"] or not logs["stdout"].strip():
+            raise RuntimeError(f"recovery log/state oracle failed: {node['service']}: state={state} logs={logs}")
+        packets[node["variant"]] = {
+            "transport": "docker-runtime", "fault_removed": "broker-process-restarted",
+            "service_state": state, "log_trace": logs,
+        }
+        assertions[node["variant"]] = [
+            "service stateがUpへ復帰した",
+            "recovery時点のbroker logを取得できた",
+            "同じ時点のcluster statusが3-node onlineを示した",
+        ]
+    report(
+        "monitoring.logs", "recovery", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "docker-compose-log-client", packets, assertions,
+    )
 
 
 def main() -> int:

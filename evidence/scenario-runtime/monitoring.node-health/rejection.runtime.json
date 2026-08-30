@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "behavior_id": "monitoring.node-health",
+  "authority_surface_id": "monitoring.node-health",
+  "scenario": "rejection",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
+        "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T143739Z-65535"
+      },
+      "oracle": {
+        "id": "oracle.monitoring.node-health.rejection.node-1",
+        "assertions": [
+          "停止nodeへのhealth probeが非zeroで拒否された",
+          "拒否Traceが停止対象node identityへ結び付いた"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/packet.json",
+          "digest": "sha256:df7f35634f6d1953d703151b8d01b8000f4b73a59ec388be0c9aa6809900c01e",
+          "size_bytes": 499,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/log.txt",
+          "digest": "sha256:fe8c795d72d888a648ab0dd9f3e66330c1d972cab377d48c731a191cbedf4d6c",
+          "size_bytes": 35539,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/metric.json",
+          "digest": "sha256:24e25d0edf3c1661dabc5a48d628cdf791353a52b87d8b35829f2dde5f3ad5f7",
+          "size_bytes": 573,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
+        "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T143739Z-65535"
+      },
+      "oracle": {
+        "id": "oracle.monitoring.node-health.rejection.node-2",
+        "assertions": [
+          "停止nodeへのhealth probeが非zeroで拒否された",
+          "拒否Traceが停止対象node identityへ結び付いた"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/packet.json",
+          "digest": "sha256:7061647f67136470884d9b5d5db856484edeb5fbecb21d2b588a123d27f7be59",
+          "size_bytes": 577,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/log.txt",
+          "digest": "sha256:be5b23ff0789ffcbe6add329acf0dca3070212e84d0abc572976d0568ac751ff",
+          "size_bytes": 36040,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/metric.json",
+          "digest": "sha256:cbfec3c85272b1dbedbeff6ca290efe22a1742c0dc73c9632c59fdbd7a02c9f1",
+          "size_bytes": 44716,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
+        "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T143739Z-65535"
+      },
+      "oracle": {
+        "id": "oracle.monitoring.node-health.rejection.node-3",
+        "assertions": [
+          "停止nodeへのhealth probeが非zeroで拒否された",
+          "拒否Traceが停止対象node identityへ結び付いた"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/packet.json",
+          "digest": "sha256:4d38f05852d86167dfdd9f8ba6c562feecbd0870118dba2ad3aacf5b554bc84e",
+          "size_bytes": 577,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/log.txt",
+          "digest": "sha256:f0a2541c3532f37083261ddaa80563679edf38ba5417a341d0d4f98104e69460",
+          "size_bytes": 35101,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/metric.json",
+          "digest": "sha256:2371bbe0163ada67a36b60ab7242476440fd4ad3751e94314eeb4b044498ddc7",
+          "size_bytes": 44716,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

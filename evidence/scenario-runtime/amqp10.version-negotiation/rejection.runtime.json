@@ -13,7 +13,7 @@
   },
   "harness": {
     "path": "scripts/generate-scenario-runtime.py",
-    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+    "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
   },
   "variants": [
     {
@@ -35,7 +35,7 @@
       "runtime": {
         "profile": "protocol-amqp10",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T141832Z-3367"
+        "execution_id": "20260830T143739Z-65535"
       },
       "oracle": {
         "id": "oracle.amqp10.version-negotiation.rejection.node-1",
@@ -51,27 +51,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/packet.json",
-          "digest": "sha256:77af8b16042e9fdde84be1f8bacecea7e0a4d86e48133eea70cfb34091b95a56",
+          "digest": "sha256:890b621f0dc1f559962ce4dfb3900b4ba9d0ff5353e17ddbaeb74789391628a6",
           "size_bytes": 387,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/log.txt",
-          "digest": "sha256:e2c05ac176da3f1adcf00373a56b6564e2805549ad60e4a16171a41db64457b8",
-          "size_bytes": 31386,
+          "digest": "sha256:dfa44e0948886acfaecb3c3d20ec85b78af7855cd450b8ea58d3dbef81c76fd3",
+          "size_bytes": 31546,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/metric.json",
-          "digest": "sha256:a6d13e3696dc934e9f3d54afdfa1037661e74094300c35324a9101a6abddc83c",
-          "size_bytes": 65252,
+          "digest": "sha256:28a4a288b4ac9495e15cb6cf3d6f67361a8164dafd15f1c541c054c519c97c89",
+          "size_bytes": 61281,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -96,7 +96,7 @@
       "runtime": {
         "profile": "protocol-amqp10",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T141832Z-3367"
+        "execution_id": "20260830T143739Z-65535"
       },
       "oracle": {
         "id": "oracle.amqp10.version-negotiation.rejection.node-2",
@@ -112,27 +112,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/packet.json",
-          "digest": "sha256:3d43b70122fc42b9975cec6f5604d2e820c0aa83a0dab7819611bc99ef84befa",
+          "digest": "sha256:22d7b574e318f01b27697083fad38e48d8655044fcf5109d1d9c68eb51c48a55",
           "size_bytes": 387,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/log.txt",
-          "digest": "sha256:9781843bfb76934068f74020158906d9fd80e34b3dd5592fd7c0530fd3ba20fc",
-          "size_bytes": 31550,
+          "digest": "sha256:26307b335fdac0eb24d600c6741c210337bb5199fe691aa4e54093c8a85b57a9",
+          "size_bytes": 31319,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/metric.json",
-          "digest": "sha256:0c77fd05b85bb4f8d09b696cf58fd641236aba12de5cf2e04667d8a4f7c4b995",
-          "size_bytes": 65248,
+          "digest": "sha256:811c8101786a98a03c598e21ada9d66dcfa40ce56e367f44eea7a0e22a2a1fb4",
+          "size_bytes": 61293,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -157,7 +157,7 @@
       "runtime": {
         "profile": "protocol-amqp10",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T141832Z-3367"
+        "execution_id": "20260830T143739Z-65535"
       },
       "oracle": {
         "id": "oracle.amqp10.version-negotiation.rejection.node-3",
@@ -173,27 +173,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/packet.json",
-          "digest": "sha256:1cb3d435fc9c98b3bd9180af086ee6728a8956865f1cf1e66c51c826e7278d78",
+          "digest": "sha256:2365d63c9e7268b3ed257b0dce10b0caf7b68d930191c112e98b3b70f71d58c9",
           "size_bytes": 387,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/log.txt",
-          "digest": "sha256:242a50e6d7b775b9d5622a5f776eb50864cb37e1af73a190cae2e76e9525d0c2",
-          "size_bytes": 31576,
+          "digest": "sha256:36361d3925bd4427c851270c883277dae33e73983de6c941199fcfcac1b4c6ed",
+          "size_bytes": 31574,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/metric.json",
-          "digest": "sha256:44592d4e2128cef4283573946b0ce9eb03996577674db99860e1db6f981fd885",
-          "size_bytes": 65217,
+          "digest": "sha256:a27265288cc1caefddde867095eefe741d267e6031e4387d928988e606b5329e",
+          "size_bytes": 61293,
           "channel": "metric",
           "media_type": "application/json"
         }

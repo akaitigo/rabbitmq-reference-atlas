@@ -14,15 +14,10 @@
         "disk_free_alarm": false,
         "proc_total": 1048576,
         "rates_mode": "basic",
-        "uptime": 346011,
+        "uptime": 264983,
         "run_queue": 1,
         "processors": 12,
         "exchange_types": [
-          {
-            "name": "x-local-random",
-            "description": "Picks one random local binding (queue) to route via (to).",
-            "enabled": true
-          },
           {
             "name": "direct",
             "description": "AMQP direct exchange, as per the AMQP specification",
@@ -34,22 +29,32 @@
             "enabled": true
           },
           {
+            "name": "fanout",
+            "description": "AMQP fanout exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
             "name": "headers",
             "description": "AMQP headers exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "x-local-random",
+            "description": "Picks one random local binding (queue) to route via (to).",
             "enabled": true
           },
           {
             "name": "topic",
             "description": "AMQP topic exchange, as per the AMQP specification",
             "enabled": true
-          },
-          {
-            "name": "fanout",
-            "description": "AMQP fanout exchange, as per the AMQP specification",
-            "enabled": true
           }
         ],
         "auth_mechanisms": [
+          {
+            "name": "ANONYMOUS",
+            "description": "SASL ANONYMOUS authentication mechanism",
+            "enabled": true
+          },
           {
             "name": "AMQPLAIN",
             "description": "QPid AMQPLAIN mechanism",
@@ -63,11 +68,6 @@
           {
             "name": "PLAIN",
             "description": "SASL PLAIN authentication mechanism",
-            "enabled": true
-          },
-          {
-            "name": "ANONYMOUS",
-            "description": "SASL ANONYMOUS authentication mechanism",
             "enabled": true
           }
         ],
@@ -349,9 +349,9 @@
         "type": "disc",
         "running": true,
         "being_drained": false,
-        "mem_used": 172728320,
+        "mem_used": 167817216,
         "mem_used_details": {
-          "rate": 0.0
+          "rate": -40960.0
         },
         "fd_used": 40,
         "fd_used_details": {
@@ -365,21 +365,21 @@
         "proc_used_details": {
           "rate": 0.0
         },
-        "disk_free": 379852955648,
+        "disk_free": 375486853120,
         "disk_free_details": {
           "rate": 0.0
         },
-        "gc_num": 14279,
+        "gc_num": 13435,
         "gc_num_details": {
-          "rate": 0.0
+          "rate": 41.4
         },
-        "gc_bytes_reclaimed": 604365080,
+        "gc_bytes_reclaimed": 599903760,
         "gc_bytes_reclaimed_details": {
-          "rate": 0.0
+          "rate": 2406201.6
         },
-        "context_switches": 199999,
+        "context_switches": 194401,
         "context_switches_details": {
-          "rate": 0.0
+          "rate": 598.4
         },
         "io_read_count": 0,
         "io_read_count_details": {
@@ -480,79 +480,41 @@
         "cluster_links": [
           {
             "stats": {
-              "send_bytes": 441028,
+              "send_bytes": 675477,
               "send_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               },
-              "recv_bytes": 470559,
+              "recv_bytes": 739216,
               "recv_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               }
             },
             "name": "rabbit@rabbitmq-2",
             "peer_addr": "192.168.80.2",
-            "peer_port": 58548,
-            "sock_addr": "192.168.80.4",
+            "peer_port": 34344,
+            "sock_addr": "192.168.80.3",
             "sock_port": 25672,
-            "recv_bytes": 470559,
-            "send_bytes": 441028
+            "recv_bytes": 741660,
+            "send_bytes": 677921
           },
           {
             "stats": {
-              "send_bytes": 729939,
+              "send_bytes": 370899,
               "send_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               },
-              "recv_bytes": 776684,
+              "recv_bytes": 404923,
               "recv_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               }
             },
             "name": "rabbit@rabbitmq-3",
-            "peer_addr": "192.168.80.3",
-            "peer_port": 49798,
-            "sock_addr": "192.168.80.4",
-            "sock_port": 25672,
-            "recv_bytes": 776684,
-            "send_bytes": 729939
-          },
-          {
-            "stats": {
-              "send_bytes": 20244,
-              "send_bytes_details": {
-                "rate": 0.0
-              },
-              "recv_bytes": 5495,
-              "recv_bytes_details": {
-                "rate": 0.0
-              }
-            },
-            "name": "rabbitmqcli-822-rabbit@rabbitmq-1",
             "peer_addr": "192.168.80.4",
-            "peer_port": 43572,
-            "sock_addr": "192.168.80.4",
+            "peer_port": 52018,
+            "sock_addr": "192.168.80.3",
             "sock_port": 25672,
-            "recv_bytes": 5495,
-            "send_bytes": 20244
-          },
-          {
-            "stats": {
-              "send_bytes": 1620,
-              "send_bytes_details": {
-                "rate": 0.0
-              },
-              "recv_bytes": 1138,
-              "recv_bytes_details": {
-                "rate": 0.0
-              }
-            },
-            "name": "rabbitmqcli-902-rabbit@rabbitmq-3",
-            "peer_addr": "192.168.80.3",
-            "peer_port": 41324,
-            "sock_addr": "192.168.80.4",
-            "sock_port": 25672,
-            "recv_bytes": 1138,
-            "send_bytes": 1620
+            "recv_bytes": 407367,
+            "send_bytes": 373343
           }
         ],
         "metrics_gc_queue_length": {
@@ -577,13 +539,13 @@
         "disk_free_alarm": false,
         "proc_total": 1048576,
         "rates_mode": "basic",
-        "uptime": 346494,
+        "uptime": 264891,
         "run_queue": 1,
         "processors": 12,
         "exchange_types": [
           {
-            "name": "direct",
-            "description": "AMQP direct exchange, as per the AMQP specification",
+            "name": "fanout",
+            "description": "AMQP fanout exchange, as per the AMQP specification",
             "enabled": true
           },
           {
@@ -592,23 +554,23 @@
             "enabled": true
           },
           {
-            "name": "topic",
-            "description": "AMQP topic exchange, as per the AMQP specification",
-            "enabled": true
-          },
-          {
-            "name": "fanout",
-            "description": "AMQP fanout exchange, as per the AMQP specification",
-            "enabled": true
-          },
-          {
             "name": "x-local-random",
             "description": "Picks one random local binding (queue) to route via (to).",
             "enabled": true
           },
           {
+            "name": "topic",
+            "description": "AMQP topic exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
             "name": "x-modulus-hash",
             "description": "Modulus Hashing Exchange",
+            "enabled": true
+          },
+          {
+            "name": "direct",
+            "description": "AMQP direct exchange, as per the AMQP specification",
             "enabled": true
           }
         ],
@@ -619,14 +581,14 @@
             "enabled": true
           },
           {
-            "name": "RABBIT-CR-DEMO",
-            "description": "RabbitMQ Demo challenge-response authentication mechanism",
-            "enabled": false
-          },
-          {
             "name": "PLAIN",
             "description": "SASL PLAIN authentication mechanism",
             "enabled": true
+          },
+          {
+            "name": "RABBIT-CR-DEMO",
+            "description": "RabbitMQ Demo challenge-response authentication mechanism",
+            "enabled": false
           },
           {
             "name": "ANONYMOUS",
@@ -912,37 +874,37 @@
         "type": "disc",
         "running": true,
         "being_drained": false,
-        "mem_used": 159678464,
+        "mem_used": 165265408,
         "mem_used_details": {
-          "rate": 0.0
+          "rate": 819.2
         },
-        "fd_used": 40,
+        "fd_used": 41,
         "fd_used_details": {
-          "rate": 0.0
+          "rate": 0.2
         },
         "sockets_used": 0,
         "sockets_used_details": {
           "rate": 0.0
         },
-        "proc_used": 421,
+        "proc_used": 422,
         "proc_used_details": {
-          "rate": 0.0
+          "rate": 0.2
         },
-        "disk_free": 379852955648,
+        "disk_free": 375486853120,
         "disk_free_details": {
           "rate": 0.0
         },
-        "gc_num": 11813,
+        "gc_num": 11353,
         "gc_num_details": {
-          "rate": 0.0
+          "rate": 8.4
         },
-        "gc_bytes_reclaimed": 568008592,
+        "gc_bytes_reclaimed": 545464320,
         "gc_bytes_reclaimed_details": {
-          "rate": 0.0
+          "rate": 97155.2
         },
-        "context_switches": 188639,
+        "context_switches": 179254,
         "context_switches_details": {
-          "rate": 0.0
+          "rate": 84.0
         },
         "io_read_count": 0,
         "io_read_count_details": {
@@ -1012,7 +974,7 @@
         "queue_index_read_count_details": {
           "rate": 0.0
         },
-        "connection_created": 10,
+        "connection_created": 9,
         "connection_created_details": {
           "rate": 0.0
         },
@@ -1043,60 +1005,60 @@
         "cluster_links": [
           {
             "stats": {
-              "send_bytes": 470799,
+              "send_bytes": 739168,
               "send_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               },
-              "recv_bytes": 441268,
+              "recv_bytes": 675477,
               "recv_bytes_details": {
-                "rate": 0.0
+                "rate": 480.0
               }
             },
             "name": "rabbit@rabbitmq-1",
-            "peer_addr": "192.168.80.4",
+            "peer_addr": "192.168.80.3",
             "peer_port": 25672,
             "sock_addr": "192.168.80.2",
-            "sock_port": 58548,
-            "recv_bytes": 441268,
-            "send_bytes": 470799
+            "sock_port": 34344,
+            "recv_bytes": 677873,
+            "send_bytes": 741612
           },
           {
             "stats": {
-              "send_bytes": 480409,
+              "send_bytes": 692802,
               "send_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               },
-              "recv_bytes": 718522,
+              "recv_bytes": 440336,
               "recv_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               }
             },
             "name": "rabbit@rabbitmq-3",
-            "peer_addr": "192.168.80.3",
-            "peer_port": 52392,
+            "peer_addr": "192.168.80.4",
+            "peer_port": 25672,
             "sock_addr": "192.168.80.2",
-            "sock_port": 25672,
-            "recv_bytes": 718522,
-            "send_bytes": 480409
+            "sock_port": 40310,
+            "recv_bytes": 442780,
+            "send_bytes": 695246
           },
           {
             "stats": {
-              "send_bytes": 225,
+              "send_bytes": 16313,
               "send_bytes_details": {
                 "rate": 0.0
               },
-              "recv_bytes": 560,
+              "recv_bytes": 4487,
               "recv_bytes_details": {
                 "rate": 0.0
               }
             },
-            "name": "rabbitmqcli-86-rabbit@rabbitmq-2",
+            "name": "rabbitmqcli-242-rabbit@rabbitmq-2",
             "peer_addr": "192.168.80.2",
-            "peer_port": 55140,
+            "peer_port": 59474,
             "sock_addr": "192.168.80.2",
             "sock_port": 25672,
-            "recv_bytes": 560,
-            "send_bytes": 225
+            "recv_bytes": 4487,
+            "send_bytes": 16313
           }
         ],
         "metrics_gc_queue_length": {
@@ -1121,23 +1083,13 @@
         "disk_free_alarm": false,
         "proc_total": 1048576,
         "rates_mode": "basic",
-        "uptime": 346480,
+        "uptime": 264881,
         "run_queue": 1,
         "processors": 12,
         "exchange_types": [
           {
-            "name": "direct",
-            "description": "AMQP direct exchange, as per the AMQP specification",
-            "enabled": true
-          },
-          {
-            "name": "headers",
-            "description": "AMQP headers exchange, as per the AMQP specification",
-            "enabled": true
-          },
-          {
-            "name": "topic",
-            "description": "AMQP topic exchange, as per the AMQP specification",
+            "name": "x-modulus-hash",
+            "description": "Modulus Hashing Exchange",
             "enabled": true
           },
           {
@@ -1146,17 +1098,32 @@
             "enabled": true
           },
           {
+            "name": "headers",
+            "description": "AMQP headers exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
+            "name": "direct",
+            "description": "AMQP direct exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
             "name": "x-local-random",
             "description": "Picks one random local binding (queue) to route via (to).",
             "enabled": true
           },
           {
-            "name": "x-modulus-hash",
-            "description": "Modulus Hashing Exchange",
+            "name": "topic",
+            "description": "AMQP topic exchange, as per the AMQP specification",
             "enabled": true
           }
         ],
         "auth_mechanisms": [
+          {
+            "name": "RABBIT-CR-DEMO",
+            "description": "RabbitMQ Demo challenge-response authentication mechanism",
+            "enabled": false
+          },
           {
             "name": "AMQPLAIN",
             "description": "QPid AMQPLAIN mechanism",
@@ -1171,11 +1138,6 @@
             "name": "ANONYMOUS",
             "description": "SASL ANONYMOUS authentication mechanism",
             "enabled": true
-          },
-          {
-            "name": "RABBIT-CR-DEMO",
-            "description": "RabbitMQ Demo challenge-response authentication mechanism",
-            "enabled": false
           }
         ],
         "applications": [
@@ -1456,11 +1418,11 @@
         "type": "disc",
         "running": true,
         "being_drained": false,
-        "mem_used": 177958912,
+        "mem_used": 164593664,
         "mem_used_details": {
-          "rate": 0.0
+          "rate": 9011.2
         },
-        "fd_used": 40,
+        "fd_used": 39,
         "fd_used_details": {
           "rate": 0.0
         },
@@ -1472,21 +1434,21 @@
         "proc_used_details": {
           "rate": 0.0
         },
-        "disk_free": 379852955648,
+        "disk_free": 375486853120,
         "disk_free_details": {
           "rate": 0.0
         },
-        "gc_num": 11544,
+        "gc_num": 11328,
         "gc_num_details": {
-          "rate": 0.0
+          "rate": 7.2
         },
-        "gc_bytes_reclaimed": 558208312,
+        "gc_bytes_reclaimed": 543016344,
         "gc_bytes_reclaimed_details": {
-          "rate": 0.0
+          "rate": 107654.4
         },
-        "context_switches": 186846,
+        "context_switches": 178111,
         "context_switches_details": {
-          "rate": 0.0
+          "rate": 72.6
         },
         "io_read_count": 0,
         "io_read_count_details": {
@@ -1556,7 +1518,7 @@
         "queue_index_read_count_details": {
           "rate": 0.0
         },
-        "connection_created": 11,
+        "connection_created": 10,
         "connection_created_details": {
           "rate": 0.0
         },
@@ -1587,60 +1549,41 @@
         "cluster_links": [
           {
             "stats": {
-              "send_bytes": 776924,
+              "send_bytes": 404875,
               "send_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               },
-              "recv_bytes": 730179,
+              "recv_bytes": 370851,
               "recv_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               }
             },
             "name": "rabbit@rabbitmq-1",
-            "peer_addr": "192.168.80.4",
+            "peer_addr": "192.168.80.3",
             "peer_port": 25672,
-            "sock_addr": "192.168.80.3",
-            "sock_port": 49798,
-            "recv_bytes": 730179,
-            "send_bytes": 776924
+            "sock_addr": "192.168.80.4",
+            "sock_port": 52018,
+            "recv_bytes": 373295,
+            "send_bytes": 407319
           },
           {
             "stats": {
-              "send_bytes": 718522,
+              "send_bytes": 440336,
               "send_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               },
-              "recv_bytes": 480409,
+              "recv_bytes": 692802,
               "recv_bytes_details": {
-                "rate": 0.0
+                "rate": 470.4
               }
             },
             "name": "rabbit@rabbitmq-2",
             "peer_addr": "192.168.80.2",
-            "peer_port": 25672,
-            "sock_addr": "192.168.80.3",
-            "sock_port": 52392,
-            "recv_bytes": 480409,
-            "send_bytes": 718522
-          },
-          {
-            "stats": {
-              "send_bytes": 16313,
-              "send_bytes_details": {
-                "rate": 0.0
-              },
-              "recv_bytes": 4487,
-              "recv_bytes_details": {
-                "rate": 0.0
-              }
-            },
-            "name": "rabbitmqcli-572-rabbit@rabbitmq-3",
-            "peer_addr": "192.168.80.3",
-            "peer_port": 53764,
-            "sock_addr": "192.168.80.3",
+            "peer_port": 40310,
+            "sock_addr": "192.168.80.4",
             "sock_port": 25672,
-            "recv_bytes": 4487,
-            "send_bytes": 16313
+            "recv_bytes": 695246,
+            "send_bytes": 442780
           }
         ],
         "metrics_gc_queue_length": {

@@ -454,7 +454,7 @@
       "id": "rejection-017",
       "risk_rank": 2,
       "scenario": "rejection",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.monitoring.node-health.rejection",
         "closure.mqtt.authentication-anonymous.rejection",
@@ -1067,7 +1067,7 @@
       "id": "failure-006",
       "risk_rank": 3,
       "scenario": "failure",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.ldap.outage.failure",
         "closure.monitoring.correlation.failure",
@@ -1350,7 +1350,7 @@
       "id": "recovery-006",
       "risk_rank": 4,
       "scenario": "recovery",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.ldap.outage.recovery",
         "closure.monitoring.correlation.recovery",
@@ -1678,7 +1678,7 @@
       "id": "operations-004",
       "risk_rank": 6,
       "scenario": "operations",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.management.http-api.operations",
         "closure.management.metrics-cost.operations",
@@ -4515,7 +4515,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.client.connection-recovery.rejection",
@@ -5112,7 +5112,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.mqtt.authentication-anonymous.rejection",
@@ -7271,7 +7271,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.mqtt.message-expiry-will-retained.failure",
@@ -8242,7 +8242,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.mqtt.message-expiry-will-retained.recovery",
@@ -9355,7 +9355,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.management.metrics-cost.operations",
@@ -9394,7 +9394,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.monitoring.metrics.operations",
@@ -16185,8 +16185,8 @@
     "commit_policy": "one-reviewed-tranche-with-non-regression-runtime-identity-and-oracle-validation"
   },
   "summary": {
-    "remaining_rows": 931,
+    "remaining_rows": 925,
     "planned_tranches": 242,
-    "completed_rows": 20
+    "completed_rows": 26
   }
 }

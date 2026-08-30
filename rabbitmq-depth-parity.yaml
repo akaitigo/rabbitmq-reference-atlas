@@ -90,7 +90,7 @@ summary:
   satisfied: 1
   partial: 14
   missing: 3
-  total_gaps: 4243
+  total_gaps: 4231
   definitive_allowed: false
 axes:
 - id: authority-body-digestion
@@ -5552,14 +5552,14 @@ axes:
     unit: authority-derived behavior requiring rejection
     required: 206
     legacy_runtime_observation: 3
-    scenario_gap_closed: 2
+    scenario_gap_closed: 4
     completion_eligible: 0
-    remaining: 204
+    remaining: 202
     profile_partitions:
       broker-cluster-3:
         required: 81
         legacy_runtime_observation: 0
-        scenario_gap_closed: 1
+        scenario_gap_closed: 3
         completion_eligible: 0
       capacity-benchmark:
         required: 7
@@ -5632,7 +5632,7 @@ axes:
         scenario_gap_closed: 0
         completion_eligible: 0
   status: partial
-  gap_count: 204
+  gap_count: 202
   gap_ids:
   - proof.alarm.cluster-wide.rejection
   - proof.alarm.disk.rejection
@@ -5651,7 +5651,6 @@ axes:
   - proof.classic-queue.priority.rejection
   - proof.cli.exit-timeout.rejection
   - proof.cli.rabbitmq-diagnostics.rejection
-  - proof.cli.rabbitmqctl.rejection
   - proof.client.connection-recovery.rejection
   - proof.cluster.client-connection.rejection
   - proof.cluster.membership.rejection
@@ -5696,7 +5695,6 @@ axes:
   - proof.monitoring.correlation.rejection
   - proof.monitoring.logs.rejection
   - proof.monitoring.metrics.rejection
-  - proof.monitoring.node-health.rejection
   - proof.mqtt.authentication-anonymous.rejection
   - proof.mqtt.authorization.rejection
   - proof.mqtt.cross-protocol-routing.rejection
@@ -5842,7 +5840,7 @@ axes:
   - id: scenario-refusal.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=3/206; scenario-gap-closed=2/206; completion-eligible=0/206
+    observed: legacy-observation=3/206; scenario-gap-closed=4/206; completion-eligible=0/206
     status: partial
     evidence:
     - scenario-closure.yaml
@@ -5870,7 +5868,6 @@ axes:
     - proof.classic-queue.priority.rejection
     - proof.classic-queue.overflow.rejection
     - proof.classic-queue.exclusive-auto-delete.rejection
-    - proof.cli.rabbitmqctl.rejection
     - proof.cli.rabbitmq-diagnostics.rejection
     - proof.cli.exit-timeout.rejection
     - proof.cluster.membership.rejection
@@ -5914,7 +5911,6 @@ axes:
     - proof.management.authorization.rejection
     - proof.management.metrics-cost.rejection
     - proof.management.oauth.rejection
-    - proof.monitoring.node-health.rejection
     - proof.monitoring.logs.rejection
     - proof.monitoring.metrics.rejection
     - proof.monitoring.correlation.rejection
@@ -6061,14 +6057,14 @@ axes:
     unit: authority-derived behavior requiring failure
     required: 74
     legacy_runtime_observation: 0
-    scenario_gap_closed: 3
+    scenario_gap_closed: 4
     completion_eligible: 0
-    remaining: 71
+    remaining: 70
     profile_partitions:
       broker-cluster-3:
         required: 31
         legacy_runtime_observation: 0
-        scenario_gap_closed: 3
+        scenario_gap_closed: 4
         completion_eligible: 0
       capacity-benchmark:
         required: 4
@@ -6126,7 +6122,7 @@ axes:
         scenario_gap_closed: 0
         completion_eligible: 0
   status: partial
-  gap_count: 71
+  gap_count: 70
   gap_ids:
   - proof.alarm.cluster-wide.failure
   - proof.alarm.disk.failure
@@ -6148,7 +6144,6 @@ axes:
   - proof.federation.link-recovery.failure
   - proof.ldap.outage.failure
   - proof.monitoring.correlation.failure
-  - proof.monitoring.logs.failure
   - proof.mqtt.message-expiry-will-retained.failure
   - proof.mqtt.qos0-overload-drop.failure
   - proof.mqtt.session-expiry-clean.failure
@@ -6203,7 +6198,7 @@ axes:
   - id: scenario-failure.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=0/74; scenario-gap-closed=3/74; completion-eligible=0/74
+    observed: legacy-observation=0/74; scenario-gap-closed=4/74; completion-eligible=0/74
     status: partial
     evidence:
     - scenario-closure.yaml
@@ -6230,7 +6225,6 @@ axes:
     - proof.feature-flags.irreversibility.failure
     - proof.federation.link-recovery.failure
     - proof.ldap.outage.failure
-    - proof.monitoring.logs.failure
     - proof.monitoring.correlation.failure
     - proof.mqtt.message-expiry-will-retained.failure
     - proof.mqtt.session-expiry-clean.failure
@@ -6289,14 +6283,14 @@ axes:
     unit: authority-derived behavior requiring recovery
     required: 74
     legacy_runtime_observation: 0
-    scenario_gap_closed: 3
+    scenario_gap_closed: 4
     completion_eligible: 0
-    remaining: 71
+    remaining: 70
     profile_partitions:
       broker-cluster-3:
         required: 31
         legacy_runtime_observation: 0
-        scenario_gap_closed: 3
+        scenario_gap_closed: 4
         completion_eligible: 0
       capacity-benchmark:
         required: 4
@@ -6354,7 +6348,7 @@ axes:
         scenario_gap_closed: 0
         completion_eligible: 0
   status: partial
-  gap_count: 71
+  gap_count: 70
   gap_ids:
   - proof.alarm.cluster-wide.recovery
   - proof.alarm.disk.recovery
@@ -6376,7 +6370,6 @@ axes:
   - proof.federation.link-recovery.recovery
   - proof.ldap.outage.recovery
   - proof.monitoring.correlation.recovery
-  - proof.monitoring.logs.recovery
   - proof.mqtt.message-expiry-will-retained.recovery
   - proof.mqtt.qos0-overload-drop.recovery
   - proof.mqtt.session-expiry-clean.recovery
@@ -6431,7 +6424,7 @@ axes:
   - id: scenario-recovery.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=0/74; scenario-gap-closed=3/74; completion-eligible=0/74
+    observed: legacy-observation=0/74; scenario-gap-closed=4/74; completion-eligible=0/74
     status: partial
     evidence:
     - scenario-closure.yaml
@@ -6458,7 +6451,6 @@ axes:
     - proof.feature-flags.irreversibility.recovery
     - proof.federation.link-recovery.recovery
     - proof.ldap.outage.recovery
-    - proof.monitoring.logs.recovery
     - proof.monitoring.correlation.recovery
     - proof.mqtt.message-expiry-will-retained.recovery
     - proof.mqtt.session-expiry-clean.recovery
@@ -6613,14 +6605,14 @@ axes:
     unit: authority-derived behavior requiring operations
     required: 50
     legacy_runtime_observation: 0
-    scenario_gap_closed: 4
+    scenario_gap_closed: 6
     completion_eligible: 0
-    remaining: 46
+    remaining: 44
     profile_partitions:
       broker-cluster-3:
         required: 23
         legacy_runtime_observation: 0
-        scenario_gap_closed: 4
+        scenario_gap_closed: 6
         completion_eligible: 0
       capacity-benchmark:
         required: 2
@@ -6678,7 +6670,7 @@ axes:
         scenario_gap_closed: 0
         completion_eligible: 0
   status: partial
-  gap_count: 46
+  gap_count: 44
   gap_ids:
   - proof.alarm.disk.operations
   - proof.alarm.memory.operations
@@ -6690,10 +6682,8 @@ axes:
   - proof.consumer.ack-timeout.operations
   - proof.federation.link-recovery.operations
   - proof.ldap.outage.operations
-  - proof.management.http-api.operations
   - proof.management.metrics-cost.operations
   - proof.monitoring.correlation.operations
-  - proof.monitoring.logs.operations
   - proof.monitoring.metrics.operations
   - proof.mqtt.metrics-capacity.operations
   - proof.mqtt.qos0-overload-drop.operations
@@ -6730,7 +6720,7 @@ axes:
   - id: scenario-operations.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=0/50; scenario-gap-closed=4/50; completion-eligible=0/50
+    observed: legacy-observation=0/50; scenario-gap-closed=6/50; completion-eligible=0/50
     status: partial
     evidence:
     - scenario-closure.yaml
@@ -6749,9 +6739,7 @@ axes:
     - proof.consumer.ack-timeout.operations
     - proof.federation.link-recovery.operations
     - proof.ldap.outage.operations
-    - proof.management.http-api.operations
     - proof.management.metrics-cost.operations
-    - proof.monitoring.logs.operations
     - proof.monitoring.metrics.operations
     - proof.monitoring.correlation.operations
     - proof.mqtt.session-queue-cardinality.operations
@@ -7242,16 +7230,16 @@ axes:
     unit: required behavior × scenario × profile × proof × artifact
     required: 951
     legacy_runtime_observation: 12
-    dedicated_runtime_reports: 20
-    scenario_gap_closed: 20
+    dedicated_runtime_reports: 26
+    scenario_gap_closed: 26
     completion_eligible: 0
-    remaining: 931
+    remaining: 925
     required_channels:
     - packet
     - log
     - metric
   status: partial
-  gap_count: 931
+  gap_count: 925
   gap_ids:
   - proof.alarm.cluster-wide.boundary
   - proof.alarm.cluster-wide.failure
@@ -7335,7 +7323,6 @@ axes:
   - proof.cli.rabbitmq-plugins.normal
   - proof.cli.rabbitmqctl.boundary
   - proof.cli.rabbitmqctl.normal
-  - proof.cli.rabbitmqctl.rejection
   - proof.client.connection-recovery.boundary
   - proof.client.connection-recovery.compatibility
   - proof.client.connection-recovery.failure
@@ -7498,7 +7485,6 @@ axes:
   - proof.management.authorization.rejection
   - proof.management.http-api.boundary
   - proof.management.http-api.normal
-  - proof.management.http-api.operations
   - proof.management.http-api.rejection
   - proof.management.metrics-cost.boundary
   - proof.management.metrics-cost.normal
@@ -7517,10 +7503,7 @@ axes:
   - proof.monitoring.correlation.recovery
   - proof.monitoring.correlation.rejection
   - proof.monitoring.logs.boundary
-  - proof.monitoring.logs.failure
   - proof.monitoring.logs.normal
-  - proof.monitoring.logs.operations
-  - proof.monitoring.logs.recovery
   - proof.monitoring.logs.rejection
   - proof.monitoring.metrics.boundary
   - proof.monitoring.metrics.normal
@@ -7529,7 +7512,6 @@ axes:
   - proof.monitoring.metrics.rejection
   - proof.monitoring.node-health.boundary
   - proof.monitoring.node-health.normal
-  - proof.monitoring.node-health.rejection
   - proof.mqtt.authentication-anonymous.boundary
   - proof.mqtt.authentication-anonymous.normal
   - proof.mqtt.authentication-anonymous.rejection
@@ -8187,7 +8169,7 @@ axes:
   checks:
   - id: artifact.unique-binding
     required: 各Required rowの全Variantへ共有しないpacket/log/metric Artifactを専用pathとdigestで接続する。
-    observed: legacy-observation=12/951; scenario-gap-closed=20/951
+    observed: legacy-observation=12/951; scenario-gap-closed=26/951
     status: partial
     evidence:
     - scenario-closure.yaml
@@ -8288,7 +8270,6 @@ axes:
     - proof.classic-queue.exclusive-auto-delete.rejection
     - proof.cli.rabbitmqctl.normal
     - proof.cli.rabbitmqctl.boundary
-    - proof.cli.rabbitmqctl.rejection
     - proof.cli.rabbitmq-diagnostics.normal
     - proof.cli.rabbitmq-diagnostics.boundary
     - proof.cli.rabbitmq-diagnostics.rejection
@@ -8459,7 +8440,6 @@ axes:
     - proof.management.http-api.normal
     - proof.management.http-api.boundary
     - proof.management.http-api.rejection
-    - proof.management.http-api.operations
     - proof.management.authorization.normal
     - proof.management.authorization.boundary
     - proof.management.authorization.rejection
@@ -8475,13 +8455,9 @@ axes:
     - proof.management.oauth.compatibility
     - proof.monitoring.node-health.normal
     - proof.monitoring.node-health.boundary
-    - proof.monitoring.node-health.rejection
     - proof.monitoring.logs.normal
     - proof.monitoring.logs.boundary
     - proof.monitoring.logs.rejection
-    - proof.monitoring.logs.failure
-    - proof.monitoring.logs.recovery
-    - proof.monitoring.logs.operations
     - proof.monitoring.metrics.normal
     - proof.monitoring.metrics.boundary
     - proof.monitoring.metrics.rejection

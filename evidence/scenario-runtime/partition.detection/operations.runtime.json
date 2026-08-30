@@ -13,7 +13,7 @@
   },
   "harness": {
     "path": "scripts/generate-scenario-runtime.py",
-    "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+    "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
   },
   "variants": [
     {
@@ -35,7 +35,7 @@
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T141832Z-3367"
+        "execution_id": "20260830T143739Z-65535"
       },
       "oracle": {
         "id": "oracle.partition.detection.operations.node-1",
@@ -51,20 +51,20 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/packet.json",
-          "digest": "sha256:612605fc5662b74cc3215ce2c4f66f7d5caa7dfca22cc3d1e4f01d042a5cd9d9",
+          "digest": "sha256:f3ee365c8b1050ec8a02477ff4f3d9e1eed0ab01aa825500b5b3c6d0d6ea9838",
           "size_bytes": 1091,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/log.txt",
-          "digest": "sha256:20b5b15ba9b59e8d0668be4e0b3f0031fc4688c42b3265a0aee76eec5f047397",
-          "size_bytes": 32146,
+          "digest": "sha256:9fd291750cef9ff217010cb0c3b15fc0cfccd1d487c85141e78dec2de28f9d82",
+          "size_bytes": 32073,
           "channel": "log",
           "media_type": "text/plain"
         },
@@ -96,7 +96,7 @@
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T141832Z-3367"
+        "execution_id": "20260830T143739Z-65535"
       },
       "oracle": {
         "id": "oracle.partition.detection.operations.node-2",
@@ -112,27 +112,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/packet.json",
-          "digest": "sha256:a5e572a9a68617746b59975ccb33741c2be05f40071841a440ab8818e44fd858",
+          "digest": "sha256:47a89bce5b8d0c6b812fa1e1ba883d9a4aa02e3f2ab878c70ea3b5a1c5868ead",
           "size_bytes": 1074,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/log.txt",
-          "digest": "sha256:c5409f1c1c573fea81607a95701feba0267290eec63bfc8d5378b9a2aaeb6af8",
-          "size_bytes": 35614,
+          "digest": "sha256:23ae8413d2ae5a736bcddcbdcc99da86655a87797f40a4293045a986c3f1f37f",
+          "size_bytes": 36053,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/metric.json",
-          "digest": "sha256:a9c6cc19890881f994e4fe9d84a384f01fe2d93b875a779f846692e725c29e55",
-          "size_bytes": 46481,
+          "digest": "sha256:aa37d647a488597f502c9c3679631040386db2b63d597b525227207a1607f04d",
+          "size_bytes": 46495,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -157,7 +157,7 @@
       "runtime": {
         "profile": "broker-cluster-3",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T141832Z-3367"
+        "execution_id": "20260830T143739Z-65535"
       },
       "oracle": {
         "id": "oracle.partition.detection.operations.node-3",
@@ -173,27 +173,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/packet.json",
-          "digest": "sha256:426ae39ae97ef841b452a4c021c8617e68038c4cdebaf20283c7b167640cc662",
+          "digest": "sha256:ba19f9e9b2fa6ea572fdfda83cb7a32b0325d805141d19611b3bac19a7fb719d",
           "size_bytes": 1074,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/log.txt",
-          "digest": "sha256:658db27188f592327393cbe5da54354973f84a3492d4f93bda4b4d88491c56d6",
-          "size_bytes": 35951,
+          "digest": "sha256:759c6beb833ffb2e9cc1bc6b2d2663c7a44d6f7350034f626597bf15155fb7f9",
+          "size_bytes": 35871,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/metric.json",
-          "digest": "sha256:bdc4dfb7866204541fb6a35f9f5ff3969ad495056656cb255ad64fd355722eef",
-          "size_bytes": 46481,
+          "digest": "sha256:1e26bf30d377bf0abdfde606ed45a2e95c42a568d0f46a672506b7e691946993",
+          "size_bytes": 46495,
           "channel": "metric",
           "media_type": "application/json"
         }

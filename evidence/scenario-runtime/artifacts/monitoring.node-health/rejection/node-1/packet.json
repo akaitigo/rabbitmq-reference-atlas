@@ -1,0 +1,22 @@
+{
+  "transport": "container-exec",
+  "stopped_service": "rabbitmq-1",
+  "target_node": "rabbit@rabbitmq-1",
+  "diagnostic": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-1",
+      "rabbitmq-diagnostics",
+      "-q",
+      "ping"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "service \"rabbitmq-1\" is not running\n"
+  }
+}

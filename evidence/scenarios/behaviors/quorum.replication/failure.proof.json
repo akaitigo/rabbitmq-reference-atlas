@@ -70,7 +70,7 @@
     "report": {
       "path": "evidence/scenario-runtime/quorum.replication/failure.runtime.json",
       "present": true,
-      "digest": "sha256:43fd50de11a39379f06ee3e6633fce0b49bb46ef88aecc067d608914425b46f7"
+      "digest": "sha256:18b032d94ba923243eaa4a212ab820e4f2c0f51fa73ec59f16b4b3de80c98cfb"
     },
     "required_variants": [
       "node-1",
@@ -97,7 +97,7 @@
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T141832Z-3367"
+          "execution_id": "20260830T143739Z-65535"
         },
         "oracle": {
           "id": "oracle.quorum.replication.failure.node-1",
@@ -113,13 +113,13 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/packet.json",
-              "digest": "sha256:612605fc5662b74cc3215ce2c4f66f7d5caa7dfca22cc3d1e4f01d042a5cd9d9",
+              "digest": "sha256:f3ee365c8b1050ec8a02477ff4f3d9e1eed0ab01aa825500b5b3c6d0d6ea9838",
               "size_bytes": 1091,
               "channel": "packet",
               "media_type": "application/json"
@@ -129,8 +129,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/log.txt",
-              "digest": "sha256:6d276d3b79276e6f476f341fb9f2c615ee6a9c5602a63df5bc12789ee40fd40a",
-              "size_bytes": 32567,
+              "digest": "sha256:f3d23c230e581d7d783c5853130b5a3ed45c72d658143621a7a2197f47cd447f",
+              "size_bytes": 32494,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -167,7 +167,7 @@
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T141832Z-3367"
+          "execution_id": "20260830T143739Z-65535"
         },
         "oracle": {
           "id": "oracle.quorum.replication.failure.node-2",
@@ -183,13 +183,13 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/packet.json",
-              "digest": "sha256:a5e572a9a68617746b59975ccb33741c2be05f40071841a440ab8818e44fd858",
+              "digest": "sha256:47a89bce5b8d0c6b812fa1e1ba883d9a4aa02e3f2ab878c70ea3b5a1c5868ead",
               "size_bytes": 1074,
               "channel": "packet",
               "media_type": "application/json"
@@ -199,8 +199,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/log.txt",
-              "digest": "sha256:dba12c5ee016e4a4196552dc6e62ae334e8cdf29eef428e8cc4a7d20384cc95f",
-              "size_bytes": 35752,
+              "digest": "sha256:1a5c8b4441ae4291f0fa5d02989c573135fd27c4986eee34e69cdd9a5b20f34e",
+              "size_bytes": 36125,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -209,8 +209,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/metric.json",
-              "digest": "sha256:1bf7654c88c1549280766a1d37d50ff667f358b0ca2e62a098cb23b63e5c1961",
-              "size_bytes": 46477,
+              "digest": "sha256:3de802cf1aade723e567fee3504d731e6a51ae7aa06f5c97f8f44177e7c64402",
+              "size_bytes": 46473,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -237,7 +237,7 @@
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T141832Z-3367"
+          "execution_id": "20260830T143739Z-65535"
         },
         "oracle": {
           "id": "oracle.quorum.replication.failure.node-3",
@@ -253,13 +253,13 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/packet.json",
-              "digest": "sha256:426ae39ae97ef841b452a4c021c8617e68038c4cdebaf20283c7b167640cc662",
+              "digest": "sha256:ba19f9e9b2fa6ea572fdfda83cb7a32b0325d805141d19611b3bac19a7fb719d",
               "size_bytes": 1074,
               "channel": "packet",
               "media_type": "application/json"
@@ -269,8 +269,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/log.txt",
-              "digest": "sha256:0391e4fc56276e250ef7b0facb4aab9ae3a0dd25240452767623eff04969f5c8",
-              "size_bytes": 35955,
+              "digest": "sha256:c2ba0bc37b1692816938b561c5ca30ec3faa2c43251ed92f0cb2f329be84b389",
+              "size_bytes": 35726,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -279,8 +279,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/metric.json",
-              "digest": "sha256:cd966376c36c58a2c7234aaeb9acdf02ed61489e0a60f1110848275ec16fa29e",
-              "size_bytes": 46477,
+              "digest": "sha256:4f1ca5e1b77c6f109af54b4a4f2c2775643a23fe5b26fae1f9b4e072840785c7",
+              "size_bytes": 46489,
               "channel": "metric",
               "media_type": "application/json"
             },

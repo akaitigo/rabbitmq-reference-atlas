@@ -1,0 +1,203 @@
+{
+  "schema_version": 1,
+  "behavior_id": "management.http-api",
+  "authority_surface_id": "management.http-api",
+  "scenario": "operations",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-urllib-management-client",
+        "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
+        "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T143739Z-65535"
+      },
+      "oracle": {
+        "id": "oracle.management.http-api.operations.node-1",
+        "assertions": [
+          "認証済みManagement HTTP overview requestが成功した",
+          "認証済みnodes requestが3-node inventoryを返した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-1/packet.json",
+          "digest": "sha256:1232ead2cdb4e4d765d0abb4f1fc22cfea92832aa6e015b54790743a93b384dd",
+          "size_bytes": 57049,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-1/log.txt",
+          "digest": "sha256:077b45c934af17192c4f2c2d0d0f0eb260e901e041ec298f070d7f0cc26482be",
+          "size_bytes": 36242,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-1/metric.json",
+          "digest": "sha256:fe6bb51b1e2d266f54cd8c4a01bc29f239924f761418384155e7782edab3a245",
+          "size_bytes": 60727,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-urllib-management-client",
+        "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
+        "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T143739Z-65535"
+      },
+      "oracle": {
+        "id": "oracle.management.http-api.operations.node-2",
+        "assertions": [
+          "認証済みManagement HTTP overview requestが成功した",
+          "認証済みnodes requestが3-node inventoryを返した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-2/packet.json",
+          "digest": "sha256:a62c97abc89cc719481c9fbb20e4a9eed0ab37799ec0cfd4c233257d08833a91",
+          "size_bytes": 57049,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-2/log.txt",
+          "digest": "sha256:769aa9ec7c45b22936774859a2b0f18a03361587c3ab5449a1adf25d3b00595e",
+          "size_bytes": 34194,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-2/metric.json",
+          "digest": "sha256:698db1f3f6c7ef7a4c7b056d47082c4281f4d3bed0e4596b8d2ed2f5a4689bba",
+          "size_bytes": 60727,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "python-urllib-management-client",
+        "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
+        "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T143739Z-65535"
+      },
+      "oracle": {
+        "id": "oracle.management.http-api.operations.node-3",
+        "assertions": [
+          "認証済みManagement HTTP overview requestが成功した",
+          "認証済みnodes requestが3-node inventoryを返した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-3/packet.json",
+          "digest": "sha256:27f9765e3c93e150d87f712271933fab842755a73800f1388b49e9be35b5c277",
+          "size_bytes": 57049,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-3/log.txt",
+          "digest": "sha256:6eb97472bd6bb48aece4342b5d270e457524c4949c408386abffed9b63303804",
+          "size_bytes": 33947,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-3/metric.json",
+          "digest": "sha256:6e378e9a5a9d6f54572e35d4b26cd16fc04072d3d337b4a47ac525b773c70221",
+          "size_bytes": 60727,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

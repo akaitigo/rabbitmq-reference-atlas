@@ -70,7 +70,7 @@
     "report": {
       "path": "evidence/scenario-runtime/partition.recovery/recovery.runtime.json",
       "present": true,
-      "digest": "sha256:4957b0fb76b43b4636415ee3e247a059bf41f8d072eb0430b7bad6b3ad727fc0"
+      "digest": "sha256:330060872c41afd6777fa600d3a59cab4d36f22e3e4117c7ec0950ed1bc5cf75"
     },
     "required_variants": [
       "node-1",
@@ -97,7 +97,7 @@
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T141832Z-3367"
+          "execution_id": "20260830T143739Z-65535"
         },
         "oracle": {
           "id": "oracle.partition.recovery.recovery.node-1",
@@ -114,13 +114,13 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/packet.json",
-              "digest": "sha256:108266bb790331097cfbfc9fbbc029181b376b6410fa3e561805e1f0b7f5608c",
+              "digest": "sha256:8278b6f1742914f4b6407020060df2f04a91a23fc9ea7d54669cc737d2f2ee3b",
               "size_bytes": 860,
               "channel": "packet",
               "media_type": "application/json"
@@ -130,8 +130,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/log.txt",
-              "digest": "sha256:72dd0ef4d7bf0d5c10c13bacf553c3fd2eb30878ff14df9218b027ba6b67b85a",
-              "size_bytes": 32645,
+              "digest": "sha256:b46c26d74911c2e4ea1e4e252de44dd0d714df3bd00bc9e2eeefc463930b1295",
+              "size_bytes": 32826,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -140,8 +140,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/metric.json",
-              "digest": "sha256:2f56534d1e769864e57499ec95a6f2b5faac1b012b247faa64e867a9077b3999",
-              "size_bytes": 58714,
+              "digest": "sha256:a9a710b49e1d9b2543471dd343aca63d6c6777afa8c6a016a207b57c145f5136",
+              "size_bytes": 59296,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -168,7 +168,7 @@
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T141832Z-3367"
+          "execution_id": "20260830T143739Z-65535"
         },
         "oracle": {
           "id": "oracle.partition.recovery.recovery.node-2",
@@ -185,13 +185,13 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/packet.json",
-              "digest": "sha256:fba3b7178e64652a3bd73a7380cca67624dc3919d2a5174cbc461b2d9231dedf",
+              "digest": "sha256:e8fa95b9511e83ecf9ce3eb335341fcf84121e998ff0c9dd478d02ed24751ed3",
               "size_bytes": 860,
               "channel": "packet",
               "media_type": "application/json"
@@ -201,8 +201,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/log.txt",
-              "digest": "sha256:0622bf745fd693c1b9059379c8ab22f039b8c23305566f610707bf0829b46026",
-              "size_bytes": 35695,
+              "digest": "sha256:55c3207506dccc8542779ce401ae8545325ffd584c59cfbd30633ce56c498854",
+              "size_bytes": 36145,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -211,8 +211,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/metric.json",
-              "digest": "sha256:2e6f1f7dd28bdbe0f2179a8f4e8c19f1d52ed2d46a29f298e6ce7406cbcce880",
-              "size_bytes": 59572,
+              "digest": "sha256:fb03951f9a9622292deecd4ab25e98a27ef71f10f8db249caa4977d8c1f4e8a3",
+              "size_bytes": 60147,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -239,7 +239,7 @@
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T141832Z-3367"
+          "execution_id": "20260830T143739Z-65535"
         },
         "oracle": {
           "id": "oracle.partition.recovery.recovery.node-3",
@@ -256,13 +256,13 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:89a6873dd60f7291c95e432a510c4fc8ede1ca8de15aef9566f65e3b6f7695f1"
+          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/packet.json",
-              "digest": "sha256:60ef56a5b8beb58e1a1c61121ae0f9cc460e91698c5d2d92e7813054a8748b74",
+              "digest": "sha256:8bd429573271e31a0740d3be0acacad69f98670e930e883dcee8339189eed610",
               "size_bytes": 860,
               "channel": "packet",
               "media_type": "application/json"
@@ -272,8 +272,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/log.txt",
-              "digest": "sha256:639c0bf2822bc759eaa5da4652893d02bdf0fc0517d3bbad2088a2a2fed5a649",
-              "size_bytes": 36388,
+              "digest": "sha256:1d0a81fd11346b9c64108fd33298dbc95042a58e21ed3247488deac86961b614",
+              "size_bytes": 35706,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -282,8 +282,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/metric.json",
-              "digest": "sha256:f7468707a853b08404295349df5b04e9e8b5852edc0b6dd89fab33a47a2ae72a",
-              "size_bytes": 59572,
+              "digest": "sha256:b16d69e89e737231f792da12f47b642df61757f348757e3800924f1026838520",
+              "size_bytes": 60147,
               "channel": "metric",
               "media_type": "application/json"
             },

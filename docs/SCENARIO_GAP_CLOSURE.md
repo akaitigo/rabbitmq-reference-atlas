@@ -24,4 +24,4 @@ python3 scripts/test-scenario-proofs.py
 python3 scripts/validate-scenario-proofs.py
 ```
 
-現時点はRequired 951 row、legacy runtime observation 12、専用runtime report 20、Scenario gap closed 20、Completion eligible 0である。専用reportはProtocol/Plugin/Clusterの既存実証に加え、node停止中に作成したvhost metadataの多数派可視性と再参加後複製、rabbitmqctl/rabbitmq-diagnostics operations、plugin online apply拒否、AMQP 1.0 SASL mechanism比較をRabbitMQ 4.3.5の3-node runtimeで駆動する。3 Variant × 3 channelの180 Artifact bindingを保持し、残り931 rowとAuthority atomic bindingは未Closureである。
+現時点はRequired 951 row、legacy runtime observation 12、専用runtime report 26、Scenario gap closed 26、Completion eligible 0である。専用reportはProtocol/Plugin/Cluster、Management、CLI、SASL、metadataの既存実証に加え、Management HTTP operations、broker log operations/failure/recovery、CLIとnode healthの拒否をRabbitMQ 4.3.5の3-node runtimeで駆動する。3 Variant × 3 channelの234 Artifact bindingを保持し、残り925 rowとAuthority atomic bindingは未Closureである。
