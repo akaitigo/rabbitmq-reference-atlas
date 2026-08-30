@@ -1,0 +1,115 @@
+name: rabbitmq-reference-atlas-security-002-ldap
+
+x-security-rabbitmq: &security-rabbitmq
+  image: rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031
+  restart: "no"
+  environment:
+    RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-security-002-ldap-cookie
+  configs:
+  - source: rabbitmq-config
+    target: /etc/rabbitmq/rabbitmq.conf
+  - source: rabbitmq-advanced-config
+    target: /etc/rabbitmq/advanced.config
+  - source: rabbitmq-enabled-plugins
+    target: /etc/rabbitmq/enabled_plugins
+  volumes:
+  - type: bind
+    source: ${SECURITY_002_CERT_DIR:?SECURITY_002_CERT_DIR is required}
+    target: /etc/rabbitmq/ldap-ca
+    read_only: true
+  depends_on:
+    ldap-directory:
+      condition: service_healthy
+  healthcheck:
+    test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+    interval: 3s
+    timeout: 5s
+    retries: 60
+    start_period: 10s
+  tmpfs:
+  - /var/lib/rabbitmq:rw,nosuid,nodev,size=268435456
+  networks: [security-002-ldap]
+
+services:
+  ldap-directory:
+    image: bitnamilegacy/openldap:2.6.10-debian-12-r4@sha256:966fd39ed25813890e9bd57dac56def163bbcfe64967e0bae59ab018d505bd93
+    restart: "no"
+    environment:
+      LDAP_ROOT: dc=atlas,dc=local
+      LDAP_ADMIN_USERNAME: admin
+      LDAP_ADMIN_PASSWORD: atlas-directory-admin-local-only
+      LDAP_USERS: atlas-allowed,atlas-denied
+      LDAP_PASSWORDS: atlas-allowed-local-only,atlas-denied-local-only
+      LDAP_USER_OU: users
+      LDAP_GROUP_OU: groups
+      LDAP_GROUP: atlas-authenticated-users
+      LDAP_ALLOW_ANON_BINDING: "no"
+      LDAP_ENABLE_TLS: "yes"
+      LDAP_TLS_CERT_FILE: /opt/bitnami/openldap/certs/ldap.crt
+      LDAP_TLS_KEY_FILE: /opt/bitnami/openldap/certs/ldap.key
+      LDAP_TLS_CA_FILE: /opt/bitnami/openldap/certs/ca.crt
+      LDAP_TLS_ENFORCE: "yes"
+      LDAP_LOGLEVEL: "256"
+    volumes:
+    - type: bind
+      source: ./security-001/ldap
+      target: /ldifs
+      read_only: true
+    - type: bind
+      source: ${SECURITY_002_CERT_DIR:?SECURITY_002_CERT_DIR is required}
+      target: /opt/bitnami/openldap/certs
+      read_only: true
+    tmpfs:
+    - /bitnami/openldap:rw,nosuid,nodev,size=67108864,uid=1001,gid=0,mode=0770
+    ports:
+    - "127.0.0.1:2636:1636"
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - >-
+        LDAPTLS_CACERT=/opt/bitnami/openldap/certs/ca.crt
+        ldapsearch -x -H ldaps://127.0.0.1:1636
+        -D cn=admin,dc=atlas,dc=local
+        -w atlas-directory-admin-local-only
+        -b dc=atlas,dc=local -s base '(objectClass=*)' dn >/dev/null
+      interval: 2s
+      timeout: 5s
+      retries: 60
+      start_period: 5s
+    networks: [security-002-ldap]
+
+  security-rabbitmq-1:
+    <<: *security-rabbitmq
+    hostname: security-rabbitmq-1
+    environment:
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-security-002-ldap-cookie
+      RABBITMQ_NODENAME: rabbit@security-rabbitmq-1
+    ports: ["127.0.0.1:27672:5672", "127.0.0.1:36672:15672"]
+
+  security-rabbitmq-2:
+    <<: *security-rabbitmq
+    hostname: security-rabbitmq-2
+    environment:
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-security-002-ldap-cookie
+      RABBITMQ_NODENAME: rabbit@security-rabbitmq-2
+    ports: ["127.0.0.1:27673:5672", "127.0.0.1:36673:15672"]
+
+  security-rabbitmq-3:
+    <<: *security-rabbitmq
+    hostname: security-rabbitmq-3
+    environment:
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-security-002-ldap-cookie
+      RABBITMQ_NODENAME: rabbit@security-rabbitmq-3
+    ports: ["127.0.0.1:27674:5672", "127.0.0.1:36674:15672"]
+
+configs:
+  rabbitmq-config:
+    file: ./security-002/ldap-rabbitmq.conf
+  rabbitmq-advanced-config:
+    file: ./security-001/advanced.config
+  rabbitmq-enabled-plugins:
+    file: ./security-002/ldap-enabled_plugins
+
+networks:
+  security-002-ldap:
+    name: rabbitmq-reference-atlas-security-002-ldap-network

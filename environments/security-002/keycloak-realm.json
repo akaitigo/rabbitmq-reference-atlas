@@ -1,0 +1,65 @@
+{
+  "realm": "rabbitmq",
+  "enabled": true,
+  "sslRequired": "none",
+  "registrationAllowed": false,
+  "loginWithEmailAllowed": false,
+  "clientScopes": [
+    {
+      "name": "rabbitmq-audience",
+      "protocol": "openid-connect",
+      "attributes": {"include.in.token.scope": "false", "display.on.consent.screen": "false"},
+      "protocolMappers": [
+        {
+          "name": "rabbitmq-audience",
+          "protocol": "openid-connect",
+          "protocolMapper": "oidc-audience-mapper",
+          "consentRequired": false,
+          "config": {"included.custom.audience": "rabbitmq", "id.token.claim": "false", "access.token.claim": "true"}
+        }
+      ]
+    },
+    {
+      "name": "rabbitmq.tag:management",
+      "protocol": "openid-connect",
+      "attributes": {"include.in.token.scope": "true", "display.on.consent.screen": "false"},
+      "protocolMappers": []
+    }
+  ],
+  "clients": [
+    {
+      "clientId": "rabbitmq-management",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": ["http://127.0.0.1:37672/*", "http://127.0.0.1:37673/*", "http://127.0.0.1:37674/*"],
+      "webOrigins": ["+"],
+      "defaultClientScopes": ["profile", "email", "roles", "web-origins", "acr", "basic", "rabbitmq-audience", "rabbitmq.tag:management"]
+    },
+    {
+      "clientId": "rabbitmq-no-management",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "defaultClientScopes": ["profile", "email", "roles", "web-origins", "acr", "basic", "rabbitmq-audience"]
+    },
+    {
+      "clientId": "rabbitmq-wrong-audience",
+      "enabled": true,
+      "publicClient": true,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": true,
+      "defaultClientScopes": ["profile", "email", "roles", "web-origins", "acr", "basic", "rabbitmq.tag:management"]
+    }
+  ],
+  "users": [
+    {
+      "username": "atlas-oauth-user",
+      "enabled": true,
+      "emailVerified": true,
+      "credentials": [{"type": "password", "value": "atlas-oauth-local-only", "temporary": false}]
+    }
+  ]
+}

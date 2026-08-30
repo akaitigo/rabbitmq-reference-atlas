@@ -1,4 +1,4 @@
-.PHONY: test skill-eval definitive-skill-eval scenario-proof scenario-runtime upgrade-cleanup atomic-evidence evidence-dependency atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal check labs amqp10-lab plugin-protocol-lab tls-lab observability-lab upgrade-lab lock-sources completion
+.PHONY: test skill-eval definitive-skill-eval scenario-proof scenario-runtime security-tranche-contract security-tranche-cleanup upgrade-cleanup atomic-evidence evidence-dependency atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal check labs amqp10-lab plugin-protocol-lab tls-lab observability-lab upgrade-lab lock-sources completion
 
 export GOCACHE := $(CURDIR)/.cache/go-build
 export GOMODCACHE := $(CURDIR)/.cache/go-mod
@@ -20,6 +20,12 @@ scenario-proof:
 
 scenario-runtime:
 	python3 scripts/test-scenario-runtime.py
+
+security-tranche-contract:
+	python3 scripts/test-security-tranche-contract.py
+
+security-tranche-cleanup:
+	python3 scripts/test-security-002-cleanup.py
 
 upgrade-cleanup:
 	python3 scripts/test-upgrade-cleanup.py
@@ -64,7 +70,7 @@ legal:
 	test -s sbom.spdx.json
 	test -s third_party/sbom.cdx.json
 
-check: test skill-eval definitive-skill-eval scenario-proof scenario-runtime upgrade-cleanup atomic-evidence evidence-dependency atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal
+check: test skill-eval definitive-skill-eval scenario-proof scenario-runtime security-tranche-contract security-tranche-cleanup upgrade-cleanup atomic-evidence evidence-dependency atlas-validate repo-validate authority-locators authority-body authority-review non-regression parity neutral-language legal
 
 labs:
 	bash scripts/run-labs.sh

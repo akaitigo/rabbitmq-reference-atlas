@@ -1,0 +1,87 @@
+name: rabbitmq-reference-atlas-security-002-oauth
+
+x-oauth-rabbitmq: &oauth-rabbitmq
+  image: rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031
+  restart: "no"
+  environment:
+    RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-security-002-oauth-cookie
+  configs:
+  - source: rabbitmq-config
+    target: /etc/rabbitmq/rabbitmq.conf
+  - source: rabbitmq-enabled-plugins
+    target: /etc/rabbitmq/enabled_plugins
+  depends_on:
+    keycloak:
+      condition: service_healthy
+  healthcheck:
+    test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+    interval: 3s
+    timeout: 5s
+    retries: 60
+    start_period: 10s
+  tmpfs:
+  - /var/lib/rabbitmq:rw,nosuid,nodev,size=268435456
+  networks: [security-002-oauth]
+
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.7.2@sha256:9d1f1b2b7261ff53c66cb1092dfcdc34a5fb77e81f9e6a6e75b8b6a795de8067
+    restart: "no"
+    command: ["start-dev", "--import-realm", "--health-enabled=true", "--hostname=http://keycloak:8080"]
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: atlas-admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: atlas-keycloak-admin-local-only
+    volumes:
+    - type: bind
+      source: ./security-002/keycloak-realm.json
+      target: /opt/keycloak/data/import/rabbitmq-realm.json
+      read_only: true
+    tmpfs:
+    - /opt/keycloak/data/h2:rw,nosuid,nodev,size=268435456,uid=1000,gid=0,mode=0770
+    ports: ["127.0.0.1:28080:8080"]
+    healthcheck:
+      test:
+      - CMD-SHELL
+      - >-
+        exec 3<>/dev/tcp/127.0.0.1/9000 &&
+        printf 'GET /health/ready HTTP/1.1\r\nHost: localhost\r\nConnection: close\r\n\r\n' >&3 &&
+        grep -q '200 OK' <&3
+      interval: 3s
+      timeout: 5s
+      retries: 80
+      start_period: 20s
+    networks: [security-002-oauth]
+
+  oauth-rabbitmq-1:
+    <<: *oauth-rabbitmq
+    hostname: oauth-rabbitmq-1
+    environment:
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-security-002-oauth-cookie
+      RABBITMQ_NODENAME: rabbit@oauth-rabbitmq-1
+    ports: ["127.0.0.1:37672:15672"]
+
+  oauth-rabbitmq-2:
+    <<: *oauth-rabbitmq
+    hostname: oauth-rabbitmq-2
+    environment:
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-security-002-oauth-cookie
+      RABBITMQ_NODENAME: rabbit@oauth-rabbitmq-2
+    ports: ["127.0.0.1:37673:15672"]
+
+  oauth-rabbitmq-3:
+    <<: *oauth-rabbitmq
+    hostname: oauth-rabbitmq-3
+    environment:
+      RABBITMQ_ERLANG_COOKIE: rabbitmq-reference-atlas-security-002-oauth-cookie
+      RABBITMQ_NODENAME: rabbit@oauth-rabbitmq-3
+    ports: ["127.0.0.1:37674:15672"]
+
+configs:
+  rabbitmq-config:
+    file: ./security-002/oauth-rabbitmq.conf
+  rabbitmq-enabled-plugins:
+    file: ./security-002/oauth-enabled_plugins
+
+networks:
+  security-002-oauth:
+    name: rabbitmq-reference-atlas-security-002-oauth-network

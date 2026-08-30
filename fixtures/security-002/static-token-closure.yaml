@@ -1,0 +1,4 @@
+id: fixture.security-002.static-token-closure
+mutation_path: rows.3.runtime_dependencies.2
+replacement: static-jwt
+expected_error: forbidden-substitution
