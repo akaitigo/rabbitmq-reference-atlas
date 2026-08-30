@@ -29,13 +29,12 @@
     "authority_behaviors": 206,
     "scenarios": 10
   },
-  "completed_tranches": [],
-  "tranches": [
+  "completed_tranches": [
     {
       "id": "security-001",
       "risk_rank": 1,
       "scenario": "security",
-      "status": "in-progress",
+      "status": "completed",
       "row_ids": [
         "closure.amqp10.authentication-options.security",
         "closure.amqp10.version-negotiation.security",
@@ -45,7 +44,9 @@
       "pattern_rows": 4,
       "variant_runs": 12,
       "commit_policy": "one-reviewed-tranche-with-non-regression-runtime-identity-and-oracle-validation"
-    },
+    }
+  ],
+  "tranches": [
     {
       "id": "security-002",
       "risk_rank": 1,
@@ -3657,7 +3658,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.amqp10.version-negotiation.security",
@@ -3683,7 +3684,7 @@
         "node-2-with-ldap",
         "node-3-with-ldap"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.ldap.authorization.security",
@@ -3696,7 +3697,7 @@
         "node-2-with-ldap",
         "node-3-with-ldap"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.ldap.tls.security",
@@ -16170,23 +16171,23 @@
     }
   ],
   "next_tranche": {
-    "id": "security-001",
+    "id": "security-002",
     "risk_rank": 1,
     "scenario": "security",
     "status": "in-progress",
     "row_ids": [
-      "closure.amqp10.authentication-options.security",
-      "closure.amqp10.version-negotiation.security",
-      "closure.ldap.authentication.security",
-      "closure.ldap.authorization.security"
+      "closure.ldap.tls.security",
+      "closure.limit.queues.security",
+      "closure.management.authorization.security",
+      "closure.management.oauth.security"
     ],
     "pattern_rows": 4,
     "variant_runs": 12,
     "commit_policy": "one-reviewed-tranche-with-non-regression-runtime-identity-and-oracle-validation"
   },
   "summary": {
-    "remaining_rows": 925,
-    "planned_tranches": 242,
-    "completed_rows": 26
+    "remaining_rows": 922,
+    "planned_tranches": 241,
+    "completed_rows": 29
   }
 }

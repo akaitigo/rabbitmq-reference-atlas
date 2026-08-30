@@ -70,7 +70,7 @@
     "report": {
       "path": "evidence/scenario-runtime/cluster.client-connection/failure.runtime.json",
       "present": true,
-      "digest": "sha256:fdbc57227a54fc58737dada606d067ca1f589521c5952dbfbfd790ed3d4c89ba"
+      "digest": "sha256:3bcfac2e87daa5fad36d9bb52f41498b7a35ff6e54d57a189c21ed9c864e37d4"
     },
     "required_variants": [
       "node-1",
@@ -91,13 +91,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "python-socket-amqp091-probe",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.cluster.client-connection.failure.node-1",
@@ -108,11 +109,11 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
@@ -128,8 +129,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-1/log.txt",
-              "digest": "sha256:fe8c795d72d888a648ab0dd9f3e66330c1d972cab377d48c731a191cbedf4d6c",
-              "size_bytes": 35539,
+              "digest": "sha256:d96c4cd67c23d399fa392098fc16d908d15231a12ed7c9038a9619e455ffad08",
+              "size_bytes": 35449,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -138,8 +139,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-1/metric.json",
-              "digest": "sha256:24e25d0edf3c1661dabc5a48d628cdf791353a52b87d8b35829f2dde5f3ad5f7",
-              "size_bytes": 573,
+              "digest": "sha256:db053aa749138c002102a30d91f16ec0dda7ae3470e6cb06f62c4e21c2b217ff",
+              "size_bytes": 506,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -160,13 +161,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "python-socket-amqp091-probe",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.cluster.client-connection.failure.node-2",
@@ -177,11 +179,11 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
@@ -197,8 +199,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-2/log.txt",
-              "digest": "sha256:08c861055b7df98c0e221fdff2e1a7c4cac5fbd020d627b1fe8608a59315dcef",
-              "size_bytes": 35810,
+              "digest": "sha256:d7befb06c655eabfb1adf6a663a5aef579676961cc2d28fe298f67ddcf697065",
+              "size_bytes": 34957,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -207,8 +209,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-2/metric.json",
-              "digest": "sha256:289053461febedb74838e049ab536b0f1b52f2742cee6ff6ca207678b3753142",
-              "size_bytes": 44720,
+              "digest": "sha256:260e6736748546e2f237112555ac9336a591e2451af8f1b6ccc29c53c337559c",
+              "size_bytes": 43502,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -229,13 +231,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "python-socket-amqp091-probe",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.cluster.client-connection.failure.node-3",
@@ -246,11 +249,11 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
@@ -266,8 +269,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-3/log.txt",
-              "digest": "sha256:9b29784090aedec778fe438bf08f52d917d8d9e839dbbfb877bd41e7c08fbff2",
-              "size_bytes": 34936,
+              "digest": "sha256:872d9c6f7334593edbc32106d9dc0ac78045e3f4de15bc7568b04e64258bba3c",
+              "size_bytes": 35976,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -276,8 +279,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-3/metric.json",
-              "digest": "sha256:71d8303a0d531346ada99859c06929e603be54607092175a51ff9c4d421d580e",
-              "size_bytes": 44720,
+              "digest": "sha256:18373aa272d1e0e65242ba2ba12b911935812d3c5d5c61bf7c91348a0373bd05",
+              "size_bytes": 43502,
               "channel": "metric",
               "media_type": "application/json"
             },

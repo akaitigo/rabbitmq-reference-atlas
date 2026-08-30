@@ -3,10 +3,12 @@ set -euo pipefail
 
 ROOT=$(cd "$(dirname "$0")/.." && pwd)
 COMPOSE=(docker compose -f "$ROOT/environments/compose.yaml")
+SECURITY_COMPOSE=(docker compose -f "$ROOT/environments/security-001.compose.yaml")
 AMQP_ALL='amqp://atlas:atlas-local-only@127.0.0.1:25672/,amqp://atlas:atlas-local-only@127.0.0.1:25673/,amqp://atlas:atlas-local-only@127.0.0.1:25674/'
 MGMT_ALL='http://127.0.0.1:35672,http://127.0.0.1:35673,http://127.0.0.1:35674'
 LIVE_EVIDENCE="$ROOT/evidence"
-RUN_TOKEN="$(date -u +%Y%m%dT%H%M%SZ)-$$"
+RUN_STARTED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+RUN_TOKEN="${RUN_STARTED_AT//[-:]/}-$$"
 STAGING_EVIDENCE="$ROOT/.evidence-next-$RUN_TOKEN"
 BACKUP_EVIDENCE="$ROOT/.evidence-previous-$RUN_TOKEN"
 TRANSACTION_TMP=$(mktemp -d "${TMPDIR:-/tmp}/rabbitmq-evidence-transaction.XXXXXX")
@@ -18,6 +20,7 @@ RAW="$STAGING_EVIDENCE/raw"
 STOPPED_SERVICE=''
 DISCONNECTED_CONTAINER=''
 ALARM_ACTIVE=''
+SECURITY_ENV_ACTIVE=''
 
 cleanup() {
   if [[ -n "$TRANSACTION_ACTIVE" && -f "$TRANSACTION_STATE" ]]; then
@@ -28,6 +31,7 @@ cleanup() {
     cp "$EVAL_BACKUP/rabbitmq-reference-atlas.definitive-skill-eval.json" "$ROOT/evals/rabbitmq-reference-atlas.definitive-skill-eval.json" >/dev/null 2>&1 || true
   fi
   if [[ -n "$ALARM_ACTIVE" ]]; then "${COMPOSE[@]}" exec -T rabbitmq-1 rabbitmqctl set_vm_memory_high_watermark 0.4 >/dev/null 2>&1 || true; fi
+  if [[ -n "$SECURITY_ENV_ACTIVE" ]]; then "${SECURITY_COMPOSE[@]}" down --remove-orphans >/dev/null 2>&1 || true; fi
   if [[ -n "$DISCONNECTED_CONTAINER" ]]; then docker network connect rabbitmq-reference-atlas-cluster "$DISCONNECTED_CONTAINER" >/dev/null 2>&1 || true; fi
   if [[ -n "$STOPPED_SERVICE" ]]; then "${COMPOSE[@]}" start "$STOPPED_SERVICE" >/dev/null 2>&1 || true; fi
   if [[ -n "${RABBITMQ_SCENARIO_METADATA_VHOST:-}" ]]; then
@@ -53,7 +57,7 @@ cp "$ROOT/evals/rabbitmq-reference-atlas.definitive-skill-eval.json" "$EVAL_BACK
 export RABBITMQ_EVIDENCE_ROOT="$STAGING_EVIDENCE"
 export RABBITMQ_EVIDENCE_ONLY=1
 export RABBITMQ_EVIDENCE_RUN_TOKEN="$RUN_TOKEN"
-export RABBITMQ_EVIDENCE_OBSERVED_AT="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+export RABBITMQ_EVIDENCE_OBSERVED_AT="$RUN_STARTED_AT"
 export RABBITMQ_EVIDENCE_RERUN_AT="$RABBITMQ_EVIDENCE_OBSERVED_AT"
 export RABBITMQ_EVIDENCE_PREVIOUS_GRAPH="$LIVE_EVIDENCE/dependency-graph.json"
 export RABBITMQ_SCENARIO_METADATA_VHOST="/atlas-metadata-$RUN_TOKEN"
@@ -87,6 +91,35 @@ done
 (cd "$ROOT" && go run ./cmd/rmq-lab --mode core --amqp-urls "$AMQP_ALL" --output "$RAW/core.json")
 (cd "$ROOT" && go run ./cmd/rmq-secops --amqp-urls "$AMQP_ALL" --management-urls "$MGMT_ALL" --output "$RAW/security-observability.json")
 (cd "$ROOT" && python3 scripts/generate-scenario-runtime.py steady-state-tranche)
+
+# security-001はmain clusterとは別のCompose project/network/ports/tmpfsを使う。
+# OpenLDAPとLDAP auth backendを有効にした3-node実Brokerを起動し、認証と
+# authorizationを専用Client/Oracleで一度だけ駆動する。
+"${SECURITY_COMPOSE[@]}" up -d --wait
+SECURITY_ENV_ACTIVE=1
+for service in security-rabbitmq-1 security-rabbitmq-2 security-rabbitmq-3; do
+  SECURITY_LISTENER_READY=''
+  for _ in $(seq 1 60); do
+    if "${SECURITY_COMPOSE[@]}" exec -T "$service" rabbitmq-diagnostics listeners 2>/dev/null | grep -q 'port: 5672'; then
+      SECURITY_LISTENER_READY=1
+      break
+    fi
+    sleep 1
+  done
+  if [[ -z "$SECURITY_LISTENER_READY" ]]; then
+    "${SECURITY_COMPOSE[@]}" logs --no-color --tail 200 "$service" >&2
+    echo "$service のLDAP security AMQP listenerがreadiness期限内に起動しませんでした。" >&2
+    exit 1
+  fi
+done
+"${SECURITY_COMPOSE[@]}" exec -T security-rabbitmq-1 rabbitmqctl await_online_nodes 3
+for service in security-rabbitmq-1 security-rabbitmq-2 security-rabbitmq-3; do
+  "${SECURITY_COMPOSE[@]}" exec -T "$service" rabbitmq-plugins list -e -m | grep -qx rabbitmq_auth_backend_ldap
+done
+(cd "$ROOT" && python3 scripts/generate-scenario-runtime.py security-001-ldap)
+"${SECURITY_COMPOSE[@]}" down --remove-orphans
+SECURITY_ENV_ACTIVE=''
+
 (cd "$ROOT" && bash scripts/run-observability-lab.sh "$RAW/observability-state.json" >/dev/null)
 (cd "$ROOT" && go run ./cmd/rmq-benchmark --amqp-urls "$AMQP_ALL" --management-urls "$MGMT_ALL" --messages 300 --payload-bytes 1024 --output "$RAW/performance.json")
 "${COMPOSE[@]}" exec -T rabbitmq-1 rabbitmqctl set_vm_memory_high_watermark absolute 1

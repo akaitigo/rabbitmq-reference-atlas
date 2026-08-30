@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE_ROOT = Path(os.environ.get("RABBITMQ_EVIDENCE_ROOT", ROOT / "evidence"))
 GRAPH_PATH = EVIDENCE_ROOT / "dependency-graph.json"
 BASELINE_PATH = ROOT / "baseline/evidence-dependency-graph-v1.json"
+STRUCTURE_MIGRATION_PATH = ROOT / "migrations/evidence-dependency-structure-v2.json"
 CORE_COMMIT = "072d7ca77981f51754e824d70c6d4ecd55ea67e5"
 DEFAULT_OBSERVED_AT = "2026-08-28T00:00:00+09:00"
 
@@ -75,6 +76,57 @@ def parse_time(value: str) -> dt.datetime:
     return dt.datetime.fromisoformat(normalized)
 
 
+def execution_id_time(value: str) -> str | None:
+    match = re.match(r"^(\d{8}T\d{6}Z)(?:-|$)", value)
+    if not match:
+        return None
+    parsed = dt.datetime.strptime(match.group(1), "%Y%m%dT%H%M%SZ").replace(tzinfo=dt.timezone.utc)
+    return parsed.isoformat().replace("+00:00", "Z")
+
+
+def authoritative_runtime_window(outputs: list[dict[str, Any]], root: Path = ROOT,
+                                 evidence_root: Path = EVIDENCE_ROOT) -> tuple[str, str]:
+    """Return clone-stable runtime times from records, never filesystem metadata."""
+    times: list[str] = []
+    for output in outputs:
+        path = actual_path(output["path"], root, evidence_root)
+        if path.suffix != ".json":
+            continue
+        try:
+            document = load(path)
+        except (json.JSONDecodeError, UnicodeDecodeError):
+            continue
+        if not isinstance(document, dict):
+            continue
+        for key in ("created_at", "started_at", "completed_at"):
+            if isinstance(document.get(key), str):
+                times.append(document[key])
+        run_metadata = document.get("run_metadata")
+        if isinstance(run_metadata, dict):
+            for key in ("created_at", "started_at", "completed_at"):
+                if isinstance(run_metadata.get(key), str):
+                    times.append(run_metadata[key])
+            if isinstance(run_metadata.get("execution_id"), str):
+                canonical = execution_id_time(run_metadata["execution_id"])
+                if canonical:
+                    times.append(canonical)
+        variants = document.get("variants")
+        if isinstance(variants, list):
+            for variant in variants:
+                runtime = variant.get("runtime") if isinstance(variant, dict) else None
+                execution_id = runtime.get("execution_id") if isinstance(runtime, dict) else None
+                if isinstance(execution_id, str):
+                    canonical = execution_id_time(execution_id)
+                    if canonical:
+                        times.append(canonical)
+    if not times:
+        paths = sorted(output["path"] for output in outputs)
+        raise ValueError(f"runtime groupにclone-stable created_at/run metadataがありません: {paths}")
+    for value in times:
+        parse_time(value)
+    return min(times, key=parse_time), max(times, key=parse_time)
+
+
 def aggregate_digest(members: list[str], root: Path = ROOT, evidence_root: Path | None = None) -> str:
     items = [
         {"path": member, "digest": sha_file(actual_path(member, root, evidence_root))}
@@ -99,16 +151,17 @@ def input_specs() -> list[dict[str, Any]]:
         ("harness.producer-clients", "harness", [
             "cmd/rmq-lab/main.go", "cmd/rmq-flow-control/main.go", "cmd/rmq-benchmark/main.go",
             "cmd/rmq-amqp10-handshake/main.go", "cmd/rmq-plugin-protocols/main.go",
-            "cmd/rmq-upgrade-workload/main.go",
+            "cmd/rmq-upgrade-workload/main.go", "cmd/rmq-ldap-security/main.go",
         ]),
         ("harness.consumer-clients", "harness", [
             "cmd/rmq-lab/main.go", "cmd/rmq-plugin-protocols/main.go", "cmd/rmq-observability/main.go",
-            "cmd/rmq-secops/main.go", "cmd/rmq-tls-lab/main.go",
+            "cmd/rmq-secops/main.go", "cmd/rmq-tls-lab/main.go", "cmd/rmq-ldap-security/main.go",
         ]),
         ("harness.evidence-reporters", "harness", [
             "scripts/run-labs.sh", "scripts/generate-evidence.py", "scripts/generate-amqp10-evidence.py",
             "scripts/generate-plugin-protocol-evidence.py", "scripts/generate-scenario-proofs.py",
-            "scripts/generate-scenario-runtime.py",
+            "scripts/generate-scenario-runtime.py", "scripts/run-tls-lab.sh",
+            "scripts/run-upgrade-migration-lab.sh", "scripts/test-upgrade-cleanup.py",
             "scripts/scenario_proof.py", "scripts/evidence_transaction.py", "scripts/evidence_dependency_graph.py",
             "evidence-reporting.yaml",
         ]),
@@ -122,6 +175,9 @@ def input_specs() -> list[dict[str, Any]]:
         ("profile.broker-config-and-topology", "profile", [
             "environments/compose.yaml", "environments/rabbitmq.conf", "environments/tls.compose.yaml",
             "environments/tls/rabbitmq.conf", "environments/upgrade.compose.yaml",
+            "environments/security-001.compose.yaml", "environments/security-001/rabbitmq.conf",
+            "environments/security-001/advanced.config", "environments/security-001/enabled_plugins",
+            "environments/security-001/ldap/10-security-groups.ldif",
             "labs/cluster-failure-recovery/lab.yaml", "labs/network-partition/lab.yaml",
         ]),
         ("profile.delivery-ack-retry-dlx", "profile", [
@@ -140,10 +196,15 @@ def input_specs() -> list[dict[str, Any]]:
         ("profile.security-and-observability", "profile", [
             "labs/security-observability/lab.yaml", "labs/security-tls/lab.yaml",
             "labs/observability-state/lab.yaml", "environments/tls/rabbitmq.conf",
+            "environments/security-001.compose.yaml", "environments/security-001/rabbitmq.conf",
+            "environments/security-001/advanced.config", "environments/security-001/enabled_plugins",
+            "environments/security-001/ldap/10-security-groups.ldif",
         ]),
         ("profile.scenario-and-reference-system", "profile", [
             "scenario-closure.yaml", "reference-system/manifest.yaml", "verification.plan.yaml",
             "authority/review-queue.snapshot.json", "authority/reviews/decisions.json",
+            "evidence/migrations/ldap-security-variant-id-migration.json",
+            "migrations/evidence-dependency-structure-v2.json",
         ]),
         ("profile.skill-mastery-and-routing", "profile", [
             "mastery.yaml", "skill.package.yaml", "evals/router-cases.json", "evals/forward-agent-prompts.json",
@@ -282,13 +343,90 @@ def structure_digest(kind: str, path: str, root: Path = ROOT, evidence_root: Pat
     elif kind == "scenario-closure-plan":
         tranches = [{key: item.get(key) for key in ("id", "risk_rank", "scenario", "row_ids", "pattern_rows", "variant_runs", "commit_policy")}
                      for field in ("completed_tranches", "tranches") for item in document.get(field, [])]
-        tranches.sort(key=lambda item: (item["risk_rank"], item["id"]))
-        ordered = [item["id"] for item in document.get("rows", [])]
+        ordered = [row_id for item in document.get("completed_tranches", []) for row_id in item.get("row_ids", [])]
+        ordered.extend(item["id"] for item in document.get("rows", []))
         value = {"id": document.get("id"), "scope": document.get("scope"), "policy": document.get("policy"),
                  "baseline": document.get("baseline"), "tranches": tranches, "ordered_row_ids": ordered}
     else:
         raise ValueError(f"unknown structure kind: {kind}")
     return canonical_digest(value)
+
+
+def legacy_closure_structure_digest(path: str, root: Path = ROOT,
+                                    evidence_root: Path | None = None) -> str:
+    """Core v2導入前のClosure Plan digestを移行検証のためだけに再計算する。"""
+    document = load(actual_path(path, root, evidence_root))
+    tranches = [
+        {key: item.get(key) for key in (
+            "id", "risk_rank", "scenario", "row_ids", "pattern_rows", "variant_runs", "commit_policy"
+        )}
+        for field in ("completed_tranches", "tranches")
+        for item in document.get(field, [])
+    ]
+    tranches.sort(key=lambda item: (item["risk_rank"], item["id"]))
+    value = {
+        "id": document.get("id"), "scope": document.get("scope"), "policy": document.get("policy"),
+        "baseline": document.get("baseline"), "tranches": tranches,
+        "ordered_row_ids": [item["id"] for item in document.get("rows", [])],
+    }
+    return canonical_digest(value)
+
+
+def closure_structure_invariants(path: str, root: Path = ROOT,
+                                 evidence_root: Path | None = None) -> dict[str, Any]:
+    document = load(actual_path(path, root, evidence_root))
+    tranches = [item for field in ("completed_tranches", "tranches") for item in document.get(field, [])]
+    baseline = document.get("baseline", {})
+    return {
+        "matrix_rows": baseline.get("matrix_rows"),
+        "required_rows": baseline.get("required_rows"),
+        "authority_behaviors": baseline.get("authority_behaviors"),
+        "scenarios": baseline.get("scenarios"),
+        "plan_row_count": len(document.get("rows", [])),
+        "tranche_count": len(tranches),
+        "completed_tranche_ids": [item["id"] for item in document.get("completed_tranches", [])],
+        "row_id_digest": canonical_digest([item["id"] for item in document.get("rows", [])]),
+        "tranche_membership_digest": canonical_digest([
+            {"id": item["id"], "row_ids": item.get("row_ids", [])} for item in tranches
+        ]),
+    }
+
+
+def migrated_structure_baseline(identifier: str, kind: str, path: str, previous_baseline: str,
+                                current: str, root: Path = ROOT,
+                                evidence_root: Path | None = None) -> str:
+    """完全一致する一回限りのManifestがある場合だけstructure digest移行を許す。"""
+    migration_path = root / "migrations/evidence-dependency-structure-v2.json"
+    if not migration_path.is_file():
+        return previous_baseline
+    migration = load(migration_path)
+    expected_keys = {
+        "schema_version", "id", "structure_id", "kind", "path", "from", "to", "core_commit",
+        "invariants", "execution_proof", "migration_evidence", "reason",
+    }
+    if set(migration) != expected_keys:
+        raise ValueError("Evidence structure migrationのfieldが契約と一致しません")
+    if migration.get("schema_version") != 1 or migration.get("structure_id") != identifier:
+        return previous_baseline
+    if migration.get("kind") != kind or migration.get("path") != path or migration.get("core_commit") != CORE_COMMIT:
+        raise ValueError(f"Evidence structure migrationの対象またはCore pinが不正です: {identifier}")
+    source = migration.get("from", {})
+    target = migration.get("to", {})
+    if set(source) != {"algorithm", "digest"} or set(target) != {"algorithm", "digest"}:
+        raise ValueError(f"Evidence structure migrationのalgorithm bindingが不正です: {identifier}")
+    if source.get("algorithm") != "rabbitmq-local-v1-sorted-tranches-and-pending-row-order":
+        raise ValueError(f"Evidence structure migrationの旧algorithmが不正です: {identifier}")
+    if target.get("algorithm") != "reference-atlas-core-v2-completed-then-pending-order":
+        raise ValueError(f"Evidence structure migrationの新algorithmが不正です: {identifier}")
+    legacy = legacy_closure_structure_digest(path, root, evidence_root)
+    invariants = closure_structure_invariants(path, root, evidence_root)
+    if previous_baseline != source.get("digest") or legacy != source.get("digest"):
+        raise ValueError(f"Evidence structure migrationの旧digest再計算が一致しません: {identifier}")
+    if current != target.get("digest") or invariants != migration.get("invariants"):
+        raise ValueError(f"Evidence structure migrationの新digestまたは非後退invariantが一致しません: {identifier}")
+    if not migration.get("reason") or migration.get("execution_proof") == migration.get("migration_evidence"):
+        raise ValueError(f"Evidence structure migrationの理由または独立Proofが不正です: {identifier}")
+    return current
 
 
 def discover_outputs(root: Path = ROOT, evidence_root: Path | None = None) -> list[str]:
@@ -471,8 +609,7 @@ def build_graph(previous: dict[str, Any] | None = None) -> dict[str, Any]:
             }[run_id]
             runtime_identity = None
         else:
-            mtimes = [dt.datetime.fromtimestamp(actual_path(item["path"], ROOT, EVIDENCE_ROOT).stat().st_mtime, dt.timezone.utc) for item in group["outputs"]]
-            started_at = completed_at = min(mtimes).isoformat().replace("+00:00", "Z")
+            started_at, completed_at = authoritative_runtime_window(group["outputs"])
             command = "make labs"
             runtime_identity = {"broker": "RabbitMQ 4.3.5", "profile": "container", "artifact_set": [item["path"] for item in group["outputs"]]}
         run = {
@@ -500,6 +637,8 @@ def build_graph(previous: dict[str, Any] | None = None) -> dict[str, Any]:
     ):
         current = structure_digest(kind, path, ROOT, EVIDENCE_ROOT)
         baseline = previous_structures.get(identifier, {}).get("baseline_digest", current)
+        if baseline != current:
+            baseline = migrated_structure_baseline(identifier, kind, path, baseline, current)
         structures.append({"id": identifier, "kind": kind, "path": path, "baseline_digest": baseline})
         if current != baseline:
             stale_outputs.update(output["id"] for output in output_by_path.values() if output["path"].startswith("evidence/scenarios/"))

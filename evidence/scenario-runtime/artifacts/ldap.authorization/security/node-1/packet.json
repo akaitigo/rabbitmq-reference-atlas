@@ -1,0 +1,46 @@
+{
+  "transport": "AMQP 0-9-1 with LDAP backend",
+  "client_result": {
+    "variant": "node-1",
+    "endpoint": "127.0.0.1:26672",
+    "passed": true,
+    "oracle": "両userのLDAP認証とvhost接続は成功し、resource group所属userだけがqueueを宣言できる",
+    "outcomes": [
+      {
+        "operation": "resource-group-connect",
+        "result": "accepted"
+      },
+      {
+        "operation": "resource-group-queue-declare",
+        "result": "accepted"
+      },
+      {
+        "operation": "vhost-only-group-connect",
+        "result": "accepted"
+      },
+      {
+        "operation": "vhost-only-group-queue-declare",
+        "result": "rejected",
+        "error": "Exception (403) Reason: \"ACCESS_REFUSED - configure access to queue 'amq.gen-vCIZKpfGK5456KeLq9BI1Q' in vhost '/' refused for user 'atlas-denied'\""
+      }
+    ]
+  },
+  "directory_result": {
+    "runtime": {
+      "product": "OpenLDAP",
+      "version": "2.6.10",
+      "image_digest": "sha256:966fd39ed25813890e9bd57dac56def163bbcfe64967e0bae59ab018d505bd93",
+      "runtime_kind": "actual-directory"
+    },
+    "endpoint": "ldap://ldap-directory:1389",
+    "bind_dn": "cn=admin,dc=atlas,dc=local",
+    "credential": "[redacted]",
+    "base_dn": "ou=groups,dc=atlas,dc=local",
+    "search_filter": "(cn=atlas-*-users)",
+    "entry_dns": [
+      "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local",
+      "cn=atlas-resource-users,ou=groups,dc=atlas,dc=local"
+    ],
+    "returncode": 0
+  }
+}

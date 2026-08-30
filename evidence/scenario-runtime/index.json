@@ -10,24 +10,24 @@
       "scenario": "compatibility",
       "report": {
         "path": "evidence/scenario-runtime/amqp10.authentication-options/compatibility.runtime.json",
-        "digest": "sha256:206d6994dc8f9d302d9c7abeb0a5c7abd3c3e7daf5d3093b1a51029333233ea8"
+        "digest": "sha256:77eebc55f34421490429c2e9152e4b9a6d4de9ac3042324a07afe3005f83e821"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/amqp10.authentication-options/compatibility.proof.json",
-        "digest": "sha256:9db222253a14e3c56835459ee636bbc8e9feb78e60e291286418041eaffb8d62"
+        "digest": "sha256:e48faef1fbddc6e45adc9ca21d9e1bc1ff0027e26b43123869cbc4b67d55e1e4"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-1/log.txt",
-          "digest": "sha256:0bf011bb696b347d2606b20f7d2119ca034e46e66ad015dbebdbea1156695ae5"
+          "digest": "sha256:d41d3c50e900804c45075d8e2e96e09f035652e7e53f19496f77b19521cd84f2"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-1/metric.json",
-          "digest": "sha256:4a751197844d64f5003193261b1dcb7bc1354d067a74a8f7cf88feb59953e4af"
+          "digest": "sha256:d0939e35bb17ace08c572dac32b116e834f2c1371b5322043cbbb04c3617fc33"
         },
         {
           "variant_id": "node-1",
@@ -39,13 +39,13 @@
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-2/log.txt",
-          "digest": "sha256:bad6ebc1adc2e09d498e91238c8df3a458a0231d16f814cfb64c7d50f0d943fd"
+          "digest": "sha256:fd3fcc65d5f798c46f162d9c016f05e94715c4c31f7c8979cb4fcc96629d5af0"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-2/metric.json",
-          "digest": "sha256:b890f6e635f120ab6412d3e1edcd8ff7502562c5459cfcd05797ce4d9c9ee2c2"
+          "digest": "sha256:6bdf31387f4eee02ac26ea8ce9efb4f71480522901077ed3c2bf15d781e6d756"
         },
         {
           "variant_id": "node-2",
@@ -57,13 +57,13 @@
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-3/log.txt",
-          "digest": "sha256:721001c02c88a247b7fbc29f631f87150b45a4edcfcfc5e740585b740203f9d7"
+          "digest": "sha256:28dcd28e006bd45db35ddb655b5328cdea5e011bbbc6cab14e5226c1b7ca4350"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-3/metric.json",
-          "digest": "sha256:261c70a3cc84b5a16733cac7d7d88e5349f1a9d98732359b907aad69ff827d9a"
+          "digest": "sha256:71dbe3e3fcdd387b86e18528bc5d98ddeb08db2c7c166625c55e75f385ecaffc"
         },
         {
           "variant_id": "node-3",
@@ -74,71 +74,140 @@
       ]
     },
     {
+      "id": "runtime-binding.amqp10.authentication-options.security",
+      "behavior_id": "amqp10.authentication-options",
+      "scenario": "security",
+      "report": {
+        "path": "evidence/scenario-runtime/amqp10.authentication-options/security.runtime.json",
+        "digest": "sha256:e781c513944bf8cd23901a4fabc3a1ded458e8ec9864aa91ece03ab4a4345f85"
+      },
+      "proof": {
+        "path": "evidence/scenarios/behaviors/amqp10.authentication-options/security.proof.json",
+        "digest": "sha256:81be26da73eddd388186dd47983e407400dda51845c13a19c06a6046a3c63e57"
+      },
+      "artifacts": [
+        {
+          "variant_id": "node-1",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-1/log.txt",
+          "digest": "sha256:e8fa09ee0a1a6e1a1764da09b659472f0fa34cbfa893df5dffdeea899c5b254b"
+        },
+        {
+          "variant_id": "node-1",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-1/metric.json",
+          "digest": "sha256:49f71f1671ff11af1bd7c8580cb839d1450f3ffabd0b63290a7d6a14012b7e6b"
+        },
+        {
+          "variant_id": "node-1",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-1/packet.json",
+          "digest": "sha256:82ae18fca5c917c9469f1b5d7f49923bba3ffd3bc9f15efdccc6fa11d31d9905"
+        },
+        {
+          "variant_id": "node-2",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-2/log.txt",
+          "digest": "sha256:916f446b62f7cd5d4b7c2840ff5f18d9b39ca255937072bb4bdddb01d02afac1"
+        },
+        {
+          "variant_id": "node-2",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-2/metric.json",
+          "digest": "sha256:295582350d4042babfda423770e0268fcd1e640988c9fdb000769e88a77fd6be"
+        },
+        {
+          "variant_id": "node-2",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-2/packet.json",
+          "digest": "sha256:2a16fc4599b2e61e88f47ee04837d1d452cb737ee39e4ac364acec6373d4ebee"
+        },
+        {
+          "variant_id": "node-3",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-3/log.txt",
+          "digest": "sha256:62203b8f48c2044fcb10f63fb8ca9d8a7be889cf4583dd397c9e64a64f1e1d32"
+        },
+        {
+          "variant_id": "node-3",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-3/metric.json",
+          "digest": "sha256:0ea75ada690aff2c0e0cf72ce5226f2585ea4ea395454160274fbeeb3d48bfe2"
+        },
+        {
+          "variant_id": "node-3",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/security/node-3/packet.json",
+          "digest": "sha256:b0c7582b17355057ae5701f2dd206e2593ec7e644b6bc841f1fff7e377f13036"
+        }
+      ]
+    },
+    {
       "id": "runtime-binding.amqp10.version-negotiation.boundary",
       "behavior_id": "amqp10.version-negotiation",
       "scenario": "boundary",
       "report": {
         "path": "evidence/scenario-runtime/amqp10.version-negotiation/boundary.runtime.json",
-        "digest": "sha256:d2be23d7d0691657e975eb56a9023c54cee5e4b7302d15296396c41f4c48bdef"
+        "digest": "sha256:12950fc4a2a6adb4bb5574eccb3c27ffbca3dd352848cedc99d469743a1697e7"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/boundary.proof.json",
-        "digest": "sha256:49c8b54c4fc0cf99a037fd491c33daaf4890b49f50185acee86db7849d819abc"
+        "digest": "sha256:e50f3f55549a9310574fc7204303b1f1ea507b2228ac6f47b51e0826fe9fa0c2"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/log.txt",
-          "digest": "sha256:ab29f46935cc87e1300a54d4d7166605a7cd99ce0239446998fab6b5aa5b7777"
+          "digest": "sha256:7def60cd44d9ed7a0ef7ad6f2f41508e91bf0bbfa6818a1cfc98058536ddbc0a"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/metric.json",
-          "digest": "sha256:77e453546521d0819c946229c4d99e8f20d9c6c10dc1740383dd1f693bbfa711"
+          "digest": "sha256:ff1ebdb94481e5fe42ff5e784b94039e873aabf7a1ab58a597f205fc9897ce52"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-1/packet.json",
-          "digest": "sha256:06db579e6716749f3fbcc60c9f4565cd5fcdbfa4632f47e798be5071f99f4371"
+          "digest": "sha256:c74f9d16f128cc8ebe6212470bb86804a4a04665782b7c367d2dbc1fe3e6a4fa"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/log.txt",
-          "digest": "sha256:e1dc5ed0c367a4883e9dca81588e5862f8fbe9f0eba86eb23755cfad68c7430f"
+          "digest": "sha256:be9fc4e159c52ce56e1986769721cf4db34f8227801bc4246951b0dd39618766"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/metric.json",
-          "digest": "sha256:010521b82b6059a9b5d5e48e95b911cc58e1735c6960f25cba3262a005c0b352"
+          "digest": "sha256:8ea3175b8fb4868990711bbd5436bcf1fac3ae1e65e8a72ef9e1dd15a79354ef"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-2/packet.json",
-          "digest": "sha256:88ff7c1e377315cef0462d8a60b3bd530d8bc124c8fb4109805e844b2a564a98"
+          "digest": "sha256:84f224348c0fea7ab2e123c42180718000d1329646719b729d0efda6c47f1ca4"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/log.txt",
-          "digest": "sha256:3226e00279bafedc64b751e8834a48e26b42390447362a04f68886db7f4c7f8c"
+          "digest": "sha256:84bc63cf6f0a4c247a67f35543d8b7473d06e4c5f9227702b84835db35737c7d"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/metric.json",
-          "digest": "sha256:102f9d18702ad91d3165dee771ab302506fc0926b5e323e3bea589af61f06648"
+          "digest": "sha256:34e3760b75d5bc92dd8e5f3333a340e135bb79323bf748689cfe68dd57921d78"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/boundary/node-3/packet.json",
-          "digest": "sha256:3c2217ad0293172735751797663a4bee75f9ee1f9d4bc476bd94a90df3a8c8cf"
+          "digest": "sha256:67cefa5dfdf95fa01a9e42c6bb128a88ecac4714bb94431b3f5d1bdec3edbff1"
         }
       ]
     },
@@ -148,66 +217,66 @@
       "scenario": "normal",
       "report": {
         "path": "evidence/scenario-runtime/amqp10.version-negotiation/normal.runtime.json",
-        "digest": "sha256:f1f5abc89f178dc27a3477be358d8d340750f6d7c27d9af2caef261d385e0aab"
+        "digest": "sha256:64b03661dddc7483acb77175a26c8964b70e0c3a0307a29422a309ab7f47ce41"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/normal.proof.json",
-        "digest": "sha256:7a6669570a8b43ebdc72000bdc77b307e31abbd6b861da253cca480f56516a40"
+        "digest": "sha256:b9279b59c6094e2ac07b0b1150e352992484540963790165542bd761aea64133"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/log.txt",
-          "digest": "sha256:68e2f725470272f576ae1500bad15dd908dccd56708b57d4ee5fb5bd1490a901"
+          "digest": "sha256:31b7bb8f2e8fa541850462845aed4bfb12b9d8f96c2e4f8e899fd09bc6ab23ba"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/metric.json",
-          "digest": "sha256:05e585f6ef2507257ae2e8fd4d41496487b2455f9d1bf14f11f633bf9bc35398"
+          "digest": "sha256:db9edd97888d0c61206b4b99214d0c74c2059707d4b2934d7a2dcda036cefa32"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-1/packet.json",
-          "digest": "sha256:79deff100418f7467ecd7961a9401df6c821472ec1a06be7b701f39d52c223d6"
+          "digest": "sha256:24f7ea70fabc9d6bf5803d8349cba848f48fb85a2d3e7194d5ea28788182e9f3"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/log.txt",
-          "digest": "sha256:5893420ea976d37287b3486e4fc46c29b6c68464434f21445157bca8299d08c1"
+          "digest": "sha256:e4f53ca57514738878dff017fb20362df2fac83cfe071a4086fe79aa82710aba"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/metric.json",
-          "digest": "sha256:6c82c5808fa4dbea389deb779ac6902c4f6f4913cef7548012528a99fe74ac0b"
+          "digest": "sha256:23e4b8431b86428955bc82c28e02cbaeb3b7c90ada51fd4ae6e10f843099cf48"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-2/packet.json",
-          "digest": "sha256:d46679326853fad3bf0906350d2b9981d8874c28efd8b0e38f1210fcd4b53e90"
+          "digest": "sha256:6a43974b200af303dca206e4c7fd100cd0418d3e653eae47d2bf4bf2b0620abf"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/log.txt",
-          "digest": "sha256:689ed84d137fc74f8add092dd82cfb7245a6f833e44bcf9969e4ea9b78bae396"
+          "digest": "sha256:246d9149f8b8c7a43b2c28531dc3a2f1f38d60cbbf65dc75f66be5dc74da89cf"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/metric.json",
-          "digest": "sha256:68ab0c30e9b1c52713616ec6f8a027877eb98a0049ea149e3973c394fc9e2868"
+          "digest": "sha256:1bf00f23420d2abefce2fc9cde76e5a337ed81534a8e94f29785602172847675"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/normal/node-3/packet.json",
-          "digest": "sha256:0c9efcec474f69ef112454e76fbaa3f83beb7f272c61bdd7bf3d02af958fc07e"
+          "digest": "sha256:9f9b5b6523bd490fd5a9024d8d88a3de1238f651254ce44d433410cc4d11d219"
         }
       ]
     },
@@ -217,66 +286,66 @@
       "scenario": "rejection",
       "report": {
         "path": "evidence/scenario-runtime/amqp10.version-negotiation/rejection.runtime.json",
-        "digest": "sha256:15cdecb78c8b03fc3538223f33d8211a11ec970fdd6a4b750f7735d7e198574b"
+        "digest": "sha256:9523bad35602632d9d4d1acf7283a59e437c82d8108350bde7b980285b430d39"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/rejection.proof.json",
-        "digest": "sha256:0d93be3c488dd558a17a46f4e5dd202d1575c75244908689690d12c1e9b4dd30"
+        "digest": "sha256:f7107f1f1374fd1019c5647a724d5266dae3f10e17613f27909d7a313ae586b4"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/log.txt",
-          "digest": "sha256:dfa44e0948886acfaecb3c3d20ec85b78af7855cd450b8ea58d3dbef81c76fd3"
+          "digest": "sha256:b8e0b304dbecda23741bb3acb96db482b763932074b7e5dcfc21b9b7fea73e66"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/metric.json",
-          "digest": "sha256:28a4a288b4ac9495e15cb6cf3d6f67361a8164dafd15f1c541c054c519c97c89"
+          "digest": "sha256:82a2a7c475afd3310305d0a5bbfaeb741b81ea392a707969140910b9d1d9a809"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-1/packet.json",
-          "digest": "sha256:890b621f0dc1f559962ce4dfb3900b4ba9d0ff5353e17ddbaeb74789391628a6"
+          "digest": "sha256:1a40dbacfb20bdb63ecb66bdc09290ed33e89bbdd9304f7cc54322350b9a3a21"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/log.txt",
-          "digest": "sha256:26307b335fdac0eb24d600c6741c210337bb5199fe691aa4e54093c8a85b57a9"
+          "digest": "sha256:7f954c81c10ac9c2b2fbbb523ea645ef5c97e057cfc385ea092f0b4c576457ae"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/metric.json",
-          "digest": "sha256:811c8101786a98a03c598e21ada9d66dcfa40ce56e367f44eea7a0e22a2a1fb4"
+          "digest": "sha256:e74439839890d5f01d562950898d7875126b9da5203e6a9abd78d0a54c0bf469"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-2/packet.json",
-          "digest": "sha256:22d7b574e318f01b27697083fad38e48d8655044fcf5109d1d9c68eb51c48a55"
+          "digest": "sha256:a5c8d2a1bc17525f7a5cf2ccf745d057874e98e5435b55fb7390db0e1c0b0cb7"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/log.txt",
-          "digest": "sha256:36361d3925bd4427c851270c883277dae33e73983de6c941199fcfcac1b4c6ed"
+          "digest": "sha256:12b097f1c97e4f0382ca716dd0cab2c713d99a5676c273a6b34ee233767c8283"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/metric.json",
-          "digest": "sha256:a27265288cc1caefddde867095eefe741d267e6031e4387d928988e606b5329e"
+          "digest": "sha256:0c9aad1df3bfcb4504875e5098f3e788764d0c6db9bc5aeba142c4215d453123"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/rejection/node-3/packet.json",
-          "digest": "sha256:2365d63c9e7268b3ed257b0dce10b0caf7b68d930191c112e98b3b70f71d58c9"
+          "digest": "sha256:af67df1d702e280be8b9e82a82f6953110fd4045a2c55a0e63f5653e3dc169f6"
         }
       ]
     },
@@ -286,66 +355,66 @@
       "scenario": "security",
       "report": {
         "path": "evidence/scenario-runtime/amqp10.version-negotiation/security.runtime.json",
-        "digest": "sha256:caacf89e1e6989ad0412f24dc183afebef858106b3f68f988366187171ecb9ac"
+        "digest": "sha256:105f899adbe7da227f031d19885a1b3257adc5611c0bcf2f0c54134043a29f8c"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/amqp10.version-negotiation/security.proof.json",
-        "digest": "sha256:d133ff0a451e339b87a82919a90c2d37cab497a53df28bbcbbab2f98b9ef9f21"
+        "digest": "sha256:c8abe11874ef319fc35430dbfa65140e678d2dc2a6d20925c9300baf0ac599df"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/log.txt",
-          "digest": "sha256:f277eeb44fba70694e1f6f61fc7b5558f7ea9c9b67167c9ec3943bb868ec11fd"
+          "digest": "sha256:0bfbce1518ed0ec85b2f644b086510d650a3aa653db5601334f2b4f5a8d1a713"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/metric.json",
-          "digest": "sha256:d18acf913088f336fd0063d3f7a000e115568e60e6855dc2a112fbfec6b15256"
+          "digest": "sha256:cb3a4b6e923de6d33a34db9e8a5bfd1d609029a76f14bb1ec6c5e6255dd4e755"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-1/packet.json",
-          "digest": "sha256:8dce73b079661e6055c4569e4b7096bd2c05658553bc8864f78ba6ec321fab83"
+          "digest": "sha256:806de099339f18a1026de581b38f72a021c656d73b53345a5887b5b365bf1659"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/log.txt",
-          "digest": "sha256:a71ddc36853a9bb09e743e2e1e558ecab0207fffff3255eb949377392f84ced7"
+          "digest": "sha256:a27046d80504899fd07aa3abd78ed97d8e1e4bef7782bff2ddab07a866bf7cb6"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/metric.json",
-          "digest": "sha256:be03c501ffdac0e599c78be2bac9a3f8f8d3c161bb8ed81a1e59280ca9305f86"
+          "digest": "sha256:2a29f7a190b57de6b4c7b26280380cf1ee3458fd385ab3673d6c19c2a8503ebb"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-2/packet.json",
-          "digest": "sha256:6dbee5861867c62a477b0dca41f771fce7712ed908b80ecf29d4b8142061bba5"
+          "digest": "sha256:99552b8f96bc48439af7cd000d94c110bdbe71d0368cad0e35667b270516388f"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/log.txt",
-          "digest": "sha256:818543eeb9e1f5e81165c45dd6c3ec70113e2cc7e36c7ea1b6452eac0a32f25c"
+          "digest": "sha256:ac601ec2a4a03b27fa249abec9b1cf44b2cd8703bac183c55a6c7499058c2485"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/metric.json",
-          "digest": "sha256:45ca17d72b3c522772c018a20922e303cdb3ad3c86530af5aac2f44f7b9cb255"
+          "digest": "sha256:de1a6841868e776d086489d56b26ebb1b71cb80811d6fcfe9b62c4a6a2fc5137"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/amqp10.version-negotiation/security/node-3/packet.json",
-          "digest": "sha256:c7fab7b7985ae646a202d76bfd168b535bd791f2891aad7ecb0b944823c7bed3"
+          "digest": "sha256:15dcdf7f856cd8de404eb244be7b55a1804e93f535f5302589d726d38f3a4212"
         }
       ]
     },
@@ -355,66 +424,66 @@
       "scenario": "operations",
       "report": {
         "path": "evidence/scenario-runtime/cli.rabbitmq-diagnostics/operations.runtime.json",
-        "digest": "sha256:4c4ba241bbfda713995fce31459e81085112677e3ff3b291ad0a6d8738b54171"
+        "digest": "sha256:b93df06beb9b0b5bc7da095a4dbd3b746ae247e3816e87654d6394d80862ca25"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cli.rabbitmq-diagnostics/operations.proof.json",
-        "digest": "sha256:195e091b6ee1e6c5b85246a3012c768af0c298f426e3b2f3a1c384439d7b39b0"
+        "digest": "sha256:95e843372789639cdbaed478fc79207a2b5eab65a6cba0413a16986d5b6f6993"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/log.txt",
-          "digest": "sha256:92906fa5e4211df19e6281a8aaecad817f26fc12b1f6311cbbd7ab25c745c3ca"
+          "digest": "sha256:48aa127c4bbc059c415e0fa8b76efde8453cb40bf722ea90ddeafc7749ce416b"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/metric.json",
-          "digest": "sha256:284a8837ab82eed5ac1fbb27f7332b3bce5fb5b64eb892a22daf02f73ae2d7b7"
+          "digest": "sha256:48dda0437e3e393f3bfbd8979e1a3d57b786ba612bf55eb6cbb6a2de5b60f045"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/packet.json",
-          "digest": "sha256:07ffe3c480f5411fe8b3563840259d2176fa7f4abb1598418d34b1b0e1b403e3"
+          "digest": "sha256:ff1f9ce691950e048712741f7cafed63f5c384abf65bc33cc9785cbd6693a63d"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/log.txt",
-          "digest": "sha256:14608e0e484628e19fbd8d593b43a0e932acadc5f119a5e7fe5b1534762ba8cf"
+          "digest": "sha256:b8445d26a01ef5486fc5091cd71ce679b1bb10e340fbaafc07e450e8215b2e63"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/metric.json",
-          "digest": "sha256:82ae63331fde4f1901b851d15f50ba496baeb5b9b6a7f41619e0be3c1091b623"
+          "digest": "sha256:e69822bb8db3ea2af0c8cce6215bd3775ffda88ff059c4ed09e690e6797fe718"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/packet.json",
-          "digest": "sha256:c41ca980a2bbb8fd4f6a3384688b712cd2d4b831837f8f981fa0bbda578c64f8"
+          "digest": "sha256:b302ae185be16d2c5abb8f9ee469af8f055b53d481d0957e1fabaa7aef1aa070"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/log.txt",
-          "digest": "sha256:becc551343b48ab3e66667a6da3a14af3f14da61b07f72a079f70f1bc1d144ec"
+          "digest": "sha256:40f8d4f7386a1b5044f2231e04173bb81ef58850f7c12af24df2036299ed8240"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/metric.json",
-          "digest": "sha256:838f696153b8cb323cc60ff5cca91857870a4628dcb527a8687970b6c30472dc"
+          "digest": "sha256:9a568cf66f1ce5e652ffc405fc4e7abf9e0a80f9ba6010adb960728c52b72fd8"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/packet.json",
-          "digest": "sha256:3817fb2e0d96deb9be58553c53260b6ee80f77f33cbaf47026955c59cf8267b8"
+          "digest": "sha256:4799202d0973f0fdf2bdebb57f95c49e61c9bd13158bdae50e523ade0fe8a743"
         }
       ]
     },
@@ -424,66 +493,66 @@
       "scenario": "compatibility",
       "report": {
         "path": "evidence/scenario-runtime/cli.rabbitmq-plugins/compatibility.runtime.json",
-        "digest": "sha256:9f6a730727701b8e858a0a267f0b77706d352bb7b4daf2a09e8ffe77bd63d83a"
+        "digest": "sha256:3b88d7fc27c12fd4ecf6ff851e107c3a5b1409ef4ea853fa120fc0c6d3ab688f"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cli.rabbitmq-plugins/compatibility.proof.json",
-        "digest": "sha256:9fac4e8107763391a2fcf0abebde53bec80cf7fb99ddae7e72a38e4018b9a9d7"
+        "digest": "sha256:9eee975235492c9e45d911317758e6d0c278d94cbabd5cbaddfcbaa84f1363bd"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-1/log.txt",
-          "digest": "sha256:05f9cd8f52d02dc8242c97476f3a4baa1458e56fbf886a3173822e2746a53c5c"
+          "digest": "sha256:055678bd5b9ee17a1576c0c6225c2dcee4a7152bd53df70f73be671110a59d44"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-1/metric.json",
-          "digest": "sha256:7587776ede13226648d234e710fda693b0248c735fed2c2c81f7d30d6c0199a6"
+          "digest": "sha256:330a6f113c57cf8a79f69af35fafaf4556acc1775ad2247a5be3011895542aef"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-1/packet.json",
-          "digest": "sha256:966fb4d35b9b101bebd2f1171c098869a95fb0772196d626cb24c24c074b97cb"
+          "digest": "sha256:d487d31e13a09c90aaac9dd27fbf6bbaedc6878bdbdf0bb3c61804e589752417"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-2/log.txt",
-          "digest": "sha256:4390aa4526b88bca1bc9590a6be5dda8ba06008ba00bccc623b2a1f810b010eb"
+          "digest": "sha256:39a97e9557f5ab6374bfa6b71564cd5946e6aa63d763f0fdf1015f61a4684063"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-2/metric.json",
-          "digest": "sha256:9aa34fba91453183cb1526e28d71278fd0f8ab747511ff69f05b495042e046d7"
+          "digest": "sha256:f15f8eb27ecfe178abcc20c82c923e73353a88333db2a419c8b95d45d26f5ea7"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-2/packet.json",
-          "digest": "sha256:6c686a854b564bd297494eba79f340610ef6398056553865a7bc897b0251adcc"
+          "digest": "sha256:ad7dedd828c42d5445699349c94bca981a8f6697c3a732e782adf8253e128d58"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-3/log.txt",
-          "digest": "sha256:29285c28f3fa7c30b7201002c995473aee197fe5e68692719db2ec7ec279e93b"
+          "digest": "sha256:ca044b778dcb104b4f17cb5c4ad448da11c02664f59fb89dcc09f4e77cf89a81"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-3/metric.json",
-          "digest": "sha256:8bc8e6613755c36f5d8f242e55a3ea23174d9e284062a2c63cd2cea47b55cb69"
+          "digest": "sha256:2ca60d4adb767718db9c0fbb4525b255996c0d98b36eb94f4659c3b3fe5d085a"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-3/packet.json",
-          "digest": "sha256:da6e7b70a60146a50709b935caae664f904a60ed64f8da7ac2b83939cdddc8b6"
+          "digest": "sha256:b4b7c1f2732c17eaf1ec0ce1959b6394ccaeaa6be1e30bcd3cc03d7a349a8b88"
         }
       ]
     },
@@ -493,66 +562,66 @@
       "scenario": "rejection",
       "report": {
         "path": "evidence/scenario-runtime/cli.rabbitmq-plugins/rejection.runtime.json",
-        "digest": "sha256:3f34314e9a2016b55fb87dd3b2de80719bc575dea56c03d0d6a9c60b4b78c7bf"
+        "digest": "sha256:e4986cf41efe19bfe057d0ae6078493d4fd928eb3ef1a15d397215ba86894bda"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cli.rabbitmq-plugins/rejection.proof.json",
-        "digest": "sha256:2a28759545824fae039411e4c620c16a3d866d8cedc40bed9b896e599fc8880f"
+        "digest": "sha256:f9d4f649c95c78395a1b332653cbcd0fb02e9a453400668a1ae31b3be243d92f"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-1/log.txt",
-          "digest": "sha256:f2bff6e12e1ecad8ae2f858f9f6afd0174f923ba7f0969635e22d3bf01bd5329"
+          "digest": "sha256:1f9d1d3593ee457ad9ba8128fb666716a418d070d69f77c2a4da71f7800c52b9"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-1/metric.json",
-          "digest": "sha256:91b4a14963f8619be60f1403e176b7ef73dcaee79620736932e84dac307a63d7"
+          "digest": "sha256:35aaefd7e6c009a160cb49b7fa30f1d21d484f1a38d6a2f733a90c1848dd33f6"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-1/packet.json",
-          "digest": "sha256:3ca343de7dda607972bb8e8855fa17b7803e76d9702cc7f5c29e10c419a837e0"
+          "digest": "sha256:09e707ae6ab77b5ad0296b4d9df6da9b16e04f1611e1dca507e6266c90eaf38c"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-2/log.txt",
-          "digest": "sha256:7d98d6cb0e5de998870d8c1cb849969af1743e3c9052045ec7025b955e6a5f7c"
+          "digest": "sha256:8aa83ca9f7721fe3e85280ce7710784a2bf0420da87c769cd66a881eb74a992e"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-2/metric.json",
-          "digest": "sha256:2840ae321f962e3cd0e265882ee1765e25193e7b29909d148b274b75acba9674"
+          "digest": "sha256:d875bb1cfe4d8857b63a810312992d53bdcb14efbd102df34cf92d5a4b663f0f"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-2/packet.json",
-          "digest": "sha256:1fb6a319148f26901d928c286494ba03eb457f6031cf456419d5e7f04f2aceb9"
+          "digest": "sha256:d68d908dfbca4e93b2839cda545a31de5a2b139d3d04f29a81851f48c36668f2"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-3/log.txt",
-          "digest": "sha256:e836f798c3a38bd4a3c06262edbef00f43622101ea24010c4a64c6d965e6073f"
+          "digest": "sha256:96e42d8548ce4706e890a3f3e2586a6d39b4b4d3f9186879f03ffe6b5a4e0c99"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-3/metric.json",
-          "digest": "sha256:18522ac2094fb74ffb990d26093875cd7bb5a5ee3ee497d12400483f71fb0ba1"
+          "digest": "sha256:70b5bc8f8938f724d17be891f6b9fc3544994a726f61a32496ec7f43c2a3b86c"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/rejection/node-3/packet.json",
-          "digest": "sha256:f08f935bb94a3aa5fd5f0584b3d5cf00b082a7b72e1ed09c8fd7e2be35568b0a"
+          "digest": "sha256:ca240462e24294d45ad2d3a6fcb2143610bdf0685ab77b6e99e822baf22cf761"
         }
       ]
     },
@@ -562,66 +631,66 @@
       "scenario": "operations",
       "report": {
         "path": "evidence/scenario-runtime/cli.rabbitmqctl/operations.runtime.json",
-        "digest": "sha256:5cf1d9b656c4ff174136610f1a2593601cd32cb65da3e0bf7022c026a2f9c71c"
+        "digest": "sha256:f176d8bcc327c0b8cf2fc592dbdd938af188cefd2032f7ea30074718380ab547"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cli.rabbitmqctl/operations.proof.json",
-        "digest": "sha256:17d8ef9d7fed8575857798ab016ae1ec0a333373706812480d808dab57c36e18"
+        "digest": "sha256:ce78091bbdb75085d336f6bc2442ea9b63a94cb0315eaf6fa38948ca85acc5c1"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-1/log.txt",
-          "digest": "sha256:b848373363f48e051c568892bbfc630c2cdaf719b202fdf9b09f2bc90ec91746"
+          "digest": "sha256:067081da2d11b305852072c2022752399f6c2cd077361b05aa6aa7dc231471d0"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-1/metric.json",
-          "digest": "sha256:e7da56f73cfe40db08df2e5d6b83ce48257e54bcdc24393d2c083b59b3487744"
+          "digest": "sha256:3edc6f10c72d0347e7ee1f2ca0fcf2b139990ae0e9d741e8be93bc004481dbd4"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-1/packet.json",
-          "digest": "sha256:40aee738f3374902670b2cc690e1bc4ca28fee876c940bbff95a78f548729df5"
+          "digest": "sha256:32230752e0528f8fe8c71f70d76726c6f83481753d3008c6560dcb7be4868227"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-2/log.txt",
-          "digest": "sha256:6aa816d6caaa6c646c8e2c31c1574ac5c668012c010a5037024e5acc8dd22ec2"
+          "digest": "sha256:0950041bc2baaa065bbbdd1db55eab8ec4b5be35d441544ae09cb814479999e9"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-2/metric.json",
-          "digest": "sha256:9cec1daaae4f0acba819fd5f6ce7b6a5f044195ec0e887f18af3b02ac5a1cac7"
+          "digest": "sha256:18ecc783d60358c10d9777205184fa588688f93d7f9ddf98bb6b2657ebd88d6f"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-2/packet.json",
-          "digest": "sha256:6ca4e2f909480ce2f2a6b095a5abca1ce6532fbd45ffd065be7126421131241f"
+          "digest": "sha256:adec32fafcb2474db0ff68917f8443ae962d3ae54df92bb2941bd3c8f3b376db"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-3/log.txt",
-          "digest": "sha256:2db048b2674b327df407bf3932f3980634a11bdd0a874ad5a040595da44bf6c1"
+          "digest": "sha256:8ab296246537028287881011305eaf9bc575587820d3d4753655dcc28cf9bcd3"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-3/metric.json",
-          "digest": "sha256:2327be4fa2a2aa0c03a312d5b13f100da116f82ba45be1447b015e23d34f1821"
+          "digest": "sha256:6cebe3c8f7b303cdf64e37ceb443ac6835ad5b2173504704c120fddd2e69c005"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/operations/node-3/packet.json",
-          "digest": "sha256:17f4c3d0f4a1b798f497c03c9c5a5fc49de1453ddae79cf68381e294acfdb89f"
+          "digest": "sha256:b7fd47e0efe9042144130a90b5bc2cd63a4a62d11c3ea8a80a4a684702a689fe"
         }
       ]
     },
@@ -631,66 +700,66 @@
       "scenario": "rejection",
       "report": {
         "path": "evidence/scenario-runtime/cli.rabbitmqctl/rejection.runtime.json",
-        "digest": "sha256:789828ec8885492faef1905b04f26631bdd19021da746dcd424a1440f03de4a6"
+        "digest": "sha256:ce166e6e77ce6134d0d3b4a2331e8f13132900851b9934bf5877c27a056f7fdb"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cli.rabbitmqctl/rejection.proof.json",
-        "digest": "sha256:cff45f2150bebe92375171d587bc9e9ca1112c92640f96b7f3f828548f61f7ad"
+        "digest": "sha256:141ca87c5090176fc61bc6ad9bd6b8da9562eca5d2e202b6f3530000507ac822"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-1/log.txt",
-          "digest": "sha256:164e20ec3ff8a9fbb179f18d468ffad66a15f3734c8cd1b284511aa0be84569f"
+          "digest": "sha256:1980fadfa806164814022b196dcb9969844106fe32c4c0d23c76244d1888ea57"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-1/metric.json",
-          "digest": "sha256:efbcc3515717a7ab4532fe4d5176bc861b148b58226a7ca535d28f8d19557b5f"
+          "digest": "sha256:790f812a68eac0e0ce80f4d83fa4eb87ffb42ff46e26b3ca09a4feb59c880a2d"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-1/packet.json",
-          "digest": "sha256:67ad3f3596dfe30ff1f8684e6db54e55bf71933fccc3e91fb049bb8f7cbe0493"
+          "digest": "sha256:c7911cef92657b3892061f6757c0d4ee73e71f0a1b16d591b4b140dca5326531"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-2/log.txt",
-          "digest": "sha256:96e0b44a2369f5fa3bb3c7275ffd958f62cac8a8fe0c234f1bc7b0945651d7f3"
+          "digest": "sha256:42a2a3850c4857134d37cce7af8896ef1ea713530f9e395fd0c5202fc7abfa0e"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-2/metric.json",
-          "digest": "sha256:dd52d1b65616821206bd1cd0dc82cedcd1ff3484b765a1c9024860eeaccfdad4"
+          "digest": "sha256:b404f805063dea0e8143354370291c95e4ac3eb42c4f4a6089effcb733908448"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-2/packet.json",
-          "digest": "sha256:0533eea5780d3925d728c7fe8e92d1979c0508e743fa18d65dfb487da1273863"
+          "digest": "sha256:ed92646e5c96daef37dc11610844a37a4e949b519386896d91ef7627a2839f29"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-3/log.txt",
-          "digest": "sha256:146fdb380b344cff2773781e2dddd981a19231ed67fe9dc8b910a6d9940a0c78"
+          "digest": "sha256:250fa23e01e9b2fb1ef5e1f3ae7bb03a6c51eb7068264e08b43d270f8ddd35e6"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-3/metric.json",
-          "digest": "sha256:cc41ff8b3e3dcb19f0b69a42b544fd975331e6cd050b8c0099f7da68558dfc0a"
+          "digest": "sha256:132872776d3101828c3b2f953381877565c8f98fc95dd3fbdc64d3dc805edc67"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cli.rabbitmqctl/rejection/node-3/packet.json",
-          "digest": "sha256:3bbfdd8c2de89f706d5edc91cdc3903c247afa85e5e426257fc3e3fbe730db70"
+          "digest": "sha256:92fb16ee7a8b1c274f5d26c1cbcb8b5ea4c786360139311bb295c94931bb31f7"
         }
       ]
     },
@@ -700,24 +769,24 @@
       "scenario": "failure",
       "report": {
         "path": "evidence/scenario-runtime/cluster.client-connection/failure.runtime.json",
-        "digest": "sha256:fdbc57227a54fc58737dada606d067ca1f589521c5952dbfbfd790ed3d4c89ba"
+        "digest": "sha256:3bcfac2e87daa5fad36d9bb52f41498b7a35ff6e54d57a189c21ed9c864e37d4"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cluster.client-connection/failure.proof.json",
-        "digest": "sha256:1bd0502cf388c60809bf39d3dec9a128ed8e353dadc75a8cccf8ae3b903567b0"
+        "digest": "sha256:2cdf2374eaa84de018a50a8e724296008f7961e3d933c6dfc106bb1a820a2be2"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-1/log.txt",
-          "digest": "sha256:fe8c795d72d888a648ab0dd9f3e66330c1d972cab377d48c731a191cbedf4d6c"
+          "digest": "sha256:d96c4cd67c23d399fa392098fc16d908d15231a12ed7c9038a9619e455ffad08"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-1/metric.json",
-          "digest": "sha256:24e25d0edf3c1661dabc5a48d628cdf791353a52b87d8b35829f2dde5f3ad5f7"
+          "digest": "sha256:db053aa749138c002102a30d91f16ec0dda7ae3470e6cb06f62c4e21c2b217ff"
         },
         {
           "variant_id": "node-1",
@@ -729,13 +798,13 @@
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-2/log.txt",
-          "digest": "sha256:08c861055b7df98c0e221fdff2e1a7c4cac5fbd020d627b1fe8608a59315dcef"
+          "digest": "sha256:d7befb06c655eabfb1adf6a663a5aef579676961cc2d28fe298f67ddcf697065"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-2/metric.json",
-          "digest": "sha256:289053461febedb74838e049ab536b0f1b52f2742cee6ff6ca207678b3753142"
+          "digest": "sha256:260e6736748546e2f237112555ac9336a591e2451af8f1b6ccc29c53c337559c"
         },
         {
           "variant_id": "node-2",
@@ -747,13 +816,13 @@
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-3/log.txt",
-          "digest": "sha256:9b29784090aedec778fe438bf08f52d917d8d9e839dbbfb877bd41e7c08fbff2"
+          "digest": "sha256:872d9c6f7334593edbc32106d9dc0ac78045e3f4de15bc7568b04e64258bba3c"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/failure/node-3/metric.json",
-          "digest": "sha256:71d8303a0d531346ada99859c06929e603be54607092175a51ff9c4d421d580e"
+          "digest": "sha256:18373aa272d1e0e65242ba2ba12b911935812d3c5d5c61bf7c91348a0373bd05"
         },
         {
           "variant_id": "node-3",
@@ -769,24 +838,24 @@
       "scenario": "recovery",
       "report": {
         "path": "evidence/scenario-runtime/cluster.client-connection/recovery.runtime.json",
-        "digest": "sha256:576968027063077280334fc24ad1e691948f54f72244da71dc440d2677a36a83"
+        "digest": "sha256:a921b40c59ed6875a917bef85fc7d2d7f7d8c2026f257e35f063cd8a12e0a7b4"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cluster.client-connection/recovery.proof.json",
-        "digest": "sha256:5e0d0de6d87a015ed085de39095f9da3dd149c8fd2ee492ba6e587cbfb01f09b"
+        "digest": "sha256:3a38784256e3cf35d1dfdce1f8d03ada3f481f28f4d836e4bda1b9f64c4c2d3b"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-1/log.txt",
-          "digest": "sha256:e2f8757b8348b43e9a373b874fd643fe6fbce4d5009684e4ec3f5d20df96783a"
+          "digest": "sha256:1248c8bc64926ca40ae23d7bd731c349106245d4761c07bd89c1be8502afffbb"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-1/metric.json",
-          "digest": "sha256:e01a36869214c7845a29b6090621a05d9eb1c7e50198c9ffa1f4f1afe1fadd0b"
+          "digest": "sha256:8ca60ba75e1673f4000c36f7ebc79bf94dc2fa4fb49fc6d17d7832c30eab84d5"
         },
         {
           "variant_id": "node-1",
@@ -798,13 +867,13 @@
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-2/log.txt",
-          "digest": "sha256:0526abd97033e6983332cb434537e79237cb76c35a7e425e3537d84c574b1f4c"
+          "digest": "sha256:25ea737a0616b0ef407fa950e0e81b39b4cd0313ac6e4cd829558541280b5fcb"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-2/metric.json",
-          "digest": "sha256:0d39ad59631bb2342f0f0dac60d4211b1b81f6a19895c389712de2f1792234d0"
+          "digest": "sha256:7b7b0e69746b9c721acb075c1c9fc4090a80348e841daca5d6547b9b1fecba59"
         },
         {
           "variant_id": "node-2",
@@ -816,13 +885,13 @@
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-3/log.txt",
-          "digest": "sha256:6e95b317b68a7315286ba203d4b586d73add70331571d02dca840b07c9ff35f5"
+          "digest": "sha256:fd0d9c145dd861df7889c6263a7de1ee829314cef4cdc3781a126c30f4586bd9"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.client-connection/recovery/node-3/metric.json",
-          "digest": "sha256:3fa1c940bd63379cf55ffeb7695b9cae1c04818fc55c99065a4baf2505bf6700"
+          "digest": "sha256:c01c23e6dc9665516aa25cc9e2aa4bee4a59ec1cabf353948bd76923ccfc040c"
         },
         {
           "variant_id": "node-3",
@@ -838,66 +907,66 @@
       "scenario": "failure",
       "report": {
         "path": "evidence/scenario-runtime/cluster.metadata-replication/failure.runtime.json",
-        "digest": "sha256:ff7f4353e6fa5ef89a6870bdb490f1538630d070b08c0707b060fe886fb4c5c9"
+        "digest": "sha256:7c3c5f2b290c62656d4cc4fdb19c52550da80dcf5c7edae651e5e91c1af0bb91"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cluster.metadata-replication/failure.proof.json",
-        "digest": "sha256:2c083f646047395d7a6b5cb4df2a5596ca48e0c4b300b0ed8f61993c6b8cd3e2"
+        "digest": "sha256:ef1d0a5ed059baca87bc00c37e093c01adb5481dae2da8c4e4e392e6cd81a7ed"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-1/log.txt",
-          "digest": "sha256:fe8c795d72d888a648ab0dd9f3e66330c1d972cab377d48c731a191cbedf4d6c"
+          "digest": "sha256:d96c4cd67c23d399fa392098fc16d908d15231a12ed7c9038a9619e455ffad08"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-1/metric.json",
-          "digest": "sha256:24e25d0edf3c1661dabc5a48d628cdf791353a52b87d8b35829f2dde5f3ad5f7"
+          "digest": "sha256:db053aa749138c002102a30d91f16ec0dda7ae3470e6cb06f62c4e21c2b217ff"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-1/packet.json",
-          "digest": "sha256:b676f2653337d96ad5742e03850b9bed0bfc1d6a35f77bff068614d067ab4810"
+          "digest": "sha256:2938a78f907743ab69b391d8b10966d34a1a1849d197aca64dc8b3c17d0f7147"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-2/log.txt",
-          "digest": "sha256:4e9211ae8ed09ad6fa695d96a717a6b01e16e88335749559254f8ea8fee642fb"
+          "digest": "sha256:ba12996dcb11ce549239087679e113f83e07b3da37a228ec6f38d36742d581bb"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-2/metric.json",
-          "digest": "sha256:fd885a2eb2ddd5f61bad3201e86331c096db66f24564a8d60649d51bffc3e820"
+          "digest": "sha256:9f19c75cdc4f93b60404550b94952d496a2e78fba07d13f7e70ad55d610cf774"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-2/packet.json",
-          "digest": "sha256:f0f9ead18ff3854f096a01f6d10172d89ef6f979db6e085e0824187477b2635f"
+          "digest": "sha256:01704ecff4219b3bc2c354516906004ccf2ea3ba219322e463bdddab8ed47ec0"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-3/log.txt",
-          "digest": "sha256:492b674db9d879509d0e19ec21b61b0f79be047da8dea442c43b0e5bffdf8994"
+          "digest": "sha256:c5d85a8736f0f8f62fc9d117deadeb59ea0369ee1bf10eb7b73c2d0a60815e76"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-3/metric.json",
-          "digest": "sha256:e3b538d23d213e480e04c21727659ed1c77785278131fba2de45bcc923e284b8"
+          "digest": "sha256:2261628e6b451ab87e77b62d08fce3078d3ac3be48ce46a81518802218ab742e"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/failure/node-3/packet.json",
-          "digest": "sha256:27a96fa4c72d012fce34e94a0711761e15aacecc1be88f12db0f32a7f38d3e7b"
+          "digest": "sha256:a11b0d28a2c3b0cab3b4c0c36d653d053836f16ef4a85498ae6a37ce09357f16"
         }
       ]
     },
@@ -907,66 +976,204 @@
       "scenario": "recovery",
       "report": {
         "path": "evidence/scenario-runtime/cluster.metadata-replication/recovery.runtime.json",
-        "digest": "sha256:78f8cfecf086d571abd0fb81f0dc99c09e2ea9b723fbe11d3c72b40f038a4a06"
+        "digest": "sha256:082003f553dabc3fec4ec4fc0cdf2c11921a6c1709f3a66f7bc773a59d97d4f2"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/cluster.metadata-replication/recovery.proof.json",
-        "digest": "sha256:d8cc59bf612e0568247c53717d7ef7c4f23c3b8ce63dfe3fb03d409021de406f"
+        "digest": "sha256:666a2dd3d61d39644969f2ebf417a8552f6c395531a3ee096b32438f0708a451"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-1/log.txt",
-          "digest": "sha256:b38f851a6306560d81e9757e3219f1396fc9293b5f4cbecfefd03017944d7563"
+          "digest": "sha256:e1045de69af79e7eec491131f82855215197bf80de3e6e878eea327f6d1b1cdf"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-1/metric.json",
-          "digest": "sha256:4953fd9577ba0b800b4530c8afea5fa0a91f2448caa11637c5058f6ca2f576df"
+          "digest": "sha256:37805bd206c06b193bab2d556b66670a48ad7a30c31d7fff0357736ea4ed455c"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-1/packet.json",
-          "digest": "sha256:544eb22e07e06cc720bfcaa108429e67006e13afb7d2dd7406d0fca8763359f8"
+          "digest": "sha256:adec2e332f1a6b247a97ee49c56b3621586a12c17e61e08dd591829cf1af984e"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-2/log.txt",
-          "digest": "sha256:973888356090e0fe1ff9f46477894fb34ae3840c931df5ccad83ad39424c5ae8"
+          "digest": "sha256:401e0ff98559808ce873c72f791821d74de502187017965d4ef7d6cccba4f066"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-2/metric.json",
-          "digest": "sha256:e6fe38caf8676cca93b31275fa49d72aab7452bb8ffed6210b1276399bf3256c"
+          "digest": "sha256:5486749b893bfc35a907a5004fcdd926be369a2b03c35d5b3566f54ea216afc7"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-2/packet.json",
-          "digest": "sha256:04009d07b81c8b9354af37bf487c321cc89ea6e142a90813cb74db41ba275e69"
+          "digest": "sha256:6f600707ddbfdf5fa69be0a96fcdaa92b1b03cd5b1bea52ecd62941f04b9d628"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-3/log.txt",
-          "digest": "sha256:94652ea36477585c88f4149a05eda43f8dcf58aef371279414d3eb5ba34ff599"
+          "digest": "sha256:496d353abce3ba60c9d425c1cf40d0856f54d8ffd7f568e7fc2de5d0c5c96356"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-3/metric.json",
-          "digest": "sha256:e53a8a72b3ec8129c24bfd3100cabe42cc7f97fba4f417ed07afbdddecc9ef8b"
+          "digest": "sha256:b6402aa6d5e109c988bfbcb03c5ffb724ba23e50f82de7f4a2492936d7d580e9"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/cluster.metadata-replication/recovery/node-3/packet.json",
-          "digest": "sha256:50988c0a085e2e75f836c46e9c6dd3abd87bf449aad765c7e2fb199115daafe4"
+          "digest": "sha256:f491121c53f893b1cfc21ab8ef40390107964144de76bac43d83a2b61d36aa93"
+        }
+      ]
+    },
+    {
+      "id": "runtime-binding.ldap.authentication.security",
+      "behavior_id": "ldap.authentication",
+      "scenario": "security",
+      "report": {
+        "path": "evidence/scenario-runtime/ldap.authentication/security.runtime.json",
+        "digest": "sha256:fd4023fb6ac1afa248a2da369e3bc2396d66696598e39d17935ad6776f2f1230"
+      },
+      "proof": {
+        "path": "evidence/scenarios/behaviors/ldap.authentication/security.proof.json",
+        "digest": "sha256:862d051ff697d3df3550914217117ed21faa192271a9763bffd7faf6927facea"
+      },
+      "artifacts": [
+        {
+          "variant_id": "node-1-with-ldap",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-1-with-ldap/log.txt",
+          "digest": "sha256:1bf92fc2d4ef4d0a6b182eb5fac3d960b13ba1ddcc0ba4675563621766c695bb"
+        },
+        {
+          "variant_id": "node-1-with-ldap",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-1-with-ldap/metric.json",
+          "digest": "sha256:b58a8f626ccb6cd4c4c2b90d8972d9788d8348b69e13b60b911205502127c77d"
+        },
+        {
+          "variant_id": "node-1-with-ldap",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-1-with-ldap/packet.json",
+          "digest": "sha256:7619c6944d60cb3b5fa977279481b7b519f32fa175b5c869a3d15a4262f0deab"
+        },
+        {
+          "variant_id": "node-2-with-ldap",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-2-with-ldap/log.txt",
+          "digest": "sha256:6ab1847b4808a14d1d1f1bc7131174aacc0be1dce62b38af96253635e4d4f4c4"
+        },
+        {
+          "variant_id": "node-2-with-ldap",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-2-with-ldap/metric.json",
+          "digest": "sha256:c7c002af940c4ac77cbe02e17b4b337a7ed53d30f8fb4cb49f6d2ff7f80f3c37"
+        },
+        {
+          "variant_id": "node-2-with-ldap",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-2-with-ldap/packet.json",
+          "digest": "sha256:8feac2a11f95f97b092c47384a377638efbcb3973c02b7418615fadb039ffa36"
+        },
+        {
+          "variant_id": "node-3-with-ldap",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-3-with-ldap/log.txt",
+          "digest": "sha256:62e76c409a9cc6600eb7eea6b0f1d909733690bea68c07ad33eb687d82e666b0"
+        },
+        {
+          "variant_id": "node-3-with-ldap",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-3-with-ldap/metric.json",
+          "digest": "sha256:642fda0d6a75d9621459f10130bb0fd19f0350fb7e1311aab8af59d8c22d8c05"
+        },
+        {
+          "variant_id": "node-3-with-ldap",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authentication/security/node-3-with-ldap/packet.json",
+          "digest": "sha256:6db4ce106cf3abaa536cf8e87909be61afe74b19629d9cb87ffb80abd8e47377"
+        }
+      ]
+    },
+    {
+      "id": "runtime-binding.ldap.authorization.security",
+      "behavior_id": "ldap.authorization",
+      "scenario": "security",
+      "report": {
+        "path": "evidence/scenario-runtime/ldap.authorization/security.runtime.json",
+        "digest": "sha256:29cafde593cf51ca2e8006cbd79deeabc54fd81a9bac2500305bc525a85737c7"
+      },
+      "proof": {
+        "path": "evidence/scenarios/behaviors/ldap.authorization/security.proof.json",
+        "digest": "sha256:435ccd07d27ce0c752b72f94496ec3408cd699cc214c5b3b1663e49eaea0796e"
+      },
+      "artifacts": [
+        {
+          "variant_id": "node-1-with-ldap",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-1-with-ldap/log.txt",
+          "digest": "sha256:29786b54ed659ea96b0df467ca498712919e8f888f1a698aa8e36f262def28b4"
+        },
+        {
+          "variant_id": "node-1-with-ldap",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-1-with-ldap/metric.json",
+          "digest": "sha256:79e9fc455e9e8cba15f80203e689f4ef5983ae82192f00a030d56719678225a6"
+        },
+        {
+          "variant_id": "node-1-with-ldap",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-1-with-ldap/packet.json",
+          "digest": "sha256:bc62504e1495494bcf8b31a9332132cb50826c75a6639e5ea8c9446f21c1c44b"
+        },
+        {
+          "variant_id": "node-2-with-ldap",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-2-with-ldap/log.txt",
+          "digest": "sha256:ced3d1acddc15640a5195854c2fe8f670299606f5a6e339cd7fe2c6ff3e09223"
+        },
+        {
+          "variant_id": "node-2-with-ldap",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-2-with-ldap/metric.json",
+          "digest": "sha256:cc8fa589f5be3f2b2316274b9da901db9f66f443803da468ec6b0129a46dc9db"
+        },
+        {
+          "variant_id": "node-2-with-ldap",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-2-with-ldap/packet.json",
+          "digest": "sha256:f8240a8fed9863f20f17c9d580caf17565ab54e75324d2bba883bb450a227ad1"
+        },
+        {
+          "variant_id": "node-3-with-ldap",
+          "channel": "log",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-3-with-ldap/log.txt",
+          "digest": "sha256:7a64e9d140612de6a55b8cbcfd4ce7977730206635326b23e5a8641b6886f02f"
+        },
+        {
+          "variant_id": "node-3-with-ldap",
+          "channel": "metric",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-3-with-ldap/metric.json",
+          "digest": "sha256:642fda0d6a75d9621459f10130bb0fd19f0350fb7e1311aab8af59d8c22d8c05"
+        },
+        {
+          "variant_id": "node-3-with-ldap",
+          "channel": "packet",
+          "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-3-with-ldap/packet.json",
+          "digest": "sha256:d11f83cabf2cac18bccfa66988982325c6079f433cc457169237a45c7495e7d2"
         }
       ]
     },
@@ -976,24 +1183,24 @@
       "scenario": "security",
       "report": {
         "path": "evidence/scenario-runtime/management.authorization/security.runtime.json",
-        "digest": "sha256:6adedd87b3eeb75f76dc17a75f5d1486aba7ce6627803cbdb2bad4bd105569de"
+        "digest": "sha256:b89aaa9ce67c54beabf7b8bb7311ff51ccc6552efc6f4ff2dd2dcbe64b16a51a"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/management.authorization/security.proof.json",
-        "digest": "sha256:10e783dabb528fa864720b3b236259625216f7cce556f83c331846a5c7304b80"
+        "digest": "sha256:3ac460e28068431409969b2475ff38dc02942c96214fe6c4a32285882eac477c"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-1/log.txt",
-          "digest": "sha256:ce8a8755e16bfa35d454ea90353a5e466303a76718fe1b9e3f54f4d5919f0290"
+          "digest": "sha256:05ffe520ef82edee880b53b3f45e4cd6d8a26216b9191b085da4d519464d927a"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-1/metric.json",
-          "digest": "sha256:92b44780b93bef2823f09ac34d25bbf45070032a5ef29eb82844c3307b993290"
+          "digest": "sha256:57cf86cc2608e924fb6464e1a405722fcd115076849c0a6b099f8e5dfe4a93f2"
         },
         {
           "variant_id": "node-1",
@@ -1005,13 +1212,13 @@
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-2/log.txt",
-          "digest": "sha256:7a49a3c6b2c5a4fb6ee1b8a9b8831fc5a9032d6955e85b490e0a97cb0d1380dc"
+          "digest": "sha256:810934fa977ccba33b37875c90e7be6f0de58cc1b94e3d70c381d77e79c22d81"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-2/metric.json",
-          "digest": "sha256:29ddce8939766ee7747feaeae0ea667b1c59a1e8e6b2426cdabc26a42a5e6c5c"
+          "digest": "sha256:460ed6311f7360830f321dc4f9776f12c1386ec6dffa88da44b4a7163c44ee95"
         },
         {
           "variant_id": "node-2",
@@ -1023,13 +1230,13 @@
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-3/log.txt",
-          "digest": "sha256:660eba2f6c1b6709a6d1e12e35c89c964fbea189099f86f2cc6a9664279e262a"
+          "digest": "sha256:c9afbc91990d6d6a5743639c0df5fae83e2fbfb0dda68a821a985b0f0dc192d0"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/management.authorization/security/node-3/metric.json",
-          "digest": "sha256:402a2c25f8467cac98df2ab2ce1f784356079292eab9523c4d6073daf57b6c31"
+          "digest": "sha256:80d5fa1923b2fccbbf3467938db1ab1d0c701d75270ab13056e70d1cad5fcd30"
         },
         {
           "variant_id": "node-3",
@@ -1045,66 +1252,66 @@
       "scenario": "operations",
       "report": {
         "path": "evidence/scenario-runtime/management.http-api/operations.runtime.json",
-        "digest": "sha256:eaf410d5d49fbcaa5169e5d1334843a20472b5c0daefbcc179c17d7cf7159427"
+        "digest": "sha256:f29b1e7bfcc89d3df53f6d0972f53b34e10af1d98a6c666669dc1109d8afb797"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/management.http-api/operations.proof.json",
-        "digest": "sha256:cb377903ea6f214d7fcecd5c54ffd392753fd983b95eef065ced18c725b7d890"
+        "digest": "sha256:b370a3d3096224b5a465cd09489b84d607b1d5e150655ff6fe8fb782b321cb91"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-1/log.txt",
-          "digest": "sha256:077b45c934af17192c4f2c2d0d0f0eb260e901e041ec298f070d7f0cc26482be"
+          "digest": "sha256:b0f863baaa0bc6e03e18eb4ec38f3ce1e47390f210702936b54bcef142b6ea14"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-1/metric.json",
-          "digest": "sha256:fe6bb51b1e2d266f54cd8c4a01bc29f239924f761418384155e7782edab3a245"
+          "digest": "sha256:42fefd1c28f1d8e9efcd57bb6b6f9c5bc50c15fad30f0813fa213bdcb2e71b21"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-1/packet.json",
-          "digest": "sha256:1232ead2cdb4e4d765d0abb4f1fc22cfea92832aa6e015b54790743a93b384dd"
+          "digest": "sha256:f0547dc2abedf80248838fadf3c21e8a1861997c6e76e082728b636702f6a97c"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-2/log.txt",
-          "digest": "sha256:769aa9ec7c45b22936774859a2b0f18a03361587c3ab5449a1adf25d3b00595e"
+          "digest": "sha256:277c3ba329b44d90a000a1c6f8d461675ffd686899a9f24addffc78b3d4bb0de"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-2/metric.json",
-          "digest": "sha256:698db1f3f6c7ef7a4c7b056d47082c4281f4d3bed0e4596b8d2ed2f5a4689bba"
+          "digest": "sha256:9641cd7976f1d93d0299304cce6f821ef3603976475f29211ac98e7cbd9e1d1a"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-2/packet.json",
-          "digest": "sha256:a62c97abc89cc719481c9fbb20e4a9eed0ab37799ec0cfd4c233257d08833a91"
+          "digest": "sha256:651be95f2d6c619bc89b8fa071b0db47429225fee13991014d5cfc81246ae0bd"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-3/log.txt",
-          "digest": "sha256:6eb97472bd6bb48aece4342b5d270e457524c4949c408386abffed9b63303804"
+          "digest": "sha256:a0dc3357f83c0f9ae5244845c1654edbd7c01535f7e89677859b111576b87da0"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-3/metric.json",
-          "digest": "sha256:6e378e9a5a9d6f54572e35d4b26cd16fc04072d3d337b4a47ac525b773c70221"
+          "digest": "sha256:31b2a35d52b96baf5c0b7090ac1013034f3e051cac15efa9de2044bfcfdef7cb"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/management.http-api/operations/node-3/packet.json",
-          "digest": "sha256:27f9765e3c93e150d87f712271933fab842755a73800f1388b49e9be35b5c277"
+          "digest": "sha256:999efa7d073c7329795237235dada8546f156bfc44b72e2097b4acccb39b431e"
         }
       ]
     },
@@ -1114,66 +1321,66 @@
       "scenario": "failure",
       "report": {
         "path": "evidence/scenario-runtime/monitoring.logs/failure.runtime.json",
-        "digest": "sha256:f3248e78573576486efb1a9ec3f0f4668fbd3f35ca58d18ee0f5ac9ca6dbedf7"
+        "digest": "sha256:aab4c3829699c9968bbb2d5125a0a1993cc8ae9ca4979876a6aa93e05ca7d553"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/monitoring.logs/failure.proof.json",
-        "digest": "sha256:f7657179beca488cc8986f080910e135223e15c6485846a58410de7cf354d02f"
+        "digest": "sha256:6a388857f43856f51ffbad01894ad7af6e1be949eecc4c8f5b8573d14f47462d"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-1/log.txt",
-          "digest": "sha256:fe8c795d72d888a648ab0dd9f3e66330c1d972cab377d48c731a191cbedf4d6c"
+          "digest": "sha256:d96c4cd67c23d399fa392098fc16d908d15231a12ed7c9038a9619e455ffad08"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-1/metric.json",
-          "digest": "sha256:24e25d0edf3c1661dabc5a48d628cdf791353a52b87d8b35829f2dde5f3ad5f7"
+          "digest": "sha256:db053aa749138c002102a30d91f16ec0dda7ae3470e6cb06f62c4e21c2b217ff"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-1/packet.json",
-          "digest": "sha256:9fec25ffba9a1a7dc9154b459ca25123f354efb881416da7138385e880ac420b"
+          "digest": "sha256:3216a7e58285430a12c3a456324578f6faa062b15714a02b495f1a63692f7a95"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-2/log.txt",
-          "digest": "sha256:38de8d464e46996028fd21d4bbc22f6ab4da37c0262f84359c284f4b5e94bc21"
+          "digest": "sha256:ef4f6cd5c555817ac2dc5136074d15999d44aa1d0a13eb2a67d2259094940573"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-2/metric.json",
-          "digest": "sha256:885a74d374a31551b24579f5d3254ee1c13a4c1f1759ab4cb4f8ad21c1becac6"
+          "digest": "sha256:41e27afdb63c0d337a8d12ff7d8cafa9b9cc067887694eb7724aba7958ce210a"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-2/packet.json",
-          "digest": "sha256:07c8474e5569ee94af26a35141326bf5b9eb1bc2dc72d9ac288596505a1a8559"
+          "digest": "sha256:cd9fe76860498b3d34804812087294a7750cbe7563d8ec0c3eb12065eb121881"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-3/log.txt",
-          "digest": "sha256:ea289692756c08cecae3e7e7b15af2b71715606d656167a831e37f5b17fd840d"
+          "digest": "sha256:10c8c414fe883aabb62ed4c90221a6ca86d167c0a49d95af1fd18ec430cfd054"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-3/metric.json",
-          "digest": "sha256:149aedf3a89da0247fbf2f192e6894544527f7ef84c5ba8f4c403769c35a49d4"
+          "digest": "sha256:0010fe5ab684e8094e7ec99c44214786adf9341a64d3d2b246b4e11bd7dd784a"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/failure/node-3/packet.json",
-          "digest": "sha256:58429d8d8162a26e44a8bcfc455ae595f591f539fac85f1f9fbbefb0c3eb17dc"
+          "digest": "sha256:3863b4066fbd21eae30cc048c938e298acec1c5408913c51c671be9b28e2ca8c"
         }
       ]
     },
@@ -1183,66 +1390,66 @@
       "scenario": "operations",
       "report": {
         "path": "evidence/scenario-runtime/monitoring.logs/operations.runtime.json",
-        "digest": "sha256:5101e8adb186061df527e189a4b970ba676705ddbcc23122932d4af80afe3529"
+        "digest": "sha256:d7995145fd6005314972d5f99459a011da370e17e07d0115bcaba72805b25aea"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/monitoring.logs/operations.proof.json",
-        "digest": "sha256:cde5e96d4f43eac7f86405eec3b6cba60ea0076c968c6ca96b95d6fa6004038a"
+        "digest": "sha256:6252a68a09baf3d614a644400baa322c17d472ab34574c962b2bc9ab29837f9a"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-1/log.txt",
-          "digest": "sha256:34072d6446c9bbf434fbdcb8c4d60cd5e476995542e5af2a978f3d356b5c4ce7"
+          "digest": "sha256:711eb296da251f55a7ed93b761a1fe42423cf0416d80e61bc5e1f8af470d1cbb"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-1/metric.json",
-          "digest": "sha256:c9890a477a8b2287161e18d6483a3e6acaa9af8917833209b048e77fb6e9ca96"
+          "digest": "sha256:8f536e6a8f3f00d9f33756b27002d641c3adfb47922a80c9fcd60d35865ad33d"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-1/packet.json",
-          "digest": "sha256:fe162f51830eadde5d1fb3bfa5c0139db1082e0dfb3cc065e30bcf6710b73e25"
+          "digest": "sha256:e9f927fcdaffbf8adbf60036ded592b3c2f590f47936e92faa384a3c8bb0c12b"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-2/log.txt",
-          "digest": "sha256:1e7ee33649dafc53c198d50f1c69b6e86f0b7767424a2556b5aa04417ac540d2"
+          "digest": "sha256:d205b37bbbeaeb1c53973ddabf88f74a0e3c1f1b8a7bc716dacc664b1ea02f14"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-2/metric.json",
-          "digest": "sha256:7ced3d076c17e8be6d135f91b41939d9f0a44afcb891fa195680bbb94773e3f8"
+          "digest": "sha256:a32045c6ac5753b4e1ca0e976b5bf3b5893c9e092016cdf61df703686ee47c49"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-2/packet.json",
-          "digest": "sha256:172eed0f26aeb6e001a04d499f34e387830f531337e5525a4baebcfae7cd56c8"
+          "digest": "sha256:d49d66453555455c8934511cf9b4ed7310e2db4f5f9d1f3b3e3ad1263e989b8a"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-3/log.txt",
-          "digest": "sha256:f91a42f4e463751648add2006a705d6b6493ce265a078741d9c2528500480c52"
+          "digest": "sha256:efddfe589a56cf3aae38b6276dc37e5087d1a45135189fbd9683e94e90740800"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-3/metric.json",
-          "digest": "sha256:3da3b0e3d84e6857422cf274484602fa5c8a1d0865e6caccc578081946b78e41"
+          "digest": "sha256:75d586027c844cea68707fc5520cb00ba3a80bf32f3be0357a9ccf017f39afa0"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/operations/node-3/packet.json",
-          "digest": "sha256:292944665f1b7471124299183f8467b41c565cfb20ab79a978809b6f42242290"
+          "digest": "sha256:526b1a845dc96d030152afda6eb63906e3b02613dbd623ec354c2b94ea8c83b9"
         }
       ]
     },
@@ -1252,66 +1459,66 @@
       "scenario": "recovery",
       "report": {
         "path": "evidence/scenario-runtime/monitoring.logs/recovery.runtime.json",
-        "digest": "sha256:624980aeded1ca8588976b58765a39ab46322fd9af56a076a34e2249b4de4813"
+        "digest": "sha256:cb5010fb6bebbae1ec6ee7cf764c3662bc4b435311265c88b668c80479793d5d"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/monitoring.logs/recovery.proof.json",
-        "digest": "sha256:4c99ef0ee328900d47a2d7cda873a657670ef37c9b368b1c77a10f2b786a78e9"
+        "digest": "sha256:eadb4397b38ff87c1ab12831053dc3dec7cb2fc116e95622a8b122f85e55dc06"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-1/log.txt",
-          "digest": "sha256:5b6b66e22ea63f44a746c59fc37d9ffbd040f6c946a1a2f27509dbcfcf641ce5"
+          "digest": "sha256:728a5b66f2305aaed2837f36149746136918b98350d94deecbbbbeba897e9982"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-1/metric.json",
-          "digest": "sha256:22272ef85c55920fdb9fa27e5004d57b13b957486ea3ce9ba769c17a205c91d3"
+          "digest": "sha256:1b8eed8150ceb4ce4b4ac63b5550d19a5078299d9db1bcde2bc6b5f368ff0467"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-1/packet.json",
-          "digest": "sha256:860166596810007b139d2350681926c44cbfaab750363338b61fcf3db6723817"
+          "digest": "sha256:d51cc9232ab78ce8411ff1ae1493fc84e56c0b1d2b36c9601e2ccc5200fb6247"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-2/log.txt",
-          "digest": "sha256:157c912c2e3db879e9bbbb71a268189765292a868018e6a676a5431222dc2666"
+          "digest": "sha256:f62ada4b133441498a924e1bc204e6553d2d69406c76c24f471a881e02346993"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-2/metric.json",
-          "digest": "sha256:bcae8e1ac41de9dfe8bb5caa8df1000f8024598db22abf67023f76072d2899a1"
+          "digest": "sha256:ded6c5a4561bb59dc2351a9f70730a8a0691676631e0a18446e6ccf0af9b6ef8"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-2/packet.json",
-          "digest": "sha256:3976bb7d92340a4b353d039dbf454fe4a27583e5d06957fcb3749e9b2a31ac90"
+          "digest": "sha256:b75d75e7addbd5c9c07d459a4d9a8e890e3893c7aefa386065e2d14c1e960f36"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-3/log.txt",
-          "digest": "sha256:e59d5e5889565d679bea7f6a07310398fe35a89be10120853cd4d53c21ccd55d"
+          "digest": "sha256:3bf55a0394545b2ac997d39710a256aa50db24e00e2fbdeb0004de49f4411544"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-3/metric.json",
-          "digest": "sha256:df108421a2f194bb9e91c7dc358df82a2ca397dadf20db0719cfcf69a214723b"
+          "digest": "sha256:e3a945915022d586e0c9690794ea37093311e97d518c5210ffb5d0ad81daa09a"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.logs/recovery/node-3/packet.json",
-          "digest": "sha256:9a83c53f8475955b6e297c9c0035cf267a1061d1089a38bf9d2b2dcfe05a8bfa"
+          "digest": "sha256:1c09b77ab7940f7f289d59c676df9f304eb0bd62e153bf8e8e550e0144dce1f7"
         }
       ]
     },
@@ -1321,66 +1528,66 @@
       "scenario": "operations",
       "report": {
         "path": "evidence/scenario-runtime/monitoring.node-health/operations.runtime.json",
-        "digest": "sha256:46e43a07fcc746fe4792396bcfe0ff8805acc24c2b5337dcbcdee566ea7efac7"
+        "digest": "sha256:6f36e22908321be3f5f44ab7d02cf60a781fcfbf7d461bb482dff954519dc614"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/monitoring.node-health/operations.proof.json",
-        "digest": "sha256:2f17d8097db9321ced37587dfaa57f9bff7aef95b142856ece4160b3a0a8c92f"
+        "digest": "sha256:eb1e3073e44415f6cace47977dcbd0932dca329e4187471f7d4eb28610e2760d"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-1/log.txt",
-          "digest": "sha256:9996ce279d5b9d0f3ec883c865fe9576f8015d5ee5961288ad1b41e4360f0f40"
+          "digest": "sha256:5b88290238a07c1547c7c80b68df7fb4d6fdd7195ab946d6c336429c4a551806"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-1/metric.json",
-          "digest": "sha256:1467962f218035bd026a1bb6cc8e1cef74a8413c4df304aff7be4656f48a2915"
+          "digest": "sha256:7727e54716bdcc241e9d407202f0adcda54652593cef002ca4fdcce2957a49d1"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-1/packet.json",
-          "digest": "sha256:301be9ca71d0fd4c23ef86c283fbd609bfd00fb34ee555cffa28d4cf20353ce4"
+          "digest": "sha256:4d5f4d41b124cb0e8a4edd58d45034141316ce8a1f51ec5b7dfe3c0302ef14b3"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-2/log.txt",
-          "digest": "sha256:ac67d2e6c4088c1b1a2794ff3c6c55a96554140188acbf5bd154dc2bdce7581c"
+          "digest": "sha256:624a2a31283ee956ce6fe30914bf1ba39fbef32288f2e2a430037137425ed697"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-2/metric.json",
-          "digest": "sha256:69d711252018eec4f0765241730d35f25a5aa0eba8405f954e9127110cc4944c"
+          "digest": "sha256:823edabb5d6893b6f76f83c938e7c55474556de33a58bbf62484d4866b0bacf9"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-2/packet.json",
-          "digest": "sha256:5b050ac55d113d631d09763917acd3c6f96e1edccbe9c3d85a35c314143e8792"
+          "digest": "sha256:0006a89147538bb9183afe272b7acdf4bc0aa2fb1b337de12f59daf8b338c613"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-3/log.txt",
-          "digest": "sha256:907f86431a1d631c1116f2f3b66d44d5c3b2e93876820048731658e1d0a39923"
+          "digest": "sha256:eb60c4a1fdd0a8610bae6fe315322389a53e85cff36930f64922347318b8fa2f"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-3/metric.json",
-          "digest": "sha256:bba54992a46877e634842873b316111ccca6c6489ccfb7bdf41a6672f50a7018"
+          "digest": "sha256:f54c7e7901ac56b1bbc55e90011e393b177f764190247cb695e4d2e5f2acb997"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-3/packet.json",
-          "digest": "sha256:c2edfdd3d6a6daac04ec26b00430b4d727c014f65d31f6ec2d5fc9a40bb192d5"
+          "digest": "sha256:2891b8ea3cf3d3f6870d346580126684f0f49a761879be3c04b536363d6c51dd"
         }
       ]
     },
@@ -1390,66 +1597,66 @@
       "scenario": "rejection",
       "report": {
         "path": "evidence/scenario-runtime/monitoring.node-health/rejection.runtime.json",
-        "digest": "sha256:959275230546b3698a0fae99de8926e8d53b0eda31783eb04635668db3b5b9e9"
+        "digest": "sha256:43f2f7e348ea1101a8ea12419b3e2767f89a57737b0dbdc1fd0fa4b499a1d449"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/monitoring.node-health/rejection.proof.json",
-        "digest": "sha256:7fd10845f7af98ae70983dff0ecb1a8b13c33dbe07e2e95018ec3b59313d8227"
+        "digest": "sha256:696e6c518126a823f8d723931e27d9bd02d337f855adb28f10b8da6b13a5b1cf"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/log.txt",
-          "digest": "sha256:fe8c795d72d888a648ab0dd9f3e66330c1d972cab377d48c731a191cbedf4d6c"
+          "digest": "sha256:d96c4cd67c23d399fa392098fc16d908d15231a12ed7c9038a9619e455ffad08"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/metric.json",
-          "digest": "sha256:24e25d0edf3c1661dabc5a48d628cdf791353a52b87d8b35829f2dde5f3ad5f7"
+          "digest": "sha256:db053aa749138c002102a30d91f16ec0dda7ae3470e6cb06f62c4e21c2b217ff"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-1/packet.json",
-          "digest": "sha256:df7f35634f6d1953d703151b8d01b8000f4b73a59ec388be0c9aa6809900c01e"
+          "digest": "sha256:c0071bebe0b3384eab46a1dec687ab08dd27e7d5deaa4a90851c68b42c43e9b0"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/log.txt",
-          "digest": "sha256:be5b23ff0789ffcbe6add329acf0dca3070212e84d0abc572976d0568ac751ff"
+          "digest": "sha256:2a8197fa8e47a0caf4fb19428841b5510220a11f71cf69ee9dc683ea0aca737d"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/metric.json",
-          "digest": "sha256:cbfec3c85272b1dbedbeff6ca290efe22a1742c0dc73c9632c59fdbd7a02c9f1"
+          "digest": "sha256:6b1407b19079577b2c23f0757c6500df80957c6cd7bceec59e166957e358bb20"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-2/packet.json",
-          "digest": "sha256:7061647f67136470884d9b5d5db856484edeb5fbecb21d2b588a123d27f7be59"
+          "digest": "sha256:bd7394ea3666c390de3631f81b943e5d008d82ca5dbe2a1101bd89189cc12287"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/log.txt",
-          "digest": "sha256:f0a2541c3532f37083261ddaa80563679edf38ba5417a341d0d4f98104e69460"
+          "digest": "sha256:fc5f06324a09ecf03b00b8ed2619b2cb3c4b88e2ebc11474d38d45c537659403"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/metric.json",
-          "digest": "sha256:2371bbe0163ada67a36b60ab7242476440fd4ad3751e94314eeb4b044498ddc7"
+          "digest": "sha256:d92ae1993d21db83b89d73702a0316e8afecfba6b602f469552bf6706fde8242"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/rejection/node-3/packet.json",
-          "digest": "sha256:4d38f05852d86167dfdd9f8ba6c562feecbd0870118dba2ad3aacf5b554bc84e"
+          "digest": "sha256:87913f31f141c14fba957b73cc5d187efdf8e6d4cf19164f7381cfc4774b52ed"
         }
       ]
     },
@@ -1459,66 +1666,66 @@
       "scenario": "compatibility",
       "report": {
         "path": "evidence/scenario-runtime/mqtt.protocol-versions-qos/compatibility.runtime.json",
-        "digest": "sha256:95717c1cfed90977ae9a283721c2d4b7f6b02c1c4a92aabc7313058c88349766"
+        "digest": "sha256:2fed3aa7026dbead1925740738cef91cf37258f7341a2b46136c6faeeb3ad6e8"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/mqtt.protocol-versions-qos/compatibility.proof.json",
-        "digest": "sha256:146ca9ca3937014bbda8ed1ba8dbc6f33477d1a4e4eb33200e1cd99660995d67"
+        "digest": "sha256:871d9a70bc1c7070e30b56be8f7768f66ca8291c8647fae9b894cce69eb78bcb"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/log.txt",
-          "digest": "sha256:4a4440033bca0d087cf2b7e2fc1eb0d7930b02fcc1125220c57d33b99f8c2a63"
+          "digest": "sha256:e21eb0a46bb67ad26f3f2c959aed942838d4cabe612df4479e1b7d46dfeb0980"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/metric.json",
-          "digest": "sha256:236b541eaca4c2441e7a83d43d60b5bb587121d560d2051dbe519bc78579039b"
+          "digest": "sha256:a5ee23291cea94d937862346300225ec421136bea297d145d902fbf77d117c99"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/packet.json",
-          "digest": "sha256:0e717fc689aa887c147c176494d688948a119692488c153d25e639b2f2674c4e"
+          "digest": "sha256:3f0d2ad433ea27e527f0736f28e3c7d38edde38bed973f46e7bf382bfd1c59de"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/log.txt",
-          "digest": "sha256:c9f68625743bddb2ef4d012cafdef08ab17a562704a031c522e3ef06ca22775b"
+          "digest": "sha256:5b44da26c357d48aa5f00fd2999d2c625230a52ebd907f21982aa32af7c1c1de"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/metric.json",
-          "digest": "sha256:df1c8e085e6ac309793683b4622da9015990a191016bd712f7d317f36a5d8eac"
+          "digest": "sha256:0f84f3e53dc98ca4dad32832360c97f3a2e786b9b9c5f94374cc284ca024b967"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/packet.json",
-          "digest": "sha256:7d7e8e7a83acd6fed19033ec5b29d6e4dc2407f79e495a1f3d398b8f900d383d"
+          "digest": "sha256:25c94e2bfc5e4dbc6bbc2829c1de5bbdf1033590c5e499fffc8c5eafab923d4b"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/log.txt",
-          "digest": "sha256:274b9bd59564e79bdb484f66f59f3ada29e666e42cb45f8749f358e5ee390d6b"
+          "digest": "sha256:7847e68be33a669d9f73452c3ca8ed3b9902c78284452a50ddbfc7ca3feb4ed2"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/metric.json",
-          "digest": "sha256:197adcd00c03bd99b1dbf24d9391bc8aefd3dde27c46e4b2ecad5a0d8370320b"
+          "digest": "sha256:3cee4d39b9d50cbb6b2c2a5e9b67557062d631c59895299034e3df5f5536d522"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/packet.json",
-          "digest": "sha256:4b841f6849c4d6004fad7e66578b687d61a142296e4d54255d931317f0671610"
+          "digest": "sha256:9be438e76e5e4901899f4106355c5a74626b2a4ff5a45e2d2da7436d11631d73"
         }
       ]
     },
@@ -1528,66 +1735,66 @@
       "scenario": "operations",
       "report": {
         "path": "evidence/scenario-runtime/partition.detection/operations.runtime.json",
-        "digest": "sha256:04d5815c10d0492908bab8ae5147f4da4976ded7a1f20ca6cbfa6973c5230af9"
+        "digest": "sha256:149a80eb39923cc6e630f1e3ed634b0a36d0ad4ce79c63d5c54c6701a3cdbe30"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/partition.detection/operations.proof.json",
-        "digest": "sha256:821ea476b56258f2985f704f79794a43ce9e917652c3a9efd0d07c3e581a1609"
+        "digest": "sha256:fcf0bb7c3ba030b9ef9be8bf1d861ff577693fc3ec869babc21fd04814cddf15"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/log.txt",
-          "digest": "sha256:9fd291750cef9ff217010cb0c3b15fc0cfccd1d487c85141e78dec2de28f9d82"
+          "digest": "sha256:7a459c5bfef9810610d8a597a16ba453e3b7cc6115fb1d38dc2cc4f0a9897536"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/metric.json",
-          "digest": "sha256:0aec3c05b67c62caaacdf24ac8d82dd03f11da51a6c851fb8227bc5ec29fd553"
+          "digest": "sha256:0a11b44198197f885c6f6cb1797bec1cd5f1a765b067549f571b1f5fc9913167"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-1/packet.json",
-          "digest": "sha256:f3ee365c8b1050ec8a02477ff4f3d9e1eed0ab01aa825500b5b3c6d0d6ea9838"
+          "digest": "sha256:243359963057be8cba559c01bcb181679c2f434184df3a9d67e42a68c75e2eab"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/log.txt",
-          "digest": "sha256:23ae8413d2ae5a736bcddcbdcc99da86655a87797f40a4293045a986c3f1f37f"
+          "digest": "sha256:8d4695e99d24f131b776eea1c097f0e12336043a6bedc2154e0d8d16d1a22409"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/metric.json",
-          "digest": "sha256:aa37d647a488597f502c9c3679631040386db2b63d597b525227207a1607f04d"
+          "digest": "sha256:b34bf33241ccb3ba972390561fb1af5e9f7fe8cc7106649f80d3d1c3d532eb35"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-2/packet.json",
-          "digest": "sha256:47a89bce5b8d0c6b812fa1e1ba883d9a4aa02e3f2ab878c70ea3b5a1c5868ead"
+          "digest": "sha256:14965db3be9fb1b63b8f7aab954ff6de24c17d77ac2899ae46ea75bd42c71f89"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/log.txt",
-          "digest": "sha256:759c6beb833ffb2e9cc1bc6b2d2663c7a44d6f7350034f626597bf15155fb7f9"
+          "digest": "sha256:0b76a561a12cac30dd1c6114105dcfb87a352ece975f05ba47de796c7deb75cc"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/metric.json",
-          "digest": "sha256:1e26bf30d377bf0abdfde606ed45a2e95c42a568d0f46a672506b7e691946993"
+          "digest": "sha256:324e756ee553e68948d7aad13a04b9ef468d36b7c467b23b7ba49d930a40c46d"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/partition.detection/operations/node-3/packet.json",
-          "digest": "sha256:ba19f9e9b2fa6ea572fdfda83cb7a32b0325d805141d19611b3bac19a7fb719d"
+          "digest": "sha256:398e630fd044a53805451c2b013e9874e6f78808395f951ce56d57219e6d7fc7"
         }
       ]
     },
@@ -1597,66 +1804,66 @@
       "scenario": "recovery",
       "report": {
         "path": "evidence/scenario-runtime/partition.recovery/recovery.runtime.json",
-        "digest": "sha256:330060872c41afd6777fa600d3a59cab4d36f22e3e4117c7ec0950ed1bc5cf75"
+        "digest": "sha256:877ea97b0b0443706eb53d77a54c57c6bae5a739281de99a74c9e0fccff52375"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/partition.recovery/recovery.proof.json",
-        "digest": "sha256:de470289970570d530f150c365415854ccf6d70667cfacc89cda1bdca744125d"
+        "digest": "sha256:12fc85629c92d675650cdfc5d0a554a7e38ffc7cb27fd77b84a60594b53f9521"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/log.txt",
-          "digest": "sha256:b46c26d74911c2e4ea1e4e252de44dd0d714df3bd00bc9e2eeefc463930b1295"
+          "digest": "sha256:191503cdec2e79bc79825240f345364040f474af9e14b872be2521458cf50f39"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/metric.json",
-          "digest": "sha256:a9a710b49e1d9b2543471dd343aca63d6c6777afa8c6a016a207b57c145f5136"
+          "digest": "sha256:f32e00767884bfda65e4bb7b1aeceb1ce60e451231d63d916747f5963953fd93"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-1/packet.json",
-          "digest": "sha256:8278b6f1742914f4b6407020060df2f04a91a23fc9ea7d54669cc737d2f2ee3b"
+          "digest": "sha256:5c24c22dd7d001811879034f38c92652c9ae48aad5b6436ab505dd22b623484a"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/log.txt",
-          "digest": "sha256:55c3207506dccc8542779ce401ae8545325ffd584c59cfbd30633ce56c498854"
+          "digest": "sha256:6d32fd44e2f686cd7f89c4dd591d626c2ddb96c596eaeac76def2dfb0d7ce8d4"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/metric.json",
-          "digest": "sha256:fb03951f9a9622292deecd4ab25e98a27ef71f10f8db249caa4977d8c1f4e8a3"
+          "digest": "sha256:3c354b6960932f7ed48450bd9eabbf26244d0695577b19d734c31b598881ae30"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-2/packet.json",
-          "digest": "sha256:e8fa95b9511e83ecf9ce3eb335341fcf84121e998ff0c9dd478d02ed24751ed3"
+          "digest": "sha256:18d05983224b5450f9f9b24b637f15a663752fbd6620ab6b846a0179af871c64"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/log.txt",
-          "digest": "sha256:1d0a81fd11346b9c64108fd33298dbc95042a58e21ed3247488deac86961b614"
+          "digest": "sha256:18ee4a510bdcb2f13387bc0c5dd494144c1213e0a699fb878dfa5be4e177a9ae"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/metric.json",
-          "digest": "sha256:b16d69e89e737231f792da12f47b642df61757f348757e3800924f1026838520"
+          "digest": "sha256:0857bdfe0ce5147dab420c110ef742473f1a021d526d0babfd8f8e34d959a3da"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/partition.recovery/recovery/node-3/packet.json",
-          "digest": "sha256:8bd429573271e31a0740d3be0acacad69f98670e930e883dcee8339189eed610"
+          "digest": "sha256:b49301cbf27c7dd58440207abc47f13e5c22b4c94974e0581b17f8f72014c12f"
         }
       ]
     },
@@ -1666,66 +1873,66 @@
       "scenario": "failure",
       "report": {
         "path": "evidence/scenario-runtime/quorum.replication/failure.runtime.json",
-        "digest": "sha256:18b032d94ba923243eaa4a212ab820e4f2c0f51fa73ec59f16b4b3de80c98cfb"
+        "digest": "sha256:a21cb97afd5bdbe9f590f6a7db031ab9e21fbd885167d23536154217927a1680"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/quorum.replication/failure.proof.json",
-        "digest": "sha256:0ed647c00f20c8a604ec3ae69fd831813dadbaebcf4227516729e85bbc9d96dc"
+        "digest": "sha256:35e380c6924104e5cea146744c7e7c52e069efe7ae60cb787b8082b70b4f834f"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/log.txt",
-          "digest": "sha256:f3d23c230e581d7d783c5853130b5a3ed45c72d658143621a7a2197f47cd447f"
+          "digest": "sha256:b5d3f4f70cd5b71370f13d598eb09e249d98bd6042972e7687323fe7c4379ced"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/metric.json",
-          "digest": "sha256:0aec3c05b67c62caaacdf24ac8d82dd03f11da51a6c851fb8227bc5ec29fd553"
+          "digest": "sha256:0a11b44198197f885c6f6cb1797bec1cd5f1a765b067549f571b1f5fc9913167"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-1/packet.json",
-          "digest": "sha256:f3ee365c8b1050ec8a02477ff4f3d9e1eed0ab01aa825500b5b3c6d0d6ea9838"
+          "digest": "sha256:243359963057be8cba559c01bcb181679c2f434184df3a9d67e42a68c75e2eab"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/log.txt",
-          "digest": "sha256:1a5c8b4441ae4291f0fa5d02989c573135fd27c4986eee34e69cdd9a5b20f34e"
+          "digest": "sha256:6f3dbc968f5b6f4976de210df44efb8b309282ceb311d7fd37a6cf5f78b9ea80"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/metric.json",
-          "digest": "sha256:3de802cf1aade723e567fee3504d731e6a51ae7aa06f5c97f8f44177e7c64402"
+          "digest": "sha256:3556281ba9a935f9779375d78ad157c6c84611bc794a4cd1f659e9c48db1f50d"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-2/packet.json",
-          "digest": "sha256:47a89bce5b8d0c6b812fa1e1ba883d9a4aa02e3f2ab878c70ea3b5a1c5868ead"
+          "digest": "sha256:14965db3be9fb1b63b8f7aab954ff6de24c17d77ac2899ae46ea75bd42c71f89"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/log.txt",
-          "digest": "sha256:c2ba0bc37b1692816938b561c5ca30ec3faa2c43251ed92f0cb2f329be84b389"
+          "digest": "sha256:aa70cc7b07fb2d4270c0bbf72b7a8a2a8e26744fccee8b1c22c3fe53a156e97d"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/metric.json",
-          "digest": "sha256:4f1ca5e1b77c6f109af54b4a4f2c2775643a23fe5b26fae1f9b4e072840785c7"
+          "digest": "sha256:1fb771f7cd30f720d1482e2590bb92aff34735cdd6e8114475a7910f4a9891be"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/quorum.replication/failure/node-3/packet.json",
-          "digest": "sha256:ba19f9e9b2fa6ea572fdfda83cb7a32b0325d805141d19611b3bac19a7fb719d"
+          "digest": "sha256:398e630fd044a53805451c2b013e9874e6f78808395f951ce56d57219e6d7fc7"
         }
       ]
     },
@@ -1735,72 +1942,72 @@
       "scenario": "compatibility",
       "report": {
         "path": "evidence/scenario-runtime/stomp.protocol-plugin/compatibility.runtime.json",
-        "digest": "sha256:6f242fe879dc6c9bfe22ae807ba049a07c1d97ef47e75a04344ae50252d4ce46"
+        "digest": "sha256:17523ca2714eef841f33bbbd63a28fd50c603f0bf6442539031ff28ac2d5adf1"
       },
       "proof": {
         "path": "evidence/scenarios/behaviors/stomp.protocol-plugin/compatibility.proof.json",
-        "digest": "sha256:498d129bbfb9c5cdd4dbfff19684ef1adffb5f2a87a94b113c3002012aaad0d3"
+        "digest": "sha256:a44c91990098197a379c19c8fea3c29e9fb61360f6e41139495dd7a857b3ef6f"
       },
       "artifacts": [
         {
           "variant_id": "node-1",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/log.txt",
-          "digest": "sha256:6dc25477956afddc7d39a52d9555dd9a5a9a11d0414d816bfa8e99283eb46daf"
+          "digest": "sha256:7573a0eb774fe00f53f8be3c905a38b23f4ddcfb5cc3ed91151ba2580428c6bb"
         },
         {
           "variant_id": "node-1",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/metric.json",
-          "digest": "sha256:2ed1b11f5dc66cff71fc991d6e0e239cb2c0068444a45a6651b7949538550c57"
+          "digest": "sha256:34500e6c191dd99614336b9346e9bd0b460920bd53761e825bdd85e77f686127"
         },
         {
           "variant_id": "node-1",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/packet.json",
-          "digest": "sha256:b91796e50f86d5a13c766c48047c3adbd348a2cd11b672fc5170b13b144349d3"
+          "digest": "sha256:031fad3dad26833bed2f4f0b72abb00afd5c593e853d19e9d004d2cac471b638"
         },
         {
           "variant_id": "node-2",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/log.txt",
-          "digest": "sha256:957f78ddc65292263318d378c096e87e9a7501040145a75decbb1e91a46e1989"
+          "digest": "sha256:90565919395482f66b8dc3492316de950873b8484208ad31f91749fac387f2bf"
         },
         {
           "variant_id": "node-2",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/metric.json",
-          "digest": "sha256:00f66299d75881db663c279c532e2525ecbc09252e684887c8385358c31c262b"
+          "digest": "sha256:2e6e3e0202c32f0cc38adf28d98e352ab3ab11254b67b4cd602e5e992dde9bed"
         },
         {
           "variant_id": "node-2",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/packet.json",
-          "digest": "sha256:85db88fd3655d2a1774c6bc5f256b299390ae6df4ecff5538f40e28263b96a6b"
+          "digest": "sha256:c48cc779dee347c9cd6783d638e6ce72517e04ce365dd3c40c63bad272dd9f5d"
         },
         {
           "variant_id": "node-3",
           "channel": "log",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/log.txt",
-          "digest": "sha256:f59249679f9c34db85c00ce42857656e0ee095cf452a166b3e3d655732308955"
+          "digest": "sha256:7113acf686445ae51c2f4c8c3d0ce82ff6b58696158a1a0a049969da214a748a"
         },
         {
           "variant_id": "node-3",
           "channel": "metric",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/metric.json",
-          "digest": "sha256:02a595ba4c12b2bc4c2af497e3bf46db2fe50d38d2c1d752d9d6a7a8b20c2a74"
+          "digest": "sha256:8dc6eeea705ef3db398a850e73f94ac5f155271a100c712c801202d31e0d846f"
         },
         {
           "variant_id": "node-3",
           "channel": "packet",
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/packet.json",
-          "digest": "sha256:b09363c77e644614b3028c0ffdbb81fd1bf4f261b6b02b2fd5b290a9b869514b"
+          "digest": "sha256:97911eb80ef0b8151a2e316b2726ede5d619ab05c47947b68701819a28dd943b"
         }
       ]
     }
   ],
   "summary": {
-    "runtime_reports": 26,
-    "artifact_bindings": 234
+    "runtime_reports": 29,
+    "artifact_bindings": 261
   }
 }

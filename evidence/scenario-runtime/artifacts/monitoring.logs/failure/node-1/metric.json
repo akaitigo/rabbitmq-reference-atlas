@@ -1,16 +1,11 @@
 {
   "node": "rabbitmq-1",
-  "management_nodes": {
-    "status": null,
-    "body": null,
-    "error": "<urlopen error [Errno 61] Connection refused>"
-  },
   "cluster_status": {
     "command": [
       "docker",
       "compose",
       "-f",
-      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "environments/compose.yaml",
       "exec",
       "-T",
       "rabbitmq-1",
@@ -22,5 +17,10 @@
     "returncode": 1,
     "stdout": "",
     "stderr": "service \"rabbitmq-1\" is not running\n"
+  },
+  "management_nodes": {
+    "status": null,
+    "body": null,
+    "error": "<urlopen error [Errno 61] Connection refused>"
   }
 }

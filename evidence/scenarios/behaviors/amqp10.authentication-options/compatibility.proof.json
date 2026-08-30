@@ -70,7 +70,7 @@
     "report": {
       "path": "evidence/scenario-runtime/amqp10.authentication-options/compatibility.runtime.json",
       "present": true,
-      "digest": "sha256:206d6994dc8f9d302d9c7abeb0a5c7abd3c3e7daf5d3093b1a51029333233ea8"
+      "digest": "sha256:77eebc55f34421490429c2e9152e4b9a6d4de9ac3042324a07afe3005f83e821"
     },
     "required_variants": [
       "node-1",
@@ -91,13 +91,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "python-socket-amqp10-sasl-probe",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "protocol-amqp10",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.amqp10.authentication-options.compatibility.node-1",
@@ -110,11 +111,11 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
@@ -130,8 +131,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-1/log.txt",
-              "digest": "sha256:0bf011bb696b347d2606b20f7d2119ca034e46e66ad015dbebdbea1156695ae5",
-              "size_bytes": 36247,
+              "digest": "sha256:d41d3c50e900804c45075d8e2e96e09f035652e7e53f19496f77b19521cd84f2",
+              "size_bytes": 36068,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -140,8 +141,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-1/metric.json",
-              "digest": "sha256:4a751197844d64f5003193261b1dcb7bc1354d067a74a8f7cf88feb59953e4af",
-              "size_bytes": 60723,
+              "digest": "sha256:d0939e35bb17ace08c572dac32b116e834f2c1371b5322043cbbb04c3617fc33",
+              "size_bytes": 61204,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -162,13 +163,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "python-socket-amqp10-sasl-probe",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "protocol-amqp10",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.amqp10.authentication-options.compatibility.node-2",
@@ -181,11 +183,11 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
@@ -201,8 +203,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-2/log.txt",
-              "digest": "sha256:bad6ebc1adc2e09d498e91238c8df3a458a0231d16f814cfb64c7d50f0d943fd",
-              "size_bytes": 34251,
+              "digest": "sha256:fd3fcc65d5f798c46f162d9c016f05e94715c4c31f7c8979cb4fcc96629d5af0",
+              "size_bytes": 33824,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -211,8 +213,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-2/metric.json",
-              "digest": "sha256:b890f6e635f120ab6412d3e1edcd8ff7502562c5459cfcd05797ce4d9c9ee2c2",
-              "size_bytes": 60723,
+              "digest": "sha256:6bdf31387f4eee02ac26ea8ce9efb4f71480522901077ed3c2bf15d781e6d756",
+              "size_bytes": 61198,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -233,13 +235,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "python-socket-amqp10-sasl-probe",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "protocol-amqp10",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.amqp10.authentication-options.compatibility.node-3",
@@ -252,11 +255,11 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
@@ -272,8 +275,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-3/log.txt",
-              "digest": "sha256:721001c02c88a247b7fbc29f631f87150b45a4edcfcfc5e740585b740203f9d7",
-              "size_bytes": 34039,
+              "digest": "sha256:28dcd28e006bd45db35ddb655b5328cdea5e011bbbc6cab14e5226c1b7ca4350",
+              "size_bytes": 34134,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -282,8 +285,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/amqp10.authentication-options/compatibility/node-3/metric.json",
-              "digest": "sha256:261c70a3cc84b5a16733cac7d7d88e5349f1a9d98732359b907aad69ff827d9a",
-              "size_bytes": 60723,
+              "digest": "sha256:71dbe3e3fcdd387b86e18528bc5d98ddeb08db2c7c166625c55e75f385ecaffc",
+              "size_bytes": 61180,
               "channel": "metric",
               "media_type": "application/json"
             },

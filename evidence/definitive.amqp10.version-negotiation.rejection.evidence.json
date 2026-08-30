@@ -8,7 +8,7 @@
   "kind": "conformance",
   "producer": "cmd/rmq-amqp10-handshake",
   "command": "go run ./cmd/rmq-amqp10-handshake --endpoints 127.0.0.1:25672,127.0.0.1:25673,127.0.0.1:25674 --output-dir evidence/raw",
-  "created_at": "2026-08-30T14:37:57.280479Z",
+  "created_at": "2026-08-30T17:13:06.59479Z",
   "environment": {
     "profile": "cluster",
     "runtime_profile": "protocol-amqp10",
@@ -24,9 +24,9 @@
   "runtime_identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3",
   "artifact": {
     "uri": "evidence/raw/definitive.amqp10.version-negotiation.rejection.json",
-    "digest": "sha256:6020df9cffe9acbb2fd3bfd7e60a6d1e88f05e99588967c33818e29a03ad13a0",
+    "digest": "sha256:8f9f2667fd5f739aee48622e534a95c8d66b3f3bd6d274c7675984b2ab52c519",
     "media_type": "application/json",
-    "size_bytes": 975
+    "size_bytes": 974
   },
   "verdict": "pass",
   "retention": "git"

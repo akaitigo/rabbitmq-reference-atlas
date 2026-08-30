@@ -5,7 +5,7 @@
       "docker",
       "compose",
       "-f",
-      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "environments/compose.yaml",
       "exec",
       "-T",
       "rabbitmq-3",

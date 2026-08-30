@@ -8,7 +8,7 @@
   "kind": "conformance",
   "producer": "cmd/rmq-plugin-protocols",
   "command": "bash scripts/run-plugin-protocol-lab.sh",
-  "created_at": "2026-08-30T14:38:51.570266591Z",
+  "created_at": "2026-08-30T17:14:49.22760367Z",
   "environment": {
     "profile": "cluster",
     "runtime_profile": "plugin-mqtt",
@@ -29,9 +29,9 @@
   "runtime_identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins",
   "artifact": {
     "uri": "evidence/raw/definitive.mqtt.protocol-versions-qos.rejection.json",
-    "digest": "sha256:b7e36127afbd89e5f5d9421497efd018eda58783f05b1cc19d533b3deaf6cec7",
+    "digest": "sha256:a3e994ae3d575ab15a986eaf4b1322d6a6be330778cd63eb1fcfd26431fa90d9",
     "media_type": "application/json",
-    "size_bytes": 718
+    "size_bytes": 717
   },
   "verdict": "pass",
   "retention": "git"

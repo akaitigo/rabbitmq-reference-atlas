@@ -7,7 +7,7 @@
   "target_id": "definitive.ldap.authorization",
   "scenario": "security",
   "applicability": "required",
-  "status": "scenario-gap-open",
+  "status": "scenario-gap-closed",
   "runtime_profile": "plugin-ldap-directory",
   "proof_obligation_id": "proof.ldap.authorization.security",
   "authority_binding": {
@@ -69,8 +69,8 @@
   "dedicated_runtime": {
     "report": {
       "path": "evidence/scenario-runtime/ldap.authorization/security.runtime.json",
-      "present": false,
-      "digest": null
+      "present": true,
+      "digest": "sha256:29cafde593cf51ca2e8006cbd79deeabc54fd81a9bac2500305bc525a85737c7"
     },
     "required_variants": [
       "node-1-with-ldap",
@@ -80,108 +80,255 @@
     "variant_proofs": [
       {
         "id": "node-1-with-ldap",
-        "attempts": null,
-        "retries": null,
-        "broker": null,
-        "client": null,
-        "runtime": null,
-        "oracle": null,
-        "source": null,
-        "harness": null,
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "rmq-ldap-security",
+          "version": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5",
+          "source_digest": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5"
+        },
+        "runtime": {
+          "profile": "plugin-ldap-directory",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": [
+            {
+              "product": "OpenLDAP",
+              "version": "2.6.10",
+              "image_digest": "sha256:966fd39ed25813890e9bd57dac56def163bbcfe64967e0bae59ab018d505bd93",
+              "runtime_kind": "actual-directory"
+            }
+          ]
+        },
+        "oracle": {
+          "id": "oracle.ldap.authorization.security.node-1-with-ldap",
+          "assertions": [
+            "vhost groupの両userがLDAP認証後に実Brokerへ接続した",
+            "resource group所属userだけがqueue宣言を許可された",
+            "resource group非所属userの越権queue宣言が拒否された",
+            "Client outputにCredential値を保存していない"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "cmd/rmq-ldap-security/main.go",
+          "digest": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
         "artifact_channels": {
           "packet": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-1-with-ldap.packet.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-1-with-ldap/packet.json",
+              "digest": "sha256:bc62504e1495494bcf8b31a9332132cb50826c75a6639e5ea8c9446f21c1c44b",
+              "size_bytes": 1482,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
           },
           "log": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-1-with-ldap.log.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-1-with-ldap/log.txt",
+              "digest": "sha256:29786b54ed659ea96b0df467ca498712919e8f888f1a698aa8e36f262def28b4",
+              "size_bytes": 34114,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
           },
           "metric": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-1-with-ldap.metric.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-1-with-ldap/metric.json",
+              "digest": "sha256:79e9fc455e9e8cba15f80203e689f4ef5983ae82192f00a030d56719678225a6",
+              "size_bytes": 22934,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
           }
         }
       },
       {
         "id": "node-2-with-ldap",
-        "attempts": null,
-        "retries": null,
-        "broker": null,
-        "client": null,
-        "runtime": null,
-        "oracle": null,
-        "source": null,
-        "harness": null,
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "rmq-ldap-security",
+          "version": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5",
+          "source_digest": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5"
+        },
+        "runtime": {
+          "profile": "plugin-ldap-directory",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": [
+            {
+              "product": "OpenLDAP",
+              "version": "2.6.10",
+              "image_digest": "sha256:966fd39ed25813890e9bd57dac56def163bbcfe64967e0bae59ab018d505bd93",
+              "runtime_kind": "actual-directory"
+            }
+          ]
+        },
+        "oracle": {
+          "id": "oracle.ldap.authorization.security.node-2-with-ldap",
+          "assertions": [
+            "vhost groupの両userがLDAP認証後に実Brokerへ接続した",
+            "resource group所属userだけがqueue宣言を許可された",
+            "resource group非所属userの越権queue宣言が拒否された",
+            "Client outputにCredential値を保存していない"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "cmd/rmq-ldap-security/main.go",
+          "digest": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
         "artifact_channels": {
           "packet": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-2-with-ldap.packet.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-2-with-ldap/packet.json",
+              "digest": "sha256:f8240a8fed9863f20f17c9d580caf17565ab54e75324d2bba883bb450a227ad1",
+              "size_bytes": 1482,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
           },
           "log": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-2-with-ldap.log.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-2-with-ldap/log.txt",
+              "digest": "sha256:ced3d1acddc15640a5195854c2fe8f670299606f5a6e339cd7fe2c6ff3e09223",
+              "size_bytes": 34114,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
           },
           "metric": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-2-with-ldap.metric.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-2-with-ldap/metric.json",
+              "digest": "sha256:cc8fa589f5be3f2b2316274b9da901db9f66f443803da468ec6b0129a46dc9db",
+              "size_bytes": 22934,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
           }
         }
       },
       {
         "id": "node-3-with-ldap",
-        "attempts": null,
-        "retries": null,
-        "broker": null,
-        "client": null,
-        "runtime": null,
-        "oracle": null,
-        "source": null,
-        "harness": null,
+        "attempts": 1,
+        "retries": 0,
+        "broker": {
+          "runtime_kind": "actual-broker",
+          "product": "RabbitMQ",
+          "version": "4.3.5",
+          "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+        },
+        "client": {
+          "runtime_kind": "actual-client",
+          "name": "rmq-ldap-security",
+          "version": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5",
+          "source_digest": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5"
+        },
+        "runtime": {
+          "profile": "plugin-ldap-directory",
+          "platform": "docker-engine/29.7.2",
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": [
+            {
+              "product": "OpenLDAP",
+              "version": "2.6.10",
+              "image_digest": "sha256:966fd39ed25813890e9bd57dac56def163bbcfe64967e0bae59ab018d505bd93",
+              "runtime_kind": "actual-directory"
+            }
+          ]
+        },
+        "oracle": {
+          "id": "oracle.ldap.authorization.security.node-3-with-ldap",
+          "assertions": [
+            "vhost groupの両userがLDAP認証後に実Brokerへ接続した",
+            "resource group所属userだけがqueue宣言を許可された",
+            "resource group非所属userの越権queue宣言が拒否された",
+            "Client outputにCredential値を保存していない"
+          ],
+          "passed": true
+        },
+        "source": {
+          "path": "cmd/rmq-ldap-security/main.go",
+          "digest": "sha256:dbf77461ce932c2fe5679618d40957a6370f5dff2fac332a224930a42f3dcac5"
+        },
+        "harness": {
+          "path": "scripts/generate-scenario-runtime.py",
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
+        },
         "artifact_channels": {
           "packet": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-3-with-ldap.packet.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-3-with-ldap/packet.json",
+              "digest": "sha256:d11f83cabf2cac18bccfa66988982325c6079f433cc457169237a45c7495e7d2",
+              "size_bytes": 1482,
+              "channel": "packet",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
           },
           "log": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-3-with-ldap.log.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-3-with-ldap/log.txt",
+              "digest": "sha256:7a64e9d140612de6a55b8cbcfd4ce7977730206635326b23e5a8641b6886f02f",
+              "size_bytes": 34451,
+              "channel": "log",
+              "media_type": "text/plain"
+            },
+            "gap_ids": []
           },
           "metric": {
-            "artifact": null,
-            "gap_ids": [
-              "artifact.node-3-with-ldap.metric.missing"
-            ]
+            "artifact": {
+              "path": "evidence/scenario-runtime/artifacts/ldap.authorization/security/node-3-with-ldap/metric.json",
+              "digest": "sha256:642fda0d6a75d9621459f10130bb0fd19f0350fb7e1311aab8af59d8c22d8c05",
+              "size_bytes": 22934,
+              "channel": "metric",
+              "media_type": "application/json"
+            },
+            "gap_ids": []
           }
         }
       }
     ],
     "requirements": {
-      "dedicated_surface_scenario_report": false,
-      "all_variants_driven": false,
-      "attempts_one_retry_zero": false,
-      "oracle_pass_per_variant": false,
-      "source_harness_digest_bound": false,
-      "broker_client_runtime_identity": false,
-      "packet_log_metric_dedicated": false
+      "dedicated_surface_scenario_report": true,
+      "all_variants_driven": true,
+      "attempts_one_retry_zero": true,
+      "oracle_pass_per_variant": true,
+      "source_harness_digest_bound": true,
+      "broker_client_runtime_identity": true,
+      "packet_log_metric_dedicated": true
     },
-    "scenario_gap_closed": false
+    "scenario_gap_closed": true
   },
   "integrated_reference": {
     "manifest": "reference-system/manifest.yaml",
@@ -192,56 +339,23 @@
   },
   "closure": {
     "dedicated_row": true,
-    "dedicated_surface_scenario_report": false,
-    "all_variants_driven": false,
-    "attempts_one_retry_zero": false,
-    "oracle_pass_per_variant": false,
-    "source_harness_digest_bound": false,
-    "broker_client_runtime_identity": false,
-    "packet_log_metric_dedicated": false,
+    "dedicated_surface_scenario_report": true,
+    "all_variants_driven": true,
+    "attempts_one_retry_zero": true,
+    "oracle_pass_per_variant": true,
+    "source_harness_digest_bound": true,
+    "broker_client_runtime_identity": true,
+    "packet_log_metric_dedicated": true,
     "artifact_metadata_exclusive": true,
-    "scenario_gap_closed": false,
+    "scenario_gap_closed": true,
     "authority_atomic_behavior": false,
     "completion_eligible": false
   },
-  "scenario_gap_ids": [
-    "artifact.node-1-with-ldap.log.missing",
-    "artifact.node-1-with-ldap.metric.missing",
-    "artifact.node-1-with-ldap.packet.missing",
-    "artifact.node-2-with-ldap.log.missing",
-    "artifact.node-2-with-ldap.metric.missing",
-    "artifact.node-2-with-ldap.packet.missing",
-    "artifact.node-3-with-ldap.log.missing",
-    "artifact.node-3-with-ldap.metric.missing",
-    "artifact.node-3-with-ldap.packet.missing",
-    "digest.source-harness-missing",
-    "execution.attempts-not-one",
-    "execution.retries-not-zero",
-    "identity.broker-client-runtime-missing",
-    "oracle.variant-pass-missing",
-    "runtime.dedicated-report-missing",
-    "variant.execution-missing"
-  ],
+  "scenario_gap_ids": [],
   "completion_gap_ids": [
     "authority.atomic-human-promotion-missing"
   ],
   "gap_ids": [
-    "artifact.node-1-with-ldap.log.missing",
-    "artifact.node-1-with-ldap.metric.missing",
-    "artifact.node-1-with-ldap.packet.missing",
-    "artifact.node-2-with-ldap.log.missing",
-    "artifact.node-2-with-ldap.metric.missing",
-    "artifact.node-2-with-ldap.packet.missing",
-    "artifact.node-3-with-ldap.log.missing",
-    "artifact.node-3-with-ldap.metric.missing",
-    "artifact.node-3-with-ldap.packet.missing",
-    "authority.atomic-human-promotion-missing",
-    "digest.source-harness-missing",
-    "execution.attempts-not-one",
-    "execution.retries-not-zero",
-    "identity.broker-client-runtime-missing",
-    "oracle.variant-pass-missing",
-    "runtime.dedicated-report-missing",
-    "variant.execution-missing"
+    "authority.atomic-human-promotion-missing"
   ]
 }

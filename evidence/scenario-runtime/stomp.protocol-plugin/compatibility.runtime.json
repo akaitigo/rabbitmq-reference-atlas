@@ -7,13 +7,18 @@
   "status": "passed",
   "attempts": 1,
   "retries": 0,
+  "run_metadata": {
+    "execution_id": "20260830T171233Z-40300",
+    "started_at": "2026-08-30T17:12:33Z",
+    "completed_at": "2026-08-30T17:17:30.646574Z"
+  },
   "source": {
     "path": "cmd/rmq-plugin-protocols/main.go",
     "digest": "sha256:f5ac0af28b85f969f386726178df0bd25f4ed923695c06f4ca5ffb2d5a67f592"
   },
   "harness": {
     "path": "scripts/generate-scenario-runtime.py",
-    "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+    "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
   },
   "variants": [
     {
@@ -35,7 +40,8 @@
       "runtime": {
         "profile": "plugin-stomp",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T143739Z-65535"
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
       },
       "oracle": {
         "id": "oracle.stomp.protocol-plugin.compatibility.node-1",
@@ -51,27 +57,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/packet.json",
-          "digest": "sha256:b91796e50f86d5a13c766c48047c3adbd348a2cd11b672fc5170b13b144349d3",
+          "digest": "sha256:031fad3dad26833bed2f4f0b72abb00afd5c593e853d19e9d004d2cac471b638",
           "size_bytes": 558,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/log.txt",
-          "digest": "sha256:6dc25477956afddc7d39a52d9555dd9a5a9a11d0414d816bfa8e99283eb46daf",
-          "size_bytes": 31722,
+          "digest": "sha256:7573a0eb774fe00f53f8be3c905a38b23f4ddcfb5cc3ed91151ba2580428c6bb",
+          "size_bytes": 31787,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/metric.json",
-          "digest": "sha256:2ed1b11f5dc66cff71fc991d6e0e239cb2c0068444a45a6651b7949538550c57",
-          "size_bytes": 61281,
+          "digest": "sha256:34500e6c191dd99614336b9346e9bd0b460920bd53761e825bdd85e77f686127",
+          "size_bytes": 60403,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -96,7 +102,8 @@
       "runtime": {
         "profile": "plugin-stomp",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T143739Z-65535"
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
       },
       "oracle": {
         "id": "oracle.stomp.protocol-plugin.compatibility.node-2",
@@ -112,27 +119,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/packet.json",
-          "digest": "sha256:85db88fd3655d2a1774c6bc5f256b299390ae6df4ecff5538f40e28263b96a6b",
+          "digest": "sha256:c48cc779dee347c9cd6783d638e6ce72517e04ce365dd3c40c63bad272dd9f5d",
           "size_bytes": 558,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/log.txt",
-          "digest": "sha256:957f78ddc65292263318d378c096e87e9a7501040145a75decbb1e91a46e1989",
-          "size_bytes": 31445,
+          "digest": "sha256:90565919395482f66b8dc3492316de950873b8484208ad31f91749fac387f2bf",
+          "size_bytes": 31458,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/metric.json",
-          "digest": "sha256:00f66299d75881db663c279c532e2525ecbc09252e684887c8385358c31c262b",
-          "size_bytes": 61276,
+          "digest": "sha256:2e6e3e0202c32f0cc38adf28d98e352ab3ab11254b67b4cd602e5e992dde9bed",
+          "size_bytes": 60421,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -157,7 +164,8 @@
       "runtime": {
         "profile": "plugin-stomp",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T143739Z-65535"
+        "execution_id": "20260830T171233Z-40300",
+        "dependencies": []
       },
       "oracle": {
         "id": "oracle.stomp.protocol-plugin.compatibility.node-3",
@@ -173,27 +181,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+        "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/packet.json",
-          "digest": "sha256:b09363c77e644614b3028c0ffdbb81fd1bf4f261b6b02b2fd5b290a9b869514b",
+          "digest": "sha256:97911eb80ef0b8151a2e316b2726ede5d619ab05c47947b68701819a28dd943b",
           "size_bytes": 558,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/log.txt",
-          "digest": "sha256:f59249679f9c34db85c00ce42857656e0ee095cf452a166b3e3d655732308955",
-          "size_bytes": 31700,
+          "digest": "sha256:7113acf686445ae51c2f4c8c3d0ce82ff6b58696158a1a0a049969da214a748a",
+          "size_bytes": 31425,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/metric.json",
-          "digest": "sha256:02a595ba4c12b2bc4c2af497e3bf46db2fe50d38d2c1d752d9d6a7a8b20c2a74",
-          "size_bytes": 61276,
+          "digest": "sha256:8dc6eeea705ef3db398a850e73f94ac5f155271a100c712c801202d31e0d846f",
+          "size_bytes": 60402,
           "channel": "metric",
           "media_type": "application/json"
         }

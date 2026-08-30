@@ -90,7 +90,7 @@ summary:
   satisfied: 1
   partial: 14
   missing: 3
-  total_gaps: 4231
+  total_gaps: 4225
   definitive_allowed: false
 axes:
 - id: authority-body-digestion
@@ -6779,9 +6779,9 @@ axes:
     unit: authority-derived behavior requiring security
     required: 47
     legacy_runtime_observation: 1
-    scenario_gap_closed: 2
+    scenario_gap_closed: 5
     completion_eligible: 0
-    remaining: 45
+    remaining: 42
     profile_partitions:
       broker-cluster-3:
         required: 7
@@ -6806,7 +6806,7 @@ axes:
       plugin-ldap-directory:
         required: 3
         legacy_runtime_observation: 0
-        scenario_gap_closed: 0
+        scenario_gap_closed: 2
         completion_eligible: 0
       plugin-mqtt:
         required: 5
@@ -6836,7 +6836,7 @@ axes:
       protocol-amqp10:
         required: 2
         legacy_runtime_observation: 1
-        scenario_gap_closed: 1
+        scenario_gap_closed: 2
         completion_eligible: 0
       tls-cluster-client:
         required: 3
@@ -6844,11 +6844,8 @@ axes:
         scenario_gap_closed: 0
         completion_eligible: 0
   status: partial
-  gap_count: 45
+  gap_count: 42
   gap_ids:
-  - proof.amqp10.authentication-options.security
-  - proof.ldap.authentication.security
-  - proof.ldap.authorization.security
   - proof.ldap.tls.security
   - proof.limit.queues.security
   - proof.management.oauth.security
@@ -6895,7 +6892,7 @@ axes:
   - id: scenario-security.dedicated-proof
     required: 各Required Surface×Scenarioの全Variantを専用実Broker/Clientでretry 0実行し、Oracle、Source/Harness digest、Runtime identity、packet/log/metric
       Artifactを接続する。
-    observed: legacy-observation=1/47; scenario-gap-closed=2/47; completion-eligible=0/47
+    observed: legacy-observation=1/47; scenario-gap-closed=5/47; completion-eligible=0/47
     status: partial
     evidence:
     - scenario-closure.yaml
@@ -6908,9 +6905,6 @@ axes:
     - proof.security.vhost-permissions.security
     - proof.security.topic-permissions.security
     - proof.security.credential-rotation.security
-    - proof.amqp10.authentication-options.security
-    - proof.ldap.authentication.security
-    - proof.ldap.authorization.security
     - proof.ldap.tls.security
     - proof.limit.queues.security
     - proof.management.oauth.security
@@ -7230,16 +7224,16 @@ axes:
     unit: required behavior × scenario × profile × proof × artifact
     required: 951
     legacy_runtime_observation: 12
-    dedicated_runtime_reports: 26
-    scenario_gap_closed: 26
+    dedicated_runtime_reports: 29
+    scenario_gap_closed: 29
     completion_eligible: 0
-    remaining: 925
+    remaining: 922
     required_channels:
     - packet
     - log
     - metric
   status: partial
-  gap_count: 925
+  gap_count: 922
   gap_ids:
   - proof.alarm.cluster-wide.boundary
   - proof.alarm.cluster-wide.failure
@@ -7272,7 +7266,6 @@ axes:
   - proof.amqp10.authentication-options.boundary
   - proof.amqp10.authentication-options.normal
   - proof.amqp10.authentication-options.rejection
-  - proof.amqp10.authentication-options.security
   - proof.amqp10.protocol-interoperability.boundary
   - proof.amqp10.protocol-interoperability.compatibility
   - proof.amqp10.protocol-interoperability.normal
@@ -7451,11 +7444,9 @@ axes:
   - proof.ldap.authentication.boundary
   - proof.ldap.authentication.normal
   - proof.ldap.authentication.rejection
-  - proof.ldap.authentication.security
   - proof.ldap.authorization.boundary
   - proof.ldap.authorization.normal
   - proof.ldap.authorization.rejection
-  - proof.ldap.authorization.security
   - proof.ldap.outage.boundary
   - proof.ldap.outage.failure
   - proof.ldap.outage.normal
@@ -8169,7 +8160,7 @@ axes:
   checks:
   - id: artifact.unique-binding
     required: 各Required rowの全Variantへ共有しないpacket/log/metric Artifactを専用pathとdigestで接続する。
-    observed: legacy-observation=12/951; scenario-gap-closed=26/951
+    observed: legacy-observation=12/951; scenario-gap-closed=29/951
     status: partial
     evidence:
     - scenario-closure.yaml
@@ -8225,7 +8216,6 @@ axes:
     - proof.amqp10.authentication-options.normal
     - proof.amqp10.authentication-options.boundary
     - proof.amqp10.authentication-options.rejection
-    - proof.amqp10.authentication-options.security
     - proof.amqp10.protocol-interoperability.normal
     - proof.amqp10.protocol-interoperability.boundary
     - proof.amqp10.protocol-interoperability.rejection
@@ -8408,11 +8398,9 @@ axes:
     - proof.ldap.authentication.normal
     - proof.ldap.authentication.boundary
     - proof.ldap.authentication.rejection
-    - proof.ldap.authentication.security
     - proof.ldap.authorization.normal
     - proof.ldap.authorization.boundary
     - proof.ldap.authorization.rejection
-    - proof.ldap.authorization.security
     - proof.ldap.tls.normal
     - proof.ldap.tls.boundary
     - proof.ldap.tls.rejection

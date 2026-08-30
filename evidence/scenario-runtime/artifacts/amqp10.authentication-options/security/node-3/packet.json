@@ -1,0 +1,44 @@
+{
+  "accepted": {
+    "transport": "tcp",
+    "protocol": "AMQP 1.0 SASL PLAIN",
+    "endpoint": "127.0.0.1:25674",
+    "credential_case": "valid-local-test-credential",
+    "sent": {
+      "protocol_header": "414d515003010000",
+      "performative": "sasl-init",
+      "mechanism": "PLAIN",
+      "initial_response": "[redacted]"
+    },
+    "received": {
+      "protocol_header": "414d515003010000",
+      "mechanisms_frame_size": 52,
+      "advertised_plain": true,
+      "outcome_frame_size": 17,
+      "outcome_code": 0,
+      "outcome": "ok"
+    },
+    "error": null
+  },
+  "rejected": {
+    "transport": "tcp",
+    "protocol": "AMQP 1.0 SASL PLAIN",
+    "endpoint": "127.0.0.1:25674",
+    "credential_case": "invalid-local-test-credential",
+    "sent": {
+      "protocol_header": "414d515003010000",
+      "performative": "sasl-init",
+      "mechanism": "PLAIN",
+      "initial_response": "[redacted]"
+    },
+    "received": {
+      "protocol_header": "414d515003010000",
+      "mechanisms_frame_size": 52,
+      "advertised_plain": true,
+      "outcome_frame_size": 17,
+      "outcome_code": 1,
+      "outcome": "auth"
+    },
+    "error": null
+  }
+}

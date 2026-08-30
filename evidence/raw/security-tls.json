@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "mode": "security-tls-mtls",
-  "created_at": "2026-08-30T14:45:54Z",
+  "created_at": "2026-08-30T17:27:49Z",
   "rabbitmq_version": "4.3.5",
-  "ca_fingerprint_sha256": "sha256:776cd7aab471b13d5f11ad360cde4a3edff00565a898d11253f0d17e8ed1bfea",
-  "client_fingerprint_sha256": "sha256:7eac57883c862ccb420ef2b1f7d811ff1d762e6b0c0bd80a06f00780806e890a",
-  "server_fingerprint_sha256": "sha256:6e82ee7be8bc16b17c26a75c15b513358c5f4d164aa8a40a6ae76a3769e0db4c",
-  "remote_server_fingerprint_sha256": "sha256:6e82ee7be8bc16b17c26a75c15b513358c5f4d164aa8a40a6ae76a3769e0db4c",
+  "ca_fingerprint_sha256": "sha256:ff5da6e361e70dfdd7b8a748ca2a69db95ee914adf29d61795f977437d5343cb",
+  "client_fingerprint_sha256": "sha256:89582f78fe20d34e6900cff6cca23debd0a97ee6630ffdd89abc773689ed0e5d",
+  "server_fingerprint_sha256": "sha256:f89a0a5ffaa0a4cc61326da978193607a8ec8e74c256cf0990213cc2cf58c34b",
+  "remote_server_fingerprint_sha256": "sha256:f89a0a5ffaa0a4cc61326da978193607a8ec8e74c256cf0990213cc2cf58c34b",
   "checks": [
     {
       "name": "tls.server-certificate-pinned",

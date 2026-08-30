@@ -1,5 +1,23 @@
 {
   "node": "rabbitmq-3",
+  "cluster_status": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-3",
+      "rabbitmqctl",
+      "cluster_status",
+      "--formatter",
+      "json"
+    ],
+    "returncode": 0,
+    "stdout": "{\"alarms\":[],\"cluster_tags\":[],\"listeners\":{\"rabbit@rabbitmq-3\":[{\"node\":\"rabbit@rabbitmq-3\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}],\"rabbit@rabbitmq-1\":[{\"node\":\"rabbit@rabbitmq-1\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}],\"rabbit@rabbitmq-2\":[{\"node\":\"rabbit@rabbitmq-2\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}]},\"cpu_cores\":{\"rabbit@rabbitmq-3\":12,\"rabbit@rabbitmq-1\":12,\"rabbit@rabbitmq-2\":12},\"cluster_name\":\"rabbit@rabbitmq-3\",\"disk_nodes\":[\"rabbit@rabbitmq-1\",\"rabbit@rabbitmq-2\",\"rabbit@rabbitmq-3\"],\"running_nodes\":[\"rabbit@rabbitmq-1\",\"rabbit@rabbitmq-2\",\"rabbit@rabbitmq-3\"],\"versions\":{\"rabbit@rabbitmq-3\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"},\"rabbit@rabbitmq-1\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"},\"rabbit@rabbitmq-2\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"}},\"partitions\":{},\"maintenance_status\":{\"rabbit@rabbitmq-3\":\"not under maintenance\",\"rabbit@rabbitmq-1\":\"not under maintenance\",\"rabbit@rabbitmq-2\":\"not under maintenance\"},\"feature_flags\":[{\"name\":\"classic_mirrored_queue_version\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support setting version for classic mirrored queues\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"classic_queue_type_delivery_support\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix for classic queue deliveries using mixed versions\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/5931\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"delete_ra_cluster_mqtt_node\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Delete Ra cluster 'mqtt_node' since MQTT client IDs are tracked locally\",\"provided_by\":\"rabbitmq_mqtt\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"detailed_queues_endpoint\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Add a detailed queues HTTP API endpoint. Reduce number of metrics in the default endpoint.\",\"provided_by\":\"rabbitmq_management\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"direct_exchange_routing_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"v2 direct exchange routing implementation\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"drop_unroutable_metric\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Count unroutable publishes to be dropped in stats\",\"provided_by\":\"rabbitmq_management_agent\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"empty_basic_get_metric\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Count AMQP `basic.get` on empty queues in stats\",\"provided_by\":\"rabbitmq_management_agent\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"feature_flags_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Feature flags subsystem V2\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"implicit_default_bindings\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Default bindings are now implicit, instead of being stored in the database\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"khepri_db\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"New Raft-based metadata store.\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/next/metadata-store\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"listener_records_in_ets\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Store listener records in ETS instead of Mnesia\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"maintenance_mode_status\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Maintenance mode status\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"message_containers\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Message containers.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"message_containers_deaths_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix for dead letter cycle detection\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/11159\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"mqtt_v5\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support MQTT 5.0\",\"provided_by\":\"rabbitmq_mqtt\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"quorum_queue\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support queues of type `quorum`\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/quorum-queues\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"quorum_queue_non_voters\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows new quorum queue members to be added as non voters initially.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbit_exchange_type_local_random\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Local random exchange\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbit_mqtt_qos0_queue\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support pseudo queue type for MQTT QoS 0 subscribers omitting a queue process\",\"provided_by\":\"rabbitmq_mqtt\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.0.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades from 3.13.x to 4.0.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.1.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades to 4.1.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.2.0\",\"state\":\"enabled\",\"callbacks\":[\"enable\"],\"desc\":\"Allows rolling upgrades to 4.2.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.3.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades to 4.3.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"restart_streams\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support for restarting streams with optional preferred next leader argument.Used to implement stream leader rebalancing\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_filtering\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support for stream filtering.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_queue\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support queues of type `stream`\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/stream\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_sac_coordinator_unblock_group\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix to unblock a group of consumers in a super stream partition\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/7743\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_single_active_consumer\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Single active consumer for streams\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/stream\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_update_config_command\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"A new internal command that is used to update streams as part of a policy.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"tie_binding_to_dest_with_keep_while_cond\",\"state\":\"enabled\",\"callbacks\":[\"enable\"],\"desc\":\"Use keep_while condition to tie a binding record lifetime to its destination record in Khepri\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"topic_binding_projection_v4\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"Enable the topic binding Khepri projection v4\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"topic_binding_projection_v5\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"Enable the topic binding Khepri projection v5\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"track_qq_members_uids\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Track queue members UIDs in the metadata store\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"tracking_records_in_ets\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Store tracking records in ETS instead of Mnesia\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"user_limits\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Configure connection and channel limits for a user\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"virtual_host_metadata\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Virtual host metadata (description, tags, etc)\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"}]}\n",
+    "stderr": ""
+  },
   "management_nodes": {
     "status": 200,
     "body": [
@@ -14,13 +32,13 @@
         "disk_free_alarm": false,
         "proc_total": 1048576,
         "rates_mode": "basic",
-        "uptime": 13006,
+        "uptime": 18454,
         "run_queue": 0,
         "processors": 12,
         "exchange_types": [
           {
-            "name": "x-modulus-hash",
-            "description": "Modulus Hashing Exchange",
+            "name": "fanout",
+            "description": "AMQP fanout exchange, as per the AMQP specification",
             "enabled": true
           },
           {
@@ -29,45 +47,45 @@
             "enabled": true
           },
           {
+            "name": "x-local-random",
+            "description": "Picks one random local binding (queue) to route via (to).",
+            "enabled": true
+          },
+          {
             "name": "topic",
             "description": "AMQP topic exchange, as per the AMQP specification",
             "enabled": true
           },
           {
-            "name": "fanout",
-            "description": "AMQP fanout exchange, as per the AMQP specification",
+            "name": "x-modulus-hash",
+            "description": "Modulus Hashing Exchange",
             "enabled": true
           },
           {
             "name": "direct",
             "description": "AMQP direct exchange, as per the AMQP specification",
             "enabled": true
-          },
-          {
-            "name": "x-local-random",
-            "description": "Picks one random local binding (queue) to route via (to).",
-            "enabled": true
           }
         ],
         "auth_mechanisms": [
-          {
-            "name": "AMQPLAIN",
-            "description": "QPid AMQPLAIN mechanism",
-            "enabled": true
-          },
           {
             "name": "RABBIT-CR-DEMO",
             "description": "RabbitMQ Demo challenge-response authentication mechanism",
             "enabled": false
           },
           {
-            "name": "ANONYMOUS",
-            "description": "SASL ANONYMOUS authentication mechanism",
+            "name": "AMQPLAIN",
+            "description": "QPid AMQPLAIN mechanism",
             "enabled": true
           },
           {
             "name": "PLAIN",
             "description": "SASL PLAIN authentication mechanism",
+            "enabled": true
+          },
+          {
+            "name": "ANONYMOUS",
+            "description": "SASL ANONYMOUS authentication mechanism",
             "enabled": true
           }
         ],
@@ -349,9 +367,9 @@
         "type": "disc",
         "running": true,
         "being_drained": false,
-        "mem_used": 180576256,
+        "mem_used": 170205184,
         "mem_used_details": {
-          "rate": -716800.0
+          "rate": -1357414.4
         },
         "fd_used": 43,
         "fd_used_details": {
@@ -361,25 +379,25 @@
         "sockets_used_details": {
           "rate": 0.0
         },
-        "proc_used": 434,
+        "proc_used": 432,
         "proc_used_details": {
           "rate": 23.4
         },
-        "disk_free": 375485546496,
+        "disk_free": 367482019840,
         "disk_free_details": {
           "rate": 0.0
         },
-        "gc_num": 4468,
+        "gc_num": 5002,
         "gc_num_details": {
-          "rate": 232.4
+          "rate": 216.6
         },
-        "gc_bytes_reclaimed": 357918360,
+        "gc_bytes_reclaimed": 419603672,
         "gc_bytes_reclaimed_details": {
-          "rate": 6899996.8
+          "rate": 6933238.4
         },
-        "context_switches": 113946,
+        "context_switches": 116211,
         "context_switches_details": {
-          "rate": 1929.0
+          "rate": 1889.4
         },
         "io_read_count": 0,
         "io_read_count_details": {
@@ -480,41 +498,41 @@
         "cluster_links": [
           {
             "stats": {
-              "send_bytes": 53746,
+              "send_bytes": 41447,
               "send_bytes_details": {
-                "rate": 1818.8
+                "rate": 990.4
               },
-              "recv_bytes": 155187,
+              "recv_bytes": 126505,
               "recv_bytes_details": {
-                "rate": 9704.4
+                "rate": 8351.0
               }
             },
             "name": "rabbit@rabbitmq-2",
-            "peer_addr": "192.168.80.2",
-            "peer_port": 54924,
-            "sock_addr": "192.168.80.3",
+            "peer_addr": "172.29.0.3",
+            "peer_port": 42486,
+            "sock_addr": "172.29.0.4",
             "sock_port": 25672,
-            "recv_bytes": 191699,
-            "send_bytes": 85970
+            "recv_bytes": 149580,
+            "send_bytes": 45724
           },
           {
             "stats": {
-              "send_bytes": 20315,
+              "send_bytes": 68431,
               "send_bytes_details": {
-                "rate": 1699.6
+                "rate": 843.0
               },
-              "recv_bytes": 101920,
+              "recv_bytes": 180403,
               "recv_bytes_details": {
-                "rate": 9566.6
+                "rate": 8224.2
               }
             },
             "name": "rabbit@rabbitmq-3",
-            "peer_addr": "192.168.80.4",
-            "peer_port": 48564,
-            "sock_addr": "192.168.80.3",
+            "peer_addr": "172.29.0.2",
+            "peer_port": 52028,
+            "sock_addr": "172.29.0.4",
             "sock_port": 25672,
-            "recv_bytes": 123127,
-            "send_bytes": 34733
+            "recv_bytes": 218948,
+            "send_bytes": 97529
           }
         ],
         "metrics_gc_queue_length": {
@@ -539,18 +557,13 @@
         "disk_free_alarm": false,
         "proc_total": 1048576,
         "rates_mode": "basic",
-        "uptime": 370149,
+        "uptime": 749731,
         "run_queue": 1,
         "processors": 12,
         "exchange_types": [
           {
-            "name": "fanout",
-            "description": "AMQP fanout exchange, as per the AMQP specification",
-            "enabled": true
-          },
-          {
-            "name": "headers",
-            "description": "AMQP headers exchange, as per the AMQP specification",
+            "name": "x-modulus-hash",
+            "description": "Modulus Hashing Exchange",
             "enabled": true
           },
           {
@@ -559,13 +572,18 @@
             "enabled": true
           },
           {
+            "name": "headers",
+            "description": "AMQP headers exchange, as per the AMQP specification",
+            "enabled": true
+          },
+          {
             "name": "topic",
             "description": "AMQP topic exchange, as per the AMQP specification",
             "enabled": true
           },
           {
-            "name": "x-modulus-hash",
-            "description": "Modulus Hashing Exchange",
+            "name": "fanout",
+            "description": "AMQP fanout exchange, as per the AMQP specification",
             "enabled": true
           },
           {
@@ -581,14 +599,14 @@
             "enabled": true
           },
           {
-            "name": "PLAIN",
-            "description": "SASL PLAIN authentication mechanism",
-            "enabled": true
-          },
-          {
             "name": "RABBIT-CR-DEMO",
             "description": "RabbitMQ Demo challenge-response authentication mechanism",
             "enabled": false
+          },
+          {
+            "name": "PLAIN",
+            "description": "SASL PLAIN authentication mechanism",
+            "enabled": true
           },
           {
             "name": "ANONYMOUS",
@@ -874,11 +892,11 @@
         "type": "disc",
         "running": true,
         "being_drained": false,
-        "mem_used": 168300544,
+        "mem_used": 180543488,
         "mem_used_details": {
-          "rate": -819.2
+          "rate": -177766.4
         },
-        "fd_used": 43,
+        "fd_used": 42,
         "fd_used_details": {
           "rate": 0.0
         },
@@ -890,21 +908,21 @@
         "proc_used_details": {
           "rate": 0.0
         },
-        "disk_free": 375485485056,
+        "disk_free": 367432339456,
         "disk_free_details": {
-          "rate": -39321.6
+          "rate": -307200.0
         },
-        "gc_num": 15450,
+        "gc_num": 18449,
         "gc_num_details": {
-          "rate": 43.6
+          "rate": 28.2
         },
-        "gc_bytes_reclaimed": 649677720,
+        "gc_bytes_reclaimed": 761780880,
         "gc_bytes_reclaimed_details": {
-          "rate": 680772.8
+          "rate": 661107.2
         },
-        "context_switches": 213241,
+        "context_switches": 242159,
         "context_switches_details": {
-          "rate": 209.6
+          "rate": 192.4
         },
         "io_read_count": 0,
         "io_read_count_details": {
@@ -974,11 +992,11 @@
         "queue_index_read_count_details": {
           "rate": 0.0
         },
-        "connection_created": 10,
+        "connection_created": 12,
         "connection_created_details": {
           "rate": 0.0
         },
-        "connection_closed": 23,
+        "connection_closed": 25,
         "connection_closed_details": {
           "rate": 0.0
         },
@@ -998,48 +1016,48 @@
         "queue_created_details": {
           "rate": 0.0
         },
-        "queue_deleted": 3,
+        "queue_deleted": 4,
         "queue_deleted_details": {
           "rate": 0.0
         },
         "cluster_links": [
           {
             "stats": {
-              "send_bytes": 156498,
+              "send_bytes": 129207,
               "send_bytes_details": {
-                "rate": 4028.2
+                "rate": 4783.0
               },
-              "recv_bytes": 61487,
+              "recv_bytes": 43409,
               "recv_bytes_details": {
-                "rate": 2862.0
+                "rate": 2630.6
               }
             },
             "name": "rabbit@rabbitmq-1",
-            "peer_addr": "192.168.80.3",
+            "peer_addr": "172.29.0.4",
             "peer_port": 25672,
-            "sock_addr": "192.168.80.2",
-            "sock_port": 54924,
-            "recv_bytes": 61487,
-            "send_bytes": 156498
+            "sock_addr": "172.29.0.3",
+            "sock_port": 42486,
+            "recv_bytes": 43409,
+            "send_bytes": 129207
           },
           {
             "stats": {
-              "send_bytes": 1024643,
+              "send_bytes": 949726,
               "send_bytes_details": {
-                "rate": 4093.8
+                "rate": 1533.6
               },
-              "recv_bytes": 832188,
+              "recv_bytes": 1164079,
               "recv_bytes_details": {
-                "rate": 6649.2
+                "rate": 5139.8
               }
             },
             "name": "rabbit@rabbitmq-3",
-            "peer_addr": "192.168.80.4",
-            "peer_port": 25672,
-            "sock_addr": "192.168.80.2",
-            "sock_port": 40310,
-            "recv_bytes": 832188,
-            "send_bytes": 1024643
+            "peer_addr": "172.29.0.2",
+            "peer_port": 51964,
+            "sock_addr": "172.29.0.3",
+            "sock_port": 25672,
+            "recv_bytes": 1164079,
+            "send_bytes": 949726
           }
         ],
         "metrics_gc_queue_length": {
@@ -1064,10 +1082,15 @@
         "disk_free_alarm": false,
         "proc_total": 1048576,
         "rates_mode": "basic",
-        "uptime": 370100,
+        "uptime": 752375,
         "run_queue": 1,
         "processors": 12,
         "exchange_types": [
+          {
+            "name": "direct",
+            "description": "AMQP direct exchange, as per the AMQP specification",
+            "enabled": true
+          },
           {
             "name": "x-modulus-hash",
             "description": "Modulus Hashing Exchange",
@@ -1084,27 +1107,17 @@
             "enabled": true
           },
           {
-            "name": "direct",
-            "description": "AMQP direct exchange, as per the AMQP specification",
+            "name": "topic",
+            "description": "AMQP topic exchange, as per the AMQP specification",
             "enabled": true
           },
           {
             "name": "x-local-random",
             "description": "Picks one random local binding (queue) to route via (to).",
             "enabled": true
-          },
-          {
-            "name": "topic",
-            "description": "AMQP topic exchange, as per the AMQP specification",
-            "enabled": true
           }
         ],
         "auth_mechanisms": [
-          {
-            "name": "RABBIT-CR-DEMO",
-            "description": "RabbitMQ Demo challenge-response authentication mechanism",
-            "enabled": false
-          },
           {
             "name": "AMQPLAIN",
             "description": "QPid AMQPLAIN mechanism",
@@ -1114,6 +1127,11 @@
             "name": "PLAIN",
             "description": "SASL PLAIN authentication mechanism",
             "enabled": true
+          },
+          {
+            "name": "RABBIT-CR-DEMO",
+            "description": "RabbitMQ Demo challenge-response authentication mechanism",
+            "enabled": false
           },
           {
             "name": "ANONYMOUS",
@@ -1399,11 +1417,11 @@
         "type": "disc",
         "running": true,
         "being_drained": false,
-        "mem_used": 166158336,
+        "mem_used": 193236992,
         "mem_used_details": {
-          "rate": 45875.2
+          "rate": 9011.2
         },
-        "fd_used": 42,
+        "fd_used": 39,
         "fd_used_details": {
           "rate": 0.0
         },
@@ -1411,25 +1429,25 @@
         "sockets_used_details": {
           "rate": 0.0
         },
-        "proc_used": 432,
+        "proc_used": 421,
         "proc_used_details": {
           "rate": 0.0
         },
-        "disk_free": 375485485056,
+        "disk_free": 367482019840,
         "disk_free_details": {
-          "rate": -39321.6
+          "rate": 0.0
         },
-        "gc_num": 14850,
+        "gc_num": 17872,
         "gc_num_details": {
-          "rate": 34.4
+          "rate": 32.0
         },
-        "gc_bytes_reclaimed": 627840920,
+        "gc_bytes_reclaimed": 744268864,
         "gc_bytes_reclaimed_details": {
-          "rate": 427790.4
+          "rate": 500945.6
         },
-        "context_switches": 209977,
+        "context_switches": 243388,
         "context_switches_details": {
-          "rate": 193.8
+          "rate": 192.8
         },
         "io_read_count": 0,
         "io_read_count_details": {
@@ -1499,11 +1517,11 @@
         "queue_index_read_count_details": {
           "rate": 0.0
         },
-        "connection_created": 10,
+        "connection_created": 12,
         "connection_created_details": {
           "rate": 0.0
         },
-        "connection_closed": 22,
+        "connection_closed": 24,
         "connection_closed_details": {
           "rate": 0.0
         },
@@ -1523,48 +1541,48 @@
         "queue_created_details": {
           "rate": 0.0
         },
-        "queue_deleted": 3,
+        "queue_deleted": 2,
         "queue_deleted_details": {
           "rate": 0.0
         },
         "cluster_links": [
           {
             "stats": {
-              "send_bytes": 102776,
+              "send_bytes": 218564,
               "send_bytes_details": {
-                "rate": 3907.4
+                "rate": 5094.6
               },
-              "recv_bytes": 21180,
+              "recv_bytes": 97097,
               "recv_bytes_details": {
-                "rate": 1455.4
+                "rate": 2947.4
               }
             },
             "name": "rabbit@rabbitmq-1",
-            "peer_addr": "192.168.80.3",
+            "peer_addr": "172.29.0.4",
             "peer_port": 25672,
-            "sock_addr": "192.168.80.4",
-            "sock_port": 48564,
-            "recv_bytes": 21180,
-            "send_bytes": 102776
+            "sock_addr": "172.29.0.2",
+            "sock_port": 52028,
+            "recv_bytes": 97097,
+            "send_bytes": 218564
           },
           {
             "stats": {
-              "send_bytes": 832140,
+              "send_bytes": 1165279,
               "send_bytes_details": {
-                "rate": 6639.6
+                "rate": 5570.8
               },
-              "recv_bytes": 1024595,
+              "recv_bytes": 950878,
               "recv_bytes_details": {
-                "rate": 4084.2
+                "rate": 5592.2
               }
             },
             "name": "rabbit@rabbitmq-2",
-            "peer_addr": "192.168.80.2",
-            "peer_port": 40310,
-            "sock_addr": "192.168.80.4",
-            "sock_port": 25672,
-            "recv_bytes": 1024595,
-            "send_bytes": 832140
+            "peer_addr": "172.29.0.3",
+            "peer_port": 25672,
+            "sock_addr": "172.29.0.2",
+            "sock_port": 51964,
+            "recv_bytes": 950878,
+            "send_bytes": 1165279
           }
         ],
         "metrics_gc_queue_length": {
@@ -1580,23 +1598,5 @@
       }
     ],
     "error": null
-  },
-  "cluster_status": {
-    "command": [
-      "docker",
-      "compose",
-      "-f",
-      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
-      "exec",
-      "-T",
-      "rabbitmq-3",
-      "rabbitmqctl",
-      "cluster_status",
-      "--formatter",
-      "json"
-    ],
-    "returncode": 0,
-    "stdout": "{\"alarms\":[],\"cluster_tags\":[],\"listeners\":{\"rabbit@rabbitmq-3\":[{\"node\":\"rabbit@rabbitmq-3\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-3\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}],\"rabbit@rabbitmq-1\":[{\"node\":\"rabbit@rabbitmq-1\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-1\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}],\"rabbit@rabbitmq-2\":[{\"node\":\"rabbit@rabbitmq-2\",\"port\":15672,\"protocol\":\"http\",\"interface\":\"[::]\",\"purpose\":\"HTTP API\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":15692,\"protocol\":\"http/prometheus\",\"interface\":\"[::]\",\"purpose\":\"Prometheus exporter API over HTTP\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":25672,\"protocol\":\"clustering\",\"interface\":\"[::]\",\"purpose\":\"inter-node and CLI tool communication\"},{\"node\":\"rabbit@rabbitmq-2\",\"port\":5672,\"protocol\":\"amqp\",\"interface\":\"[::]\",\"purpose\":\"AMQP 0-9-1 and AMQP 1.0\"}]},\"cpu_cores\":{\"rabbit@rabbitmq-3\":12,\"rabbit@rabbitmq-1\":12,\"rabbit@rabbitmq-2\":12},\"cluster_name\":\"rabbit@rabbitmq-3\",\"disk_nodes\":[\"rabbit@rabbitmq-1\",\"rabbit@rabbitmq-2\",\"rabbit@rabbitmq-3\"],\"running_nodes\":[\"rabbit@rabbitmq-1\",\"rabbit@rabbitmq-2\",\"rabbit@rabbitmq-3\"],\"versions\":{\"rabbit@rabbitmq-3\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"},\"rabbit@rabbitmq-1\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"},\"rabbit@rabbitmq-2\":{\"erlang_version\":\"27.3.4.16\",\"rabbitmq_name\":\"RabbitMQ\",\"rabbitmq_version\":\"4.3.5\"}},\"partitions\":{},\"maintenance_status\":{\"rabbit@rabbitmq-3\":\"not under maintenance\",\"rabbit@rabbitmq-1\":\"not under maintenance\",\"rabbit@rabbitmq-2\":\"not under maintenance\"},\"feature_flags\":[{\"name\":\"classic_mirrored_queue_version\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support setting version for classic mirrored queues\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"classic_queue_type_delivery_support\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix for classic queue deliveries using mixed versions\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/5931\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"delete_ra_cluster_mqtt_node\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Delete Ra cluster 'mqtt_node' since MQTT client IDs are tracked locally\",\"provided_by\":\"rabbitmq_mqtt\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"detailed_queues_endpoint\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Add a detailed queues HTTP API endpoint. Reduce number of metrics in the default endpoint.\",\"provided_by\":\"rabbitmq_management\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"direct_exchange_routing_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"v2 direct exchange routing implementation\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"drop_unroutable_metric\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Count unroutable publishes to be dropped in stats\",\"provided_by\":\"rabbitmq_management_agent\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"empty_basic_get_metric\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Count AMQP `basic.get` on empty queues in stats\",\"provided_by\":\"rabbitmq_management_agent\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"feature_flags_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Feature flags subsystem V2\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"implicit_default_bindings\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Default bindings are now implicit, instead of being stored in the database\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"khepri_db\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"New Raft-based metadata store.\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/next/metadata-store\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"listener_records_in_ets\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Store listener records in ETS instead of Mnesia\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"maintenance_mode_status\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Maintenance mode status\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"message_containers\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Message containers.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"message_containers_deaths_v2\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix for dead letter cycle detection\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/11159\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"mqtt_v5\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support MQTT 5.0\",\"provided_by\":\"rabbitmq_mqtt\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"quorum_queue\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support queues of type `quorum`\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/quorum-queues\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"quorum_queue_non_voters\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows new quorum queue members to be added as non voters initially.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbit_exchange_type_local_random\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Local random exchange\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbit_mqtt_qos0_queue\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support pseudo queue type for MQTT QoS 0 subscribers omitting a queue process\",\"provided_by\":\"rabbitmq_mqtt\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.0.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades from 3.13.x to 4.0.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.1.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades to 4.1.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.2.0\",\"state\":\"enabled\",\"callbacks\":[\"enable\"],\"desc\":\"Allows rolling upgrades to 4.2.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"soft\",\"experiment_level\":\"supported\"},{\"name\":\"rabbitmq_4.3.0\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Allows rolling upgrades to 4.3.x\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"restart_streams\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support for restarting streams with optional preferred next leader argument.Used to implement stream leader rebalancing\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_filtering\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support for stream filtering.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_queue\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Support queues of type `stream`\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/stream\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_sac_coordinator_unblock_group\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Bug fix to unblock a group of consumers in a super stream partition\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://github.com/rabbitmq/rabbitmq-server/issues/7743\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_single_active_consumer\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Single active consumer for streams\",\"provided_by\":\"rabbit\",\"doc_url\":\"https://www.rabbitmq.com/docs/stream\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"stream_update_config_command\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"A new internal command that is used to update streams as part of a policy.\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"tie_binding_to_dest_with_keep_while_cond\",\"state\":\"enabled\",\"callbacks\":[\"enable\"],\"desc\":\"Use keep_while condition to tie a binding record lifetime to its destination record in Khepri\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"topic_binding_projection_v4\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"Enable the topic binding Khepri projection v4\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"topic_binding_projection_v5\",\"state\":\"enabled\",\"callbacks\":[\"enable\",\"post_enable\"],\"desc\":\"Enable the topic binding Khepri projection v5\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"track_qq_members_uids\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Track queue members UIDs in the metadata store\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"stable\",\"require_level\":\"none\",\"experiment_level\":\"supported\"},{\"name\":\"tracking_records_in_ets\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Store tracking records in ETS instead of Mnesia\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"user_limits\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Configure connection and channel limits for a user\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"},{\"name\":\"virtual_host_metadata\",\"state\":\"enabled\",\"callbacks\":[],\"desc\":\"Virtual host metadata (description, tags, etc)\",\"provided_by\":\"rabbit\",\"doc_url\":\"\",\"stability\":\"required\",\"require_level\":\"hard\",\"experiment_level\":\"supported\"}]}\n",
-    "stderr": ""
   }
 }

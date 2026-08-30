@@ -19,20 +19,45 @@ export UPGRADE_IMAGE_2="$SOURCE_IMAGE"
 export UPGRADE_IMAGE_3="$SOURCE_IMAGE"
 
 cleanup() {
+  local exit_code=$?
+  local cleanup_code=0
   if [[ -n "$WORKLOAD_PID" ]] && kill -0 "$WORKLOAD_PID" >/dev/null 2>&1; then
     kill "$WORKLOAD_PID" >/dev/null 2>&1 || true
     wait "$WORKLOAD_PID" >/dev/null 2>&1 || true
   fi
-  if [[ "${KEEP_UPGRADE_ENV:-0}" != "1" ]]; then
-    "${COMPOSE[@]}" down --remove-orphans >/dev/null 2>&1 || true
+  if [[ "$exit_code" -ne 0 ]]; then
+    echo "RabbitMQ Upgrade Lab failure diagnostics (project: $UPGRADE_PROJECT)" >&2
+    "${COMPOSE[@]}" ps --all >&2 || true
+    "${COMPOSE[@]}" logs --no-color --timestamps --tail 300 >&2 || true
+  fi
+  if ! "${COMPOSE[@]}" down --volumes --remove-orphans >/dev/null 2>&1; then
+    echo "Upgrade Lab task-owned Compose resource cleanup failed: $UPGRADE_PROJECT" >&2
+    "${COMPOSE[@]}" ps --all >&2 || true
+    cleanup_code=1
   fi
   if [[ -d "$UPGRADE_TMP" ]]; then
     rm -rf -- "$UPGRADE_TMP"
   fi
+  trap - EXIT
+  if [[ "$exit_code" -ne 0 ]]; then
+    exit "$exit_code"
+  fi
+  exit "$cleanup_code"
 }
 trap cleanup EXIT
 
 mkdir -p "$PRESTOP" "$(dirname "$OUTPUT")"
+# fresh Compose volumeのcookieがowner/mode不整合になった場合はRabbitMQがEACCESで停止する。
+# Broker起動前にtask-owned volume内のcookieを明示初期化し、権限をfail-closedで検証する。
+for service in upgrade-1 upgrade-2 upgrade-3; do
+  "${COMPOSE[@]}" run --rm --no-deps --user 0:0 --entrypoint bash "$service" -ec '
+    umask 077
+    printf "%s" "$RABBITMQ_ERLANG_COOKIE" > /var/lib/rabbitmq/.erlang.cookie
+    chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
+    chmod 0400 /var/lib/rabbitmq/.erlang.cookie
+    test "$(stat -c "%u:%g:%a" /var/lib/rabbitmq/.erlang.cookie)" = "999:999:400"
+  '
+done
 "${COMPOSE[@]}" up -d --wait
 
 wait_rabbit_running() {

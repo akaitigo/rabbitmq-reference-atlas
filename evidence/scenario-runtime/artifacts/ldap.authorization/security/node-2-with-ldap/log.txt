@@ -1,0 +1,240 @@
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.242484+00:00 [info] <0.209.0> Priority queues enabled, real BQ is rabbit_variable_queue[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.242518+00:00 [info] <0.209.0> Running boot step kernel_ready defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.242531+00:00 [info] <0.209.0> Running boot step ldap_pool defined by app rabbitmq_auth_backend_ldap[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.242574+00:00 [info] <0.538.0> Starting worker pool 'ldap_pool' with 64 processes in it[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.243955+00:00 [info] <0.209.0> Running boot step pg_local_amqp_connection defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.273076+00:00 [info] <0.209.0> Running boot step pg_local_amqp_session defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.273308+00:00 [info] <0.209.0> Running boot step rabbit_sysmon_minder defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.273708+00:00 [info] <0.209.0> Running boot step rabbit_epmd_monitor defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.275624+00:00 [info] <0.836.0> epmd monitor knows us, inter-node communication (distribution) port: 25672[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.275729+00:00 [info] <0.209.0> Running boot step guid_generator defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.276642+00:00 [info] <0.209.0> Running boot step rabbit_node_monitor defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.276876+00:00 [info] <0.840.0> Starting rabbit_node_monitor[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.276941+00:00 [info] <0.209.0> Running boot step delegate_sup defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.277814+00:00 [info] <0.209.0> Running boot step rabbit_chaos defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.278056+00:00 [info] <0.209.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.278217+00:00 [info] <0.209.0> Running boot step core_initialized defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.278253+00:00 [info] <0.209.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.278392+00:00 [info] <0.209.0> Running boot step rabbit_classic_queue_type defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.278566+00:00 [info] <0.209.0> Running boot step rabbit_classic_queue defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.278665+00:00 [info] <0.209.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.278698+00:00 [info] <0.209.0> Running boot step rabbit_definitions_hashing defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.278734+00:00 [info] <0.209.0> Running boot step rabbit_exchange_parameters defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.282965+00:00 [info] <0.209.0> Running boot step rabbit_policies defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.283602+00:00 [info] <0.209.0> Running boot step rabbit_quorum_queue_type defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.283724+00:00 [info] <0.209.0> Running boot step rabbit_stream_queue defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.283814+00:00 [info] <0.209.0> Running boot step rabbit_policy defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.284098+00:00 [info] <0.209.0> Running boot step rabbit_quorum_event_subscriber defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.284339+00:00 [info] <0.209.0> Running boot step rabbit_quorum_queue defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.284693+00:00 [info] <0.209.0> Running boot step quorum_memory_alarm_handler defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.284917+00:00 [info] <0.209.0> Running boot step rabbit_stream_coordinator defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.286211+00:00 [info] <0.209.0> Running boot step rabbit_vhost_limit defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.286469+00:00 [info] <0.209.0> Running boot step recovery defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.288387+00:00 [info] <0.864.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@security-rabbitmq-2/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.293337+00:00 [info] <0.864.0> Setting segment_entry_count for vhost '/' with 0 queues to '2048'[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.335029+00:00 [info] <0.864.0> Starting message stores for vhost '/'[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.341969+00:00 [info] <0.864.0> Started message store of type transient for vhost '/'[0m
+security-rabbitmq-2-1  | [38;5;214m2026-08-30 17:21:29.435627+00:00 [warning] <0.877.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.440081+00:00 [info] <0.864.0> Started message store of type persistent for vhost '/'[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.440460+00:00 [info] <0.864.0> Recovering 0 queues of type rabbit_classic_queue took 136ms[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.440545+00:00 [info] <0.864.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.440606+00:00 [info] <0.864.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.440805+00:00 [info] <0.209.0> Running boot step prevent_startup_if_node_was_reset defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.440918+00:00 [info] <0.209.0> Running boot step empty_db_check defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.441410+00:00 [info] <0.209.0> Will not seed default virtual host and user: have definitions to load...[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.441757+00:00 [info] <0.209.0> Running boot step rabbit_observer_cli defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.441958+00:00 [info] <0.209.0> Running boot step rabbit_core_metrics_gc defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.442146+00:00 [info] <0.209.0> Running boot step background_gc defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.442548+00:00 [info] <0.209.0> Running boot step rabbit_observer_cli_classic_queues defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.442647+00:00 [info] <0.209.0> Running boot step rabbit_observer_cli_quorum_queues defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.442716+00:00 [info] <0.209.0> Running boot step routing_ready defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.442920+00:00 [info] <0.209.0> Running boot step pre_flight defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.443059+00:00 [info] <0.209.0> Running boot step notify_cluster defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.443112+00:00 [info] <0.209.0> Running boot step networking defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.443150+00:00 [info] <0.209.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.443285+00:00 [info] <0.840.0> rabbit on node 'rabbit@security-rabbitmq-3' up[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.443549+00:00 [info] <0.209.0> Running boot step definition_import_worker_pool defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.443602+00:00 [info] <0.538.0> Starting worker pool 'definition_import_pool' with 12 processes in it[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.445239+00:00 [info] <0.209.0> Running boot step cluster_name defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.445436+00:00 [info] <0.209.0> Running boot step virtual_host_reconciliation defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.449168+00:00 [info] <0.209.0> Running boot step direct_client defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.449363+00:00 [info] <0.209.0> Running boot step logger_exchange defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.451819+00:00 [info] <0.209.0> Running boot step cluster_tags defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.454029+00:00 [info] <0.209.0> Running boot step queue_type_registrations defined by app rabbit[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.454541+00:00 [info] <0.911.0> Resetting node maintenance status[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.458526+00:00 [info] <0.911.0> Ready to start client connection listeners[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.522946+00:00 [info] <0.932.0> started TCP listener on [::]:5672[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.923475+00:00 [info] <0.911.0> Server startup complete; 1 plugins started.[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:29.923475+00:00 [info] <0.911.0>  * rabbitmq_auth_backend_ldap[0m
+security-rabbitmq-2-1  |  completed with 1 plugins.
+security-rabbitmq-2-1  | 2026-08-30 17:21:30.057733+00:00 [info] <0.10.0> Time to start RabbitMQ: 24928 ms[0m
+security-rabbitmq-2-1  | 2026-08-30 17:21:30.857235+00:00 [info] <0.840.0> rabbit on node 'rabbit@security-rabbitmq-1' up[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.198910+00:00 [info] <0.1039.0> accepting AMQP connection 192.168.80.1:63198 -> 192.168.80.3:5672[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.348145+00:00 [info] <0.1039.0> LDAP CHECK: login for atlas-allowed[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.348265+00:00 [info] <0.1039.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.348265+00:00 [info] <0.1039.0>             [{username,<<"atlas-allowed">>}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.348473+00:00 [info] <0.1039.0>         LDAP DN template result: "cn=atlas-allowed,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.775679+00:00 [info] <0.767.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.775923+00:00 [info] <0.767.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.775923+00:00 [info] <0.767.0>             [{username,<<"atlas-allowed">>}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.776487+00:00 [info] <0.767.0>         LDAP DN template result: "cn=atlas-allowed,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777014+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-allowed have tag administrator?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777211+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777291+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777317+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-allowed have tag administrator? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777330+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-allowed have tag management?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777346+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777358+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777378+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-allowed have tag management? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777424+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-allowed have tag policymaker?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777439+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777468+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777480+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-allowed have tag policymaker? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777490+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-allowed have tag monitoring?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777508+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777520+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777528+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-allowed have tag monitoring? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777556+00:00 [info] <0.1039.0> LDAP DECISION: login for atlas-allowed: ok[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.777603+00:00 [info] <0.1039.0> User 'atlas-allowed' authenticated successfully[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.790027+00:00 [info] <0.1039.0> LDAP CHECK: access to vhost "/" for "atlas-allowed"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.791290+00:00 [info] <0.767.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.791324+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.791957+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local",[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.791957+00:00 [info] <0.767.0>                                      "member"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.792096+00:00 [info] <0.767.0>         LDAP filling DN template "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.792096+00:00 [info] <0.767.0>             [{username,<<"atlas-allowed">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.792096+00:00 [info] <0.767.0>              {user_dn,"cn=atlas-allowed,ou=users,dc=atlas,dc=local"},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.792096+00:00 [info] <0.767.0>              {vhost,<<"/">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.792096+00:00 [info] <0.767.0>              {peeraddr,{0,0,0,0,0,65535,49320,20481}}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.792325+00:00 [info] <0.767.0>         LDAP DN template result: "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.796573+00:00 [info] <0.767.0>     LDAP evaluated in_group for "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local": true[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.796723+00:00 [info] <0.1039.0> LDAP DECISION: access to vhost "/" for "atlas-allowed": ok (ok)[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.797316+00:00 [info] <0.1039.0> connection 192.168.80.1:63198 -> 192.168.80.3:5672: user 'atlas-allowed' authenticated and granted access to vhost '/'[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.812946+00:00 [info] <0.1039.0> closing AMQP connection (192.168.80.1:63198 -> 192.168.80.3:5672, vhost: '/', user: 'atlas-allowed', duration: '614ms')[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.816408+00:00 [info] <0.1053.0> accepting AMQP connection 192.168.80.1:63200 -> 192.168.80.3:5672[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.826771+00:00 [info] <0.1053.0> LDAP CHECK: login for atlas-allowed[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.826844+00:00 [info] <0.1053.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.826844+00:00 [info] <0.1053.0>             [{username,<<"atlas-allowed">>}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.826933+00:00 [info] <0.1053.0>         LDAP DN template result: "cn=atlas-allowed,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.828091+00:00 [info] <0.767.0>     LDAP bind returned "invalid credentials": cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:01.828240+00:00 [info] <0.1053.0> LDAP DECISION: login for atlas-allowed: denied[0m
+security-rabbitmq-2-1  | [38;5;214m2026-08-30 17:22:01.828264+00:00 [warning] <0.1053.0> User 'atlas-allowed' failed to authenticate: cn=atlas-allowed,ou=users,dc=atlas,dc=local[0m
+security-rabbitmq-2-1  | [38;5;160m2026-08-30 17:22:01.828708+00:00 [error] <0.1053.0> Error on AMQP connection <0.1053.0> (192.168.80.1:63200 -> 192.168.80.3:5672, state: starting):[0m
+security-rabbitmq-2-1  | [38;5;160m2026-08-30 17:22:01.828708+00:00 [error] <0.1053.0> PLAIN login refused: cn=atlas-allowed,ou=users,dc=atlas,dc=local[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:04.829578+00:00 [info] <0.1053.0> closing AMQP connection (192.168.80.1:63200 -> 192.168.80.3:5672, duration: '3s')[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.501764+00:00 [info] <0.1181.0> accepting AMQP connection 192.168.80.1:60586 -> 192.168.80.3:5672[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.515045+00:00 [info] <0.1181.0> LDAP CHECK: login for atlas-allowed[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.515168+00:00 [info] <0.1181.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.515168+00:00 [info] <0.1181.0>             [{username,<<"atlas-allowed">>}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.515888+00:00 [info] <0.1181.0>         LDAP DN template result: "cn=atlas-allowed,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.518370+00:00 [info] <0.767.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.518646+00:00 [info] <0.767.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.518646+00:00 [info] <0.767.0>             [{username,<<"atlas-allowed">>}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.518937+00:00 [info] <0.767.0>         LDAP DN template result: "cn=atlas-allowed,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.518994+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-allowed have tag administrator?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.519173+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.519347+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.519430+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-allowed have tag administrator? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.519481+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-allowed have tag management?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.519551+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.519591+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.519661+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-allowed have tag management? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.520726+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-allowed have tag policymaker?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.520850+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.521179+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.521233+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-allowed have tag policymaker? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.521262+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-allowed have tag monitoring?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.521356+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.521611+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.521629+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-allowed have tag monitoring? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.521703+00:00 [info] <0.1181.0> LDAP DECISION: login for atlas-allowed: ok[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.521834+00:00 [info] <0.1181.0> User 'atlas-allowed' authenticated successfully[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.526635+00:00 [info] <0.1181.0> LDAP CHECK: access to vhost "/" for "atlas-allowed"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528171+00:00 [info] <0.767.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528217+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528304+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local",[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528304+00:00 [info] <0.767.0>                                      "member"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528367+00:00 [info] <0.767.0>         LDAP filling DN template "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528367+00:00 [info] <0.767.0>             [{username,<<"atlas-allowed">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528367+00:00 [info] <0.767.0>              {user_dn,"cn=atlas-allowed,ou=users,dc=atlas,dc=local"},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528367+00:00 [info] <0.767.0>              {vhost,<<"/">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528367+00:00 [info] <0.767.0>              {peeraddr,{0,0,0,0,0,65535,49320,20481}}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.528490+00:00 [info] <0.767.0>         LDAP DN template result: "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.529168+00:00 [info] <0.767.0>     LDAP evaluated in_group for "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local": true[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.529239+00:00 [info] <0.1181.0> LDAP DECISION: access to vhost "/" for "atlas-allowed": ok (ok)[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.530263+00:00 [info] <0.1181.0> connection 192.168.80.1:60586 -> 192.168.80.3:5672: user 'atlas-allowed' authenticated and granted access to vhost '/'[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.543641+00:00 [info] <0.1190.0> LDAP CHECK: configure permission for queue "amq.gen-mVIPxPgDEYu8-sdoWS1gug" in "/" for "atlas-allowed"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.545874+00:00 [info] <0.767.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546006+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-resource-users,ou=groups,dc=atlas,dc=local"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546207+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-resource-users,ou=groups,dc=atlas,dc=local",[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546207+00:00 [info] <0.767.0>                                      "member"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546368+00:00 [info] <0.767.0>         LDAP filling DN template "cn=atlas-resource-users,ou=groups,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546368+00:00 [info] <0.767.0>             [{username,<<"atlas-allowed">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546368+00:00 [info] <0.767.0>              {user_dn,"cn=atlas-allowed,ou=users,dc=atlas,dc=local"},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546368+00:00 [info] <0.767.0>              {vhost,<<"/">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546368+00:00 [info] <0.767.0>              {resource,queue},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546368+00:00 [info] <0.767.0>              {name,<<"amq.gen-mVIPxPgDEYu8-sdoWS1gug">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.546368+00:00 [info] <0.767.0>              {permission,configure}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.547694+00:00 [info] <0.767.0>         LDAP DN template result: "cn=atlas-resource-users,ou=groups,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.549951+00:00 [info] <0.767.0>     LDAP evaluated in_group for "cn=atlas-resource-users,ou=groups,dc=atlas,dc=local": true[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.550235+00:00 [info] <0.1190.0> LDAP DECISION: configure permission for queue "amq.gen-mVIPxPgDEYu8-sdoWS1gug" in "/" for "atlas-allowed": ok (ok)[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.610542+00:00 [info] <0.1181.0> closing AMQP connection (192.168.80.1:60586 -> 192.168.80.3:5672, vhost: '/', user: 'atlas-allowed', duration: '111ms')[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.614834+00:00 [info] <0.1202.0> accepting AMQP connection 192.168.80.1:60602 -> 192.168.80.3:5672[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.624094+00:00 [info] <0.1202.0> LDAP CHECK: login for atlas-denied[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.624195+00:00 [info] <0.1202.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.624195+00:00 [info] <0.1202.0>             [{username,<<"atlas-denied">>}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.624608+00:00 [info] <0.1202.0>         LDAP DN template result: "cn=atlas-denied,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.627819+00:00 [info] <0.767.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.627926+00:00 [info] <0.767.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.627926+00:00 [info] <0.767.0>             [{username,<<"atlas-denied">>}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628085+00:00 [info] <0.767.0>         LDAP DN template result: "cn=atlas-denied,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628119+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-denied have tag administrator?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628162+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628325+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628375+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-denied have tag administrator? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628427+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-denied have tag management?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628481+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628503+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628552+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-denied have tag management? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628588+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-denied have tag policymaker?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628659+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628695+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628723+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-denied have tag policymaker? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628755+00:00 [info] <0.767.0>     LDAP CHECK: does atlas-denied have tag monitoring?[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628775+00:00 [info] <0.767.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628822+00:00 [info] <0.767.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628840+00:00 [info] <0.767.0>     LDAP DECISION: does atlas-denied have tag monitoring? false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628876+00:00 [info] <0.1202.0> LDAP DECISION: login for atlas-denied: ok[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.628893+00:00 [info] <0.1202.0> User 'atlas-denied' authenticated successfully[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.630597+00:00 [info] <0.1202.0> LDAP CHECK: access to vhost "/" for "atlas-denied"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631793+00:00 [info] <0.767.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631862+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631917+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local",[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631917+00:00 [info] <0.767.0>                                      "member"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631978+00:00 [info] <0.767.0>         LDAP filling DN template "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631978+00:00 [info] <0.767.0>             [{username,<<"atlas-denied">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631978+00:00 [info] <0.767.0>              {user_dn,"cn=atlas-denied,ou=users,dc=atlas,dc=local"},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631978+00:00 [info] <0.767.0>              {vhost,<<"/">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.631978+00:00 [info] <0.767.0>              {peeraddr,{0,0,0,0,0,65535,49320,20481}}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.632430+00:00 [info] <0.767.0>         LDAP DN template result: "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.634986+00:00 [info] <0.767.0>     LDAP evaluated in_group for "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local": true[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.635294+00:00 [info] <0.1202.0> LDAP DECISION: access to vhost "/" for "atlas-denied": ok (ok)[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.635914+00:00 [info] <0.1202.0> connection 192.168.80.1:60602 -> 192.168.80.3:5672: user 'atlas-denied' authenticated and granted access to vhost '/'[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.651186+00:00 [info] <0.1211.0> LDAP CHECK: configure permission for queue "amq.gen-7oeKSZnDHh-aGbPpGrSarA" in "/" for "atlas-denied"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.654447+00:00 [info] <0.767.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655448+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-resource-users,ou=groups,dc=atlas,dc=local"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655518+00:00 [info] <0.767.0>     LDAP evaluating query: {in_group,"cn=atlas-resource-users,ou=groups,dc=atlas,dc=local",[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655518+00:00 [info] <0.767.0>                                      "member"}[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655575+00:00 [info] <0.767.0>         LDAP filling DN template "cn=atlas-resource-users,ou=groups,dc=atlas,dc=local" with[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655575+00:00 [info] <0.767.0>             [{username,<<"atlas-denied">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655575+00:00 [info] <0.767.0>              {user_dn,"cn=atlas-denied,ou=users,dc=atlas,dc=local"},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655575+00:00 [info] <0.767.0>              {vhost,<<"/">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655575+00:00 [info] <0.767.0>              {resource,queue},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655575+00:00 [info] <0.767.0>              {name,<<"amq.gen-7oeKSZnDHh-aGbPpGrSarA">>},[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655575+00:00 [info] <0.767.0>              {permission,configure}][0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.655677+00:00 [info] <0.767.0>         LDAP DN template result: "cn=atlas-resource-users,ou=groups,dc=atlas,dc=local"[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.660660+00:00 [info] <0.767.0>     LDAP evaluated in_group for "cn=atlas-resource-users,ou=groups,dc=atlas,dc=local": false[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.660778+00:00 [info] <0.1211.0> LDAP DECISION: configure permission for queue "amq.gen-7oeKSZnDHh-aGbPpGrSarA" in "/" for "atlas-denied": denied (denied)[0m
+security-rabbitmq-2-1  | [38;5;160m2026-08-30 17:22:44.660907+00:00 [error] <0.1211.0> Channel error on connection <0.1202.0> (192.168.80.1:60602 -> 192.168.80.3:5672, vhost: '/', user: 'atlas-denied'), channel 1:[0m
+security-rabbitmq-2-1  | [38;5;160m2026-08-30 17:22:44.660907+00:00 [error] <0.1211.0> operation queue.declare caused a channel exception access_refused: configure access to queue 'amq.gen-7oeKSZnDHh-aGbPpGrSarA' in vhost '/' refused for user 'atlas-denied'[0m
+security-rabbitmq-2-1  | 2026-08-30 17:22:44.678764+00:00 [info] <0.1202.0> closing AMQP connection (192.168.80.1:60602 -> 192.168.80.3:5672, vhost: '/', user: 'atlas-denied', duration: '66ms')[0m

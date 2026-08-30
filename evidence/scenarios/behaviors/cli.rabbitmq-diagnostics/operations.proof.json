@@ -70,7 +70,7 @@
     "report": {
       "path": "evidence/scenario-runtime/cli.rabbitmq-diagnostics/operations.runtime.json",
       "present": true,
-      "digest": "sha256:4c4ba241bbfda713995fce31459e81085112677e3ff3b291ad0a6d8738b54171"
+      "digest": "sha256:b93df06beb9b0b5bc7da095a4dbd3b746ae247e3816e87654d6394d80862ca25"
     },
     "required_variants": [
       "node-1",
@@ -91,13 +91,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "rabbitmq-diagnostics-4.3.5",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.cli.rabbitmq-diagnostics.operations.node-1",
@@ -109,18 +110,18 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/packet.json",
-              "digest": "sha256:07ffe3c480f5411fe8b3563840259d2176fa7f4abb1598418d34b1b0e1b403e3",
-              "size_bytes": 743,
+              "digest": "sha256:ff1f9ce691950e048712741f7cafed63f5c384abf65bc33cc9785cbd6693a63d",
+              "size_bytes": 676,
               "channel": "packet",
               "media_type": "application/json"
             },
@@ -129,8 +130,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/log.txt",
-              "digest": "sha256:92906fa5e4211df19e6281a8aaecad817f26fc12b1f6311cbbd7ab25c745c3ca",
-              "size_bytes": 36465,
+              "digest": "sha256:48aa127c4bbc059c415e0fa8b76efde8453cb40bf722ea90ddeafc7749ce416b",
+              "size_bytes": 36279,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -139,8 +140,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-1/metric.json",
-              "digest": "sha256:284a8837ab82eed5ac1fbb27f7332b3bce5fb5b64eb892a22daf02f73ae2d7b7",
-              "size_bytes": 59603,
+              "digest": "sha256:48dda0437e3e393f3bfbd8979e1a3d57b786ba612bf55eb6cbb6a2de5b60f045",
+              "size_bytes": 61532,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -161,13 +162,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "rabbitmq-diagnostics-4.3.5",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.cli.rabbitmq-diagnostics.operations.node-2",
@@ -179,18 +181,18 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/packet.json",
-              "digest": "sha256:c41ca980a2bbb8fd4f6a3384688b712cd2d4b831837f8f981fa0bbda578c64f8",
-              "size_bytes": 743,
+              "digest": "sha256:b302ae185be16d2c5abb8f9ee469af8f055b53d481d0957e1fabaa7aef1aa070",
+              "size_bytes": 676,
               "channel": "packet",
               "media_type": "application/json"
             },
@@ -199,8 +201,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/log.txt",
-              "digest": "sha256:14608e0e484628e19fbd8d593b43a0e932acadc5f119a5e7fe5b1534762ba8cf",
-              "size_bytes": 34298,
+              "digest": "sha256:b8445d26a01ef5486fc5091cd71ce679b1bb10e340fbaafc07e450e8215b2e63",
+              "size_bytes": 33891,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -209,8 +211,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-2/metric.json",
-              "digest": "sha256:82ae63331fde4f1901b851d15f50ba496baeb5b9b6a7f41619e0be3c1091b623",
-              "size_bytes": 59619,
+              "digest": "sha256:e69822bb8db3ea2af0c8cce6215bd3775ffda88ff059c4ed09e690e6797fe718",
+              "size_bytes": 60620,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -231,13 +233,14 @@
         "client": {
           "runtime_kind": "actual-client",
           "name": "rabbitmq-diagnostics-4.3.5",
-          "version": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3",
-          "source_digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "version": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d",
+          "source_digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "runtime": {
           "profile": "broker-cluster-3",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T143739Z-65535"
+          "execution_id": "20260830T171233Z-40300",
+          "dependencies": []
         },
         "oracle": {
           "id": "oracle.cli.rabbitmq-diagnostics.operations.node-3",
@@ -249,18 +252,18 @@
         },
         "source": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:7fecb9ce7e3a3431abe059f83aefee655600f3fd8c5fbbbf8171aeedfda429a3"
+          "digest": "sha256:dd40772e26268be2e178860fe411799191e057522cb2f7efb540269b5f71734d"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/packet.json",
-              "digest": "sha256:3817fb2e0d96deb9be58553c53260b6ee80f77f33cbaf47026955c59cf8267b8",
-              "size_bytes": 743,
+              "digest": "sha256:4799202d0973f0fdf2bdebb57f95c49e61c9bd13158bdae50e523ade0fe8a743",
+              "size_bytes": 676,
               "channel": "packet",
               "media_type": "application/json"
             },
@@ -269,8 +272,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/log.txt",
-              "digest": "sha256:becc551343b48ab3e66667a6da3a14af3f14da61b07f72a079f70f1bc1d144ec",
-              "size_bytes": 34097,
+              "digest": "sha256:40f8d4f7386a1b5044f2231e04173bb81ef58850f7c12af24df2036299ed8240",
+              "size_bytes": 34172,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -279,8 +282,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-diagnostics/operations/node-3/metric.json",
-              "digest": "sha256:838f696153b8cb323cc60ff5cca91857870a4628dcb527a8687970b6c30472dc",
-              "size_bytes": 59619,
+              "digest": "sha256:9a568cf66f1ce5e652ffc405fc4e7abf9e0a80f9ba6010adb960728c52b72fd8",
+              "size_bytes": 59514,
               "channel": "metric",
               "media_type": "application/json"
             },

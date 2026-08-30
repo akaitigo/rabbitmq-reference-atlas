@@ -498,6 +498,10 @@ def main() -> int:
         if not (ROOT / relative).exists():
             fail(errors, f"required publication file missing: {relative}")
     forbidden = ("BEGIN PRIVATE KEY", "ghp_", "github_pat_", "AKIA")
+    evidence_forbidden = (
+        str(ROOT), "atlas-local-only", "atlas-directory-admin-local-only",
+        "atlas-allowed-local-only", "atlas-denied-local-only", "atlas-invalid-local-only",
+    )
     for path in ROOT.rglob("*"):
         if path.is_file() and ".git" not in path.parts and ".cache" not in path.parts and path.stat().st_size < 2_000_000:
             if path == pathlib.Path(__file__).resolve():
@@ -509,6 +513,10 @@ def main() -> int:
             for token in forbidden:
                 if token in text:
                     fail(errors, f"secret-like token {token!r} in {path.relative_to(ROOT)}")
+            if "evidence" in path.relative_to(ROOT).parts:
+                for token in evidence_forbidden:
+                    if token in text:
+                        fail(errors, f"credential or absolute user path is forbidden in tracked Evidence: {path.relative_to(ROOT)}")
     incomplete_targets = [target["id"] for target in coverage["targets"] if target["requirement"] == "required" and target["state"] not in ("covered", "excluded", "infeasible")]
     if incomplete_targets and atlas["status"] != "incomplete":
         fail(errors, "status must remain incomplete while required targets are open")

@@ -1,0 +1,38 @@
+dn: dc=atlas,dc=local
+objectClass: dcObject
+objectClass: organization
+dc: atlas
+o: RabbitMQ Atlas Security Runtime
+
+dn: ou=users,dc=atlas,dc=local
+objectClass: organizationalUnit
+ou: users
+
+dn: ou=groups,dc=atlas,dc=local
+objectClass: organizationalUnit
+ou: groups
+
+dn: cn=atlas-allowed,ou=users,dc=atlas,dc=local
+cn: atlas-allowed
+sn: Allowed
+uid: atlas-allowed
+objectClass: inetOrgPerson
+userPassword: atlas-allowed-local-only
+
+dn: cn=atlas-denied,ou=users,dc=atlas,dc=local
+cn: atlas-denied
+sn: Denied
+uid: atlas-denied
+objectClass: inetOrgPerson
+userPassword: atlas-denied-local-only
+
+dn: cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local
+cn: atlas-vhost-users
+objectClass: groupOfNames
+member: cn=atlas-allowed,ou=users,dc=atlas,dc=local
+member: cn=atlas-denied,ou=users,dc=atlas,dc=local
+
+dn: cn=atlas-resource-users,ou=groups,dc=atlas,dc=local
+cn: atlas-resource-users
+objectClass: groupOfNames
+member: cn=atlas-allowed,ou=users,dc=atlas,dc=local

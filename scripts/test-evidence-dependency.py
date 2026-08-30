@@ -6,6 +6,7 @@ from __future__ import annotations
 import copy
 import datetime as dt
 import json
+import os
 import shutil
 import tempfile
 from pathlib import Path
@@ -86,6 +87,105 @@ def main() -> int:
             if not any(fixture["expected_error"] in error for error in errors):
                 raise AssertionError(f"{fixture['id']} was not rejected as expected: {errors[:8]}")
     print("Evidence dependency negative fixtures PASS: input変更/digest-only、rerun漏れ、output退避、Proof/Plan構造縮小を拒否")
+
+    scenario_run = next(run for run in source_graph["runs"] if run["id"].startswith("run.runtime.scenario."))
+    outputs_by_id = {item["id"]: item for item in source_graph["outputs"]}
+    scenario_outputs = [outputs_by_id[identifier] for identifier in scenario_run["output_ids"]]
+    with tempfile.TemporaryDirectory(prefix="rabbitmq-evidence-mtime-") as temporary:
+        test_root = Path(temporary)
+        for output in scenario_outputs:
+            source = ROOT / output["path"]
+            target = test_root / output["path"]
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, target)
+        first = dependency.authoritative_runtime_window(
+            scenario_outputs, test_root, test_root / "evidence"
+        )
+        for output in scenario_outputs:
+            os.utime(test_root / output["path"], ns=(1, 1))
+        second = dependency.authoritative_runtime_window(
+            scenario_outputs, test_root, test_root / "evidence"
+        )
+        assert first == second
+        assert dependency.parse_time(first[0]) <= dependency.parse_time(first[1])
+    print("Evidence dependency mtime determinism PASS: checkout mtime差でもruntime Graph時刻は不変")
+
+    with tempfile.TemporaryDirectory(prefix="rabbitmq-completed-tranche-") as temporary:
+        test_root = Path(temporary)
+        source = ROOT / "evidence/scenarios/closure-plan.json"
+        target = test_root / "evidence/scenarios/closure-plan.json"
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, target)
+        plan = json.loads(target.read_text(encoding="utf-8"))
+        assert plan["completed_tranches"]
+        before = dependency.structure_digest(
+            "scenario-closure-plan", "evidence/scenarios/closure-plan.json",
+            test_root, test_root / "evidence",
+        )
+        plan["completed_tranches"][0]["row_ids"] = plan["completed_tranches"][0]["row_ids"][1:]
+        target.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        after = dependency.structure_digest(
+            "scenario-closure-plan", "evidence/scenarios/closure-plan.json",
+            test_root, test_root / "evidence",
+        )
+        assert before != after
+    print("Evidence dependency completed-tranche structure PASS: completed row membership変更を拒否")
+
+    migration_source = ROOT / "migrations/evidence-dependency-structure-v2.json"
+    closure_source = ROOT / "evidence/scenarios/closure-plan.json"
+    with tempfile.TemporaryDirectory(prefix="rabbitmq-structure-migration-") as temporary:
+        test_root = Path(temporary)
+        migration_target = test_root / "migrations/evidence-dependency-structure-v2.json"
+        closure_target = test_root / "evidence/scenarios/closure-plan.json"
+        migration_target.parent.mkdir(parents=True, exist_ok=True)
+        closure_target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(migration_source, migration_target)
+        shutil.copyfile(closure_source, closure_target)
+        migration = json.loads(migration_target.read_text(encoding="utf-8"))
+        old_digest = migration["from"]["digest"]
+        current_digest = dependency.structure_digest(
+            "scenario-closure-plan", "evidence/scenarios/closure-plan.json",
+            test_root, test_root / "evidence",
+        )
+        assert dependency.migrated_structure_baseline(
+            "structure.scenario-closure-plan", "scenario-closure-plan",
+            "evidence/scenarios/closure-plan.json", old_digest, current_digest,
+            test_root, test_root / "evidence",
+        ) == current_digest
+
+        tampered = copy.deepcopy(migration)
+        tampered["to"]["digest"] = "sha256:" + "0" * 64
+        migration_target.write_text(json.dumps(tampered, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        try:
+            dependency.migrated_structure_baseline(
+                "structure.scenario-closure-plan", "scenario-closure-plan",
+                "evidence/scenarios/closure-plan.json", old_digest, current_digest,
+                test_root, test_root / "evidence",
+            )
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("arbitrary structure digest migration was accepted")
+
+        migration_target.write_text(json.dumps(migration, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        plan = json.loads(closure_target.read_text(encoding="utf-8"))
+        plan["completed_tranches"][0]["row_ids"] = plan["completed_tranches"][0]["row_ids"][1:]
+        closure_target.write_text(json.dumps(plan, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        changed_digest = dependency.structure_digest(
+            "scenario-closure-plan", "evidence/scenarios/closure-plan.json",
+            test_root, test_root / "evidence",
+        )
+        try:
+            dependency.migrated_structure_baseline(
+                "structure.scenario-closure-plan", "scenario-closure-plan",
+                "evidence/scenarios/closure-plan.json", old_digest, changed_digest,
+                test_root, test_root / "evidence",
+            )
+        except ValueError:
+            pass
+        else:
+            raise AssertionError("structure migration with completed-row removal was accepted")
+    print("Evidence dependency structure migration PASS: exact old/new digestのみ許可し任意変更・行削除を拒否")
     return 0
 
 

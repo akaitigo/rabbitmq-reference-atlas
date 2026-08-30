@@ -8,9 +8,9 @@
 
 ## 出力と再実行
 
-Graph生成器は`evidence/raw/*.json`、`evidence/*.evidence.json`、Skill Eval、Reference System gap snapshot、Scenario index、Closure Plan、全Behavior Scenario Proof、`evidence/scenario-runtime/`の専用reportとpacket／log／metric ArtifactをRepository実体から列挙する。実Broker／Client outputは、Command、RabbitMQ 4.3.5、Profile、Runtime identity、`attempts: 1`、全祖先inputの現在Digestをrunへ記録する。入力変更時は影響runの開始が`observed_at`以後でなければ`stale`となり、Graph Digestやbindingだけの更新では閉じない。現行Graphは14 input、2,397 required output、63 runを列挙し、26専用reportと234 Artifact bindingを含む。
+Graph生成器は`evidence/raw/*.json`、`evidence/*.evidence.json`、Skill Eval、Reference System gap snapshot、Scenario index、Closure Plan、全Behavior Scenario Proof、`evidence/scenario-runtime/`の専用reportとpacket／log／metric ArtifactをRepository実体から列挙する。実Broker／Client outputは、Command、RabbitMQ 4.3.5、Profile、Runtime identity、`attempts: 1`、全祖先inputの現在Digestをrunへ記録する。入力変更時は影響runの開始が`observed_at`以後でなければ`stale`となり、Graph Digestやbindingだけの更新では閉じない。現行Graphは14 input、2,445 required output、66 runを列挙し、29専用reportと261 Artifact bindingを含む。
 
-`evidence/scenarios/closure-plan.json`は951 required rowをrisk順、1 tranche最大4 rowで固定する。Scenario Proof indexの2,060 rowと併せ、行削除、順序退避、Variant差替え、tranche肥大化を構造変更として拒否する。現在は26 rowがcompleted、925 rowがplannedである。
+`evidence/scenarios/closure-plan.json`は951 required rowをrisk順、1 tranche最大4 rowで固定する。Scenario Proof indexの2,060 rowと併せ、行削除、順序退避、Variant差替え、tranche肥大化を構造変更として拒否する。現在は29 rowがcompleted、922 rowがplannedである。
 
 ## 検証
 

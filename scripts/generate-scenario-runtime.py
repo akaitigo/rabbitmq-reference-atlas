@@ -5,10 +5,13 @@ from __future__ import annotations
 
 import argparse
 import base64
+import datetime as dt
 import hashlib
 import json
 import os
+import shutil
 import socket
+import struct
 import subprocess
 import urllib.error
 import urllib.parse
@@ -21,8 +24,10 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE_ROOT = Path(os.environ.get("RABBITMQ_EVIDENCE_ROOT", ROOT / "evidence"))
-COMPOSE = ["docker", "compose", "-f", str(ROOT / "environments/compose.yaml")]
+COMPOSE = ["docker", "compose", "-f", "environments/compose.yaml"]
+SECURITY_COMPOSE = ["docker", "compose", "-f", "environments/security-001.compose.yaml"]
 IMAGE_DIGEST = "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+LDAP_IMAGE_DIGEST = "sha256:966fd39ed25813890e9bd57dac56def163bbcfe64967e0bae59ab018d505bd93"
 AMQP091_HEADER = bytes((65, 77, 81, 80, 0, 0, 9, 1))
 AMQP10_SASL_HEADER = bytes((65, 77, 81, 80, 3, 1, 0, 0))
 NODES = (
@@ -30,6 +35,17 @@ NODES = (
     {"variant": "node-2", "service": "rabbitmq-2", "amqp": ("127.0.0.1", 25673), "management": "http://127.0.0.1:35673"},
     {"variant": "node-3", "service": "rabbitmq-3", "amqp": ("127.0.0.1", 25674), "management": "http://127.0.0.1:35674"},
 )
+LDAP_NODES = (
+    {"variant": "node-1", "proof_variant": "node-1-with-ldap", "service": "security-rabbitmq-1", "amqp": ("127.0.0.1", 26672)},
+    {"variant": "node-2", "proof_variant": "node-2-with-ldap", "service": "security-rabbitmq-2", "amqp": ("127.0.0.1", 26673)},
+    {"variant": "node-3", "proof_variant": "node-3-with-ldap", "service": "security-rabbitmq-3", "amqp": ("127.0.0.1", 26674)},
+)
+LDAP_RUNTIME_IDENTITY = {
+    "product": "OpenLDAP",
+    "version": "2.6.10",
+    "image_digest": LDAP_IMAGE_DIGEST,
+    "runtime_kind": "actual-directory",
+}
 
 
 def sha(path: Path) -> str:
@@ -68,12 +84,20 @@ def run(command: list[str]) -> dict[str, Any]:
     return {"command": command, "returncode": result.returncode, "stdout": result.stdout, "stderr": result.stderr}
 
 
-def cluster_status(service: str) -> dict[str, Any]:
-    return run([*COMPOSE, "exec", "-T", service, "rabbitmqctl", "cluster_status", "--formatter", "json"])
+def run_env(command: list[str], environment: dict[str, str]) -> dict[str, Any]:
+    result = subprocess.run(
+        command, cwd=ROOT, capture_output=True, text=True, timeout=60,
+        env={**os.environ, **environment},
+    )
+    return {"command": command, "returncode": result.returncode, "stdout": result.stdout, "stderr": result.stderr}
 
 
-def broker_log(service: str) -> str:
-    result = run([*COMPOSE, "logs", "--no-color", "--tail", "240", service])
+def cluster_status(service: str, compose: list[str] = COMPOSE) -> dict[str, Any]:
+    return run([*compose, "exec", "-T", service, "rabbitmqctl", "cluster_status", "--formatter", "json"])
+
+
+def broker_log(service: str, compose: list[str] = COMPOSE) -> str:
+    result = run([*compose, "logs", "--no-color", "--tail", "240", service])
     if result["returncode"] != 0:
         raise RuntimeError(f"broker log collection failed: {service}: {result['stderr']}")
     if not result["stdout"].strip():
@@ -167,6 +191,79 @@ def amqp10_sasl_mechanisms_probe(endpoint: tuple[str, int]) -> dict[str, Any]:
     return observation
 
 
+def receive_exact(connection: socket.socket, size: int) -> bytes:
+    received = bytearray()
+    while len(received) < size:
+        chunk = connection.recv(size - len(received))
+        if not chunk:
+            raise ConnectionError(f"AMQP peer closed after {len(received)}/{size} bytes")
+        received.extend(chunk)
+    return bytes(received)
+
+
+def receive_amqp_frame(connection: socket.socket) -> bytes:
+    size_prefix = receive_exact(connection, 4)
+    size = struct.unpack(">I", size_prefix)[0]
+    if size < 8 or size > 1024 * 1024:
+        raise ValueError(f"invalid AMQP frame size: {size}")
+    return size_prefix + receive_exact(connection, size - 4)
+
+
+def sasl_plain_init_frame(username: str, password: str) -> bytes:
+    mechanism = b"PLAIN"
+    response = b"\0" + username.encode("utf-8") + b"\0" + password.encode("utf-8")
+    if len(mechanism) > 255 or len(response) > 255:
+        raise ValueError("security-001 SASL PLAIN field exceeds list8/binary8 boundary")
+    fields = bytes((0xA3, len(mechanism))) + mechanism + bytes((0xA0, len(response))) + response
+    body = bytes((0x00, 0x53, 0x41, 0xC0, 1 + len(fields), 2)) + fields
+    return struct.pack(">IBBH", 8 + len(body), 2, 1, 0) + body
+
+
+def sasl_outcome(frame: bytes) -> tuple[int | None, str | None]:
+    descriptor = frame.find(bytes((0x00, 0x53, 0x44)))
+    if descriptor < 0:
+        return None, "sasl-outcome descriptor was not present"
+    encoded_code = frame.find(bytes((0x50,)), descriptor + 3)
+    if encoded_code < 0 or encoded_code + 1 >= len(frame):
+        return None, "sasl-code ubyte was not present"
+    return frame[encoded_code + 1], None
+
+
+def amqp10_plain_auth_probe(endpoint: tuple[str, int], username: str, password: str,
+                            credential_case: str) -> dict[str, Any]:
+    observation: dict[str, Any] = {
+        "transport": "tcp", "protocol": "AMQP 1.0 SASL PLAIN",
+        "endpoint": f"{endpoint[0]}:{endpoint[1]}", "credential_case": credential_case,
+        "sent": {
+            "protocol_header": AMQP10_SASL_HEADER.hex(), "performative": "sasl-init",
+            "mechanism": "PLAIN", "initial_response": "[redacted]",
+        },
+        "received": {"protocol_header": None, "mechanisms_frame_size": None, "outcome_code": None},
+        "error": None,
+    }
+    try:
+        with socket.create_connection(endpoint, timeout=4) as connection:
+            connection.settimeout(5)
+            connection.sendall(AMQP10_SASL_HEADER)
+            header = receive_exact(connection, 8)
+            mechanisms = receive_amqp_frame(connection)
+            if header != AMQP10_SASL_HEADER or b"PLAIN" not in mechanisms:
+                raise ValueError("broker did not negotiate AMQP 1.0 SASL PLAIN")
+            connection.sendall(sasl_plain_init_frame(username, password))
+            outcome_frame = receive_amqp_frame(connection)
+            code, error = sasl_outcome(outcome_frame)
+            if error:
+                raise ValueError(error)
+            observation["received"] = {
+                "protocol_header": header.hex(), "mechanisms_frame_size": len(mechanisms),
+                "advertised_plain": True, "outcome_frame_size": len(outcome_frame), "outcome_code": code,
+                "outcome": {0: "ok", 1: "auth", 2: "sys", 3: "sys-perm", 4: "sys-temp"}.get(code, "unknown"),
+            }
+    except Exception as error:
+        observation["error"] = str(error)
+    return observation
+
+
 def platform_identity() -> str:
     result = run(["docker", "version", "--format", "{{.Server.Version}}"])
     if result["returncode"] != 0 or not result["stdout"].strip():
@@ -179,19 +276,38 @@ def artifact_paths(behavior: str, scenario: str, variant: str) -> tuple[Path, Pa
     return base / "packet.json", base / "log.txt", base / "metric.json"
 
 
+def refresh_legacy_variant_aliases(behavior: str, scenario: str, legacy_variant: str,
+                                   proof_variant: str) -> None:
+    legacy_paths = artifact_paths(behavior, scenario, legacy_variant)
+    proof_paths = artifact_paths(behavior, scenario, proof_variant)
+    for index in range(len(legacy_paths)):
+        legacy_path, proof_path = legacy_paths[index], proof_paths[index]
+        legacy_path.parent.mkdir(parents=True, exist_ok=True)
+        # The first security-001 run published node-* paths before the Closure
+        # Plan ID mismatch was found. Refresh byte-equivalent aliases every run
+        # so atomic publication never deletes that public baseline while
+        # canonical bindings use *-with-ldap.
+        shutil.copyfile(proof_path, legacy_path)
+
+
 def write_variant_artifacts(behavior: str, scenario: str, node: dict[str, Any], packet: dict[str, Any],
-                            queue: str | None = None,
-                            cluster_status_failure_allowed: bool = False) -> dict[str, dict[str, Any]]:
-    packet_path, log_path, metric_path = artifact_paths(behavior, scenario, node["variant"])
+                            queue: str | None = None, cluster_status_failure_allowed: bool = False,
+                            compose: list[str] = COMPOSE) -> dict[str, dict[str, Any]]:
+    proof_variant = node.get("proof_variant", node["variant"])
+    packet_path, log_path, metric_path = artifact_paths(behavior, scenario, proof_variant)
     packet_path.parent.mkdir(parents=True, exist_ok=True)
     write_json(packet_path, packet)
-    log_path.write_text(broker_log(node["service"]), encoding="utf-8")
+    log_path.write_text(broker_log(node["service"], compose), encoding="utf-8")
     metric = {
         "node": node["service"],
-        "management_nodes": management_get(node["management"], "/api/nodes"),
-        "cluster_status": cluster_status(node["service"]),
+        "cluster_status": cluster_status(node["service"], compose),
     }
-    if queue:
+    if node.get("management"):
+        metric["management_nodes"] = management_get(node["management"], "/api/nodes")
+    else:
+        metric["enabled_plugins"] = run([*compose, "exec", "-T", node["service"], "rabbitmq-plugins", "list", "-e", "-m"])
+        metric["runtime_environment"] = run([*compose, "exec", "-T", node["service"], "rabbitmqctl", "environment"])
+    if queue and node.get("management"):
         metric["queue"] = management_get(node["management"], "/api/queues/%2F/" + urllib.parse.quote(queue, safe=""))
     write_json(metric_path, metric)
     if metric["cluster_status"]["returncode"] != 0 and not cluster_status_failure_allowed:
@@ -205,7 +321,8 @@ def write_variant_artifacts(behavior: str, scenario: str, node: dict[str, Any], 
 
 def report(behavior: str, scenario: str, profile: str, source_path: str, client_name: str,
            packets: dict[str, dict[str, Any]], assertions: dict[str, list[str]], queue: str | None = None,
-           unavailable_services: set[str] | None = None) -> None:
+           unavailable_services: set[str] | None = None, nodes: tuple[dict[str, Any], ...] = NODES,
+           compose: list[str] = COMPOSE, runtime_dependencies: list[dict[str, Any]] | None = None) -> None:
     source_file = ROOT / source_path
     harness_file = ROOT / "scripts/generate-scenario-runtime.py"
     source = {"path": source_path, "digest": sha(source_file)}
@@ -214,19 +331,29 @@ def report(behavior: str, scenario: str, profile: str, source_path: str, client_
     execution_id = os.environ.get("RABBITMQ_EVIDENCE_RUN_TOKEN")
     if not execution_id:
         raise RuntimeError("RABBITMQ_EVIDENCE_RUN_TOKEN is required")
+    started_at = os.environ.get("RABBITMQ_EVIDENCE_RERUN_AT")
+    if not started_at:
+        raise RuntimeError("RABBITMQ_EVIDENCE_RERUN_AT is required")
     variants = []
     unavailable_services = unavailable_services or set()
-    for node in NODES:
+    for node in nodes:
+        proof_variant = node.get("proof_variant", node["variant"])
         channels = write_variant_artifacts(
             behavior, scenario, node, packets[node["variant"]], queue,
             cluster_status_failure_allowed=node["service"] in unavailable_services,
+            compose=compose,
         )
+        if proof_variant != node["variant"]:
+            refresh_legacy_variant_aliases(behavior, scenario, node["variant"], proof_variant)
         variants.append({
-            "id": node["variant"], "attempts": 1, "retries": 0,
+            "id": proof_variant, "attempts": 1, "retries": 0,
             "broker": {"runtime_kind": "actual-broker", "product": "RabbitMQ", "version": "4.3.5", "image_digest": IMAGE_DIGEST},
             "client": {"runtime_kind": "actual-client", "name": client_name, "version": source["digest"], "source_digest": source["digest"]},
-            "runtime": {"profile": profile, "platform": platform, "execution_id": execution_id},
-            "oracle": {"id": f"oracle.{behavior}.{scenario}.{node['variant']}", "assertions": assertions[node["variant"]], "passed": True},
+            "runtime": {
+                "profile": profile, "platform": platform, "execution_id": execution_id,
+                "dependencies": runtime_dependencies or [],
+            },
+            "oracle": {"id": f"oracle.{behavior}.{scenario}.{proof_variant}", "assertions": assertions[node["variant"]], "passed": True},
             "source": source, "harness": harness, "artifact_channels": channels,
         })
     output = {
@@ -238,6 +365,11 @@ def report(behavior: str, scenario: str, profile: str, source_path: str, client_
         "status": "passed",
         "attempts": 1,
         "retries": 0,
+        "run_metadata": {
+            "execution_id": execution_id,
+            "started_at": started_at,
+            "completed_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="microseconds").replace("+00:00", "Z"),
+        },
         "source": source,
         "harness": harness,
         "variants": variants,
@@ -510,6 +642,8 @@ def steady_state_tranche() -> None:
         "scripts/generate-scenario-runtime.py", "python-socket-amqp10-sasl-probe", packets, assertions,
     )
 
+    security_001_amqp()
+
     packets, assertions = {}, {}
     for node in NODES:
         overview = management_get(node["management"], "/api/overview")
@@ -564,6 +698,111 @@ def steady_state_tranche() -> None:
         "cli.rabbitmqctl", "rejection", "broker-cluster-3",
         "scripts/generate-scenario-runtime.py", "rabbitmqctl-4.3.5", packets, assertions,
     )
+
+
+def security_001_amqp() -> None:
+    packets, assertions = {}, {}
+    for node in NODES:
+        accepted = amqp10_plain_auth_probe(node["amqp"], "atlas", "atlas-local-only", "valid-local-test-credential")
+        rejected = amqp10_plain_auth_probe(node["amqp"], "atlas", "atlas-invalid-local-only", "invalid-local-test-credential")
+        if accepted["error"] or accepted["received"]["outcome_code"] != 0:
+            raise RuntimeError(f"AMQP 1.0 valid credential oracle failed: {node['service']}: {accepted}")
+        if rejected["error"] or rejected["received"]["outcome_code"] != 1:
+            raise RuntimeError(f"AMQP 1.0 invalid credential oracle failed: {node['service']}: {rejected}")
+        packets[node["variant"]] = {"accepted": accepted, "rejected": rejected}
+        assertions[node["variant"]] = [
+            "AMQP 1.0 SASL PLAINの正しいlocal test Credentialがsasl-code okを返した",
+            "同一userの誤Credentialがsasl-code authで拒否された",
+            "SASL initial-responseをEvidenceへ保存していない",
+        ]
+    report(
+        "amqp10.authentication-options", "security", "protocol-amqp10",
+        "scripts/generate-scenario-runtime.py", "python-socket-amqp10-sasl-plain-client", packets, assertions,
+    )
+
+
+def ldap_directory_probe(base_dn: str, search_filter: str) -> dict[str, Any]:
+    password = "atlas-directory-admin-local-only"
+    result = run([
+        *SECURITY_COMPOSE, "exec", "-T", "ldap-directory", "ldapsearch", "-LLL", "-x",
+        "-H", "ldap://127.0.0.1:1389", "-D", "cn=admin,dc=atlas,dc=local", "-w", password,
+        "-b", base_dn, search_filter, "dn",
+    ])
+    if result["returncode"] != 0:
+        raise RuntimeError(f"OpenLDAP directory probe failed: {result['stderr'].replace(password, '[redacted]')}")
+    dns = [line.removeprefix("dn: ") for line in result["stdout"].splitlines() if line.startswith("dn: ")]
+    if not dns:
+        raise RuntimeError(f"OpenLDAP directory probe returned no entries: {base_dn} {search_filter}")
+    return {
+        "runtime": LDAP_RUNTIME_IDENTITY,
+        "endpoint": "ldap://ldap-directory:1389",
+        "bind_dn": "cn=admin,dc=atlas,dc=local",
+        "credential": "[redacted]",
+        "base_dn": base_dn,
+        "search_filter": search_filter,
+        "entry_dns": dns,
+        "returncode": result["returncode"],
+    }
+
+
+def ldap_security_tranche() -> None:
+    endpoints = ",".join(f"{node['amqp'][0]}:{node['amqp'][1]}" for node in LDAP_NODES)
+    environment = {
+        "RABBITMQ_LDAP_ALLOWED_USER": "atlas-allowed",
+        "RABBITMQ_LDAP_ALLOWED_PASSWORD": "atlas-allowed-local-only",
+        "RABBITMQ_LDAP_DENIED_USER": "atlas-denied",
+        "RABBITMQ_LDAP_DENIED_PASSWORD": "atlas-denied-local-only",
+        "RABBITMQ_LDAP_BAD_PASSWORD": "atlas-invalid-local-only",
+    }
+    definitions = (
+        (
+            "ldap.authentication", "authentication", "ou=users,dc=atlas,dc=local", "(uid=*)",
+            [
+                "resource group userのLDAP Credentialで実Broker接続が成功した",
+                "同一LDAP userの誤Credentialが実Brokerで拒否された",
+                "Directory user DNを同じ実行のOpenLDAP queryで確認した",
+            ],
+        ),
+        (
+            "ldap.authorization", "authorization", "ou=groups,dc=atlas,dc=local", "(cn=atlas-*-users)",
+            [
+                "vhost groupの両userがLDAP認証後に実Brokerへ接続した",
+                "resource group所属userだけがqueue宣言を許可された",
+                "resource group非所属userの越権queue宣言が拒否された",
+            ],
+        ),
+    )
+    for behavior, mode, base_dn, search_filter, oracle_assertions in definitions:
+        client = run_env(
+            ["go", "run", "./cmd/rmq-ldap-security", "--mode", mode, "--endpoints", endpoints],
+            environment,
+        )
+        if client["returncode"] != 0:
+            raise RuntimeError(f"{behavior} client failed: {client['stderr']}")
+        try:
+            result = json.loads(client["stdout"])
+        except json.JSONDecodeError as error:
+            raise RuntimeError(f"{behavior} client output was not JSON: {client['stdout']}") from error
+        checks = result.get("checks", [])
+        if result.get("passed") is not True or len(checks) != 3:
+            raise RuntimeError(f"{behavior} did not pass all three variants: {result}")
+        by_variant = {item["variant"]: item for item in checks}
+        packets, assertions = {}, {}
+        for node in LDAP_NODES:
+            check = by_variant.get(node["variant"])
+            if not check or check.get("passed") is not True:
+                raise RuntimeError(f"{behavior} variant failed: {node['variant']}: {check}")
+            packets[node["variant"]] = {
+                "transport": "AMQP 0-9-1 with LDAP backend",
+                "client_result": check,
+                "directory_result": ldap_directory_probe(base_dn, search_filter),
+            }
+            assertions[node["variant"]] = [*oracle_assertions, "Client outputにCredential値を保存していない"]
+        report(
+            behavior, "security", "plugin-ldap-directory", "cmd/rmq-ldap-security/main.go",
+            "rmq-ldap-security", packets, assertions, nodes=LDAP_NODES, compose=SECURITY_COMPOSE,
+            runtime_dependencies=[LDAP_RUNTIME_IDENTITY],
+        )
 
 
 def cluster_connection_failure(stopped_service: str) -> None:
@@ -767,6 +1006,7 @@ def main() -> int:
     node_failure = sub.add_parser("node-failure")
     node_failure.add_argument("--stopped-service", required=True, choices=[node["service"] for node in NODES])
     sub.add_parser("node-recovery")
+    sub.add_parser("security-001-ldap")
     args = parser.parse_args()
     if args.command == "protocols":
         protocols()
@@ -778,6 +1018,8 @@ def main() -> int:
         partition_recovery(args.queue)
     elif args.command == "node-failure":
         cluster_connection_failure(args.stopped_service)
+    elif args.command == "security-001-ldap":
+        ldap_security_tranche()
     else:
         cluster_connection_recovery()
     return 0

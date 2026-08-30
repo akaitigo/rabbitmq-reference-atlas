@@ -1,0 +1,12 @@
+schemaVersion: 1
+id: rabbitmq-reference-atlas
+classification: reference-implementation
+lifecycle: active
+sensitivity: public
+hostClass: managed-development-mac
+commands:
+  verify: make check
+externalWrites:
+  github: allowed
+  cloud: denied
+  existingRepositories: denied

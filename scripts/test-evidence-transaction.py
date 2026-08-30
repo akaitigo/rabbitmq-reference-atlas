@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import json
 import os
 import shutil
 import subprocess
@@ -124,9 +125,13 @@ owned_patterns = ("raw/*.json", "*.evidence.json", "dependency-graph.json", "ref
                   "scenarios/behaviors/**/*.proof.json", "scenario-runtime/**/*.json", "scenario-runtime/**/*.txt")
 owned_before = {item.relative_to(live_evidence).as_posix(): sha(item) for pattern in owned_patterns
                 for item in live_evidence.glob(pattern)}
-with tempfile.TemporaryDirectory() as directory:
-    staged_evidence = Path(directory) / "evidence"
+with tempfile.TemporaryDirectory(prefix=".evidence-staging-test-", dir=repository_root) as directory:
+    # 実transactionと同様、Evidence root自体をRepository直下の一時directoryにする。
+    staged_evidence = Path(directory)
     shutil.copytree(live_evidence / "raw", staged_evidence / "raw", copy_function=shutil.copy2)
+    # Python producerだけを隔離検証するため、実Brokerが既に生成したruntime inputは
+    # liveへ書き戻さずstagingへ複製する。Closure Plan構造はこのinput集合に依存する。
+    shutil.copytree(live_evidence / "scenario-runtime", staged_evidence / "scenario-runtime", copy_function=shutil.copy2)
     environment = os.environ.copy()
     environment["RABBITMQ_EVIDENCE_ROOT"] = str(staged_evidence)
     environment["RABBITMQ_EVIDENCE_ONLY"] = "1"
@@ -138,7 +143,24 @@ with tempfile.TemporaryDirectory() as directory:
         result = subprocess.run(arguments, cwd=repository_root,
                                 env=environment, capture_output=True, text=True)
         if result.returncode != 0:
-            raise AssertionError(f"staging producer failed: {script}\nstdout={result.stdout}\nstderr={result.stderr}")
+            diagnostics = ""
+            graph_path = staged_evidence / "dependency-graph.json"
+            if graph_path.is_file():
+                diagnostics = "\ngraph=" + graph_path.read_text(encoding="utf-8")[-3000:]
+            closure_path = staged_evidence / "scenarios/closure-plan.json"
+            if closure_path.is_file():
+                closure = json.loads(closure_path.read_text(encoding="utf-8"))
+                diagnostics += (
+                    f"\nclosure_summary={closure.get('summary')}"
+                    f"\ncompleted_tranches={closure.get('completed_tranches')}"
+                )
+            proof_path = staged_evidence / "scenarios/behaviors/amqp10.authentication-options/security.proof.json"
+            if proof_path.is_file():
+                proof = json.loads(proof_path.read_text(encoding="utf-8"))
+                diagnostics += f"\nsecurity_proof_gaps={proof.get('scenario_gap_ids')}"
+            raise AssertionError(
+                f"staging producer failed: {script}\nstdout={result.stdout}\nstderr={result.stderr}{diagnostics}"
+            )
     assert len(list(staged_evidence.glob("*.evidence.json"))) == len(list(live_evidence.glob("*.evidence.json")))
     assert len(list((staged_evidence / "scenarios/behaviors").rglob("*.proof.json"))) == 2060
     assert (staged_evidence / "dependency-graph.json").is_file()

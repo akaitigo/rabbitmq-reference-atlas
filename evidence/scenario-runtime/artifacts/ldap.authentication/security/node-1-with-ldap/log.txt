@@ -1,0 +1,240 @@
+security-rabbitmq-1-1  | 2026-08-30 17:21:23.745542+00:00 [info] <0.209.0> Running boot step rabbit_registry defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:23.746419+00:00 [info] <0.209.0> Running boot step database defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:23.748280+00:00 [info] <0.209.0> Peer discovery: configured backend: rabbit_peer_discovery_classic_config[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:23.748925+00:00 [info] <0.539.0> Feature flags: starting an unclustered node for the first time: all stable feature flags will be enabled by default[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:23.750538+00:00 [notice] <0.539.0> Feature flags: attempt to enable `track_qq_members_uids`...[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:23.764273+00:00 [notice] <0.539.0> Feature flags: attempt to enable `rabbitmq_4.3.0`...[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:23.778405+00:00 [notice] <0.539.0> Feature flags: `rabbitmq_4.3.0` enabled[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:23.798753+00:00 [notice] <0.539.0> Feature flags: `track_qq_members_uids` enabled[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:23.798924+00:00 [notice] <0.539.0> Feature flags: attempt to enable `topic_binding_projection_v4`...[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:25.456787+00:00 [notice] <0.539.0> Feature flags: `topic_binding_projection_v4` enabled[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:25.458401+00:00 [notice] <0.539.0> Feature flags: attempt to enable `tie_binding_to_dest_with_keep_while_cond`...[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:25.670191+00:00 [notice] <0.539.0> Feature flags: `tie_binding_to_dest_with_keep_while_cond` enabled[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:25.670248+00:00 [notice] <0.539.0> Feature flags: attempt to enable `topic_binding_projection_v5`...[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:25.699538+00:00 [notice] <0.539.0> Feature flags: `topic_binding_projection_v5` enabled[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:25.699808+00:00 [info] <0.209.0> DB: virgin node -> run peer discovery[0m
+security-rabbitmq-1-1  | =PROGRESS REPORT==== 30-Aug-2026::17:21:26.482943 ===
+security-rabbitmq-1-1  |     supervisor: {local,inet_gethost_native_sup}
+security-rabbitmq-1-1  |     started: [{pid,<0.96.0>},{mfa,{inet_gethost_native,init,[[]]}}]
+security-rabbitmq-1-1  |
+security-rabbitmq-1-1  | =PROGRESS REPORT==== 30-Aug-2026::17:21:26.485819 ===
+security-rabbitmq-1-1  |     supervisor: {local,kernel_safe_sup}
+security-rabbitmq-1-1  |     started: [{pid,<0.95.0>},
+security-rabbitmq-1-1  |               {id,inet_gethost_native_sup},
+security-rabbitmq-1-1  |               {mfargs,{inet_gethost_native,start_link,[]}},
+security-rabbitmq-1-1  |               {restart_type,temporary},
+security-rabbitmq-1-1  |               {significant,false},
+security-rabbitmq-1-1  |               {shutdown,1000},
+security-rabbitmq-1-1  |               {child_type,worker}]
+security-rabbitmq-1-1  |
+security-rabbitmq-1-1  | 2026-08-30 17:21:26.553430+00:00 [info] <0.209.0> Peer discovery: node 'rabbit@security-rabbitmq-3' selected for auto-clustering but its DB layer is not ready; waiting before retrying...[0m
+security-rabbitmq-1-1  | =PROGRESS REPORT==== 30-Aug-2026::17:21:28.033659 ===
+security-rabbitmq-1-1  |     supervisor: {local,inet_gethost_native_sup}
+security-rabbitmq-1-1  |     started: [{pid,<0.96.0>},{mfa,{inet_gethost_native,init,[[]]}}]
+security-rabbitmq-1-1  |
+security-rabbitmq-1-1  | =PROGRESS REPORT==== 30-Aug-2026::17:21:28.041235 ===
+security-rabbitmq-1-1  |     supervisor: {local,kernel_safe_sup}
+security-rabbitmq-1-1  |     started: [{pid,<0.95.0>},
+security-rabbitmq-1-1  |               {id,inet_gethost_native_sup},
+security-rabbitmq-1-1  |               {mfargs,{inet_gethost_native,start_link,[]}},
+security-rabbitmq-1-1  |               {restart_type,temporary},
+security-rabbitmq-1-1  |               {significant,false},
+security-rabbitmq-1-1  |               {shutdown,1000},
+security-rabbitmq-1-1  |               {child_type,worker}]
+security-rabbitmq-1-1  |
+security-rabbitmq-1-1  | 2026-08-30 17:21:28.094697+00:00 [info] <0.209.0> Peer discovery: node 'rabbit@security-rabbitmq-3' selected for auto-clustering[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:28.097461+00:00 [info] <0.209.0> Peer discovery: will try to lock with peer discovery backend rabbit_peer_discovery_classic_config[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.114551+00:00 [info] <0.209.0> DB: checking if `rabbit@security-rabbitmq-1` can join cluster using remote node `rabbit@security-rabbitmq-3`[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:29.115199+00:00 [notice] <0.209.0> Feature flags: checking nodes `rabbit@security-rabbitmq-1` and `rabbit@security-rabbitmq-3` compatibility...[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:29.120194+00:00 [notice] <0.209.0> Feature flags: nodes `rabbit@security-rabbitmq-1` and `rabbit@security-rabbitmq-3` are compatible[0m
+security-rabbitmq-1-1  | [38;5;214m2026-08-30 17:21:29.125758+00:00 [warning] <0.536.0> RabbitMQ metadata store: worker exited with shutdown[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.142168+00:00 [info] <0.209.0> ra: starting system coordination[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.142267+00:00 [info] <0.209.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@security-rabbitmq-1/coordination/rabbit@security-rabbitmq-1[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.143801+00:00 [info] <0.705.0> ra_coordination_log_ets: in system coordination initialising. Mem table opts: [set,{write_concurrency,auto},public,{compressed,false}][0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.147589+00:00 [info] <0.709.0> ra system 'coordination' running pre init for 1 registered servers[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.150116+00:00 [info] <0.710.0> ra: meta data store initialised for system coordination. 1 record(s) recovered[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:29.150562+00:00 [notice] <0.718.0> WAL in coordination initialising with name ra_coordination_log_wal[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:29.788392+00:00 [notice] <0.723.0> RabbitMQ metadata store: candidate -> leader in term: 2 machine version: 3, last applied 18[0m
+security-rabbitmq-1-1  | [38;5;214m2026-08-30 17:21:29.793167+00:00 [warning] <0.723.0> RabbitMQ metadata store: worker exited with shutdown[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.793571+00:00 [info] <0.209.0> Deleting server rabbitmq_metadata and its data directory.[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.814048+00:00 [info] <0.209.0> ra: starting system coordination[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.814504+00:00 [info] <0.209.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@security-rabbitmq-1/coordination/rabbit@security-rabbitmq-1[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.815248+00:00 [info] <0.209.0> ra: starting system quorum_queues[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.815278+00:00 [info] <0.209.0> starting Ra system: quorum_queues in directory: /var/lib/rabbitmq/mnesia/rabbit@security-rabbitmq-1/quorum/rabbit@security-rabbitmq-1[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.816569+00:00 [info] <0.726.0> ra_log_ets: in system quorum_queues initialising. Mem table opts: [set,{write_concurrency,auto},public,{compressed,true}][0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.820304+00:00 [info] <0.730.0> ra system 'quorum_queues' running pre init for 0 registered servers[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.824734+00:00 [info] <0.731.0> ra: meta data store initialised for system quorum_queues. 0 record(s) recovered[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:29.825922+00:00 [notice] <0.739.0> WAL in quorum_queues initialising with name ra_log_wal[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.833213+00:00 [info] <0.741.0> ra_system_recover: ra system 'quorum_queues' server recovery strategy rabbit_quorum_queue:system_recover[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.833779+00:00 [info] <0.741.0> [rabbit_quorum_queue:system_recover/1] rabbit not booted, skipping queue recovery[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.834731+00:00 [info] <0.209.0> ra: starting system coordination[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.835220+00:00 [info] <0.209.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@security-rabbitmq-1/coordination/rabbit@security-rabbitmq-1[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:29.864750+00:00 [notice] <0.743.0> RabbitMQ metadata store: candidate -> leader in term: 1 machine version: 3, last applied 0[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.865034+00:00 [info] <0.209.0> DB: joining cluster using remote nodes:[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.865034+00:00 [info] <0.209.0> ['rabbit@security-rabbitmq-2','rabbit@security-rabbitmq-3'][0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.867569+00:00 [info] <0.209.0> Khepri clustering: Attempt to add node 'rabbit@security-rabbitmq-1' to cluster ['rabbit@security-rabbitmq-2','rabbit@security-rabbitmq-3'] through node 'rabbit@security-rabbitmq-2'[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.867861+00:00 [info] <0.209.0> ra: starting system coordination[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.867974+00:00 [info] <0.209.0> starting Ra system: coordination in directory: /var/lib/rabbitmq/mnesia/rabbit@security-rabbitmq-1/coordination/rabbit@security-rabbitmq-1[0m
+security-rabbitmq-1-1  | [38;5;214m2026-08-30 17:21:29.871593+00:00 [warning] <0.743.0> RabbitMQ metadata store: worker exited with shutdown[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.871690+00:00 [info] <0.209.0> Deleting server rabbitmq_metadata and its data directory.[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:29.903949+00:00 [info] <0.209.0> Khepri clustering: Node 'rabbit@security-rabbitmq-1' successfully added to cluster "rabbitmq_metadata" through node 'rabbit@security-rabbitmq-2'[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.065245+00:00 [info] <0.746.0> RabbitMQ metadata store: detected a new leader {rabbitmq_metadata,'rabbit@security-rabbitmq-3'} in term 1[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.068595+00:00 [info] <0.209.0> Peer discovery: this node (rabbit@security-rabbitmq-1) successfully joined node 'rabbit@security-rabbitmq-3' cluster[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.068702+00:00 [info] <0.209.0> Peer discovery: will try to unlock with peer discovery backend rabbit_peer_discovery_classic_config[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:30.070552+00:00 [notice] <0.209.0> Found the following metadata store members: [{rabbitmq_metadata,[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:30.070552+00:00 [notice] <0.209.0>                                               'rabbit@security-rabbitmq-1'},[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:30.070552+00:00 [notice] <0.209.0>                                              {rabbitmq_metadata,[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:30.070552+00:00 [notice] <0.209.0>                                               'rabbit@security-rabbitmq-2'},[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:30.070552+00:00 [notice] <0.209.0>                                              {rabbitmq_metadata,[0m
+security-rabbitmq-1-1  | [38;5;87m2026-08-30 17:21:30.070552+00:00 [notice] <0.209.0>                                               'rabbit@security-rabbitmq-3'}][0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.120466+00:00 [info] <0.209.0> Running boot step tracking_metadata_store defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.120679+00:00 [info] <0.762.0> Setting up a table for connection tracking on this node: tracked_connection[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.120712+00:00 [info] <0.762.0> Setting up a table for per-vhost connection counting on this node: tracked_connection_per_vhost[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.120759+00:00 [info] <0.762.0> Setting up a table for per-user connection counting on this node: tracked_connection_per_user[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.120825+00:00 [info] <0.762.0> Setting up a table for channel tracking on this node: tracked_channel[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.120859+00:00 [info] <0.762.0> Setting up a table for channel tracking on this node: tracked_channel_per_user[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.121115+00:00 [info] <0.209.0> Running boot step networking_metadata_store defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.121195+00:00 [info] <0.209.0> Running boot step feature_flags defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.121438+00:00 [info] <0.209.0> Running boot step rabbit_alarm defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.130683+00:00 [info] <0.767.0> Memory high watermark set to 4760 MiB (4991542886 bytes) of 7933 MiB (8319238144 bytes) total[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.139685+00:00 [info] <0.769.0> Enabling free disk space monitoring (disk free space: 268251136, total memory: 8319238144)[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.139797+00:00 [info] <0.769.0> Disk free limit set to 50MB[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.149220+00:00 [info] <0.209.0> Running boot step auth_backend_plugins_check defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527121+00:00 [info] <0.209.0> Running boot step codec_correctness_check defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527228+00:00 [info] <0.209.0> Running boot step external_infrastructure defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527268+00:00 [info] <0.209.0> Running boot step rabbit_event defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527413+00:00 [info] <0.209.0> Running boot step rabbit_auth_mechanism_amqplain defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527490+00:00 [info] <0.209.0> Running boot step rabbit_auth_mechanism_anonymous defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527643+00:00 [info] <0.209.0> Running boot step rabbit_auth_mechanism_cr_demo defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527795+00:00 [info] <0.209.0> Running boot step rabbit_auth_mechanism_plain defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527862+00:00 [info] <0.209.0> Running boot step rabbit_exchange_type_direct defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527917+00:00 [info] <0.209.0> Running boot step rabbit_exchange_type_fanout defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.527970+00:00 [info] <0.209.0> Running boot step rabbit_exchange_type_headers defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.528014+00:00 [info] <0.209.0> Running boot step rabbit_exchange_type_local_random defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.528101+00:00 [info] <0.209.0> Running boot step rabbit_exchange_type_modulus_hash defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.528151+00:00 [info] <0.209.0> Running boot step rabbit_exchange_type_topic defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.528194+00:00 [info] <0.209.0> Running boot step rabbit_priority_queue defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.528266+00:00 [info] <0.209.0> Priority queues enabled, real BQ is rabbit_variable_queue[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.528336+00:00 [info] <0.209.0> Running boot step kernel_ready defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.528351+00:00 [info] <0.209.0> Running boot step ldap_pool defined by app rabbitmq_auth_backend_ldap[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.528387+00:00 [info] <0.538.0> Starting worker pool 'ldap_pool' with 64 processes in it[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.532063+00:00 [info] <0.209.0> Running boot step pg_local_amqp_connection defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.547632+00:00 [info] <0.209.0> Running boot step pg_local_amqp_session defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.547941+00:00 [info] <0.209.0> Running boot step rabbit_sysmon_minder defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.548051+00:00 [info] <0.209.0> Running boot step rabbit_epmd_monitor defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.558438+00:00 [info] <0.843.0> epmd monitor knows us, inter-node communication (distribution) port: 25672[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.558794+00:00 [info] <0.209.0> Running boot step guid_generator defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.559147+00:00 [info] <0.209.0> Running boot step rabbit_node_monitor defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.559271+00:00 [info] <0.847.0> Starting rabbit_node_monitor[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.559314+00:00 [info] <0.209.0> Running boot step delegate_sup defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.559669+00:00 [info] <0.209.0> Running boot step rabbit_chaos defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.559712+00:00 [info] <0.209.0> Running boot step rabbit_fifo_dlx_sup defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.559750+00:00 [info] <0.209.0> Running boot step core_initialized defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.559937+00:00 [info] <0.209.0> Running boot step rabbit_channel_tracking_handler defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.561143+00:00 [info] <0.209.0> Running boot step rabbit_classic_queue_type defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.561216+00:00 [info] <0.209.0> Running boot step rabbit_classic_queue defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.561246+00:00 [info] <0.209.0> Running boot step rabbit_connection_tracking_handler defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.561264+00:00 [info] <0.209.0> Running boot step rabbit_definitions_hashing defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.561288+00:00 [info] <0.209.0> Running boot step rabbit_exchange_parameters defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.573892+00:00 [info] <0.209.0> Running boot step rabbit_policies defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.577549+00:00 [info] <0.209.0> Running boot step rabbit_quorum_queue_type defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.577688+00:00 [info] <0.209.0> Running boot step rabbit_stream_queue defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.577723+00:00 [info] <0.209.0> Running boot step rabbit_policy defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.577758+00:00 [info] <0.209.0> Running boot step rabbit_quorum_event_subscriber defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.577834+00:00 [info] <0.209.0> Running boot step rabbit_quorum_queue defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.578533+00:00 [info] <0.209.0> Running boot step quorum_memory_alarm_handler defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.578574+00:00 [info] <0.209.0> Running boot step rabbit_stream_coordinator defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.578995+00:00 [info] <0.209.0> Running boot step rabbit_vhost_limit defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.579030+00:00 [info] <0.209.0> Running boot step recovery defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.579588+00:00 [info] <0.871.0> Making sure data directory '/var/lib/rabbitmq/mnesia/rabbit@security-rabbitmq-1/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L' for vhost '/' exists[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.600082+00:00 [info] <0.871.0> Setting segment_entry_count for vhost '/' with 0 queues to '2048'[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.763558+00:00 [info] <0.871.0> Starting message stores for vhost '/'[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.765644+00:00 [info] <0.871.0> Started message store of type transient for vhost '/'[0m
+security-rabbitmq-1-1  | [38;5;214m2026-08-30 17:21:30.853524+00:00 [warning] <0.884.0> Message store "628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent": rebuilding indices from scratch[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.854974+00:00 [info] <0.871.0> Started message store of type persistent for vhost '/'[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.855342+00:00 [info] <0.871.0> Recovering 0 queues of type rabbit_classic_queue took 105ms[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.855841+00:00 [info] <0.871.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.855913+00:00 [info] <0.871.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856006+00:00 [info] <0.209.0> Running boot step prevent_startup_if_node_was_reset defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856023+00:00 [info] <0.209.0> Running boot step empty_db_check defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856103+00:00 [info] <0.209.0> Will not seed default virtual host and user: have definitions to load...[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856124+00:00 [info] <0.209.0> Running boot step rabbit_observer_cli defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856166+00:00 [info] <0.209.0> Running boot step rabbit_core_metrics_gc defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856328+00:00 [info] <0.209.0> Running boot step background_gc defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856392+00:00 [info] <0.209.0> Running boot step rabbit_observer_cli_classic_queues defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856425+00:00 [info] <0.209.0> Running boot step rabbit_observer_cli_quorum_queues defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856460+00:00 [info] <0.209.0> Running boot step routing_ready defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856472+00:00 [info] <0.209.0> Running boot step pre_flight defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856481+00:00 [info] <0.209.0> Running boot step notify_cluster defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856501+00:00 [info] <0.209.0> Running boot step networking defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856515+00:00 [info] <0.209.0> Running boot step rabbit_quorum_queue_periodic_membership_reconciliation defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856554+00:00 [info] <0.209.0> Running boot step definition_import_worker_pool defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856576+00:00 [info] <0.538.0> Starting worker pool 'definition_import_pool' with 12 processes in it[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856744+00:00 [info] <0.209.0> Running boot step cluster_name defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856780+00:00 [info] <0.209.0> Running boot step virtual_host_reconciliation defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.856699+00:00 [info] <0.847.0> rabbit on node 'rabbit@security-rabbitmq-2' up[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.870155+00:00 [info] <0.847.0> rabbit on node 'rabbit@security-rabbitmq-3' up[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.894801+00:00 [info] <0.209.0> Running boot step direct_client defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.894980+00:00 [info] <0.209.0> Running boot step logger_exchange defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.912533+00:00 [info] <0.209.0> Running boot step cluster_tags defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.921099+00:00 [info] <0.209.0> Running boot step queue_type_registrations defined by app rabbit[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.921308+00:00 [info] <0.918.0> Resetting node maintenance status[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:30.929110+00:00 [info] <0.918.0> Ready to start client connection listeners[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:31.345318+00:00 [info] <0.939.0> started TCP listener on [::]:5672[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:31.766989+00:00 [info] <0.918.0> Server startup complete; 1 plugins started.[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:31.766989+00:00 [info] <0.918.0>  * rabbitmq_auth_backend_ldap[0m
+security-rabbitmq-1-1  |  completed with 1 plugins.
+security-rabbitmq-1-1  | 2026-08-30 17:21:31.937696+00:00 [info] <0.10.0> Time to start RabbitMQ: 26808 ms[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.011962+00:00 [info] <0.1037.0> accepting AMQP connection 192.168.80.1:64102 -> 192.168.80.5:5672[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.021180+00:00 [info] <0.1037.0> LDAP CHECK: login for atlas-allowed[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.021332+00:00 [info] <0.1037.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.021332+00:00 [info] <0.1037.0>             [{username,<<"atlas-allowed">>}][0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.022054+00:00 [info] <0.1037.0>         LDAP DN template result: "cn=atlas-allowed,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.124622+00:00 [info] <0.774.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.124855+00:00 [info] <0.774.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.124855+00:00 [info] <0.774.0>             [{username,<<"atlas-allowed">>}][0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.125034+00:00 [info] <0.774.0>         LDAP DN template result: "cn=atlas-allowed,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.125165+00:00 [info] <0.774.0>     LDAP CHECK: does atlas-allowed have tag administrator?[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.125280+00:00 [info] <0.774.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.125438+00:00 [info] <0.774.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.125516+00:00 [info] <0.774.0>     LDAP DECISION: does atlas-allowed have tag administrator? false[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.125618+00:00 [info] <0.774.0>     LDAP CHECK: does atlas-allowed have tag management?[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.125992+00:00 [info] <0.774.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.126187+00:00 [info] <0.774.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.126308+00:00 [info] <0.774.0>     LDAP DECISION: does atlas-allowed have tag management? false[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.126425+00:00 [info] <0.774.0>     LDAP CHECK: does atlas-allowed have tag policymaker?[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.126497+00:00 [info] <0.774.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.126602+00:00 [info] <0.774.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.127036+00:00 [info] <0.774.0>     LDAP DECISION: does atlas-allowed have tag policymaker? false[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.127154+00:00 [info] <0.774.0>     LDAP CHECK: does atlas-allowed have tag monitoring?[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.127236+00:00 [info] <0.774.0>     LDAP evaluating query: {constant,false}[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.127294+00:00 [info] <0.774.0>     LDAP evaluated constant: false[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.127367+00:00 [info] <0.774.0>     LDAP DECISION: does atlas-allowed have tag monitoring? false[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.127499+00:00 [info] <0.1037.0> LDAP DECISION: login for atlas-allowed: ok[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.127680+00:00 [info] <0.1037.0> User 'atlas-allowed' authenticated successfully[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.130130+00:00 [info] <0.1037.0> LDAP CHECK: access to vhost "/" for "atlas-allowed"[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131001+00:00 [info] <0.774.0>     LDAP bind succeeded: cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131045+00:00 [info] <0.774.0>     LDAP evaluating query: {in_group,"cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local"}[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131129+00:00 [info] <0.774.0>     LDAP evaluating query: {in_group,"cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local",[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131129+00:00 [info] <0.774.0>                                      "member"}[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131286+00:00 [info] <0.774.0>         LDAP filling DN template "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local" with[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131286+00:00 [info] <0.774.0>             [{username,<<"atlas-allowed">>},[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131286+00:00 [info] <0.774.0>              {user_dn,"cn=atlas-allowed,ou=users,dc=atlas,dc=local"},[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131286+00:00 [info] <0.774.0>              {vhost,<<"/">>},[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131286+00:00 [info] <0.774.0>              {peeraddr,{0,0,0,0,0,65535,49320,20481}}][0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.131928+00:00 [info] <0.774.0>         LDAP DN template result: "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local"[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.133772+00:00 [info] <0.774.0>     LDAP evaluated in_group for "cn=atlas-vhost-users,ou=groups,dc=atlas,dc=local": true[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.133961+00:00 [info] <0.1037.0> LDAP DECISION: access to vhost "/" for "atlas-allowed": ok (ok)[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.134487+00:00 [info] <0.1037.0> connection 192.168.80.1:64102 -> 192.168.80.5:5672: user 'atlas-allowed' authenticated and granted access to vhost '/'[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.135797+00:00 [info] <0.1037.0> closing AMQP connection (192.168.80.1:64102 -> 192.168.80.5:5672, vhost: '/', user: 'atlas-allowed', duration: '124ms')[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.137178+00:00 [info] <0.1051.0> accepting AMQP connection 192.168.80.1:64108 -> 192.168.80.5:5672[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.139658+00:00 [info] <0.1051.0> LDAP CHECK: login for atlas-allowed[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.139732+00:00 [info] <0.1051.0>         LDAP filling DN template "cn=${username},ou=users,dc=atlas,dc=local" with[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.139732+00:00 [info] <0.1051.0>             [{username,<<"atlas-allowed">>}][0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.139835+00:00 [info] <0.1051.0>         LDAP DN template result: "cn=atlas-allowed,ou=users,dc=atlas,dc=local"[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.140847+00:00 [info] <0.774.0>     LDAP bind returned "invalid credentials": cn=xxxx,ou=xxxx,dc=xxxx,dc=xxxx[0m
+security-rabbitmq-1-1  | 2026-08-30 17:21:58.140927+00:00 [info] <0.1051.0> LDAP DECISION: login for atlas-allowed: denied[0m
+security-rabbitmq-1-1  | [38;5;214m2026-08-30 17:21:58.140975+00:00 [warning] <0.1051.0> User 'atlas-allowed' failed to authenticate: cn=atlas-allowed,ou=users,dc=atlas,dc=local[0m
+security-rabbitmq-1-1  | [38;5;160m2026-08-30 17:21:58.141065+00:00 [error] <0.1051.0> Error on AMQP connection <0.1051.0> (192.168.80.1:64108 -> 192.168.80.5:5672, state: starting):[0m
+security-rabbitmq-1-1  | [38;5;160m2026-08-30 17:21:58.141065+00:00 [error] <0.1051.0> PLAIN login refused: cn=atlas-allowed,ou=users,dc=atlas,dc=local[0m
+security-rabbitmq-1-1  | 2026-08-30 17:22:01.144883+00:00 [info] <0.1051.0> closing AMQP connection (192.168.80.1:64108 -> 192.168.80.5:5672, duration: '3s')[0m
