@@ -1,0 +1,26 @@
+{
+  "transport": "container-exec",
+  "command": [
+    "docker",
+    "compose",
+    "-f",
+    "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+    "exec",
+    "-T",
+    "rabbitmq-1",
+    "rabbitmq-plugins",
+    "list",
+    "-e",
+    "-m"
+  ],
+  "returncode": 0,
+  "stdout": "Listing plugins with pattern \".*\" ...\nrabbitmq_management\nrabbitmq_management_agent\nrabbitmq_prometheus\nrabbitmq_web_dispatch\n",
+  "stderr": "",
+  "enabled_plugins": [
+    "Listing plugins with pattern \".*\" ...",
+    "rabbitmq_management",
+    "rabbitmq_management_agent",
+    "rabbitmq_prometheus",
+    "rabbitmq_web_dispatch"
+  ]
+}

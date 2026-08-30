@@ -1,0 +1,240 @@
+rabbitmq-1-1  | 2026-08-30 13:56:10.834551+00:00 [info] <0.2520.0> Started message store of type persistent for vhost 'atlas-secops-1788098170704400000'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.834712+00:00 [info] <0.2520.0> Recovering 0 queues of type rabbit_classic_queue took 20ms[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.834744+00:00 [info] <0.2520.0> Recovering 0 queues of type rabbit_quorum_queue took 0ms[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.834768+00:00 [info] <0.2520.0> Recovering 0 queues of type rabbit_stream_queue took 0ms[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0> ** gen_event handler rabbit_mqtt_internal_event_handler crashed.[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0> ** Was installed in rabbit_event[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0> ** Last event was: {event,vhost_created,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                        [{name,<<"atlas-secops-1788098170704400000">>},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {description,<<>>},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {tags,[]},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {default_queue_type,<<"classic">>},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {protected_from_deletion,false},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {metadata,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                             #{description => <<>>,tags => [],[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                               default_queue_type => <<"classic">>}},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {tracing,false},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {cluster_state,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                             [{'rabbit@rabbitmq-1',running},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                              {'rabbit@rabbitmq-2',running},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                              {'rabbit@rabbitmq-3',running}]},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {user_who_performed_action,<<"atlas">>},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {description,<<>>},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                         {tags,[]}],[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                        none,1788098170884}[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0> ** When handler state == [][0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0> ** Reason == {noproc,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                  {gen_server,call,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                      [rabbit_mqtt_retainer_sup,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                       {start_child,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                           #{id => 'atlas-secops-1788098170704400000',[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                             shutdown => 120000,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                             start =>[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                                 {rabbit_mqtt_retainer,start_link,[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                                     [<<"atlas-secops-1788098170704400000">>]}}},[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0>                       infinity]}}[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.904877+00:00 [error] <0.793.0> [0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.909507+00:00 [info] <0.2516.0> Successfully set permissions for user 'atlas' in virtual host 'atlas-secops-1788098170704400000' to '.*', '.*', '.*'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.911991+00:00 [info] <0.2546.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.914472+00:00 [info] <0.2546.0> Created user 'atlas-secops-1788098170704400000-user'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.915855+00:00 [info] <0.2547.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.920522+00:00 [info] <0.2547.0> Successfully set permissions for user 'atlas-secops-1788098170704400000-user' in virtual host 'atlas-secops-1788098170704400000' to '^allowed\..*$', '^allowed\..*$', '^allowed\..*$'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.922306+00:00 [info] <0.2548.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.925441+00:00 [info] <0.2548.0> Successfully set permissions for user 'atlas' in virtual host 'atlas-secops-1788098170704400000' to '.*', '.*', '.*'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.927676+00:00 [info] <0.2549.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:10.937011+00:00 [info] <0.2556.0> accepting AMQP connection 192.168.80.1:38569 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:56:10.940093+00:00 [warning] <0.2556.0> User 'atlas-secops-1788098170704400000-user' failed to authenticate: user 'atlas-secops-1788098170704400000-user' - invalid credentials[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.940323+00:00 [error] <0.2556.0> Error on AMQP connection <0.2556.0> (192.168.80.1:38569 -> 192.168.80.2:5672, state: starting):[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:10.940323+00:00 [error] <0.2556.0> PLAIN login refused: user 'atlas-secops-1788098170704400000-user' - invalid credentials[0m
+rabbitmq-1-1  | 2026-08-30 13:56:13.941583+00:00 [info] <0.2556.0> closing AMQP connection (192.168.80.1:38569 -> 192.168.80.2:5672, duration: '3s')[0m
+rabbitmq-1-1  | 2026-08-30 13:56:19.950524+00:00 [info] <0.2567.0> accepting AMQP connection 192.168.80.1:27358 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:56:19.964675+00:00 [info] <0.2567.0> User 'atlas-secops-1788098170704400000-user' authenticated successfully[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:19.966434+00:00 [error] <0.2567.0> Error on AMQP connection <0.2567.0> (192.168.80.1:27358 -> 192.168.80.2:5672, user: 'atlas-secops-1788098170704400000-user', state: opening):[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:19.966434+00:00 [error] <0.2567.0> access to vhost '/' refused for user 'atlas-secops-1788098170704400000-user'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:19.967640+00:00 [info] <0.2567.0> closing AMQP connection (192.168.80.1:27358 -> 192.168.80.2:5672, vhost: 'none', user: 'atlas-secops-1788098170704400000-user', duration: '17ms')[0m
+rabbitmq-1-1  | 2026-08-30 13:56:19.986027+00:00 [info] <0.2576.0> accepting AMQP connection 192.168.80.1:52520 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:56:19.987983+00:00 [info] <0.2576.0> User 'atlas-secops-1788098170704400000-user' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:19.989069+00:00 [info] <0.2576.0> connection 192.168.80.1:52520 -> 192.168.80.2:5672: user 'atlas-secops-1788098170704400000-user' authenticated and granted access to vhost 'atlas-secops-1788098170704400000'[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:20.023089+00:00 [error] <0.2595.0> Channel error on connection <0.2576.0> (192.168.80.1:52520 -> 192.168.80.2:5672, vhost: 'atlas-secops-1788098170704400000', user: 'atlas-secops-1788098170704400000-user'), channel 2:[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:20.023089+00:00 [error] <0.2595.0> operation queue.declare caused a channel exception access_refused: configure access to queue 'forbidden.queue-new' in vhost 'atlas-secops-1788098170704400000' refused for user 'atlas-secops-1788098170704400000-user'[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:20.025262+00:00 [error] <0.2602.0> Channel error on connection <0.2576.0> (192.168.80.1:52520 -> 192.168.80.2:5672, vhost: 'atlas-secops-1788098170704400000', user: 'atlas-secops-1788098170704400000-user'), channel 3:[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:20.025262+00:00 [error] <0.2602.0> operation basic.consume caused a channel exception access_refused: read access to queue 'forbidden.queue' in vhost 'atlas-secops-1788098170704400000' refused for user 'atlas-secops-1788098170704400000-user'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:20.026540+00:00 [info] <0.2576.0> closing AMQP connection (192.168.80.1:52520 -> 192.168.80.2:5672, vhost: 'atlas-secops-1788098170704400000', user: 'atlas-secops-1788098170704400000-user', duration: '40ms')[0m
+rabbitmq-1-1  | 2026-08-30 13:56:20.030144+00:00 [info] <0.2609.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:20.061860+00:00 [info] <0.2609.0> Successfully changed password for user 'atlas-secops-1788098170704400000-user'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:20.061985+00:00 [info] <0.2609.0> Successfully set user tags for user 'atlas-secops-1788098170704400000-user' to [][0m
+rabbitmq-1-1  | 2026-08-30 13:56:20.064069+00:00 [info] <0.2615.0> accepting AMQP connection 192.168.80.1:59425 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:56:20.065682+00:00 [warning] <0.2615.0> User 'atlas-secops-1788098170704400000-user' failed to authenticate: user 'atlas-secops-1788098170704400000-user' - invalid credentials[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:20.065783+00:00 [error] <0.2615.0> Error on AMQP connection <0.2615.0> (192.168.80.1:59425 -> 192.168.80.2:5672, state: starting):[0m
+rabbitmq-1-1  | [38;5;160m2026-08-30 13:56:20.065783+00:00 [error] <0.2615.0> PLAIN login refused: user 'atlas-secops-1788098170704400000-user' - invalid credentials[0m
+rabbitmq-1-1  | 2026-08-30 13:56:23.071255+00:00 [info] <0.2615.0> closing AMQP connection (192.168.80.1:59425 -> 192.168.80.2:5672, duration: '3s')[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.101276+00:00 [info] <0.2648.0> accepting AMQP connection 192.168.80.1:45146 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.128751+00:00 [info] <0.2648.0> User 'atlas-secops-1788098170704400000-user' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.140096+00:00 [info] <0.2648.0> connection 192.168.80.1:45146 -> 192.168.80.2:5672: user 'atlas-secops-1788098170704400000-user' authenticated and granted access to vhost 'atlas-secops-1788098170704400000'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.152044+00:00 [info] <0.2648.0> closing AMQP connection (192.168.80.1:45146 -> 192.168.80.2:5672, vhost: 'atlas-secops-1788098170704400000', user: 'atlas-secops-1788098170704400000-user', duration: '50ms')[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.162187+00:00 [info] <0.2657.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.207701+00:00 [info] <0.2659.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.221484+00:00 [info] <0.2661.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.279008+00:00 [info] <0.2662.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.294132+00:00 [info] <0.2662.0> Deleted user 'atlas-secops-1788098170704400000-user'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.294366+00:00 [info] <0.2663.0> Closing all connections for user 'atlas-secops-1788098170704400000-user' because the user is being deleted[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.296040+00:00 [info] <0.2666.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.345798+00:00 [info] <0.2667.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.345940+00:00 [info] <0.2667.0> Deleting vhost 'atlas-secops-1788098170704400000'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.345999+00:00 [info] <0.2667.0> Clearing permissions in vhost 'atlas-secops-1788098170704400000' because it's being deleted[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.356579+00:00 [info] <0.2667.0> Deleting queues in vhost 'atlas-secops-1788098170704400000' because it's being deleted[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.409087+00:00 [info] <0.2667.0> Deleting exchanges in vhost 'atlas-secops-1788098170704400000' because it's being deleted[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.545951+00:00 [info] <0.2667.0> Clearing policies and runtime parameters in vhost 'atlas-secops-1788098170704400000' because it's being deleted[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.581804+00:00 [info] <0.2674.0> Closing all connections in vhost 'atlas-secops-1788098170704400000' because it's being deleted[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.583733+00:00 [info] <0.2667.0> Stopping vhost supervisor <0.2519.0> for vhost 'atlas-secops-1788098170704400000'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.585201+00:00 [info] <0.2520.0> Virtual host 'atlas-secops-1788098170704400000' is stopping[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.586294+00:00 [info] <0.2676.0> Closing all connections in vhost 'atlas-secops-1788098170704400000' on node 'rabbit@rabbitmq-1' because the vhost is stopping[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.588425+00:00 [info] <0.2531.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/AIUE58IXR340UCD1KOCPUF3PT/msg_store_persistent'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.635135+00:00 [info] <0.2531.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/AIUE58IXR340UCD1KOCPUF3PT/msg_store_persistent' is stopped[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.635396+00:00 [info] <0.2527.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/AIUE58IXR340UCD1KOCPUF3PT/msg_store_transient'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.654420+00:00 [info] <0.2527.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/AIUE58IXR340UCD1KOCPUF3PT/msg_store_transient' is stopped[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.658209+00:00 [info] <0.2667.0> Deleting message store directory for vhost 'atlas-secops-1788098170704400000' at '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/AIUE58IXR340UCD1KOCPUF3PT'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.680005+00:00 [info] <15327.2399.0> Stopping vhost supervisor <15327.2305.0> for vhost 'atlas-secops-1788098170704400000'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.729209+00:00 [info] <15327.2399.0> Deleting message store directory for vhost 'atlas-secops-1788098170704400000' at '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-2/msg_stores/vhosts/AIUE58IXR340UCD1KOCPUF3PT'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.782569+00:00 [info] <15328.2435.0> Stopping vhost supervisor <15328.2340.0> for vhost 'atlas-secops-1788098170704400000'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.877004+00:00 [info] <15328.2435.0> Deleting message store directory for vhost 'atlas-secops-1788098170704400000' at '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-3/msg_stores/vhosts/AIUE58IXR340UCD1KOCPUF3PT'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:29.926460+00:00 [info] <0.2686.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:37.832161+00:00 [info] <0.2702.0> Created user 'atlas-scenario-20260830t135414z12655'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:38.870911+00:00 [info] <0.2708.0> Successfully set permissions for user 'atlas-scenario-20260830t135414z12655' in virtual host '/' to '.*', '.*', '.*'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:39.006747+00:00 [info] <0.2710.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:39.046201+00:00 [info] <0.2715.0> User 'atlas-scenario-20260830t135414z12655' authenticated successfully[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:56:39.046867+00:00 [warning] <0.2715.0> HTTP access denied: user 'atlas-scenario-20260830t135414z12655' - Not management user[0m
+rabbitmq-1-1  | 2026-08-30 13:56:39.311453+00:00 [info] <0.2727.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:56:43.752589+00:00 [info] <0.2790.0> Deleted user 'atlas-scenario-20260830t135414z12655'[0m
+rabbitmq-1-1  | 2026-08-30 13:56:43.753844+00:00 [info] <0.2791.0> Closing all connections for user 'atlas-scenario-20260830t135414z12655' because the user is being deleted[0m
+rabbitmq-1-1  | 2026-08-30 13:56:53.158415+00:00 [info] <0.2811.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:09.299477+00:00 [info] <0.2931.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:19.725696+00:00 [info] <0.2990.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:19.778838+00:00 [info] <0.2997.0> accepting AMQP connection 192.168.80.1:24002 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:57:19.790793+00:00 [info] <0.2997.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:19.797818+00:00 [info] <0.2997.0> connection 192.168.80.1:24002 -> 192.168.80.2:5672: user 'atlas' authenticated and granted access to vhost '/'[0m
+rabbitmq-1-1  | 2026-08-30 13:57:19.830653+00:00 [info] <0.3011.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:20.087716+00:00 [info] <0.3012.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:20.349608+00:00 [info] <0.3013.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:20.610743+00:00 [info] <0.3014.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:20.878961+00:00 [info] <0.3015.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:20.910675+00:00 [info] <0.3016.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:21.171046+00:00 [info] <0.3017.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:21.435158+00:00 [info] <0.3018.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:21.690789+00:00 [info] <0.3019.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:21.946385+00:00 [info] <0.3020.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:22.202414+00:00 [info] <0.3023.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:22.456510+00:00 [info] <0.3024.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:22.712595+00:00 [info] <0.3025.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:22.967568+00:00 [info] <0.3026.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:23.222281+00:00 [info] <0.3027.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:23.477506+00:00 [info] <0.3028.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:23.732497+00:00 [info] <0.3029.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:23.993874+00:00 [info] <0.3030.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:24.250462+00:00 [info] <0.3031.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:24.510708+00:00 [info] <0.3032.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:24.768379+00:00 [info] <0.3033.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:25.024046+00:00 [info] <0.3034.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:25.285797+00:00 [info] <0.3035.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:25.541931+00:00 [info] <0.3036.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:25.798593+00:00 [info] <0.3042.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:26.054773+00:00 [info] <0.3043.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:26.058160+00:00 [info] <0.3044.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:26.311340+00:00 [info] <0.3048.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:26.565765+00:00 [info] <0.3049.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:26.821372+00:00 [info] <0.3050.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:27.075633+00:00 [info] <0.3051.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:27.328629+00:00 [info] <0.3052.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:27.583247+00:00 [info] <0.3053.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:27.840184+00:00 [info] <0.3054.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:28.095318+00:00 [info] <0.3055.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:28.351378+00:00 [info] <0.3056.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:28.609417+00:00 [info] <0.3057.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:28.865361+00:00 [info] <0.3058.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:29.119144+00:00 [info] <0.3059.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:29.372270+00:00 [info] <0.3060.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:29.627025+00:00 [info] <0.3061.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:29.881302+00:00 [info] <0.3064.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:30.135917+00:00 [info] <0.3065.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:30.390172+00:00 [info] <0.3066.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:30.646802+00:00 [info] <0.3067.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:30.900774+00:00 [info] <0.3068.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:30.920250+00:00 [info] <0.3070.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:30.923540+00:00 [info] <0.2997.0> closing AMQP connection (192.168.80.1:24002 -> 192.168.80.2:5672, vhost: '/', user: 'atlas', duration: '11s')[0m
+rabbitmq-1-1  | 2026-08-30 13:57:35.694434+00:00 [info] <0.3080.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:35.730500+00:00 [info] <0.3087.0> accepting AMQP connection 192.168.80.1:24177 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:57:35.733965+00:00 [info] <0.3087.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:35.735777+00:00 [info] <0.3087.0> connection 192.168.80.1:24177 -> 192.168.80.2:5672: user 'atlas' authenticated and granted access to vhost '/'[0m
+rabbitmq-1-1  | 2026-08-30 13:57:35.761716+00:00 [info] <0.3101.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:36.505802+00:00 [info] <0.3103.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:36.540292+00:00 [info] <0.3111.0> queue 'atlas.1788098255737477000.performance.quorum' in vhost '/': delivery_limit not set, defaulting to 20[0m
+rabbitmq-1-1  | 2026-08-30 13:57:36.540565+00:00 [info] <0.3111.0> queue 'atlas.1788098255737477000.performance.quorum' in vhost '/': delivery_limit not set, defaulting to 20[0m
+rabbitmq-1-1  | 2026-08-30 13:57:36.540770+00:00 [info] <0.3111.0> queue 'atlas.1788098255737477000.performance.quorum' in vhost '/': delivery_limit not set, defaulting to 20[0m
+rabbitmq-1-1  | [38;5;87m2026-08-30 13:57:36.609387+00:00 [notice] <0.3118.0> queue 'atlas.1788098255737477000.performance.quorum' in vhost '/': candidate -> leader in term: 1 machine version: 8, last applied 0[0m
+rabbitmq-1-1  | 2026-08-30 13:57:36.611528+00:00 [info] <0.3111.0> ra: started cluster '%2F_atlas.1788098255737477000.performance.quorum' with 3 servers. 0 servers failed to start: []. Leader: {'%2F_atlas.1788098255737477000.performance.quorum','rabbit@rabbitmq-1'}[0m
+rabbitmq-1-1  | 2026-08-30 13:57:36.611638+00:00 [info] <0.3111.0> queue 'atlas.1788098255737477000.performance.quorum' in vhost '/': delivery_limit not set, defaulting to 20[0m
+rabbitmq-1-1  | 2026-08-30 13:57:36.632891+00:00 [info] <0.3128.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.559152+00:00 [info] <0.3130.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | [38;5;87m2026-08-30 13:57:37.567669+00:00 [notice] <0.3118.0> queue 'atlas.1788098255737477000.performance.quorum' in vhost '/': leader -> terminating_leader in term: 1 machine version: 8, last applied 438[0m
+rabbitmq-1-1  | [38;5;87m2026-08-30 13:57:37.569368+00:00 [notice] <0.3118.0> queue 'atlas.1788098255737477000.performance.quorum' in vhost '/': terminating with reason 'delete'[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.574087+00:00 [info] <15327.2738.0> Deleting server '%2F_atlas.1788098255737477000.performance.quorum' and its data directory.[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.575604+00:00 [info] <15328.2777.0> Deleting server '%2F_atlas.1788098255737477000.performance.quorum' and its data directory.[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.585026+00:00 [info] <0.3141.0> Stream: __atlas_1788098255737477000_performance_stream_1788098257581834556 will use /var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/stream/__atlas_1788098255737477000_performance_stream_1788098257581834556 for osiris log data directory[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.589114+00:00 [info] <0.3141.0> osiris_writer:init/1: name: __atlas_1788098255737477000_performance_stream_1788098257581834556 committed offset: -1 committed chunk id: -1 epoch: 1[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.597519+00:00 [info] <0.3144.0> __atlas_1788098255737477000_performance_stream_1788098257581834556 [osiris_replica_reader:init/1] replica reader successfully connected to host {192,168,80,3} port 6253[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.598740+00:00 [info] <0.3144.0> __atlas_1788098255737477000_performance_stream_1788098257581834556 [osiris_replica_reader:init/1] starting osiris replica reader at offset 0[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.599181+00:00 [info] <0.3146.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.599898+00:00 [info] <0.3145.0> __atlas_1788098255737477000_performance_stream_1788098257581834556 [osiris_replica_reader:init/1] replica reader successfully connected to host {192,168,80,4} port 6308[0m
+rabbitmq-1-1  | 2026-08-30 13:57:37.601408+00:00 [info] <0.3145.0> __atlas_1788098255737477000_performance_stream_1788098257581834556 [osiris_replica_reader:init/1] starting osiris replica reader at offset 0[0m
+rabbitmq-1-1  | 2026-08-30 13:57:38.090176+00:00 [info] <0.3148.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:38.111341+00:00 [info] <0.3141.0> osiris_writer:terminate/2: name __atlas_1788098255737477000_performance_stream_1788098257581834556 reason: shutdown[0m
+rabbitmq-1-1  | 2026-08-30 13:57:38.119610+00:00 [info] <0.3087.0> closing AMQP connection (192.168.80.1:24177 -> 192.168.80.2:5672, vhost: '/', user: 'atlas', duration: '2s')[0m
+rabbitmq-1-1  | 2026-08-30 13:57:39.446888+00:00 [info] <0.789.0> Memory high watermark set to 0 MiB (1 bytes) of 7933 MiB (8319238144 bytes) total[0m
+rabbitmq-1-1  | 2026-08-30 13:57:39.447284+00:00 [info] <0.789.0> vm_memory_high_watermark set. Memory used:166842368 allowed:1[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:39.447781+00:00 [warning] <0.787.0> memory resource limit alarm set on node 'rabbit@rabbitmq-1'.[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:39.447781+00:00 [warning] <0.787.0> [0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:39.447781+00:00 [warning] <0.787.0> **********************************************************[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:39.447781+00:00 [warning] <0.787.0> *** Publishers will be blocked until this alarm clears ***[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:39.447781+00:00 [warning] <0.787.0> **********************************************************[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:39.447781+00:00 [warning] <0.787.0> [0m
+rabbitmq-1-1  | 2026-08-30 13:57:39.760067+00:00 [info] <0.3164.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:39.763583+00:00 [info] <0.3168.0> accepting AMQP connection 192.168.80.1:64185 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:57:39.766805+00:00 [info] <0.3168.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:39.768575+00:00 [info] <0.3168.0> connection 192.168.80.1:64185 -> 192.168.80.2:5672: user 'atlas' authenticated and granted access to vhost '/'[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.217873+00:00 [info] <0.789.0> Memory high watermark set to 3173 MiB (3327695257 bytes) of 7933 MiB (8319238144 bytes) total[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.219668+00:00 [info] <0.789.0> vm_memory_high_watermark clear. Memory used:161271808 allowed:3327695257[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:48.219965+00:00 [warning] <0.787.0> memory resource limit alarm cleared on node 'rabbit@rabbitmq-1'[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:48.220087+00:00 [warning] <0.787.0> memory resource limit alarm cleared across the cluster[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:48.224104+00:00 [warning] <0.3168.0> closing AMQP connection <0.3168.0> (192.168.80.1:64185 -> 192.168.80.2:5672, vhost: '/', user: 'atlas', duration: '8s'):[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:48.224104+00:00 [warning] <0.3168.0> client unexpectedly closed TCP connection[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:48.225892+00:00 [warning] <0.3177.0> Channel is stopping with 1 pending publisher confirms[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.597221+00:00 [info] <0.3197.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.604856+00:00 [info] <0.3201.0> accepting AMQP connection 192.168.80.1:31014 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.616108+00:00 [info] <0.3201.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.619557+00:00 [info] <0.3201.0> connection 192.168.80.1:31014 -> 192.168.80.2:5672: user 'atlas' authenticated and granted access to vhost '/'[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.645243+00:00 [info] <0.3201.0> closing AMQP connection (192.168.80.1:31014 -> 192.168.80.2:5672, vhost: '/', user: 'atlas', duration: '41ms')[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.973224+00:00 [info] <0.3222.0> accepting AMQP connection 192.168.80.1:28175 -> 192.168.80.2:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.982501+00:00 [info] <0.3222.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:48.987340+00:00 [info] <0.3222.0> connection 192.168.80.1:28175 -> 192.168.80.2:5672: user 'atlas' authenticated and granted access to vhost '/'[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.049618+00:00 [info] <0.3231.0> queue 'atlas.1788098268966693000.quorum-recovery' in vhost '/': delivery_limit not set, defaulting to 20[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.049818+00:00 [info] <0.3231.0> queue 'atlas.1788098268966693000.quorum-recovery' in vhost '/': delivery_limit not set, defaulting to 20[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.050194+00:00 [info] <0.3231.0> queue 'atlas.1788098268966693000.quorum-recovery' in vhost '/': delivery_limit not set, defaulting to 20[0m
+rabbitmq-1-1  | [38;5;87m2026-08-30 13:57:49.229779+00:00 [notice] <0.3238.0> queue 'atlas.1788098268966693000.quorum-recovery' in vhost '/': candidate -> leader in term: 1 machine version: 8, last applied 0[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.230749+00:00 [info] <0.3231.0> ra: started cluster '%2F_atlas.1788098268966693000.quorum-recovery' with 3 servers. 0 servers failed to start: []. Leader: {'%2F_atlas.1788098268966693000.quorum-recovery','rabbit@rabbitmq-1'}[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.231124+00:00 [info] <0.3231.0> queue 'atlas.1788098268966693000.quorum-recovery' in vhost '/': delivery_limit not set, defaulting to 20[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.317216+00:00 [info] <0.3249.0> User 'atlas' authenticated successfully[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.334014+00:00 [info] <0.3222.0> closing AMQP connection (192.168.80.1:28175 -> 192.168.80.2:5672, vhost: '/', user: 'atlas', duration: '360ms')[0m
+rabbitmq-1-1  | [38;5;87m2026-08-30 13:57:49.715309+00:00 [notice] <0.64.0> SIGTERM received - shutting down[0m
+rabbitmq-1-1  | [38;5;87m2026-08-30 13:57:49.715309+00:00 [notice] <0.64.0> [0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:49.728674+00:00 [warning] <0.893.0> HTTP listener registry could not find context rabbitmq_prometheus_tls[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:49.767286+00:00 [warning] <0.893.0> HTTP listener registry could not find context rabbitmq_management_tls[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.787574+00:00 [info] <0.1017.0> stopped TCP listener on [::]:5672[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.791998+00:00 [info] <0.834.0> Virtual host '/' is stopping[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.792160+00:00 [info] <0.3259.0> Closing all connections in vhost '/' on node 'rabbit@rabbitmq-1' because the vhost is stopping[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.792336+00:00 [info] <0.848.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent'[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.808182+00:00 [info] <0.848.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_persistent' is stopped[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.808498+00:00 [info] <0.844.0> Stopping message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient'[0m
+rabbitmq-1-1  | 2026-08-30 13:57:49.822350+00:00 [info] <0.844.0> Message store for directory '/var/lib/rabbitmq/mnesia/rabbit@rabbitmq-1/msg_stores/vhosts/628WB79CIFDYO9LJI6DKMI09L/msg_store_transient' is stopped[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:49.845950+00:00 [warning] <0.535.0> RabbitMQ metadata store: worker exited with shutdown[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:49.853525+00:00 [warning] <0.3238.0> queue 'atlas.1788098268966693000.quorum-recovery' in vhost '/': worker exited with shutdown[0m
+rabbitmq-1-1  | [38;5;214m2026-08-30 13:57:49.856962+00:00 [warning] <0.825.0> rabbit_stream_coordinator: worker exited with shutdown[0m

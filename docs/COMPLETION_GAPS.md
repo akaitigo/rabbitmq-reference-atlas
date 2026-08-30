@@ -16,7 +16,7 @@ Authority Inventoryで発見したSurfaceは、実装の有無にかかわらず
 - Authority Artifact: 37。RabbitMQ公式の固定commitと固定Versionから抽出した。
 - Authority Behavior: 206。集約Targetを禁止し、Behaviorごとに専用required Targetとproposed Claimを持つ。
 - Verification Plan: 2,060 Row。全Behaviorに10 Scenarioを分類し、951 Rowが実Runtimeまたは実Platform必須である。
-- Scenario Proof: 2,060専用判定Artifact。Required 951 Rowのうち12 Rowは既存のBehavior固有Runtime観測を持つが、これは非後退のlegacy observationでありScenario gap Closureへ算入しない。`scenario-closure.yaml`の条件を満たす専用実Broker/Client reportは9で、AMQP 1.0、MQTT、STOMP、Quorum failure、Partition operations/recoveryのScenario gap 9/951を閉じた。各reportはattempts 1、retries 0、3 VariantごとのOracle、Source/Harness digest、3-node RabbitMQ 4.3.5 runtime identity、専用packet／log／metric Artifactを持つ。Authority atomic昇格は0のためCompletion eligibleは0である。
+- Scenario Proof: 2,060専用判定Artifact。Required 951 Rowのうち12 Rowは既存のBehavior固有Runtime観測を持つが、これは非後退のlegacy observationでありScenario gap Closureへ算入しない。`scenario-closure.yaml`の条件を満たす専用実Broker/Client reportは14で、AMQP 1.0、MQTT、STOMP、Quorum/Partition、Management認可、node health、plugin inventory、node停止中と再参加後のclient接続のScenario gap 14/951を閉じた。各reportはattempts 1、retries 0、3 VariantごとのOracle、Source/Harness digest、3-node RabbitMQ 4.3.5 runtime identity、専用packet／log／metric Artifactを持つ。Authority atomic昇格は0のためCompletion eligibleは0である。
 - Integrated Reference System: 10 Scenarioを`reference-system/manifest.yaml`へ固定したが、専用実行Evidenceは0/10である。統合結果はBehavior固有Proofへ流用せず、各Protocol、Plugin、Cluster Behaviorの専用Artifactを別に要求する。
 - Definitive Skill Eval: 112セルのRouter契約は112/112 passだが、Route可能86、Mastery routing gap 26、実Target/Variant/Authority/Broker/Protocol Evidenceまで閉じたセルは20/112である。全Target stateは`covered` 35、`planned` 203として記録する。期待値を隠した独立Agent Forward Evalは6/10であり、Queue Type比較、STOMP検証、Metrics運用、Partition復旧の4件をGapとして保持する。
 

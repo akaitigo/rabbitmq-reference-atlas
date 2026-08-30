@@ -81,9 +81,10 @@ def broker_log(service: str) -> str:
     return "\n".join(line.rstrip() for line in result["stdout"].splitlines()) + "\n"
 
 
-def management_get(base: str, path: str) -> dict[str, Any]:
+def management_get(base: str, path: str, username: str = "atlas",
+                   password: str = "atlas-local-only") -> dict[str, Any]:
     request = urllib.request.Request(base + path)
-    token = base64.b64encode(b"atlas:atlas-local-only").decode("ascii")
+    token = base64.b64encode(f"{username}:{password}".encode()).decode("ascii")
     request.add_header("Authorization", "Basic " + token)
     try:
         with urllib.request.urlopen(request, timeout=8) as response:
@@ -128,7 +129,8 @@ def artifact_paths(behavior: str, scenario: str, variant: str) -> tuple[Path, Pa
 
 
 def write_variant_artifacts(behavior: str, scenario: str, node: dict[str, Any], packet: dict[str, Any],
-                            queue: str | None = None) -> dict[str, dict[str, Any]]:
+                            queue: str | None = None,
+                            cluster_status_failure_allowed: bool = False) -> dict[str, dict[str, Any]]:
     packet_path, log_path, metric_path = artifact_paths(behavior, scenario, node["variant"])
     packet_path.parent.mkdir(parents=True, exist_ok=True)
     write_json(packet_path, packet)
@@ -141,7 +143,7 @@ def write_variant_artifacts(behavior: str, scenario: str, node: dict[str, Any], 
     if queue:
         metric["queue"] = management_get(node["management"], "/api/queues/%2F/" + urllib.parse.quote(queue, safe=""))
     write_json(metric_path, metric)
-    if metric["cluster_status"]["returncode"] != 0:
+    if metric["cluster_status"]["returncode"] != 0 and not cluster_status_failure_allowed:
         raise RuntimeError(f"cluster_status failed: {node['service']}")
     return {
         "packet": binding(packet_path, "packet", "application/json"),
@@ -151,7 +153,8 @@ def write_variant_artifacts(behavior: str, scenario: str, node: dict[str, Any], 
 
 
 def report(behavior: str, scenario: str, profile: str, source_path: str, client_name: str,
-           packets: dict[str, dict[str, Any]], assertions: dict[str, list[str]], queue: str | None = None) -> None:
+           packets: dict[str, dict[str, Any]], assertions: dict[str, list[str]], queue: str | None = None,
+           unavailable_services: set[str] | None = None) -> None:
     source_file = ROOT / source_path
     harness_file = ROOT / "scripts/generate-scenario-runtime.py"
     source = {"path": source_path, "digest": sha(source_file)}
@@ -161,8 +164,12 @@ def report(behavior: str, scenario: str, profile: str, source_path: str, client_
     if not execution_id:
         raise RuntimeError("RABBITMQ_EVIDENCE_RUN_TOKEN is required")
     variants = []
+    unavailable_services = unavailable_services or set()
     for node in NODES:
-        channels = write_variant_artifacts(behavior, scenario, node, packets[node["variant"]], queue)
+        channels = write_variant_artifacts(
+            behavior, scenario, node, packets[node["variant"]], queue,
+            cluster_status_failure_allowed=node["service"] in unavailable_services,
+        )
         variants.append({
             "id": node["variant"], "attempts": 1, "retries": 0,
             "broker": {"runtime_kind": "actual-broker", "product": "RabbitMQ", "version": "4.3.5", "image_digest": IMAGE_DIGEST},
@@ -274,22 +281,169 @@ def partition_recovery(queue: str) -> None:
     report("partition.recovery", "recovery", "broker-cluster-3", "cmd/rmq-lab/main.go", "rmq-lab", packets, assertions)
 
 
+def steady_state_tranche() -> None:
+    """Security、Operations、Compatibilityを同じhealthy 3-node状態で専用実行する。"""
+    execution_id = os.environ.get("RABBITMQ_EVIDENCE_RUN_TOKEN")
+    if not execution_id:
+        raise RuntimeError("RABBITMQ_EVIDENCE_RUN_TOKEN is required")
+
+    username = "atlas-scenario-" + "".join(character.lower() for character in execution_id if character.isalnum())
+    password = "scenario-local-only"
+    run([*COMPOSE, "exec", "-T", "rabbitmq-1", "rabbitmqctl", "delete_user", username])
+    added = run([*COMPOSE, "exec", "-T", "rabbitmq-1", "rabbitmqctl", "add_user", username, password])
+    if added["returncode"] != 0:
+        raise RuntimeError(f"scenario management user creation failed: {added['stderr']}")
+    try:
+        permissions = run([
+            *COMPOSE, "exec", "-T", "rabbitmq-1", "rabbitmqctl", "set_permissions", "-p", "/",
+            username, ".*", ".*", ".*",
+        ])
+        if permissions["returncode"] != 0:
+            raise RuntimeError(f"scenario management permissions failed: {permissions['stderr']}")
+        packets, assertions = {}, {}
+        for node in NODES:
+            admin = management_get(node["management"], "/api/overview")
+            untagged = management_get(node["management"], "/api/overview", username, password)
+            if admin["status"] != 200 or untagged["status"] not in (401, 403):
+                raise RuntimeError(
+                    f"management authorization oracle failed: {node['service']} "
+                    f"admin={admin['status']} untagged={untagged['status']}"
+                )
+            packets[node["variant"]] = {
+                "transport": "HTTP",
+                "endpoint": node["management"] + "/api/overview",
+                "admin_user": {"tag": "administrator", "status": admin["status"]},
+                "untagged_user": {"tag": "none", "status": untagged["status"], "response": untagged["body"]},
+            }
+            assertions[node["variant"]] = [
+                "administrator tagを持つuserのManagement API requestが成功した",
+                "vhost permissionだけを持ちmanagement tagを持たないuserのrequestが拒否された",
+            ]
+        report(
+            "management.authorization", "security", "broker-cluster-3",
+            "scripts/generate-scenario-runtime.py", "python-urllib-management-client", packets, assertions,
+        )
+    finally:
+        deleted = run([*COMPOSE, "exec", "-T", "rabbitmq-1", "rabbitmqctl", "delete_user", username])
+        if deleted["returncode"] != 0:
+            raise RuntimeError(f"scenario management user cleanup failed: {deleted['stderr']}")
+
+    packets, assertions = {}, {}
+    for node in NODES:
+        ping = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmq-diagnostics", "-q", "ping"])
+        running = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmq-diagnostics", "-q", "check_running"])
+        if ping["returncode"] != 0 or running["returncode"] != 0:
+            raise RuntimeError(f"node health oracle failed: {node['service']}: ping={ping} running={running}")
+        packets[node["variant"]] = {
+            "transport": "container-exec",
+            "ping": ping,
+            "check_running": running,
+        }
+        assertions[node["variant"]] = [
+            "対象node自身のrabbitmq-diagnostics pingが成功した",
+            "対象node自身のrabbitmq-diagnostics check_runningが成功した",
+            "応答を同じnodeのcluster statusとbroker logへ結び付けた",
+        ]
+    report(
+        "monitoring.node-health", "operations", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "rabbitmq-diagnostics-4.3.5", packets, assertions,
+    )
+
+    packets, assertions, inventories = {}, {}, {}
+    for node in NODES:
+        trace = run([*COMPOSE, "exec", "-T", node["service"], "rabbitmq-plugins", "list", "-e", "-m"])
+        plugins = sorted(line.strip() for line in trace["stdout"].splitlines() if line.strip())
+        if trace["returncode"] != 0 or "rabbitmq_management" not in plugins:
+            raise RuntimeError(f"plugin inventory oracle failed: {node['service']}: {trace}")
+        inventories[node["variant"]] = plugins
+        packets[node["variant"]] = {
+            "transport": "container-exec",
+            "command": trace["command"],
+            "returncode": trace["returncode"],
+            "stdout": trace["stdout"],
+            "stderr": trace["stderr"],
+            "enabled_plugins": plugins,
+        }
+        assertions[node["variant"]] = [
+            "rabbitmq-pluginsが実Broker nodeからenabled inventoryを返した",
+            "management pluginがenabledである",
+            "全3 nodeのenabled plugin集合が一致した",
+        ]
+    if len({tuple(value) for value in inventories.values()}) != 1:
+        raise RuntimeError(f"plugin inventory differs across nodes: {inventories}")
+    report(
+        "cli.rabbitmq-plugins", "compatibility", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "rabbitmq-plugins-4.3.5", packets, assertions,
+    )
+
+
+def cluster_connection_failure(stopped_service: str) -> None:
+    packets, assertions = {}, {}
+    for node in NODES:
+        packet = amqp_header_probe(node["amqp"])
+        unavailable = node["service"] == stopped_service
+        if unavailable and (not packet["error"] or packet["received_hex"]):
+            raise RuntimeError(f"stopped node unexpectedly accepted AMQP: {node['service']}: {packet}")
+        if not unavailable and (packet["error"] or not packet["received_hex"]):
+            raise RuntimeError(f"live node AMQP probe failed: {node['service']}: {packet}")
+        packet.update({"fault": "broker-process-stopped", "stopped_service": stopped_service})
+        packets[node["variant"]] = packet
+        assertions[node["variant"]] = [
+            "停止対象nodeは新規AMQP接続を拒否し、稼働nodeはprotocol headerへ応答した"
+            if unavailable else
+            "別node停止中も当該nodeは新規AMQP接続のprotocol headerへ応答した",
+        ]
+    report(
+        "cluster.client-connection", "failure", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "python-socket-amqp091-probe", packets, assertions,
+        unavailable_services={stopped_service},
+    )
+
+
+def cluster_connection_recovery() -> None:
+    packets, assertions = {}, {}
+    for node in NODES:
+        packet = amqp_header_probe(node["amqp"])
+        if packet["error"] or not packet["received_hex"]:
+            raise RuntimeError(f"recovered node AMQP probe failed: {node['service']}: {packet}")
+        packet.update({"fault_removed": "broker-process-restarted"})
+        packets[node["variant"]] = packet
+        assertions[node["variant"]] = [
+            "node再起動後に新規AMQP接続のprotocol headerへ応答した",
+            "同じ時点のcluster statusが3-node onlineを示した",
+        ]
+    report(
+        "cluster.client-connection", "recovery", "broker-cluster-3",
+        "scripts/generate-scenario-runtime.py", "python-socket-amqp091-probe", packets, assertions,
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("protocols")
+    sub.add_parser("steady-state-tranche")
     failure = sub.add_parser("partition-failure")
     failure.add_argument("--queue", required=True)
     failure.add_argument("--isolated-service", required=True, choices=[node["service"] for node in NODES])
     recovery = sub.add_parser("partition-recovery")
     recovery.add_argument("--queue", required=True)
+    node_failure = sub.add_parser("node-failure")
+    node_failure.add_argument("--stopped-service", required=True, choices=[node["service"] for node in NODES])
+    sub.add_parser("node-recovery")
     args = parser.parse_args()
     if args.command == "protocols":
         protocols()
+    elif args.command == "steady-state-tranche":
+        steady_state_tranche()
     elif args.command == "partition-failure":
         partition_failure(args.queue, args.isolated_service)
-    else:
+    elif args.command == "partition-recovery":
         partition_recovery(args.queue)
+    elif args.command == "node-failure":
+        cluster_connection_failure(args.stopped_service)
+    else:
+        cluster_connection_recovery()
     return 0
 
 

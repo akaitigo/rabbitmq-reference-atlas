@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "behavior_id": "monitoring.node-health",
+  "authority_surface_id": "monitoring.node-health",
+  "scenario": "operations",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
+        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T135414Z-12655"
+      },
+      "oracle": {
+        "id": "oracle.monitoring.node-health.operations.node-1",
+        "assertions": [
+          "対象node自身のrabbitmq-diagnostics pingが成功した",
+          "対象node自身のrabbitmq-diagnostics check_runningが成功した",
+          "応答を同じnodeのcluster statusとbroker logへ結び付けた"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-1/packet.json",
+          "digest": "sha256:301be9ca71d0fd4c23ef86c283fbd609bfd00fb34ee555cffa28d4cf20353ce4",
+          "size_bytes": 824,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-1/log.txt",
+          "digest": "sha256:1ed2edef8284a2d55d02289c60a07232143c7dc520a912d30672f650bf60d110",
+          "size_bytes": 36559,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-1/metric.json",
+          "digest": "sha256:acc351ec050f884834af3428816186ede789960a247cb50630e9aedc1e284247",
+          "size_bytes": 59622,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
+        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T135414Z-12655"
+      },
+      "oracle": {
+        "id": "oracle.monitoring.node-health.operations.node-2",
+        "assertions": [
+          "対象node自身のrabbitmq-diagnostics pingが成功した",
+          "対象node自身のrabbitmq-diagnostics check_runningが成功した",
+          "応答を同じnodeのcluster statusとbroker logへ結び付けた"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-2/packet.json",
+          "digest": "sha256:5b050ac55d113d631d09763917acd3c6f96e1edccbe9c3d85a35c314143e8792",
+          "size_bytes": 824,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-2/log.txt",
+          "digest": "sha256:ef9b124e619227d4e59e9e826bf4479392c22f923c9b50cf735771f2463af869",
+          "size_bytes": 34069,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-2/metric.json",
+          "digest": "sha256:9f15685478054e93b822260be72ef433973e77d40c0c56164d684938d74bcc55",
+          "size_bytes": 59622,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-diagnostics-4.3.5",
+        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
+        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T135414Z-12655"
+      },
+      "oracle": {
+        "id": "oracle.monitoring.node-health.operations.node-3",
+        "assertions": [
+          "対象node自身のrabbitmq-diagnostics pingが成功した",
+          "対象node自身のrabbitmq-diagnostics check_runningが成功した",
+          "応答を同じnodeのcluster statusとbroker logへ結び付けた"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-3/packet.json",
+          "digest": "sha256:c2edfdd3d6a6daac04ec26b00430b4d727c014f65d31f6ec2d5fc9a40bb192d5",
+          "size_bytes": 824,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-3/log.txt",
+          "digest": "sha256:cc0f8eb736da8ce77f5d0c79e9f25c814abe833df976c2ef6be4c3370ff0640b",
+          "size_bytes": 34322,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/monitoring.node-health/operations/node-3/metric.json",
+          "digest": "sha256:b0b7dadd7324571de0947f61bb98ba6f4aa8f1f263d87d061ca8e19a159564ec",
+          "size_bytes": 59576,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

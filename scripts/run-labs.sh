@@ -80,6 +80,7 @@ done
 (cd "$ROOT" && go run ./cmd/rmq-lab --mode cluster --management-urls "$MGMT_ALL" --output "$RAW/cluster-before.json")
 (cd "$ROOT" && go run ./cmd/rmq-lab --mode core --amqp-urls "$AMQP_ALL" --output "$RAW/core.json")
 (cd "$ROOT" && go run ./cmd/rmq-secops --amqp-urls "$AMQP_ALL" --management-urls "$MGMT_ALL" --output "$RAW/security-observability.json")
+(cd "$ROOT" && python3 scripts/generate-scenario-runtime.py steady-state-tranche)
 (cd "$ROOT" && bash scripts/run-observability-lab.sh "$RAW/observability-state.json" >/dev/null)
 (cd "$ROOT" && go run ./cmd/rmq-benchmark --amqp-urls "$AMQP_ALL" --management-urls "$MGMT_ALL" --messages 300 --payload-bytes 1024 --output "$RAW/performance.json")
 "${COMPOSE[@]}" exec -T rabbitmq-1 rabbitmqctl set_vm_memory_high_watermark absolute 1
@@ -95,6 +96,7 @@ QUEUE=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["queue"]
 STOPPED_SERVICE=${LEADER#rabbit@}
 case "$STOPPED_SERVICE" in rabbitmq-1|rabbitmq-2|rabbitmq-3) ;; *) echo "unexpected leader: $LEADER" >&2; exit 1 ;; esac
 "${COMPOSE[@]}" stop "$STOPPED_SERVICE"
+(cd "$ROOT" && python3 scripts/generate-scenario-runtime.py node-failure --stopped-service "$STOPPED_SERVICE")
 
 case "$STOPPED_SERVICE" in
   rabbitmq-1) LIVE_AMQP='amqp://atlas:atlas-local-only@127.0.0.1:25673/,amqp://atlas:atlas-local-only@127.0.0.1:25674/' ;;
@@ -106,6 +108,7 @@ esac
 "${COMPOSE[@]}" start "$STOPPED_SERVICE"
 STOPPED_SERVICE=''
 (cd "$ROOT" && go run ./cmd/rmq-lab --mode cluster --management-urls "$MGMT_ALL" --output "$RAW/cluster-after.json")
+(cd "$ROOT" && python3 scripts/generate-scenario-runtime.py node-recovery)
 
 # Network partition is distinct from a stopped process. Isolate the current
 # quorum leader on the dedicated Compose network, verify majority progress and

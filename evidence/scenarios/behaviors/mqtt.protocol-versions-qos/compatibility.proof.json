@@ -46,7 +46,7 @@
       "runtime": {
         "profile": "plugin-mqtt",
         "execution_mode": "runtime",
-        "created_at": "2026-08-30T11:43:01.57260093Z",
+        "created_at": "2026-08-30T13:54:50.684436258Z",
         "identity": "rabbitmq:4.3.5-management@sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031; nodes=3; official plugins"
       }
     },
@@ -62,9 +62,9 @@
           {
             "channel": "client-log",
             "path": "evidence/raw/definitive.mqtt.protocol-versions-qos.compatibility.json",
-            "digest": "sha256:2cbc69b28994b49909e3b1bc9ee39aa9f83522d14eca84798beb961d5bb0aac4",
+            "digest": "sha256:6126c60b8901163b24530b016627b7b2d996e83f27ceeb94aee3a01545b0904c",
             "media_type": "application/json",
-            "size_bytes": 841
+            "size_bytes": 842
           }
         ],
         "gap_ids": []
@@ -87,7 +87,7 @@
     "report": {
       "path": "evidence/scenario-runtime/mqtt.protocol-versions-qos/compatibility.runtime.json",
       "present": true,
-      "digest": "sha256:9d66fce97f597e3185ce08d66b2df933faa5bcf07357776a8b04111d0d6c234b"
+      "digest": "sha256:b4bdcfe7d7053c1036334f4e99dda639503a2c9d16179d4d0e955f0c1edb669f"
     },
     "required_variants": [
       "node-1",
@@ -114,7 +114,7 @@
         "runtime": {
           "profile": "plugin-mqtt",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T114229Z-54707"
+          "execution_id": "20260830T135414Z-12655"
         },
         "oracle": {
           "id": "oracle.mqtt.protocol-versions-qos.compatibility.node-1",
@@ -130,14 +130,14 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+          "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/packet.json",
-              "digest": "sha256:1920363473e518e15e5bf5dc48183bd230549fcbb0c0a510e0cc39a1478fbfe5",
-              "size_bytes": 337,
+              "digest": "sha256:78bc2462994925d814934ef3c6eabff01e55d9bf5186b2e44e5bca7c11d1832f",
+              "size_bytes": 338,
               "channel": "packet",
               "media_type": "application/json"
             },
@@ -146,8 +146,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/log.txt",
-              "digest": "sha256:57d3dad16ae15f967f415ff9b4e85de814ca56e9e73376260de978c98580bc7b",
-              "size_bytes": 31614,
+              "digest": "sha256:c628e09f9ecdd351e69741a08c5d9f3476de3c9bbb0936547331a24209d9c1ea",
+              "size_bytes": 31641,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -156,8 +156,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-1/metric.json",
-              "digest": "sha256:ed252594b78b916e785c09da240ad8d581558d52bae7eb0fb084669736183dd0",
-              "size_bytes": 64952,
+              "digest": "sha256:fa60d5bb10bbc1762546e222771a26ccd7467051c05257e78e7be25185203bb7",
+              "size_bytes": 65234,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -184,7 +184,7 @@
         "runtime": {
           "profile": "plugin-mqtt",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T114229Z-54707"
+          "execution_id": "20260830T135414Z-12655"
         },
         "oracle": {
           "id": "oracle.mqtt.protocol-versions-qos.compatibility.node-2",
@@ -200,14 +200,14 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+          "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/packet.json",
-              "digest": "sha256:f90181a8e3f43b780dac3a10b9aa664f44a44867d54ee5a65b840d7594172abe",
-              "size_bytes": 337,
+              "digest": "sha256:e69b07d044d6afe551443627015198ac170c27810d2d99beb2f9b929caf4d7e1",
+              "size_bytes": 338,
               "channel": "packet",
               "media_type": "application/json"
             },
@@ -216,8 +216,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/log.txt",
-              "digest": "sha256:031eff775e04ad8421ae5523486e0672da478742766ff82fe363145014af7f82",
-              "size_bytes": 31443,
+              "digest": "sha256:4cabec26a8129cd37b6a8c477209324054dc25eb37cc7c0e898e504f5912ad5a",
+              "size_bytes": 31589,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -226,8 +226,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-2/metric.json",
-              "digest": "sha256:0dcd5590f9abab07672e55946d53ed8ab725e8aa97fc9e4f6a81c1f010577250",
-              "size_bytes": 64693,
+              "digest": "sha256:55c1d90813edddb61e6bb85b11f7da31b28d54109fb6273129402a31a1ed9772",
+              "size_bytes": 65234,
               "channel": "metric",
               "media_type": "application/json"
             },
@@ -254,7 +254,7 @@
         "runtime": {
           "profile": "plugin-mqtt",
           "platform": "docker-engine/29.7.2",
-          "execution_id": "20260830T114229Z-54707"
+          "execution_id": "20260830T135414Z-12655"
         },
         "oracle": {
           "id": "oracle.mqtt.protocol-versions-qos.compatibility.node-3",
@@ -270,14 +270,14 @@
         },
         "harness": {
           "path": "scripts/generate-scenario-runtime.py",
-          "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+          "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
         },
         "artifact_channels": {
           "packet": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/packet.json",
-              "digest": "sha256:313dbb5f8008ac50e593933b351136fa31d1ee8b913fbe96e8030370a33a0e88",
-              "size_bytes": 337,
+              "digest": "sha256:81f2b9dfa14259503094033d810540f6147582486e4d29eca79d2030135a5a2e",
+              "size_bytes": 338,
               "channel": "packet",
               "media_type": "application/json"
             },
@@ -286,8 +286,8 @@
           "log": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/log.txt",
-              "digest": "sha256:2095e38f307dd0a68af16e84a9d155305fb00b7215b798e51cb6c634170ed29e",
-              "size_bytes": 31653,
+              "digest": "sha256:1e7c5942c0d5ae2e179c0ac9f7491915f75bc958987e14c5acc308d24d091467",
+              "size_bytes": 31442,
               "channel": "log",
               "media_type": "text/plain"
             },
@@ -296,8 +296,8 @@
           "metric": {
             "artifact": {
               "path": "evidence/scenario-runtime/artifacts/mqtt.protocol-versions-qos/compatibility/node-3/metric.json",
-              "digest": "sha256:945d3bdb7402aab30399be25d7e6988b722c40be4391db7dc681b7aa64933dfc",
-              "size_bytes": 64693,
+              "digest": "sha256:e0f29c3e406e3447e72370f04fe321f1bbf98409670a56d191a10a5e4d435588",
+              "size_bytes": 65234,
               "channel": "metric",
               "media_type": "application/json"
             },

@@ -1,0 +1,37 @@
+{
+  "transport": "container-exec",
+  "ping": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-1",
+      "rabbitmq-diagnostics",
+      "-q",
+      "ping"
+    ],
+    "returncode": 0,
+    "stdout": "Ping succeeded\n",
+    "stderr": ""
+  },
+  "check_running": {
+    "command": [
+      "docker",
+      "compose",
+      "-f",
+      "/Users/nakayamaryuuukei/work/private-code/rabbitmq-reference-atlas/environments/compose.yaml",
+      "exec",
+      "-T",
+      "rabbitmq-1",
+      "rabbitmq-diagnostics",
+      "-q",
+      "check_running"
+    ],
+    "returncode": 0,
+    "stdout": "RabbitMQ on node rabbit@rabbitmq-1 is fully booted and running\n",
+    "stderr": ""
+  }
+}

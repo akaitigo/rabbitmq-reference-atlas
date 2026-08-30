@@ -50,7 +50,7 @@
       "id": "security-002",
       "risk_rank": 1,
       "scenario": "security",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.ldap.tls.security",
         "closure.limit.queues.security",
@@ -1022,7 +1022,7 @@
       "id": "failure-003",
       "risk_rank": 3,
       "scenario": "failure",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.client.connection-recovery.failure",
         "closure.cluster.client-connection.failure",
@@ -1305,7 +1305,7 @@
       "id": "recovery-003",
       "risk_rank": 4,
       "scenario": "recovery",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.client.connection-recovery.recovery",
         "closure.cluster.client-connection.recovery",
@@ -1693,7 +1693,7 @@
       "id": "operations-005",
       "risk_rank": 6,
       "scenario": "operations",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.monitoring.metrics.operations",
         "closure.monitoring.node-health.operations",
@@ -2707,7 +2707,7 @@
       "id": "compatibility-001",
       "risk_rank": 9,
       "scenario": "compatibility",
-      "status": "planned",
+      "status": "in-progress",
       "row_ids": [
         "closure.amqp10.authentication-options.compatibility",
         "closure.amqp10.protocol-interoperability.compatibility",
@@ -3735,7 +3735,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.management.oauth.security",
@@ -7099,7 +7099,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.cluster.metadata-replication.failure",
@@ -8070,7 +8070,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.cluster.metadata-replication.recovery",
@@ -9420,7 +9420,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.mqtt.metrics-capacity.operations",
@@ -12933,7 +12933,7 @@
         "node-2",
         "node-3"
       ],
-      "status": "planned"
+      "status": "completed"
     },
     {
       "id": "closure.client.connection-recovery.compatibility",
@@ -16185,8 +16185,8 @@
     "commit_policy": "one-reviewed-tranche-with-non-regression-runtime-identity-and-oracle-validation"
   },
   "summary": {
-    "remaining_rows": 942,
+    "remaining_rows": 937,
     "planned_tranches": 242,
-    "completed_rows": 9
+    "completed_rows": 14
   }
 }

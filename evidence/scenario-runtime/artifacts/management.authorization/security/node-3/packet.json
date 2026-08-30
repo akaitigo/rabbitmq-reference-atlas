@@ -1,0 +1,13 @@
+{
+  "transport": "HTTP",
+  "endpoint": "http://127.0.0.1:35674/api/overview",
+  "admin_user": {
+    "tag": "administrator",
+    "status": 200
+  },
+  "untagged_user": {
+    "tag": "none",
+    "status": 401,
+    "response": "{\"error\":\"not_authorised\",\"reason\":\"Not management user\"}"
+  }
+}

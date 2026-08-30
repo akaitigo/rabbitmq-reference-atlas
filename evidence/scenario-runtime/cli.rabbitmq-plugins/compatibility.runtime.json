@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "behavior_id": "cli.rabbitmq-plugins",
+  "authority_surface_id": "cli.rabbitmq-plugins",
+  "scenario": "compatibility",
+  "runtime_profile": "broker-cluster-3",
+  "status": "passed",
+  "attempts": 1,
+  "retries": 0,
+  "source": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+  },
+  "harness": {
+    "path": "scripts/generate-scenario-runtime.py",
+    "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+  },
+  "variants": [
+    {
+      "id": "node-1",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-plugins-4.3.5",
+        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
+        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T135414Z-12655"
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-plugins.compatibility.node-1",
+        "assertions": [
+          "rabbitmq-pluginsが実Broker nodeからenabled inventoryを返した",
+          "management pluginがenabledである",
+          "全3 nodeのenabled plugin集合が一致した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-1/packet.json",
+          "digest": "sha256:966fb4d35b9b101bebd2f1171c098869a95fb0772196d626cb24c24c074b97cb",
+          "size_bytes": 664,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-1/log.txt",
+          "digest": "sha256:a93badb6bdd67656231a8e2fd9cbca727534582c2fe442634030387ac7df7ac6",
+          "size_bytes": 36543,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-1/metric.json",
+          "digest": "sha256:8d7f90a6c530d27e51c4c963c8ef35728bff407c5cbd7f3b56648df78ff2f137",
+          "size_bytes": 60152,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-2",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-plugins-4.3.5",
+        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
+        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T135414Z-12655"
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-plugins.compatibility.node-2",
+        "assertions": [
+          "rabbitmq-pluginsが実Broker nodeからenabled inventoryを返した",
+          "management pluginがenabledである",
+          "全3 nodeのenabled plugin集合が一致した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-2/packet.json",
+          "digest": "sha256:6c686a854b564bd297494eba79f340610ef6398056553865a7bc897b0251adcc",
+          "size_bytes": 664,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-2/log.txt",
+          "digest": "sha256:a75528be841f0e8bc992faebbf0c04302a757bfdcc2dc6733f8dc7fa686642e4",
+          "size_bytes": 34057,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-2/metric.json",
+          "digest": "sha256:eb853ef87d7d9909b272e1a85fd3e055b67892e84aa7ce9a471894ea2069c9c2",
+          "size_bytes": 60175,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    },
+    {
+      "id": "node-3",
+      "attempts": 1,
+      "retries": 0,
+      "broker": {
+        "runtime_kind": "actual-broker",
+        "product": "RabbitMQ",
+        "version": "4.3.5",
+        "image_digest": "sha256:45226f38499559b9f56875c752cc6689ff90e8f20796fe80fd9bc28d64723031"
+      },
+      "client": {
+        "runtime_kind": "actual-client",
+        "name": "rabbitmq-plugins-4.3.5",
+        "version": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40",
+        "source_digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "runtime": {
+        "profile": "broker-cluster-3",
+        "platform": "docker-engine/29.7.2",
+        "execution_id": "20260830T135414Z-12655"
+      },
+      "oracle": {
+        "id": "oracle.cli.rabbitmq-plugins.compatibility.node-3",
+        "assertions": [
+          "rabbitmq-pluginsが実Broker nodeからenabled inventoryを返した",
+          "management pluginがenabledである",
+          "全3 nodeのenabled plugin集合が一致した"
+        ],
+        "passed": true
+      },
+      "source": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "harness": {
+        "path": "scripts/generate-scenario-runtime.py",
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
+      },
+      "artifact_channels": {
+        "packet": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-3/packet.json",
+          "digest": "sha256:da6e7b70a60146a50709b935caae664f904a60ed64f8da7ac2b83939cdddc8b6",
+          "size_bytes": 664,
+          "channel": "packet",
+          "media_type": "application/json"
+        },
+        "log": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-3/log.txt",
+          "digest": "sha256:f8ac6c240c4917e6bf7ee9c65de982d0396428dd30e287abe9dcb49140e1cfa9",
+          "size_bytes": 34295,
+          "channel": "log",
+          "media_type": "text/plain"
+        },
+        "metric": {
+          "path": "evidence/scenario-runtime/artifacts/cli.rabbitmq-plugins/compatibility/node-3/metric.json",
+          "digest": "sha256:3d23660a0f6991d590936e9b1df8489d6cd574096b3eb72c3169dfd8bfaed14e",
+          "size_bytes": 60156,
+          "channel": "metric",
+          "media_type": "application/json"
+        }
+      }
+    }
+  ]
+}

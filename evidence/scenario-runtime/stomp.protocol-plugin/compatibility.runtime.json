@@ -13,7 +13,7 @@
   },
   "harness": {
     "path": "scripts/generate-scenario-runtime.py",
-    "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+    "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
   },
   "variants": [
     {
@@ -35,7 +35,7 @@
       "runtime": {
         "profile": "plugin-stomp",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T114229Z-54707"
+        "execution_id": "20260830T135414Z-12655"
       },
       "oracle": {
         "id": "oracle.stomp.protocol-plugin.compatibility.node-1",
@@ -51,27 +51,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/packet.json",
-          "digest": "sha256:b1cb97d600b18213b31634f37387cb5bf598b65a3f92a6ad86c1c2fd725402fa",
+          "digest": "sha256:a80f85e6beec460040cda56cf25bd62d4f65b6930a8d9cb570a5fcd66c53877f",
           "size_bytes": 558,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/log.txt",
-          "digest": "sha256:cf3ee81bd6ef13e4fb78b035cd83f82b246c4152d06282e5931ea459fae56324",
-          "size_bytes": 31656,
+          "digest": "sha256:ddac946a810eadd1cbb56e387eb30f18444f7d18b8790c27f21c9df810da37dc",
+          "size_bytes": 31683,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-1/metric.json",
-          "digest": "sha256:f6288fd281893d010b3fdc9cb85f2faeda0d011dc80b0fd5d609a8da687bb62b",
-          "size_bytes": 64693,
+          "digest": "sha256:fa60d5bb10bbc1762546e222771a26ccd7467051c05257e78e7be25185203bb7",
+          "size_bytes": 65234,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -96,7 +96,7 @@
       "runtime": {
         "profile": "plugin-stomp",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T114229Z-54707"
+        "execution_id": "20260830T135414Z-12655"
       },
       "oracle": {
         "id": "oracle.stomp.protocol-plugin.compatibility.node-2",
@@ -112,27 +112,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/packet.json",
-          "digest": "sha256:ddf720df507ca03d58e76e6dc3713f6912f9ef32bbd4aecbb0353e447861c5a6",
+          "digest": "sha256:984680302e4ffac212d61f48bb4a8ecad4666368603a9548e14cdb351a4ec281",
           "size_bytes": 558,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/log.txt",
-          "digest": "sha256:27baa766ab87703089a0402c20d9fe65ab9873a0bbd93881f0882c886af1bfd8",
-          "size_bytes": 31488,
+          "digest": "sha256:2cecfc15b251ef057033fe5623ca880bf62fbdd9881e4f18b6ccf7bf292d864c",
+          "size_bytes": 31631,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-2/metric.json",
-          "digest": "sha256:d50839846c8b552562fea9d56418fa394db0b54dc08e4b14a0e159c3b87ce568",
-          "size_bytes": 64693,
+          "digest": "sha256:0a04f32ba3fb098c335bb385d8067694884614fa98227aeaf74751f16418345f",
+          "size_bytes": 65254,
           "channel": "metric",
           "media_type": "application/json"
         }
@@ -157,7 +157,7 @@
       "runtime": {
         "profile": "plugin-stomp",
         "platform": "docker-engine/29.7.2",
-        "execution_id": "20260830T114229Z-54707"
+        "execution_id": "20260830T135414Z-12655"
       },
       "oracle": {
         "id": "oracle.stomp.protocol-plugin.compatibility.node-3",
@@ -173,27 +173,27 @@
       },
       "harness": {
         "path": "scripts/generate-scenario-runtime.py",
-        "digest": "sha256:f66b84e43b656222f0127f91ecb8f9bfc4925bcc9e0e9bce50e1898b5802a28b"
+        "digest": "sha256:491e3ccbcdc9cbd9c4ec681c71c98dc88f17a37e892b35b9b58482161968af40"
       },
       "artifact_channels": {
         "packet": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/packet.json",
-          "digest": "sha256:f2e167697ac105437b73508b0816f36b364b0f2798febd68936010f2c2b3fcba",
+          "digest": "sha256:9cf9a2c413d201c4b691c35dd2cc0b39f10c4ea5466051d75cbac97800c41584",
           "size_bytes": 558,
           "channel": "packet",
           "media_type": "application/json"
         },
         "log": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/log.txt",
-          "digest": "sha256:dcb3ba87bccd9e0b2285ebc81841116f4139873912050e10f026a11adbf6826b",
-          "size_bytes": 31748,
+          "digest": "sha256:e4d43a5ddb5337bf27ef453689b66c62280e7a4088342ff3b501117a9ce0054f",
+          "size_bytes": 31484,
           "channel": "log",
           "media_type": "text/plain"
         },
         "metric": {
           "path": "evidence/scenario-runtime/artifacts/stomp.protocol-plugin/compatibility/node-3/metric.json",
-          "digest": "sha256:945d3bdb7402aab30399be25d7e6988b722c40be4391db7dc681b7aa64933dfc",
-          "size_bytes": 64693,
+          "digest": "sha256:2ecf3b6285c31a31d34d622c6eaf169a81141cf455d791e4fbdace92c103eed4",
+          "size_bytes": 65254,
           "channel": "metric",
           "media_type": "application/json"
         }
